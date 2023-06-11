@@ -1,0 +1,22 @@
+html {
+    font-family: sans-serif;
+}
+  
+/* Your CSS below here */
+
+p{
+    width: 200px;
+    height: 40px;
+    line-height: 1.7;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: red;
+    color: rgb(255, 0, 0);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 0, 0, 0.192);
+    background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.3));
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.8), inset 2px 2px 5px rgba(255, 255, 255, 0.9), inset -2px -2px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.9);
+}

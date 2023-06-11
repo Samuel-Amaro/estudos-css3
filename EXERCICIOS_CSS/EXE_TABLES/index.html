@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Tables Task</title>
+    <style>
+        table {
+            font-size: 75%;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .nums{
+            text-align: right;
+        }
+        .text{
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tfoot{
+            border-top: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>A summary of the UK's most famous punk bands</caption>
+        <thead>
+            <tr>
+                <th scope="col" class="text">Band</th>
+                <th scope="col" class="nums">Year formed</th>
+                <th scope="col" class="nums">No. of Albums</th>
+                <th scope="col" class="text">Most famous song</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="text">Buzzcocks</th>
+                <td class="nums">1976</td>
+                <td class="nums">9</td>
+                <td class="text">Ever fallen in love (with someone you shouldn't've)</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text">The Clash</th>
+                <td class="nums">1976</td>
+                <td class="nums">6</td>
+                <td class="text">London Calling</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text">The Damned</th>
+                <td class="nums">1976</td>
+                <td class="nums">10</td>
+                <td class="text">Smash it up</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text">Sex Pistols</th>
+                <td class="nums">1975</td>
+                <td class="nums">1</td>
+                <td class="text">Anarchy in the UK</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text">Sham 69</th>
+                <td class="nums">1976</td>
+                <td class="nums">13</td>
+                <td class="text">If the kids are united</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text">Siouxsie and the Banshees</th>
+                <td class="nums">1976</td>
+                <td class="nums">11</td>
+                <td class="text">Hong Kong Garden</td>
+            </tr>
+            <tr>
+                <th scope="row" class="text">Stiff Little Fingers</th>
+                <td class="nums">1977</td>
+                <td class="nums">10</td>
+                <td class="text">Suspect Device</td>
+            </tr>
+            <tr class="border">
+                <th scope="row" class="text">The Stranglers</th>
+                <td class="nums">1974</td>
+                <td class="nums">17</td>
+                <td class="text">No More Heroes</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Total albums</th>
+                <td colspan="2">77</td>
+            </tr>
+        </tfoot>
+     </table>
+</body>
+</html>

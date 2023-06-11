@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Style de form</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 1em;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0; margin: 0;
+        }
+
+        input[type="search"]{
+            display: block;
+            width: 200px;
+            height: 45px;
+            padding: 4px;
+            border: 1px solid #333;
+            appearance: none;
+        }
+
+        input[type="search"]:focus, input[type="search"]:hover{
+            outline: none;
+            border: 2px solid #567;
+        }
+
+        form{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="search"]:not(:focus, :active)::-webkit-search-cancel-button { display: none; }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <input type="search" name="search" id="search" aria-label="Search our site"/>
+        <div class="icon">
+            <img src="./search-24px.png" alt="icon input search"/>
+        </div>
+    </form>
+    
+</body>
+</html>
