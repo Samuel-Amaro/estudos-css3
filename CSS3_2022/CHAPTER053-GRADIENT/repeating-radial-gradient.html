@@ -1,0 +1,55 @@
+<!--
+    * REPEATING-RADIAL-GRADIENT(GRADIENTE RADIAL REPETIDO)
+
+        A função CSS repeating-radial-gradient() cria uma imagem que consiste em gradientes repetidos que irradiam de uma origem. É semelhante a radial-gradient() e recebe os mesmos argumentos, mas repete as paradas de cor infinitamente em todas as direções para cobrir todo o seu contêiner, semelhante a repeating-linear-gradient(). O resultado da função é um objeto do tipo de dados <gradient>, que é um tipo especial de <image>.
+
+        A cada repetição, as posições dos pontos de cor são deslocadas por um múltiplo das dimensões do gradiente radial básico (a distância entre o último ponto de cor e o primeiro). Assim, a posição de cada parada de cor final coincide com uma parada de cor inicial; se os valores das cores forem diferentes, isso resultará em uma transição visual nítida, que pode ser atenuada repetindo a primeira cor como a última cor.
+
+        Como acontece com qualquer gradiente, um gradiente radial repetitivo não tem dimensões intrínsecas ; isto é, não tem tamanho natural ou preferido, nem proporção preferida. Seu tamanho concreto corresponderá ao tamanho do elemento ao qual se aplica.
+
+        Como <gradient>s pertence ao <image> tipo de dados, eles só podem ser usados ​​onde <image>s pode ser usado. Por esse motivo, repeating-radial-gradient()não funcionará em background-color outras propriedades que usam o <color> tipo de dados.
+
+    * SINTAXE
+
+        /* Um gradiente no centro de seu contêiner,
+        começando vermelho, mudando para azul e terminando verde,
+        com as cores se repetindo a cada 30px */
+        repeating-radial-gradient(circle at center, red 0, blue, green 30px);
+
+        /* Um gradiente elíptico próximo ao canto superior esquerdo de seu contêiner,
+            começando vermelho, mudando para verde e voltando novamente,
+            repetindo cinco vezes entre o centro e o canto inferior direito,
+            e apenas uma vez entre o centro e o canto superior esquerdo */
+        repeating-radial-gradient(farthest-corner at 20% 20%, red 0, green, red 20%);
+
+    * VALORES
+
+        <position(posição)>: A posição do gradiente, interpretada da mesma forma que a posição do plano de fundo(background-position) ou a origem da transformação(transform-origin). Se não especificado, o padrão é centralizado(center).
+            
+        <ending-shape(form final do gradiente)>: A forma final do gradiente. O valor pode ser circle (o que significa que a forma do gradiente é um círculo com um raio constante) ou elipse (o que significa que a forma é uma elipse alinhada ao eixo). Se não especificado, o padrão é elipse.
+
+        <size(tamanho):> Determina o tamanho da forma final do gradiente. Se omitido, o padrão é o canto mais distante(farthest-corner). Pode ser fornecido explicitamente ou por palavra-chave. Para o propósito das definições de palavras-chave, considere as bordas da caixa de gradiente como se estendendo infinitamente em ambas as direções, em vez de serem segmentos de linha finitos.
+
+        Os gradientes de círculo e elipse aceitam as seguintes palavras-chave para seu <size>:
+
+            PALAVRA-CHAVE: lado mais próximo(CLOSEST-SIDE)
+            DESCRIÇÃO: A forma final do gradiente encontra o lado da caixa mais próximo de seu centro (para círculos) ou encontra os lados vertical e horizontal mais próximos do centro (para elipses).
+            ----------------------------------
+            PALAVRA-CHAVE: closet-corner(canto mais próximo)
+            DESCRIÇÃO: A forma final do gradiente é dimensionada de modo que encontre exatamente o canto mais próximo da caixa a partir do centro
+            ----------------------------------
+            PALAVRA-CHAVE: farthest-side(lado mais distante)
+            DESCRIÇÃO: Semelhante ao lado mais próximo, exceto que a forma final é dimensionada para atender o lado da caixa mais distante de seu centro (ou lados vertical e horizontal).
+            ----------------------------------
+             PALAVRA-CHAVE: farthest-corner(canto mais distante)
+            DESCRIÇÃO: O valor padrão, a forma final do gradiente é dimensionada para que encontre exatamente o canto mais distante da caixa a partir de seu centro.
+            ----------------------------------
+            
+            Se <ending-shape> for especificado como circle, o tamanho pode ser fornecido explicitamente como um <length>, que fornece um raio de círculo explícito. Os valores negativos são inválidos.
+
+            Se <ending-shape> for especificado como elipse ou for omitido, o tamanho poderá ser fornecido como <length-percentage> com dois valores para fornecer um tamanho de elipse explícito. O primeiro valor representa o raio horizontal, o segundo o raio vertical. Os valores de porcentagens são relativos à dimensão correspondente da caixa de gradiente. Os valores negativos são inválidos.   
+                
+        <linear-color-stop(parada de cor linear)>: Um valor de <color> de um color-stop, seguido por uma ou duas posições de stop opcionais (um <percentage> ou um <length> ao longo do eixo do gradiente). Uma porcentagem de 0%, ou um comprimento de 0, representa o centro do gradiente; o valor 100% representa a interseção da forma final com o raio de gradiente virtual. Os valores percentuais intermediários são posicionados linearmente no raio de gradiente. Incluir duas posições de parada equivale a declarar duas paradas de cor com a mesma cor nas duas posições.
+
+        <color-hint(dica cor)>: A dica de cor é uma dica de interpolação que define como o gradiente progride entre as paradas de cores adjacentes. O comprimento define em que ponto entre duas paradas de cores a cor do gradiente deve atingir o ponto médio da transição de cores. Se omitido, o ponto médio da transição de cores é o ponto médio entre duas paradas de cores.
+-->

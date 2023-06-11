@@ -1,0 +1,41 @@
+<!--
+    * TEXTO NA CAIXA TRANSPARENTE
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        div.background{
+            background: url(klematis.jpg) repeat;
+            border: 2px solid black;
+        }
+        div.transbox{
+            margin: 30px;
+            background-color: #ffffff;
+            border: 1px solid black;
+            /*
+             - A opacity propriedade especifica a opacidade/transparência de um elemento.
+             - A opacity propriedade pode ter um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
+             - o valor 0.6 especifica que o elemento tera 0.6 de transparencia-opacidade, 60% de opacidade, essa opacidade esta definida no elemento, assim afeta a visualização do texto, muita transparencia dificulta a visualização do texto. o texto também ficara tranparente.
+            */
+            opacity: 0.6;
+        }
+        div.transbox p{
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background">
+        <div class="transbox">
+            <p>Este é algum texto que é colocado na caixa transparente.</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+/*
+ * * ESPECIFICIDADE CSS
+
+   * O QUE É ESPECIFICIDADE ?
+
+        - Se houver duas ou mais regras CSS conflitantes que apontam para o mesmo elemento, o navegador segue algumas regras para determinar qual é a mais específica e, portanto, vence.
+
+        - Pense na especificidade como uma pontuação/classificação que determina quais declarações de estilo são aplicadas a um elemento.
+
+        - O seletor universal (*) tem baixa especificidade, enquanto os seletores de ID são altamente específicos! 
+
+        - Nota: A especificidade é uma razão comum pela qual suas regras CSS não se aplicam a alguns elementos, embora você ache que deveriam.
+
+    * HIERARQUIA DE ESPECIFICIDADE
+
+       -  Cada seletor tem seu lugar na hierarquia de especificidade. Existem quatro categorias que definem o nível de especificidade de um seletor:
+
+            - Estilos embutidos(ESTILO INLINE - STYLE INLINE) - um estilo embutido é anexado diretamente ao elemento a ser estilizado. Exemplo: <h1 style = "color: #ffffff;">.
+
+
+            - IDs - um ID é um identificador exclusivo para os elementos da página, como #navbar.
+
+
+            - Classes, atributos e pseudoclasses - Esta categoria inclui .classes, [atributos] e pseudoclasses como: hover,: focus etc.
+
+
+            - Elementos e pseudoelementos - Esta categoria inclui nomes de elementos e pseudoelementos, como h1, div,: before e: after.
+
+
+    * COMO CALCULAR A ESPECIFICIDADE ?
+
+        - Memorize como calcular a especificidade!
+
+        - Comece em 0, adicione 1000 para o atributo de estilo, adicione 100 para cada ID, adicione 10 para cada atributo, classe ou pseudoclasse, adicione 1 para cada nome de elemento ou pseudoelemento.
+
+        - Considere estes três fragmentos de código:
+
+        A: h1
+
+        B: #content h1
+
+        C: <div id="content"><h1 style="color: #ffffff">Heading</h1></div>
+
+        A especificidade de A é 1 (um elemento)
+
+        A especificidade de B é 101 (uma referência de ID e um elemento)
+
+        A especificidade de C é 1000 (estilo embutido)
+
+        Como 1 < 101 < 1000, a terceira regra (C) tem um nível de especificidade maior e, portanto, será aplicada.
+*/
+
+/**
+ * REGRAS DE ESPECIFICIDADE
+
+   - Especificidade igual: a regra mais recente conta - Se a mesma regra for escrita duas vezes na folha de estilo externa, então a regra inferior na folha de estilo está mais próxima do elemento a ser estilizado e, portanto, será aplicada:
+
+*/
+
+h1{
+    background-color: yellow;
+}
+
+/*essa ultima regra que vai ser aplica, no elemento*/
+h1{
+    background-color: red;
+}
+
+/**
+  - a última regra é sempre aplicada.
+
+  - Os seletores de ID têm uma especificidade mais alta do que os seletores de atributo - Observe as três linhas de código a seguir:
+
+  - a primeira regra é mais específica do que as outras duas e será aplicada.
+
+
+
+*/
+
+div#conteiner{
+    background-color: green;
+}
+
+#conteiner{
+    background-color: yellow;
+}
+
+/*seletor que captura somente o atributo do elemento*/
+div[id=conteiner]{
+    background-color: blue;
+}
+
+/*
+  - Os seletores contextuais são mais específicos do que um único seletor de elemento - a folha de estilo incorporada está mais próxima do elemento a ser estilizado. Então, na seguinte situação:
+
+  From external CSS file:
+
+     #content h1 {
+         background-color: red;
+     }
+
+  In HTML file:
+
+  <style>
+        #content h1 {
+                background-color: yellow;
+        }
+  </style>
+
+  - a última regra será aplicada.
+*/
+
+
+/*
+ - Um seletor de classe vence qualquer número de seletores de elemento - um seletor de classe como .intro bate h1, p, div, etc:
+*/
+
+h1.intro{
+    background-color: yellow;
+}
+
+h1{
+    background-color: red;
+}
+
+/*
+ - O seletor universal e os valores herdados têm especificidade de 0 - *, body * e similares têm especificidade zero. Os valores herdados também têm uma especificidade de 0.
+*/

@@ -1,0 +1,50 @@
+<!--
+    * FUNCTION CROSSFADE()
+
+        A função CSS cross-fade() pode ser usada para misturar duas ou mais imagens em uma transparência definida. Ele pode ser usado para muitas manipulações de imagem simples, como tingir uma imagem com uma cor sólida ou destacar uma área específica da página combinando uma imagem com um gradiente radial. 
+
+    * SINTAXE
+
+        Atenção: A especificação e as implementações atuais possuem sintaxes diferentes. A sintaxe de especificação é explicada primeiro.
+
+    * SINTAXE DE ESPECIFICAÇÃO:
+
+        A cross-fade()função obtém uma lista de imagens com uma porcentagem que define quanto de cada imagem é retida em termos de opacidade quando é mesclada com as outras imagens. O valor percentual deve ser codificado sem aspas, deve conter o '%'símbolo e seu valor deve estar entre 0% e 100%.
+
+        A função pode ser usada em CSS em qualquer lugar que uma referência de imagem comum possa ser usada.
+
+        * PORCENTAGENS DE DESVANECIMENTO CRUZADO
+
+            Pense na porcentagem como um valor de opacidade para cada imagem. Isso significa que um valor de 0% significa que a imagem é totalmente transparente, enquanto um valor de 100% torna a imagem totalmente opaca.
+
+            cross-fade( url(white.png) 0%, url(black.png) 100%); /* fully black */
+            cross-fade( url(white.png) 25%, url(black.png) 75%); /* 25% white, 75% black */
+            cross-fade( url(white.png) 50%, url(black.png) 50%); /* 50% white, 50% black */
+            cross-fade( url(white.png) 75%, url(black.png) 25%); /* 75% white, 25% black */
+            cross-fade( url(white.png) 100%, url(black.png) 0%); /* fully white */
+            cross-fade( url(green.png) 75%, url(red.png) 75%); /* both green and red at 75% */
+
+            Se quaisquer porcentagens forem omitidas, todas as porcentagens especificadas serão somadas e subtraídas de100% . Se o resultado for maior que 0%, o resultado será dividido igualmente entre todas as imagens com porcentagens omitidas.
+
+            No caso mais simples, duas imagens são esmaecidas entre si. Para fazer isso, apenas uma das imagens precisa ter uma porcentagem, a outra será desbotada de acordo. Por exemplo, um valor de 0% definido para a primeira imagem produz apenas a segunda imagem, enquanto 100% produz apenas a primeira. Um valor de 25% renderiza a primeira imagem em 25% e a segunda em 75%. O valor de 75% é o inverso, mostrando a primeira imagem em 75% e a segunda em 25%.
+
+            O acima também poderia ter sido escrito como:
+
+                cross-fade( url(white.png) 0%,   url(black.png)); /* fully black */
+                cross-fade( url(white.png) 25%,  url(black.png)); /* 25% white, 75% black */
+                cross-fade( url(white.png),      url(black.png)); /* 50% white, 50% black */
+                cross-fade( url(white.png) 75%,  url(black.png)); /* 75% white, 25% black */
+                cross-fade( url(white.png) 100%, url(black.png)); /* fully white */
+                cross-fade( url(green.png) 75%, url(red.png) 75%); /* both green and red at 75% */
+
+                Se nenhuma porcentagem for declarada, ambas as imagens serão 50% opacas, com uma renderização de cross-fade como uma mesclagem uniforme de ambas as imagens. O exemplo de 50%/50% visto acima não precisava ter as porcentagens listadas, pois quando um valor percentual é omitido, as porcentagens incluídas são somadas e subtraídas de 100%. O resultado, se maior que 0, é então dividido igualmente entre todas as imagens com porcentagens omitidas.
+
+                No último exemplo, a soma de ambas as porcentagens não é 100% e, portanto, ambas as imagens incluem suas respectivas opacidades.
+
+                Se nenhuma porcentagem for declarada e três imagens forem incluídas, cada imagem será 33,33% opaca. As duas linhas a seguir são (quase) idênticas:
+
+                    cross-fade( url(red.png), url(yellow.png), url(blue.png)); /* all three will be 33.3333% opaque */
+                    cross-fade( url(red.png) 33.33%, url(yellow.png) 33.33%, url(blue.png) 33.33%);
+
+
+-->

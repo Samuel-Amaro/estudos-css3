@@ -1,0 +1,99 @@
+<!--
+    * PROPRIEDADE WIDTH CSS
+
+      - Define a largura de um elemento
+
+    * DEFINIÇÃO E USO
+
+      - A width propriedade define a largura de um elemento.
+
+      - A largura de um elemento não inclui preenchimento(padding), bordas(border) ou margens(margins)!
+
+      - Observação: as propriedades min-width e max-width sobrescrevem a width propriedade.
+
+      - VALOR PADRÃO: auto;
+
+      - HERDADO: não
+
+    * SINTAXE CSS:
+
+      width: auto|value|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      VALUE: auto;
+      DESCRIPTION: Valor padrão. O navegador calcula a largura;
+
+      VALUE: lenght;
+      DESCRIPTION: Define a largura em px, cm, etc.;
+
+      VALUE: %;
+      DESCRIPTION: Define a largura em porcentagem do bloco que o contém;
+
+      VALUE: initial;
+      DESCRIPTION: Define esta propriedade com seu valor padrão.
+
+      VALUE: inherit;
+      DESCRIPTION: Herda essa propriedade de seu elemento pai.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura de um elemento</title>
+    <style>
+        div.a{
+            /* Valor padrão. O navegador calcula a largura;*/
+            width: auto;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+        div.b{
+            /*Define a largura em px. o proprio dev definiu a largura do elemento. largura estatica.*/
+            width: 150px;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+        div.c{
+            /*Define a largura em porcentagem do bloco que o contém. a largura e defina como 50% do elemento que o contem. então este elemento vai ocupar 50% da largura do elemento pai definido. o elemento pai em relação ao elemento que o contem tem 100% de largura. o elemento filho vai ocupar 50% dessa largura como sua largura. dentro do conteiner pai. quando não tem elemento pai definido usa o corpo da pagina o body*/
+            width: 50%;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Largura de um elemento</h1>
+
+    <p><strong>Exemplo:</strong>Defina a largura de três elementos &lt;div&gt;:</p>
+
+    <h2>width: auto(default)</h2>
+
+    <div class="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nesciunt iste excepturi omnis? Voluptates a quae pariatur nihil optio. Illo, aut id soluta repellendus reiciendis incidunt repellat rerum ipsa? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis minus culpa est soluta dolorum praesentium nesciunt nobis deleniti temporibus? Incidunt, delectus minus! Incidunt perspiciatis nesciunt architecto repudiandae nulla, quasi deleniti? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consectetur ipsa laudantium, vero dicta nihil commodi nulla iusto assumenda illo itaque voluptates quos, voluptatum eum deleniti odio a dolorum suscipit!</div>
+
+    <h2>width: 150px</h2>
+
+    <div class="b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nesciunt iste excepturi omnis? Voluptates a quae pariatur nihil optio. Illo, aut id soluta repellendus reiciendis incidunt repellat rerum ipsa? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis minus culpa est soluta dolorum praesentium nesciunt nobis deleniti temporibus? Incidunt, delectus minus! Incidunt perspiciatis nesciunt architecto repudiandae nulla, quasi deleniti? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consectetur ipsa laudantium, vero dicta nihil commodi nulla iusto assumenda illo itaque voluptates quos, voluptatum eum deleniti odio a dolorum suscipit!</div>
+
+    <h2>width: 50%</h2>
+
+    <div class="c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nesciunt iste excepturi omnis? Voluptates a quae pariatur nihil optio. Illo, aut id soluta repellendus reiciendis incidunt repellat rerum ipsa? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis minus culpa est soluta dolorum praesentium nesciunt nobis deleniti temporibus? Incidunt, delectus minus! Incidunt perspiciatis nesciunt architecto repudiandae nulla, quasi deleniti? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consectetur ipsa laudantium, vero dicta nihil commodi nulla iusto assumenda illo itaque voluptates quos, voluptatum eum deleniti odio a dolorum suscipit!</div>
+
+</body>
+</html>

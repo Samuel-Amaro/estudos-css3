@@ -1,0 +1,36 @@
+<!--
+    * VIRAR UMA IMAGEN
+      - Passe o mouse sobre a imagem.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virar Imagen</title>
+    <style>
+        img{
+            width: 400px;
+            height: 400px;
+        }
+        /*ao passar o mouse por cima da imagen, o seletor de estado, vai captar a ação e aplicar o seguinte css*/
+        img:hover{
+            /*
+              - As transformações CSS permitem mover, girar, dimensionar e inclinar elementos.
+              - MÉTODOS DE TRANSFORMAÇÃO CSS 2D;
+              - O scaleX() método aumenta ou diminui a largura de um elemento.
+            */
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Virar Uma imagen</h1>
+
+    <p><strong>Exemplo:</strong> passe o mouse sobre a imagen</p>
+
+    <img src="../paris.jpg" alt="imagen" title="Uma Imagen">
+</body>
+</html>

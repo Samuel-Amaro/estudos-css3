@@ -1,0 +1,54 @@
+<!--
+    * VALOR HEX DE 3 DÍGITOS
+
+        - Às vezes, você verá um código hexadecimal de 3 dígitos na fonte CSS.
+
+        - O código hexadecimal de 3 dígitos é uma abreviação para alguns códigos hexadecimais de 6 dígitos.
+
+        - O código hexadecimal de 3 dígitos tem o seguinte formato:
+
+            #rgb;
+
+        - Onde r(red), g(green) e b(blue) representam os componentes vermelho, verde e azul com valores entre 0 e f.
+
+        - O código hexadecimal de 3 dígitos só pode ser usado quando ambos os valores (RR, GG e BB) são os mesmos para cada componente. Então, se temos #ff00cc, pode ser escrito assim: #f0c.
+
+        - Aqui está um exemplo:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Valor hex três digitos</title>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - css interno e usado para estilizar somente um unico documento de forma local, o estilo so e aplicado a um documento.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*regra css, usando seletor de elemento e o bloco de declaração*/
+        body{
+            /*
+                - declaração css, com propriedade : valor;
+                - usando a propriedade para definir um cor de fundo, a cor e especificada pelo valor hex de 3 digitos(uma abreviação para o valor hex de 6 digitos)
+                - so pode abreviar uma especificação ded cor para três digitos se o valor hex original tiver as formas #RRGGBB, os pares RR, GG, BB com valores iguais.
+            */
+            background-color: #fc9;/*igual a #ffcc99*/
+        }
+        h1{
+            color: #f0f; /*igual a #ff00ff*/
+        }
+        p{
+            color: #b58; /*igual a #bb5588*/
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Código hexadecimal CSS de 3 dígitos</h1>
+    <p>Este é um parágrafo.</p>
+
+</body>
+</html>

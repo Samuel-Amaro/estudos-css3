@@ -1,0 +1,75 @@
+<!--
+    * EXEPLORANDO UM EXEMPLO
+
+        No exemplo abaixo, você pode ver como algumas unidades de comprimento relativo e absoluto se comportam. A primeira caixa tem um width conjunto em pixels. Como uma unidade absoluta, essa largura permanecerá a mesma, não importa o que mais mude.
+
+        A segunda caixa tem uma largura definida em vw unidades (largura da janela de visualização). Esse valor é relativo à largura da janela de visualização e, portanto, 10vw é 10% da largura da janela de visualização. Se você alterar a largura da janela do navegador, o tamanho da caixa deve mudar. No entanto, este exemplo é incorporado à página usando um <iframe>, portanto, isso não funcionará.
+
+        A terceira caixa usa em unidades. Estes são relativos ao tamanho da fonte. Eu configurei um tamanho de fonte 1em no container <div>, que tem uma classe de .wrapper. Altere este valor para 1.5 em e você verá que o tamanho da fonte de todos os elementos aumenta, mas apenas o último item ficará mais largo, pois sua largura é relativa a esse tamanho de fonte.
+
+        Depois de seguir as instruções acima, tente brincar com os valores de outras maneiras, para ver o que você obtém.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            background-color: lightblue;
+            border: 5px solid darkblue;
+            padding: 10px;
+            margin: 1em 0;
+        }
+
+        .wrapper{
+            /*
+             - unidade de comprimento relativo, relativo a Tamanho da fonte do pai, no caso de propriedades tipográficas como font-size.
+             - 1em significa 1vez o tamanho da fonte do elemento pai, no caso o body tem 16px de fonte
+             1em x 16px = 16px
+            */
+            font-size: 1em;
+        }
+
+        .px{
+            /*
+             - unidade de comprimento asboluta pixels
+             - são consideradas sempre do mesmo tamanho.
+             - uma unidade absoluta, essa largura permanecerá a mesma, não importa o que mais mude.
+            */
+            width: 200px;
+        }
+
+        .vw{
+            /*
+             - unidade de comprimento relativa, viewport, relativo a 1% da largura da janela de visualização.
+             - o elemento ocupara 10% de largura do espaço da janela de visualização
+            */
+            width: 10vw;
+        }
+
+        .em{
+            /*
+             - unidade de comprimento relativa, em, relativo a: e tamanho da fonte do próprio elemento, no caso de outras propriedades como width.
+             - 10em significa, 10em x 16px = 160px
+             - 10 vezes o tamanho da fonte atual do proprio elemento
+            */
+            width: 10em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box px">tenho 200px de largura</div>
+        <div class="box vw">tenho 10vw de largura</div>
+        <div class="box em">tenho 10em de largura</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION-DELAY
+
+        A propriedade CSS animation-delay especifíca quando uma animação deve começar.  Você pode começar a animação no futuro, imediatamente ou desde o  início, ou imediatamente e parcialmente através do ciclo de animação.
+
+        /* Uma animação */
+        animation-delay: 3s;
+        animation-delay: 0s;
+        animation-delay: -1500ms;
+
+        /* Várias animações */
+        animation-delay: 2.1s, 480ms;
+
+        Muitas vezes é conveniente usar a propriedade abreviada animation para definir todas as propriedades de animação de uma só vez. 
+
+    * SINTAXE
+
+        VALORES
+
+            <time>: O deslocamento do tempo, a partir do momento em que a animação é aplicada ao elemento, no qual a animação deve começar. Isso pode ser especificado em segundos (s) ou milesegundos or milliseconds (ms). A unidade é necessaria.
+            
+            Um valor positivo indica que a animação deve começar após o período de especificação ter decorrido.  O valor de 0s,  que é o padrão, incida que a animação deve começar desde que foi aplicada.
+            
+            Um valor negativo faz com que a animação comece imediatamente, mas parcialmente através do seu ciclo. Por exemplo, se você específicar -1s como tempo da animation-delay , a animação vai começar imediatamente, mas começará 1 segundo na sequência de animação. Se você específicar um valor negativo para a animation-delay, mas o valor inicial é implícito, o valor inicial é retirado do momento em que a animação é aplicada ao elemento.
+-->

@@ -1,0 +1,33 @@
+<!--
+    * OCULTAR UM ELEMENTO - display: none ou visibility: hidden
+
+        - Ocultar um elemento pode ser feito definindo a display propriedade como none. O elemento ficará oculto e a página será exibida como se o elemento não estivesse lá:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        h1.hidden{
+            /*
+             - propriedade display e usada para definir como um elemento sera exibido,
+             - Cada elemento HTML tem um valor de exibição padrão dependendo do tipo de elemento que é. 
+             - o elemento <h1> por padrão e exibido como um elemento block(bloco) começa em uma nova linha e ocupa toda a largura disponível (se estende para a esquerda e para a direita o máximo possível).
+             - substituiremos seu valor padrão block para none. o elemento sera ocultado e a pagina sera exibida como se o elemento não estivesse la. e não ocupa espaço.
+             - obs a propriedade display não muda o tipo do elemento so muda a forma como o elemento e exibido, por isso não confunda.
+            */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Este é um título visível</h1>
+
+    <h1 class="hidden">Este é um título visível</h1>
+
+    <p>Observe que o elemento h1 com display: none; não ocupa espaço.</p>
+
+</body>
+</html>

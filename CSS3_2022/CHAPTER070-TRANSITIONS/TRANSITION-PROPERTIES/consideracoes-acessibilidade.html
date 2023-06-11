@@ -1,0 +1,27 @@
+<!--
+    * CONSIDERAÇÕES DE ACESSIBILIDADE
+
+        As transições CSS não são para todos. Para algumas pessoas, transições e animações podem causar enjoo ou desconforto. Felizmente, o CSS tem um recurso de mídia chamado prefers-reduced-motion que detecta se um usuário indicou uma preferência por menos movimento de seu dispositivo.
+
+        /*
+        If the user has expressed their preference for
+        reduced motion, then don't use transitions.
+        */
+        @media (prefers-reduced-motion: reduce) {
+            .my-element {
+                transition: none;
+            }
+        }
+
+        /*
+        If the browser understands the media query and the user
+        explicitly hasn't set a preference, then use transitions.
+        */
+        @media (prefers-reduced-motion: no-preference) {
+            .my-element {
+                transition: transform 250ms ease;
+            }
+        }
+
+        Confira nossa postagem de blog prefere-reduced-motion: Às vezes, menos movimento é mais para obter mais informações sobre esse recurso de mídia.
+-->

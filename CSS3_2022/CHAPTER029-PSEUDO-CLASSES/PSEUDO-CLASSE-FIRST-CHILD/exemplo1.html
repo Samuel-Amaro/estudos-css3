@@ -1,0 +1,32 @@
+<!--
+    * CORRESPONDE AO PRIMEIRO ELEMENTO <p>
+
+        - No exemplo a seguir, o seletor corresponde a qualquer elemento <p> que seja o primeiro filho de qualquer elemento:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+          - um pseudo-classe e usada para definir uma estado especial  de um elemento.
+          - A :first-child pseudoclasse corresponde a um elemento especificado que é o primeiro filho de outro elemento. 
+          - no exemplo abaixo queremos selecionar todos os elementos <p> que sejam o primeiro filho de outro elemento qualquer
+        */
+        p:first-child{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Este e algum texto</p>
+    <p>Este e algum texto</p>
+    <div>
+        <p>Este e algum texto</p>
+        <p>Este e algum texto</p>
+    </div>
+
+</body>
+</html>

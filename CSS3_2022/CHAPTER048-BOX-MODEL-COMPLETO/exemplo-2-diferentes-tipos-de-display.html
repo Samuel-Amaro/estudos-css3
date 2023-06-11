@@ -1,0 +1,72 @@
+<!--
+
+        No próximo exemplo, podemos ver como inline elementos se comportam. o <span> os elementos no primeiro parágrafo são embutidos por padrão e, portanto, não forçam quebras de linha.  
+            
+        Também temos um <ul> elemento definido para display: inline-flex, criando uma caixa embutida em torno de alguns itens flexíveis. 
+
+        Finalmente, temos dois parágrafos ambos definidos para display: inline. O contêiner flexível embutido e os parágrafos são executados juntos em uma linha, em vez de quebrar em novas linhas, como fariam se estivessem sendo exibidos como elementos em nível de bloco.    
+
+        No exemplo, você pode alterar display: inlinepara display: blockou display: inline-flex para display: flex para alternar entre esses modos de exibição. 
+
+        Você encontrará coisas como layout flexível posteriormente nestas lições; o principal a ser lembrado agora é que alterar o valor do displayA propriedade pode alterar se o tipo de exibição externa de uma caixa é em bloco ou em linha, o que altera a maneira como ela é exibida ao lado de outros elementos no layout. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p, ul{
+            /*adiciona uma borda nos paragrafos e na lista não ordenada*/
+            border: 2px solid rebeccapurple;
+        }
+        span, li{
+            border: 2px solid blue;
+        }
+        ul{
+            /*
+             - a propriedade display determina tipo de caixa aplicado a um elemento é definido por display valores de propriedade.
+             - refere-se ao externo valor display.
+             - o valor inline-flex cria uma caixa embutida em torno de alguns itens flexíveis. 
+            */
+            display: inline-flex;
+            list-style: none;
+            padding: 0;
+        }
+        .inline{
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--
+        - elemento <p> e exibido como um tipo de exibição externa de block.
+        - o elemento <span> e exibido como um tipo de exibição externa de inline
+        - A caixa não quebrará em uma nova linha.
+        - o width e height propriedades não serão aplicadas. 
+        - padding, border, margins vertical são aplicados mas não farão com que outros elementos inline se afastem
+        - Preenchimento horizontal(padding horizontal), margens(margin) e bordas(border) serão aplicados e farão com que outras caixas embutidas(inline) se afastem da caixa.
+    -->
+    <p>I am a paragraph. Some of the <span>words</span> have been wrapped in a <span>span element</span></p>
+    <!--
+        - o elemento ul e exibidio como block externamente, display type externa block
+    -->
+    <ul>
+        <!--
+            - a display type inner(interna) do <ul> que determina como os elementos dentro dessa caixa são dispostos. 
+            - define que os elementos da lista cada item da lista serão exibidos como um elemento inline-flex
+        -->
+        <li>Item Um</li>
+        <li>Item Dois</li>
+        <li>Item três</li>
+    </ul>
+    <!--
+        - o elemento <p> e exibido como um tipo de exibição externa de inline, uma caixa de linha
+    -->
+    <p class="inline">Eu sou um parágrafo. Um curto.</p>
+    <p class="inline">Eu sou outro parágrafo. Também um curto.</p>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!--
+    * A PROPRIEDADE FLEX-FLOW(fluxo flexível)
+
+      - A flex-flow propriedade é uma propriedade abreviada para definir as propriedades flex-direction e flex-wrap.
+
+      - Nota: Se os elementos não forem itens flexíveis, a flex-flow propriedade não tem efeito.
+
+    * SINTAXE CSS:
+
+       flex-flow: flex-direction flex-wrap|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+     VALUE: flex-direction;
+
+     DESCRIPTION: 
+            Possible values: 
+                row 
+                row-reverse
+                column
+                column-reverse
+                initial
+                inherit
+
+                Default value is "row"
+
+                Specifica a direção dos elementos flexiveis
+
+     VALUE: flex-wrap;
+
+     DESCRIPTION: 
+            Possible values:
+
+                nowrap
+                wrap
+                wrap-reverse
+                initial
+                inherit
+
+                Default value is "nowrap".
+
+                Specifica se os elementos flexiveis devem ser agrupados ou não
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade FlexFlow</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*usando uma shorthand para definir as propriedades flex-direction e flex-wrap do conteiner flexbox, vamos definir a direção do itens flexiveis do conteiner como linha, isso e todos os elementos dispostos na mesma linha, e os itens flexiveis do coneiner deve ser agrupados se necessarios, isso quando o layout do conteiner for sobreposto, haver um overflox dos itens flexiveis em relação ao conteiner-flex*/
+            flex-flow: row wrap;
+            background-color: dodgerblue;
+        }
+
+        div.flex-container > div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 75px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Propriedade FlexFlow</h1>
+
+    <p>A propriedade flex-flow é uma propriedade abreviada para as propriedades flex-direction e flex-wrap.</p>
+
+    <p><strong>Exemplo:</strong> O elemento acima representa um flex container (a área azul) com três flex items.</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+   <p>Tente redimensionar a janela do navegador.</p>
+
+</body>
+</html>

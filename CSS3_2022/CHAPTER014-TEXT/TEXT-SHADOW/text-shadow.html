@@ -1,0 +1,61 @@
+<!--
+    * TEXT SHADOW(SOMBRA DE TEXTO CSS)
+
+        - A text-shadow propriedade adiciona sombra ao texto.
+
+        - Em seu uso mais simples, você especifica apenas a sombra horizontal (2px) e a sombra vertical (2px):
+
+        - Esta propriedade aceita uma lista de sombras separadas por vírgulas a serem aplicadas ao texto.
+
+    * SINTAXE CSS:
+
+        text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit;
+
+        Nota: Para adicionar mais de uma sombra ao texto, adicione uma lista de sombras separadas por vírgulas.
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: h-sadow. obrigatorio
+        DESCRIPTION: A posição da sombra horizontal. Valores negativos são permitidos
+        -------------------------------------
+        VALUE: v-shadow. obrigatorio
+        DESCRIPTION: A posição da sombra vertical. Valores negativos são permitidos
+        -------------------------------------
+        VALUE: blur-radius. opcional
+        DESCRIPTION: O raio de desfoque. O valor padrão é 0
+        -------------------------------------
+        VALUE: color(cor). Opcional
+        DESCRIPTION: A cor da sombra.
+        -------------------------------------
+        VALUE: none(nenhum)
+        DESCRIPTION: Valor padrão. Sem sombra
+        -------------------------------------
+        VALUE: inicial(initial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão
+        -------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        -------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /*
+             - a propriedade css text-shadow, adiciona uma sombra ao texto,
+             - o primeiro valor 2px especifica a posição da sombra horizontal
+             - o segundo valor 2px espefica a posição da sombra vertical
+            */
+            text-shadow: 2px 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Efeito de sombra de texto!</h1>
+
+</body>
+</html>

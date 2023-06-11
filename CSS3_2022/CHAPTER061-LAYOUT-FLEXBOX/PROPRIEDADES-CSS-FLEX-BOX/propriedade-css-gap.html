@@ -1,0 +1,92 @@
+<!--
+    * PROPRIEDADE CSS GAP(GRID-GAP)
+
+        A propriedade gap CSS define as lacunas (calhas) entre linhas e colunas. É uma abreviação(SHORTHAND) para intervalo de linha(ROW-GAP) e intervalo de coluna(COLUMN GAP).
+
+    * SINTAXE
+
+        /*UM VALOR DE COMPRIMENTO*/
+        gap: 20px;
+        gap: 1em;
+        gap: 3vmin;
+        gap: 0.5cm;
+
+        /*UM VALOR DE PORCENTAGEM*/
+        gap: 16%;
+        gap: 100%;
+
+        /*DOIS VALORES DE COMPRIMENTO*/
+        gap: 20px 10px;
+        gap: 1em 0.5em;
+        gap: 3vmin 2vmax;
+        gap: 0.5cm 2mm;
+
+        /*UM OU DOIS VALORES DE PORCENTAGEM*/
+        gap: 16% 100%;
+        gap: 21px 82%;
+
+        /*VALORES calc()*/
+        gap: calc(10% + 20px);
+        gap: calc(20px + 10%) calc(10% - 5px);
+
+        /*VALORES GLOBAIS*/
+        gap: inherit;
+        gap: initial;
+        gap: revert;
+        gap: revert-layer;
+        gap: unset;
+
+        Esta propriedade é especificada como um valor para <'row-gap'> seguido opcionalmente por um valor para <'column-gap'>. Se <'column-gap'> for omitido, será definido com o mesmo valor que <'row-gap'>.
+
+        <'row-gap'> e <'column-gap'> são especificados como <length> ou <percentage>.
+
+    * VALORES 
+
+        <length>(comprimento): É a largura da calha que separa as linhas de grade.
+
+        <percentage>: É a largura da calha que separa as linhas de grade, em relação à dimensão do elemento.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /*flex container*/
+        #flexbox{
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            /*
+             - A propriedade gap CSS define as lacunas (calhas) entre linhas e colunas. É uma abreviação(SHORTHAND) para intervalo de linha(ROW-GAP) e intervalo de coluna(COLUMN GAP).
+             - define que a lacuna entre as linhas tera 20px de espaço entre as linhas.
+             - e a lacuna entre colunas tera 5px de espaço entre as colunas.
+            */
+            gap: 20px 5px;
+        }
+
+        /*itens flex*/
+        #flexbox > div{
+            border: 1px solid green;
+            background-color: lime;
+            flex: 1 1 auto;
+            width: 100px;
+            height: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="flexbox">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+</html>

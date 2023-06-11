@@ -1,0 +1,73 @@
+<!--
+    * URL() -> Usado para incluir um arquivo.
+
+        A função CSS url() é usada para incluir um arquivo. O parâmetro é uma URL absoluta, uma URL relativa, uma URL de blob ou uma URL de dados. A url() função pode ser passada como parâmetro de outras funções CSS, como a função attr(). Dependendo da propriedade para a qual é um valor, o recurso procurado pode ser uma imagem, fonte ou folha de estilo. A url() notação funcional é o valor para o tipo de dados <url>. 
+
+            Observação: há uma diferença entre um URI e um URL . Um URI identifica um recurso. Uma URL é um tipo de URI e descreve a localização de um recurso. Um URI pode ser um URL ou um nome ( URN ) de um recurso.
+
+        /*uso simples*/
+
+        url(https://example.com/images/myImg.jpg);
+        url(data:image/png;base64,iRxVB0…);
+        url(myFont.woff);
+        url(#IDofSVGpath);
+
+        /*associando a propriedades*/
+
+        background-image: url("star.gif");
+        list-style-image: url('../images/bullet.jpg');
+        content: url("pdficon.jpg");
+        cursor: url(mycursor.cur);
+        border-image-source: url(/media/diamonds.png);
+        src: url('fantasticfont.woff');
+        offset-path: url(#path);
+        mask-image: url("masks.svg#mask1");
+
+        /*propriedades com fallbacks*/
+
+        cursor: url(pointer.cur), pointer;
+
+        /*propriedades associadas a shorthand*/
+
+        background: url('star.gif') bottom right repeat-x blue;
+        border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;
+
+        /*Como parâmetro em outra função CSS*/
+
+        background-image: cross-fade(20% url(first.png), url(second.png));
+        mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));
+
+        /*como parte de um valor múltiplo não abreviado*/
+        content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);
+
+        /*regras*/
+        @document url("https://www.example.com/") { ... } 
+            Experimental
+
+        @import url("https://www.example.com/style.css");
+        @namespace url(http://www.w3.org/1999/xhtml);
+
+        URLs relativos, se usados, são relativos ao URL da folha de estilo (não ao URL da página da web).
+
+        A url() função pode ser incluída como um valor para background, background-image, border, border-image, border-image-source, content, cursor, filter, list-style, list-style-image, mask, mask-image, offset-path, src como parte de um bloco @font-face e @counter-style/symbol
+
+    * SINTAXE
+
+        * VALORES
+
+            <string>: Uma string que pode especificar um URL ou o ID de uma forma SVG.
+
+            <url>: Uma URL, que é um endereço relativo ou absoluto, ou ponteiro, para o recurso da Web a ser incluído, ou uma URL de dados, opcionalmente entre aspas simples ou duplas. As aspas são necessárias se a URL incluir parênteses, espaços em branco ou aspas, a menos que esses caracteres sejam escapados ou se o endereço incluir caracteres de controle acima de 0x7e. Aspas duplas não podem ocorrer dentro de aspas duplas e aspas simples não podem ocorrer dentro de aspas simples, a menos que sejam escapadas. Os seguintes são todos válidos e equivalentes:
+
+                <css_property>: url("https://example.com/image.png");
+                <css_property>: url('https://example.com/image.png');
+                <css_property>: url(https://example.com/image.png);
+
+            Se você optar por escrever o URL sem aspas, use uma barra invertida ( \) antes de quaisquer parênteses, caracteres de espaço em branco, aspas simples ( ') e aspas duplas ( ") que fazem parte do URL.
+
+            path: Referencia o ID de uma forma SVG -- circle, ellipse, line, path, polygon, polylineou rect-- usando a geometria da forma como o caminho.
+
+        * SINTAXE FORMAL
+
+            url(<string> <url-modifier>*);
+-->

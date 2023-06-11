@@ -1,0 +1,89 @@
+<!--
+    * A PROPRIEDADE ORDER(PEDIDO)
+
+      - Especifica a ordem dos itens flexíveis dentro do mesmo contêiner
+
+      - A order propriedade especifica a ordem dos itens flexíveis.
+
+      - O primeiro item flexível no código não precisa aparecer como o primeiro item no layout.
+
+      - O valor do pedido(order) deve ser um número, o valor padrão é 0.
+
+    * DEFINIÇÃO E USO
+
+      - A order propriedade especifica a ordem de um item flexível em relação ao restante dos itens flexíveis dentro do mesmo contêiner.
+
+      - Observação: se o elemento não for um item flexível, a order propriedade não terá efeito.
+
+    * SINTAXE CSS:
+
+     order: number|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+     number: Valor padrão 0. Especifica o pedido do item flexível      
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itens Flex - Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*especificando o tipo de alinhamento vertical que os itens flexiveis que são filhos diretos deste container vão ter, isso so e usando quando os itens flexiveis não usam todo espaço reservado disponivel no eixo cruzado para eles. stretch(esticam): Predefinição. Os itens são esticados para caber no contêiner; itens são esticados para prencher o recipiente(container na vertical)*/
+            align-items: stretch;
+            background-color: #f1f1f1;
+        }
+        /*filhos diretos do container flex são itens flex*/
+        div.flex-container > div{
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        /*usando a propriedade order, vamos especificar a ordem que os itens flex devem ser renderizados, cada item flex tem um numero associdado a propriedade order, o menor numero e o primeiro item, o maior numero e o ultimo item, vamos seguir uma ordem crescente de 0 a n......*/
+        div#order-1{
+            order: 1;
+        }
+        div#order-2{
+            order: 2;
+        }
+        div#order-3{
+            order: 3;
+        }
+        div#order-4{
+            order: 4;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Itens Flex - Flex Box</h1>
+
+    <p><strong>Exemplo:</strong> A propriedade order pode alterar a ordem dos itens flexíveis:</p>
+
+    <h2>A propriedade order</h2>
+
+    <p><strong>Exemplo:</strong> Use a propriedade order para classificar os itens flexíveis como desejar: </p>
+
+    <div class="flex-container">
+        <div id="order-3">1</div>
+        <div id="order-2">2</div>
+        <div id="order-4">3</div>
+        <div id="order-1">4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!-- 
+    * BOTÕES ANIMADOS
+      - Adicione uma seta ao passar o mouse:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Animados</title>
+    <style>
+        button.button{
+            /*Aceita largura e altura, e do tamanho de seu conteudo, ambas caracteristicas*/
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            width: 200px;
+            /*definindo uma transição que vai suavisar uma propriedade css, para ser executada num intervalo de tempo*/
+            /*todas as propriedades que suportam transição*/
+            transition-property: all;
+            /*duração da transição*/
+            transition-duration: 0.5s;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+        /*button tendo um elemento span descendente*/
+        button.button span{
+            cursor: pointer;
+            display: inline-block;
+            /*seu posicionamento e normal no layout, mas para mudar o posicionamento so por meio das propriedades left, top, right, bottom*/
+            position: relative;
+            /*duração da transição*/
+            transition-duration: 0.5s;
+        }
+        /*button tendo um elemento span descendente, com um pseudo elemento aplicado, que vai capturar um estado apos o conteudo ser exibido*/
+        button.button span:after{
+            /*conteudo*/
+            content: '\00bb';
+            /*poscionamento absoluto, sai do fluxo normal da pagina, do layout, vai para sua camada unica de posicionamento, fica isolado*/
+            position: absolute;
+            /*fica trasnparente o elemento*/
+            opacity: 0;
+            /*se aproxima -20px para a direita do elemento que o contem*/
+            right: -20px;
+        }
+        /*ao passar o mouse por cima do elemento button*/
+        button.button:hover span{
+            padding-right: 25px;
+        }
+        /*ao passar o mouse por cima do elemento button, e o span com pseudo elemento para captura um elemento apos o conteudo*/
+        button:hover span:after{
+            /*volta a cor normal, deixa a transparencia*/
+            opacity: 1;
+            /*volta para a direita*/
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Botão Animado</h2>
+
+    <button class="button"><span>Hover</span></button>
+
+</body>
+</html>

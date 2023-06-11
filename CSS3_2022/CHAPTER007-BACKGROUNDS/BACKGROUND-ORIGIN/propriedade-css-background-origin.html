@@ -1,0 +1,140 @@
+<!--
+    * PROPRIEDADE CSS BACKGROUND-ORIGIN(ORIGEM FUNDO)
+
+        - A background-origin propriedade especifica a posição de origem (a área de posicionamento do plano de fundo) de uma imagem de plano de fundo.
+
+        - Nota: Esta propriedade não tem efeito se o background-attachment for "fixo". 
+
+    * SINTAXE CSS:
+
+        bakcgorund-origin: padding-box|border-box|content-box|initial|inherit;
+
+    * VALORES DE PROPRIEDADE
+
+        VALUE: padding-box(caixa de preenchimento)
+        DESCRIPTION: Valor padrão. A imagem de fundo começa no canto superior esquerdo da borda de preenchimento
+        --------------------------------
+         VALUE: border-box(borda da caixa)
+        DESCRIPTION: A imagem de fundo começa no canto superior esquerdo da borda
+        --------------------------------
+         VALUE: content-box(caixa de conteudo)
+        DESCRIPTION: A imagem de fundo começa no canto superior esquerdo do conteúdo
+        --------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        #exemplo1{
+            border: 10px dashed black;
+            padding: 25px;
+            /*
+             - A background propriedade é uma propriedade abreviada para:
+                        
+                        background-color
+                        background-image
+                        background-position
+                        background-size
+                        background-repeat
+                        background-origin
+                        background-clip
+                        background-attachment
+
+             - especifica dois valores para uma mesma propriedade background-image, especifica duas imagens de fundo
+            */
+            background: url('img_tree.gif'), url('paper.gif');
+            background-repeat: no-repeat;
+            /*
+             - a propriedade background-origin especifica a posição de origem (a área de posicionamento do plano de fundo) de uma imagem de plano de fundo.
+             - o primeiro valor: content-box(caixa de conteudo) e para a primeira imagen de fundo, a posição de origem da imagen e no canto superior esquerdo do conteudo
+             - o segundo valor: padding-box, a posição de origem da imagen começa no padding border superior esquerdo
+            */
+            background-origin: content-box, padding-box;
+        }
+        #exemplo2{
+            border: 10px dashed black;
+            padding: 25px;
+            /*
+             - A background propriedade é uma propriedade abreviada para:
+                        
+                        background-color
+                        background-image
+                        background-position
+                        background-size
+                        background-repeat
+                        background-origin
+                        background-clip
+                        background-attachment
+
+             - especifica dois valores para uma mesma propriedade background-image, especifica duas imagens de fundo
+            */
+            background: url('img_tree.gif'), url('paper.gif');
+            background-repeat: no-repeat;
+            /*
+             - a propriedade background-origin especifica a posição de origem (a área de posicionamento do plano de fundo) de uma imagem de plano de fundo.
+             - o primeiro valor: content-box(caixa de conteudo) e para a primeira imagen de fundo, a posição de origem da imagen e no canto superior esquerdo do conteudo
+             - o segundo valor: border-box(borda da caixa), a posição de origem da imagen começa canto superior esquerdo da borda
+            */
+            background-origin: content-box, border-box;
+        }
+        #exemplo3{
+            border: 10px dashed black;
+            padding: 25px;
+            /*
+             - A background propriedade é uma propriedade abreviada para:
+                        
+                        background-color
+                        background-image
+                        background-position
+                        background-size
+                        background-repeat
+                        background-origin
+                        background-clip
+                        background-attachment
+
+             - especifica dois valores para uma mesma propriedade background-image, especifica duas imagens de fundo
+            */
+            background: url('img_tree.gif'), url('paper.gif');
+            background-repeat: no-repeat;
+            /*
+             - a propriedade background-origin especifica a posição de origem (a área de posicionamento do plano de fundo) de uma imagem de plano de fundo.
+             - o primeiro valor: content-box(caixa de conteudo) e para a primeira imagen de fundo, a posição de origem da imagen e no canto superior esquerdo do conteudo
+             - o segundo valor: content-box(caixa de conteudo), a posição de origem da imagen de fundo começa no canto superior esquerdo do conteudo
+            */
+            background-origin: content-box, content-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>background-origin: content-box, padding-box:</h2>
+    </header>
+    <main>
+        <section id="exemplo1">
+            <header>
+                <h2>Hello World</h2>
+                <p>A imagem de fundo "paper.gif" começa no canto superior esquerdo da borda de preenchimento.</p>
+                <p>A imagem de fundo "img_tree.gif" começa no canto superior esquerdo do conteúdo.</p>
+            </header>
+        </section>
+        <h2>background-origin: content-box, border-box:</h2>
+        <section id="exemplo2">
+            <header>
+                <h2>Hello World</h2>
+                <p>A imagem de fundo "paper.gif" começa no canto superior esquerdo da borda.</p>
+                <p>A imagem de fundo "img_tree.gif" começa no canto superior esquerdo do conteúdo.</p>
+            </header>
+        </section>
+        <h2>background-origin: content-box, content-box:</h2>
+        <section id="exemplo3">
+            <header>
+                <h2>Hello World</h2>
+                <p>Ambas as imagens de fundo começam no canto superior esquerdo do conteúdo.</p>
+            </header>
+        </section>
+    </main>
+    
+</body>
+</html>

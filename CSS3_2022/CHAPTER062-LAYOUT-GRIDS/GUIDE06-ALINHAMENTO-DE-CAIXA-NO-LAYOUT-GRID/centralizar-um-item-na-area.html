@@ -1,0 +1,84 @@
+<!--
+    * CENTRALIZAR UM ITEM NA ÁREA
+
+        Ao combinar as propriedades de alinhamento e justificação, podemos centralizar facilmente um item dentro de uma área de grade.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container*/
+        .wrapper{
+            display: grid;
+            /*faixa de colunas explicita - faixa de 4 colunas de tamaanhos flexiveis iguais que diminue e crescem de acordo com o espaço disponivel no conteiner-grip*/
+            grid-template-columns: repeat(4, 1fr);
+            /*espaço entre faixas de colunas e linhas - cria um espaço vazio de 10px*/
+            gap: 10px;
+            /*altura das faixas de linhas implicitas*/
+            grid-auto-rows: 200px;
+            /*
+             - posicionando area no grid - definido o layout da grid - grid com lacunas, pois ha espaços vazions, celulas de grid vazia.
+             - definimos 1 areas de grade, onde somente um item esta posicionado
+             - area de grade abrange uma ou mais celulas por linha ou por coluna. cada item dentro de uma area de grade sera alinhado
+            */
+            grid-template-areas: 
+                ". a a ."
+                ". a a .";
+        }
+
+        /*iten-grid*/
+        .item1{
+            /*define nome da area*/
+            grid-area: a;
+            /*
+             - a propriedade align-self controlam o alinhamento no eixo do bloco. na vertical dentro de uma area definida no layout.
+             - para definir o alinhamento de um item individualmente no eixo do bloco usar a propriedade align-self.
+             - alinha a area definida no grid no eixo de bloco.
+             - estamos alterando o alinhamento do item dentro da área da grade em que você o colocou. 
+             - estamos alterando o alinhamento somente do iten que esta dentro da area a, alinhando o iten ao eixo do bloco dentro da area de grid definda a. alinha o iten grid, no centro do eixo de bloco
+            */
+            align-self: center;
+            /*
+             a propriedade justify-self controla o alinhamento no eixo inline, o eixo inline percorre o eixo do bloco, é a direção na qual o texto no fluxo inline regular é executado.
+             - para definir o alinhamento de um item individualmente no eixo do inline usar a propriedade justify-self.
+             - estamos alterando o alinhamento somente do iten que esta dentro da area d, alinhando o iten no eixo inline na direção horizontal, a direção do fluxo do texto da esquerda para direita no modo de escrita tradicional. o valor center alinha o iten no centro do eixo inline.
+            */
+            justify-self: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Item 1</div>
+    </div>
+
+</body>
+</html>

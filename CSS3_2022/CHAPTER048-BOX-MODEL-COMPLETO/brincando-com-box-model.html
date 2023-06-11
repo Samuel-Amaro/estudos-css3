@@ -1,0 +1,54 @@
+<!--
+    * BRINCANDO COM BOX MODEL(MODELOS DE CAIXA)
+
+        No exemplo abaixo, você pode ver duas caixas. Ambos têm uma classe de .box, o que lhes dá o mesmo width, height, margin, border, e padding. A única diferença é que a segunda caixa foi configurada para usar o modelo de caixa alternativo. 
+
+        Você pode alterar o tamanho da segunda caixa (adicionando CSS ao .alternateclass) para fazê-lo corresponder à primeira caixa em largura e altura? 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .box{
+            /*
+             -  No modelo box-model padrão, se você der a uma caixa um width e um height atributo, isso define a largura e a altura da caixa de conteúdo.
+             - Qualquer padding e border são adicionados a essa largura e altura para obter o tamanho total ocupado pela caixa.
+
+                a width total da caixa e: width-contet(300px) + padding-left(40px) + padding-right(40px) + border-left(5px) + border-right(5px) = 390px(width total)
+
+                a height total da caixa e: height-content(150px) + padding-top(40px) + padding-bottom(40px) + border-bottom(5px) + border-top(5px) = 240px(height total)
+            */
+            /*define largura da caixa de conteudo*/
+            width: 300px;
+            /*define altura da caixa de conteudo*/
+            height: 150px;
+            margin: 40px;
+            padding: 40px;
+            border: 5px solid rebeccapurple;
+            background-color: lightgray;
+        }
+
+        .alternate{
+            /*
+             - Usando este modelo, qualquer largura é a largura da caixa visível na página, portanto, a largura da área de conteúdo é essa largura menos a largura do preenchimento e da borda.
+             - ativa o modelo de caixa(box model) alternativo para o elemento, dizendo ao navegador para usar a caixa de borda
+             -  A caixa de borda envolve o conteúdo e qualquer preenchimento. Seu tamanho e estilo podem ser controlados usando border e propriedades relacionadas. 
+             
+              width = width-total = 390px - padding-horizontal(80px) - border-horizontal(10) = 300px
+
+              height = height-total = 240px - padding-vertical(80px) - border-vertical(10px) = 150px
+            */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">Eu uso o modelo de caixa padrão. </div>
+    <div class="box alternate">Eu uso o modelo de caixa alternativa. </div>
+
+</body>
+</html>

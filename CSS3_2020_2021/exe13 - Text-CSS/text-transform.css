@@ -1,0 +1,18 @@
+/*
+ * CSS TEXT TRANSFORM(TRASFORMAÇÃO DE TEXTO)
+
+  - A text-transform propriedade é usada para especificar letras maiúsculas e minúsculas em um texto;
+  - Ele pode ser usado para transformar tudo em letras maiúsculas ou minúsculas, ou colocar a primeira letra de cada palavra em maiúscula:
+ */
+ #maiusc{
+     text-transform: uppercase; /*maiuscula*/
+ }
+ #minusc{
+     text-transform: lowercase;/*minuscula*/
+ }
+ #letra{
+     text-transform: capitalize; /*primeira letra de cada palavra em Maiuscula*/
+ }
+ h1{
+     text-transform: uppercase;
+ }

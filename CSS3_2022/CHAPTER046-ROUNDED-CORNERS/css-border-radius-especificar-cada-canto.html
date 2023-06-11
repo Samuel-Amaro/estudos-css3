@@ -1,0 +1,93 @@
+<!--
+    * CSS border-radius - Especificar cada canto
+
+        A border-radius propriedade pode ter de um a quatro valores. Aqui estão as regras:
+
+            Four values - border-radius: 15px 50px 30px 5px; (o primeiro valor se aplica ao canto superior esquerdo, o segundo valor se aplica ao canto superior direito, o terceiro valor se aplica ao canto inferior direito e o quarto valor se aplica ao canto inferior esquerdo)
+
+            Three values - border-radius: 15px 50px 30px; (o primeiro valor se aplica ao canto superior esquerdo, o segundo valor se aplica aos cantos superior direito e inferior esquerdo e o terceiro valor se aplica ao canto inferior direito)
+
+            Two values - border-radius: 15px 50px; (o primeiro valor se aplica aos cantos superior esquerdo e inferior direito, e o segundo valor se aplica aos cantos superior direito e inferior esquerdo);
+
+            One value - border-radius: 15px; (o valor se aplica a todos os quatro cantos, que são arredondados igualmente)
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        #rcorners1{
+            /*
+             - A propriedade CSS border-radius define o raio dos cantos de um elemento.
+             - border radius e uma shorthand para propriedades individuais como: 
+                border-top-left-radius, border-top-right-radius e .border-bottom-right-radius border-bottom-left-radius
+             -  A border-radius propriedade pode ter de um a quatro valores.
+             - especificando quatro valores: o primeiro valor se aplica ao canto superior esquerdo, o segundo valor se aplica ao canto superior direito, o terceiro valor se aplica ao canto inferior direito, o quarto valor se aplica ao canto inferior esquerdo.
+            */
+            border-radius: 15px 50px 30px 5px;
+            /*
+             - propriedade shorthand backgorund, uma propriedade abreviada:
+
+                background-color
+                background-image
+                background-position
+                background-size
+                background-repeat
+                background-origin
+                background-clip
+                background-attachment
+            
+            */
+            background: #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        #rcorners2{
+            /*
+             - especificando três valores para a shorthand border-radius fica como: primeiro valor canto superior esquerdo, segundo valor canto superior direito, e canto inferior esquerdo, terceiro valor canto inferior direito
+            */
+            border-radius: 15px 50px 30px;
+            border: 2px solid #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        #rcorners3{
+            /*
+             - especificando somente dois valores para a shorthand border-radius, o primeiro valor especifica o canto superior esquerdo e inferior direito, o segundo valor especifica o canto superior direito, e inferior esquerdo
+            */
+            border-radius: 15px 50px;
+            background: #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        #rcorners4{
+            /*
+             - especificando somente um valor para a shorthand border radius, o valor se aplica para todos os quatro cantos, arredondando todos os cantos igualmente
+            */
+            border-radius: 15px;
+            background: #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade border-radius</h1>
+
+    <p>Four values - border-radius: 15px 50px 30px 5px:</p>
+    <p id="rcorners1"></p>
+    <p>Three values - border-radius: 15px 50px 30px:</p>
+    <p id="rcorners2"></p>
+    <p>Two values - border-radius: 15px 50px:</p>
+    <p id="rcorners3"></p>
+    <p>One value - border-radius: 15px:</p>
+    <p id="rcorners4"></p>
+
+</body>
+</html>

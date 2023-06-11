@@ -1,0 +1,86 @@
+<!--
+    * A PROPRIEDADE ALIGN-ITEMS(alinhar itens)
+
+      - A align-items propriedade é usada para alinhar os itens flexíveis.
+
+      - Alinha verticalmente os itens flexíveis quando os itens não usam todo o espaço disponível no eixo cruzado
+
+      - Dica: Use a propriedade align-self de cada item para substituir a align-items propriedade.
+
+    * SINTAXE CSS:
+
+     align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      stretch(esticam): Predefinição. Os itens são esticados para caber no contêiner;
+
+      center(centro): Os itens são posicionados no centro do contêiner;
+
+      flex-start(início flexivel): Os itens são posicionados no início do contêiner;
+
+      flex-end(extremidade flexivel): Os itens são posicionados no final do contêiner;
+      
+      baseline(linha de base): Os itens são posicionados na linha de base do contêiner;
+
+      initial: Define esta propriedade com seu valor padrão;
+
+      inherit: Herda essa propriedade de seu elemento pai;
+
+    * Nestes exemplos, usamos um contêiner de 200 pixels de altura, para melhor demonstrar a align-itemspropriedade.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade Align Items</title>
+    <style>
+        em{
+            color: rgb(224, 72, 72);
+        }
+        div.container-flex{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*esta propriedade especifica os alinhamento  na vertical dos itens flexiveis deste conteiner, flex-end(extremidade flexivel): Os itens são posicionados no final do contêiner;*/
+            align-items: flex-end;
+            background-color: dodgerblue;
+            height: 200px;
+            /*esta propriedade e responsavel por alinhar os itens flexiveis na disposição horizontal, isso e alinha os itens, quando não usa todo espaço disponivel no eixo principal, o valor space-around: Os itens terão espaço antes, entre e depois deles;*/
+            justify-content: space-around;
+        }
+        div.container-flex > div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            line-height: 75px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Flex box</h1>
+
+    <p><strong>Exemplo:</strong> O <em>flex-end</em>  valor alinha os itens flexíveis na parte inferior do contêiner:</p>
+
+    <h2>A propriedade Align Items</h2>
+
+    <p>Os "align-items: <em>flex-end</em>;" alinha os itens flexíveis na parte superior do contêiner:</p>
+
+    <div class="container-flex">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+</body>
+</html>

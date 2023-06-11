@@ -1,0 +1,63 @@
+<!--
+    * PROPRIEDADE CSS TRANSFORM
+
+        A propriedade transform CSS permite girar, dimensionar, inclinar ou transladar um elemento. Ele modifica o espaço de coordenadas do modelo de formatação visual CSS.
+
+        Se a propriedade tiver um valor diferente de none, será criado um contexto de empilhamento. Nesse caso, o elemento atuará como um bloco de contenção para qualquer position: fixed; ou position: absolute; elementos que contém.
+
+        Aviso: Somente elementos transformáveis podem ser transformados. Ou seja, todos os elementos cujo layout é regido pelo box model CSS, exceto:  non-replaced inline boxes, table-column boxes, and table-column-group boxes.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+
+        transform: none;
+
+        /*VALORES FUNÇÃO*/
+
+        transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transform: perspective(17px);
+        transform: rotate(0.5turn);
+        transform: rotate3d(1, 2.0, 3.0, 10deg);
+        transform: rotateX(10deg);
+        transform: rotateY(10deg);
+        transform: rotateZ(10deg);
+        transform: translate(12px, 50%);
+        transform: translate3d(12px, 50%, 3em);
+        transform: translateX(2em);
+        transform: translateY(3in);
+        transform: translateZ(2px);
+        transform: scale(2, 0.5);
+        transform: scale3d(2.5, 1.2, 0.3);
+        transform: scaleX(2);
+        transform: scaleY(0.5);
+        transform: scaleZ(0.3);
+        transform: skew(30deg, 20deg);
+        transform: skewX(30deg);
+        transform: skewY(1.07rad);
+
+        /*MULTIPLOS VALORES DE FUNÇÃO*/
+
+        transform: translateX(10px) rotate(10deg) translateY(5px);
+        transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
+
+        /*VALORES GLOBAIS*/
+
+        transform: inherit;
+        transform: initial;
+        transform: revert;
+        transform: revert-layer;
+        transform: unset;
+
+        A propriedade transform pode ser especificada como o valor da palavra-chave none ou como um ou mais valores <transform-function>.
+
+        Se perspective() for um dos vários valores de função, ele deverá ser listado primeiro.
+
+    * VALORES 
+            
+        <transform-function>: Uma ou mais das funções de transformação CSS a serem aplicadas. As funções de transformação são multiplicadas da esquerda para a direita, o que significa que as transformações compostas são efetivamente aplicadas da direita para a esquerda.
+
+        none: Especifica que nenhuma transformação deve ser aplicada.
+
+-->

@@ -1,0 +1,56 @@
+<!--
+    * FUNCTION CSS repeat()
+
+        A função CSS repeat() representa um fragmento repetido da lista de faixas, permitindo que um grande número de colunas ou linhas que exibem um padrão recorrente sejam escritos de forma mais compacta.
+
+        Esta função pode ser usada nas propriedades de grade CSS grid-template-columns e grid-template-rows.
+
+    * SINTAXE
+
+        /*VALORES <repetição da faixa*/
+        repeat(4, 1fr)
+        repeat(4, [col-start] 250px [col-end])
+        repeat(4, [col-start] 60% [col-end])
+        repeat(4, [col-start] 1fr [col-end])
+        repeat(4, [col-start] min-content [col-end])
+        repeat(4, [col-start] max-content [col-end])
+        repeat(4, [col-start] auto [col-end])
+        repeat(4, [col-start] minmax(100px, 1fr) [col-end])
+        repeat(4, [col-start] fit-content(200px) [col-end])
+        repeat(4, 10px [col-start] 30% [col-middle] auto [col-end])
+        repeat(4, [col-start] min-content [col-middle] max-content [col-end])
+
+        /*VALORES DE <auto-repetição>*/
+        repeat(auto-fill, 250px)
+        repeat(auto-fit, 250px)
+        repeat(auto-fill, [col-start] 250px [col-end])
+        repeat(auto-fit, [col-start] 250px [col-end])
+        repeat(auto-fill, [col-start] minmax(100px, 1fr) [col-end])
+        repeat(auto-fill, 10px [col-start] 30% [col-middle] 400px [col-end])
+
+        /*VALORES DE <repetição fixa>*/
+        repeat(4, 250px)
+        repeat(4, [col-start] 250px [col-end])
+        repeat(4, [col-start] 60% [col-end])
+        repeat(4, [col-start] minmax(100px, 1fr) [col-end])
+        repeat(4, [col-start] fit-content(200px) [col-end])
+        repeat(4, 10px [col-start] 30% [col-middle] 400px [col-end])
+
+    * VALORES
+
+        <lenght-comprimnto>: Um comprimento inteiro positivo.
+
+        <porcentagem>: Uma porcentagem não negativa em relação ao tamanho embutido do contêiner de grade em faixas de grade de coluna e o tamanho de bloco do contêiner de grade em faixas de grade de linha. Se o tamanho do contêiner de grade depender do tamanho de suas faixas, o <percentage> deverá ser tratado como automático. O agente do usuário pode ajustar as contribuições de tamanho intrínseco da trilha ao tamanho do contêiner da grade e aumentar o tamanho final da trilha pelo valor mínimo que resultaria em honrar a porcentagem.
+
+        <flex>: Uma dimensão não negativa com a unidade fr especificando o fator de flexibilidade da pista. Cada trilha de tamanho <flex> ocupa uma parte do espaço restante em proporção ao seu fator de flexibilidade
+
+        max-content: Representa a maior contribuição de conteúdo máximo dos itens de grade que ocupam a trilha de grade.
+
+        min-content: Representa a maior contribuição de conteúdo mínimo dos itens de grade que ocupam a trilha de grade.
+
+        auto: No máximo, idêntico ao max-content. No mínimo, representa o maior tamanho mínimo (conforme especificado por min-width/min-height) dos itens da grade que ocupam a trilha da grade.
+
+        preenchimento automatico(auto fill): Se o contêiner de grade tiver um tamanho maximo definido no eixo relevante, então o número de repetições é o maior inteiro positivo possível que não faz com que a grade transborde seu contêiner de grade. Tratar cada faixa como sua função máxima de dimensionamento de faixa (cada valor independente usado para definir linhas de modelo de grade ou colunas de modelo de grade), se isso for definitivo. Caso contrário, como sua função de dimensionamento mínimo de pista, e levando em consideração o grid gap. Se qualquer número de repetições estourar, então a repetição é 1. Caso contrário, se o contêiner de grade tem um tamanho mínimo definido no eixo relevante, o número de repetições é o menor inteiro positivo possível que atende a esse requisito mínimo. Caso contrário, a lista de faixas especificada será repetida apenas uma vez.
+
+        auto-fit(ajuste automatico): Comporta-se da mesma forma que o preenchimento automático, exceto que depois de colocar os itens da grade, todas as faixas repetidas vazias são recolhidas. Uma trilha vazia é aquela sem itens de grade de entrada colocados ou atravessando-a. (Isso pode resultar no colapso de todas as faixas, se estiverem todas vazias.). Uma trilha recolhida é tratada como tendo uma única função de dimensionamento de trilha fixa de 0px, e as calhas de cada lado dela colapsam. Para encontrar o número de faixas repetidas automaticamente, o agente do usuário reduz o tamanho da faixa para um valor especificado pelo agente do usuário (por exemplo, 1px), para evitar a divisão por zero.
+-->

@@ -1,0 +1,56 @@
+<!--
+    * BARRA DE NAVEGAÇÃO HORIZONTAL CINZA
+
+        - Um exemplo de uma barra de navegação horizontal cinza com uma borda cinza fina:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #e7e7e7;
+            background-color: #f3f3f3;
+        }
+
+        li{
+            float: left;
+        }
+        
+        li a{
+            display: block;
+            color: #666;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        /*
+         - pseudo-class :not(selector) seleciona todos os elementos que não sejam selector
+         - pseudo-class captura um estado especial de um elemento,
+         - o usuario ira selecionar o elemento ao passar o mouse por cima do elemento <a> que e descendente de um elemento li, e que não seja o que tenha a class .active
+        */
+        li a:hover:not(.active){
+            background-color: #ddd;
+        }
+
+        .active{
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a class="active" href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contadores CSS</title>
+    <style>
+        /*
+            * * CONTADORES DE ANINHAMENTO;
+            * O exemplo a seguir cria um contador para a página (seção) e um contador para cada elemento <h1> (subseção). O contador de "seção" será contado para cada elemento <h1> com "Seção < valor do contador de seção >.", E o contador de "subseção" será contado para cada elemento <h2> com "< valor do contador de seção >. < valor do contador de subseção > ":
+        */
+
+        /*no corpo da pagina - conteudo da pagina - area de conteudo*/
+        body{
+                /*cria um novo contador de tipo seção, começou a mostra conteudo na pagina ja se cria um novo contador de seção*/
+                counter-reset: section;
+        }
+
+        /*para cada titulo de h1*/
+        h1.titulo-p{
+                /*Cria ou zera um contador, esse cria um contador para subseção em cada h1, para cada novo h1 que for existir vai se criar um contador para uma subseção, para se iniciar uma nova contagem*/
+                counter-reset: subsection;
+        }
+
+        /*antes de mostrar o conteudo do titulo*/
+        h1.titulo-p::before{
+                    /*incrementa um valor no contador geral de seção, para cada h1 existente*/
+                    counter-increment: section;
+                    /*
+                        * content: Insere conteúdo gerado no elemento;  
+                        * counter(elemento): Adiciona o valor de um contador a um elemento;
+                        * vai gerar um conteudo concatenado no elemento: da seguinte maneira: "Section + valor gerador pelo contador da seção + . + valor gerado pelo contador da subseção;
+                        "Section 1.1 conteudo elemento HTML";  
+                    */
+                    content: "Section " counter(section) "." counter(subsection) " ";
+        }
+
+        /*para o elemento de subtitulo, antes de mostrar o conteudo do elemento*/
+        h2.subtitulo::before{
+                    /*incrementa um valor no contador da subseção, para cada nova subseção criada*/
+                    counter-increment: subsection;
+                    /*
+                        * content: Insere conteúdo gerado no elemento;  
+                        * counter(elemento): Adiciona o valor de um contador a um elemento;
+                        * vai gerar um conteudo concatenado no elemento: da seguinte maneira: valor gerador pelo contador seção + . + valor gerado pelo valor da subseção;
+                        "1.1 conteudo elemento HTML";  
+                    */
+                    content: counter(section) "." counter(subsection) " ";
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Contadores de Aninhamento</h3>
+
+    <p><strong>Exemplo: </strong> O exemplo a seguir cria um contador para a página (seção) e um contador para cada elemento &lt;h1&gt; (subseção). O contador de "seção" será contado para cada elemento &lt;h1&gt; com "Seção &lt;valor do contador de seção&gt;", E o contador de "subseção" será contado para cada elemento &lt;h2&gt;  com "&lt;valor do contador de seção.&gt;  &lt;valor do contador de subseção.&gt;":</p>
+
+    <h1 class="titulo-p">HTML Tutoriais</h1>
+    <h2 class="subtitulo">HTML Tutoriais</h2>
+    <h2 class="subtitulo">HTML Tutoriais</h2>
+
+    <h1 class="titulo-p">Scripting Tutorials:</h1>
+    <h2 class="subtitulo">Java Script</h2>
+    <h2 class="subtitulo">VBScript</h2>
+
+    <h1 class="titulo-p">XML Tutorials:</h1>
+    <h2 class="subtitulo">XML</h2>
+    <h2 class="subtitulo">XSL</h2>
+</body>
+</html>

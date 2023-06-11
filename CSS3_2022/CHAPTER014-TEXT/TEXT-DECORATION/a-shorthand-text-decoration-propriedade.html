@@ -1,0 +1,63 @@
+<!--
+    * A PROPRIEDADE ABREVIADA(A SHORTHAND TEXT-DECORATION)
+
+        - A text-decoration propriedade é uma propriedade abreviada(SHORTHAND) para:
+
+            text-decoration-line(obrigatorio)
+            text-decoration-color(opcional)
+            text-decoration-style(opcional)
+            text-decoration-thickness(opcional)
+
+    
+    * SINTAXE CSS:
+
+        text-decoration: text-decoration-line text-decoration-color text-decoration-style text-decoration-thickness|initial|inherit;
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /* a propriedade text-decoration e uma shorthand para text-decoration-line, text-decoration-color, text-decoration-style, text-decoration-thickness*/
+            /*a propriedade css, text-decoration-line e usada para adicionar uma linha de decoração ao texto, o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration: underline;
+        }
+        h2{
+            /*
+             - especificando dois valores para a shorthand text-decoration, o primeiro valor 
+             - o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto
+             - definir a cor da linha de decoração, especifica a cor da decoração do texto
+            */
+            text-decoration: underline red;
+        }
+        h3{
+            /*
+             - especificando três valores para a shorthand text-decoration
+             - o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto
+             - definir a cor da linha de decoração, especifica a cor da decoração do texto
+             - o valor double fara linha de decoração a ser exibida como uma linha dupla
+            */
+            text-decoration: underline red double;
+        }
+        p.ex1{
+            /*
+             - especificando três valores para a shorthand text-decoration
+             - o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto
+             - definir a cor da linha de decoração, especifica a cor da decoração do texto
+             - o valor double fara linha de decoração a ser exibida como uma linha dupla
+             - o valor 5px e um comprimento, especifica a espessura  da linha de decoração em px
+            */
+            text-decoration: underline red double 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Título 1</h1>
+    <h2>Título 2</h2>
+    <h3>Título 3</h3>
+    <p class="ex1">Um parágrafo</p>
+</body>
+</html>

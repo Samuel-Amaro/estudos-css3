@@ -1,0 +1,67 @@
+/**
+ * * CANTOS ARREDONDADOS CSS
+ * Com a border-radius propriedade CSS , você pode dar a qualquer elemento "cantos arredondados".
+ * * PROPRIEDADE CSS BORDER-RADIUS
+ * A border-radius propriedade CSS define o raio dos cantos de um elemento.
+ * Dica: Esta propriedade permite adicionar cantos arredondados aos elementos! 
+*/
+
+/*1. Cantos arredondados para um elemento com uma cor de fundo especificada:*/
+p#arredondado1{
+    /*arredondando o canto do elemento*/
+    border-radius: 25px;
+    background: #73AD21;
+    /*espaço interno*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*largura*/
+    width: 200px;
+    /*altura*/
+    height: 150px;
+}
+
+/*2 - Cantos arredondados para um elemento com borda*/
+p#arredondado2{
+     /*arredondando o canto do elemento*/
+     border-radius: 25px;
+     /*add uma borda - prenchimento ao elemento*/
+     border-top: 2px;
+     border-right: 2px;
+     border-bottom: 2px;
+     border-left: 2px;
+     border-color: #73AD21;
+     border-style: solid;
+     /*espaço interno*/
+     padding-top: 20px;
+     padding-right: 20px;
+     padding-bottom: 20px;
+     padding-left: 20px;
+     /*largura*/
+     width: 200px;
+     /*altura*/
+     height: 150px;
+}
+
+/*3 - Cantos arredondados para um elemento com uma imagem de fundo:*/
+p#arredondado3{
+    /*arredondando o canto do elemento*/
+    border-radius: 25px;
+    background: url(paper.jpg);
+    background-position: left top;
+    background-repeat: repeat;
+    /*espaço interno*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*largura*/
+    width: 200px;
+    /*altura*/
+    height: 150px;
+}
+
+/*
+ * Dica: A border-radius propriedade é na verdade um atalho para o border-top-left-radius, border-top-right-radius, border-bottom-right-radius e border-bottom-left-radius propriedades.
+*/

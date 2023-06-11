@@ -1,0 +1,97 @@
+<!--
+    * A PROPRIEDADE ALIGN-SELF(alinhar-se)
+      
+      - A align-self propriedade especifica o alinhamento do item selecionado dentro do recipiente flexível.
+
+      - A align-self propriedade substitui o alinhamento padrão definido pela align-items propriedade do contêiner.
+
+      - Nestes exemplos, usamos um contêiner de 200 pixels de altura, para demonstrar melhor a align-self propriedade:
+
+      - Especifica o alinhamento para um item flexível (substitui a propriedade align-items do contêiner flexível)
+
+    * DEFINIÇÃO E USO
+
+      - A align-self propriedade especifica o alinhamento do item selecionado dentro do recipiente flexível.
+
+      - Observação: a align-self propriedade substitui a propriedade align-items do contêiner flexível.
+
+      - A propriedade CSS align-self alinha itens-flex da linha flex alvo, sobreescrevendo o valor align-items. Se alguma dos eixos das margens do dado item está estabelecido como auto, então align-self é ignorado.
+
+    * SINTAXE CSS:
+
+      align-self: auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      auto(automatico): Predefinição. O elemento herda a propriedade de alinhamento de itens do contêiner pai ou "strech" se não houver contêiner pai;
+
+      strech(esticam): O elemento é posicionado para caber no contêiner;
+
+      center(centro): O elemento é posicionado no centro do contêiner;
+
+      flex-start(inicio flexivel): O elemento está posicionado no início do contêiner;
+
+      flex-end(final-flexivel): O elemento é posicionado no final do contêiner;
+
+      baseline: O elemento está posicionado na linha de base do contêiner;
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            background-color: #f1f1f1;
+            height: 200px;
+        }
+        /*flihos direitos de um flex container, são itens flex, itens flexiveis*/
+        div.flex-container > div{
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        /*o item flexivel selecionado, tera a propriedade align-self aplicada, esta propriedade e responsavel por alinha o item flexivel dentro do recipiente, dentro do conteiner, somente o item selecionado, ela substitui a proriedade align-itens do flex conteiner, o valor center: O elemento é posicionado no centro do contêiner*/
+        div#as-center{
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Flex Box</h1>
+    
+    <p><strong>Exemplo:</strong>Nestes exemplos, usamos um contêiner de 200 pixels de altura, para demonstrar melhor a align-selfpropriedade:</p>
+
+    <h2>Itens Flexíveis - Propriedade align-self</h2>
+
+    <p><strong>Exemplo:</strong>Alinhe o terceiro item flexível no meio do contêiner:</p>
+
+    <p><strong>Exemplo: "align-self: center;"</strong> alinha o item flexível selecionado no meio do contêiner:</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div id="as-center">3</div>
+        <div>4</div>
+    </div>
+
+    <p>A propriedade align-self substitui a propriedade align-items do contêiner.</p>
+
+</body>
+</html>

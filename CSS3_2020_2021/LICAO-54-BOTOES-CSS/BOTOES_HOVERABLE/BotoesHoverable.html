@@ -1,0 +1,133 @@
+<!--
+    * BOTÕES HOVERABLE
+      - 
+      - Use o :hover seletor para alterar o estilo de um botão ao mover o mouse sobre ele.
+      - Dica: use a transition-duration propriedade para determinar a velocidade do efeito "pairar":
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTÕES DE ESTADO</title>
+    <style>
+        button.button{
+            background-color: #4CAF50;
+            border: none;
+            padding-top: 15px;
+            padding-right: 32px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 4px;
+            margin-right: 2px;
+            margin-bottom: 4px;
+            margin-left: 2px;
+            /*
+             - As transições CSS permitem que você altere os valores das propriedades suavemente, ao longo de um determinado período.
+             - precisa adicionar propriedade CSS à qual você deseja adicionar um efeito a duração do efeito
+             - a duração do efeito
+             - transition-duration : Especifica quantos segundos ou milissegundos um efeito de transição leva para completar
+             -  transition-property : Especifica o nome da propriedade CSS o efeito de transição é para
+             - o valor all: Todas as propriedades que podem passar por uma transição o farão.
+            */
+            transition-property: all;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        button.button1{
+            background-color: white;
+            color: black;
+            border-top: 2px;
+            border-right: 2px;
+            border-bottom: 2px;
+            border-left: 2px;
+            border-style: solid;
+            border-color: #4CAF50;
+        }
+        /*seletor de mudança de estado, ao passar o mouse sobre o button ele muda o estado do elemento com as regras css aplicadas*/
+        button.button1:hover{
+            background-color: #4CAF50;
+            color: white;
+        }
+        button.button2{
+            background-color: white;
+            color: black;
+            border-top: 2px;
+            border-right: 2px;
+            border-bottom: 2px;
+            border-left: 2px;
+            border-style: solid;
+            border-color: #008CBA;
+        }
+        button.button2:hover{
+            background-color: #008cba;
+            color: white;
+        }
+        button.button3{
+            background-color: white;
+            color: black;
+            border-top: 2px;
+            border-right: 2px;
+            border-bottom: 2px;
+            border-left: 2px;
+            border-style: solid;
+            border-color: #F44336;
+        }
+        button.button3:hover{
+            background-color: #F44336;
+            color: white;
+        }
+        button.button4{
+            background-color: white;
+            color: black;
+            border-top: 2px;
+            border-right: 2px;
+            border-bottom: 2px;
+            border-left: 2px;
+            border-style: solid;
+            border-color: #E7E7E7;
+        }
+        button.button4:hover{
+            background-color: #E7E7E7;
+        }
+        button.button5{
+            background-color: white;
+            color: black;
+            border-top: 2px;
+            border-right: 2px;
+            border-bottom: 2px;
+            border-left: 2px;
+            border-style: solid;
+            border-color: #555555;
+        }
+        button.button5:hover{
+            background-color: #555555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Tamanhos Botões</h2>
+
+    <p>Use o seletor: hover para alterar o estilo do botão ao mover o mouse sobre ele.</p>
+
+    <p><strong>Exemplo:</strong>  Use a propriedade transit-duration para determinar a velocidade do efeito "hover":</p>
+
+    <button class="button button1">Green</button>
+
+    <button class="button button2">Blue</button>
+
+    <button class="button button3">Red</button>
+
+    <button class="button button4">Gray</button>
+
+    <button class="button button5">Black</button>
+
+</body>
+</html>

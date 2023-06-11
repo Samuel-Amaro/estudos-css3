@@ -1,0 +1,51 @@
+<!--
+    * COM A PROPRIEDADE CSS Box-Sizing
+
+      - Como o resultado de usar o box-sizing: border-box;é muito melhor, muitos desenvolvedores desejam que todos os elementos em suas páginas funcionem dessa maneira.
+
+      - O código abaixo garante que todos os elementos sejam dimensionados de forma mais intuitiva. Muitos navegadores já usam box-sizing: border-box;para muitos elementos de formulário (mas não todos - é por isso que as entradas e as áreas de texto parecem diferentes na largura: 100%;).
+
+      - Aplicar isso a todos os elementos é seguro e sensato:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo box-sizing</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        *{
+            /*especificando a box-sizing propriedade*/
+            box-sizing: border-box;
+        }
+        input, textarea{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="/action_page.php">
+        <label for="primeironome">Primeiro nome:</label>
+        <br>
+        <input type="text" name="primeironome" value="Mickey">
+        <br>
+        <label for="ultimonome">Ultimo nome:</label>
+        <br>
+        <input type="text" name="ultimonome" value="Mouse">
+        <br>
+        <textarea name="message" cols="30" rows="5"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <p><strong>Dica:</strong> tente remover a propriedade box-sizing do elemento de estilo e veja o que acontece. Observe que a largura do botão de entrada, área de texto e envio ficará fora da tela.</p>
+
+</body>
+</html>

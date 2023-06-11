@@ -1,0 +1,35 @@
+<!--
+    * PSEUDO-ELEMENTOS E CLASSES HTML
+
+        - Pseudo-elementos podem ser combinados com classes HTML: 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::first-letter pseudoelemento é usado para adicionar um estilo especial à primeira letra de um texto.
+         - o ::first-letter pseudo elemento so pode ser aplicado a elementos de nivel de bloco
+         - estilizando a primeira letra do texto(conteudo) de um elemento <p> com uma class .intro, seletor mais especifico
+        */
+        p.intro::first-letter{
+            color: #ff0000;
+            /*
+             - a propriedade font-size especifica o tamanho da fonte
+             - o valor xx-large define o tamanho da fonte para xx-large
+            */
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="intro">Esta é uma introdução.</p>
+
+    <p>Este é um parágrafo com algum texto. Um pouco mais de texto mesmo.</p>
+
+</body>
+</html>

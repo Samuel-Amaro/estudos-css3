@@ -1,0 +1,61 @@
+<!--
+    * PROPRIEDADE CSS grid-template-columns
+
+        A propriedade CSS grid-template-columns define os nomes das linhas e as funções de dimensionamento das faixas das colunas da grade.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        grid-template-columns: none;
+
+        /*VALORES <lista de faixas>*/
+        grid-template-columns: 100px 1fr;
+        grid-template-columns: [linename] 100px;
+        grid-template-columns: [linename1] 100px [linename2 linename3];
+        grid-template-columns: minmax(100px, 1fr);
+        grid-template-columns: fit-content(40%);
+        grid-template-columns: repeat(3, 200px);
+        grid-template-columns: subgrid;
+        grid-template-columns: masonry;
+
+        /*VALORES <lista de faixas automaticas>*/
+        grid-template-columns: 200px repeat(auto-fill, 100px) 300px;
+        grid-template-columns: minmax(100px, max-content) repeat(auto-fill, 200px) 20%;
+        grid-template-columns: [linename1] 100px [linename2] repeat(auto-fit, [linename3 linename4] 300px) 100px;
+        grid-template-columns: [linename1 linename2] 100px repeat(auto-fit, [linename1] 300px) [linename3];
+
+        /*VALORES GLOBAIS*/
+        grid-template-columns: inherit;
+        grid-template-columns: initial;
+        grid-template-columns: revert;
+        grid-template-columns: revert-layer;
+        grid-template-columns: unset;
+
+    * VALORES
+
+        none: Indica que não há grade explícita. Quaisquer colunas serão geradas implicitamente e seu tamanho será determinado pela propriedade grid-auto-columns.
+
+        [linename]: Um <custom-ident> especificando um nome para a linha nesse local. O ident pode ser qualquer string válida diferente das palavras reservadas span e auto. As linhas podem ter vários nomes separados por um espaço entre colchetes, por exemplo [line-name-a line-name-b].
+
+        <comprimento-length>: Um comprimento não negativo, fornecendo a largura da coluna.
+
+        <porcentagem>: É um valor <percentage> não negativo em relação ao tamanho embutido do contêiner de grade. Se o tamanho do contêiner de grade depender do tamanho de suas faixas, a porcentagem deverá ser tratada como automática. As contribuições de tamanho intrínseco da trilha podem ser ajustadas ao tamanho do contêiner de grade e aumentar o tamanho final da trilha pelo valor mínimo que resultaria em honrar a porcentagem.
+
+        <flex>: É uma dimensão não negativa com a unidade fr especificando o fator de flexibilidade da faixa. Cada <flex> faixa de tamanho ocupa uma parte do espaço restante em proporção ao seu fator de flexibilidade. Ao aparecer fora de uma minmax()notação, implica um mínimo automático (ie minmax(auto, <flex>)).
+
+        max-content: É uma palavra-chave que representa a maior contribuição máxima de conteúdo dos itens da grade que ocupam a faixa da grade.
+
+        min-content: É uma palavra-chave que representa a maior contribuição mínima de conteúdo dos itens da grade que ocupam a trilha da grade.
+
+        minmax(min, max): É uma notação funcional que define um intervalo de tamanho maior ou igual a min e menor ou igual a max . Se max for menor que min , max será ignorado e a função será tratada como min . No máximo, um <flex> valor define o fator de flexibilidade da faixa. É inválido no mínimo.
+
+        auto(automatico): Como máximo representa o maior max-content tamanho dos itens nessa faixa. Como mínimo representa o maior tamanho mínimo de itens nessa faixa (especificado pelo min-width/min-height dos itens). Este é frequentemente, embora nem sempre, o min-contenttamanho.  Se usado fora da minmax() notação, autorepresenta o intervalo entre o mínimo e o máximo descritos acima. Isso se comporta de maneira semelhante minmax(min-content,max-content) na maioria dos casos. Observação: tamanhos de rastreamento automático (e somente tamanhos de rastreamento automático) podem ser esticados pelas propriedades align-content e justify-content. Portanto, por padrão, uma faixa de tamanho automático ocupará qualquer espaço restante no contêiner de grade.
+
+        fit-content([<lenght> | <percentage>]): Representa a fórmula min(max-content, max(auto, argument)), que é calculada de forma semelhante a auto(ou seja minmax(auto, max-content)), exceto que o tamanho da trilha é fixado no argumento se for maior que o automínimo.
+
+        repeat( [ <positive-integer> | auto-fill | auto-fit ] , <track-list> ): Representa um fragmento repetido da lista de faixas, permitindo que um grande número de colunas que exibem um padrão recorrente sejam escritos de forma mais compacta.
+
+        masonry: O valor de alvenaria indica que este eixo deve ser disposto de acordo com o algoritmo de alvenaria.
+
+        subgrid: O subgridvalor indica que a grade adotará a parte estendida de sua grade pai nesse eixo. Em vez de ser especificado explicitamente, os tamanhos das linhas/colunas da grade serão obtidos da definição da grade pai.
+-->

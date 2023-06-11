@@ -1,0 +1,40 @@
+<!--
+    * FORMAS(SHAPES) CSS
+
+        Embora seja verdade que tudo em CSS é uma caixa retangular e as imagens são uma caixa retangular física, podemos fazer com que pareça que nosso conteúdo flui em torno de coisas não retangulares usando CSS Shapes.
+
+        A especificação CSS Shapes permite a quebra de texto em torno de uma forma não retangular. É especialmente útil ao trabalhar com uma imagem que tem algum espaço em branco ao redor do qual você pode querer flutuar o texto.
+
+        Na imagem abaixo temos um balão agradavelmente redondo. O arquivo real é retangular, mas flutuando a imagem (as formas se aplicam apenas a elementos flutuantes) e usando a propriedade shape-outside com um valor de circle(50%), podemos dar o efeito do texto seguindo a linha do balão
+
+        A forma neste exemplo não está reagindo ao conteúdo do arquivo de imagem. Em vez disso, a função circle está tomando seu ponto central do centro do arquivo de imagem, como se tivéssemos colocado uma bússola no meio do arquivo e desenhado um círculo que se encaixasse dentro do arquivo. É nesse círculo que o texto flui.
+
+        A função circle() é apenas uma das poucas formas básicas definidas, no entanto, existem várias maneiras diferentes de criar formas.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        img{
+            /*
+             - faz o elemento img flutuar a esquerda do elemento pai que o contem. ira flutuar a esquerda da div
+            */
+            float: left;
+            /*
+             - A especificação CSS Shapes permite a quebra de texto em torno de uma forma não retangular.
+             - usando a propriedade shape-outside com um valor de circle(50%), podemos dar o efeito do texto seguindo a linha do balão
+            */
+            shape-outside: circle(50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <img src="./round-balloon.png" alt="ballon"/>
+        <p>Em uma noite de novembro do ano de 1782, segundo a história, dois irmãos sentaram-se sobre sua fogueira de inverno na pequena cidade francesa de Annonay, observando as grinaldas de fumaça cinzenta da lareira enrolarem-se na ampla chaminé. Seus nomes eram Stephen e Joseph Montgolfier, eles eram fabricantes de papel por profissão e eram conhecidos como possuidores de mentes pensantes e um profundo interesse em todo conhecimento científico e novas descobertas. Antes daquela noite — uma noite memorável, como estava para provar —, centenas de milhões de pessoas assistiram às crescentes coroas de fumaça de suas fogueiras sem tirar nenhuma inspiração especial do fato.</p>
+    </div>
+</body>
+</html>

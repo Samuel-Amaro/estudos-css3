@@ -1,0 +1,84 @@
+<!--
+    * FILTROS DE IMAGEN
+
+      - A filter propriedade CSS adiciona efeitos visuais (como desfoque e saturação) a um elemento.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos De Imagen</title>
+    <style>
+        img{
+            /*largura atual do elemento img*/
+            width: 33%;
+            /*altura e definada automaticamente pela propria pagina*/
+            height: auto;
+            /*
+             - A float propriedade é usada para posicionar e formatar o conteúdo, por exemplo, deixar uma imagem flutuar à esquerda do texto em um contêiner;
+             -  A float propriedade pode ter um dos seguintes valores:
+              - LEFT(ESQUERDA) - O elemento flutua à esquerda de seu contêiner;
+              - a float propriedade pode fazer o elemento img flutuar a esquerda, todas as imagens vão flutuar a esquerda sempre uma do lado da outra
+            */
+            float: left;
+            /*largura maxima do elemento img */
+            max-width: 235px;
+        }
+        img.blur{
+            filter: blur(4px);
+        }
+        img.brightness{
+            filter: brightness(250%);
+        }
+        img.constrast{
+            filter: contrast(180%);
+        }
+        img.grayscale{
+            filter: grayscale(100%);
+        }
+        img.huerotate{
+            filter: hue-rotate(180deg);
+        }
+        img.invert{
+            filter: invert(100%);
+        }
+        img.opacity{
+            filter: opacity(50%);
+        }
+        img.saturate{
+            filter: saturate(7);
+        }
+        img.sepia{
+            filter: sepia(100%);
+        }
+        img.shadow{
+            filter: drop-shadow(8px 8px 10px green);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Estilos de Imagens</h1>
+    
+    <h2>Filtros de Imagen</h2>
+    
+    <p><strong>Exemplo:</strong></p>
+
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="blur">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="brightness">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="contrast">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="grayscale">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="huerotate">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="invert">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="opacity">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="saturate">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="sepia">
+    <img src="../pineapple.jpg" alt="Pipeapple" width="300px" height="300px" class="shadow">
+
+
+
+</body>
+</html>

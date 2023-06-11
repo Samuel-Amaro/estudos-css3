@@ -1,0 +1,94 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION-PLAY-STATE
+
+        A propriedade CSS animation-play-state define se uma animação está em execução ou pausada.
+
+        Retomar uma animação pausada iniciará a animação de onde parou no momento em que foi pausada, em vez de recomeçar a partir do início da sequência de animação.
+
+    * SINTAXE
+
+        /*uma animação*/
+        animation-play-state: running;
+        animation-play-state: paused;
+
+        /*multiplas animações*/
+        animation-play-state: paused, running, running;
+
+        /*valores globais*/
+        animation-play-state: inherit;
+        animation-play-state: initial;
+        animation-play-state: revert;
+        animation-play-state: revert-layer;
+        animation-play-state: unset;
+
+    * VALORES
+
+        running: A animação está sendo reproduzida no momento .
+
+        paused: A animação está pausada no momento .
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .box{
+            background-color: rebeccapurple;
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+            /*
+             - A propriedade CSS animation-name especifica os nomes de um ou mais @keyframes at-rules que descrevem a animação ou animações a serem aplicadas ao elemento.
+             - o nome rotate especifica o nome da @keyframe regra que descreve a animação a ser aplicada neste elemento após o usuario passar o mouse sobre o elemento.
+            */
+            animation-name: rotate;
+            /*
+             - a animação tera uma duração de 0.7 segundos
+            */
+            animation-duration: 0.7s;
+            /*
+             - a animação se repetira infinitamente
+            */
+            animation-iteration-count: infinite;
+            /*
+             - propriedade css animation-play-state define se uma animação está em execução ou pausada.
+             - o valor paused, animação esta pausada, parada
+            */
+            animation-play-state: paused;
+        }
+
+        /*quando usuario passar o mouse por cima do elemento que recebe a animação*/
+        .box:hover{
+           /*
+            - a animação sera reproduzida novamente. de onde parou.
+            - valor running(executando)
+           */
+           animation-play-state: running;
+        }
+
+        /*
+          - A regra de CSS @keyframes controla as etapas intermediárias em uma sequência de animação CSS definindo estilos para quadros-chave (ou waypoints) ao longo da sequência de animação.
+          - animação identificada por rotate
+        */
+        @keyframes rotate{
+            /*inicio da animação*/
+            0%{
+                transform: rotate(0);
+            }
+            /*final da animação*/
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>

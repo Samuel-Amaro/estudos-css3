@@ -1,0 +1,35 @@
+<!--
+    * EXEMPLS SIMPLES DE MEDIAS QUERIES
+
+      - Uma maneira de usar consultas de mídia é ter uma seção CSS alternativa dentro de sua folha de estilo.
+
+      - O exemplo a seguir altera a cor de fundo para verde claro se a janela de visualização tiver 480 pixels de largura ou mais (se a janela de visualização tiver menos de 480 pixels, a cor de fundo será rosa):
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo media query</title>
+    <style>
+        body{
+            background-color: pink;
+        }
+        /*se o tipo de midia for computador, smartphone, tablet, ou tela de dispositivo e se a largura da viewport tiver 480pixels de largura ou mais(altera a cor de fundo da pagina para verde), e se a janela de visualização tiver menos que 480pixels que e a largura minima da pagina, se a largura da viewport for menor que 480px a cor de fundo sera rosa*/
+        @media screen and (min-width: 480px) {
+            body{
+                background-color: lightgreen;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Redimensione a janela do navegador para ver o efeito!</h1>
+
+    <p>A consulta de mídia só se aplicará se o tipo de mídia for tela e a janela de visualização tiver 480 pixels de largura ou mais</p>
+
+</body>
+</html>

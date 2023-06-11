@@ -1,0 +1,52 @@
+<!--
+    * EXEMPLO SEM Z-INDEX
+
+        - Se dois elementos posicionados se sobrepuserem sem um z-index especificado, o último elemento definido no código HTML será mostrado no topo.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        .container{
+            position: relative;
+        }
+        .black-box{
+            position: relative;
+            border: 2px solid black;
+            height: 100px;
+            margin: 30px;
+        }
+        .gray-box{
+            position: absolute;
+            background: lightgray;
+            height: 60px;
+            width: 70%;
+            left: 50px;
+            top: 50px;
+        }
+        .green-box{
+            position: absolute;
+            background: lightgreen;
+            width: 35%;
+            left: 270px;
+            top: -15px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Elementos sobrepostos</h1>
+
+    <p>Se dois elementos posicionados se sobrepuserem sem um z-index especificado, o último elemento definido no código HTML será mostrado no topo:</p>
+
+    <div class="container">
+        <div class="black-box">Black box</div>
+        <div class="gray-box">Gray box</div>
+        <div class="green-box">Green box</div>
+    </div>
+
+</body>
+</html>

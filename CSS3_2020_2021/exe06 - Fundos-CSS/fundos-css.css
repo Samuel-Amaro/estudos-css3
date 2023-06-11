@@ -1,0 +1,57 @@
+/*
+ * FUNDOS CSS
+   - As propriedades de fundo CSS são usadas para definir os efeitos de fundo para os elementos.
+   - propriedades de fundo CSS:
+        cor de fundo(background-color)
+        imagem de fundo((background-image)
+        fundo de repetição(background-repeat)
+        anexo de fundo(background-attachment)
+        posição de fundo((background-position))
+    
+  * CSS-BACKGROUND-COLOR(COR DE FUNDO)
+    - A background-color propriedade especifica a cor de fundo de um elemento.
+
+    - exemplo: definindo a cor de fundo de uma pagina
+*/
+body{
+    background-color: lightblue;
+}
+/*
+ * CSS-BACKGROUND-COLOR;
+   - exemplo:
+   - defindo uma cor de fundo para qualque elemento HTML;
+*/
+h1{
+  background-color: green;
+}
+.p{
+    background-color: yellow;
+}
+/*
+ * OPACIDADE/TRASPARÊNCIA(Opacity / Transparency)
+  - A opacity propriedade especifica a opacidade/ transparência de um elemento. Pode assumir um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
+*/
+#op1{
+    background-color: green;
+    opacity: 0.3;
+    height: 100px; /*altura da caixa do elemento html*/
+}
+#op2{
+    background-color: green;
+    opacity: 0.6;
+    height: 100px;/*altura da caixa do elemento html*/
+}
+#op3{
+    background-color: green;
+    opacity: 0.9;
+    height: 100px;/*altura da caixa do elemento html*/
+}
+/*
+ * TRASPARÊNCIA USANDO RGBA
+  - Se você não quiser aplicar opacidade aos elementos filhos, como em nosso exemplo acima, use os valores de cor RGBA . O exemplo a seguir define a opacidade da cor de fundo e não do texto:
+*/
+#op4{
+     background-color: rgba(0, 128, 0, 0.3);
+}
+
+

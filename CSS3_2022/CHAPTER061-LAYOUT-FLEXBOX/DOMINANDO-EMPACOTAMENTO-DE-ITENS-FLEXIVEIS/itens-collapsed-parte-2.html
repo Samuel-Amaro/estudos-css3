@@ -1,0 +1,56 @@
+<!--
+    - Ao lidar com contêineres flexíveis de várias linhas, no entanto, você precisa entender que o encapsulamento é refeito após o colapso. Portanto, o navegador precisa refazer o comportamento de encapsulamento para levar em conta o novo espaço que o item recolhido deixou na direção em linha.
+
+    Isso significa que os itens podem terminar em uma linha diferente daquela em que começaram. No caso de um item ser mostrado e oculto, isso pode fazer com que os itens acabem em uma linha diferente.
+
+    Eu criei esse comportamento no próximo exemplo ao vivo. Você pode ver como o alongamento altera a linha com base na localização do item recolhido. Se você adicionar mais conteúdo ao segundo item, ele mudará de linha assim que ficar longo o suficiente. Essa linha superior só se torna tão alta quanto uma única linha de texto.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+    <style>
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .box > * {
+        flex: 1 1 200px;
+        background-color: #dfe8ee;
+        color: black;
+        border: 1px solid #608BA8;
+        border-radius: 4px;
+      }
+
+      .hide{
+        visibility: collapse;
+      }
+
+      /**
+       - Se isso causar um problema para o seu layout, pode ser necessário repensar a estrutura, por exemplo, colocar cada linha em um contêiner flexível separado para que elas não possam deslocar as linhas.
+      */
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>One</div>
+      <div>Add more text to this box to make it grow</div>
+      <div class="hide">
+        Three <br />
+        has <br />
+        extra <br />
+        text
+      </div>
+      <div>Four</div>
+          <div>Five</div>
+          <div>Six</div>
+          <div>Seven</div>
+          <div>Eight</div>
+          <div>Nine</div>
+          <div>Ten</div>
+    </div>
+  </body>
+</html>

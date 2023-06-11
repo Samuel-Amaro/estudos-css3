@@ -1,0 +1,115 @@
+<!--
+    * ABRANGENDO VÁRIAS CÉLULAS
+
+        Em nosso exemplo, cada uma das áreas abrange várias células da grade e conseguimos isso repetindo o nome dessa área da grade várias vezes com espaços em branco entre elas. Você pode adicionar espaço em branco extra para manter suas colunas perfeitamente alinhadas no valor de grid-template-areas. Você pode ver que eu fiz isso para que o hd e ft se alinhem com main.
+
+        A área que você cria encadeando os nomes das áreas deve ser retangular, neste ponto não há como criar uma área em forma de L. A especificação observa que um nível futuro pode fornecer essa funcionalidade. No entanto, você pode abranger linhas tão facilmente quanto colunas. Por exemplo, poderíamos fazer nossa barra lateral se estender até o final do rodapé substituindo o .por sd.
+
+        O valor de grid-template-areas deve mostrar uma grade completa, caso contrário é inválido (e a propriedade é ignorada). Isso significa que você deve ter o mesmo número de células para cada linha, se vazia com um caractere de ponto final demonstrando que a célula deve ser deixada vazia. Você também criará uma grade inválida se suas áreas não forem retangulares.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com nove colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - usando a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+            */
+            grid-template-columns: repeat(9, 1fr);
+            /*
+             - espefica a altura das linhas implicitas
+            */
+            grid-auto-rows: minmax(100px, auto);
+            /*
+             - Aqui vamos, especificar a localização das áreas definidas por nome, especificando o valor na grid-template-areas propriedade.
+             - criando o layout, cria todo o layout no conteiner de grade ao inves de especificar nos proprios itens grid.
+             - Em nosso exemplo, cada uma das áreas abrange várias células da grade e conseguimos isso repetindo o nome dessa área da grade várias vezes com espaços em branco entre elas. Você pode adicionar espaço em branco extra para manter suas colunas perfeitamente alinhadas no valor de grid-template-areas.
+             - Por exemplo, poderíamos fazer nossa barra lateral se estender até o final do rodapé substituindo o .por sd.
+             - O valor de grid-template-areas deve mostrar uma grade completa.  Isso significa que você deve ter o mesmo número de células para cada linha
+            */
+            grid-template-areas: 
+                "hd hd hd hd   hd   hd   hd   hd   hd"
+                "sd sd sd main main main main main main"
+                "sd sd sd ft   ft   ft   ft   ft   ft";
+        }
+
+        /*iten grid*/
+        .header{
+            /*
+             - a propriedade grid-area e usada para posicionar uma area de grade
+             - Definindo uma área dando-lhe um nome. pode ser o nome que eu quiser.
+             - isso não cria um layout, mas nomeia areas para serem usdas em um layout.
+             - nomendo a area do primeiro iten de grid.
+            */
+            grid-area: hd;
+        }
+
+        /*iten grid*/
+        .footer{
+            /*
+            - nomendo a area do segundo iten de grid.
+            */
+            grid-area: ft;
+        }
+
+        /*iten grid*/
+        .content{
+            /*
+            - nomendo a area do terceiro iten de grid.
+            */
+            grid-area: main;
+        }
+
+        /*iten grid*/
+        .sidebar{
+            /*
+            - nomendo a area do quarto iten de grid.
+            */
+            grid-area: sd;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

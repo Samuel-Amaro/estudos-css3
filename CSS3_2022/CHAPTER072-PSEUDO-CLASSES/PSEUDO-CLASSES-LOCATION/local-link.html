@@ -1,0 +1,40 @@
+<!--
+    * :local-link
+
+        A pseudoclasse CSS :local-link representa um link para o mesmo documento. Portanto, um elemento que é a âncora de origem de um hiperlink cuja URL absoluta do destino corresponde à URL do documento do próprio elemento.
+
+        /*Seleciona qualquer <a> vinculado ao documento atual*/
+        a:local-link {
+            color: green;
+        }
+
+    * SINTAXE
+
+        :local-link
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - seleciona elementos <a> vinculado ao documento atual.
+        */
+        a:local-link{
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="#target" target="_self" rel="next">This is a link on the current page.</a>
+    <br>/
+    <a href="https://example.com" target="_blank" rel="external">This is an external link</a>
+    <br/>
+
+
+</body>
+</html>

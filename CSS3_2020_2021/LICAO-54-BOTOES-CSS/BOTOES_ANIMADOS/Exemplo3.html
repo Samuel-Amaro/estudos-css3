@@ -1,0 +1,63 @@
+<!--
+    * EXEMPLO
+
+      - Fade in ao pairar:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 3</title>
+    <style>
+        button.button{
+            background-color: #f4511e;
+            border: none;
+            color: white;
+            /*add espaço interno*/
+            padding-top: 16px;
+            padding-right: 32px;
+            padding-bottom: 16px;
+            padding-left: 32px;
+            font-size: 16px;
+            /*add espaço externo*/
+            margin-top: 4px;
+            margin-right: 2px;
+            margin-bottom: 4px;
+            margin-left: 2px;
+            /*tirar a cor do elemento, deixa o elemento opaco, quanto mais baixo o valor mais trasparente <= 1 = trasparente. 1 == sem trasparencia e opacidade*/
+            opacity: 0.6;
+            /*
+                - todas as propriedade que aceitam transição vão ser afetadas pela transição neste elemento. 
+                - As transições CSS permitem que você altere os valores das propriedades suavemente, ao longo de um determinado período.
+                - transição vai ser o periodo de tempo que uma propriedade muda de um valor para o outro, conseguimos suavisar isso, determinando tempo, e outras coisas
+            */
+            transition-property: all;
+            /*duração da transição*/
+            transition-duration: 0.3s;
+            /*o elemento sera exibido como um elemento que aceita largura e altura, e quebra de linhas, so que também e um elemento que não aceita largura e altura e somente ocupara o espaço que necessita*/
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /*uma pseudo classe - uma classe que captura o estado do elemento. 
+        - Uma pseudoclasse é usada para definir um estado especial de um elemento.
+         - essa pseudo classe muda o estado do elemento quando o usuario passa o mouse por cima do elemento button
+        */
+        button.button:hover{
+            /*perde a trasnparencia e opacidade, volta a sua cor normal*/
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Botões Animados - Fade em efeito</h3>
+
+    <p><strong>Exemplo 03:</strong> Fade in ao pairar:</p>
+
+    <button class="button">Passe o mouse sobre min</button>
+</body>
+</html>

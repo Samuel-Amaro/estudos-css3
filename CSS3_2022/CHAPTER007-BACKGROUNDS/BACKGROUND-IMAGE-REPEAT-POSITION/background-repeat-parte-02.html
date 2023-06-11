@@ -1,0 +1,33 @@
+<!--
+    - Se a imagem acima for repetida apenas horizontalmente ( background-repeat: repeat-x;), o plano de fundo ficará melhor:
+
+    - Dica: Para repetir uma imagem verticalmente, defina background-repeat: repeat-y;
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Background-Image-repeat</title>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*seletor de elemento, o seletor body, seleciona o elemento html <body>*/
+        body{
+            /*a propriedade background-image, especifica uma imagen a ser usada como plano de fundo de um elemento, por padrão a imagen e repetida para cobrir todo o elemento. se repete na horizontal e vertical, começa no canto superior esquerdo*/
+            background-image: url("fundo.jpg");
+            /*propriedade background-repeat, com o valor repeat-x repete a imagen apenas na horizontal*/
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Olá Mundo!</h1>
+
+    <p>Aqui, uma imagem de fundo é repetida apenas horizontalmente!</p>
+
+</body>
+</html>

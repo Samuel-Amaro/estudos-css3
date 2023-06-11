@@ -1,0 +1,44 @@
+<!--
+    * EXEMPLO FLUTUAR UM AO LADO DO OUTRO
+
+        - Normalmente, os elementos div serão exibidos um em cima do outro. No entanto, se usarmos float: left, podemos deixar os elementos flutuarem um ao lado do outro:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        div{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor left, O elemento flutua à esquerda de seu contêiner.
+             - neste exemplo o elemento <div> ira flutuar a esquerda do seu conteiner que e o <body>, os elementos <div> irão flutuar a esquerda do <body>
+            */
+            float: left;
+            padding: 15px;
+        }
+        .div1{
+            background-color: red;
+        }
+        .div2{
+            background-color: yellow;
+        }
+        .div3{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Flutuar um ao lado do outro</h2>
+
+    <p>Neste exemplo, as três divs flutuarão uma ao lado da outra.</p>
+
+    <div class="div1">Div 1</div>
+    <div class="div2">Div 2</div>
+    <div class="div3">Div 3</div>
+
+</body>
+</html>

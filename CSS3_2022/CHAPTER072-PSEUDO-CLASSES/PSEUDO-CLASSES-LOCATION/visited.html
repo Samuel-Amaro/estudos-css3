@@ -1,0 +1,63 @@
+<!--
+    * :visited
+
+      A pseudoclasse CSS :visited   representa links que o usuário já visitou. Por motivos de privacidade, os estilos que podem ser modificados usando este seletor são muito limitados.
+
+      /*Seleciona qualquer <a> que foi visitado*/
+      a:visited {
+        color: green;
+      }
+
+      Os estilos definidos pela :visited pseudoclasse serão substituídos por qualquer pseudoclasse relacionada ao link subsequente ( :link, :hover, ou :active) que tenha pelo menos igual especificidade. Para estilizar os links adequadamente, coloque a :visited regra após a :link regra, mas antes das regras :hover e :active, conforme definido pela ordem LVHA : :link— :visited— :hover— :active.
+
+    * RESTRIÇÕES DE PRIVACIDADE
+
+      Por motivos de privacidade, os navegadores limitam estritamente quais estilos você pode aplicar usando essa pseudoclasse e como eles podem ser usados:
+
+        As propriedades CSS permitidas são color, background-color, border-color, border-bottom-color, border-left-color, border-right-color, border-top-color, column-rule-color, outline-color, text-decoration-color e text-emphasis-color.
+
+        Os atributos SVG permitidos são fill e stroke.
+
+        O componente alfa dos estilos permitidos será ignorado. O componente alfa do não :visited-estado do elemento será usado em seu lugar. No Firefox, quando o componente alfa é 0, o estilo definido :visited será ignorado completamente.
+
+        Embora esses estilos possam alterar a aparência das cores para o usuário final, o window.getComputedStyle método mentirá e sempre retornará o valor da não :visited cor.
+
+        O <link> elemento nunca é correspondido por :visited.
+
+    * SINTAXE  
+
+        :visited
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Especifique padrões não transparentes para determinadas propriedades,
+         - permitindo que eles sejam estilizados com o estado :visited
+        */
+        a{
+            background-color: white;
+            border: 1px solid white;
+        }
+        /*
+         - A pseudoclasse CSS :visited   representa links que o usuário já visitou.
+        */
+        a:link{
+           background-color: yellow;
+           border-color: hotpink;
+           color: hotpink;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="#test-visited-link">Have you visited this link yet?</a>
+    <br/>
+    <a href="" target="_self" rel="next">You've already visited this link.</a>
+
+</body>
+</html>

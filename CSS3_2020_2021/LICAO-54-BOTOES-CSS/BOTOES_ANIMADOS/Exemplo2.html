@@ -1,0 +1,67 @@
+<!--
+    * EXEMPLO
+
+      - Adicione um efeito "pressionado" ao clicar:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2</title>
+    <style>
+        button.button{
+            /*o elemento e exibido como um bloco que aceita espaço de largura e altura, e e um elemento que não aceita largura e altura, e o seu tamnho e conforme seu conteudo*/
+            display: inline-block;
+            padding-top: 15px;
+            padding-right: 25px;
+            padding-bottom: 15px;
+            padding-left: 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            /*arredonda os cantos do elemento, arredondado os elemntos que são pontudos nos cantos*/
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            /*add uma sombra na horizontal e vertical, sem espessura, so uma sombra simples. add uma sombra de 9px na horizontal*/
+            box-shadow: 0 9px #999;
+        }
+        /*ao passar o mouse por cima do elemento button, vai mudar o estado do elemento com novos estilos*/
+        button.button:hover{
+            background-color: #3e8341;
+        }
+        /*usando uma pseudo class active para definer um estado no elemento button. se o elemento button estiver ativo, estado do elemento estiver ativado, como o mouse*/
+        button.button:active{
+            background-color: #3e8341;
+            /*add uma sombra na horizontal*/
+            box-shadow: 0 5px #666;
+            /*
+             - A Propriedade CSS  transform permite modificar o espaço coordenado do modelo de formatação CSS. Usando-a, elementos podem ser traduzidos, rotacionados, ter seu tamanho completado e inclinados de acordo com os valores definidos.
+             - A transform propriedade CSS permite que o sistema de coordenadas usado por um elemento seja manipulado usando funções de transformação . 
+             - Traduz o elemento pela quantidade fornecida ao longo do eixo Y.
+             - translateY
+             - transform:  translateY(ty) see <length> for possible values. 
+             - move o elemento 4px para o eixo y durante a cordenada y positiva.
+            */
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Botões Animados - "Efeito pressionado"</h2>
+
+    <p><strong>Exemplo:</strong> Adicione um efeito "pressionado" ao clicar:</p>
+
+    <button class="button">Clica Aqui!</button>
+</body>
+</html>

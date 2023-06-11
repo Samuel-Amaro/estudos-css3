@@ -1,0 +1,66 @@
+<!--
+    * CONTÊINER FLEX
+
+        A área de um documento que faz uso do flexbox é chamada de contêiner flex. Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex. Desse modo, os elementos-filhos desse contêiner tornar-se-ão do tipo flex. Como todas as propriedades no CSS possuem valores padrão, ao criar um contêiner flex, os elementos nele contidos apresentarão o seguinte comportamento:
+
+            Exibição em linha (o padrão do flex-direction é row).
+
+            Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+
+            Não há expansão no eixo principal, mas pode haver contração.
+
+            Haverá expansão vertical para preencher a altura do eixo transversal.
+
+            A propriedade flex-basis (en-US) estará definida como auto.
+
+            A propriedade flex-wrap estará definida como nowrap.
+
+        O resultado final é que todos os elementos serão alinhados em uma linha, usando o tamanho do conteúdo como o tamanho no eixo principal. Se houver mais itens do que é possível caber no container, não haverá uma quebra de linha; ao invés disso, irão ultrapassar o limite horizontal da página. Se alguns elementos forem mais altos que outros, todos os itens se estenderão ao longo do eixo transversal para preencher seu tamanho total.
+
+        É possível conferir essas questões no exemplo prático abaixo. Tente editar ou adicionar mais itens para testar o comportamento inicial do Flexbox.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três 
+            <br/>tem
+            <br/>extra
+            <br/>texto
+        </div>
+    </div>
+</body>
+</html>

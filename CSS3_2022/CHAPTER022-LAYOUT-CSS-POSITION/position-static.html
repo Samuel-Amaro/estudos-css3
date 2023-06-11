@@ -1,0 +1,38 @@
+<!--
+    * position: static;
+
+        - Os elementos HTML são posicionados estáticos(static) por padrão.
+
+        - Elementos estáticos posicionados não são afetados pelas propriedades top, right, bottom e left.
+
+        - Um elemento com position: static;não está posicionado de forma especial; é sempre posicionado de acordo com o fluxo normal da página:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        div.static{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor static(estatico), o elemento e posicionado de acordo com o fluxo normal da pagina, o elemento não esta posicionado de forma especial.
+             - os elementos html são posicionados static por padrão.
+             - elementos que possui a position static não são afetados pelas propriedades top, right, bottom e left
+            */
+            position: static;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>position: static;</h2>
+
+    <p>Um elemento com posição: estático; não está posicionado de forma especial; é sempre posicionado de acordo com o fluxo normal da página:</p>
+
+    <div class="static">Este elemento div tem posição: static;</div>
+
+</body>
+</html>

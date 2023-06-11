@@ -1,0 +1,91 @@
+<!--
+    * USANDO APPEARANCE: NONE; EM RÁDIOS/CAIXAS DE SELEÇÃO
+
+        Como mostramos antes, você pode remover a aparência padrão de uma caixa de seleção ou botão de opção com appearance: none; Vamos pegar este exemplo de HTML: 
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Agora, vamos estilizá-los com um design de caixa de seleção personalizado. Vamos começar removendo o estilo das caixas de seleção originais:
+        */
+        input[type="checkbox"]{
+            appearance: none;
+            position: relative;
+            width: 1em;
+            height: 1em;
+            border: 1px solid gray;
+            /*Ajusta a posição das caixas de seleção na linha de base do texto*/
+            vertical-align: -2px;
+            /*Defina aqui para que o modo de alto contraste do Windows possa substituir*/
+            color: green;
+        }
+
+        /**
+         - Podemos usar as pseudo-classes :checkede :disabled para alterar a aparência de nossa caixa de seleção personalizada à medida que seu estado muda:
+        */
+
+        /*inseri algum conteudo antes do conteudo original*/
+        input[type="checkbox"]::before{
+            content: "✔";
+            position: absolute;
+            font-size: 1.2em;
+            right: -1px;
+            top: -0.3em;
+            visibility: hidden;
+        }
+
+        /*quando usuario clicou/ativou, inserimos um conteudo antes do conteudo original*/
+        input[type="checkbox"]:checked::before{
+            /*Use `visibility` em vez de `display` para evitar recalcular o layout*/
+            visibility: visible;
+        }
+
+        /*checkbox desabilitada, usuario não pode interagir com ela*/
+        input[type="checkbox"]:disabled{
+            border-color: black;
+            background: #ddd;
+            color: gray;
+        }
+
+        /**
+         -:checked— a caixa de seleção (ou botão de rádio) está em um estado marcado — o usuário clicou/ativou.
+         - 
+         - :disabled— a caixa de seleção (ou botão de opção) está desabilitada — não pode interagir com ela.
+         - 
+         - Observação: embora o Internet Explorer não ofereça suporte a nenhuma versão do appearance, ele input[type=checkbox]::-ms-check permite o direcionamento de caixas de seleção somente no IE. Essa técnica também funciona para botões de opção, apesar do nome -ms-check.
+        */
+    </style>
+</head>
+<body>
+    
+   <form action="">
+        <fieldset>
+            <legend>Fruit preferences</legend>
+
+            <p>
+                <label for="fruit">
+                    <input type="checkbox" name="fruit" value="cherry"/>
+                    I like cherry
+                </label>
+            </p>
+            <p>
+                <label for="fruit">
+                    <input type="checkbox" name="fruit" value="banana" disabled/>
+                    I can't like banana.
+                </label>
+            </p>
+            <p>
+                <label for="fruit">
+                    <input type="checkbox" name="fruit" value="strawberry"/>
+                    I like strawberry.
+                </label>
+            </p>
+        </fieldset> 
+   </form>
+
+</body>
+</html>

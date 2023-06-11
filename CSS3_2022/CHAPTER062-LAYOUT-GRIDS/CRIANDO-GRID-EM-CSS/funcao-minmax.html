@@ -1,0 +1,81 @@
+<!--
+    * A FUNÇÃO MINMAX()
+
+        Nossas faixas de 100 pixels de altura não serão muito úteis se adicionarmos conteúdo a essas faixas com mais de 100 pixels, caso em que isso causaria um estouro. Pode ser melhor ter faixas com pelo menos 100 pixels de altura e que ainda possam se expandir se mais conteúdo for adicionado. Um fato bastante básico sobre a web é que você nunca sabe realmente o quão alto algo vai ser – conteúdo adicional ou tamanhos de fonte maiores podem causar problemas com designs que tentam ser perfeitos em pixels em todas as dimensões.
+
+        A minmax() função nos permite definir um tamanho mínimo e máximo para uma faixa, por exemplo, minmax(100px, auto). O tamanho mínimo é 100 pixels, mas o máximo é auto, que será expandido para acomodar mais conteúdo. Tente mudar grid-auto-rows para usar um valor minmax:
+
+        Se você adicionar conteúdo extra, verá que a faixa se expande para caber. Observe que a expansão acontece ao longo da linha.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Grid starting point</title>
+    <style>
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        /*Grid Container*/
+        .container{
+            /*
+             - Valor grid: O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo de grade.
+             - o valor grid habilita o grid layout.
+             -  todos os filhos diretos do contêiner se tornam itens de grade. 
+             - inicialmente o valor grid, fornece uma grid de uma coluna somente, assim o filhos os itens grid continuam sendo exibidos um abaixo do outro como no fluxo normal do documento.
+            */
+            display: grid;
+            /*
+             - exemplo de grid(grade) explicita. criada usando grid-template-columns. especifica explicitamente as faixas de colunas. as de linha são criadas implicitamente pelo proprio navegador, somente para conter o conteudo.
+             -  usar a fr unidade para dimensionar com flexibilidade as linhas e colunas da grade.
+             - usando a propriedade abaixo para adicionar três colunas, a grid, adicona três faixas de colunas com 1fr cada.
+             - 1fr e o mesmo que 1 fração do espaço disponivel no conteiner grid. temos três colunas com a mesma quantidade de espaço.
+             - A fr unidade distribui o espaço proporcionalmente.
+             - a função repeat() e usada para repetir toda ou apenas uma seção da lista de faixas de colunas.
+             - a função aceita como primeiro valor o numero de vezes que eu desejo que a lista se repita, enquanto o segundo valor e uma lista de faixas, que pode ser uma ou mais faxias que você deseja repetir
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - A propriedade CSS grid-auto-rows especifica o tamanho de uma faixa de linha de grade criada implicitamente ou padrão de faixas.
+             - Se um item de grade é posicionado em uma linha que não é dimensionada explicitamente por grid-template-rows, faixas de grade implícitas são criadas para mantê-lo.
+             - atribuir um tamanho às faixas de grade de linhas implícitas.
+             - o valor minmax(100px, auto), e uma function que nos permite definir um tamanho mínimo e máximo para uma faixa.
+             - aqui neste exemplo o tamanho minimo e 100px e o maximo e auto  que será expandido para acomodar mais conteúdo
+            */
+            grid-auto-rows: minmax(100px, auto);
+            /*
+             - adicionando intervalos entre faixas(colunas e linhas).
+             - gap É uma shorthand para intervalo de linha(row-gap) e intervalo de coluna(column-gap).
+             - a gap e uma shorthand para column-gap e row-gap, especificar somente um unico valor, e definido 20px de intervalo entre as linhas primeiro, e a propriedade assume o valor de 20px como o mesmo para o intervalo entre colunas.
+            */
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple grid example</h1>
+
+    <div class="container">
+        <div>One Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit provident nam quos, sunt minima soluta maiores doloremque earum eum voluptatibus adipisci ullam excepturi totam quas aspernatur ex maxime exercitationem odit!</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad sunt inventore ab nobis veritatis. Labore, voluptates saepe laborum nihil, debitis culpa asperiores ratione minima numquam, temporibus sit ut pariatur dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam fuga quas sapiente eum fugiat ut, totam officia hic ab, assumenda animi quos non, rerum quae facilis officiis saepe. Totam?</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nostrum veritatis at dignissimos expedita, magnam ex! Atque eaque sunt sint ut ullam iste corporis vero ipsam porro, aliquam quo dolore!</div>
+    </div>
+
+</body>
+</html>

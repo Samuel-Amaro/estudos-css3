@@ -1,0 +1,66 @@
+/*
+ * CSS COR DO CONTORNO
+  
+   - A outline-color propriedade é usada para definir a cor do contorno;
+
+   - a cor  pode ser definida por:
+
+    nome - especifique um nome de cor, como "vermelho"
+    HEX - especifique um valor hexadecimal, como "# ff0000"
+    RGB - especifique um valor RGB, como "rgb (255,0,0)"
+    HSL - especifique um valor HSL, como "hsl (0, 100%, 50%)"
+    inverter - executa uma inversão de cores (o que garante que o contorno seja visível, independentemente da cor de fundo)   
+*/
+#c1{
+    /*definindo uma borda*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: black;
+    /*definindo um contorno*/
+    outline-style: solid;
+    outline-color: red;
+}
+#c2{
+    /*definindo uma borda*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: black;
+    /*definindo um contorno*/
+    outline-style: dotted;
+    outline-color: blue;
+}
+#c3{
+    /*definindo uma borda*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: black;
+    /*definindo um contorno*/
+    outline-style: outset;
+    outline-color: grey;
+}
+/*
+ * INVERTE COR
+
+  - O exemplo a seguir usa outline-color: invert, que realiza uma inversão de cores. Isso garante que o contorno seja visível, independentemente da cor de fundo:
+*/
+#c4{
+    /*definindo uma borda*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: yellow;
+    /*definindo um contorno*/
+    outline-style: solid;
+    outline-color: invert;
+}

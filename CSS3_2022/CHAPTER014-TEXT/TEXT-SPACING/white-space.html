@@ -1,0 +1,67 @@
+<!--
+    * WHITE SPACE(ESPAÇO EM BRANCO)
+
+        - A white-space propriedade especifica como o espaço em branco dentro de um elemento é tratado.
+
+        - Este exemplo demonstra como desabilitar a quebra de texto dentro de um elemento:
+
+    * SINTAXE CSS:
+
+        white-space: normal|nowrap|pre|pre-line|pre-wrap|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: normal
+        DESCRIPTION: Sequências de espaços em branco serão recolhidas em um único espaço em branco. O texto será quebrado quando necessário. Isso é padrão
+        ----------------------------------
+        VALUE: nowrap
+        DESCRIPTION: As sequências de espaços em branco serão recolhidas em um único espaço em branco. O texto nunca será quebrado para a próxima linha. O texto continua na mesma linha até que uma tag <br> seja encontrada.
+        ----------------------------------
+        VALUE: pre
+        DESCRIPTION: Whitespace é preservado pelo navegador. O texto só será quebrado em quebras de linha. Atua como a tag <pre> em HTML
+        ----------------------------------
+        VALUE: pre-line
+        DESCRIPTION: As sequências de espaços em branco serão recolhidas em um único espaço em branco. O texto será quebrado quando necessário e em quebras de linha
+        ----------------------------------
+        VALUE: pre-wrap
+        DESCRIPTION: O espaço em branco pre-wrap é preservado pelo navegador. O texto será quebrado quando necessário e em quebras de linha
+        ----------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION:  Configura esta propriedade para seu valor padrão.
+        ------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION:  Herda esta propriedade de seu elemento pai.
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p{
+            /*a propriedade white-space especifica como o espaço em branco dentro de um elemento e tratado, o valor nowrap especifica que os espaços em branco dentro de um elemento e tratado da seguinte forma: As sequências de espaços em branco serão recolhidas em um único espaço em branco. O texto nunca será quebrado para a próxima linha. O texto continua na mesma linha até que uma tag <br> seja encontrada.*/
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Usando white-space</h1>
+    
+    <p>
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap.
+        This is some text that will not wrap
+    </p>
+
+    <p>tenter remover a propriedade white-space para ver a diferença</p>
+
+</body>
+</html>

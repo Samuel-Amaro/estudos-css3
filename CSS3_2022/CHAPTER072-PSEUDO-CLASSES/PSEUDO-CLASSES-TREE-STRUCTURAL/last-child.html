@@ -1,0 +1,49 @@
+<!--
+    * :last-child - ultimo filho
+
+        A pseudoclasse :last-child CSS representa o último elemento entre um grupo de elementos irmãos.
+
+        /*Seleciona qualquer <p> que seja o último elemento entre seus irmãos*/
+        p:last-child {
+            color: lime;
+        }
+
+        Nota: Conforme definido originalmente, o elemento selecionado precisava ter um pai. Começando com Seletores Nível 4, isso não é mais necessário.
+
+    * Sintaxe
+
+        :last-child
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - seleciona o ultimo elemento <p> entre um grupo de irmãos de um pai qualquer.
+        */
+        p:last-child {
+            color: lime;
+            background-color: black;
+            padding: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <p>This text isn't selected.</p>
+        <p>This text is selected!</p>
+      </div>
+      
+      <div>
+        <p>This text isn't selected.</p>
+        <h2>This text isn't selected: it's not a `p`.</h2>
+    </div>
+      
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!--
+    * PROPRIEDADE justify-content
+
+        A propriedade justify-content (en-US) é empregada para alinhar os elementos ao longo do eixo principal, cuja direção (row ou column) é definida a partir da propriedade flex-direction. O valor inicial é flex-start, que alinha os elementos rente à borda esquerda do contêiner, mas também pode ser definido como flex-end, que resulta em um alinhamento oposto, rente à borda direita do contêiner, ou center, para alinhá-los ao centro.
+
+        O valor space-between pode ser usado pode ser usado para ocupar todo o espaço livre após a disposição dos itens e dividí-lo igualmente entre os itens, para que haja a mesma quantidade de espaço entre cada elemento. Para gerar uma quantidade igual de espaço à direita e à esquerda, usa-se o valor space-around.
+
+        Tente os seguintes valores da propriedade justify-content no exemplo prático abaixo:
+
+            stretch
+            flex-start
+            flex-end
+            center
+            space-around
+            space-between
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            height: 150px;
+            /*
+             -  A propriedade justify-content (en-US) é empregada para alinhar os elementos ao longo do eixo principal, cuja direção (row ou column) é definida a partir da propriedade flex-direction.
+             - O valor inicial é flex-start, que alinha os elementos rente à borda esquerda do contêiner, na borda inicial(row start)
+            */
+            justify-content: flex-start;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="one">Um</div>
+        <div class="two">Dois</div>
+        <div class="three">Três 
+            <br/>tem
+            <br/>Mais 
+            <br/>Texto
+        </div>
+    </div>
+</body>
+</html>

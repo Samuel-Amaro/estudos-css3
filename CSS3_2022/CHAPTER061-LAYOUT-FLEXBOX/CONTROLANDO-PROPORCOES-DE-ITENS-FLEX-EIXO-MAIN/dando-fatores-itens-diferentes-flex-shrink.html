@@ -1,0 +1,65 @@
+<!--
+    * DANDO ITENS DIFERENTES FLEX-SHRINK FATORES
+   
+    Da mesma forma que , você pode atribuir diferentes fatores flex-grow aos itens flexíveis . flex-shrink Isso pode ajudar a alterar o comportamento padrão se, por exemplo, você quiser que um item diminua mais ou menos rapidamente do que seus irmãos ou não diminua.
+
+    No exemplo ao vivo a seguir, o primeiro item tem um flex-shrink fator de 1, o segundo 0(para não encolher) e o terceiro 4. O terceiro item, portanto, encolhe mais rapidamente do que o primeiro. Brinque com os diferentes valores - pois flex-growvocê pode usar decimais ou números maiores aqui. Escolha o que faz mais sentido para você.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+       /*atribuiremos fatores flex SHRINK diferentes em cada item a partir que flex-basis seja auto,*/ 
+
+        .one{
+            background-color: black;
+            color: white;
+            /*
+             - flex shorthand
+             - flex-grow: 1 -> especifica o fator de crescimento flexivel que determina o quanto o item flexivel crescera em relação ao restante dos itens flexiveis no conteiner flexivel quando o espaço live positivo for distribuido.
+             - flex-shrink: 1 
+             - flex-basis: 0 -> especifica o tamanho inicial do item flexivel antes que qualquer distribuição de espaço aconteça, valor inicial e auto. 
+            */
+            flex: 1 1 auto;
+            width: 200px;
+        }
+
+        .two{
+            /*flex-shrink com fator 0 não encolhe*/
+            flex: 1 0 auto;
+            background-color: green;
+            color: white;
+            width: 200px;
+        }
+
+        .three{
+            /*flex-shrink com valor 4 O terceiro item, portanto, encolhe mais rapidamente do que o primeiro. e cresce mais do que o primeiro e segundo item*/
+            flex: 2 4 auto;
+            background-color: blue;
+            color: white;
+            width: 200px;
+        }
+
+        /**
+        */ 
+    </style>
+    <title>FlexBox</title>
+</head>
+<body>
+    <div class="box">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+    </div>
+</body>
+</html>

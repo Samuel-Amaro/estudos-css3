@@ -1,0 +1,54 @@
+<!--
+    * QUEBRA DE LINHA COM "FLEX-WRAP"
+
+        Embora o flexbox seja um modelo unidimensional, é possível fazer com que elementos flex sejam agrupados em múltiplas linhas. Ao fazer isso, considera-se cada linha como um novo contêiner flex. Qualquer distribuição espacial ocorrerá ao longo essa linha, sem referência às linhas de ambos os lados. Para gerar a quebra automática das linhas adicione a propriedade flex-wrap com o valor wrap. Assim, se elementos forem muito grandes para serem exibidos em uma única linha, eles serão agrupados em outras linhas.
+
+        O exemplo prático abaixo contém elementos flex aos quais foi dada uma determinada largura, cuja soma totaliza um valor grande demais para caber no container. Visto que a propriedade flex-wrap está definida como wrap, os itens serão reorganizados em mais de uma linha. Trocando-se para nowrap, que também é o valor inicial, eles encolherão para caber no contêiner, porque estão usando valores iniciais de flexbox que permitem que os itens encolham. O uso do nowrap causaria um vazamento se os itens não encolhessem ou não diminuíssem o suficiente para caber.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            /*
+             - Para gerar a quebra automática das linhas adicione a propriedade flex-wrap com o valor wrap.
+             - Assim, se elementos forem muito grandes para serem exibidos em uma única linha, eles serão agrupados em outras linhas.
+            */
+            flex-wrap: wrap;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três</div>
+    </div>
+</body>
+</html>

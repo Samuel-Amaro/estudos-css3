@@ -1,0 +1,52 @@
+<!--
+    * ATRASE O EFEITO DE TRANSIÇÃO
+
+    - A transition-delay propriedade especifica um atraso (em segundos) para o efeito de transição.
+
+    - O exemplo a seguir tem um atraso de 1 segundo antes de começar:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /**
+              - especificando um efeito de transição em um propriedade css, no elemento;
+              - a propriedade css, width, vai ter um efeito de transição com duração de 3segundos;
+            **/
+            transition: width 15s;
+            /**
+             - a transição aplicada na propriedade, CSS, vai ter um atraso de 1s antes de começar, oque significa que estamos espcificando um delay antes da transição ocorrer na propriedade CSS
+            **/
+            transition-delay: 1s;
+        }
+        /**
+            - para que a propriedade CSS, tenha seu transition especificado funcionando tem que receber um novo valor, na propriedade especificada e no elemento especifico, para que possa ocorrer o efeito, isso aqui  neste exemplo e obtido, este novo valor quando o usuario passa o mouse por cima do elemento div, e o novo valor e setado na propriedade.
+        **/
+        div:hover{
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transições</h1>
+    
+    <h2>A propriedade transition</h2>
+
+    <h3>Atrase o efeito de transição</h3>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir tem um atraso de 1 segundo antes de começar:</p>
+
+    <p>Passe o mouse sobre o elemento div abaixo para ver o efeito de transição:</p>
+
+    <div></div>
+</body>
+</html>

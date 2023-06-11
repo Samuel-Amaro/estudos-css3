@@ -1,0 +1,110 @@
+<!--
+    * * ATRASAR UMA ANIMAÇÃO(ANIMATION-DELAY)
+
+        - A animation-delay propriedade especifica um atraso para o início de uma animação.
+
+        - O exemplo a seguir tem um atraso de 2 segundos antes de iniciar a animação:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regra animation-delay</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            /*nome da animação, esse nome, vinculo os quadros chaves a essa animação, que vai representar um elemento HTML*/
+            animation-name: exemplo;
+            /*duração da animação especificada*/
+            animation-duration: 4s;
+            /*especificando um atraso na animação, ele espera uma quantidade de tempo antes de se iniciar*/
+            animation-delay: 2s;
+        }
+        /*especificando os quadros chaves de uma animação*/
+        @keyframes exemplo{
+            /*quando animação tiver 0% concluida anima essas propriedade css, cor de fundo, se posiciona na esquerda no 0, e topo 0*/
+            0%{background-color: red; left: 0; top: 0;}
+            /*quando animção tiver 25% concluida anima essa propriedade css, cor de fundo, se afasta 200px da esquerda e continua no topo*/
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            /*quando animção tiver 50% concluida anima essa propriedade css, se afasta 200px da esquerda e 200px do topo*/
+            50%{background-color: blue; left: 200px; top: 200px;}
+            /*quando animção tiver 75% concluida anima essa propriedade css, cor de fundo, volta a 0 esquerda, e continua 200px afastado do topo*/
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            /*quando animação tiver 100% concluida anima essa propriedade css, cor de fundo, volta a sua posição original*/
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+
+        /**
+            - Valores negativos também são permitidos. Se usar valores negativos, a animação começará como se já tivesse sido reproduzida por N segundos.
+
+            - No exemplo a seguir, a animação começará como se já tivesse sido reproduzida por 2 segundos:
+        **/
+
+        div#valor_negativo{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: exemplo_2;
+            animation-duration: 4s;
+            /**
+             - valores negativos no atraso da animação, faz o efeito de que a animção ja esta sendo executa a N tempo
+            **/
+            animation-delay: -2s;
+        }
+        @keyframes exemplo_2{
+            0%{background-color: red; left: 0; top: 0;}
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            50%{background-color: blue; left: 200px; top: 200px;}
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Animações EM CSS</h1>
+    
+    <p>Exemplo:</p>
+    
+    <h2>A Regra animation-delay(atraso na animação)</h2>
+    
+    <p><strong>Exemplo: </strong>O exemplo a seguir tem um atraso de 2 segundos antes de iniciar a animação:</p>
+    
+    <p><strong>Nota:</strong> Quando uma animação termina, ela volta ao estilo original.</p>
+
+    <h3>Exemplo de animação com valores de animation-delay positivos</h3>
+    
+    <div></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <h3>Exemplo de animação com valores de animation-delay negativos</h3>
+
+    <h4>Usando valores negativos: aqui, a animação começará como se já tivesse sido reproduzida por 2 segundos:</h4>
+
+    <div id="valor_negativo"></div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+# DICA DE FERRAMENTA CSS
+
+ - Crie dicas de ferramentas com CSS.
+
+ - Uma dica de ferramenta geralmente é usada para especificar informações extras sobre algo quando o usuário move o ponteiro do mouse sobre um elemento.
+
+ 

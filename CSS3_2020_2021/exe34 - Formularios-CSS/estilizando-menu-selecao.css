@@ -1,0 +1,22 @@
+/*
+ * MENUS DE SELEÇÃO DE ESTILO
+
+   - COMO ESTILIZAR MENUS DE SELEÇÃO, PERTECENTE A UM FORMULARIO DENTRO DE UM DOCUMENTO HTML5.
+*/
+
+/*seleciona o elemento do menu de seleção*/
+select{
+    /*largura do elemento em relação a sua pagina, largura do elemento em relação a pagina na horizontal, pode ocupar todo o espaço da pagina na horizontal*/
+    width: 100%;
+    /*espaço interno*/
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*borda - prenchimento ocultado*/
+    border: none;
+    /*arredonda os cantos do elemento*/
+    border-radius: 4px;
+    /*cor de fundo do elemento*/
+    background-color: #f1f1f1;
+}

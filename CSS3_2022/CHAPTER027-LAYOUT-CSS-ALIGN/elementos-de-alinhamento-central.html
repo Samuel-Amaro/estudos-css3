@@ -1,0 +1,45 @@
+<!--
+    * LAYOUT CSS - ALINHAMENTO HORIZONTAL E VERTICAL
+
+    * ELEMENTOS DE ALINHAMENTO CENTRAL
+
+        - Para centralizar horizontalmente um elemento de bloco (como <div>), use margin: auto;
+
+        - Definir a largura do elemento impedirá que ele se estenda até as bordas de seu contêiner.
+
+        - O elemento então ocupará a largura especificada e o espaço restante será dividido igualmente entre as duas margens:
+
+        - Nota: O alinhamento ao centro não tem efeito se a width propriedade não estiver definida (ou definida como 100%).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .center{
+            /*
+             - a propriedade margin, e usada para espcificar um espaço depois da borda do elemento, e usada para especificar um espaço externo ao redor do elemento
+             - margens são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas
+             - o valor auto(o navegador calcula a margem, para todos os lados)
+             - o valor auto para a propriedade margin, faz o elemento se auto centralizar horizontalmente em seu conteiner, neste caso o body. centraliza o elemento no meio do documento.
+             - primeiro o elemento ocupa o espaço necessario para mostrar o conteudo ou a largura necessario especifica, e o restante do espaço horizontal sera divido igualmente entre as margens esquerda e direita 
+            */
+            margin: auto;
+            width: 60%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Alinhar elementos ao centro</h2>
+    <p>Para centralizar horizontalmente um elemento de bloco (como div), use margin: auto;</p>
+
+    <div class="center">
+        <p>Olá Mundo!</p>
+    </div>
+
+</body>
+</html>

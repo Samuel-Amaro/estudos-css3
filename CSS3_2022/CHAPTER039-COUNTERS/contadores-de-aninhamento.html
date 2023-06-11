@@ -1,0 +1,83 @@
+<!--
+    * CONTADORES DE ANINHAMENTO
+
+        - O exemplo a seguir cria um contador para a página (seção) e um contador para cada elemento <h1> (subseção). O contador "seção" será contado para cada elemento <h1> com "Seção < valor do contador de seção >.", e o contador "subseção" será contado para cada elemento <h2> com "< valor do contador de seção >.< valor do contador de subseções >":
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        body{
+            /*
+             - Os contadores CSS são como "variáveis".
+             - criando um contador com  counter-reset- Cria ou redefine um contador
+             - cria um contador para a pagina
+             - o valor especificado para a propriedade counter-reset e o nome do contador.
+            */
+            counter-reset: section;
+        }
+        h1{
+            /*
+            - cria um contador para cada elemento <h1>
+            - o valor especificado para a propriedade counter-reset e o nome do contador.
+            */
+            counter-reset: subsection;
+        }
+        /*
+         - usando uma pseudo-elemento, que e usado para estilizar partes especificas de um elemento
+         - o ::before pseudo-elemento seletor e usado para inserir um conteudo antes do conteudo real do elemento
+         - aqui vamos inserir o valor atual do contador subsection em cada elemento <h1>, apos ser incrementado
+        */
+        h1::before{
+            /*
+             - a counter-increment, propriedade, Incrementa um valor de contador.
+             - Os valores das variáveis ​​podem ser incrementados por regras CSS (que rastrearão quantas vezes elas são usadas).
+             - neste exemplo contaremos quantos elementos <h1> tem na pagina
+             - o valor para a propriedade counter-increment, especifica o nome do contador a ser incrementado, o contador section
+            */
+            counter-increment: section;
+            /*
+             - a propriedade css, content Insere conteúdo gerado
+             - iremos inserir o valor atual do contador antes do conteudo real do elemento <h1> 
+             - a função counter(name), adiciona o valor de um contador a um elemento, o section e o nome do contador a ter o seu valor adicionado em cada elemento <h1> da pagina.
+            */
+            content: "Section " counter(section) ". ";
+        }
+        /*
+         - aqui vamos inserir o valor atual do contador em cada elemento <h2>, apos ser incrementado
+        */
+        h2::before{
+            /*
+             - neste exemplo contaremos quantos elementos <h2> tem na pagina com o contador subsection
+            */
+            counter-increment: subsection;
+            /*
+             - iremos inserir o valor atual do contador antes do conteudo real do elemento <h2> 
+             - a função counter(name), adiciona o valor de um contador a um elemento, o subsection e o nome do contador a ter o seu valor adicionado em cada elemento <h2> da pagina.
+            */
+            content: counter(section) "." counter(subsection) " ";
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>HTML/CSS Tutorials</h1>
+    <h2>HTML</h2>
+    <h2>CSS</h2>
+    <h2>Bootstrap</h2>
+    <h2>W3.CSS</h2> 
+
+    <h1>Scripting Tutorials</h1>
+    <h2>JavaScript</h2>
+    <h2>jQuery</h2>
+    <h2>React</h2>
+
+    <h1>Programming Tutorials</h1>
+    <h2>Python</h2>
+    <h2>Java</h2>
+    <h2>C++</h2>
+
+</body>
+</html>

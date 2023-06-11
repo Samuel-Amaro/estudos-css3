@@ -1,0 +1,92 @@
+<!--
+    * PROPRIEDADE CSS VISIBILITY
+
+      - Especifica se um elemento deve ou não ser visível
+
+    * DEFINIÇÃO E USO
+
+      - A visibility propriedade especifica se um elemento é ou não visível.
+
+      - Dica: os elementos ocultos ocupam espaço na página. Use a propriedade display para ocultar e remover um elemento do layout do documento!
+
+    * SINTAXE CSS:
+
+        visibility: visible|hidden|collapse|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+       VALUE: visible;
+       DESCRIPTION: Valor padrão. O elemento é visível
+
+       VALUE: hidden;
+       DESCRIPTION: O elemento está oculto (mas ainda ocupa espaço)
+
+       VALUE: collapse;
+       DESCRIPTION: Apenas para linhas da tabela (<tr>), grupos de linhas (<tbody>), colunas (<col>), grupos de colunas (<colgroup>). Este valor remove uma linha ou coluna, mas não afeta o layout da tabela. O espaço ocupado pela linha ou coluna ficará disponível para outros conteúdos. Se o recolhimento for usado em outros elementos, ele será processado como "oculto".
+
+       VALUE: initial;
+       DESCRIPTION: Define esta propriedade com seu valor padrão.
+
+       VALUE: inherit;
+       DESCRIPTION: Herda essa propriedade de seu elemento pai.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibilidade do elemento</title>
+    <style>
+        h2.a{
+            /*elemento fica visivel, seu conteudo pode ser visto e o elemento*/
+            visibility: visible;
+        }
+        h2.b{
+             /*O elemento está oculto (mas ainda ocupa espaço) no layout da pagina*/
+             visibility: hidden;
+        }
+        /*seletor da tag da tabela, e da propria celula*/
+        table,td{
+            border-top: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-right: 1px;
+            border-color: black;
+            border-style: solid;
+        }
+        /*linha da tabela*/
+        tr.collapse{
+            /*vai ocultar o conteudo desta linha da tabela, vai recolher a linha, a linha existe no layout mais seu conteudo e ocultado*/
+            visibility: collapse;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Visibilidade de um elemento - visibility</h1>
+
+    <p><strong>Exemplo 01:</strong>Tornar &gt;h2&lt; elementos visíveis e ocultos:</p>
+
+    <h2 class="a">Este título está visível</h2>
+
+    <h2 class="b">Este título está oculto</h2>
+
+    <p><strong>Observe:</strong> que o título oculto ainda ocupa espaço na página.</p>
+
+    <p><strong>Exemplo:</strong> Este exemplo demonstra como fazer o recolhimento de um elemento da tabela:</p>
+
+    <table>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr class="collapse">
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+
+</body>
+</html>

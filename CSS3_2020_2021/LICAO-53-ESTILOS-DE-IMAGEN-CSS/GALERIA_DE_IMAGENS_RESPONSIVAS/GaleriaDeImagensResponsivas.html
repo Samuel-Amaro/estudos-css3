@@ -1,0 +1,157 @@
+<!--
+    * GALERIA DE IMAGENS RESPONSIVAS
+      - CSS pode ser usado para criar galerias de imagens. Este exemplo usa consultas de mídia para reorganizar as imagens em diferentes tamanhos de tela. Redimensione a janela do navegador para ver o efeito:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens Responsivas</title>
+    <style>
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        div.galeria{
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #cccc;
+            border-style: solid;
+        }
+        /*
+          - ao passar o mouse sobre o elemento div.galeria com a pseudo classe que captura o estado do elemento
+          - Uma pseudoclasse é usada para definir um estado especial de um elemento.
+          - pseudo-classe hover, a pseudo classe hover captura o estado do elemento.
+          */
+        div.galeria:hover{
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #777;
+            border-style: solid;
+        }
+        /*o elemento div.galeria, e o elemento descentende do elemento div.galeria*/
+        div.galeria img{
+            /*vai ter sua largura definada em 100%, isso e pode ocupar 100% do espço horizontal reservado  a ele*/
+            width: 100%;
+            /*proprio navegador define a altura dos elementos automaticamentes*/
+            height: auto;
+        }
+        div.desc{
+            /*espaço interno entre borda e conteudo*/
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            /*alinha texto ao centro*/
+            text-align: center;
+        }
+        /*reset css, reseta as propriedades padrões que o proprio navegador define no documento HTML5, seletor universal, seleciona todos os elementos do documento*/
+        *{
+            box-sizing: border-box;
+        }
+        div.responsive{
+            /*espaço interno entre borda e conteudo*/
+            padding-top: 0;
+            padding-right: 6px;
+            padding-bottom: 0;
+            padding-left: 6px;
+            /*
+             - o elemento com o float definido (o <div>elemento neste caso) é retirado do fluxo de layout normal do documento e preso ao lado esquerdo de seu contêiner pai ( <body>, em este caso). Qualquer conteúdo que vier abaixo do elemento flutuante no fluxo de layout normal agora o envolverá, preenchendo o espaço à direita dele até o topo do elemento flutuante. Pronto, isso vai parar.
+             - Embora possamos adicionar uma margem ao float para afastar o texto, não podemos adicionar uma margem ao texto para afastá-lo do float. Isso ocorre porque um elemento flutuante é retirado do fluxo normal e as caixas dos itens a seguir realmente correm atrás do flutuador.
+            */
+            float: left;
+            /*largura do elemento*/
+            width: 24.99999%;
+        }
+        @media only screen and (max-width: 700px) {
+            div.responsive{
+                width: 49.99999%;
+                margin-top: 6px;
+                margin-bottom: 6px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        @media only screen and (max-width: 500px) {
+            div.responsive{
+                width: 100%;
+            }
+        }
+        /*
+         - utilizando um pseudo elemento no elemento que faz a limpeza do flutuador
+         - Um pseudoelemento CSS é usado para estilizar partes específicas de um elemento
+         -  O ::after pseudoelemento pode ser usado para inserir algum conteúdo após o conteúdo de um elemento;*/
+        div.limpaFlutuador:after{
+            /*conteudo do elemento div e vazio em branco*/
+            content: "";
+            display: table;
+            /*
+             - Vimos que o flutuador é removido do fluxo normal e que outros elementos serão exibidos ao lado dele, portanto, se quisermos impedir que o elemento seguinte se mova para cima, precisamos limpá-lo; isso é conseguido com a clear propriedade.
+            */
+            clear: both;
+        }
+        body > div:first-child{
+            padding-top: 6;
+            padding-right: 6px;
+            padding-bottom: 6;
+            padding-left: 6px;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Galeria de Imagens responsivas</h1>
+
+    <p><strong>Exemplo: </strong> Redimensione a janela do navegador para ver o efeito.</p>
+
+    <div class="responsive">
+        <div class="galeria">
+            <a target="_blank" href="../img_5terre.jpg" rel="next">
+                <img src="../img_5terre.jpg" alt="Cinque Terre">
+            </a>
+            <div class="desc">Adicione uma descrição a imagen</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="galeria">
+            <a target="_blank" href="../img_forest.jpg" rel="next">
+                <img src="../img_forest.jpg" alt="Forest">
+            </a>
+            <div class="desc">Adicione uma descrição a imagen</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="galeria">
+            <a target="_blank" href="../lights600x400.jpg" rel="next">
+                <img src="../lights600x400.jpg" alt="Northern Lights">
+            </a>
+            <div class="desc">Adicione uma descrição a imagen</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="galeria">
+            <a target="_blank" href="../pineapple.jpg" rel="next">
+                <img src="../pineapple.jpg" alt="Mountains">
+            </a>
+            <div class="desc">Adicione uma descrição a imagen</div>
+        </div>
+    </div>
+
+    <div class="limpaFlutuador"></div>
+    
+    <div>
+        <p>Este exemplo usa consultas de mídia para reorganizar as imagens em tamanhos de tela diferentes: para telas maiores que 700px de largura, ele mostrará quatro imagens lado a lado, para telas menores que 700px, ele mostrará duas imagens lado a lado. Para telas menores que 500 px, as imagens serão empilhadas verticalmente (100%).</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!--
+    * O MODELO DE CAIXA(BOX MODEL) CSS ALTERNATIVO
+
+        Você pode pensar que é bastante inconveniente ter que adicionar a borda e o preenchimento para obter o tamanho real da caixa, e você estaria certo! Por esta razão, CSS teve um modelo de caixa alternativo introduzido algum tempo após o modelo de caixa padrão. Usando este modelo, qualquer largura é a largura da caixa visível na página, portanto, a largura da área de conteúdo é essa largura menos a largura do preenchimento e da borda. O mesmo CSS usado acima daria o resultado abaixo (largura = 350px, altura = 150px). 
+
+        Por padrão, os navegadores usam o modelo de caixa padrão. Se você deseja ativar o modelo alternativo para um elemento, faça isso definindo box-sizing: border-box nele. Ao fazer isso, você está dizendo ao navegador para usar a caixa de borda, como mostrado acima, como sua área definida. 
+
+        Se você deseja que todos os seus elementos usem o modelo de caixa alternativo, e esta é uma escolha comum entre os desenvolvedores, defina o box-sizing propriedade no <html> element e, em seguida, defina todos os outros elementos para herdar esse valor, conforme visto no snippet abaixo.
+
+        html {
+            box-sizing: border-box;
+        }
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .box{
+            /*
+             - ativa o modelo de caixa(box model) alternativo para o elemento, dizendo ao navegador para usar a caixa de borda
+             -  A caixa de borda envolve o conteúdo e qualquer preenchimento. Seu tamanho e estilo podem ser controlados usando border e propriedades relacionadas. 
+            */
+            box-sizing: border-box;
+            width: 350px;
+            height: 150px;
+            margin: 10px;
+            padding: 25px;
+            border: 5px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

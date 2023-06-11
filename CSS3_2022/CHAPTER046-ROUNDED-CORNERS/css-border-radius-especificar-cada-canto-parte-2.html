@@ -1,0 +1,74 @@
+<!--
+    Você também pode criar cantos elípticos:
+
+        - relativo a ou que tem forma de elipse.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        #rcorners1{
+            /*
+             - A propriedade CSS border-radius define o raio dos cantos de um elemento.
+             - border radius e uma shorthand para propriedades individuais como: 
+                border-top-left-radius, border-top-right-radius e .border-bottom-right-radius border-bottom-left-radius
+             -  A border-radius propriedade pode ter de um a quatro valores.
+             - especificando somente dois valores para a shorthand border-radius, o primeiro valor especifica o canto superior esquerdo e inferior direito, o segundo valor especifica o canto superior direito, e inferior esquerdo
+            */
+            border-radius: 50px / 15px;
+            /*
+             - propriedade shorthand backgorund, uma propriedade abreviada:
+
+                background-color
+                background-image
+                background-position
+                background-size
+                background-repeat
+                background-origin
+                background-clip
+                background-attachment
+            
+            */
+            background: #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        #rcorners2{
+            /*
+             - especificando somente dois valores para a shorthand border-radius, o primeiro valor especifica o canto superior esquerdo e inferior direito, o segundo valor especifica o canto superior direito, e inferior esquerdo
+            */
+            border-radius: 15px / 50px;
+            border: 2px solid #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        #rcorners3{
+            /*
+             - especificando somente um valor para a shorthand border radius, o valor se aplica para todos os quatro cantos, arredondando todos os cantos igualmente
+             - Define a forma dos cantos em %, define que os cantos terão 50% de forma arredondada
+            */
+            border-radius: 50%;
+            background: #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade border-radius</h1>
+
+    <p>Elliptical border - border-radius: 50px / 15px:</p>
+    <p id="rcorners1"></p>
+    <p>Elliptical border - border-radius: 15px / 50px:</p>
+    <p id="rcorners2"></p>
+    <p>Ellipse border - border-radius: 50%:</p>
+    <p id="rcorners3"></p>
+
+</body>
+</html>

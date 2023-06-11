@@ -1,0 +1,31 @@
+<!--
+    * A META TAG DA JANELA DE VISUALIZAÇÃO
+
+        Se você observar a fonte HTML de uma página responsiva, normalmente verá a seguinte <meta> tag no <head> documento.
+
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+        Essa metatag informa aos navegadores móveis que eles devem definir a largura da janela de visualização para a largura do dispositivo e dimensionar o documento para 100% do tamanho pretendido, o que mostra o documento no tamanho otimizado para dispositivos móveis desejado.
+
+        Por que isso é necessário? Porque os navegadores móveis tendem a mentir sobre a largura da janela de visualização.
+
+        Essa metatag existe porque quando o iPhone original foi lançado e as pessoas começaram a visualizar sites em uma pequena tela de telefone, a maioria dos sites não era otimizada para dispositivos móveis. O navegador móvel, portanto, definiria a largura da janela de visualização para 980 pixels, renderizaria a página nessa largura e mostraria o resultado como uma versão reduzida do layout da área de trabalho. Outros navegadores móveis (por exemplo, no Google Android) fizeram a mesma coisa. Os usuários podiam dar zoom e deslocar o site para ver os bits em que estavam interessados, mas parecia ruim. Você ainda verá isso hoje se tiver a infelicidade de encontrar um site que não tenha um design responsivo.
+
+        O problema é que seu design responsivo com pontos de interrupção e consultas de mídia não funcionará como pretendido em navegadores móveis. Se você tiver um layout de tela estreito com largura de janela de visualização de 480px ou menos, e a janela de visualização estiver definida em 980px, você nunca verá seu layout de tela estreita em dispositivos móveis. Ao configurar, width=device-widthvocê está substituindo o padrão da Apple pela width=980px largura real do dispositivo, para que suas consultas de mídia funcionem conforme o esperado.
+
+        Portanto, você deve sempre incluir a linha de HTML acima no cabeçalho de seus documentos.
+
+        Existem outras configurações que você pode usar com a meta tag viewport, no entanto, em geral, a linha acima é o que você deseja usar.
+
+            initial-scale: define o zoom inicial da página, que definimos como 1.
+
+            height: define uma altura específica para a viewport.
+
+            minimum-scale: define o nível mínimo de zoom.
+
+            maximum-scale: Define o nível máximo de zoom.
+
+            user-scalable: Impede o zoom se definido como no.
+
+        Você deve evitar o uso minimum-scale de maximum-scale, e em particular a configuração user-scalable de no. Os usuários devem ter permissão para aumentar ou diminuir o zoom conforme necessário; evitar isso causa problemas de acessibilidade.
+-->

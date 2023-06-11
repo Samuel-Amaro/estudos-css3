@@ -1,0 +1,37 @@
+<!--
+    - Você também pode definir a largura de <ul> e remover a largura de <a>, pois eles ocuparão toda a largura disponível quando exibidos como elementos de bloco. Isso produzirá o mesmo resultado do nosso exemplo anterior:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60px;
+        }
+
+        li a{
+            display: block;
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+    <p>Uma cor de fundo é adicionada aos links para mostrar a área do link.</p>
+    
+    <p>Observe que toda a área do link é clicável, não apenas o texto.</p>
+
+</body>
+</html>

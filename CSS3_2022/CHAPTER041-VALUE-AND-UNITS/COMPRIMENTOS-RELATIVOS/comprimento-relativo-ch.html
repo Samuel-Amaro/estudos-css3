@@ -1,0 +1,39 @@
+<!--
+    * COMPRIMENTO RELATIVO ch
+
+        Relativo à largura do "0" (zero)
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        body{
+            /*
+             - As unidades de comprimento absoluto são fixas e um comprimento expresso em qualquer uma delas aparecerá exatamente com esse tamanho.
+             - aqui neste exemplo especificamos que a fonte do texto do cordo do documento tera o tamanho 16px de comprimento absoluto.
+             - px: unidade comprimento absoluto - pixels
+            */
+            font-size: 16px;
+        }
+        div{
+            /*
+             - o comprimento e um numero seguido por uma unidade de comprimento.
+             - As unidades de comprimento relativo especificam um comprimento relativo a outra propriedade de comprimento.
+             - aqui neste exemplo especificamos que a fonte do texto do elemento div tera o tamanho 3ch de comprimento relativo.
+             - ch: unidade comprimento relativo - Relativo à largura do "0" (zero)
+            */
+            font-size: 3ch;/*3ch significa que sera 3ch em relação a largura do zero*/
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <p>O tamanho da fonte deste documento é 16px</p>
+    <div>O tamanho da fonte deste elemento div é 3ch.</div>
+    <p>A unidade ch define o tamanho da fonte em relação à largura do caractere "0"</p>
+
+</body>
+</html>

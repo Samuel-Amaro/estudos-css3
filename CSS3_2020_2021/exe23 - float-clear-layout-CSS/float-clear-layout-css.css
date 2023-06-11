@@ -1,0 +1,181 @@
+/*
+ * LAYOUT CSS - FLOAT E CLEAR (FLUTUAR E LIMPAR)
+
+  - A float propriedade CSS especifica como um elemento deve flutuar;
+  - A clear propriedade CSS especifica quais elementos podem flutuar ao lado do elemento limpo e em que lado;
+
+  * A PROPRIEDADE FLUTUAR - PROPRETY FLOAT
+
+   - A float propriedade é usada para posicionar e formatar o conteúdo, por exemplo, deixar uma imagem flutuar à esquerda do texto em um contêiner;
+   - A float propriedade pode ter um dos seguintes valores:
+    
+        LEFT(ESQUERDA) - O elemento flutua à esquerda de seu contêiner;
+        RIGHT(DIREITA) - O elemento flutua à direita de seu contêiner;
+        NONE(NENHUM) -  O elemento não flutua (será exibido apenas onde ocorre no texto). Este é o padrão;
+        INHERIT(HERDAR) - O elemento herda o valor flutuante de seu pai;
+        
+    - Em seu uso mais simples, a float propriedade pode ser usada para envolver o texto em imagens.
+*/
+
+/*
+ * EXEMPLO 01 - FLOAT RIGHT - FLUTUANDO A DIREITA
+  
+  - a imagem deve flutuar a direita do texto
+*/
+#conteiner_float_direita > p > img{
+      float: right;/*a caixa do elemento img vai se posicionar flutuar na direita do elemento p*/
+      margin-left: 15px; /*dando um espaço externo entre a caixa do p e do img*/  
+}
+
+/*
+ * EXEMPLO 02 - FLOAT LEFT - FLUTUANDO A ESQUERDA DO ELEMENTO
+  
+  - a imagem deve flutuar a esquerda do texto
+*/
+#conteiner_float_left > p > img{
+    float: left;/*a caixa do elemento img vai se posicionar flutuar na esquerda do elemento p*/
+    margin-right: 15px; /*dando um espaço externo entre a caixa do p e do img, no lado direito entre a borda do caixa do img*/             
+}
+
+/*
+ * FLOAT: NONE - SEM FLUTUAÇÃO
+*/
+#conteiner_float_none > p > img{
+   float: none; /*nenhuma flutuação aplicada ao elemento img*/ 
+}
+
+
+/*
+ * CSS LAYOUT - CLEAR(CLARO) AND CLEARFIX(CORREÇÃO CLARA)
+
+ * A PROPRIEDADE CLARA
+
+  - A clear propriedade especifica quais elementos podem flutuar(float) ao lado do elemento limpo e em qual lado.
+
+  - A clear propriedade pode ter um dos seguintes valores:
+
+    none(nenhum) - permite elementos flutuantes em ambos os lados. Este é o padrão;
+    left(esquerda) - nenhum elemento flutuante permitido no lado esquerdo;
+    right(direita) - Não são permitidos elementos flutuantes no lado direito;
+    both(ambos) - Nenhum elemento flutuante permitido no lado esquerdo ou direito;
+    inherit(herdar) -  O elemento herda o valor claro de seu pai;
+
+    - A maneira mais comum de usar a clear propriedade é depois de usar uma float propriedade em um elemento;
+    - Ao limpar os flutuadores, você deve combinar o clear com o flutuante: Se um elemento for flutuado para a esquerda, você deve limpar para a esquerda. Seu elemento flutuado continuará a flutuar, mas o elemento limpo aparecerá abaixo dele na página da web.
+    - O exemplo a seguir limpa o flutuador à esquerda. Significa que nenhum elemento flutuante é permitido no lado esquerdo (do div):
+*/
+#conteiner_1{
+   float:left; /*posiciona esse conteiner a esquerda de qualquer elemento*/
+   width: 100px; /*possui uma largura de 100px a caixa*/
+   height: 50px; /*altura de 50px*/
+   /*ESPAÇO EXTERNO NA CAIXA, AO REDOR DA CAIXA DA CAIXA PARA FORA NO TOPO,DIREITA,INFERIOR E ESQUERDA*/
+   margin-top: 10px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+   margin-left: 10px;
+   /*UM ESPAÇO ENTRE O ESPAÇO INTERNO E O ESPAÇO EXTERNO DA CAIXA NO TOPO,DIREITA INFERIOR E ESQUERDA*/
+   border-top: 3px;
+   border-right: 3px;
+   border-bottom: 3px;
+   border-left: 3px;
+   border-style: solid;
+   border-color: #73AD21;
+}
+
+#paragrafo_1{
+  /*UM ESPAÇO ENTRE O ESPAÇO INTERNO E O ESPAÇO EXTERNO DA CAIXA NO TOPO,DIREITA INFERIOR E ESQUERDA*/
+  border-top: 1px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-left: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+#conteiner_2{
+  float:left; /*posiciona esse conteiner a esquerda de qualquer elemento*/
+  width: 100px; /*possui uma largura de 100px a caixa*/
+  height: 50px; /*altura de 50px*/
+  /*ESPAÇO EXTERNO NA CAIXA, AO REDOR DA CAIXA DA CAIXA PARA FORA NO TOPO,DIREITA,INFERIOR E ESQUERDA*/
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  /*UM ESPAÇO ENTRE O ESPAÇO INTERNO E O ESPAÇO EXTERNO DA CAIXA NO TOPO,DIREITA INFERIOR E ESQUERDA*/
+  border-top: 3px;
+  border-right: 3px;
+  border-bottom: 3px;
+  border-left: 3px;
+  border-style: solid;
+  border-color: #73AD21;
+}
+
+#paragrafo_2{
+  /*UM ESPAÇO ENTRE O ESPAÇO INTERNO E O ESPAÇO EXTERNO DA CAIXA NO TOPO,DIREITA INFERIOR E ESQUERDA*/
+  border-top: 1px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-left: 1px;
+  border-style: solid;
+  border-color: red;
+  clear: left;/*limpa o fluatuador aplicado na div2(conteiner2) para que este elemento fique abaixo do conteiner_2, porque ele foi flutuado para a esquerda, o proximo elemento ao lado deve ser limpado clareado para a esquerda, que no caso e este paragrado, ele esta sendo limpo para a esquerda*/
+}
+
+
+/*
+ * The clearfix Hack - O HACK DE CORREÇÃO CLARA
+
+  - Se um elemento for mais alto do que o elemento que o contém e estiver flutuando(FLOAT), ele "transbordará - overflow" para fora de seu contêiner:
+  - Então, podemos adicionar overflow: auto;ao elemento que o contém para corrigir este problema:
+*/
+
+#sem_clearfix{
+  /*add um espaço entre o lado interno e externo da caixa do paragrafo, isso e o espaço criado esta entre o padding e o margin*/
+  border-top: 3px;
+  border-right: 3px;
+  border-bottom: 3px;
+  border-left: 3px;
+  border-style: solid;
+  border-color: #73AD21;
+}
+
+#sem_clearfix > img{
+  float: left;/*a imagen dentro do paragrafo vai fluatuar a esquerda do paragrafo*/
+}
+
+#com_clearfix{
+  /*add um espaço entre o lado interno e externo da caixa do paragrafo, isso e o espaço criado esta entre o padding e o margin*/
+  border-top: 3px;
+  border-right: 3px;
+  border-bottom: 3px;
+  border-left: 3px;
+  border-style: solid;
+  border-color: #73AD21;
+  /*o controle de trasbordamento de conteudo da caixa do paragrafo e de controle automatico, so e adicionado as barras de rolagem quando se for necessario e automaticamente*/
+  overflow: auto;
+}
+
+#com_clearfix > img{
+  float: left;/*a imagen dentro do paragrafo vai fluatuar a esquerda do paragrafo*/
+}
+
+/*
+ - O overflow: auto clearfix funciona bem desde que você seja capaz de manter o controle de suas margens e preenchimento (caso contrário, você poderá ver barras de rolagem). O novo e moderno hack do clearfix , entretanto, é mais seguro de usar e o código a seguir é usado para a maioria das páginas da web:
+*/
+
+#com_hack::after{
+    /*add um espaço entre o lado interno e externo da caixa do paragrafo, isso e o espaço criado esta entre o padding e o margin*/
+  border-top: 3px;
+  border-right: 3px;
+  border-bottom: 3px;
+  border-left: 3px;
+  border-style: solid;
+  border-color: #73AD21;
+  /*hack de clearfix*/
+  content: "";
+  clear:both; /*limpa os flutuadores da esquerda e direita*/
+  display: table; /*exibição de tipo tabela*/
+}
+#com_hack > img{
+  float: left;/*a imagen dentro do paragrafo vai fluatuar a esquerda do paragrafo*/
+}

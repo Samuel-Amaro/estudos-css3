@@ -1,0 +1,115 @@
+<!--
+     * ESPECIFIQUE O MODO DE PREENCHIMENTO PARA UMA ANIMAÇÃO
+
+      - As animações CSS não afetam um elemento antes de o primeiro quadro-chave ser reproduzido ou após o último quadro-chave ser reproduzido. A propriedade animation-fill-mode pode substituir esse comportamento.
+      
+      - A animation-fill-mode(modo de preenchimento de animação) propriedade especifica um estilo para o elemento de destino quando a animação não está sendo reproduzida (antes de começar, depois de terminar ou ambos).
+
+      - A propriedade animation-fill-mode pode ter os seguintes valores:
+
+          - none- Valor padrão. A animação não aplicará nenhum estilo ao elemento antes ou depois de sua execução
+
+          - forwards(PARA FRENTE) - O elemento manterá os valores de estilo definidos pelo último quadro-chave (depende da direção da animação e da contagem da iteração da animação)
+
+          - backwards(para trás) - O elemento obterá os valores de estilo definidos pelo primeiro quadro-chave (depende da direção da animação) e os manterá durante o período de atraso da animação
+
+          - both(AMBAS) - A animação seguirá as regras para frente e para trás, estendendo as propriedades da animação em ambas as direções
+
+     - O exemplo a seguir permite que o elemento <div> retenha os valores de estilo do último quadro-chave quando a animação terminar:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações CSS</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            /*nome da animação que vai ocorrer no elemento*/
+            animation-name: exemplo;
+            /*duração da animação do inicio ao  fim*/
+            animation-duration: 3s;
+            /*especificando o modo de preenchimento de uma animação apos a animação ter sido executada no elemento, a animação vai mudar o estado do elemento aplicando a animação, mas isso não fica no elemento so enquanto a animação e executada, a propriedade abaixo permite que o estado do elemento se mantenha o mesmo apos a animação, isso e o estilos aplicados durante a animação vão continuar no elemento apos ela terminar. o valor forwards( O elemento manterá os valores de estilo definidos pelo último quadro-chave (depende da direção da animação e da contagem da iteração da animação))*/
+            animation-fill-mode: forwards;
+        }
+
+        /*especificando os quadros chave de uma animação ja especificado com prorpriedades*/
+        @keyframes exemplo{
+            /*a animação se inicia no topo, de seu elemento acima, que seria o inferior do elemento acima dele, não e o topo do site, mas o topo do elemento que esta acima, que seria o inferior, onde se inicia os quadros chaves da animation*/
+            from{top: 0px;}
+            /*e vai para o afastamento de 200px do topo para os proximos quadros e aplica uma cor de fundo no elemento*/
+            to{
+                top: 200px;
+                background-color: blue;
+            }    
+        }
+
+        div#anim2{
+                /*nome da animação associada a este elemento*/
+                animation-name: exemplo2;
+                /*atraso da animação, a animação demora dois segundos antes de começar a executar*/
+                animation-delay: 2s;
+                /*especificando o modo de preenchimento de uma animação, vai ser o modo de prenchimento forwards(obtem o estilos aplicados ao elemento durante a animação, antes de iniciar o primeiro quadro chave, se a animation tem um delay definido essa propriedade vai manter o elemento estilizado da maneira que a animação definir durante o tempo do delay)*/
+                animation-fill-mode: forwards;
+        }
+
+        /*especificando os quadros chaves para a animação*/
+        @keyframes exemplo2 {
+            /*de top 0 com cor de fundo amarelo, o top 0 seria o inferior do elemento acima do elemento atual que esta recebendo a animação*/
+            from{
+                top: 0px;
+                background-color: yellow;
+            }            
+            /*para o top 200, se afasta 200px para abaixo do topo, terminado a animação*/
+            to{
+                top: 200px;
+            }
+        }
+
+        div#anim3{
+            /*nome da animação associada a este elemento*/
+            animation-name: exemplo3;
+            /*duração da animação*/
+            animation-duration: 3s;
+            /*atraso da animação, o tempo que animação espera antes de começar*/
+            animation-delay: 2s;
+            /*especificando o modo de prenchimento desta animação: vai ser o both(ambas) obtem os estilos definidos antes do primeiro quadro chave e durante o atraso de animação, e apos o ultimo quadro chave ter sido executado, vai ter o elemento associado a esta animação com estilos da animação definidos, antes de comaçar a animação e apos ela terminar: .;*/
+            animation-fill-mode: both;
+        }
+
+        /*especificando os quadros chaves de uma animação*/
+        @keyframes exemplo3{
+            /*mesmo esquema dos quadros chaves acima*/
+            from{
+                top: 0px;
+                background-color: yellow;
+            }
+            to{
+                top: 200px;
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animações CSS</h1>
+    <h2>Usando a propriedade animation-fill-mode(mode e preenchimento de uma animação!)</h2>
+    <p><strong>Exemplo:</strong>O exemplo a seguir permite que o elemento &lt;div&gt; retenha os valores de estilo do último quadro-chave quando a animação terminar:</p>
+
+    <div></div>
+
+    <p>O exemplo a seguir permite que o elemento &lt;div&gt; obtenha os valores de estilo definidos pelo primeiro quadro-chave antes do início da animação (durante o período de atraso da animação):</p>
+
+    <div id="anim2"></div>
+
+    <p>O exemplo a seguir permite que o elemento &lt;div&gt; obtenha os valores de estilo definidos pelo primeiro quadro-chave antes do início da animação e retenha os valores de estilo do último quadro-chave quando a animação terminar:</p>
+
+    <div id="anim3"></div>
+</body>
+</html>

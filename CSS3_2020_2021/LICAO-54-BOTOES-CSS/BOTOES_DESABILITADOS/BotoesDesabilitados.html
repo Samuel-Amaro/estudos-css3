@@ -1,0 +1,50 @@
+<!--
+    * BOTÕES DESABILITADOS
+     - Use a opacity propriedade para adicionar transparência a um botão (cria uma aparência "desativada").
+     - Dica: você também pode adicionar a cursor propriedade com um valor de "não permitido", que exibirá uma "placa de proibição de estacionamento" quando você passar o mouse sobre o botão:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Desabilitados</title>
+    <style>
+        button.button{
+            background-color: #4CAF50;
+            border: none;
+            padding-top: 15px;
+            padding-right: 32px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 4px;
+            margin-right: 2px;
+            margin-bottom: 4px;
+            margin-left: 2px;
+            color: white;
+        }
+        button.disabled{
+            /*botão fica opaco trasparente*/
+            opacity: 0.6;
+            /*Indica que a ação solicitada não será executada. Frequentemente representado como um círculo com uma linha atravessando-o.*/
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Botões desabilitados</h2>
+
+    <p>Use a propriedade opacity para adicionar alguma transparência ao botão (faça com que pareça desativado):</p>
+
+    <button class="button">Normal Button</button>    
+
+    <button class="button disabled">Disabled Button</button>
+
+</body>
+</html>

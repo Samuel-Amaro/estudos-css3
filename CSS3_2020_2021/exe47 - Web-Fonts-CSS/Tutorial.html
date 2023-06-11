@@ -1,0 +1,79 @@
+<!--
+    * USANDO A FONTE QUE VOCÊ DESEJA
+
+      - Na @font-face regra; primeiro defina um nome para a fonte (por exemplo, myFirstFont) e depois aponte para o arquivo de fonte.
+
+      - Dica: Sempre use letras minúsculas para o URL da fonte. Letras maiúsculas podem gerar resultados inesperados no IE.
+      
+      - Para usar a fonte para um elemento HTML, consulte o nome da fonte (myFirstFont) por meio da font-family propriedade:
+
+    * USANDO TEXTO EM NEGRITO:
+
+      - Você deve adicionar outra @font-face regra contendo descritores para texto em negrito:
+
+      - Desta forma, você pode ter várias @font-face regras para a mesma fonte.
+
+    * DESCRITORES DE FONTE CSS:
+
+        - A tabela a seguir lista todos os descritores de fonte que podem ser definidos na @font-face regra:
+
+        DESCRITOR: font-family;
+        VALOR: name;
+        DESCRIÇÃO: Necessário. Define um nome para a fonte;
+        -------------------------------------------
+        DESCRITOR: src;
+        VALOR: URL;
+        DESCRIÇÃO: Necessário. Define a URL do arquivo de fonte;
+        -------------------------------------------
+        DESCRIPTOR: font-stretch;
+        VALOR: normal| condensed | ultra-condensed| extra-condensed| semi-condensed| expanded| semi-expanded| extra-expanded| ultra-expanded;
+        DESCRIÇÃO: opcional. Define como a fonte deve ser esticada. Padrão é "normal";
+        ------------------------------------------
+        DESCRIPTOR: font-style;
+        VALOR: normal| italic| oblique;
+        DESCRIÇÃO: opcional. Define como a fonte deve ser estilizada. Padrão é "normal";
+        ------------------------------------------
+        DESCRIPTOR: font-weight;
+        VALOR: normal|bold|100|200|300|400|500|600|700|800|900;
+        DESCRIÇÃO: opcional. Define a ousadia da fonte. Padrão é "normal";
+        -------------------------------------------
+        DESCRIPTOR: unicode-range;
+        VALOR: unicode-range;
+        DESCRIÇÃO: opcional. Define a gama de caracteres UNICODE que a fonte suporta. Padrão é "U+0-10FFFF"
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Web</title>
+    <style>
+        @font-face{
+            font-family: fonteWeb;
+            src: url(font-ttf/ZenDots-Regular.ttf);
+        }
+        h1{
+            font-family: fonteWeb;
+        }
+        p{
+            font-family: fonteWeb;
+        }
+        /**para a fonte ficar conhecida com negrito, precisa adicionar outra regra**/
+        @font-face{
+            font-family: fonteWebNegrito;
+            src: url(font-ttf/ZenDots-Regular.ttf);
+            font-weight: bold;
+        }
+        p.teste{
+            font-family: fonteWebNegrito;
+        }
+    </style>
+</head>
+<body>
+    <h1>A regra @font-face</h1>
+    <p>Com CSS, os sites podem usar fontes diferentes das fontes "seguras para a web" pré-selecionadas</p>
+    <h2>Fonte com negrito</h2>
+    <p class="teste">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed eum cum ea veritatis, ipsam autem quis recusandae aperiam animi atque inventore cupiditate sint delectus, nulla illum quod officia laboriosam quibusdam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore pariatur, nemo, recusandae dolor, quia molestiae exercitationem aliquid eaque doloribus vero cupiditate odit inventore numquam earum est! Aliquid culpa cumque voluptas.</p>
+</body>
+</html>

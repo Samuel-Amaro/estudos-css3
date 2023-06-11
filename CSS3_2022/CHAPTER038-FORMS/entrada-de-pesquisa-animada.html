@@ -1,0 +1,48 @@
+<!--
+    * ENTRADA DE PESQUISA ANIMADA
+
+        - Neste exemplo, usamos a transition propriedade CSS para animar a largura da entrada de pesquisa quando ela fica em foco. Você aprenderá mais sobre a transition propriedade mais tarde, em nosso capítulo Transições CSS .
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            /*
+             - A background-position propriedade define a posição inicial de uma imagem de fundo.
+             - O primeiro valor é a posição horizontal e o segundo valor é a vertical.
+             - O canto superior esquerdo é 0 0.
+            */
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;        
+            transition: width 0.4s ease-in-out;   
+        }
+        /*
+         - Uma pseudo-classe e usada para definir um estado especial de um elemento.
+         - seleciona o elemento input com o atributo type e valor de atributo text que tem o foco
+        */
+        input[type=text]:focus{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Animar a largura da entrada de pesquisa</h2>
+
+    <form>
+        <input type="text" name="search" placeholder="Search.."/>
+    </form>
+
+</body>
+</html>

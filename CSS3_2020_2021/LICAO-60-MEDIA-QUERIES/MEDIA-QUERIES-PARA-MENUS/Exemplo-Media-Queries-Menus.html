@@ -1,0 +1,66 @@
+<!--
+    * CONSULTAS DE MEDIA QUERYS PARA MENUS
+
+      - Neste exemplo, usamos consultas de mídia para criar um menu de navegação responsivo, que varia em design em diferentes tamanhos de tela.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de midia querys</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /*definir o estilo da barra de navegação superior*/
+        div.topnav{
+            /*se o conteudo for maior que o elemento, o elemento que passar da caixa ou trasnbordar para fora sera ocultado*/
+            overflow: hidden;
+            background-color: #333;
+        } 
+        /*define o estilo dos links topnav*/
+        div.topnav a{
+            /*cada elemento a, flutuara a esquerda de seu conteiner pai, que no caso e o div.topnav, cada link a saira do fluxo normal da pagina para flutuar a esquerda do elemento pai div*/
+            float: left;
+            /*elemento aceita largura e altura e espaços e quebra linhas*/
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            padding-left: 16px;
+            padding-right: 16px;
+            text-decoration: none;
+        }
+        /*ao passar ou pairar o mouse sobre o link*/
+        div.topnav a:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        /*em telas com largura(viewreporta a janela de visualização) de 600px ou menos, empilhe os links de menus um em cima do outros em vez de um ao lado do outro*/
+        @media screen and (max-width: 600px) {
+            .topnav a{
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Menu de navegação responsivo</h2>
+
+    <p>Redimensione a janela do navegador para ver o efeito: Quando a tela for menor que 600px, o menu de navegação será exibido verticalmente em vez de horizontalmente.</p>
+
+    <div class="topnav">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+
+</body>
+</html>

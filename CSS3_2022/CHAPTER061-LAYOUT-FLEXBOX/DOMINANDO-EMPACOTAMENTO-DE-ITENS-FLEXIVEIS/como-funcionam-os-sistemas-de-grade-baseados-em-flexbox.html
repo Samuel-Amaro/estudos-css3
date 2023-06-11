@@ -1,0 +1,55 @@
+<!--
+    * COMO FUNCIONAM OS SISTEMAS DE GRADE BASEADOS EM FLEXBOX?
+
+        Normalmente, os sistemas de grade baseados em flexbox funcionam levando o flexbox de volta ao mundo familiar dos layouts baseados em float. Se você atribuir larguras percentuais a itens flexíveis - como flex-basisou adicionando uma largura ao próprio item deixando o valor de flex-basis- autovocê pode obter a impressão de um layout bidimensional. Você pode ver isso funcionando no exemplo abaixo.
+
+        Aqui eu configurei flex-growe flex-shrinkto 0para tornar os itens flexíveis inflexíveis e então estou controlando a flexibilidade usando porcentagens, assim como costumávamos fazer em layouts flutuantes.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+    <style>
+        .box{
+            width: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #608BA8;
+            gap: 5px;
+            padding: 3px;
+        }
+
+        .box > *{
+            /*
+             - Aqui eu configurei flex-growe flex-shrinkto 0para tornar os itens flexíveis inflexíveis e então estou controlando a flexibilidade usando porcentagens, assim como costumávamos fazer em layouts flutuantes.
+            */
+            flex: 0 0 33.3333%;
+            background-color: #DFE8EE;
+            color: black;
+            border-radius: 4px;
+        }
+
+        /**
+         - Se você precisar que os itens flexíveis se alinhem no eixo transversal, controlar a largura dessa maneira conseguirá isso. Na maioria dos casos, no entanto, adicionar larguras a itens flexíveis dessa maneira demonstra que você provavelmente seria mais bem atendido mudando para o layout de grade para esse componente.
+        */
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+        <div>Eight</div>
+        <div>Nine</div>
+        <div>Ten</div>
+    </div>
+
+</body>
+</html>

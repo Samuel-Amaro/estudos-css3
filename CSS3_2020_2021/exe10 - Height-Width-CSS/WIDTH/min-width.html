@@ -1,0 +1,70 @@
+<!--
+    * CSS min-width PROPRIEDADE
+
+      - Define a largura mínima de um elemento
+
+    * DEFINIÇÃO E USO
+
+      - A min-width propriedade define a largura mínima de um elemento.
+
+      - Se o conteúdo for menor que a largura mínima, a largura mínima será aplicada.
+
+      - Se o conteúdo for maior que a largura mínima, a min-width propriedade não terá efeito.
+
+      - Nota: Isso evita que o valor da propriedade de largura se torne menor que min-width.
+
+    * SINTAXE:
+
+      - min-width: length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      VALUE: length;
+      DESCRIPTION: O valor padrão é 0. Define a largura mínima em px, cm, etc.
+
+      VALUE: %;
+      DESCRIPTION: Define a largura mínima em porcentagem do bloco que o contém
+
+      VALUE: initial;
+      DESCRIPTION: Define esta propriedade com seu valor padrão;
+
+      VALUE: inherit;
+      DESCRIPTION: Herda esta propriedade de seu elemento pai;
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura minima Elemento</title>
+    <style>
+        /*seletor da tag span*/
+        span{
+            background-color: yellow;
+        }
+        span.ex1{
+            /*define a largura minima do elemento. a largura e definida estaticamente. o elemento tem essa largura minima. não e menos que isso.*/
+            min-width: 800px;
+            /*elemento e de exibemento de bloco e embutido, aceita largura e altura definidas e quebra de linha*/
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Define largura minima elemento - min-width</h1>
+
+    <p><strong>Exemplo:</strong>Defina a largura mínima de um elemento &gt;span&lt; em 500 pixels:</p>
+
+    <h2>min-width: none(default)</h2>
+
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed unde odit suscipit fugiat labore! Provident laborum deleniti vero sunt saepe earum libero, accusamus amet sed animi molestiae itaque corporis quos!</span>
+
+    <h2>min-width: 500px</h2>
+
+    <span class="ex1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque sequi atque cupiditate minima dolorum vel animi quam odit tempore suscipit officiis repellendus, veritatis, quos illum reiciendis eligendi, aspernatur delectus nam.</span>
+
+</body>
+</html>

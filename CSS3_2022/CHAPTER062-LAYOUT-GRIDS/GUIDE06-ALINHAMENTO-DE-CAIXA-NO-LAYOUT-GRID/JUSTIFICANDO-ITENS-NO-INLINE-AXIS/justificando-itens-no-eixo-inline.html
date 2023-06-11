@@ -1,0 +1,126 @@
+<!--
+    * JUSTIFICANDO ITENS NO EIXO INLINE(INLINE AXIS)
+
+        Como align-items e align-self lidar com o alinhamento de itens no eixo do bloco, justify-items e justify-self fazer o mesmo trabalho no eixo inline. Os valores que você pode escolher são os mesmos de align-self.
+
+        auto
+        normal
+        start
+        end
+        center
+        stretch
+        baseline
+        first baseline
+        last baseline
+
+        Você pode ver o mesmo exemplo usado para align-items, abaixo. Desta vez estamos aplicando a justify-self propriedade.
+
+        Mais uma vez, o padrão é stretch, exceto para itens com uma proporção intrínseca. Isso significa que, por padrão, os itens de grade cobrirão sua área de grade, a menos que você altere isso definindo o alinhamento. O primeiro item no exemplo demonstra esse alinhamento padrão:
+
+        Assim como com align-self e align-items, você pode aplicar justify-items ao contêiner de grade para definir o justify-self valor de todos os itens.
+
+        As propriedades justify-self e justify-items não são implementadas no flexbox. Isso se deve à natureza unidimensional do flexbox , e que pode haver vários itens ao longo do eixo, impossibilitando justificar um único item. Para alinhar itens ao longo do eixo principal embutido no flexbox, você usa a justify-content propriedade.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container*/
+        .wrapper{
+            display: grid;
+            /*faixa de colunas explicita - faixa de 8 colunas flexiveis diminue e crescem de acordo com o espaço no conteiner-grip*/
+            grid-template-columns: repeat(8, 1fr);
+            /*espaço entre faixas de colunas e linhas - cria um espaço vazio de 10px*/
+            gap: 10px;
+            /*altura das faixas de linhas implicitas*/
+            grid-auto-rows: 100px;
+            /*
+             - posicionando areas no grid - definido o layout da grid - grid completa
+             - definimos 4 areas de grade, onde itens estão posicionados.
+             - area de grade abrange uma ou mais celulas por linha ou por coluna. cada item dentro de uma area de grade sera alinhado. temos quatro areas.
+            */
+            grid-template-areas: 
+                "a a a a b b b b"
+                "a a a a b b b b"
+                "c c c c d d d d"
+                "c c c c d d d d";
+        }
+
+        /*iten-grid*/
+        .item1{
+            /*define nome da area*/
+            grid-area: a;
+            /*o comportamento padrão de justify-self, que é esticar(stretch) - o iten se estica por toda a area mas somente na direção do eixo inline, da esquerda para direita na horizontal no modo de escrita tradicional*/
+            /*justify-self: stretch;*/
+        }
+
+        /*iten-grid*/
+        .item2{
+            /*define nome da area*/
+            grid-area: b;
+            /*
+             - a propriedade justify-self controla o alinhamento no eixo inline, o eixo inline percorre o eixo do bloco, é a direção na qual o texto no fluxo inline regular é executado.
+             - para definir o alinhamento de um item individualmente no eixo do inline usar a propriedade justify-self.
+             - estamos alterando o alinhamento somente do iten que esta dentro da area b, alinhando o iten no eixo inline na direção horizontal, a direção do fluxo do texto da esquerda para direita no modo de escrita tradicional. o valor start alinha o iten no inicio do eixo inline.
+            */
+            justify-self: start;
+        }
+
+        /*iten-grid*/
+        .item3{
+            /*define nome da area*/
+            grid-area: c;
+            /*
+             - estamos alterando o alinhamento somente do iten que esta dentro da area c, alinhando o iten no eixo inline na direção horizontal, a direção do fluxo do texto da esquerda para direita no modo de escrita tradicional. o valor end alinha o iten no final do eixo inline.
+            */
+            justify-self: end;
+        }
+
+        /*iten-grid*/
+        .item4{
+            /*define nome da area*/
+            grid-area: d;
+            /*
+            - estamos alterando o alinhamento somente do iten que esta dentro da area d, alinhando o iten no eixo inline na direção horizontal, a direção do fluxo do texto da esquerda para direita no modo de escrita tradicional. o valor center alinha o iten no centro do eixo inline.
+            */
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!--
+    * MIX-BLEND-MODE(MODO DE MISTURA)
+
+        Agora vamos ver o modo mix-blend-mode. Aqui apresentaremos os mesmos dois <div>s, mas cada um agora está em cima de um <div> simples com um fundo roxo, para mostrar como os elementos se misturarão
+
+        Você pode ver aqui que a mistura de mixagem múltipla misturou não apenas as duas imagens de fundo, mas também a cor <div> abaixo dela.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        article{
+            width: 280px;
+            height: 180px;
+            margin: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        div{
+            width: 250px;
+            height: 130px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        article div:first-child{
+            position: absolute;
+            top: 10px;
+            left: 0;
+            background: url(./colorful-heart.png) no-repeat center 20px;
+            background-color: green;
+        }
+
+        article div:last-child{
+            background-color: purple;
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            z-index: -1;
+        }
+
+        .multiply-mix{
+            /*
+             - Os modos de mesclagem CSS nos permitem adicionar modos de mesclagem a elementos que especificam um efeito de mesclagem quando dois elementos se sobrepõem.
+             - a cor final mostrada para cada pixel será o resultado de uma combinação da cor do pixel original e do pixel na camada abaixo isto.
+             - A propriedade CSS mix-blend-mode define como o conteúdo de um elemento deve se misturar com o conteúdo do pai do elemento e o plano de fundo do elemento.
+             - o valor multiply (multiplos): A cor final é o resultado da multiplicação das cores superior e inferior. Uma camada preta leva a uma camada final preta e uma camada branca não leva a nenhuma alteração. O efeito é como duas imagens impressas em filme transparente sobrepostas.
+             - define como o conteudo do elemento posiconado relativo ira se misturar com o conteudo do elemento sobreposto e o plano de fundo dele.
+            */
+            mix-blend-mode: multiply;
+        }
+
+    </style>
+</head>
+<body>
+
+    <article>Sem modo de mistura de mistura
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+    </article>
+
+    <article>Multiplicar mix
+        <div class="multiply-mix">
+
+        </div>
+        <div>
+        </div>
+    </article>
+
+</body>
+</html>

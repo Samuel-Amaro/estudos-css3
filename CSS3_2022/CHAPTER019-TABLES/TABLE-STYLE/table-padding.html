@@ -1,0 +1,86 @@
+<!--
+    * TABLE PADDING(PRENCHIMENTO DA TABELA)
+
+        - Para controlar o espaço entre a borda e o conteúdo de uma tabela, use a padding propriedade nos elementos <td> e <th>:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table geral
+         - para as celulas de cabeçalho
+        - para as celulas de dados
+        */
+        table, th, td{
+            /*a shorthand border e usada para abreviar as seguintes propriedades individuais border-width, border-style, border-color, adicionar uma borda nos elementos*/
+            border: 1px solid;
+        }
+        /*
+         - para o elemento table
+        */
+        table{
+            /*
+             - a propriedade width especifica uma largura para um elemento
+             - o valor em % Define a largura em porcentagem do bloco que o contém
+             - aqui o valor 100%, e que o elemento table ira ocupar 100% do espaço fornecido pelo elemento pai, no caso o elemento pai e o body, toda area visual do documento, assim o espaço fornecido e toda largura do documento
+            */
+            width: 100%;
+            /*
+             - a propriedade border-collapse define se as bordas da tabela devem ser recolhidas em uma unica borda
+             - recolhe a borda do elemento table
+             - isso e usado por causa que a tabela possui bordas duplas os elementos table, th, td possui bordas separadas.
+            */
+            border-collapse: collapse;
+        }
+        /*
+         - celulas de conteudo e de cabeçalho
+        */
+        td, th{
+            /*a propriedade padding shorthand e um abreviatura para as propriedades individuais, padding-top, padding-right, padding-bottom, padding-left, para adicionar espeço interno ao redor do conteudo das celulas entre o conteudo e a borda das celulas, a shorthand add o mesmo espaço a todos os lados*/
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Propriedades padding</h2>
+
+    <p>Essa propriedade adiciona espaço entre a borda e o conteúdo de uma tabela.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Primeiro Nome</th>
+                <th>Ultimo Nome</th>
+                <th>Poupança</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>$150</td>
+            </tr>
+            <tr>
+                <td>Joe</td>
+                <td>Swansom</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>Cleveland</td>
+                <td>Brown</td>
+                <td>$250</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

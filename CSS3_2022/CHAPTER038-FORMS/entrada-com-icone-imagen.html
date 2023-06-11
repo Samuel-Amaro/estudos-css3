@@ -1,0 +1,40 @@
+<!--
+    * ENTRADA COM ÍCONE/IMAGEM
+
+        - Se você quiser um ícone dentro da entrada, use a background-image propriedade e posicione-o com a background-position propriedade. Observe também que adicionamos um grande preenchimento à esquerda para reservar o espaço do ícone:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        input[type=text] {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            /*
+             - A background-position propriedade define a posição inicial de uma imagem de fundo.
+             - O primeiro valor é a posição horizontal e o segundo valor é a vertical.
+             - O canto superior esquerdo é 0 0.
+            */
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;           
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Campo de entrada com um icone dentro</h2>
+
+    <form>
+        <input type="text" name="search" placeholder="Search.."/>
+    </form>
+
+</body>
+</html>

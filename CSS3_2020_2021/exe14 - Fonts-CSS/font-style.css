@@ -1,0 +1,19 @@
+/*
+ * FONT STYLE ( ESTILO DA FONTE ) - CSS
+
+  - A font-style propriedade é usada principalmente para especificar texto em itálico.
+  - Esta propriedade font-style possui três valores:
+    
+    normal(normal): o texto é mostrado normalmente
+    itali(italico): o texto é mostrado em itálico
+    oblique(oblico): o texto está "inclinado" (oblíquo é muito semelhante ao itálico, mas menos suportado)
+*/
+.normal{
+    font-style: normal;
+}
+.italic{
+    font-style: italic;
+}
+.oblique{
+    font-style: oblique;
+}

@@ -1,0 +1,117 @@
+<!--
+    * ALINHANDO ITENS NO EIXO DO BLOCO(BLOCK AXIS)
+
+        As propriedades align-self e align-items controlam o alinhamento no eixo do bloco. Quando usamos essas propriedades, estamos alterando o alinhamento do item dentro da área da grade em que você o colocou.
+
+        USANDO ALIGN-ITENS
+
+            No exemplo a seguir, tenho quatro áreas de grade dentro da minha grade. Eu posso usar a align-items propriedade no contêiner de grade, para alinhar os itens usando um dos seguintes valores:
+
+                auto
+                normal
+                start
+                end
+                center
+                stretch
+                baseline
+                first baseline
+                last baseline
+
+        Lembre-se de que, uma vez definido align-items: start, a altura de cada filho <div> será determinada pelo conteúdo do elemento <div>. Isso contrasta com omitir align-items completamente, caso em que a altura de cada um <div> se estende para preencher sua área de grade.
+
+        A align-items propriedade define a align-self propriedade para todos os itens de grade filho. Isso significa que você pode definir a propriedade individualmente, usando align-self um item de grade.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container*/
+        .wrapper{
+            display: grid;
+            /*faixa de colunas explicita - faixa de 8 colunas flexiveis diminue e crescem de acordo com o espaço no conteiner-grip*/
+            grid-template-columns: repeat(8, 1fr);
+            /*espaço entre faixas de colunas e linhas - cria um espaço vazio de 10px*/
+            gap: 10px;
+            /*altura das faixas de linhas implicitas*/
+            grid-auto-rows: 100px;
+            /*
+             - posicionando areas no grid - definido o layout da grid - grid completa
+             - definimos 4 areas de grade, onde itens estão posicionados.
+            */
+            grid-template-areas: 
+                "a a a a b b b b"
+                "a a a a b b b b"
+                "c c c c d d d d"
+                "c c c c d d d d";
+            /*
+             - a propriedade align-itens controlam o alinhamento no eixo do bloco.
+             -  A align-items propriedade define a align-self propriedade para todos os itens de grade filho. 
+             - alinha as areas definidas no grid no block axis.
+             - estamos alterando o alinhamento dos item dentro da área da grade em que você o colocou. area de grade abrange uma ou mais celulas por linha ou por coluna. cada item dentro de uma area de grade sera alinhado. temos quatro areas.
+             - usamos o valor start
+            */
+            align-items: start;
+        }
+
+        /*iten-grid*/
+        .item1{
+            /*define nome da area*/
+            grid-area: a;
+        }
+
+        /*iten-grid*/
+        .item2{
+            /*define nome da area*/
+            grid-area: b;
+        }
+
+        /*iten-grid*/
+        .item3{
+            /*define nome da area*/
+            grid-area: c;
+        }
+
+        /*iten-grid*/
+        .item4{
+            /*define nome da area*/
+            grid-area: d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+</body>
+</html>

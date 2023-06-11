@@ -1,0 +1,37 @@
+<!--
+    * MARGIN COLLAPSE(RECOLHER MARGEN)
+
+        - Às vezes, duas margens colapsam em uma única margem.
+
+        - As margens superior e inferior dos elementos às vezes são recolhidas em uma única margem que é igual à maior das duas margens.
+
+        - Isso não acontece nas margens esquerda e direita! Apenas margens superior e inferior!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        h1{
+            /*
+             - margens são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas
+             - cria espaços ao redor do elemento, cria espaços externos, ao redor do elemento ou entre elementos
+             - usando a shorthand margin, para poder especificar todas as propriedades margin-top, margin right, margin bottom, margin left em uma unica propriedade.
+             - especificando 4 valores para a propriedade
+            */
+            margin: 0 0 50px 0; /*0px na margin-top, 0px na margin right, 50px na margin-bottom, 0px na margin-left*/ 
+        }
+        h2{
+            margin: 20px 0 0px 0; /*20px na margin-top, 0px na margin right, 0px na margin-bottom, 0px na margin-left*/
+        }
+    </style>
+</head>
+<body>
+
+    <p>Neste exemplo, o elemento h1 tem uma margem inferior de 50px e o elemento h2 tem uma margem superior de 20px. Portanto, a margem vertical entre h1 e h2 deveria ter sido de 70px (50px + 20px). No entanto, devido ao colapso da margem, a margem real acaba sendo 50px.</p>
+
+    <h1>Cabeçalho 1</h1>
+    <h2>Cabeçalho 2</h2>
+</body>
+</html>

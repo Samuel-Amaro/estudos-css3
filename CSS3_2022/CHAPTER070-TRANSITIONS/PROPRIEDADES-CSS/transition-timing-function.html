@@ -1,0 +1,81 @@
+<!--
+    * TRANSITION-TIMING-FUNCTION
+
+        A transition-timing-function propriedade CSS define como os valores intermediários são calculados para propriedades CSS afetadas por um efeito de transição.
+
+        Isso, em essência, permite estabelecer uma curva de aceleração para que a velocidade da transição possa variar ao longo de sua duração.
+
+        Esta curva de aceleração é definida usando uma <easing-function> para cada propriedade a ser transicionada.
+
+        Você pode especificar várias funções de atenuação; cada um será aplicado à propriedade correspondente conforme especificado pela transition-property propriedade, que funciona como uma transition-property lista. Se houver menos funções de atenuação especificadas do que na transition-property lista, o agente do usuário deve calcular qual valor é usado repetindo a lista de valores até que haja uma para cada propriedade de transição. Se houver mais funções de atenuação, a lista será truncada no tamanho correto. Em ambos os casos, a declaração CSS permanece válida.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        transition-timing-function: ease;
+        transition-timing-function: ease-in;
+        transition-timing-function: ease-out;
+        transition-timing-function: ease-in-out;
+        transition-timing-function: linear;
+        transition-timing-function: step-start;
+        transition-timing-function: step-end;
+
+        /*VALORES FUNÇÃO*/
+        transition-timing-function: steps(4, jump-end);
+        transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+
+        /*PALAVRA-CHAVES DE FUNCTIONS STEPS*/
+        transition-timing-function: steps(4, jump-start);
+        transition-timing-function: steps(10, jump-end);
+        transition-timing-function: steps(20, jump-none);
+        transition-timing-function: steps(5, jump-both);
+        transition-timing-function: steps(6, start);
+        transition-timing-function: steps(8, end);
+
+        /*MULTIPLAS FUNCTIONS DE TIMING*/
+        transition-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
+
+        /*VALORES GLOBAIS*/
+        transition-timing-function: inherit;
+        transition-timing-function: initial;
+        transition-timing-function: revert;
+        transition-timing-function: revert-layer;
+        transition-timing-function: unset;
+
+    * VALORES
+
+        <easing-function>: Cada um <easing-function> representa a função de atenuação para vincular à propriedade correspondente à transição, conforme definido em transition-property.
+
+        Os valores de palavras-chave NON-STEP(ease, linear, easy-in-out, etc.) representam cada uma curva de Bézier cúbica com valores fixos de quatro pontos, com o valor da função cubic-bezier() permitindo um valor não predefinido. As funções de temporização de passo dividem o tempo de entrada em um número especificado de intervalos que são iguais em comprimento. É definido por um número de passos e uma posição de passo.
+
+        ease: Igual a cubic-bezier(0.25, 0.1, 0.25, 1.0), o valor padrão, aumenta a velocidade no meio da transição, desacelerando no final.
+
+        linear: Igual a cubic-bezier(0.0, 0.0, 1.0, 1.0), transições a uma velocidade uniforme.
+
+        ease-in: Igual a cubic-bezier(0.42, 0, 1.0, 1.0), inicia lentamente, com a velocidade de transição aumentando até completar.
+
+        ease-out: Igual a cubic-bezier(0, 0, 0.58, 1.0), inicia a transição rapidamente, desacelerando a transição continua.
+
+        ease-in-out: Igual a cubic-bezier(0.42, 0, 0.58, 1.0), inicia a transição lentamente, acelera e depois desacelera novamente.
+
+        cubic-bezier(p1, p2, p3, p4): Uma curva cúbica-Bezier definida pelo autor, onde os valores de p1 e p3 devem estar no intervalo de 0 a 1.
+
+        steps(n, <jumpterm>): Exibe a transição ao longo de n paradas ao longo da transição, exibindo cada parada por períodos de tempo iguais. Por exemplo, se n é 5, há 5 etapas. Se a transição se mantém temporariamente em 0%, 20%, 40%, 60% e 80%, nos 20%, 40%, 60%, 80% e 100%, ou faz 5 paradas entre 0% e 100% ao longo a transição ou faz 5 paradas incluindo as marcas de 0% e 100% (nos 0%, 25%, 50%, 75% e 100%) depende de qual dos seguintes termos de salto é usado:
+
+            jump-start: Denota uma função contínua à esquerda, de modo que o primeiro salto ocorra quando a transição começar;
+
+            jump-end: Indica uma função contínua à direita, para que o último salto aconteça quando a animação terminar;
+
+            jump-none: Não há salto em nenhuma das extremidades. Em vez disso, manter a marca de 0% e a marca de 100%, cada uma por 1/n da duração.
+
+            jump-both: Inclui pausas nas marcas de 0% e 100%, adicionando efetivamente uma etapa durante o tempo de transição.
+
+            start: Igual a jump-start.
+
+            end: Igual a jump-end.
+
+            step-start: Igual a steps(1, jump-start).
+
+            step-end: Igual a steps(1, jump-end)
+
+-->

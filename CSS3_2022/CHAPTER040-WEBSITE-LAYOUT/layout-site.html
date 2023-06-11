@@ -1,0 +1,82 @@
+<!--
+    * LAYOUT DO SITE
+
+        Um site geralmente é dividido em cabeçalhos, menus, conteúdo e rodapé:
+
+        Há toneladas de designs de layout diferentes para escolher. No entanto, a estrutura acima é uma das mais comuns, e vamos dar uma olhada mais de perto neste tutorial.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            padding: 10px;
+        }
+        header, nav, aside, article{
+            background-color: #E7E9EB;
+        }
+        header{
+            text-align: center;
+            padding: 50px;
+            margin-bottom: 10px;
+        }
+        nav{
+            text-align: center;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+        aside{
+            width: 33.13%;
+            display: inline-block;
+            height: 300px;
+            text-align: center;
+        }
+        article{
+            width: 33.13%;
+            display: inline-block;
+            margin: 0px 0px;
+            height: 300px;
+            text-align: center;
+        }
+        footer{
+            margin: 10px;
+            background-color: #E7E9EB;
+            padding: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+        <header>
+            <h4>Cabeçalho</h4>
+        </header>
+        <nav>
+            <p>menu de navegação</p>
+        </nav>
+        <section>
+            <aside>
+                <p>Contéudo</p>
+            </aside>
+            <article>
+                <p>Contéudo principal</p>
+            </article>
+            <aside>
+                <p>Contéudo</p>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <p>Rodapé</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!--
+    * FUNÇÕES DE FORMA(SHAPE)
+
+        As funções a seguir podem ser usadas como valores para o <basic-shape> tipo de dados, que é usado nas propriedades clip-path, offset-path e shape-outside.
+
+    * CIRCLE(CIRCULO)
+
+        A função CSS circle() é um dos tipos de dados <basic-shape>.
+
+    * SINTAXE
+
+        shape-outside: circle(50%)
+        clip-path: circle(6rem at 12rem 8rem);
+
+    * VALORES
+
+        <shape-radius>: Isso pode ser a <length>, ou a <percentage> ou valores closest-side e farthest-side.
+
+            closest-side: Usa o comprimento do centro da forma até o lado mais próximo da caixa de referência. Para círculos, este é o lado mais próximo em qualquer dimensão.
+
+            farthest-side: Usa o comprimento do centro da forma até o lado mais distante da caixa de referência. Para círculos, este é o lado mais próximo em qualquer dimensão.
+
+        <position>: Move o centro do círculo. Pode ser a <length>, ou a <percentage>, ou valores como left.
+
+        No exemplo abaixo, a shape-outside propriedade tem um valor de circle(50%), que define um círculo em um elemento flutuante para o texto circular.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        img{
+            /*
+             - faz o elemento img flutuar a esquerda do elemento pai que o contem. ira flutuar a esquerda da div
+            */
+            float: left;
+            /*
+             - A especificação CSS Shapes permite a quebra de texto em torno de uma forma não retangular.
+             - usando a propriedade shape-outside com um valor de circle(50%), podemos dar o efeito do texto seguindo a linha do balão
+            */
+            shape-outside: circle(50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <img src="../../CHAPTER057-ADVANCE-STYLING-EFFECTS-SHAPES/round-balloon.png" alt="ballon"/>
+        <p>Em uma noite de novembro do ano de 1782, segundo a história, dois irmãos sentaram-se sobre sua fogueira de inverno na pequena cidade francesa de Annonay, observando as grinaldas de fumaça cinzenta da lareira enrolarem-se na ampla chaminé. Seus nomes eram Stephen e Joseph Montgolfier, eles eram fabricantes de papel por profissão e eram conhecidos como possuidores de mentes pensantes e um profundo interesse em todo conhecimento científico e novas descobertas. Antes daquela noite — uma noite memorável, como estava para provar —, centenas de milhões de pessoas assistiram às crescentes coroas de fumaça de suas fogueiras sem tirar nenhuma inspiração especial do fato.</p>
+    </div>
+</body>
+</html>

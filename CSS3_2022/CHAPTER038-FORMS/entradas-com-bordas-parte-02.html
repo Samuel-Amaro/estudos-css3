@@ -1,0 +1,38 @@
+<!--
+    Se você quiser apenas uma borda inferior, use a border-bottom propriedade:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            /*
+             - A border-bottom propriedade é uma propriedade abreviada(shorthand) para (na seguinte ordem):
+                border-bottom-width
+                border-bottom-style
+                border-bottom-color
+            */
+            border-bottom: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Campos de entrada com bordas inferior</h2>
+
+    <form>
+        <label for="fname">Primeiro Nome</label>
+        <input type="text" id="fname" name="fname"/>
+        <label for="lname">Último Nome</label>
+        <input type="text" id="lname" name="lname"/>
+    </form>
+
+</body>
+</html>

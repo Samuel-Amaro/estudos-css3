@@ -1,0 +1,57 @@
+<!--
+    * CRIANDO CALHAS(GAPS) ENTRE OS ITENS
+
+        Ao empacotar itens flexíveis, é provável que surja a necessidade de espaçá-los. Você pode ver no exemplo ao vivo abaixo que, para criar lacunas que também não criem uma lacuna nas bordas do contêiner, precisamos usar margens negativas no próprio contêiner flexível. Qualquer borda no contêiner flex é então movida para um segundo wrapper para que a margem negativa possa puxar os itens para esse elemento wrapper.
+
+        É esse requisito que as propriedades do gap, uma vez implementadas, resolverão para nós. As lacunas adequadas ocorrem apenas nas bordas internas dos itens.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+    <style>
+        .wrapper{
+            border: 2px dotted rgb(96, 139, 168);
+            width: 500px;
+        }
+
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #608ba8;
+        gap: 5px;
+        padding: 3px;
+        margin: -10px;
+      }
+
+      .box > * {
+        flex: 0 0 160px;
+        margin: 10px;
+        background-color: #dfe8ee;
+        color: black;
+        border-radius: 4px;
+      }
+
+      /**
+         -         */
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+        <div>Eight</div>
+        <div>Nine</div>
+        <div>Ten</div>
+      </div>
+    </div>
+  </body>
+</html>

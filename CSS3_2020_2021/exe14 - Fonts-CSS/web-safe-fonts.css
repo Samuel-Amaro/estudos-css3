@@ -1,0 +1,49 @@
+/*
+ * WEB SAFE FONTS(FONTES SEGURAS PARA WEB)
+
+  # OQUE SÃO WEB SAFE FONTS ?
+
+   - Fontes seguras para a Web são fontes instaladas universalmente em todos os navegadores e dispositivos.
+
+  # FONTES ALTERNATIVAS 
+
+   - No entanto, não existem fontes 100% totalmente seguras para a web. Sempre há uma chance de que uma fonte não seja encontrada ou não esteja instalada corretamente.
+   - Portanto, é muito importante sempre usar fontes alternativas.
+   - Isso significa que você deve adicionar uma lista de "fontes de backup" semelhantes na font-family propriedade. Se a primeira fonte não funcionar, o navegador tentará a próxima, a próxima e assim por diante. Sempre termine a lista com um nome de família de fonte genérico.
+*/
+/*
+ * Aqui, existem três tipos de fonte: Segoe UI, Tahoma e sans-serif. A segunda e a terceira fontes são backups, caso a primeira não seja encontrada.
+*/
+.f0{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.f1{
+    font-family: Arial,sans-serif;
+}
+.f2{
+    font-family: Verdana,sans-serif;
+}
+.f3{
+    font-family: Helvetica, sans-serif;
+}
+.f4{
+    font-family: Tahoma,sans-serif;
+}
+.f5{
+    font-family:'Trebuchet MS', sans-serif;
+}
+.f6{
+    font-family: 'Times New Roman',serif;
+}
+.f7{
+    font-family: Georgia,serif;
+}
+.f8{
+    font-family: Garamond,serif;
+}
+.f9{
+    font-family: 'Courier New',monospace;
+}
+.f10{
+    font-family: 'Brush Script MT',cursive;
+}

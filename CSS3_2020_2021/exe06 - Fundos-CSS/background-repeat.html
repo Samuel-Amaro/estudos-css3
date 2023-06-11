@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo de Repetição</title>
+    <style>
+         /*
+          * CSS BACKGROUND REPEAT - FUNDO DE REPETIÇÃO
+           - Por padrão, a background-image propriedade repete uma imagem horizontal e verticalmente.
+           - Algumas imagens devem ser repetidas apenas horizontal ou verticalmente, ou ficarão estranhas;
+           - como exemplo abaixo;
+         */
+         #bloco_estranho{
+             background-image: url("img-3.png");
+             height: 400px; /*altura da caixa*/
+         }
+         /*
+          - Se a imagem acima for repetida apenas horizontalmente ( background-repeat: repeat-x;), o plano de fundo ficará melhor:
+         */
+         #bloco_horizontal{
+            background-image: url("img-3.png");
+            background-repeat: repeat-x;
+            height: 400px; /*altura da caixa*/
+         }
+         /*
+          * CSS BACKGROUND-REPEAT: NO-REPEAT
+            - Mostrar a imagem de fundo apenas uma vez também é especificado pela background-repeat propriedade
+            - exemplo mostra a imagem de fundo apenas uma vez
+         */
+         #bloco_n_repete{
+             background-image: url("img-3.png");
+             background-repeat: no-repeat;
+             height: 400px; /*altura da caixa*/
+         }
+         /*
+          - No exemplo acima, a imagem de fundo é colocada no mesmo lugar que o texto. Queremos mudar a posição da imagem, para que não atrapalhe muito o texto.
+
+          * POSIÇÃO DE FUNDO CSS
+            - A background-position propriedade é usada para especificar a posição da imagem de fundo.
+
+           - exemplo posicionar a imagem no canto superior direito
+         */
+         #bloco_posicionado{
+             background-image: url("img-3.png");
+             background-repeat: no-repeat;
+             background-position: right top;
+             height: 400px; /*altura da caixa*/
+         }
+
+    </style>
+</head>
+<body>
+    <h1>Background Repeat</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus veniam numquam minus culpa excepturi reprehenderit quisquam enim facere alias, maxime ipsum? Est quidem officia placeat rerum earum ipsa nihil eum.</p>
+    <h2>Fundo de Repetição</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, dolores vitae animi minima libero culpa, magni id exercitationem nulla itaque est quos similique delectus vel facilis error provident fugit beatae!</p>
+    <h3>Fundo de repetição estranho</h3>
+    <div id="bloco_estranho">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit numquam dignissimos consequuntur beatae adipisci voluptates perferendis placeat reiciendis tempora mollitia vitae sunt nam reprehenderit illum expedita dolorem veniam, amet aspernatur!</p>
+    </div>
+    <h3>Fundo de repetição so horizontal</h3>
+    <div id="bloco_horizontal">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit numquam dignissimos consequuntur beatae adipisci voluptates perferendis placeat reiciendis tempora mollitia vitae sunt nam reprehenderit illum expedita dolorem veniam, amet aspernatur!</p>
+    </div>
+    <h3>Fundo de repetição so uma vez</h3>
+    <div id="bloco_n_repete">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit numquam dignissimos consequuntur beatae adipisci voluptates perferendis placeat reiciendis tempora mollitia vitae sunt nam reprehenderit illum expedita dolorem veniam, amet aspernatur!</p>
+    </div>
+    <h3>Fundo de repetição posicionado</h3>
+    <div id="bloco_posicionado">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit numquam dignissimos consequuntur beatae adipisci voluptates perferendis placeat reiciendis tempora mollitia vitae sunt nam reprehenderit illum expedita dolorem veniam, amet aspernatur!</p>
+    </div>
+</body>
+</html>

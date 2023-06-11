@@ -1,0 +1,40 @@
+<!--
+    * PSEUDO-ELEMENTO ::MARKER
+
+        - O ::marker pseudoelemento seleciona os marcadores dos itens da lista.
+
+        - O exemplo a seguir estiliza os marcadores de itens de lista:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::marker pseudoelemento seleciona os marcadores dos itens da lista.
+         - seleciona os marcadores de itens de lista, de qualquer tipo de lista, como lista ordenada, não ordenada e de descrição.
+        */
+        ::marker{
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+
+   <ul>
+       <li>Coffee</li>
+       <li>Tea</li>
+       <li>Milk</li>
+   </ul>
+
+   <ol>
+       <li>First</li>
+       <li>Second</li>
+       <li>Third</li>
+   </ol>
+
+</body>
+</html>

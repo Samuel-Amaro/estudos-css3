@@ -1,0 +1,59 @@
+<!--
+    * LINK BUTTONS(BOTÕES DE LINK)
+
+        - Este exemplo demonstra um exemplo mais avançado onde combinamos várias propriedades CSS para exibir links como caixas/botões:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        /**
+         - alguns regras ao definir o estilo de varios estados de um link, algumas regras de ordem:
+
+            - a:hover deve vir depois de a:link e a:visited
+
+            - a:active deve vir depois de a:hover
+        */
+
+        /*
+         - o estado a:link e um link normal e não visitado
+         - o estado a:visited um estado em que o usuario visitou o link
+        */
+        a:link,  a:visited{
+            /*a propriedade background-color especifica uma cor de fundo para o link, a cor de fundo sera um valor hexadecimal, para quando o link não for visitado, e para quando for visitado a mesma cor de fundo*/
+            background-color: #f44336;
+            /*especifica a cor do texto*/
+            color: white;
+            /*a shorthand padding e uma abreviação para padding-top, padding-right, padding-bottom, paddding-left, especificar dois valores e padding-top: 14px, padding-bottom: 14px e padding-right: 25px e padding-left: 25px*/
+            padding: 14px 25px;
+            /*o texto sera alinhado ao centro, centraliza o texto*/
+            text-align: center;
+            /*
+             - shorthand text-decoration, e uma abreviação para text-decoration-line, text-decoration-color, text-decoration-style, text-decoration-thickness
+             - especificando somente um valor para a primeira propriedade text-decoration-line, o valor none nesta propriedade não especifica nenhuma linha para a decoração de texto*/
+            text-decoration: none;
+            /*propriedade ainda não estuda*/
+            display: inline-block;
+        }
+        /*
+         - o estado a:hover quando o usuario passa o mouse sobre o link, este estado de um link ao ser estilizado para funcionar tem que vir depois de  a:link e a:visited
+         - o estado a:active e um link no momento em que e clicado, este estado ao ser estilizado para funcionar deve vir depois do estado a:hover
+        */
+        a:hover, a:active{
+            /*a propriedade background-color especifica uma cor de fundo para o link, a cor de fundo sera vermelha quando o usuario passa o mouse sobre o link, e quando o usuario clicar no link para visitalo*/
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Botão Link</h2>
+
+    <p>Um link com o estilo de um botão:</p>
+
+    <a href="#" target="_blank" rel="external">Este é um link</a>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!--
+    * GRADIENTE LINEAR CSS
+
+
+    * DIREÇÃO - DIAGONAL
+
+      - Você pode fazer um gradiente diagonalmente especificando as posições iniciais horizontal e vertical.
+      - 
+      - O exemplo a seguir mostra um gradiente linear que começa no canto superior esquerdo (e vai para o canto inferior direito). Ele começa vermelho, mudando para amarelo:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradiente Linear</title>
+    <style>
+        div#grad1{
+            height: 200px;
+            /*definindo o fundo do elemento como um gradiente liner, que começa em vermelho no canto superior esquerdo fazendo a transição para amarelo no canto inferior direito*/
+            background-image: linear-gradient(to bottom right,red, yellow);
+        }
+    </style>
+</head>
+<body>
+    <h1>Gradiente Linear</h1>
+    <h2>Direção - Diagonal</h2>
+    <p><strong>Exemplo:</strong> O exemplo a seguir mostra um gradiente linear que começa no canto superior esquerdo (e vai para o canto inferior direito). Ele começa vermelho, mudando para amarelo:</p>
+    <p>Este gradiente linear começa em vermelho no canto superior esquerdo, fazendo a transição para amarelo (no canto inferior direito)</p>
+    <div id="grad1"></div>
+</body>
+</html>

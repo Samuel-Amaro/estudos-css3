@@ -1,0 +1,81 @@
+<!--
+    * LAYOUT CSS - DISPLAY: INLINE-BLOCK
+
+    * DISPLAY: INLINE-BLOCK(BLOCO EMBUTIDO)
+
+        - Comparado com display: inline, a principal diferença é que display: inline-block permite definir uma largura e uma altura no elemento.
+
+        - Além disso, com display: inline-block, as margins/padding top e bottom são respeitados, mas com display: inline eles não.
+
+        - Comparado com display: block, a principal diferença é que display: inline-block não adiciona uma quebra de linha após o elemento, então o elemento pode ficar ao lado de outros elementos.
+
+        - O exemplo a seguir mostra o comportamento diferente de display: inline, display: inline-block e display: block.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        span.a{
+            /*
+             - A display propriedade especifica se/como um elemento é exibido.
+             - Cada elemento HTML tem um valor de exibição padrão dependendo do tipo de elemento que é. O valor de exibição padrão para a maioria dos elementos é block(bloco) ou inline(embutido).
+             - o valor inline e um elemento embutido não inicia em uma nova linha e só ocupa a largura necessária. Quaisquer propriedades de altura e largura não terão efeito
+            */
+            display: inline;
+            /*essa propriedade width não tem efeito em elementos exibidos como inline*/
+            width: 100px;
+            /*
+             - essa propriedade width não tem efeito em elementos exibidos como inline
+            */
+            height: 100px;
+            padding: 5px;
+            border: 1px solid blue;
+            background-color: yellow;
+        }
+        span.b{
+            /*
+             - o valor inline-block(bloco embutido) exibe o elemento como um elemento de bloco embutido, o proprio elemento e formatado como um bloco inline, mas permite definir uma largura e uma altura no elemento. as margins/padding top e bottom são respeitados.  não adiciona uma quebra de linha após o elemento.
+            */
+            display: inline-block;
+            /*essa propriedade width e respeitada em elemetos exibidos como inline-block*/
+            width: 100px;
+            /*essa propriedade height e respeitada em elemetos exibidos como inline-block*/
+            height: 100px;
+            /*essa propriedade padding e respeitada em elemetos exibidos como inline-block*/
+            padding: 5px;
+            border: 1px solid blue;
+            background-color: yellow;
+        }
+        span.c{
+            /**
+             - o valor block, o elemento Exibe um elemento como um elemento de bloco Começa em uma nova linha e ocupa toda a largura.
+            */
+            display: block;
+            /*essa propriedade width e respeitada em elemetos exibidos como block*/
+            width: 100px;
+            /*essa propriedade height e respeitada em elemetos exibidos como block*/
+            height: 100px;
+            /*essa propriedade padding e respeitada em elemetos exibidos como block*/
+            padding: 5px;
+            border: 1px solid blue;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade display(exibição)</h1>
+
+    <h2>display: inline</h2>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod perferendis similique non deleniti corporis ullam <span class="a">Aliquam</span> <span class="a">venenatis</span>perspiciatis tenetur vero, ea amet cum, quibusdam voluptate reprehenderit maxime pariatur eveniet accusamus nostrum repellat!</div>
+
+    <h2>display: inline-block</h2>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod perferendis similique non deleniti corporis ullam <span class="b">Aliquam</span> <span class="b">venenatis</span>perspiciatis tenetur vero, ea amet cum, quibusdam voluptate reprehenderit maxime pariatur eveniet accusamus nostrum repellat!</div>
+
+    <h2>display: block</h2>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod perferendis similique non deleniti corporis ullam <span class="c">Aliquam</span> <span class="c">venenatis</span>perspiciatis tenetur vero, ea amet cum, quibusdam voluptate reprehenderit maxime pariatur eveniet accusamus nostrum repellat!</div>
+
+</body>
+</html>

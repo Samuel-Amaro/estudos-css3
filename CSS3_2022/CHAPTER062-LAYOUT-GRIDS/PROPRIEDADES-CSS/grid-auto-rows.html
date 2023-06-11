@@ -1,0 +1,65 @@
+<!--
+    * PROPRIEDADE CSS grid-auto-rows
+
+        A propriedade CSS grid-auto-rows especifica o tamanho de uma faixa de linha de grade criada implicitamente ou padrão de faixas.
+
+        Se um item de grade é posicionado em uma linha que não é dimensionada explicitamente por grid-template-rows, faixas de grade implícitas são criadas para mantê-lo. Isso pode acontecer posicionando explicitamente em uma linha que está fora do intervalo ou pelo algoritmo de posicionamento automático criando linhas adicionais.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        grid-auto-rows: min-content;
+        grid-auto-rows: max-content;
+        grid-auto-rows: auto;
+
+        /*VALORES COMPRIMENTO*/
+        grid-auto-rows: 100px;
+        grid-auto-rows: 20cm;
+        grid-auto-rows: 50vmax;
+
+        /*VALORES PORCENTAGEM*/
+        grid-auto-rows: 10%;
+        grid-auto-rows: 33.3%;
+
+        /*VALORES <flex> fleviveis*/
+        grid-auto-rows: 0.5fr;
+        grid-auto-rows: 3fr;
+
+        /*VALORES minmax()*/
+        grid-auto-rows: minmax(100px, auto);
+        grid-auto-rows: minmax(max-content, 2fr);
+        grid-auto-rows: minmax(20%, 80vmax);
+
+        /*VARIOS VALORES DE TAMANHO DE FAIXA*/
+        grid-auto-rows: min-content max-content auto;
+        grid-auto-rows: 100px 150px 390px;
+        grid-auto-rows: 10% 33.3%;
+        grid-auto-rows: 0.5fr 3fr 1fr;
+        grid-auto-rows: minmax(100px, auto) minmax(max-content, 2fr) minmax(20%, 80vmax);
+        grid-auto-rows: 100px minmax(100px, auto) 10% 0.5fr fit-content(400px);
+
+        /*VALORES GLOBAIS*/
+        grid-auto-rows: inherit;
+        grid-auto-rows: initial;
+        grid-auto-rows: revert;
+        grid-auto-rows: revert-layer;
+        grid-auto-rows: unset;
+
+    * VALORES
+
+        <length-comprimento>: É um comprimento não negativo.
+
+        <percentage-porcentage>: É um valor <percentage> não negativo em relação ao tamanho do bloco do contêiner da grade. Se o tamanho do bloco do contêiner de grade for indefinido, o valor percentual será tratado como auto.
+
+        <flex>: É uma dimensão não negativa com a unidade fr especificando o fator de flexibilidade da faixa. Cada faixa de tamanho <flex> ocupa uma parte do espaço restante em proporção ao seu fator de flexibilidade. Ao aparecer fora de uma notação minmax(), implica um mínimo automático (ou seja, minmax(auto, <flex>)).
+
+        max-content: É uma palavra-chave que representa a maior contribuição máxima de conteúdo dos itens da grade que ocupam a faixa da grade.
+
+        min-content: É uma palavra-chave que representa a maior contribuição mínima de conteúdo dos itens da grade que ocupam a faixa da grade.
+
+        minmax(min, max): É uma notação funcional que define um intervalo de tamanho maior ou igual a min e menor ou igual a max. Se max for menor que min, max será ignorado e a função será tratada como min. No máximo, um valor <flex> define o fator de flexibilidade da faixa. No mínimo, ele é tratado como zero (ou min-content, se o contêiner de grade for dimensionado sob uma restrição de conteúdo mínimo).
+
+        fit-content([<comprimento> | <porcentagem>]): Representa a fórmula min(max-content, max(auto, argument)), que é calculada de forma semelhante a auto (ou seja, minmax(auto, max-content)), exceto que o tamanho da faixa é fixado no argumento se for maior que o mínimo automático.
+
+        auto: É uma palavra-chave idêntica ao max-content se for um máximo. No mín, representa o maior tamanho mínimo (conforme especificado por min-width/min-height) dos itens da grade que ocupam a trilha da grade.Observação: tamanhos de rastreamento automático (e somente tamanhos de rastreamento automático) podem ser esticados pelas propriedades align-content e justify-content.
+-->

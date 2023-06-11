@@ -1,0 +1,32 @@
+<!--
+    * CENTRALIZAR VERTICALMENTE - USANDO FLEXBOX
+
+        - Você também pode usar o flexbox para centralizar as coisas. Apenas observe que o flexbox não é suportado no IE10 e em versões anteriores:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Centralizar com FlexBox</h2>
+
+    <p>Um contêiner com as propriedades justify-content e align-items definidas para o centro alinhará o(s) item(ns) no centro (em ambos os eixos).</p>
+
+    <div class="center">
+        <p>Estou centrado verticalmente e horizontalmente</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!--
+    * PROPRIEDADE CSS BACKGROUND-CLIP(CLIPE DE FUNDO)
+
+    * DEFINIÇÃO E USO
+
+        - A background-clip propriedade define até onde o fundo (cor ou imagem) deve se estender dentro de um elemento.
+
+    * SINTAXE CSS:
+
+        background-clip: border-box|padding-box|content-box|initial|inherit;
+
+    * VALORES DE PROPRIEDADE
+
+        VALUE: border-box(CAIXA DE BORDA)
+        DESCRIPTION: Valor padrão. O fundo se estende por trás da fronteira(BORDA)
+        ----------------------------------
+        VALUE: padding-box(CAIXA DE PREENCHIMENTO)
+        DESCRIPTION: O plano de fundo estende-se até a borda interna(PADDING) da borda
+        ----------------------------------
+        VALUE: content-box(CAIXA DE CONTEUDO)
+        DESCRIPTION: O fundo se estende até a borda da caixa de conteúdo
+        ----------------------------------
+        VALUE: initial
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ----------------------------------
+        VALUE: inherit
+        DESCRIPTION: Herda esta propriedade de seu elemento pai
+        ----------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*seletor de id, seleciona um elemento que possua o id especificado*/
+        #exemplo1{
+            border: 10px dotted black;
+            padding: 15px;
+            /*shorthand background para encurta codigo, especifica somente o primeiro valor para a proprieadade background color, especificar uma cor pelo seu nome predefinido*/
+            background: lightblue;
+            /*background-clip propriedade define até onde o fundo (cor ou imagem) deve se estender dentro de um elemento. o valor border-box, o elemento background vai ate a borda*/
+            background-clip: border-box;
+        }
+        #exemplo2{
+            border: 10px dotted black;
+            padding: 15px;
+            /*shorthand background para encurta codigo, especifica somente o primeiro valor para a proprieadade background color, especificar uma cor pelo seu nome predefinido*/
+            background: lightblue;
+            /*background-clip propriedade define até onde o fundo (cor ou imagem) deve se estender dentro de um elemento. o valor padding-box, o elemento background estende-se até a borda interna(PADDING) da borda, vai até o prenchimento interno, entre o conteudo do elemento e a borda*/
+            background-clip: padding-box;
+        }
+        #exemplo3{
+            border: 10px dotted black;
+            padding: 15px;
+            /*shorthand background para encurta codigo, especifica somente o primeiro valor para a proprieadade background color, especificar uma cor pelo seu nome predefinido*/
+            background: lightblue;
+            /*background-clip propriedade define até onde o fundo (cor ou imagem) deve se estender dentro de um elemento. o valor content-box, O fundo se estende até a borda da caixa de conteúdo*/
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade background-clip</h1>
+
+    <p>A propriedade background-clip define até que ponto o plano de fundo deve se estender dentro de um elemento.</p>
+
+    <p>background-clip: border-box (este é o padrão):</p>
+
+    <div id="exemplo1">
+        <p>O fundo se estende por trás da borda.</p>
+    </div>
+    
+    <p>background-clip: padding-box:</p>
+
+    <div id="exemplo2">
+        <p>O plano de fundo se estende até a borda interna da borda(padding).</p>
+    </div>
+
+    <p>background-clip: content-box:</p>
+
+    <div id="exemplo3">
+        <p>O plano de fundo se estende até a borda da caixa de conteúdo.</p>
+    </div>
+
+</body>
+</html>

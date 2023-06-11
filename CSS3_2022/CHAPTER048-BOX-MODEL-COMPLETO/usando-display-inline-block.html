@@ -1,0 +1,77 @@
+<!--
+    * USANDO DISPLAY: inline-block
+
+        Existe um valor especial de display, que oferece um meio-termo entre inline e block. Isso é útil para situações em que você não deseja que um item entre em uma nova linha, mas deseja que ele respeite width e height e evite a sobreposição vista acima. 
+
+        Um elemento com display: inline-block faz um subconjunto das coisas do bloco que já conhecemos: 
+
+            o width e height propriedades são respeitadas.
+            
+            padding, margin, e border fará com que outros elementos sejam empurrados para fora da caixa. 
+
+        No entanto, ele não quebra em uma nova linha e só se tornará maior que seu conteúdo se você adicionar explicitamente width e height propriedades 
+
+        Neste próximo exemplo, adicionamos display: inline-block para nosso <span> elemento. Tente mudar isso para display: block ou removendo a linha completamente para ver a diferença nos modelos de exibição
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - o span elemento e uma caixa inline
+         - A caixa não quebrará em uma nova linha.
+         - o width e height propriedades não serão aplicadas. 
+         - Preenchimento vertical(padding vertical), margens(margins) e bordas(borders) serão aplicados, mas não farão com que outras caixas embutidas se afastem da caixa. 
+         - Preenchimento horizontal(padding horizontal), margens(margin) e bordas(border) serão aplicados e farão com que outras caixas embutidas(inline) se afastem da caixa.
+        */
+        span{
+            /*
+             - A margem é um espaço invisível ao redor de sua caixa. Ele empurra outros elementos para longe da caixa. As margens podem ter valores positivos ou negativos.
+             - o elemento so aceita margin horizontais definidos nos lados top, e bottom
+            */
+            margin: 20px;
+            /*
+             - O preenchimento fica entre a borda e a área de conteúdo. Ao contrário das margens, você não pode ter quantidades negativas de preenchimento, portanto, o valor deve ser 0 ou um valor positivo.
+             - Podemos controlar o preenchimento em todos os lados de um elemento usando o padding propriedade
+             - so aceita padding vertical, no top e bottom
+            */
+            padding: 20px;
+            /*
+             - a propriedade width não e respeitada
+            */
+            width: 80px;
+            /*
+             - a propriedade height não e respeitada
+            */
+            height: 50px;
+            background-color: lightblue;
+            /*
+             - A borda é desenhada entre a margem e o preenchimento de uma caixa.
+             - Você pode definir a largura, estilo ou cor de todas as quatro bordas de uma só vez usando o border propriedade.
+            */
+            border: 2px solid blue;
+            /*
+             - a propriedade display determina tipo de caixa aplicado a um elemento é definido por display valores de propriedade.
+             - display aplica uma caixa de tipo block externa ao elemento
+             - o valor inline-block(bloco embutido)
+             
+                o width e height propriedades são respeitadas.
+            
+                padding, margin, e border fará com que outros elementos sejam empurrados para fora da caixa. 
+
+                No entanto, ele não quebra em uma nova linha e só se tornará maior que seu conteúdo se você adicionar explicitamente width e height propriedades 
+            */
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>Eu sou um parágrafo e este é um <span>span</span> dentro desse parágrafo. Um span é um elemento embutido e, portanto, não respeita largura e altura.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!--
+    * CSS OUTLINE(CONTORNO)
+
+        - Um contorno(outline) é uma linha que é desenhada em torno de elementos, FORA das bordas, para fazer o elemento "se destacar".
+
+        - CSS tem as seguintes propriedades de outline(contorno):
+
+            outline-style(estilo do contorno)
+            outline-color(cor do contorno)
+            outline-width(largura contorno)
+            outline-offset(deslocamento contorno)
+            outline(shorthand contorno)
+
+        - Nota: O contorno difere(e diferente) das bordas! Ao contrário da borda, o contorno é desenhado fora da borda do elemento e pode sobrepor outro conteúdo. Além disso, o contorno NÃO faz parte das dimensões do elemento; a largura e a altura totais do elemento não são afetadas pela largura do contorno.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Box Model</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin: 15px;
+            border: 1px solid black;
+            padding: 45px;
+            text-align: center;
+            font-size: 20px;
+        }
+        div.border{
+            background-color: #F1F1F1;
+        }
+        div.outline{
+            background-color: #04AA6D;
+            border: 2px dashed white;
+        }
+        div.content{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outline">
+        <span>Outline</span>
+        <div class="border">
+            <span>Border</span>
+            <div class="content">
+                <span>Content</span>
+            </div> 
+        </div>
+    </div>
+
+</body>    
+</html>

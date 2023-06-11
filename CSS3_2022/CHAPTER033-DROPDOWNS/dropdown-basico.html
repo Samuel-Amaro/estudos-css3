@@ -1,0 +1,89 @@
+<!--
+    * DROPDOWNS CSS(LISTA SUSPENSA)
+
+        - Crie um menu suspenso flutuante com CSS.
+
+    * DROPDOWNS BASICO
+
+        - Crie uma caixa suspensa que aparece quando o usuário move o mouse sobre um elemento.
+
+    * EXEMPLO EXPLICADO
+
+        - HTML) Use qualquer elemento para abrir o conteúdo suspenso, por exemplo, um elemento <span> ou <button>.
+
+        - Use um elemento de contêiner (como <div>) para criar o conteúdo suspenso e adicione o que quiser dentro dele.
+
+        - Enrole um elemento <div> em torno dos elementos para posicionar o conteúdo da lista suspensa corretamente com CSS.
+
+        - CSS) A .dropdown classe usa position:relative, que é necessário quando queremos que o conteúdo do menu suspenso seja colocado logo abaixo do botão suspenso (usando position:absolute).
+
+        - A .dropdown-contentclasse contém o conteúdo suspenso real. Ele está oculto por padrão e será exibido ao passar o mouse (veja abaixo). Observe min-widthque está definido para 160px. Sinta-se à vontade para mudar isso. Dica: Se você quiser que a largura do conteúdo do menu suspenso seja tão grande quanto o botão do menu suspenso, defina o widthpara 100% (e overflow:auto ative a rolagem em telas pequenas).
+
+        - Em vez de usar uma borda, usamos a box-shadow propriedade CSS para fazer o menu suspenso parecer um "cartão".
+
+        - O :hover seletor é usado para mostrar o menu suspenso quando o usuário move o mouse sobre o botão suspenso.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        div.dropdown{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            display: inline-block;
+        }
+
+        div.dropdown-content{
+            display: none;
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancestral deste elemento <div class="dropdow-content"> e o elemento <div class="dropdown"> pois contem o elemento, e o pai do elemento e possui a position diferente de static
+            */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            /*
+             - a propriedade z-index  especifica a ordem de pilha de um elemento.
+             - qual elemento deve ser colocado na frente ou atrás dos outros
+             - um elemento pode ter a ordem de pilha negativa ou positiva
+             - o elemento com ordem de pilha positiva e o elemento que vai ser colocado na frente o elemento com ordem de pilha negativa e o elemento que ser colocado atras
+            */
+            z-index: 1;
+        }
+        
+        /*
+         - o usuario ao passar o mouse por cima do elemento div.dropdown, o elemento descendente recebera o seguinte estilo abaixo
+        */
+        div.dropdown:hover .dropdown-content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <h2>Passe o mouse lista suspensa</h2>
+        </header>
+        <p>Mova o mouse sobre o texto abaixo para abrir o conteúdo suspenso.</p>
+    </main>
+
+    <div class="dropdown">
+        <span>Passe o mouse sobre min</span>
+        <div class="dropdown-content">
+            <p>Hello World!</p>
+        </div>
+    </div>
+
+</body>
+</html>

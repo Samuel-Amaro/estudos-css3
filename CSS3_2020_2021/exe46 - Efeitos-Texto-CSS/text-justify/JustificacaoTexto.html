@@ -1,0 +1,38 @@
+<!--
+    * A PROPRIEDADE DE JUSTIFICAÇÃO DE TEXTO CSS
+
+      - A text-justify propriedade especifica o método de justificação do texto quando text-align é definido como "justify".
+
+      - SINTAXE:
+
+        text-justify: auto|inter-word|inter-character|none|initial|inherit;
+
+        inter-word: Aumenta/Diminui o espaço entre as palavras;
+
+        inter-character: Aumenta/Diminui o espaço entre caracteres	
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justificação texto</title>
+    <style>
+        p.teste{
+            /*texto alinhando como justificado*/
+            text-align: justify;
+            /*o texto fica com o metodo de justificação de aumentar e diminuir o espaço entre palavras*/
+            text-justify: inter-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Justifição de texto - text-justify;</h1>
+    <p><strong>Exemplo:</strong> Defina o método de justificação como "entre palavras" quando o alinhamento de texto estiver definido como "justificar":</p>
+    <p class="teste">Em meus anos de juventude e vulnerabilidade, meu pai me deu alguns conselhos que venho pensando desde então. 'Sempre que você sentir vontade de criticar alguém', ele me disse, 'lembre-se de que todas as pessoas neste mundo não tiveram as vantagens que você teve.'</p>
+    <p><strong>DICA:</strong> Redimensione a janela do navegador para ver como funcionar o valor "justify"</p>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!--
+    * MAIS EXEMPLOS
+
+    * topNav responsivo
+
+        - Como usar consultas de mídia CSS para criar uma navegação superior responsiva.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        body{
+            margin: 0;
+        }
+
+        nav{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        nav a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            float: left;
+        }
+        /*
+         - pseudo-class :not(selector) seleciona todos os elementos que não sejam o selector
+         - pseudo-class captura um estado especial de um elemento,
+         - o elemento sera selecionado ao usuario passar o mouse por cima do elemento <a> que não seja o que tenha a classe .active e que seja descendente de um elemento nav.topnav
+        */
+        nav.topnav a:hover:not(.active){
+            background-color: #111;
+        }
+
+        .active{
+            background-color: #04AA6D;
+        }
+
+        nav.topnav a.right{
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav.topnav a.right, nav.topnav a{
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <nav class="topnav">
+            <a class="active" href="#home" target="_self" rel="next">Home</a>
+            <a href="#news" target="_self" rel="next">News</a>
+            <a href="#contact" target="_self" rel="next">Contact</a>
+            <a class="right" href="#about" target="_self" rel="next">About</a>
+        </nav>
+    </aside>
+    <main>
+        <header>
+            <h2>Exemplo Topnav responsiva</h2>
+        </header>
+        <section>
+            <p>Este exemplo usa consultas de mídia para empilhar o topnav verticalmente quando o tamanho da tela é de 600px ou menos.</p>
+            <p>Você aprenderá mais sobre consultas de mídia e web design responsivo posteriormente em nosso Tutorial de CSS</p>
+        </section>
+    </main>
+    <footer>
+        <h4>Redimensione a janela do navegador para ver o efeito.</h4>
+    </footer>
+
+</body>
+</html>

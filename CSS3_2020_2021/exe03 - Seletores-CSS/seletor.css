@@ -1,0 +1,100 @@
+/*
+ * SELETORES CSS
+   # SELETORES CSS
+     - Os seletores CSS são usados ​​para "encontrar" (ou selecionar) os elementos HTML que você deseja estilizar.
+     - pode-se dividir os seletores CSS em cinco categorias:
+      1 - seletores simples(Selecione os elementos com base no nome, id, classe);
+      2 - seletores combinadores(selecione os elementos com base em uma relação especifica entre eles)
+      3 - seletores de pseudoclasse(selecione os elementos com base em um determinado estado)
+      4 - seletores de pseudoelementos(selecione e estilize uma parte de um elemento)
+      5 - seletores de atributos(selecione os elementos com base em um atributo ou valor de atributo)
+*/
+
+/*
+ * O SELETOR DE ELEMENTO CSS
+   - o seletor de elemento seleciona elementos HTML com base no nome do elemento;
+   - exemplo: abaixo todos os elementos <p>, da tag paragrafo, na pagina serão alinhado ao centro, com uma cor de texto vermelha
+*/
+p{
+   text-align: center;
+   color: red; 
+}
+/*
+ * O SELETOR DE ID CSS (#)
+   - O seletor de id usa o atributo id de um elemento HTML para selecionar um elemento específico;
+   - O id de um elemento é único dentro de uma página, então o seletor de id é usado para selecionar um elemento único!
+   - Para selecionar um elemento com um id específico, escreva um caractere hash (#), seguido pelo id do elemento.
+   - exemplo sintaxe:
+     #nomeElementoId{
+       declração css; 
+    }
+    - exemplo: o titulo da pagina, o titulo central, sera alinhado ao centro da pagina, e com cor de texto;
+*/
+#tituloPrincipal{
+    text-align: center;
+    color: lightslategrey;
+}
+/*
+ * O SELETOR DE CLASSE CSS (.)
+   - O seletor de classe seleciona elementos HTML com um atributo de classe específico;
+   - Para selecionar elementos com uma classe específica, escreva um ponto (.), Seguido do nome da classe.
+   - exemplo sintaxe:
+     .nomeClasse{
+           declaração css; 
+    }
+    - exemplo: todos elementos com a classe, rodape, sera centralizado e com cor de fundo;
+*/
+.rodape{
+      text-align: center;
+      background-color: lightgrey;
+      color: black;
+}
+/*
+ * OBS: SOBRE O SELETOR DE CLASSE;
+   - posso especificar que apenas elemntos HTML especificos devem ser afetados por uma classe;
+    exemplo sintaxe:
+   elementoHTMLespecifico.nomeClasse{
+        declaração css1;
+        declaração css2;
+   }
+   - os elementos HTML também podem se referir a mais de uma classe;
+    exemplo sintaxe:
+     <p class="centralizado ampla"> meu paragrafo. <p>
+*/
+/*
+ * O SELETOR UNIVERSAL CSS (*)
+   - o seletor universal(*) seleciona todos os elementos HTML na pagina
+   - exemplo todos os elementos na pagina terão uma cor de fundo, e um espaço interno entre  o conteudo e a borda, em cada respectiva caixa do elemento, e um cor de borda, e uma largura da borda, e um estilo da borda;
+*/
+* {
+    background-color: lightblue;
+    padding: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+/*
+ * O SELETOR DE AGRUPAMENTO CSS
+  - o seletor de agrupamento seleciona todos os elementos HTML com as mesmas definições de estilo;
+ 
+  h1 {
+   text-align: center;
+   color: red;
+  }
+  h2 {
+    text-align: center;
+    color: red;
+  }
+  p {
+    text-align: center;
+    color: red;
+  }
+   
+  - Será melhor agrupar os seletores, para minimizar o código.
+  Para agrupar seletores, separe cada seletor com uma vírgula;
+
+  h1,h2,p{
+        text-align: center;
+        color: red;
+ }
+*/

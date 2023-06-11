@@ -1,0 +1,140 @@
+<!--
+    * DIMENSIONAMENTO FLEXÍVEL DE ELEMENTOS FLEX
+
+        Vamos agora voltar ao nosso primeiro exemplo, e ver como podemos controlar qual a proporção de espaço os elementos flex pode tomar. 
+
+        Primeiro adicione a seguinte regra no final do seu CSS:
+
+        article {
+            flex: 1;
+        }
+
+        Esse é um valor relativo sem unidade que define quanto de espaço disponível pelo eixo principal cada elemento flex pode ter. Neste caso, estamos dando para cada elemento <article> o valor de 1, que significa que eles terão uma quantidade igual de espaço restante depois de coisas como preenchimento (padding) e margem (margin) forem definidos. É uma proporção, o que significa que dado que mesmo que você coloque o valor de "400000", para cada elemento flex, terá o mesmo efeito que o valor "1" previamente colocado.
+
+        Agora, adicione a seguinte regra abaixo da última:
+
+        article:nth-of-type(3) {
+            flex: 2;
+        }
+
+        Assim que você atualizar a página, você verá que o terceiro elemento <article> ocupa duas vezes mais do espaço disponível que os outros dois — existe agora quatro unidades na proporção total disponível. Os dois primeiros elementos flex tem uma unidade cada, dessa proporção, logo cada um deles ocupam 1/4 do espaço disponível. O terceiro tem 2 unidades, logo ele ocupa 2/4 (ou metade, 1/2) do espaço disponível. 
+
+        Você também pode especificar um valor de tamanho mínimo para a regra flex. Experimente atualizar a regra para o <article> existente para que fique assim:
+
+        article {
+            flex: 1 200px;
+        }
+
+        article:nth-of-type(3) {
+            flex: 2 200px;
+        }
+
+        Isso basicamente diz o seguinte: "Para cada elemento flex primeiro será dado 200px do espaço disponível. Depois, o restante do espaço disponível será distribuído entre os elementos, de acordo com a unidade de proporção definida.". Atualize a página e você verá a diferença de como o espaço é distribuído.
+
+        O valor real de cada caixa flex pode ser visto pela sua flexibilidade/responsividade — se você redimensionar a janela do navegador, ou adicionar outro elemento <article>, o layout continua funcionando sem quebrar.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>Flexbox 1 — basic flexbox model chosen</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            background: purple;
+            height: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+
+        /* Add your flexbox CSS below here */
+
+        section {
+            display: flex;
+        }
+
+        article{
+            /*
+             - como podemos controlar qual a proporção de espaço os elementos flex pode tomar
+             -  A propriedade flex do CSS, define como um ítem será posicionado para no espaço disponível dentro de seu container.
+             - a flex e uma shorthand que aceita de um a três valores.
+             - sintaxe de dois valores: flex-grow | flex-basis
+             - o primeiro valor 1  define o fator de crescimento flexível do tamanho principal de um item flexível. Esta propriedade especifica quanto espaço restante no contêiner flexível deve ser atribuído ao item (o fator de crescimento flexível).
+             - o segundo valor define o tamanho principal inicial de um item flex. Ele define o tamanho da caixa de conteúdo, a menos que seja definido de outra forma com dimensionamento de caixa(box-sizing).
+             - define que o elemento pode ter o valor 1 de espaço disponivel no eixo principal, uma espaço igual para todos os itens flexiveis.
+            */
+            flex: 1 200px;
+        }
+
+        /*
+         - estiliza o terceiro elemento article
+        */
+        article:nth-of-type(3){
+            /*
+             - ocupa duas vezes mais do espaço disponível que os outros dois 
+             - o valor 200px especifica um valor de tamanho minimo para a regra flex.
+            */
+            flex: 2 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sample flexbox example</h1>
+    </header>
+
+    <section>
+        <article>
+            <h2>First article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Second article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Third article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+
+            <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo
+                8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings
+                cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.
+            </p>
+        </article>
+    </section>
+</body>
+
+</html>

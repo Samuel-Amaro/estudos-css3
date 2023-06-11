@@ -1,0 +1,16 @@
+/**
+ * * DEFINIR TAMANHOS DE VÁRIAS IMAGENS DE FUNDO
+ * 
+ * A background-size propriedade também aceita vários valores para o tamanho do plano de fundo (usando uma lista separada por vírgulas), ao trabalhar com vários planos de fundo.
+ * 
+ * O exemplo a seguir tem três imagens de fundo especificadas, com diferentes valores de tamanho de fundo para cada imagem:
+*/
+
+div#bloco1{
+    background: url(flor.jpg) left top no-repeat, url(flor-fundo-trasparente.jpg) right bottom no-repeat, url(papel-amassado-fundo-branco_1232-2082.jpg) left top repeat;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    background-size: 50px, 130px, auto;
+}

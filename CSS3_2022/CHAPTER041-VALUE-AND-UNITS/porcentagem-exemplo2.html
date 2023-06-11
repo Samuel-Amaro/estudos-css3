@@ -1,0 +1,43 @@
+<!--
+    - O próximo exemplo tem tamanhos de fonte definidos em porcentagens. Cada <li> um tem um font-size de 80%; portanto, os itens da lista aninhada tornam-se progressivamente menores à medida que herdam seu dimensionamento de seu pai.
+
+    Observe que, embora muitos tipos de valor aceitem um comprimento ou uma porcentagem, há alguns que aceitam apenas comprimento. Você pode ver quais valores são aceitos nas páginas de referência de propriedade do MDN. Se o valor permitido incluir <length-percentage>, você poderá usar um comprimento ou uma porcentagem. Se o valor permitido incluir apenas <length>, não será possível usar uma porcentagem.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+    
+        li{
+            /*
+             - unidade de comprimento relativa, percent.
+             - Em muitos casos, uma porcentagem é tratada da mesma maneira que um comprimento. O problema com as porcentagens é que elas sempre são definidas em relação a algum outro valor.
+             - Por exemplo, se você definir um elemento font-size como uma porcentagem, será uma porcentagem do font-size pai do elemento.
+             - define que a fonte do elemento li sera 80% do tamanho da fonte do elemento pai
+            */
+            font-size: 80%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>Um</li>
+        <li>Two</li>
+        <li>Três
+            <ul>
+                <li>Três A</li>
+                <li>Três B
+                    <ul>
+                        <li>Três B2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+   
+</body>
+</html>

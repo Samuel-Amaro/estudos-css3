@@ -1,0 +1,7 @@
+<!--
+    * ITENS COM UMA PROPORÇÃO INTRÍSECA
+
+        A especificação detalha que o comportamento padrão em align-self é esticar(stretch), exceto para itens que possuem uma proporção intrínseca, neste caso eles se comportam como start. A razão para isso é que, se os itens com uma proporção forem definidos para esticar, esse padrão os distorcerá.
+
+        Esse comportamento agora foi esclarecido na especificação, com os navegadores ainda para implementar o comportamento correto. Até que isso aconteça, você pode garantir que os itens não se estiquem, como imagens, que são filhos diretos da grade, definindo align-self e justify-self para iniciar(start). Isso imitará o comportamento correto uma vez implementado.
+-->

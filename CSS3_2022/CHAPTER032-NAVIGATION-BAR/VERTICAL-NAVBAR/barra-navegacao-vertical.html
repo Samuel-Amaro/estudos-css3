@@ -1,0 +1,45 @@
+<!--
+    * BARRA DE NAVEGAÇÃO VERTICAL(NAVIGATION BAR CSS)
+
+        - Para construir uma barra de navegação vertical, você pode estilizar os elementos <a> dentro da lista, além do código da página anterior:
+
+        - Exemplo explicado:
+
+            - display: block; - A exibição dos links como elementos de bloco torna toda a área do link clicável (não apenas o texto) e nos permite especificar a largura (e preenchimento, margem, altura etc., se desejar)
+
+            - width: 60px;- Os elementos do bloco ocupam a largura total disponível por padrão. Queremos especificar uma largura de 60 pixels
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li a{
+            display: block;
+            width: 60px;
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+    <p>Uma cor de fundo é adicionada aos links para mostrar a área do link.</p>
+    
+    <p>Observe que toda a área do link é clicável, não apenas o texto.</p>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!--
+    * INLINE LIST ITENS(ITENS DE LISTA EMBUTIDOS)
+
+        - Uma maneira de construir uma barra de navegação horizontal é especificar os elementos <li> como embutidos, além do código "padrão" da página anterior:
+
+            - display: inline;- Por padrão, os elementos <li> são elementos de bloco. Aqui, removemos as quebras de linha antes e depois de cada item da lista, para exibi-las em uma linha
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+</body>
+</html>

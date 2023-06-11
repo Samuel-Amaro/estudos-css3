@@ -1,0 +1,48 @@
+<!--
+    * UNIDADES CSS
+
+        - CSS tem várias unidades diferentes para expressar um comprimento.
+
+        - Muitas propriedades CSS aceitam valores de "comprimento", como width, margin, padding, font-size, etc.
+
+        - Comprimento é um número seguido por uma unidade de comprimento, como 10px, 2em, etc.
+
+        - Nota: Um espaço em branco não pode aparecer entre o número e a unidade. No entanto, se o valor for 0, a unidade pode ser omitida.
+
+        - Para algumas propriedades CSS, comprimentos negativos são permitidos.
+
+        - Existem dois tipos de unidades de comprimento: absolutas(absolute) e relativas(relative).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /*
+             - o comprimento e um numero seguido por uma unidade de comprimento
+             - um exemplo de um comprimento expressado pela unidade px
+             - especifica o tamanho da fonte em um comprimento 60px
+            */
+            font-size: 60px;
+        }
+        p{
+            font-size: 25px;
+            /*
+             - A line-height propriedade é usada para especificar o espaço entre as linhas:
+             - um valor de comprimento de 50px e o tamanho do espaço entre as linhas do elemento p
+            */
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Este é o título 1</h1>
+    <h2>Este é o título 2</h2>
+    <p>Este é um parágrafo.</p>
+    <p>Este é outro parágrafo.</p>
+
+</body>
+</html>

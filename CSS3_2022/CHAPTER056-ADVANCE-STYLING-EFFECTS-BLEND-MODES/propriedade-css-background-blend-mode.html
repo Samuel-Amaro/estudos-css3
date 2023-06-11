@@ -1,0 +1,60 @@
+<!--
+    * PROPRIEDADE CSS background-blend-mode(modo de mesclagem de fundo)
+
+        A propriedade CSS background-blend-mode define como as imagens de fundo de um elemento devem se misturar entre si e com a cor de fundo do elemento.
+
+        Os modos de mesclagem devem ser definidos na mesma ordem que a propriedade background-image. Se os comprimentos da lista dos modos de mesclagem e das imagens de fundo não forem iguais, ela será repetida e/ou truncada até que os comprimentos correspondam.
+
+    * SINTAXE
+
+        /* One value */
+        background-blend-mode: normal;
+
+        /* Two values, one per background */
+        background-blend-mode: darken, luminosity;
+
+        /* Global values */
+        background-blend-mode: inherit;
+        background-blend-mode: initial;
+        background-blend-mode: revert;
+        background-blend-mode: revert-layer;
+        background-blend-mode: unset;
+
+    * VALUES
+
+        <blend-modes>: O modo de mesclagem a ser aplicado. Pode haver vários valores, separados por vírgulas.
+
+        O tipo de dados <blend-mode> é definido usando um valor de palavra-chave escolhido na lista abaixo.
+
+        normal: A cor final é a cor de cima, independentemente da cor de baixo. O efeito é como dois pedaços opacos de papel sobrepostos.
+
+        multiply(multiplos): A cor final é a cor de cima, independentemente da cor de baixo. O efeito é como dois pedaços opacos de papel sobrepostos.
+
+        screen(tela): A cor final é o resultado de inverter as cores, multiplicá-las e inverter esse valor. Uma camada preta não leva a nenhuma alteração e uma camada branca leva a uma camada final branca. O efeito é como duas imagens brilhando em uma tela de projeção.
+
+        overlay(sobreposição): A cor final é o resultado da multiplicação se a cor de baixo for mais escura, ou da tela se a cor de baixo for mais clara. Este modo de mesclagem é equivalente à luz forte, mas com as camadas trocadas.
+        
+        darken(escurecer): A cor final é composta pelos valores mais escuros de cada canal de cor.
+
+        lighten(iluminar): A cor final é composta pelos valores mais claros de cada canal de cor.
+
+        color-dodge(subexposição de cores): A cor final é o resultado da divisão da cor de baixo pelo inverso da cor de cima. Um primeiro plano preto não leva a nenhuma mudança. Um primeiro plano com a cor inversa do pano de fundo leva a uma cor totalmente iluminada. Esse modo de mesclagem é semelhante à tela, mas o primeiro plano precisa ser tão claro quanto o inverso do plano de fundo para criar uma cor totalmente iluminada.
+
+        color-burn(queima de cor): A cor final é o resultado da inversão da cor inferior, dividindo o valor pela cor superior e invertendo esse valor. Um primeiro plano branco não leva a nenhuma mudança. Um primeiro plano com a cor inversa do pano de fundo leva a uma imagem final preta. Esse modo de mesclagem é semelhante à multiplicação, mas o primeiro plano precisa ser tão escuro quanto o inverso do pano de fundo para tornar a imagem final preta.
+
+        hard-light(luz-dura): A cor final é o resultado da multiplicação se a cor de cima for mais escura, ou da tela se a cor de cima for mais clara. Este modo de mesclagem é equivalente à sobreposição, mas com as camadas trocadas. O efeito é semelhante ao de um holofote forte sobre o pano de fundo.
+
+        soft-light(luz-suave): A cor final é semelhante à luz dura, mas mais suave. Esse modo de mesclagem se comporta de maneira semelhante à luz forte. O efeito é semelhante ao de um holofote difuso no fundo*.*
+
+        difference(diferença): A cor final é o resultado da subtração da mais escura das duas cores da mais clara. Uma camada preta não tem efeito, enquanto uma camada branca inverte a cor da outra camada
+
+        exclusion(exclusão): A cor final é o resultado da subtração da mais escura das duas cores da mais clara. Uma camada preta não tem efeito, enquanto uma camada branca inverte a cor da outra camada.
+
+        hue(matiz): A cor final tem a tonalidade da cor de cima, enquanto usa a saturação e luminosidade da cor de baixo.
+
+        saturation(saturação): A cor final tem a saturação da cor de cima, enquanto usa a tonalidade e a luminosidade da cor de baixo. Um pano de fundo cinza puro, sem saturação, não terá efeito.
+
+        color(cor): A cor final tem o matiz e a saturação da cor de cima, enquanto usa a luminosidade da cor de baixo. O efeito preserva os níveis de cinza e pode ser usado para colorir o primeiro plano.
+
+        luminosity(luminosidade): A cor final tem a luminosidade da cor de cima, enquanto usa o matiz e a saturação da cor de baixo. Este modo de mesclagem é equivalente à cor, mas com as camadas trocadas.
+-->

@@ -1,0 +1,33 @@
+<!--
+    * CORRESPONDE A TODOS OS ELEMENTOS <i> em TODOS OS PRIMEIROS ELEMENTOS <p> filhos
+
+        - No exemplo a seguir, o seletor corresponde a todos os elementos <i> em elementos <p> que são o primeiro filho de outro elemento:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+          - um pseudo-classe e usada para definir uma estado especial  de um elemento.
+          - A :first-child pseudoclasse corresponde a um elemento especificado que é o primeiro filho de outro elemento. 
+          - no exemplo abaixo queremos selecionar todos os elementos <p> que sejam o primeiro filho de um elemento qualquer, e que tenha um elemento <i> como descendente
+        */
+        p:first-child i{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Eu sou uma pessoa <i>forte</i>. Eu sou uma pessoa <i>forte</i></p>
+    <p>Eu sou uma pessoa <i>forte</i>. Eu sou uma pessoa <i>forte</i></p>
+    
+    <div>
+        <p>Eu sou uma pessoa <i>forte</i>. Eu sou uma pessoa <i>forte</i></p>
+        <p>Eu sou uma pessoa <i>forte</i>. Eu sou uma pessoa <i>forte</i></p>
+    </div>
+
+</body>
+</html>

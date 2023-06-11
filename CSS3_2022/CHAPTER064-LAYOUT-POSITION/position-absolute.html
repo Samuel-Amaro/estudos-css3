@@ -1,0 +1,76 @@
+<!--
+    * POSITION ABSOLUTE(POSICIONAMENTO ABSOLUTO)
+
+        O posicionamento absoluto traz resultados muito diferentes.
+
+        Vamos tentar alterar a declaração de posição em seu código da seguinte forma:
+
+            position: absolute;
+
+        Em primeiro lugar, observe que a lacuna onde o elemento posicionado deveria estar no fluxo de documentos não existe mais - o primeiro e o terceiro elementos se fecharam como se não existissem mais! Bem, de certa forma, isso é verdade. Um elemento absolutamente posicionado não existe mais no fluxo normal de documentos. Em vez disso, ele fica em sua própria camada separada de todo o resto. Isso é muito útil: significa que podemos criar recursos de UI isolados que não interferem no layout de outros elementos da página. Por exemplo, caixas de informações pop-up, menus de controle, painéis de rolagem, recursos de interface do usuário que podem ser arrastados e soltos em qualquer lugar da página e assim por diante.
+
+        Segundo, observe que a posição do elemento mudou. Isso ocorre porque top, bottom, left, e right se comportam de maneira diferente com o posicionamento absoluto. Em vez de posicionar o elemento com base em sua posição relativa dentro do fluxo normal do documento, eles especificam a distância que o elemento deve estar de cada um dos lados do elemento que o contém. Portanto, neste caso, estamos dizendo que o elemento posicionado absolutamente deve ficar 30px do topo do "elemento contendo" e 30px da esquerda. (Nesse caso, o "elemento contendo" é o bloco contendo inicial . Consulte a seção abaixo para obter mais informações)
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic document flow</title>
+
+    <style type="text/css">
+        body {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        .positioned{
+            /*
+             -  O posicionamento permite que você retire elementos do fluxo normal de documentos e faça com que eles se comportem de maneira diferente.
+             - Para ativar um tipo específico de posicionamento em um elemento, usamos a position propriedade.
+             - o valor absolute um elemento absolutamente posicionado não existe mais no fluxo normal de documentos. Em vez disso, ele fica em sua própria camada separada de todo o resto
+             - O resultado disso é que o elemento absolutamente posicionado estará contido no bloco inicial . O bloco contendo inicial tem as dimensões da viewport e também é o bloco que contém o <html>elemento. Em outras palavras, o elemento posicionado absolutamente será exibido fora do <html>elemento e será posicionado em relação à janela de visualização inicial.
+            */
+            position: absolute;
+            background: yellow;
+            /*
+             - para modificar a posição do elemento posicionado absolutamente, Você precisa usar as propriedades top, bottom, left e right.
+             - top, bottom, left e right são usados ​​ao lado position para especificar exatamente para onde mover o elemento posicionado.
+             - essas propriedades elas são contra intuitivas, Você precisa pensar nisso como se houvesse uma força invisível que empurra o lado especificado da caixa posicionada, movendo-a na direção oposta.
+             - top, bottom, left, e right se comportam de maneira diferente com o posicionamento absoluto. Em vez de posicionar o elemento com base em sua posição relativa dentro do fluxo normal do documento, eles especificam a distância que o elemento deve estar de cada um dos lados do elemento que o contém.
+             - no exemplo abaixo o elemento posicionado absoluto fica 30px para baixo da border-top do elemento body, o elemento que contem o elemento posicionado absoluto.
+            */
+            top: 30px;
+            /*
+             - no exemplo abaixo o elemento posicionado absoluto fica 30px para esquerda da border-left do elemento body, o elemento que contem o elemento posicionado absoluto.
+            */
+            left: 30px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1>Fluxo básico de documentos</h1>
+
+    <p>Sou um elemento básico de nível de bloco. Meus elementos de nível de bloco adjacentes ficam em novas linhas abaixo de mim.</p>
+
+    <p class="positioned">Por padrão, abrangemos 100% da largura de nosso elemento pai e nossa altura é tão alta quanto nosso conteúdo filho. Nossa largura e altura totais são nosso conteúdo + preenchimento + largura/altura da borda.</p>
+
+    <p>Estamos separados por nossas margens. Por causa do recolhimento da margem, somos separados pela largura de uma de nossas margens, não de ambas.</p>
+
+    <p>elementos inline <span>como este</span> e <span>este</span> ficam na mesma linha um do outro, e nós de texto adjacentes, se houver espaço na mesma linha. Elementos inline transbordantes <span>se encaixam em uma nova linha, se possível — como esta contendo texto</span>, ou apenas vá para uma nova linha se não, assim como esta imagem fará: <img src="long.jpg "></p>
+
+  </body>
+</html>

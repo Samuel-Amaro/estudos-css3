@@ -1,0 +1,34 @@
+<!--
+    * CENTRALIZAR VERTICALMENTE - USANDO PADDING
+
+        - Existem muitas maneiras de centralizar um elemento verticalmente em CSS. Uma solução simples é usar top e bottom padding:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .center{
+            border: 3px solid #73AD21;
+            /*
+             - usando a propriedade shorthand padding para especificar espaços ao redor do conteudo entre a borda e o conteudo, espaço interno
+             - a shorthand e uma abreviação para as propriedades invidividuais, padding-top, padding-right, padding-bottom, padding-left, aceita de um a quatro valores
+             - especificar dois valores e o  mesmo que especificar o primeiro valor para padding-top, padding-bottom, o segundo valor e para padding-right, e padding-left.
+            */
+            padding: 70px 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Centralizar verticalmente com padding</h2>
+
+    <p>Neste exemplo, usamos a propriedade padding para centralizar o elemento div verticalmente:</p>
+
+    <div class="center">
+        <p>Estou centrado verticalmente</p>
+    </div>
+
+</body>
+</html>

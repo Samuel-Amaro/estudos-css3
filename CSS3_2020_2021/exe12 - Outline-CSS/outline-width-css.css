@@ -1,0 +1,31 @@
+/*
+ * Largura de Contorno CSS (outline-width)
+
+  - A outline-width propriedade especifica a largura do contorno e pode ter um dos seguintes valores: 
+
+   fino(normalmente 1px)
+   médio(normalmente 3px)
+   grosso(normalmente 5px)
+
+   um tamanho especifico (em px, pt, cm, em, etc)
+*/
+#fino{
+    outline-style: solid;
+    outline-color: red;
+    outline-width: thin; /* contorno fino*/
+}
+#medio{
+    outline-style: solid;
+    outline-color: red;
+    outline-width: medium; /* contorno medio*/
+}
+#grosso{
+    outline-style: solid;
+    outline-color: red;
+    outline-width: thick; /* contorno grosso*/
+}
+#grossona{
+    outline-style: solid;
+    outline-color: red;
+    outline-width: 4px; /* contorno grosso do grosso*/
+}

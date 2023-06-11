@@ -1,0 +1,45 @@
+<!--
+    * LÓGICA "AND"-"E" EM MEDIA QUERYS
+
+        Para combinar recursos de mídia, você pode usar and praticamente da mesma maneira que usamos and acima para combinar um tipo de mídia e um recurso. Por exemplo, podemos querer testar a min-width e orientation. O corpo do texto só ficará azul se a janela de visualização(VIEWPORT) tiver pelo menos 600 pixels de largura e o dispositivo estiver no modo paisagem.
+
+        @media screen and (min-width: 600px) and (orientation: landscape) {
+            body {
+                color: blue;
+            }
+        }
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Media Queries: and</title>
+    <style>
+      html {
+        font-size: 1em;
+      }
+
+      /*
+       - MEDIA QUERY
+       - tipo media e screen(tela)
+       - usando o operador logico and(e) para combinar tipos de recursos de midia.
+       - o css so sera executado se todos os recursos de midia abaixo forem correpondidos.
+       - o tipo de recurso de midia e largura, largura minima de 600px na viewport
+       - outro recurso de midia e orientação, o dispositivo tem que se encontrar na orientação de paisagem.
+       - o css abaixo so sera executado se a midia do dispositivo for tela, e a sua view-port tiver pelo menos 600px de largura, e se a orientação do dispositivo esta no modo de paisagem. o css abaixo sera executado.
+      */
+      @media screen and (min-width: 600px) and (orientation: landscape) {
+        body {
+          color: blue;
+        }
+      }
+
+    </style>
+</head>
+<body>
+
+  <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+  <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+
+</body>
+</html>

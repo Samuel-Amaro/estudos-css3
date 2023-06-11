@@ -1,0 +1,45 @@
+<!--
+    * DIMENSIONAMENTO DE ITENS FLEXÍVEIS
+
+        Para descobrir quanto espaço está disponível para colocar itens flexíveis, o navegador precisa saber o tamanho do item para começar. Como isso é resolvido para itens que não têm largura ou altura aplicada usando uma unidade de comprimento absoluto?
+
+        Existe um conceito em CSS de min-content e max-content— essas palavras-chave são definidas na Especificação de dimensionamento intrínseco e extrínseco do CSS e podem ser usadas no lugar de uma unidade de comprimento .
+
+        No exemplo ao vivo abaixo, por exemplo, tenho dois elementos de parágrafo que contêm uma sequência de texto. O primeiro parágrafo tem uma largura de min-content. Você deve ser capaz de ver que o texto aproveitou todas as oportunidades de quebra suave disponíveis para ele, tornando-se o menor possível sem transbordar. Este então, é o min-contenttamanho dessa string. Essencialmente, a palavra mais longa na string está ditando o tamanho.
+
+        O segundo parágrafo tem um valor de max-contente por isso faz o oposto. Ele fica tão grande quanto possível, sem oportunidades de envolvimento suave. Ele transbordaria da caixa em que está se esse recipiente fosse muito estreito.
+
+        Lembre-se desse comportamento e de quais efeitos min-content ele max-content terá à medida que exploramos flex-grow e flex-shrink mais adiante neste artigo.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .min-content {
+        /*dimensionamento intriseco, sem usar unidade de medida absoluta, o item abaixo não possui largura ou altura aplicada usando uma unidade de comprimento absoluta, assim pode-se usaro conceito de intriseco no lugar de uma unidade de comprimento, aqui teremos o item com uma largura de min-content, tornando o elemento menor o possivel sem transbordar */
+        width: -moz-min-content;
+        width: min-content;
+        border: 2px dotted rgb(96, 139, 168);
+      }
+      .max-content {
+        /*dimensionamento extrinseco, sem usar unidade de medida absoluta, o item abaixo não possui largura ou altura aplicada usando uma unidade de comprimento absoluta, assim pode-se usaro conceito de extrinseco no lugar de uma unidade de comprimento, aqui teremos o item com uma largura de max-content, tornando o elemento grande o possivel */
+        width: -moz-max-content;
+        width: max-content;
+        border: 2px dotted rgb(96, 139, 168);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="min-content">
+      I am sized with min-content and so I will take all of the soft-wrapping
+      opportunities.
+    </p>
+    <p class="max-content">
+      I am sized with max-content and so I will take none of the soft-wrapping
+      opportunities.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!--
+    * ESTILIZANDO FORMULARIOS
+
+        - Os seletores de atributo podem ser úteis para estilizar formulários sem classe ou ID:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seletor de atributos
+         - estilizando elementos que possuem um atributo ou valor de atributo especifico
+         - O [attribute="value"] seletor é usado para selecionar elementos com um atributo e valor especificados.
+         - no exemplo abaixo o seletor de atributo e valor seleciona todos os elementos input que possui o atributo type com o valor text especificado
+        */
+        input[type=text] {
+            width: 150px;
+            display: block;
+            margin-bottom: 10px;
+            background-color: yellow;
+        }
+        /*
+         - no exemplo abaixo o seletor de atributo e valor seleciona todos os elementos input que possui o atributo type com o valor button especificado
+        */
+        input[type=button] {
+            width: 120px;
+            margin-left: 35px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Estilizando Formularios</h2>
+    
+    <form name="input" action="" method="get">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="Name" value="Peter" size="20"/>
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="Name" value="Griffin" size="20"/>
+        <input type="button" value="Exemplo Botão"/>
+    </form>
+
+</body>
+</html>

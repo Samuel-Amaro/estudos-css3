@@ -1,0 +1,59 @@
+<!--
+    * GRADIENTE LINEAR CSS
+
+
+    * USANDO ÂNGULOS
+
+      - Se você quiser mais controle sobre a direção do gradiente, pode definir um ângulo, em vez das direções predefinidas (to bottom, to top, to right, to left, to bottom right, etc.) Um valor de 0deg é equivalente a "to top". Um valor de 90 graus é equivalente a "to right". Um valor de 180deg é equivalente a "to bottom".
+      - 
+      
+      * SINTAXE:
+
+        background-image: linear-gradient(angle, color-stop1, color-stop2); 
+
+        - O exemplo a seguir mostra como usar ângulos em gradientes lineares:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradiente Linear</title>
+    <style>
+        div#grad1{
+            text-align: center;
+            height: 100px;
+            background-image: linear-gradient(0deg,red, yellow);
+        }
+        div#grad2{
+            text-align: center;
+            height: 100px;
+            background-image: linear-gradient(90deg,red, yellow);
+        }
+        div#grad3{
+            text-align: center;
+            height: 100px;
+            background-image: linear-gradient(180deg,red, yellow);
+        }
+        div#grad4{
+            text-align: center;
+            height: 100px;
+            background-image: linear-gradient(-90deg,red, yellow);
+        }
+    </style>
+</head>
+<body>
+    <h1>Gradiente Linear</h1>
+    <h2>Usando angulos</h2>
+    <p>O exemplo a seguir mostra como usar ângulos em gradientes lineares:</p>
+    <div id="grad1">0deg - 0 graus</div>
+    <br>
+    <div id="grad2">90deg - 90 graus</div>
+    <br>
+    <div id="grad3">180deg - 180 graus</div>
+    <br>
+    <div id="grad4">-90deg - -90 graus</div>
+</body>
+</html>

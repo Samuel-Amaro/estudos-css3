@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contéudo Suspenso alinhado</title>
+    <link rel="stylesheet" href="Dropdown-menu-conteudo-alinhado-direita.css">
+</head>
+<body>
+    <h1>Conteúdo suspenso alinhado</h1>
+    <p>Determine se o conteúdo suspenso deve ir da esquerda para a direita ou da direita para a esquerda com as propriedades esquerda e direita.</p>
+
+    <!-- menu supenso alinhado a esquerda, flutuando a esquerda-->
+    <div class="menu-suspenso" style="float: left;">
+        <button class="botao-suspenso">Esquerda</button>
+        <!--o elemento de conteiner deve ser posicionar a partida da esquerda para direita-->
+        <div class="conteudo-menu-suspenso" style="left:0;">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 2</a>
+        </div>
+    </div>
+
+    <!-- menu supenso alinhado a direita, elemento flutuando a direita-->
+    <div class="menu-suspenso" style="float: right;">
+        <button class="botao-suspenso">Direita</button>
+        <div class="conteudo-menu-suspenso">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 2</a>
+        </div>
+    </div>
+</body>
+</html>

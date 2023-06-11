@@ -1,0 +1,39 @@
+<!--
+    * MODO DE ESCRITA CSS
+
+      - A writing-mode propriedade CSS especifica se as linhas de texto são dispostas horizontal ou verticalmente.
+
+      - O exemplo a seguir mostra alguns modos de escrita diferentes:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo de escrita</title>
+    <style>
+        p.teste1{
+            /*modo de escrita padrão*/
+            writing-mode: horizontal-tb;
+        }
+        p.teste2 > em{
+            /*texto sendo escrito na vertical*/
+            writing-mode: vertical-lr;
+        }
+        p.teste3{
+            /*texto sendo escrito na vertical*/
+            writing-mode: vertical-lr;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modo de escrita - writing-mode;</h1>
+    <p><strong>Exemplo:</strong> alguns exemplos mostrando o modo de escrita, as linhas dispostas na horizontal ou vertical.</p>
+    <h2>A propriedade do modo de escrita</h2>
+    <p class="teste1">algum texto com modo de escrita padrão</p>
+    <p class="teste2">Algum texto com modo de escrita <em>vertical-rl</em></p>
+    <p class="teste3">algum texto com modo de escrita: vertical-rl;</p>
+</body>
+</html>

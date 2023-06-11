@@ -1,0 +1,53 @@
+<!--
+    * MENU DE NAVEGAÇÃO
+
+        - Você também pode usar float com uma lista de hiperlinks para criar um menu horizontal:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor left, O elemento flutua à esquerda de seu contêiner.
+             - neste exemplo o elemento <li> ira fluar a esquerda do elemento <ul> que e o seu conteiner
+            */
+            float: left;
+        }
+        li a{
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover{
+            background-color: #111;
+        }
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+</body>
+</html>

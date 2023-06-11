@@ -1,0 +1,45 @@
+<!--
+    * NORMAL FLOW(FLUXO NORMAL)
+
+        O fluxo normal é como o navegador apresenta as páginas HTML por padrão quando você não faz nada para controlar o layout da página. Vejamos um exemplo rápido de HTML:
+
+        Observe como o HTML é exibido na ordem exata em que aparece no código-fonte, com elementos empilhados uns sobre os outros — o primeiro parágrafo, seguido pela lista não ordenada, seguido pelo segundo parágrafo.
+
+        Os elementos que aparecem um abaixo do outro são descritos como elementos de bloco(block), em contraste com os elementos embutidos(inline) , que aparecem um ao lado do outro como as palavras individuais em um parágrafo.
+
+        Nota: A direção na qual o conteúdo do elemento do bloco é disposto é descrita como a Direção do Bloco. A direção do bloco é executada verticalmente em um idioma como o inglês, que possui um modo de escrita horizontal. Ele seria executado horizontalmente em qualquer idioma com um modo de escrita vertical, como o japonês. A direção inline correspondente é a direção na qual o conteúdo inline (como uma frase) seria executado.
+
+        Para muitos dos elementos da sua página, o fluxo normal criará exatamente o layout que você precisa. No entanto, para layouts mais complexos, você precisará alterar esse comportamento padrão usando algumas das ferramentas disponíveis em CSS. Começar com um documento HTML bem estruturado é muito importante porque você pode trabalhar com a forma como as coisas são dispostas por padrão, em vez de lutar contra isso.
+
+        Os métodos que podem alterar a forma como os elementos são dispostos no CSS são:
+
+            A display propriedade — Valores padrão como block, inline ou inline-block podem alterar como os elementos se comportam no fluxo normal, por exemplo, fazendo com que um elemento de nível de bloco(block) se comporte como um elemento de nível embutido(inline). Também temos métodos de layout completos que são habilitados por meio de display valores específicos, por exemplo, CSS Grid e Flexbox , que alteram como os elementos filhos são dispostos dentro de seus pais.
+
+            Flutuantes(floats) — A aplicação de um float valor como left pode fazer com que os elementos de nível de bloco se envolvam ao longo de um lado de um elemento, como a forma como as imagens às vezes têm texto flutuando ao redor delas em layouts de revista.
+
+            position(posição) propriedade — Permite controlar com precisão a colocação de caixas dentro de outras caixas. static posicionamento é o padrão no fluxo normal, mas você pode fazer com que os elementos sejam dispostos de forma diferente usando outros valores, por exemplo, como fixado na parte superior da janela de visualização do navegador.
+
+            Layout de tabela(table layout) — Os recursos projetados para estilizar partes de uma tabela HTML podem ser usados ​​em elementos que não são de tabela usando display: table e propriedades associadas.
+
+            Layout de várias colunas(multi-column layout) — As propriedades de layout de várias colunas podem fazer com que o conteúdo de um bloco seja exibido em colunas, como você pode ver em um jornal.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+    <p>Eu amo meu gato.</p>
+
+    <ul>
+        <li>Compre comida de gato</li>
+        <li>Exercício</li>
+        <li>Anime-se amigo</li>
+    </ul>
+
+    <p>Fim!</p>
+
+</body>
+</html>

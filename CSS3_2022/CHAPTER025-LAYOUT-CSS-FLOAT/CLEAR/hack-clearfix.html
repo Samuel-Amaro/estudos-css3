@@ -1,0 +1,74 @@
+<!--
+    * HACK CLEARFIX(O HACK DE CORREÇÃO CLARA)
+
+        - Se um elemento flutuante for mais alto que o elemento que o contém, ele "transbordará-overflow" para fora de seu contêiner. Podemos então adicionar um hack clearfix para resolver este problema:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        div{
+            padding: 5px;
+            border: 3px solid #4CAF50;
+        }
+        .img1{
+           /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor right O elemento flutua à direita de seu contêiner
+             - o elemento <img> ira flutuar a direita do elemento <div> que o contem que o seu conteiner
+            */
+            float: right;
+        }
+        .img2{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor right O elemento flutua à direita de seu contêiner
+             - o elemento <img> ira flutuar a direita do elemento <div> que o contem que o seu conteiner
+             - a o elemento img2 e maior que o elemento que o contem um <div> assim, o conteuo transborda para fora
+            */
+            float: right;
+        }
+        .clear-right{
+            /*
+             - a propriedade css clear especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+             - o valor right - right(direita) - O elemento é empurrado abaixo dos elementos flutuantes à direita.
+             - o elemento <h2> que e o proximo elemento logo apos o elemento div ter sido fluatuado, precisa ser limpo, usamos a propriedade clear com o valor right para este elemento aparacer abaixo do elmeento flutuado a direita
+            */
+            clear: right;
+        }
+        .clearfix{
+           /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - o valor auto(automatico) - Semelhante a scroll, mas adiciona barras de rolagem apenas quando necessário
+             - adicionamos a propriedade de overflow pois o elemento flutuante .img2, e maior que o elemento que o contem o <div> assim o elemento .img2 fica tranbordando o conteudo adicioniar a propriedade abaixo controla o conteudo transbordado do elemento.
+            */
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Sem clearfix</h2>
+
+    <p>Esta imagem é flutuada para a direita. Também é mais alto que o elemento que o contém, então transborda para fora de seu contêiner:</p>
+    
+    <div>
+        <img class="img1" src="../FLOAT/pineapple.jpg" alt="abacaxi" width="170" height="170"/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fasellus imperdiet...
+    </div>
+
+    <h2 class="clear-right">Com clearfix</h2>
+
+    <p>Podemos corrigir isso adicionando uma classe clearfix com overflow: auto; para o elemento que contém:</p>
+
+    <div class="clearfix">
+        <img class="img2" src="../FLOAT/pineapple.jpg" alt="Abacaxi" width="170" height="170"/>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fasellus imperdiet...
+    </div>
+
+</body>
+</html

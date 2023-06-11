@@ -1,0 +1,33 @@
+<!--
+    * PSEUDO-ELEMENTO ::AFTER(depois)
+
+        - O ::after pseudo elemento pode ser usado para inserir algum conteúdo após o conteúdo de um elemento.
+
+        - O exemplo a seguir insere uma imagem após o conteúdo de cada elemento <h1>:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::after pseudo elemento pode ser usado para inserir algum conteúdo após o conteúdo de um elemento.
+         - aqui neste exemplo iremos iserir uma imagen de fundo como conteudo, apos o conteudo do elemento <h1>
+        */
+        h1::after{
+            content: url(smiley\ \(2\).gif);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Este é um título!</h1>
+    
+    <p>O pseudo-elemento ::after insere conteúdo após o conteúdo de um elemento.</p>
+
+    <h1>Este é um título!</h1>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opacity</title>
+    <link rel="stylesheet" href="opacity.css">
+</head>
+<body>
+    <h1>CSS Opacity/Transparency - Opacidade / Transparência</h1>
+    <p>A opacity propriedade especifica a opacidade / Transparência de um elemento.</p>
+    <h2>Imagen Trasparente</h2>
+    <h2>Opacidade padrão - 100%</h2>
+    <p>A propriedade opacity especifica a transparência de um elemento. Quanto menor o valor, mais transparente:</p>
+    <img src="aurora.jpg" alt="imagen aurora boreal">
+    <h2>Opacidade 50%</h2>
+    <p>A propriedade opacity especifica a transparência de um elemento. Quanto menor o valor, mais transparente: imagen com opacidade de 50%</p>
+    <img class="opacidade-meio" src="aurora.jpg" alt="imagen aurora boreal">
+    <h2>Opacidade 20%</h2>
+    <p>A propriedade opacity especifica a transparência de um elemento. Quanto menor o valor, mais transparente: imagen com opacidade de 20%</p>
+    <img class="opacidade-um-quarto" src="aurora.jpg" alt="imagen aurora boreal">
+
+    <h2>Efeito de foco transparente</h2>
+    <p>Trasparência da imagen, passe o mouse por cima da imagen abaixo</p>
+    <img class="img-trasparente" src="aurora.jpg" alt="imagen" style="height: 100px; width: 100px;">
+
+    <h2>Bloco(Caixa) Trasparente</h2>
+    <p>Ao usar a propriedade opacity para adicionar transparência ao plano de fundo de um elemento, todos os seus elementos filho também se tornam transparentes. Isso pode tornar o texto dentro de um elemento totalmente transparente difícil de ler:</p>
+    <div class="primeiro"><p>Opacidade 0.1</p></div>
+    <div class="segundo"><p>Opacidade 0.3</p></div>
+    <div class="terceiro"><p>Opacidade 0.6</p></div>
+    <div><p>Opacity 1 (default)</p></div>
+
+    <h2>Trasparência usando RGBA</h2>
+    <p>Dica: você aprenderá mais sobre cores RGBA em nosso capítulo Cores CSS</p>
+    <div class="primeiro_rgba"><p>10% Opacidade</p></div>
+    <div class="segundo_rgba"><p>30% Opacidade</p></div>
+    <div class="terceiro_rgba"><p>60% Opacidade</p></div>
+    <div class="padrao_rgba"><p>100% Opacidade</p></div>
+
+    <h2>Texto em bloco(caixa) Trasparente</h2>
+    <div class="fundo">
+        <div class="caixa_trasparence">
+            <p>Este é algum texto que é colocado na caixa transparente</p>
+        </div>
+    </div>
+</body>
+</html>

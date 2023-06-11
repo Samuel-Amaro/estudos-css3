@@ -1,0 +1,168 @@
+/*
+ * LINKS CSS
+
+  - Com CSS, os links podem ser estilizados de maneiras diferentes.
+
+ * LINKS DE ESTILO(LINKS STYLE)
+
+  - Os links podem ser decorados com qualquer propriedade CSS (por exemplo color, font-family, background, etc.).
+*/
+/*aplicando uma cor no link*/
+#cor{
+    color: hotpink;
+}
+/*
+ - Além disso, os links podem ter estilos diferentes, dependendo do estado em que estão.
+ - os quatro estados de links são:
+
+    a:link - um link normal não visitado;
+    a:visited - um link que o usuario visitou
+    a:hover - um link quando o usuario passa o mouse sobre ele;
+    a:active - um link no momento em que é clicado;
+*/
+
+/*link não visitado vai ficar com cor vermelha*/
+#link_no:link{
+        color: red;
+}
+
+/* link foi visitado ele ficar com cor verde*/
+#link_visitado:visited{
+        color: green;
+}
+
+/*usuario passou o mouse por cima do link ele fica com a cor preta de destaque*/
+#link_mouse:hover{
+    color: lawngreen;
+}
+
+/*link foi selecionado pelo cursor do mouse, ele fica com a cor de destaque azul*/
+#link_selecionado:active{
+    color: blue;
+}
+
+/*
+ - Ao definir o estilo para vários estados de link, existem algumas regras de ordem:
+   
+   a:hover DEVE vir depois de a:link e a:visited
+   a:active DEVE VIR depois de a:hover
+*/
+
+/*
+ * DECORAÇÃO DE TEXTO(TEXT DECORATION)
+
+  - A text-decoration propriedade é usada principalmente para remover sublinhados de links:
+*/
+
+/*link não visitado vai estar ser underline o sublinhado*/
+#link_no:link {
+    text-decoration: none;
+}
+
+/*link ao ser visitado vai estar ser underline o sublinhado*/
+#link_visitado:visited{
+    text-decoration: none;
+}
+
+/*usuario passou o cursor do mouse por cima do link ele fica com o underline destacado*/
+#link_mouse:hover{
+    text-decoration: underline;
+}
+
+/*link selecionado pelo usuario por meio do cursor do mouse ele fica o underline destacado*/
+#link_selecionado:active{
+    text-decoration: underline;
+}
+
+/*
+ * COR DE FUNDO (BACKGROUND-COLOR)
+
+  - A background-color propriedade pode ser usada para especificar uma cor de fundo para links:
+
+*/
+
+/*link não visitado vai ter uma cor de fundo amarela na sua respectiva caixa*/
+#link_no:link {
+    background-color: yellow;
+}
+
+/*link ao ser visitado vai ter uma cor de fundo na sua respectiva caixa*/
+#link_visitado:visited{
+       background-color: black;   
+}
+
+/*usuario passou o cursor do mouse por cima do link ele vai destacar a sua cor de fundo na sua caixa*/
+#link_mouse:hover{
+    background-color: lightgreen;
+}
+
+/*link selecionado pelo usuario por meio do cursor do mouse ele vai destacar a sua cor de fundo na caixa*/
+#link_selecionado:active{
+    background-color: hotpink;
+}
+
+
+/*
+ * BOTÕES LINK
+
+  - Este exemplo demonstra um exemplo mais avançado em que combinamos várias propriedades CSS para exibir links como caixas/botões:
+*/
+
+/*link que possui o esta de não visitado vai ter essas configurações de estilização*/
+#bt01:link{
+    background-color: #f44336; /*cor de fundo da caixa*/
+    color: white; 
+    padding-top: 14px;/*espaço interno na caixa no topo*/ 
+    padding-right: 25px;/*espaço interno na caixa na direita*/ 
+    padding-bottom: 14px;/*espaço interno na caixa no inferior*/
+    padding-left: 25px;/*espaço interno na caixa no esquerda*/
+    text-align: center; /*texto alinhado ao centro da caixa*/
+    text-decoration: none; /*tira sublinhado do link*/
+    display: inline-block; /*caixa de tipo box level*/
+}
+
+/*link que possui o estado de visitado vai ter essas configurações de estilização*/
+#bt02:visited{
+    background-color: #f44336; /*cor de fundo da caixa*/
+    color: white; 
+    padding-top: 14px;/*espaço interno na caixa no topo*/ 
+    padding-right: 25px;/*espaço interno na caixa na direita*/ 
+    padding-bottom: 14px;/*espaço interno na caixa no inferior*/
+    padding-left: 25px;/*espaço interno na caixa no esquerda*/
+    text-align: center; /*texto alinhado ao centro da caixa*/
+    text-decoration: none; /*tira sublinhado do link*/
+    display: inline-block; /*caixa de tipo box level*/
+}
+
+/*link com estado de flutuar, cursor do mouse por cima do link, muda cor de fundo da caixa*/
+#bt03:hover{
+    background-color: red;
+}
+
+/*link com estado de ativado, cursor do mouse selecionou o link, muda cor de fundo da caixa*/
+#bt04:active{
+    background-color: red;
+}
+
+/*
+ * ESTE EXEMPLO DEMOSTRA DIFERENTES TIPOS DE CURSORES DE MOUSES, existe varios aqui, vai estar alguns so de exemplo
+*/
+
+#c1{
+    cursor: auto;
+}
+#c2{
+    cursor: crosshair;
+}
+#c3{
+    cursor: default;
+}
+#c4{
+    cursor: e-resize;
+}
+#c5{
+    cursor: help;
+}
+#c6{
+    cursor: move;
+}

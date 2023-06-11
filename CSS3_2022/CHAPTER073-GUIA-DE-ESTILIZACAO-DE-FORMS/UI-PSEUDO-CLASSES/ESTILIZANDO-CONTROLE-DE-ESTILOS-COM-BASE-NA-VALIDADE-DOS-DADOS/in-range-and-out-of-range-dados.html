@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 20px auto;
+            max-width: 460px;
+        }
+
+        fieldset {
+            padding: 10px 30px 0;
+        }
+
+        legend {
+            color: white;
+            background: black;
+            padding: 5px 10px;
+        }
+
+        fieldset>div {
+            margin-bottom: 20px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        button,
+        label,
+        input {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+        }
+
+        input {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;
+        }
+
+        /*
+         - quando usuario passar o mouse sobre o input ou quando ele receber o foco nele
+        */
+        input:hover,
+        input:focus {
+            background-color: #eee;
+        }
+
+        /**CSS para fornecer os indicadores labels, valid e invalid**/
+        input+span {
+            position: relative;
+        }
+
+        input + span::after {
+            font-size: 0.7rem;
+            position: absolute;
+            padding: 5px 10px;
+            top: -26px;
+        }
+
+        /*se um elemento input possui o atributo required especificado, e ele tiver um span elemento como irmão sendo o proximo elemento, adicionaremos o conteudo "required" depois do conteudo original do span*/
+        input:required + span::after {
+            color: white;
+            background-color: black;
+            content: "required";
+            left: -70px;
+        }
+
+        /*
+         - um elemento input cujo valor atual está fora dos limites de intervalo especificados pelos atributos min e max. aplica pseudo-class :out-of-range
+         - se o input possuir um elemento span como irmão proximo seguinte, adicionamos um conteudo indicador depois do conteudo original do span
+        */
+        input:out-of-range + span::after {
+            color: white;
+            background-color: red;
+            width: 155px;
+            content: "Outside allowable value range";
+            left: -182px;
+        }
+
+        input + span::before {
+            position: absolute;
+            right: -20px;
+            top: 5px;
+        }
+
+        /*
+         - quando um elemento input possuir um conteudo não valido, aplica pseudo classe invalid.
+        */
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        /*
+         - quando um elemento input possuir um conteudo não valido , aplica pseudo classe invalid.
+         - e ele tiver um span elemento como irmão proximo, adicionaremos antes do conteudo original dele um indicador de conteudo invalido
+        */
+        input:invalid + span::before {
+            content: '✖';
+            color: red;
+        }
+
+        /*
+         - quando um elemento input possuir um conteudo valido com suceso, aplica pseudo classe :valid.
+         - e ele tiver um span elemento como irmão proximo, adicionaremos antes do conteudo original dele um indicador de conteudo valido
+        */
+        input:valid + span::before {
+            content: '✓';
+            color: green;
+        }
+
+        button {
+            width: 60%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <fieldset>
+            <legend>Feedback form</legend>
+            <p>Required fields are labelled with "required".</p>
+            <div>
+                <label for="name">Name: </label>
+                <input id="name" name="name" type="text" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="age">Age (must be 12+): </label>
+                <input id="age" name="age" type="number" min="12" max="120" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="email">Email address (include if you want a response): </label>
+                <input id="email" name="email" type="email">
+                <span></span>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script type="text/javascript">
+        /*
+         * * DADOS DENTRO(in-range) E FORA DO INTERVALO(out-of-range)
+         * 
+         * Como sugerimos acima, existem duas outras pseudoclasses relacionadas a serem consideradas — :in-range e :out-of-range. Eles correspondem a entradas numéricas em que os limites de intervalo são especificados por min e max, quando seus dados estão dentro ou fora do intervalo especificado, respectivamente.
+         * 
+         * Nota: Os tipos de entrada numérica são date, month, week, time, datetime-local, number e range.
+         * 
+         * Vale a pena notar que as entradas cujos dados estão dentro do intervalo também serão correspondidas pela :valid pseudoclasse e as entradas cujos dados estiverem fora do intervalo também serão correspondidas pela :invalid pseudoclasse. Então por que ter os dois? O problema é realmente de semântica - fora de alcance(out-of-range) é um tipo mais específico de comunicação inválida, então você pode querer fornecer uma mensagem diferente para entradas fora de alcance(out-of-range), o que será mais útil para os usuários do que apenas dizer "inválido". Você pode até querer fornecer ambos.
+         * 
+         * Vejamos um exemplo que faz exatamente isso
+         * 
+         * A entrada numérica fica assim:
+         
+            <div>
+                <label for="age">Age (must be 12+): </label>
+                <input id="age" name="age" type="number" min="12" max="120" required>
+                <span></span>
+            </div>
+
+         * O CSS Fica assim:
+
+            input + span {
+                position: relative;
+            }
+
+            input + span::after {
+                font-size: 0.7rem;
+                position: absolute;
+                padding: 5px 10px;
+                top: -26px;
+            }
+
+            input:required + span::after {
+                color: white;
+                background-color: black;
+                content: "Required";
+                left: -70px;
+            }
+
+            input:out-of-range + span::after {
+                color: white;
+                background-color: red;
+                width: 155px;
+                content: "Outside allowable value range";
+                left: -182px;
+            }
+
+         * 
+         * Esta é uma história semelhante à que tivemos antes no :required exemplo, exceto que aqui dividimos as declarações que se aplicam a qualquer ::after conteúdo em uma regra separada e fornecemos o ::after conteúdo separado para :required e :out-of-range declara seu próprio conteúdo e estilo.
+         * 
+         * É possível que a entrada numérica seja necessária(required) e fora de alcance(out-of-range) ao mesmo tempo, então o que acontece então? Como a :out-of-range regra aparece mais tarde no código-fonte do que a :required regra, as regras de cascata entram em ação e a mensagem fora do intervalo é mostrada.
+         * 
+         * Isso funciona muito bem - quando a página é carregada pela primeira vez, "Obrigatório" é mostrado, junto com uma cruz vermelha e uma borda. Quando você digita uma idade válida (ou seja, no intervalo de 12 a 120), a entrada se torna válida. Se, no entanto, você alterar a entrada de idade para uma que esteja fora do intervalo, a mensagem "Fora do intervalo de valores permitidos" será exibida no lugar de "Obrigatório".
+         * 
+         * Nota: Para inserir um valor inválido/fora do intervalo, você terá que focar o formulário e digitá-lo usando o teclado. Os botões giratórios não permitem aumentar/diminuir o valor fora do intervalo permitido.
+        */
+    </script>
+</body>
+
+</html>

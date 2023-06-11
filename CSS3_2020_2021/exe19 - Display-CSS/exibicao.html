@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibição Elemento HTML</title>
+    <link rel="stylesheet" href="exibicao.css">
+</head>
+<body>
+    <h1>Display - Exibição</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere itaque, aliquam qui et, ratione voluptatibus incidunt nesciunt totam doloribus eligendi error iusto, aliquid possimus! Tenetur, aliquid. In repellendus mollitia dolore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vero est iure, possimus voluptates, explicabo corporis reprehenderit optio pariatur eius earum minima quaerat hic doloremque? Facilis quasi soluta molestias pariatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et laboriosam mollitia nihil veniam obcaecati esse expedita. Officia autem error veniam. Minus alias nulla ipsam tempora facilis quae, eius enim iusto. <b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptatem iure quae adipisci mollitia animi ipsum, culpa porro repellendus delectus beatae iste hic autem numquam, libero quo velit, alias neque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam debitis nihil quas quaerat et iusto quia possimus. Incidunt ducimus voluptas illum cum, odit, odio consequatur repellat, praesentium tempore laborum autem?</b></p>
+    <h2>Exemplo de Elemento de Bloco uma DIV</h2>
+    <ul>
+        <li>div</li>
+        <li>h1 a h6</li>
+        <li>p</li>
+        <li>form</li>
+        <li>header</li>
+        <li>footer</li>
+        <li>section</li>
+    </ul>
+    <div id="conteiner_block_level"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo pariatur fuga, vitae itaque quibusdam voluptate. Repudiandae nemo adipisci similique autem doloremque, repellendus incidunt nulla non, neque quasi dolores omnis molestias?</div>
+    <h2>Exemplos de Elemento inline - embutido</h2>
+    <ol>
+        <li>span</li>
+        <li>a</li>
+        <li>img</li>
+    </ol>
+    <img class="img_display_inline" src="check.png" alt="icone de verificação">
+    <h2>Substituição de valor de display padrão</h2>
+    <p>De maneira padrão os links são caixas de layout de tipo block - bloco, ocupa todo o espaço de largura e se quebra de linha</p>
+    <ul>
+        <li><a href="#">HTML5</a></li>
+        <li><a href="#">CSS3</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ul>
+    <p>No exemplo abaixo vou mudar o layout de display da caixa para ela ser embutida - inline, e todos os links ficar alinhados horizontalmente, e so ocupar o espaço necessario</p>
+    <ul>
+        <li class="ex_inline"><a href="#">HTML5</a></li>
+        <li class="ex_inline"><a href="#">CSS3</a></li>
+        <li class="ex_inline"><a href="#">JavaScript</a></li>
+    </ul>
+    <b><p>exemplo exibindo um elemento inline - como um elemento de bloco, elemento funcionando como inline abaixo por padrão</p></b>
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio odit, sint officiis unde repellendus natus itaque ullam at aperiam autem atque rerum. Magni, cumque nisi! Eos eaque illum qui autem!</span>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptas dolorem! Voluptatem possimus necessitatibus ex consequuntur. Corporis magni necessitatibus blanditiis saepe excepturi quisquam, dolor, sed numquam reiciendis, amet non voluptatibus?</span>
+    <p><b>elemento inline sendo exibido como um elemento em bloco</b></p>
+    <span class="ex_display_block">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio odit, sint officiis unde repellendus natus itaque ullam at aperiam autem atque rerum. Magni, cumque nisi! Eos eaque illum qui autem!</span>
+    <span class="ex_display_block"><b>Elemento sendo quebrado de linha bem aqui</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptas dolorem! Voluptatem possimus necessitatibus ex consequuntur. Corporis magni necessitatibus blanditiis saepe excepturi quisquam, dolor, sed numquam reiciendis, amet non voluptatibus?</span>
+    <h2>Ocultar um elemento - display: none ou visibility: hidden ?</h2>
+    <p>Abaixo termos um conteiner colorido ocultado, pelo display:none, mas que no layout não ocupa espaço mesmo ocultado</p>
+    <div class="conteiner_display_none">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus ratione eos quas nemo, ad dignissimos totam delectus placeat iusto repudiandae molestias ea exercitationem architecto! Corrupti nihil ducimus obcaecati nisi esse?</p>
+    </div>
+    <p>aqui abaixo tem um conteiner - ocultado pela propriedade visibility: hidden, mas percebe-se que ele ainda ocupa layout no espaço</p>
+    <div class="conteiner_visibility">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quia laboriosam dolor suscipit magnam ullam aperiam ea neque quam rerum, repellat voluptate doloribus ex error autem officia corporis temporibus! Aspernatur!</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!--
+    * OUTLINE WIDTH(LARGURA DO CONTORNO)
+
+        - A outline-width propriedade especifica a largura do contorno e pode ter um dos seguintes valores:
+
+            thin-fino (normalmente 1px)
+            medium-médio (normalmente 3px)
+            thick-grosso (normalmente 5px)
+            Um tamanho específico (em px, pt, cm, em, etc)
+
+        - O exemplo a seguir mostra alguns contornos com larguras diferentes:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.ex1{
+            /*
+             - Um contorno(outline) é uma linha desenhada fora da borda do elemento.
+             - outline é uma linha que é desenhada em torno de elementos, FORA das bordas, para fazer o elemento "se destacar".
+             - a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: solid; /*outline solida*/
+            /*especifica a cor do contorno*/
+            outline-color: red;
+            /*
+             - a propriedade outline-width especifica a largura de uma outline(contorno)
+             - o valor thin(fino) especifica uma linha fina de contorno ao elemento.
+            */
+            outline-width: thin;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 1px solid black;
+        }
+        p.ex2{
+            /*- a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: solid; /*outline solida*/
+            /*especifica a cor do contorno*/
+            outline-color: red;
+            /*
+             - a propriedade outline-width especifica a largura de uma outline(contorno)
+             - o valor medium(medio) especifica uma linha media de contorno ao elemento.
+            */
+            outline-width: medium;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 1px solid black;
+        }
+        p.ex3{
+            /*- a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: solid; /*outline solida*/
+            /*especifica a cor do contorno*/
+            outline-color: red;
+            /*
+             - a propriedade outline-width especifica a largura de uma outline(contorno)
+             - o valor thick(grosso) especifica uma linha grossa de contorno ao elemento.
+            */
+            outline-width: thick;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 1px solid black;
+        }
+        p.ex4{
+            /*- a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: solid; /*outline solida*/
+            /*especifica a cor do contorno*/
+            outline-color: red;
+            /*
+             - a propriedade outline-width especifica a largura de uma outline(contorno)
+             - o valor 4px especifica um tamanho especifico para a linha de contorno do elemento em px.*/
+            outline-width: 4px;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade outline-width(largura do contorno)</h2>
+    <p class="ex1">Um contorno fino</p>
+    <p class="ex2">Um contorno médio</p>
+    <p class="ex3">Um contorno grosso</p>
+    <p class="ex4">Um contorno de 4px de espessura</p>
+    
+</body>    
+</html>

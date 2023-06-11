@@ -1,0 +1,63 @@
+<!--
+    * DANDO AOS ITENS DIFERENTES FATORES DE CRESCIMENTO FLEXÍVEL
+
+        Nossa compreensão de como flex-grow funciona com flex-basis nos permite ter mais controle sobre nossos tamanhos de itens individuais, atribuindo aos itens diferentes flex-grow fatores. Se mantivermos nosso flex-basis at 0 para que todo o espaço possa ser distribuído, poderíamos atribuir a cada um dos três itens flexíveis um flex-grow fator diferente. No exemplo abaixo estou usando os seguintes valores:
+
+            1 para o primeiro item.
+            1 para o segundo item.
+            2 para o terceiro item.
+
+        Trabalhando a partir de uma base flexível de 0, isso significa que o espaço disponível é distribuído da seguinte maneira. Precisamos somar os fatores de crescimento do flex e, em seguida, dividir a quantidade total de espaço livre positivo no contêiner flex por esse número, que neste caso é 4. Em seguida, dividimos o espaço de acordo com os valores individuais - o primeiro item obtém uma parte, a segunda uma parte, a terceira duas partes. Isso significa que o terceiro item tem o dobro do tamanho do primeiro e do segundo itens.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+       /*atribuiremos fatores flex grow diferentes em cada item a partir que flex-basis seja 0, isso significa que o espaço disponivel é distribuído da seguinte forma. Precisamos somar os fatores de crescimento do flex e, em seguida, dividir a quantidade total de espaço livre positivo no contêiner flex por esse número, que neste caso é 4. Em seguida, dividimos o espaço de acordo com os valores individuais - o primeiro item obtém uma parte, a segunda uma parte, a terceira duas partes. Isso significa que o terceiro item tem o dobro do tamanho do primeiro e do segundo itens.*/ 
+
+        .one{
+            background-color: black;
+            color: white;
+            /*
+             - flex shorthand
+             - flex-grow: 1 -> especifica o fator de crescimento flexivel que determina o quanto o item flexivel crescera em relação ao restante dos itens flexiveis no conteiner flexivel quando o espaço live positivo for distribuido.
+             - flex-shrink: 1 
+             - flex-basis: 0 -> especifica o tamanho inicial do item flexivel antes que qualquer distribuição de espaço aconteça, valor inicial e auto. se quisermos que o flexbox ignore completamente o tamanho do item ao fazer a distribuição de espaço definimos o valor para 0. isso essencialmente diz ao flex-bos que todo o espaço esta disponivel e para compartilha-lo proporcionalmente.
+            */
+            flex: 1 1 0;
+        }
+
+        .two{
+            flex: 1 1 0;
+            background-color: green;
+            color: white;
+        }
+
+        .three{
+            flex: 2 1 0;
+            background-color: blue;
+            color: white;
+        }
+
+        /**
+         - Lembre-se de que você pode usar qualquer valor positivo aqui. É a relação entre um item e os outros que importa. Você pode usar números grandes ou decimais - depende de você. Para testar isso, altere os valores atribuídos no exemplo acima para .25, .25e .50— você deve ver o mesmo resultado.
+        */ 
+    </style>
+    <title>FlexBox</title>
+</head>
+<body>
+    <div class="box">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!--
+    * ABREVIATURA PARA OS VALORES DAS PROPRIEDADES FLEX
+
+        As propriedades flex-grow, flex-shrink, and flex-basis raramente são empregas de forma individual. Usualmente, elas são combinadas através da propriedade de abreviação flex. A abreviatura flex permite definir os três valores na seguinte ordem: flex-grow, flex-shrink, flex-basis.
+
+        O exemplo prático abaixo permite que sejam testados diferentes valores com a propriedade de abreviação flex; lembre-se que o primeiro campo corresponde à propriedade flex-grow, onde um valor inteiro e positivo faz-se o elemento crescer. O segundo campo é a propriedade flex-shrink e, ao contrário do anterior, um valor inteiro e positivo pode fazer os elementos encolherem, mas  somente se o seu comprimento total ultrapassar o limite horizontal do contêiner, no sentido do eixo principal. O último campo contém a propriedade flex-basis, que define o valor base, em unidades de pixel, para aumentar e diminuir o elemento quando da aplicação das propriedades anteriores.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+        }
+
+        /*flex container*/
+        .one{
+            /*
+             - shorthand flex, abreviatura para flex-grow, flex-shrink, flex-basis
+             -  lembre-se que o primeiro campo corresponde à propriedade flex-grow, onde um valor inteiro e positivo faz-se o elemento crescer.
+             - O segundo campo é a propriedade flex-shrink e, ao contrário do anterior, um valor inteiro e positivo pode fazer os elementos encolherem, mas  somente se o seu comprimento total ultrapassar o limite horizontal do contêiner, no sentido do eixo principal.
+             -  O último campo contém a propriedade flex-basis, que define o valor base, em unidades de pixel, para aumentar e diminuir o elemento quando da aplicação das propriedades anteriores.
+            */
+            flex: 1 1 auto;
+        }
+
+        /*flex container*/
+        .two{
+            flex: 1 1 auto;
+        }
+
+        /*flex container*/
+        .three{
+            flex: 1 1 auto;
+        }
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="one">Um</div>
+        <div class="two">Dois</div>
+        <div class="three">Três</div>
+    </div>
+</body>
+</html>

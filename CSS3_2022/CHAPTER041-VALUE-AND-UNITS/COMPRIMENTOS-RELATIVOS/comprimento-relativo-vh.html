@@ -1,0 +1,32 @@
+<!--
+    * COMPRIMENTO RELATIVO vh(viewheight - altura da janela de visualização)
+
+        Relativo a 1% da altura da janela de visualização*
+
+        A janela de visualização(viewport) é a área visível do usuário de uma página da web. Varia de acordo com o dispositivo - será menor em um telefone celular do que em uma tela de computador.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        h1{
+            /*
+             - o comprimento e um numero seguido por uma unidade de comprimento.
+             - As unidades de comprimento relativo especificam um comprimento relativo a outra propriedade de comprimento.
+             - aqui neste exemplo especificamos que a fonte do texto do elemento h1 tera o tamanho 20vh de comprimento relativo.
+             - vh: unidade comprimento relativo - Relativo a 1% da altura da janela de visualização(viewport)*
+            */
+            font-size: 20vh;/*20vh e o mesmo que 20% da viewheight, o tamanho da fonte sera 20% da altura da janela de visualização, 20% da altura da janela do navegador*/
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Olá</h1>
+    <p>Redimensione a altura da janela do navegador para ver como o tamanho da fonte de h1 muda.</p>
+    <p>1vh(viewheight) = 1% da altura da janela de visualização.</p>
+
+</body>
+</html>

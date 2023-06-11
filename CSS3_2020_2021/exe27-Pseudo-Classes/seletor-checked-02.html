@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletor-checked</title>
+    <!--
+        * SELETOR CHECKED - SELETOR VERIFICADO
+
+         - O :checked seletor corresponde a cada elemento <input> marcado (apenas para botões de opção e caixas de seleção) e elemento <option>.
+
+         - SINTAXE:
+         
+           :checked{
+               css declarations;
+           }
+    -->
+    <style>
+
+        /*
+         * Defina a altura e a largura de todos os elementos <input> marcados, os marcados são os que o usuario seleciona, ou que por padrão ja vai selecionado:
+        
+         * o seletor verificado - checked so serve para elementos <input> como input type checkbox,radio
+
+        */
+        input:checked{
+            /*altura dos inputs*/
+            height: 50px;
+            /*largura dos inputs*/
+            width: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Seletor checked - Seletor verificado</h1>
+    <h2>Com o seletor - verificado (checked)</h2>
+    <p><b>Exemplo: </b>Defina a altura e a largura de todos os elementos &lt;input&gt; marcados pelo usuario:</p>
+    <!-- formulario -->
+    <form action="">
+        <!-- input type radio-->
+        <input type="radio" checked="checked" value="masculino" name="sexo">
+        <!--label-->
+        <label for="sexo">Escolha uma opção</label>
+        <br>
+        <!-- input type radio-->
+        <input type="radio" value="feminino" name="sexo">
+        <!--label-->
+        <label for="sexo">Escolha uma opção</label>
+        <br>
+        <!--input type checkbox-->
+        <input type="checkbox" checked="checked" value="Bicicleta">Eu tenho uma bicicleta
+        <br>
+        <!--input type checkbox-->
+        <input type="checkbox" checked="checked" value="Carro">Eu tenho um carro
+        <br>
+    </form>
+
+    <h2>Sem o seletor verificado - checked</h2>
+    <!-- formulario -->
+    <form action="">
+        <!-- input type radio-->
+        <input type="radio" value="masculino" name="sexo">
+        <!--label-->
+        <label for="sexo">Escolha uma opção</label>
+        <br>
+        <!-- input type radio-->
+        <input type="radio" value="feminino" name="sexo">
+        <!--label-->
+        <label for="sexo">Escolha uma opção</label>
+        <br>
+        <!--input type checkbox-->
+        <input type="checkbox" value="Bicicleta">Eu tenho uma bicicleta
+        <br>
+        <!--input type checkbox-->
+        <input type="checkbox" value="Carro">Eu tenho um carro
+        <br>
+    </form>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!--
+    * CONTEÚDO SUSPENSO ALINHADO À DIREITA
+
+        - Se você quiser que o menu suspenso vá da direita para a esquerda, em vez da esquerda para a direita, adicione right: 0;
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        button.dropbtn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        div.dropdown{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            display: inline-block;
+        }
+
+        div.dropdown-content{
+            display: none;
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancestral deste elemento <div class="dropdow-content"> e o elemento <div class="dropdown"> pois contem o elemento, e o pai do elemento e possui a position diferente de static
+            */
+            position: absolute;
+            /*
+             - A right propriedade afeta a posição horizontal de um elemento posicionado.
+             - Se position: absolute; ou position: fixed; - a propriedade right define a borda direita de um elemento para uma unidade à direita da borda direita de seu ancestral posicionado mais próximo.
+            */
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            /*
+             - a propriedade z-index  especifica a ordem de pilha de um elemento.
+             - qual elemento deve ser colocado na frente ou atrás dos outros
+             - um elemento pode ter a ordem de pilha negativa ou positiva
+             - o elemento com ordem de pilha positiva e o elemento que vai ser colocado na frente o elemento com ordem de pilha negativa e o elemento que ser colocado atras
+            */
+            z-index: 1;
+        }
+
+        div.dropdown-content a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /*
+         - toda vez que o usuario passar o mouse por cima de um elemento <a> e esse elemento <a> for descendente do elemento div.dropdown-content, recebera o seguinte estilo:
+        */  
+        div.dropdown-content a:hover{
+            background-color: #f1f1f1;
+        }
+
+        /*
+         - o usuario ao passar o mouse por cima do elemento div.dropdown, o elemento descendente recebera o seguinte estilo abaixo
+        */
+        div.dropdown:hover .dropdown-content{
+            display: block;
+        }
+
+        div.dropdown:hover .dropbtn{
+            background-color: #3e8e41;
+        }
+        
+        div.dropdown-left{
+            float: left;
+        }
+        div.dropdown-content-left{
+            left: 0;
+        }
+        div.dropdown-right{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <h2>Conteúdo suspenso alinhado</h2>
+        </header>
+        <p>Determine se o conteúdo da lista suspensa deve ir da esquerda para a direita ou da direita para a esquerda com as propriedades esquerda e direita.</p>
+    </main>
+
+    <div class="dropdown dropdown-left">
+        <button class="dropbtn">Left</button>
+        <div class="dropdown-content dropdown-content-left">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <div class="dropdown dropdown-right">
+        <button class="dropbtn">Right</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    
+
+</body>
+</html>

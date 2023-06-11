@@ -1,0 +1,61 @@
+<!--
+    * OPACITY / TRANSPARENCY(OPACIDADE E TRANSPARENCIA)
+
+        - A opacity propriedade especifica a opacidade/transparência de um elemento. Pode assumir um valor de 0.0 - 1.0. Quanto menor o valor, mais transparente:
+
+        - Nota: Ao usar a opacity propriedade para adicionar transparência ao plano de fundo de um elemento, todos os seus elementos filho herdam a mesma transparência. Isso pode dificultar a leitura do texto dentro de um elemento totalmente transparente.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Background-Color</title>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*regra css, seletor div para elementos <div>*/
+        div{
+            /*especifica a cor de fundo para elementos <div>, a cor e especificada pelo seu nome predefinido*/
+            background-color: green;
+        }
+        /*regra css, seletor de class para elementos mais especificos, seleciona um elemento <div> que possua a classe first*/
+        div.first{
+            /*a propriedade opacity especifica a opacidade/transparencia de um elemento. o valor 0.1 especifica o elemento mais transparente*/
+            opacity: 0.1;
+        }
+        /*regra css, seletor de class para elementos mais especificos, seleciona um elemento <div> que possua a classe second*/
+        div.second{
+            /*a propriedade opacity especifica a opacidade/transparencia de um elemento. o valor 0.3 especifica o elemento transparente mas com menos trasparencia*/
+            opacity: 0.3;
+        }
+        /*regra css, seletor de class para elementos mais especificos, seleciona um elemento <div> que possua a classe third*/
+            div.third{
+            /*a propriedade opacity especifica a opacidade/transparencia de um elemento. o valor 0.6 especifica o elemento transparente mas com menos trasparencia*/
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Caixas transparentes</h1>
+
+    <p>Ao usar a propriedade opacity para adicionar transparência ao plano de fundo de um elemento, todos os seus elementos filhos também se tornam transparentes. Isso pode dificultar a leitura do texto dentro de um elemento totalmente transparente:</p>
+
+    <div class="first">
+        <h1>opacity 0.1</h1>
+    </div>
+    <div class="second">
+        <h1>opacity 0.3</h1>
+    </div>
+    <div class="third">
+        <h1>opacity 0.6</h1>
+    </div>
+    <div>
+        <h1>opacity 1(default)</h1>
+    </div>
+
+</body>
+</html>

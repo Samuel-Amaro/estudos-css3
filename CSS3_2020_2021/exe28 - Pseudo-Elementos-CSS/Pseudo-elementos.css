@@ -1,0 +1,166 @@
+/*
+ * PSEUDO-ELEMENTOS CSS
+
+ * OQUE SÃO PSEUDO-ELEMENTOS ?
+
+  - Um pseudoelemento CSS é usado para estilizar partes específicas de um elemento.
+
+  - Por exemplo, pode ser usado para:
+
+    Estilize a primeira letra ou linha de um elemento;
+    insira contéudo antes ou depois do conteúdo de um elemento
+
+  - SINTAXE DOS PSEUDOELEMENTOS:
+
+   selector::pseudo-element{
+            property: value;
+   }
+*/
+
+
+/*
+
+ * O PSEUDO ELEMENTO DE FIRST-LINE - PSEUDO ELEMENTO DE PRIMEIRA LINHA
+
+  - O ::first-line pseudoelemento é usado para adicionar um estilo especial à primeira linha de um texto;
+
+  - O exemplo a seguir formata a primeira linha do texto em todos os elementos <p>:
+
+  - Observação: o ::first-line pseudoelemento só pode ser aplicado a elementos de nível de bloco.
+
+  - As seguintes propriedades se aplicam ao ::first-line pseudoelemento:
+
+    propriedades da fonte - font properties;
+    propriedades de cor - color properties;
+    propriedades de fundo - background properties;
+    espaçamento entre palavras - word-spacing;
+    espaçamento entre letras - letter-spacing;
+    decoração de texto - text-decoration;
+    alinhamento vertical - vertical-align;
+    transformação de texto - text-transform;
+    altura da linha - line-height;
+    Claro - clear;
+*/
+/*para cada primeira linha de um paragrafo*/
+p.pseudo-elemento-primeira-linha::first-line{
+    /*cor do texto*/
+    color: #ff0000;
+    /*estilo da fonte*/
+    font-variant: small-caps;
+}
+
+/****************************************************/
+
+/*
+ 
+ * O PSEUDO-ELEMENTO :: primeira-letra - O PSEUDO ELEMENTO :: first-letter
+
+   - O ::first-letter pseudo-elemento é usado para adicionar um estilo especial à primeira letra de um texto.
+   
+   - O exemplo a seguir formata a primeira letra do texto em todos os elementos <p>: 
+
+   - Observação: o ::first-letter pseudoelemento só pode ser aplicado a elementos de nível de bloco;
+
+   - As seguintes propriedades se aplicam ao pseudoelemento :: first-letter:
+   
+        propriedades da fonte - font properties;
+        propriedades de cor - color properties;
+        propriedades de fundo - background properties;
+        propriedades de margem - margin properties;
+        propriedades de preenchimento - padding properties;
+        propriedades de fronteira - border properties;
+        decoração de texto - text-decoration;
+        alinhamento vertical (somente se "float" for "nenhum") - vertical-align;
+        transformação de texto - text-transform;
+        altura da linha - line-height;
+        flutuador - float;
+        Claro - clear;
+*/
+/*para cada primeira letra de um paragrafo*/
+p.pseudo-elemento-primeira-letra::first-letter{
+    /*cor do texto*/
+    color: #ff0000;
+    /*tamanho da fonte*/
+    font-size: xx-large;
+}
+
+/*********************************************************/
+
+/*
+ * PSEUDO ELEMENTOS E CLASSES CSS
+
+  - Pseudo-elementos podem ser combinados com classes CSS: 
+  - so olhas os exemplos acima
+*/
+
+/********************************************************/
+
+/*
+ * PSEUDO-ELEMENTOS MÚLTIPLOS
+
+  - Vários pseudo-elementos também podem ser combinados.
+  - No exemplo a seguir, a primeira letra de um parágrafo será vermelha, em um tamanho de fonte xx-grande. O resto da primeira linha será azul e em versalete. O restante do parágrafo terá o tamanho e cor da fonte padrão:
+*/
+/*para cada primeira letra do paragrafo*/
+p.multiplo-pseudo-elementos::first-letter{
+    /*cor*/
+    color: #ff0000;
+    /*tamanho*/
+    font-size: xx-large;
+}
+/*para cada primeira linha de um paragrafo*/
+p.multiplo-pseudo-elementos::first-line{
+    /*cor*/
+    color: #0000ff;
+    /*variancia da fonte*/
+    font-variant: small-caps;
+}
+
+/****************************************************************/
+
+/*
+
+ * PSEUDO ELEMENTO :: before - Pseudo elemento :: antes
+
+  - O ::before pseudoelemento pode ser usado para inserir algum conteúdo antes do conteúdo de um elemento;
+  - O exemplo a seguir insere uma imagem antes do conteúdo de cada elemento <p>:
+*/
+/*antes de mostrar o conteudo do paragrafo*/
+p.pseudo-elemento-before::before{
+    /*inseri uma imagen*/
+    content: url(like.png);
+}
+
+/**************************************************/
+
+/*
+ * O PSEUDO-ELEMENTO :: after - PSEUDO ELEMENTO :: depois
+
+  - O ::after pseudoelemento pode ser usado para inserir algum conteúdo após o conteúdo de um elemento;
+
+  - O exemplo a seguir insere uma imagem após o conteúdo de cada elemento <p>:
+*/
+/*depois de motrar o conteudo do elemento p*/
+p.pseudo-elemento-after::after{
+    /*inseri uma imagen*/
+    content: url(edit.png);
+}
+
+/********************************************************/
+
+/*
+  * CSS - O PSEUDO ELEMENTO :: SELECTION - SELECIONADO - SELEÇÃO
+
+   - O ::selection pseudoelemento corresponde à parte de um elemento que é selecionado por um usuário.
+
+   - As seguintes propriedades CSS pode ser aplicada a ::selection: color, background, cursor, e outline.
+
+   - O exemplo a seguir torna o texto selecionado vermelho em um fundo amarelo:
+*/
+/*selecionou qualquer texto, ou conteudo de qualquer elemento*/
+p.pseudo-elemento-selection::selection{
+    /*cor do texto*/
+    color: red;
+    /*cor de fundo*/
+    background-color: yellow;
+}

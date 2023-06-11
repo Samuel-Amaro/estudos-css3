@@ -1,0 +1,41 @@
+<!--
+    * QUEBRA AUTOMÁTICA DE PALAVRAS CSS
+
+      - A word-wrap propriedade CSS permite que palavras longas possam ser quebradas e quebradas na próxima linha. 
+
+      - Se uma palavra é muito longa para caber em uma área, ela se expande para fora:
+
+      - A propriedade word-wrap permite que você force a quebra do texto - mesmo que isso signifique dividi-lo no meio de uma palavra:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebra de palavras</title>
+    <style>
+        p{
+            width: 11em;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #000000;
+            border-style: solid;
+            /**
+             * essa propriedade quebra uma linha, dentro do elemento.
+             * a quebra de linha vai ocorrer quando tiver uma palavra muito grande, que ultrapasse os limites, do elemento, ai palavra e quebra e começa em outra linha
+            **/
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quebra Automática de palavras CSS - word-wrap;</h1>
+    <p><strong>Exemplo 01:</strong> Permita que palavras longas possam ser quebradas e quebradas na próxima linha</p>
+    <h2>A propriedade de quebra de linha</h2>
+    <p>Lorem ipsum dolor, sit <strong>palavramuitograndemesmobemgrandona</strong> amet consectetur adipisicing elit. Recusandae, consequatur quo minus rerum eligendi veniam, fuga at quam aspernatur asperiores illum. Voluptatibus officia praesentium ratione obcaecati, saepe voluptate tempore recusandae?</p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!--
+    * MATRIX3D()
+
+        A função CSS matrix3d() define uma transformação 3D como uma matriz homogênea 4x4. Seu resultado é um tipo de dados <transform-function>.
+
+    * SINTAXE
+
+        A função matrix3d() é especificada com 16 valores. Eles são descritos na ordem da coluna principal.
+
+            matrix3d(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4)
+
+        * VALORES
+
+            a1 b1 c1 d1 a2 b2 c2 d2 a3 b3 c3 d3: São <number>s descrevendo a transformação linear.
+
+            a4 b4 c4 d4: São <number>s descrevendo a tradução a ser aplicada.
+
+            Coordenadas cartesianas em ℝ^2: Essa transformação se aplica ao espaço 3D e não pode ser representada no plano.
+
+            Coordenadas homogêneas em ℝℙ^2: Essa transformação se aplica ao espaço 3D e não pode ser representada no plano.
+
+            Coordenadas cartesianas em ℝ^3: Uma transformação afim 3D genérica não pode ser representada usando uma matriz de coordenadas cartesianas, pois as traduções não são transformações lineares. 
+
+            Coordenadas homogêneas em ℝℙ^3:   
+                (a1	a2	a3	a4
+                b1	b2	b3	b4
+                c1	c2	c3	c4
+                d1	d2	d3	d4 )
+
+-->

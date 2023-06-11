@@ -1,0 +1,27 @@
+/**
+ * * Imagen de Fundo em tamanho real
+ * 
+ * Agora queremos ter uma imagem de plano de fundo em um site que cubra a janela inteira do navegador o tempo todo.
+ * 
+ * Os requisitos são os seguintes:
+
+    - Preencha a página inteira com a imagem (sem espaço em branco);
+    - 
+    - Dimensione a imagem conforme necessário;
+    - 
+    - Imagem central na página
+    - 
+    - Não faça barras de rolagem
+
+ * 
+ * O exemplo a seguir mostra como fazer; Use o elemento <html> (o elemento <html> sempre tem pelo menos a altura da janela do navegador). Em seguida, defina um plano de fundo fixo e centralizado nele. Em seguida, ajuste seu tamanho com a propriedade background-size:
+*/
+
+html{
+    background: url(fundo.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+body{
+    color: white;
+}

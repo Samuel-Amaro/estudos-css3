@@ -1,0 +1,25 @@
+/**
+ * Uma folha de estilo externa pode ser escrita em qualquer editor de texto e deve ser salva com uma extensão .css.
+ *
+ * O arquivo .css externo não deve conter tags HTML.
+ * 
+ * Aqui está a aparência do arquivo "mystyle.css":
+*/
+
+/*regra css, usando seletor de elemento e o bloco de declaração*/
+body{
+    /*declaração css, com propriedade : valor;*/
+    background-color: lightblue;
+}
+
+/*regra css*/
+h1{
+    color: navy;
+    margin-left: 20px;
+}
+
+/**
+ * Nota: Não adicione um espaço entre o valor da propriedade e a unidade:
+Incorreto (espaço): margin-left: 20 px;
+Correto (sem espaço):margin-left: 20px;
+*/

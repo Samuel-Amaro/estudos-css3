@@ -1,0 +1,105 @@
+<!--
+    * * ESPECIFIQUE A CURVA DE VELOCIDADE DA ANIMAÇÃO
+
+      - A animation-timing-function propriedade especifica a curva de velocidade da animação.
+
+      - A propriedade animation-timing-function pode ter os seguintes valores:
+
+        - ease - Especifica uma animação com início lento, depois rápido e, a seguir, fim lento (este é o padrão)
+
+        - linear - especifica uma animação com a mesma velocidade do início ao fim
+
+        - ease-in - Especifica uma animação com um início lento
+
+        - ease-out - especifica uma animação com um final lento
+
+        - ease-in-out - especifica uma animação com início e fim lentos
+
+        - cubic-bezier(n,n,n,n) - Permite definir seus próprios valores em uma função de bezier cúbico
+
+     - O exemplo a seguir mostra algumas das diferentes curvas de velocidade que podem ser usadas:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curva de velocidade da animação</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            font-weight: bold;
+            position: relative;
+            /*especificando o nome da animação no elemento*/
+            animation-name: meumove;
+            /*especificando a duração da animação*/
+            animation-duration: 5s;
+            /*especificando a quantidade de vezes que a animação deve ser executada, neste caso ifinitamente*/
+            animation-iteration-count: infinite;
+        }
+
+        /*usando propriedade de herança padrão do CSS*/
+        div#div1{
+            /*especificando a velocidade da curva da animação neste elemento(linear): specifica uma animação com a mesma velocidade do início ao fim*/
+            animation-timing-function: linear;
+        }
+        div#div2{
+            /*especificando a velocidade da curva da animação neste elemento(ease): Especifica uma animação com início lento, depois rápido e, a seguir, fim lento (este é o padrão)*/
+            animation-timing-function: ease;
+        }
+        div#div3{
+            /*especificando a velocidade da curva da animação neste elemento(ease-in): Especifica uma animação com um início lento*/
+            animation-timing-function: ease-in;
+        }
+        div#div4{
+            /*especificando a velocidade da curva da animação neste elemento(ease-in): especifica uma animação com um final lento*/
+            animation-timing-function: ease-out;
+        }
+        div#div5{
+            /*especificando a velocidade da curva da animação neste elemento(ease-in-out):  especifica uma animação com início e fim lentos*/
+            animation-timing-function: ease-out;
+        }
+
+        /*especificando o quadro de chaves, a uma animação declarada em um elemento*/
+        @keyframes meumove{
+            /*a animação começa com a seguinte propriedade CSS*/
+            from{left: 0;}
+            /*a animação termina com a seguinte propriedade CSS*/
+            to{left: 300px;}
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Animações Em CSS</h1>
+
+    <h2>Especifique a curva de velocidade da Animação - animation-timing-function</h2>
+
+    <p><strong>Exemplo: </strong>O exemplo a seguir mostra algumas das diferentes curvas de velocidade que podem ser usadas:</p>
+
+    <h3>curva de velocidade: linear</h3>
+
+    <div id="div1">linear</div>
+    
+    <h3>curva de velocidade: ease - este e o default</h3>
+
+    <div id="div2">ease</div>
+    
+    <h3>curva de velocidade: ease-in</h3>
+
+    <div id="div3">ease-in</div>
+
+    <h3>curva de velocidade: ease-out</h3>
+    
+    <div id="div4">ease-out</div>
+    
+    <h3>curva de velocidade: ease-in-out</h3>
+
+    <div id="div5">ease-in-out</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!--
+    * overflow: scroll
+
+        - Definindo o valor como scroll, o estouro é cortado e uma barra de rolagem é adicionada para rolar dentro da caixa. Observe que isso adicionará uma barra de rolagem horizontal e verticalmente (mesmo que você não precise):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        div{
+            background-color: coral;
+            width: 200px;
+            /*
+             - a overflow propriedade so funcionada para elementos com display block e com uma altura especificada
+            */
+            height: 100px;
+            border: 1px solid black;
+            /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - o valor scroll(rolar) - O overflow(conteudo que transborda para fora da caixa) é cortado e uma barra de rolagem é adicionada para ver o restante do conteúdo
+            */
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>overflow: scroll(rolar)</h2>
+
+    <p>Configurando o valor de estouro para rolar, o estouro é cortado e uma barra de rolagem é adicionada para rolar dentro da caixa. Observe que isso adicionará uma barra de rolagem horizontal e verticalmente (mesmo que você não precise):</p>
+
+    <div>Você pode usar a propriedade overflow quando quiser ter um melhor controle do layout. A propriedade overflow especifica o que acontece se o conteúdo transbordar da caixa de um elemento.</div>
+
+</body>
+</html>

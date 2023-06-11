@@ -1,0 +1,63 @@
+<!--
+    * LARGURA DE BOTÃO
+      - 
+      - Por padrão, o tamanho do botão é determinado por seu conteúdo de texto (tão largo quanto seu conteúdo). Use a width propriedade para alterar a largura de um botão:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura Botões</title>
+    <style>
+        button.button{
+            background-color: #4CAF50;
+            border: none;
+            padding-top: 15px;
+            padding-right: 32px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 4px;
+            margin-right: 2px;
+            margin-bottom: 4px;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+        button.button1{
+           width: 250px; /*largura fixa*/
+        }
+        button.button2{
+            width: 50%; /*largura reponsiva, o botão se adapta ao tamanho da pagina e seus elementos pai*/
+        }
+        button.button3{
+            width: 100%; /*largura reponsiva, o botão se adapta ao tamanho da pagina e seus elementos pai*/
+        }
+        button.button4{
+            font-size: 20px;
+        }
+        button.button5{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Largura do Botão</h2>
+
+    <p>Use a propriedade de largura para alterar a largura do botão:</p>
+
+    <p><strong>Exemplo:</strong> Use pixels se quiser definir uma largura fixa e use porcentagem para botões responsivos (por exemplo, 50% de seu elemento pai). Redimensione a janela do navegador para ver o efeito.</p>
+
+    <button class="button button1">250px</button>
+
+    <button class="button button2">50%</button>
+
+    <button class="button button3">100%</button>
+
+</body>
+</html>

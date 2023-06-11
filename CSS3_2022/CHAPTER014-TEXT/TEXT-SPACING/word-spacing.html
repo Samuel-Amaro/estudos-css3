@@ -1,0 +1,61 @@
+<!--
+    * WORD SPACING(ESPAÇAMENTO ENTRE PALAVRAS)
+
+        - A word-spacing propriedade é usada para especificar o espaço entre as palavras em um texto.
+
+        - O exemplo a seguir demonstra como aumentar ou diminuir o espaço entre as palavras:
+
+        - Nota: Valores negativos são permitidos.
+
+    * SINTAXE CSS:
+
+        word-spacing: normal|length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: normal
+        DESCRIPTION: Define o espaço normal entre as palavras (0,25em) . Isso é padrão
+        ------------------------------------
+        VALUE: lenght(comprimento)
+        DESCRIPTION: Define um espaço adicional entre as palavras (em px, pt, cm, em, etc). Valores negativos são permitidos.
+        ------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION:  Configura esta propriedade para seu valor padrão.
+        ------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION:  Herda esta propriedade de seu elemento pai.
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p.one{
+            /*
+             - a propriedade word-spacing e usada para especificar o espaço entre as palavras em um texto
+             - o valor 10px especifica um comprimento, define um espaço adicional entre as palavras. define um espaço adicional de 10px entre as palavras do elemento.
+            */
+            word-spacing: 10px;
+        }
+        p.two{
+            /*
+             - o valor -2px especifica um comprimento, define um espaço adicional entre as palavras. define um espaço adicional de -2px entre as palavras do elemento.
+            */
+            word-spacing: -2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Usando word-spacing</h1>
+    
+    <p>Este é um parágrafo com espaçamento normal entre as palavras.</p>
+
+    <p class="one">Este é um parágrafo com maior espaçamento entre palavras.</p>
+
+    <p class="two">Este é um parágrafo com espaçamento de palavras menor.</p>
+
+</body>
+</html>

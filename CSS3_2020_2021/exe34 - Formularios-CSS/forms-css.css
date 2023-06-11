@@ -1,0 +1,95 @@
+/*
+ * FORMULÁRIOS CSS
+
+   - A aparência de um formulário HTML pode ser bastante melhorada com CSS:
+*/
+
+/*
+  - usando seletor de atributo, porque os elemntos estão sem especificação de classes e ids;
+  
+  - para os campos de texto e o elemento select
+
+  * seleciona apenas o campo de texto(Campo de entrada de texto)
+*/
+input[type=text], select {
+    /*pode ocupar 100% da largura do conteiner na horizontal*/
+    width: 100%;
+    /*espaço interno*/
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    /*add um espaço externo*/
+    margin-top: 8px;
+    margin-right: 8px;
+    /*o elemento sera exibido como um elemento de bloco embutido no layout da pagina*/
+    display: inline-block;
+    /*add um preenchimento*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: #ccc;
+    border-style: solid;
+    /*arredondamento do preenchimento em todas as direções*/
+    border-radius: 4px;
+    /*o elemento sera de tipo box sizing, aceita redimensionamentos*/
+    box-sizing: border-box;
+}
+
+/**
+ * usando seletor de atributo, porque os elemntos estão sem especificação de classes e ids;
+ * para o atributo type que possui o valor submit(um botão de enviar);
+ * seleciona apenas o botão envia;
+*/
+input[type=submit] {
+    /*o elemento tera sua largura de 100% em relação ao conteiner na horizontal, podera ocupar 100% da largura do conteiner*/
+    width: 100%;
+    /*cor de fundo*/
+    background-color: #4CAF50;
+    /*cor texto*/
+    color: white;
+    /*espaços interno no elemento*/
+    padding-top: 14px;
+    padding-right: 14px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*espaços externo no elemento*/
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    /*prenchimento(borda ocultada)*/
+    border: none;
+    /*arredondamento do prenchimentos nos cantos*/
+    border-radius: 4px;
+    /*muda o cursor do mouse*/
+    cursor: pointer;
+}
+
+/**
+ *  usando seletor de atributo, porque os elemntos estão sem especificação de classes e ids;
+ * para o atributo type que possui o valor submit(um botão de enviar)
+ * vai possuir um seletor de estado aplicado nesse elemento.
+ * ao usuario passar o mouse por cima do elemento;
+  * seleciona apenas o botão envia; 
+*/
+input[type=submit]:hover {
+    /*cor de fundo*/
+    background-color: #45a049;
+}
+
+/**
+ * ao seletor do conteiner;
+*/
+div {
+    /*arredondamento do prenchimento(borda)*/
+    border-radius: 5px;
+    /*cor de fundo*/
+    background-color: #f2f2f2;
+    /*espaço interno no elemento de conteiner*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}

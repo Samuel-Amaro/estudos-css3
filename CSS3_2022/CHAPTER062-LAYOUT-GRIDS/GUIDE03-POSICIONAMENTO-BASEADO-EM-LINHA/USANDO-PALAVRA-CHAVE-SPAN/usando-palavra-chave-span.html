@@ -1,0 +1,130 @@
+<!--
+    * USANDO A PALAVRA-CHAVE SPAN
+
+        Além de especificar as linhas inicial e final por número, você pode especificar uma linha inicial e, em seguida, o número de faixas(intervalos) que deseja que a área abranja.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*notação convencional*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com três colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - cada coluna tera 1fr de medida flexivel, uma fração do espaço disponivel no container grid para cada uma.
+             - Grids grandes, com muitas tracks(faixas) podem usar a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+             - usaremos a seguinte notação de repeat(3, 1fr);
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - para definir linhas, faixa de linhas.
+             - especificando as faixas de linha de forma explicita.
+             - 3 linhas com uma dimensão fixa, não cresce e nem diminue, tamanho fixo, as linhas terão 100px de altura.
+             - usando a notação repeat().
+            */
+            grid-template-rows: repeat(3, 100px);
+        }
+
+        /*iten grid*/
+        .box1{
+            /*
+             - POSICIONANDO ITENS POR NÚMERO DE LINHA
+             - Podemos usar o posicionamento baseado em linha para controlar onde esses itens ficam na grade
+             - o primeiro iten grid e posicionado contra a linha 1 faixa de colunas e se estende até a linha 2.
+             - usando shorthand grid-column uma abreviação para grid-column-start e grid-column-end
+             - se um item abrange apenas uma faixa, você pode omitir sem barra e segundo valor para os itens que abrangem apenas uma faixa.
+            */
+            grid-column: 1;
+            /*
+             - uma shorthand uma abreviação para grid-row-start e grid-row-end.
+             - você pode especificar uma linha inicial e, em seguida, o número de faixas(intervalos) que deseja que a área abranja.
+             - especificamos que queremos que o iten começa na linha 1 da faixa de linhas e se expanda por 3 linhas span 3
+            */
+            grid-row: 1 / span 3;
+        }
+
+        /*iten grid*/
+        .box2{
+            /*
+             - o segundo iten grid e posicionado contra a linha 2 faixa de colunas e se estende até a linha 3.
+             - se um item abrange apenas uma faixa, você pode omitir sem barra e segundo valor para os itens que abrangem apenas uma faixa.
+            */
+            grid-column: 2;
+            /*
+             - começa na linha 1 da faixa de linhas e se estende até a linha 2.
+             - se um item abrange apenas uma faixa, você pode omitir sem barra e segundo valor para os itens que abrangem apenas uma faixa.
+            */
+            grid-row: 1;
+        }
+
+        /*iten grid*/
+        .box3{
+            /*
+             - o terceiro iten grid e posicionado contra a linha 3 faixa de colunas e se estende até a linha 4.
+             - se um item abrange apenas uma faixa, você pode omitir sem barra e segundo valor para os itens que abrangem apenas uma faixa.
+            */
+            grid-column: 3;
+            /*
+             - especificamos que queremos que o iten começa na linha 1 da faixa de linhas e se expanda por 2 linhas (span 2)
+            */
+            grid-row: 1 / span 2;
+        }
+
+        /*iten grid*/
+        .box4{
+            /*
+             - especificamos que o quarto item queremos que o iten começa na linha 1 da faixa de colunas e se expanda por 2 linhas (span 2)
+            */
+            grid-column: 2 / span 2;
+            /*
+             - começa na linha 3 da faixa de linhas e se estende até a linha 4
+             - se um item abrange apenas uma faixa, você pode omitir sem barra e segundo valor para os itens que abrangem apenas uma faixa.
+            */
+            grid-row: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+    </div>
+
+</body>
+</html>

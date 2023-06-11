@@ -1,0 +1,82 @@
+<!--
+    * ALTERANDO O EIXO PRINCIPAL
+
+        Até agora vimos o comportamento quando nosso flex-direction é row, e enquanto trabalhamos em uma linguagem escrita de cima para baixo. Isso significa que o eixo principal percorre a linha horizontalmente e nosso alinhamento de eixo cruzado move os itens para cima e para baixo.
+
+        Se mudarmos nossa flex-direction coluna, align-items e align-self alinharemos os itens à esquerda e à direita.
+
+        Você pode tentar isso no exemplo abaixo, que tem um contêiner flex, flex-direction: column mas de outra forma é exatamente o mesmo que o exemplo anterior.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            /*
+             - definindo a direção do eixo principal
+            */
+            flex-direction: column;
+            /*
+             - align-items propriedade para alinhar nosso item no eixo cruzado(cross axis).
+             - que neste caso é o eixo do bloco que corre verticalmente.
+             - flex-start, o que significa que os itens estão todos alinhados ao início do eixo cruzado.
+            */
+            align-items: flex-start;
+            width: 200px;
+        }
+
+        .box > *:first-child{
+            /*
+             - declarar explicitamente a align-self propriedade para direcionar um único item. A align-self propriedade aceita todos os mesmos valores align-items mais um valor de auto.
+             - o valo strech o elemento se estendera. por todo o eixo vertical
+            */
+            align-self: stretch;
+        }
+
+        .box .selected{
+            /*
+             - valor center, alinha o elemento ao centro do eixo vertical.
+            */
+            align-self: center;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div class="selected">Três
+            <br/>Tem
+            <br/>Algum
+            <br/>Texto
+            <br/>Mais
+        </div>
+        <div>Quatro</div>
+    </div>
+</body>
+</html>

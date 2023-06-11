@@ -1,0 +1,65 @@
+<!--
+    * CRIANDO SUA GRADE EM CSS
+
+        Tendo decidido sobre a grade que seu design precisa, você pode usar o CSS Grid Layout para criá-lo. Veremos primeiro os recursos básicos do Layout de Grade e, em seguida, exploraremos como criar um sistema de grade simples para seu projeto.
+    
+    * DEFININDO UMA GRADE(GRID)
+
+        Para definir uma grade usamos o grid valor da display propriedade. Assim como no Flexbox, isso habilita o Grid Layout; todos os filhos diretos do contêiner se tornam itens de grade. Adicione isso ao CSS dentro do seu arquivo:
+
+        Ao contrário do Flexbox, os itens não serão imediatamente diferentes. Declarar display: grid fornece uma grade de uma coluna, para que seus itens continuem sendo exibidos um abaixo do outro, como no fluxo normal.
+
+        Para ver algo mais parecido com uma grade, precisaremos adicionar algumas colunas à grade. Vamos adicionar três colunas de 200 pixels. Você pode usar qualquer unidade de comprimento ou porcentagem para criar essas faixas de coluna.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Grid starting point</title>
+    <style>
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        /*Grid Container*/
+        .container{
+            /*
+             - Valor grid: O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo de grade.
+             - o valor grid habilita o grid layout.
+             -  todos os filhos diretos do contêiner se tornam itens de grade. 
+             - inicialmente o valor grid, fornece uma grid de uma coluna somente, assim o filhos os itens grid continuam sendo exibidos um abaixo do outro como no fluxo normal do documento.
+            */
+            display: grid;
+            /*
+             - usando a propriedade abaixo para adicionar três colunas, a grid, adiciona três colunas de 200px
+            */
+            grid-template-columns: 200px 200px 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple grid example</h1>
+
+    <div class="container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+/**
+ * SINTAXE CSS
+   - Um conjunto de regras CSS consiste em um seletor e um bloco de declaração;
+   - exemplo explicado:
+     - seletor: aponta para o elemento HTML que vou estilizar;
+     - o bloco de declaração: tudo que esta entre chaves;
+     - declaração: propriedade:valor; propriedade:valor;
+       cada declaração inlclui um nome de propriedade CSS, e um valor, separados por dois pontos;
+     - varias declarações CSS são separadas por ponto-e-virgula e os bloco de declaração são cercados por chaves;
+     SINTAXE:
+        seletor {
+                 tudo entre chaves e um bloco de declaração;
+        }
+    SINTAXE:
+       seletor {
+          propriedadeCSS : valor;
+          propriedadeCSS: valor;   
+    }    
+*/
+/*exemplo pratico, estilizando um paragrafo, colocando ele alinhado ao centro, com uma cor de texto vermelha*/
+p{
+   color: red;
+   text-align: center; 
+}

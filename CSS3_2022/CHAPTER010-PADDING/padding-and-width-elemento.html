@@ -1,0 +1,63 @@
+<!--
+    * PADDING(PREENCHIMENTO) E WIDHT(LARGURA) DE ELEMENTO
+
+    - A propriedade largura(WIDTH) do CSS especifica a largura da área de conteúdo do elemento. A área de conteúdo é a parte dentro do preenchimento(padding), borda(border) e margem(margin) de um elemento (o modelo de caixa).
+
+    - Portanto, se um elemento tiver uma largura(width) especificada, o preenchimento(padding) adicionado a esse elemento será adicionado à largura(width) total do elemento. Este é muitas vezes um resultado indesejável.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div.ex1{
+            /*usando a propriedade background-color podemos definir um cor de fundo para o elemento*/
+            background-color: yellow;
+            /*
+             - a propriedade width especifica a largura da area de conteudo do elemento.
+             - define que o elemento tera 300px de largura para a area de conteudo do elemento.
+             - a area de conteudo e a parte dentro do padding(preenchimento), border(borda), e margen(margin) de um elemento. o box-model*/
+            width: 300px;
+        }
+        div.ex2{
+            /*usando a propriedade background-color podemos definir um cor de fundo para o elemento*/
+            background-color: lightblue;
+            /*
+             - a propriedade width especifica a largura da area de conteudo do elemento.
+             - define que o elemento tera 300px de largura para a area de conteudo do elemento
+             - a area de conteudo e a parte dentro do padding(preenchimento), border(borda), e margen(margin) de um elemento. o box-model*/
+            width: 300px;
+            /*
+             - as propriedades  css padding e usado para criar espaço ao redor do conteudo de um elemento, dentro de qualquer borda definida.
+             - a propriedade padding e uma shorthand para as seguintes propriedades de padding individuais, padding-top, padding-right, padding-bottom, padding-left.
+             - especificando 1 valor para shorthand padding.
+             - a padding shorthand abaixo especificado com 1 valor e o mesmo que:
+
+                padding-top: 25px;
+                padding-right: 25px
+                padding-bottom: 25px;
+                padding-left: 25px;
+
+             - o elemento div.ex2 possui uma largura especifica para a area de conteudo, assim o padding adicionado abaixo, ira influenciar na largura total da area de conteudo.
+             - o padding(preeenchimento) adicionado no elemento sera adicionado na width(largura) total do elemento.
+             - isso  e um resultado indesejavel.
+            */
+            padding: 25px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Padding e width do elemento</h2>
+
+    <div class="ex1">Esta div tem 300px de largura.</div>
+
+    <br/>
+
+    <p>Aqui, o elemento &lt;div&gt; recebe uma largura de 300px. No entanto, a largura real do elemento &lt;div&gt; será de 350px (300px + 25px de preenchimento esquerdo + 25px de preenchimento direito):</p>
+
+    <div class="ex2">A largura desta div é de 350px, embora esteja definida como 300px no CSS.</div>
+</body>
+</html>

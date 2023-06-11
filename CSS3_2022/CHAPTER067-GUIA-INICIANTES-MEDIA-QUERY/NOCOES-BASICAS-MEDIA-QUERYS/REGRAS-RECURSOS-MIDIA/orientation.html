@@ -1,0 +1,46 @@
+<!--
+    * ORIENTAÇÃO(ORIENTATION)
+
+        Um recurso de mídia bem suportado é o orientation, que nos permite testar o modo retrato(portrait) ou paisagem(landscape). Para alterar a cor do texto do corpo se o dispositivo estiver na orientação paisagem, use a consulta de mídia a seguir.
+
+        @media (orientation: landscape) {
+            body {
+                color: rebeccapurple;
+            }
+        }
+
+        Uma visualização padrão da área de trabalho tem uma orientação paisagem e um design que funciona bem nessa orientação pode não funcionar tão bem quando visualizado em um telefone ou tablet no modo retrato. O teste de orientação pode ajudá-lo a criar um layout otimizado para dispositivos no modo retrato.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Media Queries: orientation</title>
+    <style>
+      html {
+        font-size: 1em;
+      }
+
+      /*
+       - MEDIA QUERY
+       - tipo media e all, se você não indicar um tipo de mídia em sua consulta de mídia, a consulta de mídia será padrão para todos os tipos de mídia.
+       - o tipo de recurso de midia orientação permite testar o modo retrato ou paisagem, se o dispositivo estiver na orientação paisagem executara o css abaixo.
+       - a orientação paisagem e para areas de trabalho.
+       - a orientação retrato e para telefone ou tablet.
+       - o navegador por padrão e orientação paisagem.
+      */
+      @media(orientation: landscape) {
+        body {
+          color: rebeccapurple;
+        }
+      }
+
+    </style>
+</head>
+<body>
+
+  <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+  <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+
+</body>
+</html>

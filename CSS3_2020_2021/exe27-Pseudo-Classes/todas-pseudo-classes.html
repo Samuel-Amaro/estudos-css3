@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Classes</title>
+    <style>
+        .bd{
+                border-top: 1px;
+                border-right: 1px;
+                border-bottom: 1px;
+                border-left: 1px;
+                border-style: solid;
+                border-color: black;
+        }
+        .bd > tr,th,td{
+                    border-top: 1px;
+                    border-right: 1px;
+                    border-bottom: 1px;
+                    border-left: 1px;
+                    border-style: solid;
+                    border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todas Pseudo-classes</h1>
+    <p>Todas as pseudo-classes CSS</p>
+    <table class="pd">
+        <!--cabeçalho-->
+        <tr>
+            <th>Seletor</th>
+            <th>Exemplo</th>
+            <th>Descrição do Exemplo</th>
+        </tr>
+        <tr>
+            <td>:active</td>
+            <td>a : active</td>
+            <td>Seleciona o link ativo</td>
+        </tr>
+        <tr>
+            <td>:checked</td>
+            <td>input : checked</td>
+            <td>Seleciona cada &lt;input&gt; element verificado</td>
+        </tr>
+        <tr>
+            <td>:disabled</td>
+            <td>input : disabled</td>
+            <td>Seleciona cada elemento &lt;input&gt;</td>
+        </tr>
+        <tr>
+            <td>:empty</td>
+            <td>p : empty</td>
+            <td>Seleciona cada elemento &lt;p&gt; que não tem filhos</td>
+        </tr>
+        <tr>
+            <td>:enabled</td>
+            <td>input : enabled</td>
+            <td>Seleciona cada elemento &lt;input&gt;</td>
+        </tr>
+        <tr>
+            <td>:first-child</td>
+            <td>p : first-child</td>
+            <td>Seleciona todos os &lt;p&gt; elements que é o primeiro filho de seus pais</td>
+        </tr>
+        <tr>
+            <td>:first-of-type</td>
+            <td>p : first-of-type</td>
+            <td>Seleciona cada &lt;p&gt; element que é o primeiro &lt;p&gt; element de seu pai</td>
+        </tr>
+        <tr>
+            <td>:focus</td>
+            <td>input : focus</td>
+            <td>Seleciona o &lt;input&gt; element que tem foco</td>
+        </tr>
+        <tr>
+            <td>:hover</td>
+            <td>a : hover</td>
+            <td>Seleciona links no mouse</td>
+        </tr>
+        <tr>
+            <td>:in-range</td>
+            <td>input  : in-range</td>
+            <td>Seleciona  &lt;input&gt; eles com um valor dentro de uma faixa especificada</td>
+        </tr>
+        <tr>
+            <td>:invalid</td>
+            <td>input  : invalid</td>
+            <td>Seleciona todos os elementos &lt;input&gt; com um valor inválido</td>
+        </tr>
+        <tr>
+            <td>:lang(language)</td>
+            <td>p : lang(it)</td>
+            <td>Seleciona cada &lt;p&gt; element com um valor de atributo lang começando com "ele"</td>
+        </tr>
+        <tr>
+            <td>:last-child</td>
+            <td>p : last-child</td>
+            <td>Seleciona cada &lt;p&gt; elements que é o último filho de seu pai</td>
+        </tr>
+        <tr>
+            <td>:last-of-type</td>
+            <td>p : last-of-type</td>
+            <td>Seleciona cada  &lt;p&gt; element que é o último  &lt;p&gt; element de seu pai</td>
+        </tr>
+        <tr>
+            <td>:link</td>
+            <td>a : link</td>
+            <td>Seleciona todos os links não visitados</td>
+        </tr>
+        <tr>
+            <td>:not(seletor)</td>
+            <td> : not(p)</td>
+            <td>Seleciona cada elemento que não é um elemento &lt;p&gt;</td>
+        </tr>
+        <tr>
+            <td>:nth-child(n)</td>
+            <td>p : nth-child(2)</td>
+            <td>Seleciona cada &lt;p&gt; element que é o segundo filho de seu pai</td>
+        </tr>
+        <tr>
+            <td>:nth-last-child(n)</td>
+            <td>p : nth-child(2)</td>
+            <td>Seleciona cada &lt;p&gt; element que é o segundo filho de seu pai, contando desde o último filho</td>
+        </tr>
+        <tr>
+            <td>:nth-last-of-type(n)</td>
+            <td>p : nth-last-of-type(2)</td>
+            <td>Seleciona cada &lt;p&gt; element que é o segundo &lt;p&gt; element de seu pai, contando a partir do último filho</td>
+        </tr>
+        <tr>
+            <td>:nth-of-type(n)</td>
+            <td>p : nth-of-type(2)</td>
+            <td>Seleciona cada &lt;p&gt; element que é o segundo &lt;p&gt; element de seu pai</td>
+        </tr>
+        <tr>
+            <td>:only-of-type</td>
+            <td>p : only-of-type</td>
+            <td>Seleciona cada &lt;p&gt; element que é o único &lt;p&gt; element de seu pai</td>
+        </tr>
+        <tr>
+            <td>:only-child</td>
+            <td>p : only-child</td>
+            <td>Seleciona cada &lt;p&gt; element que é o único filho de seu pai</td>
+        </tr>
+        <tr>
+            <td>:optional</td>
+            <td>input : optional</td>
+            <td>Seleciona &lt;input&gt; eles sem atributo "necessário"</td>
+        </tr>
+        <tr>
+            <td>:out-of-range</td>
+            <td>input : out-of-range</td>
+            <td>Seleciona &lt;input&gt; elements com um valor fora de uma faixa especificada</td>
+        </tr>
+        <tr>
+            <td>:read-only</td>
+            <td>input : read-only</td>
+            <td>Seleciona &lt;input&gt; eles com um atributo "readonly" especificado</td>
+        </tr>
+        <tr>
+            <td>:read-write</td>
+            <td>input : read-write</td>
+            <td>Seleciona &lt;input&gt; elements sem atributo "readonly"</td>
+        </tr>
+        <tr>
+            <td>:required</td>
+            <td>input : required</td>
+            <td>Seleciona &lt;input&gt; eles com um atributo "obrigatório" especificado</td>
+        </tr>
+        <tr>
+            <td>:root</td>
+            <td>root</td>
+            <td>Seleciona o elemento raiz do documento</td>
+        </tr>
+        <tr>
+            <td>:target</td>
+            <td>#news : target</td>
+            <td>Seleciona o elemento ativo #news atual (clicado em uma URL contendo esse nome de âncora)</td>
+        </tr>
+        <tr>
+            <td>:valid</td>
+            <td>input : valid</td>
+            <td>Seleciona todos os &lt;input&gt; elementos com um valor válido</td>
+        </tr>
+        <tr>
+            <td>:visited</td>
+            <td>a : visited</td>
+            <td>Seleciona todos os links visitados</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/**
+ * CAMPOS DE ENTRADA DE ESTILO
+ 
+   - Use a width propriedade para determinar a largura do campo de entrada:
+*/
+
+/*
+ * no seletor de elemento HTML;
+ * seleciona o elemento input do formulario, que so tem um elemento input, se tivesse mais teria que usar um seletor de atributo ou de classe para selecionar o elemento desejado;
+*/
+input{
+
+    /*o elemento pode ocupar a largura total da pagina na horizontal, em relação a pagina*/
+    width: 100%;
+}

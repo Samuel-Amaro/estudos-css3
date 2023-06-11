@@ -1,0 +1,48 @@
+<!--
+    * inset
+
+        A função CSS inset() é um dos tipos de dados <basic-shape>. Ele define um retângulo inserido.
+
+    * SINTAXE
+
+        shape-outside: inset(20px 50px 10px 0 round 50px);
+
+    * VALORES
+
+        <length-percentage>{1,4}: Quando todos os quatro argumentos são fornecidos, eles representam os deslocamentos top, right, bottom e left da caixa de referência para dentro que definem as posições das bordas do retângulo inserido. Esses argumentos seguem a sintaxe da abreviação de margem, que permite definir todas as quatro inserções com um, dois ou quatro valores.
+
+        <border-radius>: O(s) argumento(s) opcional <border-radius>(is) define(m) cantos arredondados para o retângulo inserido usando a sintaxe abreviada border-radius.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        .shape{
+            /*
+             - faz o elemento img flutuar a esquerda do elemento pai que o contem. ira flutuar a esquerda da div
+            */
+            float: left;
+            width: 150px;
+            height: 100px;
+            /*
+             - A especificação CSS Shapes permite a quebra de texto em torno de uma forma não retangular.
+            */
+            shape-outside: inset(20px 50px 10px 0 round 50px);
+            background-color: rebeccapurple;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 20px;
+           
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="shape"></div>
+        <p>Em uma noite de novembro do ano de 1782, segundo a história, dois irmãos sentaram-se sobre sua fogueira de inverno na pequena cidade francesa de Annonay, observando as grinaldas de fumaça cinzenta da lareira enrolarem-se na ampla chaminé. Seus nomes eram Stephen e Joseph Montgolfier, eles eram fabricantes de papel por profissão e eram conhecidos como possuidores de mentes pensantes e um profundo interesse em todo conhecimento científico e novas descobertas. Antes daquela noite — uma noite memorável, como estava para provar —, centenas de milhões de pessoas assistiram às crescentes coroas de fumaça de suas fogueiras sem tirar nenhuma inspiração especial do fato.</p>
+    </div>
+</body>
+</html>

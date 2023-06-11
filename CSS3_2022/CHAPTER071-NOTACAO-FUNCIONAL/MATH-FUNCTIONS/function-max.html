@@ -1,0 +1,43 @@
+<!--
+    * A FUNÇÃO MAX()
+
+        - A max() função usa o maior valor, de uma lista de valores separados por vírgulas, como o valor da propriedade.
+
+    * SINTAXE CSS:
+
+        max(value1, value2, ...);
+
+    * VALORES
+
+        VALUE: value1, value2, ...
+        DESCRIPTION: Requerido. Uma lista de valores separados por vírgulas - onde o maior valor é escolhido
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        #div1{
+            /*
+             - a function max(value1, value2, ...), função usa o maior valor, de uma lista de valores separados por vírgulas, como o valor da propriedade.
+             - o maior valor da lista de valores fornecido e escolhido como o valor da propriedade width
+            */
+            width: max(50%, 300px);
+            background-color: yellow;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A function max()</h1>
+
+    <p>Use max() para definir a largura de #div1 para o maior valor, 50% ou 300px:</p>
+
+    <div id="div1">Algum texto...</div>
+
+    <p>Redimensione a janela do navegador para ver o efeito.</p>
+
+</body>
+</html>

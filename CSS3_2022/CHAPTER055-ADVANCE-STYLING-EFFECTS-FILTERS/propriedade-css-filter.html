@@ -1,0 +1,101 @@
+<!--
+    * PROPRIEDADE CSS FILTER(FILTROS)
+
+        A propriedade de filtro(filter) CSS aplica efeitos gráficos como desfoque(blur) ou mudança de cor(shift color) a um elemento. Os filtros são comumente usados para ajustar a renderização de imagens, planos de fundo e bordas.
+
+        Incluídas no padrão CSS estão várias funções que alcançam efeitos predefinidos. Você também pode fazer referência a um filtro SVG com um URL para um elemento de filtro SVG.
+
+    * SINTAXE
+
+        /* URL to SVG filter */
+        filter: url("filters.svg#filter-id");
+
+        /* <filter-function> values */
+        filter: blur(5px);
+        filter: brightness(0.4);
+        filter: contrast(200%);
+        filter: drop-shadow(16px 16px 20px blue);
+        filter: grayscale(50%);
+        filter: hue-rotate(90deg);
+        filter: invert(75%);
+        filter: opacity(25%);
+        filter: saturate(30%);
+        filter: sepia(60%);
+
+        /* Multiple filters */
+        filter: contrast(175%) brightness(3%);
+
+        /* Use no filter */
+        filter: none;
+
+        /* Global values */
+        filter: inherit;
+        filter: initial;
+        filter: revert;
+        filter: revert-layer;
+        filter: unset;
+
+        Com uma função, use o seguinte:
+
+            filter: <filter-function> [<filter-function>] * | none;
+
+        Para uma referência a um <filter> elemento SVG, use o seguinte:
+
+            filter: url(file.svg#filter-element-id);
+
+    * FUNCTION(FUNÇÕES)
+
+        A propriedade de filtro é especificada como nenhuma ou uma ou mais das funções listadas abaixo. Se o parâmetro para qualquer função for inválido, a função não retornará nenhum. Exceto onde indicado, as funções que assumem um valor expresso com um sinal de porcentagem (como em 34%) também aceitam o valor expresso como decimal (como em 0,34).
+
+        Quando uma única propriedade de filtro tem duas ou mais funções, seus resultados serão diferentes de quando duas ou mais propriedades de filtro são aplicadas separadamente com as mesmas funções.
+
+        FILTROS SVG
+
+            url(): Recebe um URI apontando para um filtro SVG , que pode ser incorporado em um arquivo XML externo.
+
+            filter: url(resources.svg#c1);
+
+        FUNÇÕES DE FILTRO:
+
+            borrão -> blur(): A função blur() aplica um desfoque gaussiano à imagem de entrada. O valor de radius define o valor do desvio padrão para a função Gaussiana, ou quantos pixels na tela se misturam, então um valor maior criará mais desfoque. O valor inicial para interpolação é 0. O parâmetro é especificado como um comprimento CSS, mas não aceita valores percentuais. 
+            filter: url(5px);
+
+            claridade -> brightness(): A função brilho() aplica um multiplicador linear à imagem de entrada, fazendo com que pareça mais ou menos brilhante. Um valor de 0% criará uma imagem completamente preta. Um valor de 100% deixa a entrada inalterada. Outros valores são multiplicadores lineares do efeito. Valores acima de 100% são permitidos, proporcionando resultados mais brilhantes. O valor inicial para interpolação é 1. 
+            filter: brightness(2)
+
+            contraste -> constrast(): A função contrast() ajusta o contraste da imagem de entrada. Um valor de 0% criará uma imagem completamente cinza. Um valor de 100% deixa a entrada inalterada. Valores acima de 100% são permitidos, proporcionando resultados com mais contraste. O valor inicial para interpolação é 1. 
+            filter: constrast(200%)
+
+            sombra -> drop-shadow(): A função drop-shadow() aplica um efeito de sombra à imagem de entrada. Uma sombra projetada é efetivamente uma versão desfocada e deslocada da máscara alfa da imagem de entrada desenhada em uma cor específica, composta abaixo da imagem. A função aceita um parâmetro do tipo <shadow> (definido em CSS3 Backgrounds), com a exceção de que a palavra-chave inset e o parâmetro spread não são permitidos. Essa função é semelhante à propriedade box-shadow mais estabelecida; a diferença é que, com filtros, alguns navegadores fornecem aceleração de hardware para melhor desempenho. Os parâmetros do parâmetro <shadow> são os seguintes:
+
+                A função drop-shadow() aplica um efeito de sombra à imagem de entrada. Uma sombra projetada é efetivamente uma versão desfocada e deslocada da máscara alfa da imagem de entrada desenhada em uma cor específica, composta abaixo da imagem. A função aceita um parâmetro do tipo <shadow> (definido em CSS3 Backgrounds), com a exceção de que a palavra-chave inset e o parâmetro spread não são permitidos. Essa função é semelhante à propriedade box-shadow mais estabelecida; a diferença é que, com filtros, alguns navegadores fornecem aceleração de hardware para melhor desempenho. Os parâmetros do parâmetro <shadow> são os seguintes.
+
+                <blur-radius> (opcional) Este é um terceiro valor <length>. Quanto maior esse valor, maior o desfoque, então a sombra fica maior e mais clara. Valores negativos não são permitidos. Se não for especificado, será 0 (a borda da sombra é nítida).
+
+                <cor> (opcional) Consulte os valores de <color> para possíveis palavras-chave e notações. Se não for especificado, a cor usada depende do navegador - geralmente é o valor da propriedade <color>, mas observe que o Safari atualmente pinta uma sombra transparente neste caso.
+                
+                filter: drop-shadow(16px 16px 10px black).
+
+            escala-de-cinza -> grayscale(): A função grayscale() converte a imagem de entrada em tons de cinza. O valor de quantidade define a proporção da conversão. Um valor de 100% é completamente em tons de cinza. Um valor de 0% deixa a entrada inalterada. Valores entre 0% e 100% são multiplicadores lineares do efeito. O valor inicial para interpolação é 0. 
+            filter: grayscale(100%);
+
+            rotação-de-matiz -> hue-rotate(): A função hue-rotate() aplica uma rotação de matiz na imagem de entrada. O valor do ângulo define o número de graus ao redor do círculo de cores em que as amostras de entrada serão ajustadas. Um valor de 0deg deixa a entrada inalterada. O valor inicial para interpolação é 0. Embora não haja valor máximo; o efeito de valores acima de 360 graus envolve.
+            filter: hue-rotate(90deg);
+
+            inverter -> invert(): A função invert() inverte as amostras na imagem de entrada. O valor de quantidade define a proporção da conversão. Um valor de 100% é completamente invertido. Um valor de 0% deixa a entrada inalterada. Valores entre 0% e 100% são multiplicadores lineares do efeito. O valor inicial para interpolação é 0.
+            filter: invert(100%);
+
+            opacidade -> opacity(): A função opacity() aplica transparência às amostras na imagem de entrada. O valor de quantidade define a proporção da conversão. Um valor de 0% é completamente transparente. Um valor de 100% deixa a entrada inalterada. Valores entre 0% e 100% são multiplicadores lineares do efeito. Isso é equivalente a multiplicar as amostras de imagem de entrada pela quantidade. O valor inicial para interpolação é 1. Esta função é semelhante à propriedade de opacidade mais estabelecida; a diferença é que, com filtros, alguns navegadores fornecem aceleração de hardware para melhor desempenho.
+            filter: opacity(60%)
+
+            saturação -> saturate(): A função saturate() satura a imagem de entrada. O valor de quantidade define a proporção da conversão. Um valor de 0% é completamente não saturado. Um valor de 100% deixa a entrada inalterada. Outros valores são multiplicadores lineares do efeito. Valores acima de 100% são permitidos, proporcionando resultados supersaturados. O valor inicial para interpolação é 1.
+            filter: saturate(200%)
+
+            sepia(): A função sepia() converte a imagem de entrada para sépia. O valor de quantidade define a proporção da conversão. Um valor de 100% é completamente sépia. Um valor de 0% deixa a entrada inalterada. Valores entre 0% e 100% são multiplicadores lineares do efeito. O valor inicial para interpolação é 0.
+            filter: sepia(100%)
+
+        COMBINANDO FUNÇÕES
+
+            Você pode combinar qualquer número de funções para manipular a renderização. O exemplo a seguir aprimora o contraste e o brilho da imagem:
+            
+                filter: contrast(175%) brightness(103%)

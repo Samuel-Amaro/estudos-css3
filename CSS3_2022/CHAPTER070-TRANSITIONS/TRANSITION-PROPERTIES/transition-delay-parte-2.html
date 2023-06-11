@@ -1,0 +1,141 @@
+<!--
+    * TRANSITION DELAY PARTE 2
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .wrapper{
+            display: flex;
+            padding: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-item{
+            width: 150px;
+            max-height: 100px;
+            border-radius: 8px;
+            background-color: darkslateblue;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            margin-bottom: 4px;
+            /*
+             - a origem da transformação do elemento sera a partir do canto superior esquerdo
+            */
+            transform-origin: 0 0;
+            /*
+             - A função CSS translateX() reposiciona um elemento horizontalmente no plano 2D.
+            */
+            transform: translateX(-100px);
+            opacity: 0;
+            /*
+             - A transition-property propriedade especifica qual(is) estilo(s) deve(m) fazer a transição.
+             -  O transition-property aceita um ou mais nomes de propriedades CSS em uma lista separada por vírgulas.
+             - a transição de estilos desse elemento sera responsavel pelas propriedade transform e opacity.
+            */
+            transition-property: transform, opacity;
+            /*
+             - a propriedade css transition-duration, definir o tempo que uma transição levará para ser concluída.
+             - neste exemplo tera 1s para realizar a transição de estilo.
+            */
+            transition-duration: 1s;
+            /*
+             -  Use a transition-timing-function propriedade para variar a velocidade de uma transição CSS ao longo do transition-duration.
+            */
+            transition-timing-function: ease;
+        }
+
+        /*
+         - pseudo-class :is(), localiza todos elementos que possuem a pseudo-classes, :hover and :focus aplicadas.
+        */
+        .wrapper:is(:hover, :focus)
+        .menu-item{
+            /*
+             - toda vez que usuario passar o mouse por cima do elemento .wrapper todos os filhos com class .menu-item recebera a seguinte transição de estilo abaixo.
+            */
+            transform: translateX(0);
+            opacity: 100%;
+        }
+
+        /*
+         - o primeiro elemento filho de wrapper que seja do tipo .menu-item
+        */
+        .wrapper .menu-item:nth-of-type(1){
+            /*
+             - Use a transition-delay propriedade para especificar a hora em que uma transição será iniciada. Se transition-duration não for especificado, as transições serão iniciadas instantaneamente porque o valor padrão é 0s.
+            */
+            transition-delay: 0ms;
+        }
+
+        /*
+         - o segundo elemento filho de wrapper que seja do tipo .menu-item
+        */
+        .wrapper .menu-item:nth-of-type(2){
+            /*
+             - a transição de estilo do elemento sera iniciada apos passar 100ms de atraso.
+            */
+            transition-delay: 100ms;
+        }
+
+        /*
+         - o terceiro elemento filho de wrapper que seja do tipo .menu-item
+        */
+        .wrapper .menu-item:nth-of-type(3){
+            /*
+             - a transição de estilo do elemento sera iniciada apos passar 200ms de atraso.
+            */
+            transition-delay: 200ms;
+        }
+
+        /*
+         - o quarto elemento filho de wrapper que seja do tipo .menu-item
+        */
+        .wrapper .menu-item:nth-of-type(4){
+            /*
+             - a transição de estilo do elemento sera iniciada apos passar 300ms de atraso.
+            */
+            transition-delay: 300ms;
+        }
+
+        /*
+         - o quinto elemento filho de wrapper que seja do tipo .menu-item
+        */
+        .wrapper .menu-item:nth-of-type(5){
+            /*
+             - a transição de estilo do elemento sera iniciada apos passar 400ms de atraso.
+            */
+            transition-delay: 400ms;
+        }
+
+        .wrapper p{
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper" tabindex="0">
+        <p>Hover to show menu</p>
+        <div class="menu-item">Menu item 1</div>
+        <div class="menu-item">Menu item 2</div>
+        <div class="menu-item">Menu item 3</div>
+        <div class="menu-item">Menu item 4</div>
+        <div class="menu-item">Menu item 5</div>
+    </div>
+
+</body>
+</html>

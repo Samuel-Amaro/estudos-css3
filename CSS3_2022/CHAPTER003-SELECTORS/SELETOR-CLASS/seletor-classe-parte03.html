@@ -1,0 +1,62 @@
+<!--
+    - Elementos HTML também podem se referir a mais de uma classe.
+    - Nota: Um nome de classe não pode começar com um número!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--
+        - Um CSS interno é usado para definir um estilo para uma única página HTML.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento.
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style>
+        /*
+            - uma regra css formada por:
+            
+            seletor{
+                //bloco de declaração
+            }
+
+            - um seletor de classe, seleciona elementos HTML com um atributo de class especificado.
+            - para selecionar elementos com uma classe especifica, escreva um caractere(.) seguido por nome da classe.
+            - a regra css abaixo seleciona os elementos html especificos que possue o atributo class especificado com o valor (center)
+            - seleciona os elementos <p> que possue o atributo class especificado com o valor center
+        */
+        p.center{ 
+            /*
+             - declarações css são separadas, por (;)
+             - uma declaração e composta por uma propriedade e valor que são separadas por (:)
+            */
+            text-align: center;
+            color: red;
+        }
+        /*
+          - outra regra css
+          - a regra css abaixo seleciona os elementos html especificos que possue o atributo class especificado com o valor (large)
+          - seleciona os elementos <p> que possue o atributo class especificado com o valor (large)
+        */
+        p.large{
+            font-size: 300%;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+       - O atributo HTML class é usado para especificar uma classe para um elemento HTML.
+       - Vários elementos HTML podem compartilhar a mesma classe.
+       - O class atributo é frequentemente usado para apontar para um nome de classe em uma folha de estilo.
+    -->
+    <h1 class="center">Este título não será afetado</h1>
+    <p class="center">Parágrafo vermelho e alinhado ao centro.</p>
+    <!--
+        - o elemento HTML pode possui uma ou varias classes apontadas no mesmo elemento HTML.
+        - Elementos HTML podem pertencer a mais de uma classe.
+    -->
+    <p class="center large">Este parágrafo será vermelho, alinhado ao centro e em tamanho de fonte grande.</p>
+    
+</body>
+</html>

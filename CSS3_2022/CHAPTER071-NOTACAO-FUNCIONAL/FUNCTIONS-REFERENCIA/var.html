@@ -1,0 +1,31 @@
+<!--
+    * VAR()
+
+        A função CSS var() pode ser usada para inserir o valor de uma propriedade personalizada (às vezes chamada de "variável CSS") em vez de qualquer parte do valor de outra propriedade.
+
+        A var() função não pode ser usada em nomes de propriedades, seletores ou qualquer outra coisa além de valores de propriedade. (Fazer isso geralmente produz uma sintaxe inválida, ou então um valor cujo significado não tem conexão com a variável.)
+
+    * SINTAXE
+
+        O primeiro argumento para a função é o nome da propriedade customizada a ser substituída. Um segundo argumento opcional para a função serve como um valor de fallback. Se a propriedade customizada referenciada pelo primeiro argumento for inválida, a função usará o segundo valor.
+
+        var(<custom-property-name>, <declaration-value>?)
+
+        Observação: a sintaxe do fallback, como a das propriedades personalizadas, permite vírgulas. Por exemplo, var(--foo, red, blue)define um fallback de red, blue; ou seja, qualquer coisa entre a primeira vírgula e o final da função é considerada um valor de fallback.
+
+    * VALORES
+
+        <custom-property-name>: O nome de uma propriedade personalizada representado por um identificador que começa com dois traços. As propriedades personalizadas são exclusivamente para uso de autores e usuários; CSS nunca lhes dará um significado além do que é apresentado aqui.
+
+        <declaration-value>: O valor de fallback da propriedade customizada, que é usado caso a propriedade customizada seja inválida no contexto usado. Esse valor pode conter qualquer caractere, exceto alguns caracteres com significado especial, como novas linhas, colchetes sem correspondência, ou seja ), ], ou }, ponto e vírgula de nível superior ou pontos de exclamação.
+
+    * USANDO UMA PROPRIEDADE PERSONALIZADA DEFINIDA EM :ROOT
+
+        :root {
+            --main-bg-color: pink;
+        }
+
+        body {
+            background-color: var(--main-bg-color);
+        }
+-->

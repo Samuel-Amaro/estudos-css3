@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombras de um elemento</title>
+    <style>
+        div#exemplo1{
+            /*aplica uma sombra no elemento, div, aplica uma sombra no lado direito da caixa na horizontal, e aplica uma sombra embaixo da caixa na vertical, a sombra vai ter a cor do texto. e aplica 8px de borrão na sombra, o quanto a sombra deve-se espalhar. Opcional. O raio do borrão. Quanto maior o número, mais borrada será a sombra; e 10px sera o tamanho da sombra;*/
+            box-shadow: 5px 10px 8px 10px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        div#exemplo2{
+            /*aplica uma sombra no elemento, div, aplica uma sombra no lado direito da caixa na horizontal, e aplica uma sombra embaixo da caixa na vertical, a sombra vai ter a cor especificada pelo codigo hexadecimal. aplica 18px de borrão da sombra o quanto ela deve-se espalhar. o tamanho da sombra sera de 6px*/
+            box-shadow: 5px 10px 18px 6px #888888;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        div#exemplo3{
+            /*aplica uma sombra no elemento, div, aplica uma sombra no lado direito da caixa na horizontal, e aplica uma sombra embaixo da caixa na vertical, a sombra vai ter a cor vermelha especificada. aplica 18px de borrão da sombra o quanto ela deve-se espalhar. a sombra tera 8px de tamanho*/
+            box-shadow: 5px 10px 18px 8px red;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Sombras anexadas a elementos</h1>
+
+    <p><strong>Exemplo 01:</strong>Defina o raio de propagação da sombra:</p>
+
+    <h2>box-shadow: 5px 10px:</h2>
+
+    <div id="exemplo1">Um elemento div com uma sombra. O primeiro valor é o deslocamento horizontal e o segundo valor é o deslocamento vertical. A cor da sombra será herdada da cor do texto.</div>
+
+    <h2>box-shadow: 5px 10px #888888</h2>
+
+    <div id="exemplo2">Você também pode definir a cor da sombra. Aqui, a cor da sombra é cinza.</div>
+
+    <h2>box-shadow: 5px 10px red</h2>
+
+    <div id="exemplo3">Uma sombra vermelha.</div>
+</body>
+</html>

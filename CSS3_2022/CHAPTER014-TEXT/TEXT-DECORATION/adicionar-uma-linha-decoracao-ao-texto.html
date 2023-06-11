@@ -1,0 +1,72 @@
+<!--
+    * ADICIONAR UMA LINHA DE DECORAÇÃO AO TEXTO
+
+        - A text-decoration-line propriedade é usada para adicionar uma linha de decoração ao texto.
+
+        - A text-decoration-line propriedade define o tipo de decoração de texto a ser usado (como sublinhado, overline, line-through).
+
+        - Dica: você pode combinar mais de um valor, como sobrelinha e sublinhado, para exibir linhas sobre e sob um texto.
+
+        - Nota: Não é recomendado sublinhar texto que não seja um link, pois isso muitas vezes confunde o leitor.
+
+    * SINTAXE CSS:
+
+        text-decoration-line: none|underline|overline|line-through|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: none(nenhum) Valor padrão
+        DESCRIPTION: Não especifica nenhuma linha para a decoração de texto
+        --------------------------------------
+        VALUE: underline(sublinhado)
+        DESCRIPTION: Especifica que uma linha será exibida sob o texto
+        --------------------------------------
+        VALUE: overline(sobre a linha)
+        DESCRIPTION: Especifica que uma linha será exibida sobre o texto
+        --------------------------------------
+        VALUE: line-through(linha através)
+        DESCRIPTION: Especifica que uma linha será exibida através do texto
+        --------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        --------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        --------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /*a propriedade css, text-decoration-line e usada para adicionar uma linha de decoração ao texto, o valor overline especifica que uma linha será exibida sobre o texto*/
+            text-decoration-line: overline;
+        }
+        h2{
+            /*
+             - A text-decoration-line propriedade define o tipo de decoração de texto a ser usado
+             - o valor line-through(linha através) especifica que uma linha será exibida através do texto*/
+            text-decoration-line: line-through;
+        }
+        h3{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+        }
+        p.ex{
+            /*a propriedade aceita mais de um valor, assim informa o overline e o underline como valores para decorar a linha de texto*/
+            text-decoration-line: overline underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Decoração de texto overline(sobre a linha)</h1>
+    <h2>Decoração de texto line-through(linha atráves)</h2>
+    <h3>Decoração de texto underline(sublinhado)</h3>
+    <p class="ex">Decoração de texto underline(sublinhado) a overline(sobre a linha)</p>
+    <p><strong>Nota:</strong> Não é recomendado sublinhar texto que não seja um link, pois isso muitas vezes confunde o leitor.</p>
+
+</body>
+</html>

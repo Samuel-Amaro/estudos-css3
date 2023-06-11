@@ -1,0 +1,46 @@
+<!--
+    * IMAGEN TRANSPARENTE
+
+      - A opacitypropriedade pode assumir um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen trasparente</title>
+    <style>
+        img#metade_trasparente{
+            width: 170px;
+            height: 100px;
+            /*imagen fica 50% trasparente*/
+            opacity: 0.5;
+        }
+        img#trasparente_total{
+            width: 170px;
+            height: 100px;
+            /*imagen fica 70% trasparente*/
+            opacity: 0.2;
+        }
+        img#normal{
+            width: 170px;
+            height: 100px;
+            /*imagen fica 0% trasparente, imagen fica normal sem trasnparencia*/
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estilos de Imagens</h1>
+    <h2>Imagen Trasparente</h2>
+    <h3>Transparência da imagem</h3>
+    <p>A propriedade opacity especifica a transparência de um elemento. Quanto menor o valor, mais transparente:</p>
+    <p><strong>Exemplo:</strong> Imagen com 50% de opacidade:</p>
+    <img src="../img_forest.jpg" alt="Floresta" id="metade_trasparente">
+    <p><strong>Exemplo:</strong>Imagen com 100% de opacidade:</p>
+    <img src="../img_forest.jpg" alt="Floresta" id="trasparente_total">
+    <p><strong>Exemplo:</strong>Imagen normal sem trasnparencia opacidade:</p>
+    <img src="../img_forest.jpg" alt="Floresta" id="normal">
+</body>
+</html>

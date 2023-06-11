@@ -1,0 +1,59 @@
+<!--
+    * CSS A REGRA !important(importante)
+
+    * OQUE É IMPORTANTE?
+
+        A !important regra em CSS é usada para adicionar mais importância a uma propriedade/valor do que o normal.
+
+        Na verdade, se você usar a !important regra, ela substituirá TODAS as regras de estilo anteriores para essa propriedade específica nesse elemento!
+
+        Vamos ver um exemplo:
+
+    * Exemplo explicado
+
+        No exemplo acima. todos os três parágrafos terão uma cor de fundo vermelha, mesmo que o seletor de ID e o seletor de classe tenham uma especificidade mais alta. A !important regra substitui a background-color propriedade em ambos os casos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+
+        /*
+         - seletor de id, seleciona um elemento com um valor de id especifico
+         - seletor mais especifico em todos os listados aqui. esta a frente de seletor de classe e de elemento.
+        */
+        #myid{
+            background-color: blue;
+        }
+
+        /*
+         - seletor de classe, seleciona um elemento ou varios elementos que possua o valor de classe abaixo.
+         - seletor de classe, e mais especifico que seletor de elementos.
+        */
+        .myclass{
+            background-color: gray;
+        }
+
+        /*
+         - seletor de elemento, seleciona um elemento pelo nome, seleciona todos os elementos p no documento
+        */
+        p{
+            /*
+             - a regra css !important é usada para adicionar mais importância a uma propriedade/valor do que o normal.
+             - essa regra !important substituira(ignorara toda a especificidade envolvida) o seletor de id #myId, e o seletor de classe .myclass pelo valor abaixo.
+             - aplicara a cor de fundo vermelha a todos os elementos <p>, ignorara as especificidades envolvidas e regras css aplicadas anteriormente, serão substituidas pela propriedade e valor abaixo.
+            */
+            background-color: red !important;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Este é algum texto em um parágrafo.</p>
+    <p class="myclass">Este é algum texto em um parágrafo.</p>
+    <p id="myid">Este é algum texto em um parágrafo.</p>
+
+</body>
+</html>

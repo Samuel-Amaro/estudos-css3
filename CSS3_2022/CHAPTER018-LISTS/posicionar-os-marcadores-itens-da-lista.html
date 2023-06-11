@@ -1,0 +1,53 @@
+<!--
+    * POSICIONAR OS MARCADORES DE ITENS DA LISTA
+
+        - A list-style-position propriedade especifica a posição dos marcadores de item de lista (pontos de bala).
+
+        - "list-style-position: outside;" significa que os marcadores estarão fora do item da lista. O início de cada linha de um item de lista será alinhado verticalmente. Este é o padrão:
+
+        - "list-style-position: inside;" significa que os marcadores estarão dentro do item da lista. Como faz parte do item da lista, fará parte do texto e empurrará o texto no início:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        ul.a{
+            /*
+             - a propriedade list-style-position especifica a posição dos marcadores de item de lista
+             - o valor outside(fora), especifica que os marcadores da lista não ordenada estarão fora do item da lista
+            */
+            list-style-position: outside;
+        }
+        ul.b{
+            /*
+             - o valor inside(dentro), especifica que os marcadores da lista não ordenada estarão dentro do item da lista
+            */
+            list-style-position: inside;
+        }
+            
+    </style>
+</head>
+<body>
+    
+    <h1>A propriedade list-style-positon</h1>
+
+    <h2>list-style-position: outside(default):</h2>
+    
+    <ul class="a">
+        <li>Coffe - Uma bebida preparada a partir de grãos de café torrados, que são as sementes de bagas da planta Coffea</li>
+        <li>Chá - Uma bebida aromática comumente preparada derramando água quente ou fervente sobre folhas curadas da Camellia sinensis, um arbusto perene (arbusto) nativo da Ásia</li>
+        <li>Coca Cola - Um refrigerante carbonatado produzido pela The Coca-Cola Company. O nome da bebida se refere a dois de seus ingredientes originais, que eram nozes de cola (uma fonte de cafeína) e folhas de coca</li>
+    </ul>
+
+    <h2>list-style-position: inside</h2>
+
+    <ul class="b">
+        <li>Coffe - Uma bebida preparada a partir de grãos de café torrados, que são as sementes de bagas da planta Coffea</li>
+        <li>Chá - Uma bebida aromática comumente preparada derramando água quente ou fervente sobre folhas curadas da Camellia sinensis, um arbusto perene (arbusto) nativo da Ásia</li>
+        <li>Coca Cola - Um refrigerante carbonatado produzido pela The Coca-Cola Company. O nome da bebida se refere a dois de seus ingredientes originais, que eram nozes de cola (uma fonte de cafeína) e folhas de coca</li>
+    </ul>
+
+</body>
+</html>

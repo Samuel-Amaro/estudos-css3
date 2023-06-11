@@ -1,0 +1,86 @@
+/*
+ * OVERFLOW LAYOUT CSS - ESTOURO CSS LAYOUT
+    
+   -  A overflow propriedade CSS controla o que acontece com o conteúdo que é muito grande para caber em uma área.
+
+ * ESTOURO DE CSS - OVERFLOW CSS
+
+   - A overflow propriedade especifica se é necessário cortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é muito grande para caber na área especificada.
+   - A overflow propriedade possui os seguintes valores:
+      
+       - visible(Visível) - (Padrão). O estouro(OVERFLOW) não é cortado. O conteúdo é renderizado fora da caixa do elemento;
+
+       - hidden(escondidos) - O estouro(overflow) é cortado e o resto do conteúdo ficará invisível;
+       
+       - scroll(rolar) - O estouro(overflow) é cortado e uma barra de rolagem é adicionada para ver o resto do conteúdo;
+       
+       - auto(Automático) - Semelhante ao scroll(rolar), mas adiciona barras de rolagem apenas quando necessário
+
+     - Nota: A overflow propriedade só funciona para elementos de bloco(block) com uma altura(height) especificada.
+*/
+
+/*
+ * TRASBORDAMENTO OU ESTOURO DO LAYOUT CSS DE TIPO VISÍVEL : VISIBLE
+
+  - Por padrão, o estouro é visible, o que significa que não é cortado e é renderizado fora da caixa do elemento:
+  - a caixa do paragrafo tem seu conteudo trasbordado para fora da caixa, isso so pode ser visto ao declarar a propriedade do overflow;
+*/
+#trasbordamento_visivel{
+    width: 200px; /*largura da caixa do paragrafo*/
+    height: 50px; /*altura da caixa do paragrafo*/
+    background-color: #eee;/*cor de fundo da caixa*/
+    overflow: visible; /*o trasbordamento ou estouro da caixa do tipo box-level bloco que quebra de linha e de tipo visivel*/
+}
+
+
+/*
+ * OVERFLOW HIDDER - ESTOURO OU TRASBORDAMENTO DO LAYOUT CSS DE TIPO ESCONDIDO
+
+  - Com o hidden valor, o estouro é cortado e o resto do conteúdo é oculto:
+*/
+#trasbordamento_escondido{
+    width: 200px; /*largura da caixa do paragrafo*/
+    height: 50px; /*altura da caixa do paragrafo*/
+    background-color: #eee;/*cor de fundo da caixa*/
+    overflow: hidden; /*o trasbordamento ou estouro da caixa do tipo box-level bloco que quebra de linha e de tipo escondido*/
+}
+
+
+/*
+ * OVERFLOW SCROLL - TRASBORDAMENTO OU ESTOURO DA CAIXA DE TIPO ROLAGEM OU ROLAR
+ 
+  - Definindo o valor como scroll, o estouro é cortado e uma barra de rolagem é adicionada para rolar dentro da caixa. Observe que isso adicionará uma barra de rolagem horizontal e verticalmente (mesmo se você não precisar dela):
+*/
+#trasbordamento_rolagem{
+    width: 200px; /*largura da caixa do paragrafo*/
+    height: 50px; /*altura da caixa do paragrafo*/
+    background-color: #eee;/*cor de fundo da caixa*/
+    overflow: scroll; /*o trasbordamento ou estouro da caixa do tipo box-level bloco que quebra de linha e de tipo rolagem*/
+}
+
+/*
+  * OVERFLOW AUTO - TRASBORDAMENTO OU ESTOURO DE UMA CAIXA DO LAYOUT CSS DE TIPO AUTOMATICO
+
+   - O auto valor é semelhante a scroll, mas adiciona barras de rolagem apenas quando necessário:
+*/
+#trasbordamento_automatico{
+    width: 200px; /*largura da caixa do paragrafo*/
+    height: 50px; /*altura da caixa do paragrafo*/
+    background-color: #eee;/*cor de fundo da caixa*/
+    overflow: auto; /*o trasbordamento ou estouro da caixa do tipo box-level bloco que quebra de linha e de tipo automatico*/
+}
+
+/*
+ * OVERFLOW-X E OVERFLOW-Y ESTOURO OU TRASBORDAMENTO DO LAYOUT DE UMA CAIXA CSS
+
+  - As propriedades overflow-x e overflow-y especificam se é necessário alterar o excesso de conteúdo apenas horizontal ou verticalmente (ou ambos):
+  - overflow-x especifica o que fazer com as bordas esquerda/direita do conteúdo;
+  - overflow-y especifica o que fazer com as bordas superior/inferior do conteúdo;
+*/
+#trasbordamento_x_y{
+    width: 200px; /*largura da caixa do paragrafo*/
+    height: 50px; /*altura da caixa do paragrafo*/
+    background-color: #eee;/*cor de fundo da caixa*/
+    overflow-x: hidden; /*o trasbordamento ou estouro da caixa do tipo box-level bloco que quebra de linha e de tipo escondido na horizontal nas bordas esquerda e direita, isso e a barra de rolagem na horizontal fica escondida*/
+    overflow-y: scroll;/*o trasbordamento ou estouro da caixa do tipo box-level bloco que quebra de linha e de tipo rolagem na vertical nas bordas superior e inferior, isso e a barra de rolagem na vertical funcionar*/
+}

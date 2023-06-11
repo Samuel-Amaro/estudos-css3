@@ -1,0 +1,54 @@
+<!--
+    * only-child - filho unico
+
+        A pseudo-classe :only-child CSS representa um elemento sem irmãos. Este é o mesmo que :first-child:last-child ou :nth-child(1):nth-last-child(1), mas com uma especificidade menor.
+
+        /*Seleciona cada <p>, mas somente se for o*/
+        /*filho único de seu pai*/
+        p:only-child {
+            background-color: lime;
+        }
+
+        Nota: Conforme definido originalmente, o elemento selecionado precisava ter um pai. Começando com Seletores Nível 4, isso não é mais necessário.
+
+    * Sintaxe
+
+        :only-child
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - seleciona o elemento <div> somente se ele for um elmento sem irmãos, um elemento unico, filho unico de seu pai. 
+        */
+        div:only-child {
+            color: red;
+        }
+
+        div {
+            display: inline-block;
+            margin: 6px;
+            outline: 1px solid;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <div>I am an only child.</div>
+    </div>
+      
+    <div>
+        <div>I am the 1st sibling.</div>
+        <div>I am the 2nd sibling.</div>
+        <div>I am the 3rd sibling, <div>but this is an only child.</div></div>
+    </div>
+      
+      
+</body>
+</html>

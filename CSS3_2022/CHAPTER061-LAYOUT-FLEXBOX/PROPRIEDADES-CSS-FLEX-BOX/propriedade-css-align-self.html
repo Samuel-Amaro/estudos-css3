@@ -1,0 +1,133 @@
+<!--
+    * PROPRIEDADE CSS ALIGN-SELF(SE ALINHAR)
+
+        A propriedade CSS align-self alinha itens-flex da linha flex alvo, sobreescrevendo o valor align-items. Se alguma dos eixos das margens do dado item está estabelecido como auto, então align-self é ignorado.
+
+        A propriedade não se aplica a caixas block-level, ou células de tabela.
+
+    * SINTAXE
+
+        /*VALORES DE PALAVRA-CHAVE*/
+        align-self: auto;
+        align-self: normal;
+
+        /*ALINHAMENTO DE POSICIONAMENTO*/
+        /* align-self NÃO ACEITA VALORES COMO LEFT OU RIGHT*/
+
+        /* Coloca o item em torno do centro */
+        align-self: center; 
+
+        /* Coloca o item no início */
+        align-self: start; 
+
+        /* Coloca o item no fim */
+        align-self: end; 
+
+        /* Alinha o item flush no início */
+        align-self: self-start; 
+
+        /* Alinha o item flush no fim */
+        align-self: self-end; 
+
+        /* Coloca o item flex no início */
+        align-self: flex-start; 
+
+        /* Coloca o item flex no fim */
+        align-self: flex-end; 
+
+        /*ALINHAMENTO A PARTIR DA BASELINE*/
+        align-self: baseline;
+        align-self: first baseline;
+        align-self: last baseline;
+
+        /* Estica itens de tamanho 'auto' para encaixar no container */
+        align-self: stretch; 
+
+        /*ALINHAMENTO COM OVERFLOW(ESTOURO)*/
+        align-self: safe center;
+        align-self: unsafe center;
+
+        /*VALORES GLOBAIS*/
+        align-self: inherit;
+        align-self: initial;
+        align-self: unset;
+
+    * VALORES
+
+        auto: O valor align-items é originado do valor de seu pai.
+
+        normal: O efeito dessa palavra-chave depende do modo de layout em que nos encontramos:
+
+            Em layouts absolutamente posicionados, a palavra-chave se comporta como start em caixas absolutamente posicionadas replaced, e como stretch em caixas absolutamente posicionadas all other.
+
+            Em posição estática de layouts absolutamente posicionados, a palavra-chave se comporta como stretch.
+
+            Para itens-flex, a palavra-chave se comporta como stretch.
+
+            Para itens-grid, essa palavra-chave leva ao comportamento similar ao de stretch, com exceção de caixas com aspect ratio ou tamanhos intrínsecos onde se comportam como start.
+
+            A propriedade não se aplica para caixas block-level, e para células de tabela.
+        
+        self-start: Alinha os itens de maneira a mesclar a borda do alinhamento do container correspondente com o lado inicial do item no eixo.
+
+        self-end: Alinha os itens de maneira a mesclar a borda do alinhamento do container correspondente com o lado final do item no eixo.
+
+        flex-start: A borda da margem inicial do item flex é mesclada com a borda inicial da linha.
+
+        flex-end: A borda da margem fim do item flex é mesclada com a borda fim da linha.
+
+        center: A caixa-margem do item flex é centralizada ao longo da linha no eixo transversal. Se o tamanho do item é superior to container flex, então ele irá transbordar de maneira equivalente em ambas direções.
+
+        baseline, first baseline, last baseline: Especifica a participação no alinhamento da primeira ou última linha de base: alinha a linha de base de alinhamento do primeiro ou último conjunto de linha de base da caixa com a linha de base correspondente no primeiro ou último conjunto de linha de base compartilhado de todas as caixas em seu grupo de compartilhamento de linha de base. O alinhamento de fallback para a primeira linha de base é start, o da última linha de base é end.
+
+        stretch: Caso o tamanho combinado dos itens ao longo do eixo transversal seja menor do que o tamanho do container de alinhamento, e caso o tamanho do item segue o estilo auto, seu tamanho cresce igualmente (mas não proporcionalmente), enquanto que ainda respeitando as restrições impostas por max-height (en-US)/max-width (ou a funcionalidade equivalente), de maneira que o tamanho combinado de todos itens tamanho-auto preencha exatamente o container de alinhamento ao longo do eixo transversal.
+
+        safe: Caso o tamanho do item supere o alinhamento do container, o item é alinhado como se o modo de alinhamento fosse start.
+
+        unsafe: Independente dos tamanhos relativos do item e do alinhamento do container, o valor do alinhmento dado é mantido.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /*flex container*/
+        section{
+            display: flex;
+            align-items: center;
+            height: 120px;
+            background-color: beige;
+        }
+
+        /**itens flex*/
+        div{
+            height: 60px;
+            background-color: cyan;
+            margin: 5px;
+        }
+
+        /*o elemento div de um pai qualquer que e um item flex*/
+        div:nth-child(3){
+            /*
+             - A propriedade CSS align-self alinha itens-flex da linha flex alvo(a cross axis), sobreescrevendo o valor align-items.
+             - o valor flex-end Coloca o item flex no fim.
+             - A borda da margem fim do item flex é mesclada com a borda fim da linha.
+            */
+            align-self: flex-end;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    
+    <section>
+        <div>Item #1</div>
+        <div>Item #2</div>
+        <div>Item #3</div>
+    </section>
+
+
+</body>
+</html>

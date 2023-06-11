@@ -1,0 +1,46 @@
+<!--
+    * REDEFININDO TODOS OS VALORES DE PROPRIEDADE
+
+        A propriedade abreviada(shorthand) CSS all pode ser usada para aplicar um desses valores de herança a (quase) todas as propriedades de uma vez. Seu valor pode ser qualquer um dos valores de herança (herdar, inicial, não definido ou reverter). É uma maneira conveniente de desfazer as alterações feitas nos estilos para que você possa voltar a um ponto de partida conhecido antes de iniciar novas alterações.
+
+        No exemplo abaixo, temos duas aspas em bloco. O primeiro tem um estilo aplicado ao próprio elemento blockquote, o segundo tem uma classe aplicada ao blockquote que define o valor de all (todos) como unset (indefinido).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        
+        blockquote{
+            background-color: red;
+            border: 2px solid green;
+        }
+
+        .fix-this{
+            /*
+             - a propriedade shorthand all, pode ser usada para aplicar um desses valores de herança a (quase) todas as propriedades de uma vez.
+             - Seu valor pode ser qualquer um dos valores de herança (inherit, initial, unset ou reverte).
+             - o valor unset(desarmar), restaura a propriedade com seu valor natural, o que significa que se a propriedade é herdada naturalmente, ela age como herdada, caso contrário, ela age como inicial.
+             - o valor unset tira o recuo aplicado a elementos blockquote pelo navegador, pois o valor inicial define ele como um elemento sem a formatação do recuo
+            */
+            all: unset;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--
+        - O elemento HTML <blockquote> define uma seção que é citada de outra fonte.
+    -->
+    <blockquote>
+        <p>This blockquote is styled</p>
+    </blockquote>
+
+    <blockquote class="fix-this">
+        <p>This blockquote is not styled</p>
+    </blockquote>
+
+</body>
+</html>

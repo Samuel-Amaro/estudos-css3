@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo 2 de currentcolor</title>
+    <style>
+        body{
+            color: purple;
+        }
+        div{
+            background-color: currentColor;
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
+        div > p{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Palavra chave currentcolor</h1>
+
+    <p><strong>Exemplo: </strong> Neste exemplo, a cor de fundo do &lt;div&gt; é definida para o valor da cor atual do elemento do corpo:</p>
+    
+    <p>Este é algum texto na parte do corpo ...</p>
+
+    <div><p>A cor de fundo deste div é definida como o valor da cor atual do elemento do corpo.</p></div>
+</body>
+</html>

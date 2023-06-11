@@ -1,0 +1,58 @@
+<!--
+    * :default
+
+        A pseudoclasse CSS :default seleciona elementos de formulário que são o padrão em um grupo de elementos relacionados.
+
+        ele pode corresponder aos elementos <button>, <input type="checkbox">, <input type="radio"> e <option>:
+
+            Um elemento de opção padrão é o primeiro com o selected atributo ou a primeira opção habilitada na ordem DOM. multiple <select> s pode ter mais de uma selected opção, então todas irão corresponder :default.
+
+            <input type="checkbox"> e <input type="radio"> corresponder se eles tiverem o checked atributo.
+
+            <button> corresponde se for <form> o botão de envio padrão de um : o primeiro <button> na ordem DOM que pertence ao formulário. Isso também se aplica a <input> tipos que enviam formulários, como image ou submit.
+
+    * Sintaxe
+
+        :default
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - A pseudoclasse CSS :default seleciona elementos de formulário que são o padrão em um grupo de elementos relacionados.
+        */
+        input:default {
+            box-shadow: 0 0 2px 1px coral;
+        }
+
+        /*
+         - elemento padrão e o proximo elemento que seja um elemento subsequente irmão ao o padrão
+        */
+        input:default + label {
+            color: coral;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <fieldset>
+        <legend>Favorite season</legend>
+        <input type="radio" name="season" id="spring"/>
+        <label for="spring">Spring</label>
+        <input type="radio" name="season" id="summer" checked/>
+        <label for="summer">Summer</label>
+        <input type="radio" name="season" id="fall"/>
+        <label for="fall">Fall</label>
+        <input type="radio" name="season" id="winter"/>
+        <label for="winter">Winter</label>
+    </fieldset>
+      
+
+</body>
+</html>

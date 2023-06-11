@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 20px auto;
+            max-width: 460px;
+        }
+
+        fieldset {
+            padding: 10px 30px 0;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: white;
+            background: black;
+            padding: 5px 10px;
+        }
+
+        fieldset > div {
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+        button,
+        label,
+        input[type="text"] {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+        }
+
+        input {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;
+        }
+
+        /*
+         - quando usuario passar o mouse sobre o input ou quando ele receber o foco nele
+        */
+        input:hover,
+        input:focus {
+            background-color: #eee;
+        }
+
+        /*
+         - A pseudo-classe CSS :disabled representa qualquer elemento desabilitado. Um elemento está desabilitado se não puder ser ativado (selecionado, clicado, digitado etc.) ou aceitar o foco.
+        */
+        input[type="text"]:disabled {
+            background: #eee;
+            border: 1px solid #ccc;
+        }
+
+        .disabled-label {
+            color: #aaa;
+        }
+
+        button {
+            width: 60%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <fieldset id="shipping">
+            <legend>Shipping address</legend>
+            <div>
+                <label for="name1">Name: </label>
+                <input id="name1" name="name1" type="text" required>
+            </div>
+            <div>
+                <label for="address1">Address: </label>
+                <input id="address1" name="address1" type="text" required>
+            </div>
+            <div>
+                <label for="pcode1">Zip/postal code: </label>
+                <input id="pcode1" name="pcode1" type="text" required>
+            </div>
+        </fieldset>
+        <fieldset id="billing">
+            <legend>Billing address</legend>
+            <div>
+                <label for="billing-checkbox">Same as shipping address:</label>
+                <input type="checkbox" id="billing-checkbox" checked>
+            </div>
+            <div>
+                <label for="name" class="billing-label disabled-label">Name: </label>
+                <input id="name" name="name" type="text" disabled required>
+            </div>
+            <div>
+                <label for="address2" class="billing-label disabled-label">Address: </label>
+                <input id="address2" name="address2" type="text" disabled required>
+            </div>
+            <div>
+                <label for="pcode2" class="billing-label disabled-label">Zip/postal code: </label>
+                <input id="pcode2" name="pcode2" type="text" disabled required>
+            </div>
+        </fieldset>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+
+
+    <script type="text/javascript">
+        /*
+         * * ESTILIZANDO INPUTS ENABLED(HABILITADAS) É DISABLED(DESABILITADAS) É READ-ONLY(SOMENTE LEITURA) É READ-WRITE(LEITURA GRAVAÇÃO)
+         * 
+         * Um elemento enabled(habilitado) é um elemento que pode ser ativado(activate); ele pode ser selecionado, clicado, digitado, etc. Um elemento desabilitado(disabled), por outro lado, não pode interagir de forma alguma, e seus dados nem são enviados para o servidor.
+         * 
+         * Esses dois estados podem ser direcionados usando :enabled e :disabled. Por que as entradas desabilitadas são úteis? Bem, às vezes, se alguns dados não se aplicarem a um determinado usuário, talvez você nem queira enviar esses dados quando eles enviarem o formulário. Um exemplo clássico é um formulário de envio — normalmente você será perguntado se deseja usar o mesmo endereço para cobrança e envio; em caso afirmativo, você pode simplesmente enviar um único endereço para o servidor e também desabilitar os campos de endereço de cobrança.
+         * 
+         * Vamos dar uma olhada em um exemplo que faz exatamente isso. Em primeiro lugar, o HTML é um formulário simples contendo entradas de texto, além de uma caixa de seleção para ativar e desativar o endereço de cobrança. Os campos de endereço de cobrança são desabilitados por padrão.
+         * 
+         * Agora no CSS. As partes mais relevantes deste exemplo são as seguintes:
+
+            input[type="text"]:disabled {
+                background: #eee;
+                border: 1px solid #ccc;
+            }
+
+            .disabled-label {
+                color: #aaa;
+            }
+
+         * Selecionamos diretamente as entradas que queremos desabilitar usando input[type="text"]:disabled, mas também queríamos desabilitar os rótulos(labels) de texto correspondentes. Eles não eram tão fáceis de selecionar, então usamos uma classe para fornecer esse estilo.
+         * 
+         * Agora, finalmente, usamos JavaScript para desativar os campos de endereço de cobrança:
+         * 
+         * Ele usa o change evento para permitir que o usuário ative/desative os campos de cobrança e alterne o estilo dos rótulos(labels) associados.
+        */
+
+        //Aguarde a página terminar de carregar
+        //o manipulador e acionado quando todo o conteudo dom estiver carregadom todo o navegador HTML, arvore dom, etc..
+        document.addEventListener('DOMContentLoaded', function () {
+            //Anexar ouvinte de evento `change` à caixa de seleção(checkboxes)
+            //o manipulador e acionado quando o elemento checkboxe termina de mudar, e acionado quando logo, apos a seleção alterar
+            document.getElementById('billing-checkbox').addEventListener('change', toggleBilling);
+        }, false);
+
+        function toggleBilling() {
+            // Selecione os campos de texto de cobrança
+            let billingItems = document.querySelectorAll('#billing input[type="text"]');
+            // Selecione os labels de texto de cobrança
+            let billingLabels = document.querySelectorAll('.billing-label');
+
+            // Alterna os campos e rótulos(labels) de texto de cobrança
+            for (let i = 0; i < billingItems.length; i++) {
+                //desabilita os inputs 
+                billingItems[i].disabled = !billingItems[i].disabled;
+
+                if(billingLabels[i].getAttribute('class') === 'billing-label disabled-label') {
+                    billingLabels[i].setAttribute('class', 'billing-label');
+                } else {
+                    billingLabels[i].setAttribute('class', 'billing-label disabled-label');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+/*
+ - @font-face conjuntos de regras  você precisa colocá-los no topo, antes de qualquer um de seus CSS, pois as fontes precisam ser importadas antes que você possa usá-las em seu site.
+ - importações de fontes, geradas por fontsquirrel.com
+*/
+@font-face {
+    font-family: 'andadaregular';
+    src: url('./webfontkit/andada-regular-webfont.woff') format('woff'),
+        url('./webfontkit/andada-regular-webfont.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'abhaya_libreregular';
+    src: url('./webfontkit/abhayalibre-regular-webfont.woff2') format('woff2'),
+        url('./webfontkit/abhayalibre-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* General setup */
+html {
+    font-size: 10px;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Typography */
+
+h1 {
+    font-size: 3.2rem; /*10px x 3.2rem = 32px*/
+}
+
+h2 {
+    font-size: 2.4rem; /*10px x 2.4rem = 24px*/
+}
+
+p {
+    font-size: 1.4rem; /*10px x 1.4rem = 14px*/
+    line-height: 1.6; /*14px x 1.6 = 22.4px*/
+    word-spacing: 0.6rem; /*10px x 0.6rem = 6px*/
+}
+
+h1, h2{
+    font-family: 'andadaregular', serif;
+}
+ 
+p{
+    font-family: 'abhaya_libreregular', sans-serif;
+}
+ 

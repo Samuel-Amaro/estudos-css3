@@ -1,0 +1,36 @@
+<!--
+    * REPEATING-LINEAR-GRADIENT() - REPETIÇÃO DE GRADIENTE LINEAR
+
+        A função CSS repeating-linear-gradient() cria uma imagem que consiste em gradientes lineares repetidos. É semelhante a linear-gradient() e recebe os mesmos argumentos, mas repete as paradas de cor infinitamente em todas as direções para cobrir todo o seu contêiner. O resultado da função é um objeto do tipo de dados <gradient>, que é um tipo especial de <image>.
+
+        O comprimento do gradiente que se repete é a distância entre a primeira e a última parada de cor. Se a primeira cor não tiver um comprimento de parada de cor, o comprimento padrão de parada de cor será 0. A cada repetição, as posições das paradas de cor são deslocadas por um múltiplo do comprimento do gradiente linear básico. Assim, a posição de cada parada de cor final coincide com uma parada de cor inicial; se os valores de cor forem diferentes, isso resultará em uma transição visual nítida. Isso pode ser alterado repetindo a primeira cor novamente como a última cor.
+
+        Como acontece com qualquer gradiente, um gradiente linear repetitivo não tem dimensões intrínsecas ; isto é, não tem tamanho natural ou preferido, nem proporção preferida. Seu tamanho concreto corresponderá ao tamanho do elemento ao qual se aplica.
+
+        Como <gradient>s pertence ao <image> tipo de dados, eles só podem ser usados ​​onde <image>s pode ser usado. Por esse motivo, repeating-linear-gradient()não funcionará em background-color outras propriedades que usam o <color> tipo de dados.
+
+    * SINTAXE
+
+        /* Um gradiente repetido inclinado 45 graus, começando azul e terminando vermelho, repetindo 3 vezes */
+        repeating-linear-gradient(45deg, blue, red 33.3%);
+
+        /* Um gradiente repetido que vai do canto inferior direito ao canto superior esquerdo, começando em azul e terminando em vermelho, repetindo a cada 20px */
+        repeating-linear-gradient(to left top, blue, red 20px);
+
+        /* Um gradiente indo de baixo para cima, começando azul, ficando verde depois de 40%, e terminando em vermelho. Este gradiente não se repete porque a última parada de cor padrão para 100% */
+        repeating-linear-gradient(0deg, blue, green 40%, red);
+
+        /* Um gradiente repetindo cinco vezes, indo da esquerda para a direita, começando vermelho, ficando verde e voltando para vermelho */
+        repeating-linear-gradient(to right, red 0%, green 10%, red 20%);
+
+    * VALORES
+
+        <side-or-corner(lateral ou canto)>: A posição do ponto inicial da linha de gradiente. Se especificado, consiste na palavra to e até duas palavras-chave: uma indica o lado horizontal (esquerdo-left ou direito-right) e a outra o lado vertical (superior-top ou inferior-bottom). A ordem das palavras-chave secundárias não importa. Se não especificado, o padrão é para baixo(bottom). Os valores para cima(to top), para baixo(to bottom), para a esquerda(to left) e para a direita(to right) são equivalentes aos ângulos de 0 graus, 180 graus, 270 graus e 90 graus, respectivamente. Os outros valores são traduzidos em um ângulo.
+
+        <angle-angulo>: O ângulo de direção da linha de gradiente. Um valor de 0deg é equivalente a top; valores crescentes giram no sentido horário a partir daí.
+
+        <linear-color-stop(parada de cor linear)>: O valor de <color> de uma parada de cor, seguido por uma ou duas posições de parada opcionais (cada uma sendo um <percentage> ou um <length> ao longo do eixo do gradiente).
+
+        <color-hint(dica cor)>: Uma dica de interpolação definindo como o gradiente progride entre as paradas de cores adjacentes. O comprimento define em que ponto entre duas paradas de cores a cor do gradiente deve atingir o ponto médio da transição de cores. Se omitido, o ponto médio da transição de cores é o ponto médio entre duas paradas de cores.
+
+-->

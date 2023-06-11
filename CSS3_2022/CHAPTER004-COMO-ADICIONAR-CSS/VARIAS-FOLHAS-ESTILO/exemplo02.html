@@ -1,0 +1,39 @@
+<!--
+    * VÁRIAS FOLHAS DE ESTILO
+
+        - Se algumas propriedades tiverem sido definidas para o mesmo seletor (elemento) em folhas de estilo diferentes, será usado o valor da folha de estilo da última leitura. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="witdh=device-width, initial-scale=1"/>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - css interno e usado para estilizar somente um unico documento de forma local, o estilo so e aplicado a um documento.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*regra css, usando seletor de elemento e o bloco de declaração*/
+        h1{
+            /*declaração css, com propriedade : valor;*/
+            color: orange;
+        }
+    </style>
+    <!--
+        - css externo
+        - A <link> tag define o relacionamento entre o documento atual e um recurso externo.
+        - um referencia a folha de estilo externa
+        - usando a tag <link> para vincular a folha de estilo externa
+        - uma forma de adicionar css a página, e usando css externo, uma folha de estilo externa e usada para definir estilo de uma ou varias paginas ao mesmo tempo.
+    -->
+    <link type="text/css" rel="stylesheet" href="../CSS-EXTERNAL/mystyle.css"/>
+</head>
+<body>
+
+    <h1>Este é um título</h1>
+    <p>Este é um parágrafo.</p>
+    <p>O estilo deste documento é uma combinação de uma folha externa e um estilo interno</p>
+</body>
+</html>

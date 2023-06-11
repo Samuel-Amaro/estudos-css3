@@ -1,0 +1,101 @@
+<!--
+    * CSS MAX-WIDTH PROPERTY
+
+       - Define a largura máxima de um elemento
+
+    * DEFINIÇÃO E USO
+
+      - A max-width propriedade define a largura máxima de um elemento.
+
+      - Se o conteúdo for maior que a largura máxima, ele mudará automaticamente a altura do elemento.
+
+      - Se o conteúdo for menor que a largura máxima, a max-width propriedade não terá efeito.
+
+      - Nota: Isso evita que o valor da propriedade de largura se torne maior que max-width. O valor da max-width propriedade substitui a propriedade width.
+
+      - VALOR PADRÃO: none;
+
+      - HERDADO: não
+
+    * SINTAXE:
+
+      max-width: none|length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      VALUE: none;
+      DESCRIPTION: Sem largura máxima. Este é o padrão
+
+      VALUE: length;
+      DESCRIPTION: Define a largura máxima em px, cm, etc.
+
+      VALUE: %;
+      DESCRIPTION: Define a largura máxima em porcentagem do bloco que o contém;
+
+      VALUE: initial;
+      DESCRIPTION: Define esta propriedade com seu valor padrão.
+
+      VALUE: inherit;
+      DESCRIPTION: Herda essa propriedade de seu elemento pai.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largura maxima de um elemento</title>
+    <style>
+        /*seletor do elemento p*/
+        p{
+            max-width: none;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+        p.ex1{
+            /*definindo a largura maxima do elemento por tamanho em px, e uma largura maxima estatica, não tem como ter uma largura maior que essa. essa e a largura final*/
+            max-width: 150px;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+        p.ex2{
+            /*define a largura do elemento p, em porcentagem. e uma largura dinamica, se adequada conforme a largura do elemento que o contém. neste caso o elemento que contem o elemento p e body o corpo da pagina. então o p pode ocupar 50% da largura do corpo da pagina, 50% da largura da pagina e ocupar pelo elemento p*/
+            max-width: 50%;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Largura maxima de um elemento - max-width</h1>
+
+    <p><strong>Exemplo:</strong> Defina a largura máxima de um elemento &lt;p&gt; em 150 pixels:</p>
+
+    <h2>max-width: none(default)</h2>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates natus dolores, eius deleniti et rem laborum ab quisquam inventore odio magnam, officia odit corporis sint pariatur tempore maiores voluptatem similique? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, harum. Odit quod vel incidunt quibusdam hic amet ducimus, eligendi nihil neque deserunt, beatae quisquam laboriosam odio possimus ipsa veniam eaque.</p>
+
+    <h2>max-width: 150px</h2>
+
+    <p class="ex1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sed eligendi hic, facilis accusantium expedita quos, a temporibus mollitia non, aliquam corrupti obcaecati odit voluptatum similique dolorum? Commodi, similique quos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem aspernatur, molestias delectus ipsam incidunt debitis voluptates recusandae vel nostrum ipsum totam iusto consequatur vitae. Consequuntur facilis perferendis non ea aliquam.</p>
+
+    <h2>max-width: 50%</h2>
+
+    <p class="ex2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, vitae repudiandae! Omnis facilis provident nemo doloribus similique ab possimus beatae cum odio. Eos architecto nobis rem quia dolores, voluptatibus odio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quae maxime fugit. Quaerat voluptatum corrupti distinctio. Quo sed delectus ratione, perferendis suscipit cum optio nesciunt maxime ut est quibusdam corporis.</p>
+
+</body>
+</html>

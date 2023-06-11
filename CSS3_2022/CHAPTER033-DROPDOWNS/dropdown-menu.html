@@ -1,0 +1,103 @@
+<!--
+    * DROPDOWN MENU(MENU SUSPENSO)
+
+        - Crie um menu suspenso que permita ao usuário escolher uma opção de uma lista:
+
+        - Este exemplo é semelhante ao anterior, exceto que adicionamos links dentro da caixa suspensa e os estilizamos para caber em um botão suspenso com estilo:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        button.dropbtn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        div.dropdown{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            display: inline-block;
+        }
+
+        div.dropdown-content{
+            display: none;
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancestral deste elemento <div class="dropdow-content"> e o elemento <div class="dropdown"> pois contem o elemento, e o pai do elemento e possui a position diferente de static
+            */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            /*
+             - a propriedade z-index  especifica a ordem de pilha de um elemento.
+             - qual elemento deve ser colocado na frente ou atrás dos outros
+             - um elemento pode ter a ordem de pilha negativa ou positiva
+             - o elemento com ordem de pilha positiva e o elemento que vai ser colocado na frente o elemento com ordem de pilha negativa e o elemento que ser colocado atras
+            */
+            z-index: 1;
+        }
+
+        div.dropdown-content a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /*
+         - toda vez que o usuario passar o mouse por cima de um elemento <a> e esse elemento <a> for descendente do elemento div.dropdown-content, recebera o seguinte estilo:
+        */  
+        div.dropdown-content a:hover{
+            background-color: #f1f1f1;
+        }
+
+        /*
+         - o usuario ao passar o mouse por cima do elemento div.dropdown, o elemento descendente recebera o seguinte estilo abaixo
+        */
+        div.dropdown:hover .dropdown-content{
+            display: block;
+        }
+
+        div.dropdown:hover .dropbtn{
+            background-color: #3e8e41;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <h2>Dropdown Menu</h2>
+        </header>
+        <p>Mova o mouse sobre o botão para abrir o menu suspenso.</p>
+    </main>
+
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Nota:</strong>  usamos href="#" para links de teste. Em um site real, seriam URLs.</p>
+    </footer>
+</body>
+</html>

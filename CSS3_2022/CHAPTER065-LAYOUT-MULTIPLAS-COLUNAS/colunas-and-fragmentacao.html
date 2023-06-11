@@ -1,0 +1,80 @@
+<!--
+    * COLUNAS E FRAGMENTAÇÃO
+
+        O conteúdo de um layout de várias colunas é fragmentado. Essencialmente, ele se comporta da mesma maneira que o conteúdo em mídia paginada, como quando você imprime uma página da Web. Quando você transforma seu conteúdo em um contêiner multicol, ele se fragmenta em colunas. Para que o conteúdo faça isso, ele deve quebrar.
+
+        * CAIXAS FRAGMENTADAS
+
+            Às vezes, essa quebra acontecerá em lugares que levam a uma experiência de leitura ruim. No exemplo abaixo, usei multicol para apresentar uma série de caixas, cada uma com um título e algum texto dentro. O cabeçalho fica separado do texto se as colunas se fragmentarem entre os dois.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Multicol starting point</title>
+    <style type="text/css">
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        /*container multicol - layou varias colunas*/
+        .container{
+            /*
+             - habilitamos o multicol, usando a propriedade column-count ou column-width.
+             - O navegador agora lhe dará tantas colunas quanto possível do tamanho que você especificar; qualquer espaço restante é então compartilhado entre as colunas existentes. Isso significa que você não obterá exatamente a largura especificada, a menos que seu contêiner seja exatamente divisível por essa largura.
+             - cria o maximo que der de colunas com largura de 200px
+            */
+            column-width: 200px;
+            /*
+             - Alterando o tamanho da lacuna entre as colunas usando o column-gap.
+             - a propriedade column-gap adiciona uma espaço vazio de 20px entre as colunas criadas.
+            */
+            column-gap: 20px;
+        }
+
+        .card{
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            margin: 0 0 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <h2>I am the heading</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placeratvulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula.</p>
+        </div>
+        <div class="card">
+          <h2>I am the heading</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricie tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula.</p>
+        </div>
+        <div class="card">
+          <h2>I am the heading</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula.</p>
+        </div>
+        <div class="card">
+          <h2>I am the heading</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula.</p>
+        </div>
+        <div class="card">
+          <h2>I am the heading</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula.</p>
+        </div>
+        <div class="card">
+          <h2>I am the heading</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula.</p>
+        </div>
+        <div class="card">
+          <h2>I am the heading</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula.</p>
+        </div>
+    </div>
+</body>
+</html>

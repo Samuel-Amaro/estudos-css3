@@ -1,0 +1,55 @@
+/*
+ * GALERIA DE IMAGENS CSS
+
+   - CSS pode ser usado para criar uma galeria de imagens.
+*/
+
+/*para cada elemento de caixa(conteiner)*/
+div.galeria{
+    /*add um espaço externo*/
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    /*add um borda(prenchimento ao elemento*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    /*elemento começa a ser exibido a esquerda, da esquerda para direita*/
+    float: left;
+    /*largura do elemento*/
+    width: 180px;
+}
+
+/*para  o elemento de caixa(conteiner), vai ter um seletor de estado, que vai capturar o estado dele ao mouse passar por cima dele*/
+div.galeria:hover{
+    /*add um borda(prenchimento ao elemento*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: #777;
+}
+
+/*para  o elemento de caixa(conteiner), que tem elemento img como descendente, usando um combinador de seletor combinador descendente*/
+div.galeria img{
+    /*pode ocupar a largura total do seu elemento pai, no caso o conteiner link, e o pai do link e acaixa da galeria*/
+    width: 100%;
+    /*altura do elemento, o proprio navegador define*/
+    height: auto;
+}
+
+/*para o elemento de caixa, para o elemento de conteiner, que vai possuir descrição de cada imagen*/
+div.descricao-imagen{
+    /*add um espaço interno no elemento*/
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    /*alinhando o texto*/
+    text-align: center;
+}

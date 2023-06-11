@@ -1,0 +1,88 @@
+<!--
+    * TECNOLOGIAS MODERNAS DE LAYOUT
+
+        Métodos de layout modernos, como layout de várias colunas , Flexbox e Grid são responsivos por padrão. Todos eles assumem que você está tentando criar uma grade flexível e oferecem maneiras mais fáceis de fazer isso.
+
+    * MULTICOL
+
+        O mais antigo desses métodos de layout é multicol — quando você especifica um column-count, isso indica em quantas colunas você deseja que seu conteúdo seja dividido. O navegador então calcula o tamanho destes, um tamanho que mudará de acordo com o tamanho da tela.
+
+        .container {
+            column-count: 3;
+        }
+
+        Se você especificar um column-width, estará especificando uma largura mínima . O navegador criará tantas colunas dessa largura quantas couberem confortavelmente no contêiner e, em seguida, dividirá o espaço restante entre todas as colunas. Portanto, o número de colunas mudará de acordo com a quantidade de espaço existente.
+
+        .container {
+            column-width: 10em;
+        }
+
+    * FLEXBOX
+
+        No Flexbox, os itens flexíveis encolherão e distribuirão o espaço entre os itens de acordo com o espaço em seu contêiner, conforme seu comportamento inicial. Ao alterar os valores de flex-grow e flex-shrink você pode indicar como deseja que os itens se comportem quando encontrarem mais ou menos espaço ao seu redor.
+
+        No exemplo abaixo, os itens flexíveis ocuparão cada um uma quantidade igual de espaço no contêiner flexível, usando a abreviação de flex: 1
+
+        .container {
+            display: flex;
+        }
+
+        .item {
+            flex: 1;
+        }
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A simple flexbox-based responsive design</title>
+    <style>
+      body {
+        font: 1.2em Helvetica, Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #eee;
+      }
+      .wrapper {
+        max-width: 960px;
+        margin: 2em auto;
+      }
+
+      .col1,
+      .col2 {
+        background-color: #fff;
+      }
+
+      @media screen and (min-width: 600px) {
+        .wrapper {
+          display: flex;
+        }
+
+        .col1 {
+          flex: 1;
+          margin-right: 5%;
+        }
+
+        .col2 {
+          flex: 2;
+        }
+      }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+      <div class="col1">
+        <p>This layout is responsive. See what happens if you make the browser window wider or narrow.</p>
+      </div>
+      <div class="col2">
+          <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+          <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+      </div>
+
+    </div>
+</body>
+
+</html>

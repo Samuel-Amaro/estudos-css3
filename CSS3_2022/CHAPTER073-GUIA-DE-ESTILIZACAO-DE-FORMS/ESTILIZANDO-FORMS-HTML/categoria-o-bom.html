@@ -1,0 +1,61 @@
+<!--
+    * O BOM (THE GOOD)
+
+        Para estilizar controles de formulário que são fáceis de estilizar com CSS, você não deve enfrentar muita ou nenhuma dificuldade, pois eles geralmente se comportam como qualquer outro elemento HTML.
+
+        Além das ferramentas básicas de CSS abordadas acima, também recebemos vários seletores — pseudoclasses de interface do usuário — que permitem o estilo com base no estado atual da interface do usuário.
+
+        Veremos um exemplo no final deste artigo para fornecer mais algumas ideias sobre estilo e posicionamento básicos de controle de formulário. Antes de fazermos isso, porém, gostaríamos de dizer algumas palavras sobre aspectos específicos do estilo de formulários que vale a pena conhecer.
+
+    * Fontes e texto
+
+        Os recursos de fonte e texto CSS podem ser usados ​​facilmente com qualquer widget (e sim, você pode usar @font-face com widgets de formulário). No entanto, o comportamento do navegador geralmente é inconsistente. Por padrão, alguns widgets não herdam font-family e font-size de seus pais. Muitos navegadores usam a aparência padrão do sistema. Para tornar a aparência de seus formulários consistente com o restante de seu conteúdo, você pode adicionar as seguintes regras à sua folha de estilo:
+
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+        }
+
+        O inherit valor da propriedade faz com que o valor da propriedade corresponda ao valor calculado da propriedade de seu elemento pai; herdar o valor do pai.
+
+        Todos eles fazem, com uma estranha exceção - <input type="submit"> não herda do parágrafo pai no Chrome. Em vez disso, ele usa o font-family: system-ui. Esta é outra razão para usar <button> elementos sobre seus tipos de entrada equivalentes!
+
+        Há muito debate sobre se os formulários parecem melhores usando os estilos padrão do sistema ou estilos personalizados projetados para corresponder ao seu conteúdo. Essa decisão é sua, como designer do seu site ou aplicativo da web.
+
+
+    * Dimensionamento da caixa(Box sizing)
+    
+        Todos os campos de texto têm suporte completo para todas as propriedades relacionadas ao modelo de caixa CSS(box model), como width, height, padding, margin e border. Como antes, no entanto, os navegadores contam com os estilos padrão do sistema ao exibir esses widgets. Cabe a você definir como deseja combiná-los em seu conteúdo. Se você quiser manter a aparência nativa dos widgets, terá um pouco de dificuldade se quiser dar a eles um tamanho consistente.
+
+        Isso ocorre porque cada widget tem suas próprias regras para borda(border), preenchimento(padding) e margem(margin). Para dar o mesmo tamanho a vários widgets diferentes, você pode usar a box-sizing propriedade junto com alguns valores consistentes para outras propriedades:
+
+        input, textarea, select, button {
+            width : 150px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+    * Legend Placement(Colocação da legenda)
+
+        O <legend> elemento pode ser estilizado, mas pode ser um pouco complicado controlar o posicionamento dele. Por padrão, ele é sempre posicionado sobre a borda superior de seu <fieldset> pai, próximo ao canto superior esquerdo. Para posicioná-lo em outro lugar, por exemplo, dentro do fieldset em algum lugar, ou próximo ao canto inferior esquerdo, você precisa confiar no posicionamento.
+
+        Para posicionar a legenda dessa maneira, usamos o seguinte CSS (outras declarações removidas por questões de brevidade):
+
+            fieldset {
+                position: relative;
+            }
+
+            legend {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+        O <fieldset> precisa ser posicionado também, de modo que o <legend> seja posicionado em relação a ele (caso contrário, o <legend> seria posicionado em relação ao <body>).
+
+        O <legend> elemento é muito importante para acessibilidade — será falado por tecnologias assistivas como parte do rótulo de cada elemento de formulário dentro do fieldset — mas usar uma técnica como a acima está bem. O conteúdo da legenda ainda será falado da mesma forma; é apenas a posição visual que mudou.
+
+        Obsevação: você também pode usar a transform propriedade para ajudá-lo a posicionar seu arquivo <legend>. No entanto, quando você o posiciona com, por exemplo, um transform: translateY();, ele se move, mas deixa uma lacuna feia na <fieldset> borda, da qual não é fácil se livrar.
+
+-->

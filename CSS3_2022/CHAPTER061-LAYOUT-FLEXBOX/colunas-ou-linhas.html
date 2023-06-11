@@ -1,0 +1,108 @@
+<!--
+    * COLUNAS OU LINHAS ?
+
+        Flexbox possui uma propriedade chamada flex-direction que especifica a direção do eixo principal-main axis (em qual direção os filhos da flexbox estarão arranjados) — que por padrão seu valor é row (linha), que faz com que eles fiquem arranjados numa linha na direção que o seu navegador está configurado de acordo com a direção de leitura do seu idioma (da esquerda para a direita, no caso do inglês ou português).
+
+        Experimente adicionar a seguinte declaração na seção de sua regra:
+
+            flex-direction: column;
+
+        Você verá que isso organiza os elementos no layout de coluna, assim como eles estavam antes de adicionarmos qualquer regra CSS. Antes de você seguir, remova essa declaração do seu exemplo.
+
+        Nota: Você também pode arranjar itens flexíveis em direção reversa usando os valores row-reverse e column-reverse. Experimente usar esses valores no seu exemplo também!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <title>Flexbox 0 — starting code</title>
+    <style type="text/css">
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            background: purple;
+            height: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+
+        /* Add your flexbox CSS below here */
+
+        section{
+            /*
+             - vamos definir quais elementos serão caixas flexiveis.
+             - temos que definir um valor especial no elemento pai dos elementos que queremos afetar.
+             - queremos afetar os elementos <article>, assim o pai desses elementos e o elemento <section>
+             - A propriedade CSS  display especifica o tipo de caixa de renderização usada por um elemento.
+             - o valor flex O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo flexbox.
+             - aqui estamos definindo o conteiner flex. o elemento que sera pai, de todos os elementos flexiveis. definindo o flex conteiner
+            */
+            display: flex;
+            /*
+             - A propriedade CSS flex-direction define como os itens flexíveis são colocados no contêiner flexível, definindo o eixo principal(main-axis) e a direção (normal ou invertido).
+             - column(coluna): O eixo principal(main-axis) do flex container é igual ao eixo do bloco. Os pontos de início(main-start) e término principais(main-end) são iguais aos pontos de antes e depois do modo de escrita.
+             - com valor column cocê verá que isso organiza os elementos no layout de coluna, assim como eles estavam antes de adicionarmos qualquer regra CSS.
+            */
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sample flexbox example</h1>
+    </header>
+
+    <section>
+        <article>
+            <h2>First article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Second article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Third article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+
+            <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo
+                8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings
+                cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.
+            </p>
+        </article>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!--
+    * PROPRIEDADE CSS BOX-SHADOW
+
+    * DEFINIÇÃO E USO
+
+      - A box-shadow propriedade anexa uma ou mais sombras a um elemento.
+
+    * SINTAXE CSS
+
+      box-shadow: none|h-offset v-offset blur spread color|inset|initial|inherit;
+
+      Observação: para anexar mais de uma sombra a um elemento, adicione uma lista de sombras separada por vírgulas 
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: none;
+        DESCRIPTION: Valor padrão. Nenhuma sombra é exibida;
+
+        VALUE: h-offset;
+        DESCRIPTION: Obrigatório. O deslocamento horizontal da sombra. Um valor positivo coloca a sombra no lado direito da caixa, um valor negativo coloca a sombra no lado esquerdo da caixa;
+
+        VALUE: v-offset;
+        DESCRIPTION: Obrigatório. O deslocamento vertical da sombra. Um valor positivo coloca a sombra abaixo da caixa, um valor negativo coloca a sombra acima da caixa;
+
+        VALUE: blur;
+        DESCRIPTION: Opcional. O raio do borrão. Quanto maior o número, mais borrada será a sombra;
+
+        VALUE: spread;
+        DESCRIPTION: Opcional. O raio de propagação. Um valor positivo aumenta o tamanho da sombra, um valor negativo diminui o tamanho da sombra;
+
+        VALUE: color;
+        DESCRIPTION: Opcional. A cor da sombra. O valor padrão é a cor do texto. 
+
+        VALUE: inset;
+        DESCRIPTION: Opcional. Muda a sombra de uma sombra externa (início) para uma sombra interna;
+
+        VALUE: initial;
+        DESCRIPTION: Define esta propriedade com seu valor padrão;
+
+        VALUE: inherit;
+        DESCRIPTION:Herda essa propriedade de seu elemento pai.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombras de um elemento</title>
+    <style>
+        div#exemplo1{
+            /*aplica uma sombra no elemento, div, aplica uma sombra no lado direito da caixa na horizontal, e aplica uma sombra embaixo da caixa na vertical, a sombra vai ter a cor do texto*/
+            box-shadow: 5px 10px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        div#exemplo2{
+            /*aplica uma sombra no elemento, div, aplica uma sombra no lado direito da caixa na horizontal, e aplica uma sombra embaixo da caixa na vertical, a sombra vai ter a cor especificada pelo codigo hexadecimal*/
+            box-shadow: 5px 10px #888888;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        div#exemplo3{
+            /*aplica uma sombra no elemento, div, aplica uma sombra no lado direito da caixa na horizontal, e aplica uma sombra embaixo da caixa na vertical, a sombra vai ter a cor vermelha especificada*/
+            box-shadow: 5px 10px red;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Sombras anexadas a elementos</h1>
+
+    <p><strong>Exemplo 01:</strong>Adicione sombras a diferentes elementos &lt;div&gt;:</p>
+
+    <h2>box-shadow: 5px 10px:</h2>
+
+    <div id="exemplo1">Um elemento div com uma sombra. O primeiro valor é o deslocamento horizontal e o segundo valor é o deslocamento vertical. A cor da sombra será herdada da cor do texto.</div>
+
+    <h2>box-shadow: 5px 10px #888888</h2>
+
+    <div id="exemplo2">Você também pode definir a cor da sombra. Aqui, a cor da sombra é cinza.</div>
+
+    <h2>box-shadow: 5px 10px red</h2>
+
+    <div id="exemplo3">Uma sombra vermelha.</div>
+</body>
+</html>

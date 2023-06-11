@@ -1,0 +1,48 @@
+/*
+ * PADDING CSS
+
+  - As paddingpropriedades CSS são usadas para gerar espaço ao redor do conteúdo de um elemento, dentro de quaisquer bordas definidas.
+  - Com CSS, você tem controle total sobre o preenchimento. Existem propriedades para definir o preenchimento para cada lado de um elemento (superior, direito, inferior e esquerdo).
+
+  # PADDIND(PREECHIMENTO) LADOS INDIVIDUAIS
+
+   - CSS tem propriedades para especificar o preenchimento para cada lado de um elemento:
+   
+     padding-top(prenchimento superior da caixa, acima do conteudo);
+     padding-right(preechimento da direita da caixa, a direita do conteudo da caixa)
+     padding-bottom(preenchimento interno da parte inferior da caixa, abaixo do conteudo)
+     padding-left(preenchimento da esquerda da caixa, a esquerda do conteudo);
+
+    lenght(comprimento) - especifica um preenchimento em px, pt, cm, etc;
+    %(porcentagem) - especifica um preenchimento em % da largura do elemento que o contém
+    inherit(herdar) - especifica que o preenchimento deve ser herdado do elemento pai;
+
+    valores negativos não são aceitos;
+*/
+#independente{
+    padding-top: 50px; /*prenchimento interno do superior da caixa*/
+    padding-right: 30px; /*prenchimento interno da direita da caixa*/
+    padding-bottom: 50px; /*prenchimento interno do inferior da caixa*/
+    padding-left: 80px; /*prenchimento interno da esquerda da caixa*/
+}
+
+/*
+ * PREENCHIMENTO E LARGURA DO ELEMENTO;
+   
+   - A width propriedade CSS especifica a largura da área de conteúdo do elemento. A área de conteúdo é a parte dentro do preenchimento, borda e margem de um elemento ( o modelo de caixa ).
+   - Portanto, se um elemento tiver uma largura especificada, o preenchimento adicionado a esse elemento será adicionado à largura total do elemento. Muitas vezes, esse é um resultado indesejável.
+*/
+#a1{
+    width: 300px; /*largura da caixa*/
+    padding-left: 25px; /*preenchimento interno da esquerda da caixa*/
+    padding-right: 25px;/*preechimento da direta da caixa*/
+}
+/*
+ * Para manter a largura em 300 px, não importa a quantidade de preenchimento, você pode usar a box-sizingpropriedade. Isso faz com que o elemento mantenha sua largura; se você aumentar o preenchimento, o espaço de conteúdo disponível diminuirá. 
+*/
+#a2{
+    width: 300px; /*largura da caixa*/
+    padding-left: 25px; /*preenchimento interno da esquerda da caixa*/
+    padding-right: 25px;/*preechimento da direta da caixa*/
+    box-sizing: border-box;
+}

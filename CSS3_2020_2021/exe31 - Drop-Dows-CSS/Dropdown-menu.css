@@ -1,0 +1,80 @@
+/*
+ * MENU SUSPENSO - DROP DOWN MENU
+
+  - Crie um menu suspenso que permita ao usuário escolher uma opção em uma lista:
+
+  - Este exemplo é semelhante ao anterior, exceto que adicionamos links dentro da caixa suspensa e os estilizamos para caber em um botão suspenso estilizado:
+*/
+
+/*elemento de botão, um elemento de um botão*/
+button.botao-menu-suspenso{
+    /*cor de fundo*/
+    background-color: #4CAF50;
+    /*cor do texto*/
+    color: white;
+    /*espaço interno entre a borda e conteudo do elemento, da borda para o conteudo*/
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    /*tamanho da fonte*/
+    font-size: 16px;
+    /*elemento sem prenchimento*/
+    border: none;
+    /*cursor do mouse*/
+    cursor: pointer;
+}
+
+
+/* elemento de bloco, elemento de conteiner*/
+div.menu-suspenso{
+    /*o elemento esta posicionado relativamente, em posição em sua relação da posição normal*/
+    position: relative;
+    /*elemento sera exibido, como um elemento, embutido em bloco, que não quebra de linha, para se posicionar, mas aceita espaços externos, internos, e prenchimentos*/
+    display: inline-block;
+}
+
+/*elemento de bloco, elemento de conteiner*/
+div.conteudo-menu-suspenso{
+          /* o  elemento não sera exibido*/
+          display: none;  
+          /* o elemento tera posição absoluta em relação ao seu ancestral que e outra div*/
+          position: absolute;
+          /*cor de fundo do elemento*/
+          background-color: #f9f9f9;
+          /*largura minima*/
+          min-width: 160px;
+          /*aplica uma sombra*/
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          /*se ococrrer sobreposição de um outro elemento sobre esse elemento, deixo especificado para que esse elemento seja exibido primeiro*/
+          z-index: 1;
+
+}
+
+/*elemento de bloco, elemento de conteiner, que possui como filho links*/
+div.conteudo-menu-suspenso > a{
+      /*cor do texto*/
+      color: black;  
+      /*add um espaço interno entre a borda e o conteudo, da borda para o conteudo*/
+      padding-top: 12px;
+      padding-right: 12px;
+      padding-bottom: 16px;
+      padding-left: 16px;
+      /*tira o sublinhado do link*/
+      text-decoration: none;
+      /*o elemento sera exibido como um elemento de bloco, que aceita largura e altura, e respeita espaços, prenchimento*/
+      display: block;
+}
+
+
+/*o elemento de conteiner que tem elementos links como filho, o link vai ter um seletor de estado, que ao o mouse passa por cima do elemento*/
+div.conteudo-menu-suspenso > a:hover{
+    /*cor de fundo*/
+    background-color: #f1f1f1;
+}
+
+/*o elemento de conteiner que tem como filho outro elemento de conteiner, vai ter um seletor de estado aplicado, para que, ao passar o mouse por cima do elemento*/
+div.menu-suspenso:hover > div.conteudo-menu-suspenso{
+        /*o elemento sera exibido, com um elemento de bloco, que aceita largura e altura, e espaços externos e quebra de linha para ser exibido*/
+        display: block;
+}

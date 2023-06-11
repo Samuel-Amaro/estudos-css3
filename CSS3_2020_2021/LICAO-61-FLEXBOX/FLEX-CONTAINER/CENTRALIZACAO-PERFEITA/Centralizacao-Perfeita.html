@@ -1,0 +1,52 @@
+<!--
+    * CENTRALIZAÇÃO PERFEITA
+
+      - No exemplo a seguir, resolveremos um problema de estilo muito comum: centralização perfeita.
+
+      - SOLUÇÃO: Defina as propriedades justify-content e align-items como centere o flex item ficará perfeitamente centralizado:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*alinha os itens flex do conteiner no centro do conteiner na horizontal no eixo x*/
+            justify-content: center;
+            /*alinha os itens flex do conteiner no centro do conteiner no sentido vertical, no eixo y*/
+            align-items: center;
+            height: 300px;
+            background-color: dodgerblue;
+        }
+        div.flex-container > div{
+            background-color: #f1f1f1;
+            color: white;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Flex Box - conteiner flexivel</h1>
+
+    <p><strong>Exemplo:</strong>SOLUÇÃO: Defina as propriedades <i>justify-content</i> e <i>align-items</i> como <i>center</i> e o flex item ficará perfeitamente centralizado:</p>
+
+    <h2>Centralização Perfeita</h2>
+
+    <p>Um contêiner com as propriedades justify-content e align-items definidas para o centro irá alinhar o (s) item (ns) no centro (em ambos os eixos).</p>
+
+    <div class="flex-container">
+        <div></div>
+    </div>
+
+</body>
+</html>

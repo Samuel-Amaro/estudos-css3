@@ -1,0 +1,15 @@
+<!--
+    * LINHAS DE INICIO E FIM
+
+        Outra área crítica em termos de compreensão é como o Flexbox não faz nenhuma premissa sobre o modo de escrita do documento. No passado, o CSS utilizava fortemente os modos de escrita horizontal e da esquerda para a direita. Métodos modernos de layout abrangem uma variedade de modos de escrita e, portanto, não assumimos mais que uma linha de texto começará no canto superior esquerdo do documento e sigará para o lado direito, com novas linhas aparecendo uma após a as outra.
+
+        Essa discussão sobre a relação entre o flexbox e a especificação do modo de escrita será abordada um artigo posterior, contudo, a descrição a seguir explica brevemente porque não se fala sobre esquerda e direita/ acima e abaixo quando descreve-se a direção para a qual os elementos flex fluem.
+
+        Se o valor da propriedade flex-direction for row (linha), considerando o estilo de escrita ocidental, a borda inicial do eixo principal(main axis) estará localizada à esquerda e a borda final, à direita.
+
+        Considerando um idioma como o Árabe, que possui um estilo de escrita oriental, teremos o inverso: a borda inicial do eixo principal estará localizada à direita e a borda final, à esquerda.
+
+        Em ambos os casos, a borda inicial do eixo transversal está na parte superior do contêiner flex e a borda final, na parte inferior, visto que ambos os idiomas têm um estilo de de escrita horizontal.
+
+        Após um tempo de prática, pensar em termos de início e final ao invés de esquerda e direita se tornará natural e será útil ao lidar com outros métodos de layout, como CSS Grid, que seguem os mesmos padrões.
+-->

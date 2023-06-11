@@ -1,0 +1,126 @@
+<!--
+    * ANINHANDO GRIDS
+
+        Um item de grid pode se tornar um container de grid. No exemplo a seguir, temos o grid de três colunas criadas anteriormente, com nossos dois itens posicionados. Neste caso o primeiro item possui dois sub itens. Como estes itens não são filhos diretos do grid eles não participam no layout do grid e dessa forma são exibidos no fluxo normal do documento.
+
+        Se definimos box1 como display: grid  podemos dar uma definição de tracks e ela também se tornará uma grid. Os itens então são dispostos nesse novo grid.
+
+        Nesse caso o grid aninhado não possui relação com o pai. Como é possível perceber no exemplo ele não herdou o grid-gap (en-US) do pai e as linhas no grid aninhado não estão alinhadas com as linhas do grid pai.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*notação convencional*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com três colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - cada coluna tera 1fr de medida flexivel, uma fração do espaço disponivel no container grid para cada uma.
+             - Grids grandes, com muitas tracks(faixas) podem usar a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+             - usaremos a seguinte notação de repeat(3, 1fr);
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /*iten grid*/
+        .box2{
+            /*
+             - POSICIONAMENTO DE ITENS CONTRA LINHAS
+             - ao posicionar um item focamos a linha e não no rastro
+             - o segundo iten grid e posicionado contra a linha de coluna 1, e expande uma linha. esse e o padrão.
+            */
+            grid-column-start: 1;
+            /*
+             - começa na linha 3 
+            */
+            grid-row-start: 3;
+            /*
+             - termina na linha 5, tem a expansão de duas linhas
+            */
+            grid-row-end: 5;
+
+            /*OS OUTROS ITENS SERÃO POSICIONADOS DE ACORDO COM O ESPAÇO DISPONIVEL NO GRID*/
+        }
+
+        .nested {
+            border: 2px solid #ffec99;
+            border-radius: 5px;
+            background-color: #fff9db;
+            padding: 1em;
+        }
+
+        /*iten grid -> grid container*/
+        .box1{
+            /*
+             - POSICIONAMENTO DE ITENS CONTRA LINHAS
+             - ao posicionar um item focamos a linha e não no rastro
+             - o primeiro iten grid e posicionado contra a linha de coluna 1
+            */
+            grid-column-start: 1;
+            /*e vai até a linha da coluna 4, a linha do extremo direito do grid.*/
+            grid-column-end: 4;
+            /*começa na linha 1*/
+            grid-row-start: 1;
+            /*termina na linha 3, tem a expansão de três linhas*/
+            grid-row-end: 3;
+            /*o iten grid se torna grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com três colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+            */
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box box1">
+            <div class="nested">a</div>
+            <div class="nested">b</div>
+            <div class="nested">c</div>
+        </div>
+        <div class="box box2">Dois</div>
+        <div class="box box3">Três</div>
+        <div class="box box4">Quatro</div>
+        <div class="box box5">Cinco</div>
+    </div>
+
+</body>
+</htm

@@ -1,0 +1,43 @@
+<!--
+    * SELETOR DE [attribute~="value"] CSS
+
+        - O [attribute~="value"] seletor é usado para selecionar elementos com um valor de atributo contendo uma palavra especificada.
+
+        - O exemplo a seguir seleciona todos os elementos com um atributo title que contém uma lista de palavras separadas por espaço, uma das quais é "flor":
+
+        - O exemplo acima corresponderá a elementos com title="flower", title="summer flower" e title="flower new", mas não title="my-flower" ou title="flowers"
+
+    * SINTAXE CSS:
+
+        [attribute~=value] {
+            css declarations;
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seletor de atributos
+         - estilizando elementos que possuem um atributo ou valor de atributo especifico.
+         - O [attribute~="value"] seletor é usado para selecionar elementos com um valor de atributo contendo uma palavra especificada.
+         - no exemplo abaixo o seletor ira selecionar todos os elementos que tenham o atributo title especificado com o valor que contenha uma palavra especificada  como "flower"
+        */
+        [title=flower] {
+            border: 5px solid yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Seletor [attribute~="value"] CSS</h2>
+    <p>Todas as imagens com o atributo title contendo a palavra "flor" recebem uma borda amarela.</p>
+
+    <img src="./imagen1.jpg" title="Klematis flower" width="150" height="113"/>
+    <img src="./img_flwr.gif" title="flower" width="224" height="162"/>
+    <img src="./img_tree (1).gif" title="tree" width="200" height="358"/>
+
+</body>
+</html>

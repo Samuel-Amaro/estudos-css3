@@ -1,0 +1,49 @@
+<!--
+    * POSICIONAMENTO ABSOLUTO
+
+        O posicionamento absoluto é usado para remover completamente um elemento do fluxo normal e, em vez disso, posicioná-lo usando deslocamentos das bordas de um bloco que o contém.
+
+        Voltando ao nosso exemplo original não posicionado, poderíamos adicionar a seguinte regra CSS para implementar o posicionamento absoluto:
+
+        Isso é muito diferente! O elemento posicionado agora foi completamente separado do resto do layout da página e fica por cima dele. Os outros dois parágrafos agora ficam juntos como se seu irmão posicionado não existisse. As propriedades tope lefttêm um efeito diferente em elementos absolutamente posicionados do que em elementos relativamente posicionados. Neste caso, os deslocamentos foram calculados a partir da parte superior e esquerda da página. É possível alterar o elemento pai que se torna esse contêiner e veremos isso na lição sobre posicionamento .
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        
+        body{
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p{
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .positioned{
+            background-color: rgb(253, 213, 213);
+            border-color: rgb(250, 145, 145);
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Posicionamento</h1>
+
+    <p>Eu sou um elemento básico de nível de bloco.</p>
+    <p class="positioned">Eu sou um elemento básico de nível de bloco.</p>
+    <p>Eu sou um elemento básico de nível de bloco.</p>
+
+</body>
+</html>

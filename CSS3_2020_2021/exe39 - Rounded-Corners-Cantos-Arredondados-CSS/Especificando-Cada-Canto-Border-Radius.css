@@ -1,0 +1,102 @@
+/*
+ * * CSS BORDER RADIUS - ESPECIFIQUE CADA CANTO
+ * 
+ * A border-radius propriedade pode ter de um a quatro valores. Aqui estão as regras:
+*/
+
+/*
+  * Quatro valores - border-radius: 15px 50px 30px 5px;
+  * Quatro valores - border-radius: 15px 50px 30px 5px; (o primeiro valor se aplica ao canto superior esquerdo, o segundo valor se aplica ao canto superior direito, o terceiro valor se aplica ao canto inferior direito e o quarto valor se aplica ao canto inferior esquerdo):   
+*/
+p#quatro-valor{
+    /*
+        * especificando os 4 valores para ter os cantos do elemento arredondado;
+        * 15px : canto superior esquerdo;
+        * 50px : canto superior direito;
+        * 30px : canto inferior direito;
+        * 5px : canto inferior esquerdo;
+        * 
+        * SINTAXE: 
+        * border-radius: canto_superior_esquerdo canto_superior_direito canto_inferior_direito canto_inferior_esquerdo;
+    */
+    border-radius: 15px 50px 30px 5px;
+    background: #73AD21;
+    /*espaço interno*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*largura elemento*/
+    width: 200px;
+    /*altura do elemento*/
+    height: 150px;
+}
+
+/*
+ * Três valores - border-radius: 15px 50px 30px;
+ * Três valores - border-radius: 15px 50px 30px; (o primeiro valor se aplica ao canto superior esquerdo, o segundo valor se aplica aos cantos superior direito e inferior esquerdo e o terceiro valor se aplica ao canto inferior direito)
+*/
+p#tres-valores{
+    /*
+        * especificando os 3 valores para ter os cantos do elemento arredondado
+        * 15px : canto superior esquerdo;
+        * 50px : canto superior direito e inferior esquerdo;
+        * 30px : canto inferior direito;
+        * 
+        * SINTAXE:
+        * border-radius: canto_superior_esquerdo canto_superior_direito_inferior_esquerdo canto_inferior_direito;
+    */
+    border-radius: 15px 50px 30px;
+    background: #73AD21;
+    /*espaço interno*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*largura elemento*/
+    width: 200px;
+    /*altura do elemento*/
+    height: 150px;
+}
+
+/*
+ * Dois valores - border-radius: 15px 50px; (o primeiro valor se aplica aos cantos superior esquerdo e inferior direito, e o segundo valor se aplica aos cantos superior direito e inferior esquerdo):
+*/
+p#dois-valores{
+    /*
+     * especificando os 2 valores para ter os cantos do elemento arredondados
+     * 15px : canto superior esquerdo e inferior direito;
+     * 50px : canto superior direito e inferior esquerdo;
+     * SINTAXE:
+     * border-radius: canto_superior_esquerdo_e_canto_inferior_direito canto_superior_direito_e_inferior_esquerdo;
+    */
+    border-radius: 15px 50px;
+    background: #73AD21;
+    /*espaço interno*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*largura elemento*/
+    width: 200px;
+    /*altura do elemento*/
+    height: 150px;
+}
+
+/*
+ * Um valor - border-radius: 15px; (o valor se aplica a todos os quatro cantos, que são arredondados igualmente:
+*/
+p#um-valor{
+    /*o valor 15px se aplica aos quatros cantos que são arredondados igualmente*/
+    border-radius: 15px;
+    background: #73AD21;
+    /*espaço interno*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*largura elemento*/
+    width: 200px;
+    /*altura do elemento*/
+    height: 150px;
+}

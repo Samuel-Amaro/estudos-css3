@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear and clearfix</title>
+    <link rel="stylesheet" href="float-clear-layout-css.css">
+</head>
+<body>
+    <h1>Clear and Clearfix Layout CSS</h1>
+    <p><b>Clear(Claro) and Clearfix(Correção Clara) Layout CSS</b> Claro e Correção Clara de Layout CSS</p>
+    <p>A maneira mais comum de usar a clear propriedade é depois de usar uma float propriedade em um elemento.</p>
+    <p>Ao limpar os flutuadores, você deve combinar o clear com o flutuante: Se um elemento for flutuado para a esquerda, você deve limpar para a esquerda. Seu elemento flutuado continuará a flutuar, mas o elemento limpo aparecerá abaixo dele na página da web.</p>
+    <p>O exemplo a seguir limpa o flutuador à esquerda. Significa que nenhum elemento flutuante é permitido no lado esquerdo (do div):</p>
+    <br>
+
+    <h2>Sem a propriedade Clear(claro) do Layout CSS</h2>
+    <div id="conteiner_1">Div1</div>
+    <p id="paragrafo_1">este paragrafo - Observe que este paragrafo é após div1 no código HTML. No entanto, como o div1 flutua para a esquerda, o texto neste paragrafo flui em torno de div1.</p>
+
+    <br><!--quebra linha-->
+    <br><!--quebra linha-->
+
+    <h2>Com a propriedade Clear(claro) do Layout CSS</h2>
+    <div id="conteiner_2">Div1</div>
+    <p id="paragrafo_2">este paragrado - Aqui, <b>Clear(claro)</b>: esquerda(left); move este paragrafo para baixo, abaixo do div2(Conteiner_2) flutuante(float). O valor "left" limpa os elementos flutuados à esquerda. Você também pode limpar "direita" e "ambos os lados".</p>
+
+    <h2>O Hack de correção Clara - The clearfix Hack</h2>
+    <h2>Sem o ClearFix - correção clara</h2>
+    <p>Neste exemplo, a imagem é mais alta do que o elemento que a contém e é flutuante, portanto, extravasa para fora de seu contêiner:</p>
+
+    <p id="sem_clearfix"><img src="java.png" alt="icone da linguagem java"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima consequuntur nobis accusantium magnam, minus tenetur quaerat qui officiis possimus enim, quisquam fugiat accusamus hic molestias omnis alias, at odio harum?</p>
+    <br><!--quebra linha-->
+    <br><!--quebra linha-->
+    <br><!--quebra linha-->
+    <h2>Com o clearfix - com a correção clara - e trasbordamento automatico - overflow: auto</h2>
+    <p>Adicione uma classe clearfix com overflow: auto; para o elemento que contém, para corrigir este problema:</p>
+    <p id="com_clearfix"><img src="java.png" alt="icone da linguagem java"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima consequuntur nobis accusantium magnam, minus tenetur quaerat qui officiis possimus enim, quisquam fugiat accusamus hic molestias omnis alias, at odio harum?</p>
+
+    <br> <!--quebra de linha-->
+
+    <h2>Usando o hack de correção clara - hack do clearfix</h2>
+    <p>O novo e moderno hack do clearfix , entretanto, é mais seguro de usar e o código a seguir é usado para a maioria das páginas da web:</p>
+    <p id="com_hack"><img src="java.png" alt="icone da linguagem java"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima consequuntur nobis accusantium magnam, minus tenetur quaerat qui officiis possimus enim, quisquam fugiat accusamus hic molestias omnis alias, at odio harum?</p>
+</body>
+</html>

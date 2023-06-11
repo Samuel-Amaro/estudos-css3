@@ -1,0 +1,67 @@
+<!--
+    * ESPECIFIQUE UMA COR PARA A LINHA DE DECORAÇÃO
+
+        - A text-decoration-color propriedade é usada para definir a cor da linha de decoração.
+
+        - A text-decoration-color propriedade especifica a cor da decoração do texto (underline, overline, linhas).
+
+    * SINTAXE CSS:
+
+        text-decoration-color: color|initial|inherit;
+
+    * VALORES DE PROPRIEDADE
+
+        VALUE: color
+        DESCRIPTION: Especifica a cor da decoração de texto
+        -------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        -------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        -------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /*a propriedade css, text-decoration-line e usada para adicionar uma linha de decoração ao texto, o valor overline especifica que uma linha será exibida sobre o texto*/
+            text-decoration-line: overline;
+            /*a propriedade text-decoration-color e usada para definir a cor da linha de decoração, especifica a cor da decoração do texto*/
+            text-decoration-color: red;
+        }
+        h2{
+            /*
+             - A text-decoration-line propriedade define o tipo de decoração de texto a ser usado
+             - o valor line-through(linha através) especifica que uma linha será exibida através do texto*/
+            text-decoration-line: line-through;
+            /*especifica uma cor azul para a linha de decoração e decoração do texto*/
+            text-decoration-color: blue;
+        }
+        h3{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*especifica uma cor verde para a linha de decoração e decoração do texto*/
+            text-decoration-color: green;
+        }
+        p.ex{
+            /*a propriedade aceita mais de um valor, assim informa o overline e o underline como valores para decorar a linha de texto*/
+            text-decoration-line: overline underline;
+            /*especifica uma cor roxa para a linha de decoração e decoração do texto*/
+            text-decoration-color: purple;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Decoração de texto overline(sobre a linha)</h1>
+    <h2>Decoração de texto line-through(linha atráves)</h2>
+    <h3>Decoração de texto underline(sublinhado)</h3>
+    <p class="ex">Decoração de texto underline(sublinhado) a overline(sobre a linha)</p>
+    <p><strong>Nota:</strong> Não é recomendado sublinhar texto que não seja um link, pois isso muitas vezes confunde o leitor.</p>
+
+</body>
+</html>

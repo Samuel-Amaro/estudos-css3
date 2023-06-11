@@ -1,0 +1,24 @@
+/*
+ * CSS TEXT DECORATION(DECORAÇÃO DO TEXTO)
+
+  - A text-decoration propriedade é usada para definir ou remover decorações do texto.
+  - O valor text-decoration: none;é frequentemente usado para remover sublinhados de links:
+*/
+a{
+    text-decoration: none; /* none - tira o sublinhado do link*/
+}
+/*
+ * OS OUTROS text-decoration valores são usados para decorar o texto:
+*/
+h1{
+    text-decoration: overline;
+}
+h2{
+    text-decoration: line-through; /*linha atraves*/
+}
+h3{
+    text-decoration: underline; /*sublinhado*/
+}
+/*
+ *  Não é recomendável sublinhar texto que não seja um link, pois isso costuma confundir o leitor.
+*/

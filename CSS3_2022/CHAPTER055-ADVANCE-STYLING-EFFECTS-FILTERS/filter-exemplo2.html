@@ -1,0 +1,42 @@
+<!--
+    Você pode aplicar filtros a qualquer elemento e não apenas a imagens. Algumas das opções de filtro disponíveis fazem coisas muito semelhantes a outros recursos CSS, por exemplo, drop-shadow()funcionam de maneira muito semelhante e dão um efeito semelhante a box-shadow ou text-shadow. A coisa realmente legal sobre os filtros, no entanto, é que eles funcionam nas formas exatas do conteúdo dentro da caixa, não apenas na caixa em si como um grande pedaço, então vale a pena saber a diferença.
+
+    Neste próximo exemplo, estamos aplicando nosso filtro a uma caixa e comparando-o com uma sombra de caixa. Como você pode ver, o filtro de sombra segue a forma exata do texto e dos traços da borda. A sombra da caixa apenas segue o quadrado da caixa.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        p{
+            border: 5px dashed red;
+        }
+
+        .filter{
+            /*
+             - A propriedade de filtro(filter) CSS aplica efeitos gráficos como desfoque(blur) ou mudança de cor(shift color) a um elemento.
+             - o primeiro valor a função drop-shadow(), da um efeito muito semelhante a box-shadow ou text-shadow, aplica uma sobra externa na caixa do elemento, e no conteudo do elemento, e como se estivese usando a propriedade text-shadow, e box-shadow
+             - Como você pode ver, o filtro de sombra segue a forma exata do texto e dos traços da borda. 
+            */
+            filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.7));
+        }
+
+        .box-shadow{
+            /*
+             - aplica uma sombra externa ao elemento.
+             - A sombra da caixa apenas segue o quadrado da caixa.
+            */
+            box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.7);
+        }
+
+    </style>
+</head>
+<body>
+
+    <p class="filter">Filter</p>
+    <p class="box-shadow">Box-shadow</p>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!--
+    * SHORTHAND DE DEFINIÇÕES DE GRADE
+
+        Tendo visto várias maneiras de colocar itens em nossas grades e muitas das propriedades usadas para definir a grade, este é um bom momento para dar uma olhada em alguns atalhos disponíveis para definir a grade e muitas coisas sobre isso tudo em um linha de CSS.
+
+        Estes podem rapidamente tornar-se difíceis de ler para outros desenvolvedores, ou até mesmo para o seu futuro eu. No entanto, eles fazem parte da especificação e é provável que você os encontre em exemplos ou em uso por outros desenvolvedores, mesmo que opte por não usá-los.
+
+        Antes de usar qualquer taquigrafia, vale lembrar que as taquigrafias não apenas permitem a configuração de muitas propriedades de uma só vez, mas também agem para redefinir as coisas para seus valores iniciais que você não faz ou não pode definir na taquigrafia. Portanto, se você usar um atalho, esteja ciente de que ele pode redefinir coisas que você aplicou em outro lugar.
+
+        Os dois atalhos para o contêiner de grade são o Explicit Grid Shorthand grid-template e o Grid Definition Shorthand grid
+
+        GRID-TEMPLATE
+
+            A grid-template propriedade define as seguintes propriedades:
+
+                grid-template-rows
+                grid-template-columns
+                grid-template-areas
+
+            A propriedade é chamada de Explicit Grid Shorthand porque está definindo as coisas que você controla quando define uma grade explícita, e não aquelas que afetam qualquer linha implícita ou trilhas de coluna que possam ser criadas.
+
+            O código a seguir cria um layout usando grid-template o mesmo layout criado anteriormente neste guia.
+
+            .wrapper {
+                display: grid;
+                grid-template:
+                    "hd hd hd hd   hd   hd   hd   hd   hd" minmax(100px, auto)
+                    "sd sd sd main main main main main main" minmax(100px, auto)
+                    "ft ft ft ft   ft   ft   ft   ft   ft" minmax(100px, auto)
+                            / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+            }
+
+            O primeiro valor é o nosso grid-template-areas valor, mas também declaramos o tamanho da linha no final de cada linha. Isto é o que minmax(100px, auto) está fazendo.
+
+            Então grid-template-areas, depois de ter uma barra, depois disso é uma lista de faixas explícita de faixas de coluna.
+            
+-->

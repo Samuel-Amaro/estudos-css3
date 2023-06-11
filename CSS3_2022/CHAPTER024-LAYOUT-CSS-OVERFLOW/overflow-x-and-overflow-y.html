@@ -1,0 +1,48 @@
+<!--
+    * OVERFLOW-X AND OVERFLOW-Y
+
+        - As propriedades overflow-x and overflow-y especificam se o overflow do conteúdo deve ser alterado apenas horizontalmente ou verticalmente (ou ambos):
+
+        - overflow-x especifica o que fazer com as bordas esquerda/direita do conteúdo.
+
+        - overflow-y especifica o que fazer com as bordas superior/inferior do conteúdo.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        div{
+            background-color: coral;
+            width: 200px;
+            /*
+             - a overflow propriedade so funcionada para elementos com display block e com uma altura especificada
+            */
+            height: 100px;
+            border: 1px solid black;
+            /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - a overflow-x especifica o que fazer com as bordas esquerda/direita do conteúdo.
+             - a overflow-y especifica o que fazer com as bordas superior/inferior do conteúdo.
+            */
+            overflow-x: hidden; /*recorta o conteudo que transborda e oculta na horizontal*/
+            overflow-y: scroll; /*overflow(conteudo que transborda para fora da caixa) é cortado e uma barra de rolagem é adicionada para ver o restante do conteúdo na vertical*/
+        }
+    </style>
+</head>
+<body>
+
+    <h2>overflow-x é overflow-y</h2>
+
+    <p>Você também pode alterar o estouro do conteúdo horizontalmente ou verticalmente.</p>
+
+    <p>overflow-x especifica o que fazer com as bordas esquerda/direita do conteúdo.</p>
+
+    <p>overflow-y especifica o que fazer com as bordas superior/inferior do conteúdo.</p>
+
+    <div>Você pode usar a propriedade overflow quando quiser ter um melhor controle do layout. A propriedade overflow especifica o que acontece se o conteúdo transbordar da caixa de um elemento.</div>
+
+</body>
+</html>

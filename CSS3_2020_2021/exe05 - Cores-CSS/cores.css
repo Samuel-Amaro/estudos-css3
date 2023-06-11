@@ -1,0 +1,76 @@
+/*
+ * CORES CSS
+   - As cores são especificadas usando nomes de cores predefinidos ou valores RGB, HEX, HSL, RGBA, HSLA.
+
+   * NOMES DE CORES CSS
+     - Em css, uma cor pode ser especificado usando um nome de cor predefinido:
+       - tomato; - orange; - DodgerBlue; etc....
+
+   * CSS BACKGROUND COLOR
+     - eu posso definir a cor de fundo para elementos HTML;
+    
+   * COR DO TEXTO(text color)
+     - eu posso definir a cor do texto
+    
+   * CSS BORDER COLOR
+     - eu posso definir a cor das bordas da caixa do elemento html;
+    
+    * VALORES DE CORES CSS
+      - Em CSS, as cores também podem ser especificadas usando valores RGB, valores HEX, valores HSL, valores RGBA e valores HSLA;
+      - valores de cores pode usar:
+        - RGB;
+        - HEX;
+        - HSL;
+        - RGBA;
+        - HSLA;
+*/
+/* 
+  * EXEMPLO DE BACGROUND COLOR
+  - definindo uma cor de fundo de um elemento HTML
+*/
+h1{
+    background-color: dodgerblue;
+}
+p{
+   background-color: tomato; 
+}
+/*
+ * EXEMPLO DE COR DO TEXTO
+*/
+h1{
+    color: tomato;
+}
+p{
+    color: dodgerblue;
+}
+/*
+ * EXEMPLO DO CSS BORDER COLOR
+*/
+h1{
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+p{
+    border: 2px;
+    border-style: solid;
+    border-color: navy;    
+}
+/*
+ * EXEMPLO DE USO DE VALORES DE CORES;
+*/
+#p1{
+   background-color:rgb(255, 99, 71); 
+}
+#p2{
+    background-color: #ff6347; 
+}
+#p3{
+    background-color: hsl(9, 100%, 64%);
+}
+#p4{
+    background-color: rgba(255, 99, 71, 0.5);
+}
+#p5{
+    background-color: hsla(9, 100%, 64%, 0.5);
+}

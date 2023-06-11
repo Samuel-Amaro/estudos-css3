@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento CSS</title>
+    <link rel="stylesheet" href="align-css.css">
+</head>
+<body>
+    <h1>CSS Align - Alinhamento CSS</h1>
+    
+    <h2>CSS Layout - Alinhamento Vertical e Horizontal</h2>
+    <h2>Center Align Elements - Elementos alinhado ao centro</h2>
+    <p><b>Nota: O alinhamento ao centro não tem efeito se a widthpropriedade não estiver definida (ou definida como 100%).</b></p>
+    <div id="bloco_centralizado">Este Elemento div é Centralizado no centro da pagina na Horizontal</div>
+
+    <h2>Alinhar somente Texto ao centro</h2>
+    <p>No exemplo abaixo a caixa não esta centralizado, somente seu conteudo, o conteudo de dentro da caixa esta centralizado dentro da caixa</p>
+    <div id="conteudo_centralizado">O conteudo que esta dentro desse bloco e centralizado</div>
+
+    <h2>Alinhamento de imagem ao centro</h2>
+    <img src="tablet.png" alt="icone de tablet">
+
+    <h2>Alinhamento á esquerda e á direita usando a position propriedade</h2>
+    <p>Um exemplo de como alinhar elementos à direita com a propriedade position:</p>
+    <p><b>Nota: Elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.</b></p>
+    <div id="caixa_alinhada_direita_position">
+        <h3>Elemento alinhado a direita - Position</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita non fuga tenetur commodi quasi ipsam deleniti consequatur dolores ducimus, esse optio molestiae excepturi tempore consequuntur molestias. Adipisci, distinctio provident!</p>
+    </div>
+    
+    <!-- essas quebras de linham foram add para os blocos posicionados com position não serem sobrepostos pelo bloco posicionado com a flot -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>Alinhamento á esquerda e á direita usando a float propriedade</h2>
+    <p>Um exemplo de como alinhar à direita os elementos com a propriedade float:</p>
+    <div id="caixa_alinhada_direita_float">
+        <h3>Elemento alinhado a direita - float</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita non fuga tenetur commodi quasi ipsam deleniti consequatur dolores ducimus, esse optio molestiae excepturi tempore consequuntur molestias. Adipisci, distinctio provident!</p>
+    </div>
+
+    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quasi provident ratione sequi doloremque, exercitationem optio, libero dignissimos reiciendis consequatur consequuntur iure ipsum est non quisquam fugiat, ipsam mollitia voluptatum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error ullam voluptatibus optio dolores, et eveniet esse architecto commodi. Vitae delectus fuga praesentium, placeat sit consectetur. Praesentium eligendi libero rerum ipsa? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consequatur ad, officiis eaque magni facere nostrum tempore ab, corrupti non, qui fugiat optio temporibus omnis? Deserunt porro officia fugit sequi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, hic eum rerum consequuntur ex nesciunt aliquam quibusdam vitae unde earum ab, dicta voluptatibus cupiditate architecto recusandae? Cumque, nostrum. Non, iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, tenetur facere! Necessitatibus, omnis placeat ad officia, a minus provident odit enim, ea similique ut error aliquid optio dignissimos porro explicabo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, veritatis. Molestias quae mollitia perferendis illo rem, sunt necessitatibus blanditiis fuga officiis doloremque deserunt optio repellendus debitis corporis error ut id.</div>
+
+    <h2>Centralizar verticalmente - usando preenchimento(padding):</h2>
+    <p>Neste exemplo, usamos a propriedade padding para centralizar o elemento div verticalmente:</p>
+    <div id="bloco_centrado_vertical">
+        <p>Estou centrado verticalmente</p>
+    </div>
+
+    <h3>Centralizar verticalmente e centrado - usando preenchimento(padding)</h3>
+    <p>texto alinhado na vertical(centro) e na horizontal(centro)</p>
+    <div id="bloco_centrado_horizontal_vertical">
+        <p>Estou centrado verticalmente e horizontalmente</p>
+    </div>
+    
+
+    <h2>Centralizar verticalmente - usando a altura da linha - line-height</h2>
+    <p>Neste exemplo, usamos a propriedade line-height com um valor que é igual à propriedade height para centralizar o elemento div:</p>
+    <div id="bloco_centrado_vertical_horizontal_altura_linha">
+        <p>Estou centrado verticalmente e horizontalmente pela altura da linha</p>
+    </div>
+
+
+    <h2>Centralizar verticalmente - usando posição e trasformação - position and trasform</h2>
+    <p>Neste exemplo, usamos o posicionamento e a propriedade transform para centralizar vertical e horizontalmente o elemento div:</p>
+    <div id="bloco_position_trasform">
+        <p>Estou centrado verticalmente e horizontalmente</p>
+    </div>
+</body>
+</html>

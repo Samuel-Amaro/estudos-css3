@@ -1,0 +1,45 @@
+<!--
+    * PROPRIEDADE CSS BREAK-INSIDE(QUEBRA PARA DENTRO)
+
+        A propriedade CSS break-inside define como as quebras de página, coluna ou região devem se comportar dentro de uma caixa gerada. Se não houver caixa gerada, a propriedade será ignorada.
+
+        /* Keyword values */
+        break-inside: auto;
+        break-inside: avoid;
+        break-inside: avoid-page;
+        break-inside: avoid-column;
+        break-inside: avoid-region;
+
+        /* Global values */
+        break-inside: inherit;
+        break-inside: initial;
+        break-inside: revert;
+        break-inside: revert-layer;
+        break-inside: unset;
+
+        Cada ponto de quebra possível (em outras palavras, cada limite de elemento) é afetado por três propriedades: o valor de quebra após o elemento anterior(break-after), o valor de quebra antes do próximo elemento(break-before) e o valor de quebra interna do elemento que o contém(break-inside).
+
+        Para determinar se uma pausa deve ser feita, as seguintes regras são aplicadas:
+
+            1. Se qualquer um dos três valores em questão for um valor de quebra forçada ( always, left, right, page, columnou region), ele terá precedência. Se mais de um deles for uma quebra, será usado o valor do elemento que aparece por último no fluxo. Assim, o break-before valor tem precedência sobre o break-after valor, que por sua vez tem precedência sobre o break-inside valor.
+            
+            2. Se qualquer um dos três valores em questão for um valor para evitar quebra ( avoid, avoid-page, avoid-region ou avoid-column), nenhuma quebra será aplicada nesse ponto.
+
+        Uma vez que as quebras forçadas tenham sido aplicadas, as quebras suaves podem ser adicionadas se necessário, mas não nos limites do elemento que resolvem em um avoid valor correspondente.
+
+    * SINTAXE
+
+        A propriedade break-inside é especificada como um dos valores de palavra-chave da lista abaixo.
+
+    * VALORES
+
+        auto: Permite, mas não força, que qualquer quebra (page, column ou region) seja inserida dentro da caixa principal.
+
+        avoid: Evita que qualquer quebra (page, column ou region) seja inserida na caixa principal.
+
+        avoid-page: Evita qualquer quebra de página dentro da caixa principal.
+
+        avoid-column: Evita qualquer quebra de coluna dentro da caixa principal.
+
+        avoid-region: Evita qualquer quebra de região dentro da caixa principal.
+-->

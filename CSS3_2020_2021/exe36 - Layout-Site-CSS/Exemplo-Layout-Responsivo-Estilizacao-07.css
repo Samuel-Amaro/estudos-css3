@@ -1,0 +1,149 @@
+/*
+ * LAYOUT DE SITE RESPONSIVO
+
+   - Usando alguns dos códigos CSS acima, criamos um layout de site responsivo, que varia entre duas colunas e colunas de largura total, dependendo da largura da tela:
+*/
+
+/*para todos os elementos HTML*/
+*{
+    box-sizing: border-box;   
+}
+
+/*para a area de conteudo da pagina, o corpo do site*/
+body{
+    /*fontes principais do site*/
+    font-family: Arial, Helvetica, sans-serif;
+    /*add espaço interno aos elementos que vão estar na pagina*/
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    /*cor de fundo da pagina*/
+    background-color: #f1f1f1;
+}
+
+/*titulo do cabeçalho/blog - para o elemento header*/
+header.cabecalho{
+    /*add espaço interno ao elemento*/
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    /*alinhamento do texto dentro do elemento*/
+    text-align: center;
+    /*cor de fundo do elemento*/
+    background-color: white;
+}
+
+/*para o elemento h1, titulo principal*/
+header.cabecalho > h1{
+    /*tamanho da fonte do elemento*/
+    font-size: 50px;
+}
+
+/*para o elemento nav*/
+nav.barra-navegacao{
+    /*cor de fundo do elemento*/
+    background-color: #333;
+    /*caso o conteudo seja maior que a area desse elemento, essa propriedade vai ocultar o conteudo que passar da area, o conteudo que ficar fora da area sera ocultado*/
+    overflow: hidden;
+}
+
+/*para cada elemento <a> que for filho do nav*/
+nav.barra-navegacao > a{
+    /*flutua a esquerda, o elemento a flutua a esquerda, mas a esquerda de quem ? a cada elemento a adicionado a nav, sempre ficara fluturando a esquerda*/
+    float: left;
+    /*o elemento sera exibido como um elemento de bloco*/
+    display: block;
+    /*cor do conteudo do elemento*/
+    color: #f2f2f2;
+    /*alinhamento do texto*/
+    text-align: center;
+    /*add espaço interno*/
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+    /*tira o sublinhado dos elementos*/
+    text-decoration: none;
+}
+
+/*para cada elemento <a> que for filho do nav, tera um pseudo-classe aplicado ao elemento, essa pseudo classe cpturara o estado do elemento quando o mouse, estiver por cima do elemento*/
+nav.barra-navegacao > a:hover{
+    /*cor de fundo do elemento*/
+    background-color: #ddd;
+    /*cor do texto*/
+    color: black;
+}    
+
+/*Crie duas colunas desiguais que flutuam uma ao lado da outra - para o elemento article*/
+article.coluna-esquerda {
+    /*flutua a esquerda, o elemento ficara flutuando a esquerda, a sua propria esquerda, ele ficara posicionado flutuando a esquerda, cada elemento article com a classe, citada acima, flutuara a sua esquerda, ele mesmo flutua a esquerda*/
+    float: left;
+    /*largura do elemento article, em relação ao seu elemento pai, o elemento article podera ocupar 75% da largura do conteiner de seu pai*/
+    width: 75%;
+} 
+
+/* para o elemento article*/
+article.coluna-direita{
+    /*flutua a esquerda, o elemento ficara flutuando a esquerda, a sua propria esquerda, ele ficara posicionado flutuando a esquerda, cada elemento article com a classe, citada acima, flutuara a sua esquerda, ele mesmo flutua a esquerda, mas se ja tiver alguma elemento na esquerda ele ficar o mais proximo possivel da esquerda no mesmo sentido que o elemento que esta ocupando a esquerda*/
+    float: left;
+    /*largura do elemento article, em relação ao seu elemento pai, o elemento article podera ocupar 25% da largura do conteiner de seu pai*/
+    width: 25%;
+    /*cor de fundo do elemento*/
+    background-color: #f1f1f1;
+    /*add espaço interno*/
+    padding-left: 20px;
+}
+
+/*para o elemento div, elemento de bloco, conteiner*/
+div.conteiner-imagen{
+    /*cor de fundo do elemento*/
+    background-color: #aaa;
+    /*largura do elemento em relação ao conteiner que o abrange, podera ocupar 100% da largura do conteiner*/
+    width: 100%;
+    /*add espaço interno*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+/*para o elemento asside*/
+aside.cartao{
+    /*cor de fundo do elemento*/
+    background-color: white;
+    /*add espaço interno ao elemento*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    /*add espaço externo*/
+    margin-top: 20px;
+}
+
+/* Limpar flutua após as colunas - para o elemento section - aplicando um pseudo-elemento, que vai adicionar conteudo, apos o conteudo do section ter sido inserido no elemento - o after, inseri conteudo apos o conteudo do elemento*/
+section.linha:after{
+    /*conteudo do elemento*/
+    content: "";
+    /*o elemento sera exibido como uma tabela*/
+    display: table;
+    /*limpa os float propriedade aplicada as colunas, a propriedade continua a existir e ser usada nas colunas, mas a limpeza e necessaria para que para o proximo conteudo apos as colunas não fique flutuando também, porque a propriedade float faz flutuar qualquer elemento flutue a esquerda das colunas, aplicando o clear: both nenhum elemento pode ser flutuado apos as colunas, dentro do elemento section, apos o conteudo do elemento ter sido exibido no caso as colunas, essa propriedade passa a ser valida para o proximo conteudo apos as colunas. como teste coloque um conteudo na string vazia. */
+    clear: both;
+}
+
+/*para o elemento footer - rodape*/
+footer.rodape{
+    /*add espaço interno ao elemento*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    /*alinhamento do texto*/
+    text-align: center;
+    /*cor do texto do elemento*/
+    background: #ddd;
+    /*espaço externo ao elemento*/
+    margin-top: 20px;
+    margin-bottom: 0px;
+}

@@ -1,0 +1,109 @@
+<!--
+    * PROPRIEDADE DA FONTE CSS
+
+        - Para encurtar o código, também é possível especificar todas as propriedades de fonte individuais em uma propriedade.
+
+        - A font propriedade é uma propriedade abreviada para:
+
+            font-style
+            font-variant
+            font-weight
+            font-size/line-height
+            font-family
+
+        - Nota: Os valores font-size e font-family são obrigatórios. Se um dos outros valores estiver ausente, seu valor padrão será usado.
+
+    * SINTAXE CSS:
+
+        font: font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        PROPRIEDADE/VALUE: font-style
+        DESCRIPTION: Especifica o estilo da fonte.
+        -------------------------------------
+        PROPRIEDADE/VALUE: font-variant
+        DESCRIPTION: Especifica a variante da fonte. O valor padrão é "normal"
+        -------------------------------------
+        PROPRIEDADE/VALUE: Font-weight
+        DESCRIPTION: Especifica o peso da fonte. O valor padrão é "normal"
+        -------------------------------------
+        PROPRIEDADE/VALUE: font-size/line-height
+        DESCRIPTION: Especifica o tamanho da fonte e a altura da linha. O valor padrão é "normal"
+        -------------------------------------
+        PROPRIEDADE/VALUE: font-family
+        DESCRIPTION: Especifica a família de fontes. O valor padrão depende do navegador
+        -------------------------------------
+        PROPRIEDADE/VALUE: caption
+        DESCRIPTION: Usa a fonte usada pelos controles legendados (como botões, menus suspensos etc.)
+        -------------------------------------
+        PROPRIEDADE/VALUE: ícone
+        DESCRIPTION: Usa a fonte que é usada pelos rótulos dos ícones menu Usa as fontes que são usadas pelos menus suspensos
+        -------------------------------------
+        PROPRIEDADE/VALUE: message-box
+        DESCRIPTION: Usa as fontes que são usadas pelas caixas de diálogo
+        -------------------------------------
+        PROPRIEDADE/VALUE: small-caption
+        DESCRIPTION: Uma versão menor da fonte da legenda
+        -------------------------------------
+        PROPRIEDADE/VALUE: status-bar
+        DESCRIPTION: Usa as fontes que são usadas pela barra de status
+        -------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        --------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        --------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        .p1{
+            /*
+             - a propriedade font-family e usada para especificar a fonte de um texto.
+             - a font times new roman pertece a familia de fontes serif(fontes formais e elegantes)
+             - Se o nome da fonte for mais de uma palavra, deve estar entre aspas, como: "Times New Roman".
+            */
+            font-family: 'Times New Roman', Times, serif;
+            /*
+             - a propriedade font e uma shorthand para as seguintes propriedades individuais:
+
+                font-style
+                font-variant
+                font-weight
+                font-size/line-height
+                font-family
+
+                valores font-size e font-family são obrigatorios
+
+                - o primeiro valor: 20px especifica o tamanho da fonte em um tamnho especifico absoluto em px
+                - o segundo valor especifica a fonte de um texto. Arial, helvetica pertece a familia de fontes sans-serif(fontes sem serifa que possui desgin moderno e minimalista)
+            */
+            font: 20px Arial, sans-serif;
+        }
+        p.p2{
+            /**
+             - o primeiro valor especifica a fonte para ser italica
+             - o segundo valor especifica a fonte para ser negrita
+             - o terceiro valor 12px especifica o tamanho da fonte em um tamnho especifico absoluto em px
+             - o quarto valor especifica a altura da linha, os espaços entre as linhas de um texto
+             - o quinto valor especifica a fonte de um texto. fontes serif(fontes formais e elegantes)
+            */
+            font: italic bold 20px/30px Georgia, serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>A propriedade font</h1>
+
+    <p class="p1">Este é um parágrafo. O tamanho da fonte é definido como 20 pixels e a família de fontes é Arial.</p>
+
+    <p class="p2">Este é um parágrafo. A fonte é definida como itálico e negrito, o tamanho da fonte é definido como 12 pixels, a altura da linha é definida como 30 pixels e a família de fontes é Georgia.</p>
+
+</body>
+</html>

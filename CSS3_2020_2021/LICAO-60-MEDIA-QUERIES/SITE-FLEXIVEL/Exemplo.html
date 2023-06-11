@@ -1,0 +1,200 @@
+<!--
+    * SITE FLEXÍVEL
+
+      - Neste exemplo, usamos consultas de mídia em conjunto com o flexbox para criar um site responsivo, contendo uma barra de navegação flexível e conteúdo flexível.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Flexível</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        /*nota*/
+        aside.container-nota{
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            background-color: yellow;
+        }
+        aside.container-nota h4{
+            text-align: center;
+        }
+        
+        /*estilo do corpo da pagina*/
+        body{
+            font-family: Arial;
+            margin: 0;
+        }
+        
+        /*Cabeçalho/Logo titulo*/
+        header.header{
+            padding-top: 60px;
+            padding-right: 60px;
+            padding-bottom: 60px;
+            padding-left: 60px;
+            text-align: center;
+            background-color: #1abc9c;
+            color: white;
+        }
+        
+        /*estilo do top da barra de navegação*/
+        nav.navbar{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            flex : Exibe um elemento como um flex container em nível de bloco*/
+            display: flex;
+            background-color: #333;
+        }
+
+        /*estilo dos links da barra de navegação*/
+        nav.navbar a{
+            color: white;
+            padding-top: 14px;
+            padding-right: 20px;
+            padding-bottom: 14px;
+            padding-left: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /*mudar a cor ao passar o mouse*/
+        nav.navbar a:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        /*conteiner coluna*/
+        aside.row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /*cria duas colunas desiguais que ficam próximas uma da outra*/
+
+        /*barra lateral/coluna esquerda*/
+        aside.side{
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        /*coluna main*/
+        main.main{
+            flex: 70%;
+            background-color: white;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        /*Imagens, apenas para este exemplo*/
+        div.fakeimg{
+            background-color: #aaa;
+            width: 100%;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            text-align: center;
+        }
+
+        /*Rodapé*/
+        footer.footer{
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            text-align: center;
+            background-color: #ddd;
+        }
+
+        /*
+         Layout responsivo - quando a tela tem menos de 700px de width isso e a viewreport tiver 700px de largura ou menos, empilhe as duas colunas uma em cima da outra, em vez de uma ao lado da outra*/
+        @media screen and (max-width: 700px) {
+            aside.row, nav.navbar{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Nota -->
+    <aside class="container-nota">
+        <h4>Redimensione a janela do navegador para ver o efeito de resposta.</h4>
+    </aside>
+
+    <!--header-->
+    <header class="header">
+        <h1>Meu Website</h1>
+        <p>Com um layout <strong>flexível</strong></p>
+    </header>
+
+    <!--Barra de navegação-->
+    <nav class="navbar">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </nav>
+
+    <!--a grade de conteudo flexivel-->
+    <aside class="row">
+        <aside class="side">
+            <h2>Sobre Min</h2>
+            <h5>Foto Minha:</h5>
+            <div class="fakeimg">
+                <img src="pessoa.png" alt="imagen de pessoa" height="200px">
+            </div>
+            <p>Algum texto sobre min em culpa aqui officia deserunt mollit anim ...</p>
+            <h3>Mais texto</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="fakeimg">
+                <img src="produto-01.png" alt="imagen de produto" height="64px">
+            </div>
+            <div class="fakeimg">
+                <img src="produto-02.png" alt="imagen de produto" height="64px">
+            </div>
+            <div class="fakeimg">
+                <img src="produto-03.png" alt="imagen de produto" height="64px">
+            </div>
+        </aside>
+        <main class="main">
+            <article>
+                <h2>TÍTULO DO TÍTULO</h2>
+                <h5>Descrição do título, 7 de dezembro de 2017</h5>
+                <div class="fakeimg">
+                    <img src="artigo-01.jpg" alt="imagen artigo" height="200px">
+                </div>
+                <p>Algum texto...</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quibusdam quisquam, qui, quasi voluptates rem voluptatibus tempore praesentium ipsa id impedit inventore dolores officiis! Eligendi laborum tempora sed ipsam explicabo.</p>
+            </article>
+            <article>
+                <h2>TÍTULO DO TÍTULO</h2>
+                <h5>Descrição do título, 7 de dezembro de 2017</h5>
+                <div class="fakeimg">
+                    <img src="artigo-02.jpg" alt="imagen artigo" height="200px">
+                </div>
+                <p>Algum texto...</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quibusdam quisquam, qui, quasi voluptates rem voluptatibus tempore praesentium ipsa id impedit inventore dolores officiis! Eligendi laborum tempora sed ipsam explicabo.</p>
+            </article>
+        </main>
+    </aside>
+
+    <!--Rodapé-->
+    <footer class="footer">
+        <h2>Rodapé</h2>
+    </footer>
+</body>
+</html>

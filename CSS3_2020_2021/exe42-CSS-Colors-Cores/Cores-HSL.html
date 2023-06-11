@@ -1,0 +1,54 @@
+<!--
+    * CORES HSL
+
+     - HSL significa Hue, Saturation and Lightness.
+     - 
+     - Um valor de cor HSL é especificado com: hsl (matiz, saturação, claridade).
+     - 
+        1. O matiz é um grau na roda de cores (de 0 a 360):
+            - 0 (OU 360) é vermelho.
+            - 120 é verde.
+            - 240 é azul
+        2. A saturação é um valor percentual: 100% é a cor total.
+        3. A leveza também é uma porcentagem; 0% é escuro(preto) e 100% é branco.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cores HSL</title>
+    <style>
+        p#p1{
+            background-color: hsl(120, 100%, 50%);
+        }
+        p#p2{
+            background-color: hsl(120,100%,75%);
+        }
+        p#p3{
+            background-color: hsl(120,100%,25%);
+        }
+        p#p4{
+            background-color: hsl(120,60%,70%);
+        }
+        p#p5{
+            background-color: hsl(290,100%,50%);
+        }
+        p#p6{
+            background-color: hsl(290,60%,70%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Definindo cores com valores HSL</h1>
+    <p id="p1">Verde</p>
+    <p id="p2">Luz verde</p>
+    <p id="p3">Verde escuro</p>
+    <p id="p4">Verde Pastel</p>
+    <p id="p5">Tolet</p>
+    <p id="p6">Violeta Pastel</p>
+</body>
+</html>

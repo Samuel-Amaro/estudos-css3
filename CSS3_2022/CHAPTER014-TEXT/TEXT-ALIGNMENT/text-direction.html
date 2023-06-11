@@ -1,0 +1,25 @@
+<!--
+    * TEXT DIRECTION(DIREÇÃO DO TEXTO)
+
+        - As propriedades direction e unicode-bidi podem ser usadas para alterar a direção do texto de um elemento:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        p.ex1{
+            /*a propriedade direction e a unicode-bidi podem ser usadas para alttera a direção do texto de um elemento*/
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>Esta é a direção de texto padrão.</p>
+
+    <p class="ex1">Esta é a direção do texto da direita para a esquerda.</p>
+</body>
+</html>

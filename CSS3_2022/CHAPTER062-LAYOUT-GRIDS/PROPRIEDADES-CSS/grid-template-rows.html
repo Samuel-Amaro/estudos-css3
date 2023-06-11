@@ -1,0 +1,52 @@
+<!--
+    * PROPRIEDADE CSS GRID TEMPLATE ROWS
+
+       A propriedade CSS grid-template-rows define os nomes das linhas e as funções de dimensionamento de faixas das linhas da grade. 
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        grid-template-rows: none;
+
+        /*VALORES LISTA DE FAIXAS*/
+        grid-template-rows: 100px 1fr;
+        grid-template-rows: [linename] 100px;
+        grid-template-rows: [linename1] 100px [linename2 linename3];
+        grid-template-rows: minmax(100px, 1fr);
+        grid-template-rows: fit-content(40%);
+        grid-template-rows: repeat(3, 200px);
+
+        /*VALORES lista de faixas automaticas*/
+        grid-template-rows: 200px repeat(auto-fill, 100px) 300px;
+        grid-template-rows: minmax(100px, max-content) repeat(auto-fill, 200px) 20%;
+        grid-template-rows: [linename1] 100px [linename2] repeat(auto-fit, [linename3 linename4] 300px)100px;
+        grid-template-rows: [linename1 linename2] 100px repeat(auto-fit, [linename1] 300px) [linename3];
+
+        /*VALORES GLOBAIS*/
+        grid-template-rows: inherit;
+        grid-template-rows: initial;
+        grid-template-rows: unset;
+
+    * VALORES 
+
+        none: É uma palavra-chave que indica que não há uma grid explícita. Qualquer linha irá ser implicitamente gerada e seu tamanho será determinado pela a propriedade grid-auto-rows (en-US) .
+
+        <lenght>: É um comprimento não negativo.
+
+        <percentagem>: É um valor de <percentagem> (en-US) não negativo, relativo ao tamanho do bloco do grid contêiner. Se o tamanho do grid contêiner depender do tamanho de suas tracks, então a percentagem deve ser tratada como auto. As contribuições de tamanho inerentes da track podem ser ajustados ao tamanho do grid contêiner, e aumentar o tamanho final da track pelo o valor mínimo que respeitará a percentagem.
+
+        <flex>: É uma dimensão não negativa com a unidade frespecificando o fator de flexibilidade da pista. Cada <flex>faixa de tamanho ocupa uma parte do espaço restante em proporção ao seu fator de flexibilidade. Ao aparecer fora de uma minmax()notação, implica um mínimo automático (ie minmax(auto, <flex>)
+
+        max-content: É uma palavra-chave que representa a maior contribuição máxima de conteúdo dos itens da grade que ocupam a trilha da grade.
+
+        min-content: É uma palavra-chave que representa a maior contribuição mínima de conteúdo dos itens da grade que ocupam a trilha da grade.
+
+        minmax(min, max): É uma notação funcional que define um intervalo de tamanho, maior ou igual a min e menor ou igual a max . Se max for menor que min , max será ignorado e a função será tratada como min. No máximo, um <flex> valor define o fator de flexibilidade da faixa. É inválido no mínimo.
+
+        auto: É uma palavra-chave idêntica ao conteúdo máximo se for um máximo. No mínimo, representa o maior tamanho mínimo (conforme especificado por min-width (en-US) / min-height) dos itens de grade que ocupam a trilha de grade. Observação: autoos tamanhos das trilhas (e apenas autoos tamanhos das trilhas) podem ser esticados pelas propriedades align-contente justify-content (en-US) .
+
+        fit-content( [ <length> | <percentage> ] ): Representa a fórmula , que é calculada de forma semelhante a (ou seja ), exceto que o tamanho da trilha é fixado no argumento se for maior que o mínimo.min(max-content, max(auto, argument))autominmax(auto, max-content) auto.
+
+        repeat([ <positive-integer> | auto-fill | auto-fit ] , <track-list>): Representa um fragmento repetido da lista de faixas, permitindo que um grande número de linhas que exibem um padrão recorrente seja escrito de forma mais compacta.
+
+-->

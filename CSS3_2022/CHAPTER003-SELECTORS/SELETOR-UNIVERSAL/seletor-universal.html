@@ -1,0 +1,50 @@
+<!--
+    * O SELETOR UNIVERSAL CSS
+
+        - O seletor universal (*) seleciona todos os elementos HTML na página.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--
+        - Um CSS interno é usado para definir um estilo para uma única página HTML.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento.
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style>
+        /*
+            - uma regra css formada por:
+            
+            seletor{
+                //bloco de declaração
+            }
+
+            - seletor universal (*) seleciona todos os elementos html na pagina.
+            - ira aplicar a regra css abaixo a todos os elementos html do documento.
+        */
+        * { 
+            /*
+             - declarações css são separadas, por (;)
+             - uma declaração e composta por uma propriedade e valor que são separadas por (:)
+            */
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hello world!</h1>
+    <p>Cada elemento na página será afetado pelo estilo.</p>
+    <!--
+        - O atributo HTML id é usado para especificar um id exclusivo para um elemento HTML.
+        - O id atributo é usado para apontar para uma declaração de estilo específica em uma folha de estilo.
+    -->
+    <p id="para1">Eu também!</p>
+    <p>E eu!</p>
+    
+</body>
+</html>

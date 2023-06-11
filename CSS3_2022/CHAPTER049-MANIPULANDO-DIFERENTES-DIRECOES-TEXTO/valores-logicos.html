@@ -1,0 +1,61 @@
+<!--
+    * VALORES LÓGICOS
+
+        Até agora examinamos nomes de propriedades lógicas. Existem também algumas propriedades que assumem valores físicos de top, right, bottom, e left. Esses valores também têm mapeamentos para valores lógicos — block-start, inline-end, block-end e inline-start.
+
+        Por exemplo, você pode flutuar uma imagem para a esquerda para fazer com que o texto envolva a imagem. Você pode substituir left por inline-start como mostrado no exemplo abaixo.
+
+        Altere o modo de escrita neste exemplo vertical-rl para ver o que acontece com a imagem. Mude inline-start para inline-end para mudar o float.
+
+        Aqui também estamos usando valores de margem lógica para garantir que a margem esteja no lugar correto, não importa qual seja o modo de escrita.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .box{
+            /*
+             - um conjunto de propriedades mapeadas. Elas substituem essencialmente propriedades físicas — coisas como width e height— por versões lógicas ou relativas de fluxo.
+             - A propriedade mapeada para width quando em um modo de escrita horizontal é chamada inline-size— refere-se ao tamanho na dimensão em linha.
+             - A propriedade CSS inline-size define o tamanho horizontal ou vertical do bloco de um elemento, dependendo de seu modo de escrita. Corresponde à propriedade largura ou altura, dependendo do valor do modo de escrita.
+             - Se o modo de escrita estiver orientado verticalmente, o valor de inline-size está relacionado à altura do elemento; caso contrário, está relacionado à largura do elemento.
+             - aqui no exemplo o valor de inline-size esta relacionado a largura do elemento, elemento escrito no modo vertical
+            */
+            inline-size: 200px;
+            /*
+             - Um modo de escrita em CSS refere-se a se o texto está sendo executado horizontalmente ou verticalmente.
+             - A writing-mode propriedade nos permite alternar de um modo de escrita para outro.
+             - A propriedade CSS do modo de escrita define se as linhas de texto são dispostas horizontalmente ou verticalmente, bem como a direção na qual os blocos progridem.
+             - Portanto, a writing-mode propriedade está, na realidade, definindo a direção na qual os elementos de nível de bloco são exibidos na página
+             - o valor horizontal-tb Direção de fluxo do bloco de cima para baixo. As frases correm horizontalmente.
+            */
+            writing-mode: horizontal-tb;
+        }
+
+        img{
+            /*
+             - o CSS desenvolveu recentemente um conjunto de propriedades mapeadas. Elas substituem essencialmente propriedades físicas
+             - Existem também algumas propriedades que assumem valores físicos de top, right, bottom, e left. Esses valores também têm mapeamentos para valores lógicos — block-start, inline-end, block-end e inline-start.
+             - propriedades logicas
+            */
+            float: inline-start;
+            margin-inline-end: 10px;
+            margin-block-end: 10px;
+        } 
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box logical">
+            <img src="./big-star (1).png" alt="star"/>
+            <p>Esta caixa usa propriedades lógicas. A imagem da estrela foi flutuada no início inline, também tem uma margem no final inline e no final do bloco.</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!--
+    * FONTES SUBSTITUTAS(FALLBACK FONTS)
+
+        - No entanto, não existem fontes 100% totalmente seguras para a web. Há sempre uma chance de que uma fonte não seja encontrada ou não esteja instalada corretamente.
+
+        - Portanto, é muito importante sempre usar fontes de fallback.
+
+        - Isso significa que você deve adicionar uma lista de "fontes de backup" semelhantes na font-family propriedade. Se a primeira fonte não funcionar, o navegador tentará a próxima, e a próxima e assim por diante. Sempre termine a lista com um nome de família de fonte genérico.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        p{
+            /*
+             - a propriedade font-family e usada para especificar a fonte de um texto.
+             - as fontes Tahoma, Verdana, sans-serif pertece a familia de fontes sans-serif(fontes sem serifa que possui desgin moderno e minimalista)
+             - Se o nome da fonte for mais de uma palavra, deve estar entre aspas, como: "Times New Roman".
+             - usando fontes fallback(fontes substitutas)
+             - adiciona uma lista de fontes de backup semelhantes na font-family propriedade Se a primeira fonte não funcionar, o navegador tentará a próxima, e a próxima e assim por diante. Sempre termine a lista com um nome de família de fonte genérico.
+            */
+            font-family: Tahoma, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>CSS Fallback Fonts(Fontes Substitutas)</h1>
+
+    <p>Este é um parágrafo</p>
+
+    <p>Este é outro parágrafo</p>
+
+</body>
+</html>

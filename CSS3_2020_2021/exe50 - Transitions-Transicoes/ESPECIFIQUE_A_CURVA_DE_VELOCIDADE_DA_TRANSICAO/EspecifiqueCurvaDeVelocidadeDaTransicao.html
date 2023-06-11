@@ -1,0 +1,106 @@
+<!--
+    * ESPECIFIQUE A CURVA DE VELOCIDADE DA TRANSIÇÃO
+
+      - A transition-timing-function propriedade especifica a curva de velocidade do efeito de transição.
+
+      - A propriedade da função de tempo de transição pode ter os seguintes valores:
+
+        ease - especifica um efeito de transição com início lento, depois rápido e, a seguir, fim lento (é o padrão)
+
+        linear - especifica um efeito de transição com a mesma velocidade do início ao fim
+
+        ease-in - especifica um efeito de transição com um início lento
+
+        ease-out - especifica um efeito de transição com um final lento
+
+        ease-in-out - especifica um efeito de transição com início e fim lentos
+
+        cubic-bezier(n,n,n,n) - permite que você defina seus próprios valores em uma função de Bezier cúbico
+
+      - O exemplo a seguir mostra algumas das diferentes curvas de velocidade que podem ser usadas:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /**
+             - propriedade transition shorthand;
+             - especificando um efeito de transição em uma propriedade de largura do elemento, o efeito tera duração de dois segundos.
+            **/
+            transition: width 2s;
+        }
+        div#div1{
+            /**
+              - especificando a curva de velocidade do efeito de transição do elemento
+              - início lento, depois rápido e, a seguir, fim lento (é o padrão);
+            **/
+            transition-timing-function: linear;
+        }
+        div#div2{
+            /**
+              - especificando a curva de velocidade do efeito de transição do elemento
+              - especifica um efeito de transição com a mesma velocidade do início ao fim
+            **/
+            transition-timing-function: ease;
+        }
+        div#div3{
+            /**
+              - especificando a curva de velocidade do efeito de transição do elemento
+              - ease-in - especifica um efeito de transição com um início lento
+            **/
+            transition-timing-function: ease-in;
+        }
+        div#div4{
+            /**
+              - especificando a curva de velocidade do efeito de transição do elemento
+              - ease-out - especifica um efeito de transição com um final lento
+            **/
+            transition-timing-function: ease-out;
+        }
+        div#div5{
+            /**
+              - especificando a curva de velocidade do efeito de transição do elemento
+              -   ease-in-out - especifica um efeito de transição com início e fim lentos
+            **/
+            transition-timing-function: ease-in-out;
+        }
+        /**
+         - para que o efeito de transição funcione na propriedade especificada, a propriedade precisa receber um novo valor, para que a transição ocorra, esse valor, neste exemplo e obtido dinamicamente, por meio de um passar do mouse sobre um elemento
+        **/
+        div:hover{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transições</h1>
+    
+    <h2>Propriedade transition</h2>
+
+    <h3>a propriedade da função de tempo de transição</h3>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir mostra algumas das diferentes curvas de velocidade que podem ser usadas:</p>
+
+    <p><strong>Exemplo:</strong> Passe o mouse sobre os elementos div abaixo para ver as diferentes curvas de velocidade:</p>
+
+    <div id="div1">linear - padrão(default)</div>
+    <br>
+    <div id="div2">Facilidade</div>
+    <br>
+    <div id="div3">Facilidade-entrada</div>
+    <br>
+    <div id="div4">Facilidade-saida</div>
+    <br>
+    <div id="div5">Facilidade-entrada-saida</div>
+
+</body>
+</html>

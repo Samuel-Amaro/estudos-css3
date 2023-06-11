@@ -1,0 +1,41 @@
+<!--
+    * CENTRALIZAR UMA IMAGEN
+
+        - Para centralizar uma imagem, defina as margin left e right auto e transforme-a em um block elemento:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        img{
+            /**
+             - A display propriedade especifica se/como um elemento é exibido. 
+             - o valor block, o elemento Exibe um elemento como um elemento de bloco Começa em uma nova linha e ocupa toda a largura.
+            */
+            display: block;
+            width: 40%;
+            /*
+             - a propriedade margin, e usada para especificar um espaço depois da borda do elemento, e usada para especificar um espaço externo ao redor do elemento
+             - margens são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas
+             - o valor auto(o navegador calcula a margem, para todos os lados)
+             - a propriedade margin-left e usada para especificar uma margen no lado esquerdo do elemento, o valor auto faz o proprio navegador calcular uma margen esquerda para o elemento.
+             - a propriedade margin-right e usada para especificar uma margin no lado direito do elemento, o valor auto faz o proprio navegador calcular uma margen direita para o elemento.
+            */
+            margin-left: auto;
+            margin-right: auto;
+            /*ou margin: 0px auto;*/ 
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Uma imagen centralizada</h2>
+
+    <p>Para centralizar uma imagem, defina as margin left e right como auto e transforme-a em um elemento de bloco(block).</p>
+
+    <img src="./paris.jpg" alt="Paris"/>
+
+</body>
+</html>

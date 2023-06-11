@@ -1,0 +1,82 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION NAME
+
+        A propriedade CSS animation-name especifica os nomes de um ou mais @keyframes at-rules que descrevem a animação ou animações a serem aplicadas ao elemento.
+
+        Muitas vezes, é conveniente usar a animação de propriedade abreviada para definir todas as propriedades de animação de uma só vez.
+
+    * SINTAXE
+
+        /*ANIMAÇÃO UNICA*/
+        animation-name: none;
+        animation-name: test_05;
+        animation-name: -specific;
+        animation-name: sliding-vertically;
+
+        /*MULTIPLAS ANIMAÇÕES*/
+        animation-name: test1, animation4;
+        animation-name: none, -moz-specific, sliding;
+
+        /*VALORES GLOBAIS*/
+        animation-name: inherit;
+        animation-name: initial;
+        animation-name: revert;
+        animation-name: revert-layer;
+        animation-name: unset;
+
+    * VALORES
+
+        none: Uma palavra-chave especial que não indica nenhum quadro-chave. Ele pode ser usado para desativar uma animação sem alterar a ordem dos outros identificadores, ou para desativar as animações provenientes da cascata.
+
+        <custom-ident>: Um nome que identifica a animação. Esse identificador é composto por uma combinação de letras maiúsculas de minúsculas a para z, números 0 para 9, sublinhados ( _) e/ou traços ( -). O primeiro caractere sem traço deve ser uma letra. Além disso, dois traços são proibidos no início do identificador. Além disso, o identificador não pode ser none, unset, initial ou inherit.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .box{
+            background-color: rebeccapurple;
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box:hover{
+            /*
+             - A propriedade CSS animation-name especifica os nomes de um ou mais @keyframes at-rules que descrevem a animação ou animações a serem aplicadas ao elemento.
+             - o nome rotate especifica o nome da @keyframe regra que descreve a animação a ser aplicada neste elemento após o usuario passar o mouse sobre o elemento.
+            */
+            animation-name: rotate;
+            /*
+             - a animação tera uma duração de 0.7 segundos
+            */
+            animation-duration: 0.7s;
+        }
+
+        /*
+          - A regra de CSS @keyframes controla as etapas intermediárias em uma sequência de animação CSS definindo estilos para quadros-chave (ou waypoints) ao longo da sequência de animação.
+          - animação identificada por rotate
+        */
+        @keyframes rotate{
+            /*inicio da animação*/
+            0%{
+                transform: rotate(0);
+            }
+            /*final da animação*/
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>

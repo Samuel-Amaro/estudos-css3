@@ -1,0 +1,81 @@
+<!--
+    * GRADIENTE(gradient)
+
+        O tipo de dados CSS <gradient> é um tipo especial de <image> que consiste em uma transição progressiva entre duas ou mais cores.
+
+        Um gradiente CSS não tem dimensões intrínsecas ; isto é, não tem tamanho natural ou preferido, nem proporção preferida. Seu tamanho concreto corresponderá ao tamanho do elemento ao qual se aplica.
+
+    * SINTAXE
+
+        O <gradient> tipo de dados é definido com um dos tipos de função listados abaixo.
+
+        LINEAR GRADIENT: Gradientes lineares fazem a transição de cores progressivamente ao longo de uma linha imaginária. Eles são gerados com a linear-gradient() função.
+
+        RADIAL GRADIENT: Gradientes radiais fazem a transição de cores progressivamente de um ponto central (origem). Eles são gerados com a radial-gradient() função. 
+
+        GRADIENT REPEAT: A repetição de gradientes duplica um gradiente o quanto for necessário para preencher uma determinada área. Eles são gerados com as funções repeating-linear-gradient() e repeating-radial-gradient().
+
+        GRADIENT CÔNICO: Gradientes cônicos fazem a transição de cores progressivamente ao redor de um círculo. Eles são gerados com a conic-gradient() função.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        div{
+            height: 150px;
+        }
+        .linear-gradient{
+            /*
+             - O tipo de dados CSS <gradient> é um tipo especial de <image> que consiste em uma transição progressiva entre duas ou mais cores.
+             - Gradientes lineares fazem a transição de cores progressivamente ao longo de uma linha imaginária. Eles são gerados com a linear-gradient() função.
+            */
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+        .radial-gradient{
+            /*
+             - Gradientes radiais fazem a transição de cores progressivamente de um ponto central (origem). Eles são gerados com a radial-gradient() função.
+            */
+            background: radial-gradient(red, yellow, rgb(30, 144, 255));
+        }
+        .repeting-linear-repeat{
+            /*
+             - A repetição de gradientes duplica um gradiente o quanto for necessário para preencher uma determinada área.
+             - Gradientes lineares fazem a transição de cores progressivamente ao longo de uma linha imaginária. Eles são gerados com a repeating-linear-gradient() function
+            */
+            background: repeating-linear-gradient(to top left, lightpink, lightpink 5px, white 5px, white 10px);
+        }
+        .radial-repeat{
+            /*
+             - A repetição de gradientes duplica um gradiente o quanto for necessário para preencher uma determinada área.
+             - Gradientes radiais fazem a transição de cores progressivamente de um ponto central (origem). Eles são gerados com a repeating-radial-gradient() função.
+            */
+            background: repeating-radial-gradient(powderblue, powderblue 8px, white 8px, white 16px);
+        }
+        .conic-gradient{
+            /*
+             - Gradientes cônicos fazem a transição de cores progressivamente ao redor de um círculo. Eles são gerados com a conic-gradient() função.
+            */
+            background: conic-gradient(lightpink, white, powderblue);
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Exemplo de gradient linear</h2>
+    <p>Um gradiente linear simples.</p>
+    <div class="linear-gradient">Linear gradient</div>
+    <h2>Exemplo de gradient radial</h2>
+    <p>Um gradiente radial simples.</p>
+    <div class="radial-gradient">Linear gradient</div>
+    <h2>Exemplo de gradient repeating</h2>
+    <p>Um gradiente repeating simples.</p>
+    <div class="repeting-linear-repeat">Linear repeat gradient</div>
+    <div class="radial-repeat">Repeting radial gradient</div>
+    <h2>Exemplo de gradient conic</h2>
+    <p>Um exemplo simples de gradiente cônico. Observe que isso ainda não é amplamente suportado no navegador.</p>
+    <div class="conic-gradient">radient conic</div>
+
+</body>
+</html>

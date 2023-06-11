@@ -1,0 +1,81 @@
+<!--
+    * COMO FUNCIONA VAR()
+
+       - Em primeiro lugar: as variáveis ​​CSS podem ter um escopo global ou local.
+
+       - Variáveis ​​globais podem ser acessadas / usadas em todo o documento, enquanto variáveis ​​locais podem ser usadas apenas dentro do seletor onde estão declaradas.
+
+       - Para criar uma variável com escopo global, declare-a dentro do :root seletor. O :rootseletor corresponde ao elemento raiz do documento.
+
+       - Para criar uma variável com escopo local, declare-a dentro do seletor que irá utilizá-la.
+
+       - O exemplo a seguir é igual ao exemplo acima, mas aqui usamos a var()função.
+
+       - Primeiro, declaramos duas variáveis ​​globais (--blue e --white). Em seguida, usamos a var() função para inserir o valor das variáveis ​​posteriormente na folha de estilo:
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maneira tradicional</title>
+    <style>
+        /*
+         - O :root seletor corresponde ao elemento raiz do documento.
+         - Em HTML, o elemento raiz é sempre o elemento html.
+        */
+        :root{
+            /*definindo nome e valor da variavel*/
+            --blue: #1e90ff;
+            --white: #ffffff;
+        }
+        body{
+            /*a propriedade background color, vai receber o valor de --blue por meio da função var*/
+            background-color: var(--blue); 
+        }
+        h2{
+            border-bottom: 2px solid var(--blue);
+        }
+        div.container{
+            color: var(--blue);
+            background-color: var(--white);
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
+        button{
+            background-color: var(--white);
+            color: var(--blue);
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: var(--blue);
+            border-style: solid;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>A maneira tradicional</h1>
+
+    <div class="container">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore beatae at cum, ratione molestiae enim commodi provident dolorum doloribus ipsum necessitatibus quibusdam odit suscipit doloremque sapiente perspiciatis! Repudiandae, dignissimos?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas veniam non vel eveniet temporibus facilis unde a laborum consectetur corrupti, natus incidunt distinctio, aut sed velit quibusdam harum tempora tenetur!</p>
+        <p>
+            <button>Yes</button>
+            <button>No</button>
+        </p>
+    </div>
+
+</body>
+</html>

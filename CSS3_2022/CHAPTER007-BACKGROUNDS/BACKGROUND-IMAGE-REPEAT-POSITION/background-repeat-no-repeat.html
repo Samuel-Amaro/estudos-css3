@@ -1,0 +1,37 @@
+<!--
+    * CSS BACKGROUND-REPEAT: NO-REPEAT(SEM REPETIÇÃO)
+
+        - Mostrar a imagem de fundo apenas uma vez também é especificado pela background-repeat propriedade:
+
+        - No exemplo acima, a imagem de fundo é colocada no mesmo lugar que o texto. Queremos mudar a posição da imagem, para que não perturbe muito o texto.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Background-Image-repeat</title>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*seletor de elemento, o seletor body, seleciona o elemento html <body>*/
+        body{
+            /*a propriedade background-image, especifica uma imagen a ser usada como plano de fundo de um elemento, por padrão a imagen e repetida para cobrir todo o elemento. se repete na horizontal e vertical, começa no canto superior esquerdo*/
+            background-image: url("img_food.jpg");
+            /*propriedade background-repeat, com o valor no-repeat(sem repetição) mostra a imagen de fundo apenas uma vez*/
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Olá Mundo!</h1>
+
+    <p>Exemplo de imagen de fundo do W3Schools.</p>
+
+    <p>A imagem de fundo mostra apenas uma vez, mas está incomodando o leitor!</p>
+
+</body>
+</html>

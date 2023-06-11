@@ -1,0 +1,70 @@
+<!--
+    * GRADES FLEXÍVEIS COM A UNIDADE FR
+
+        Além de criar grades usando comprimentos e porcentagens, podemos usar a fr unidade para dimensionar com flexibilidade as linhas e colunas da grade. Esta unidade representa uma fração do espaço disponível no contêiner de grade.
+
+        Agora você deve ver que tem faixas flexíveis. A fr unidade distribui o espaço proporcionalmente. Então, se você especificar valores positivos diferentes para suas faixas assim:
+
+        A primeira faixa agora obtém 2fr o espaço disponível e as outras duas faixas obtêm 1fr, tornando a primeira faixa maior. Você pode misturar fr unidades com unidades de comprimento fixo - nesse caso, o espaço necessário para as faixas fixas é usado primeiro; o espaço restante é então distribuído para as outras faixas.
+
+        Nota: A fr unidade distribui o espaço disponível , não todo o espaço. Portanto, se uma de suas faixas tiver algo grande dentro dela, haverá menos espaço livre para compartilhar.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Grid starting point</title>
+    <style>
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        /*Grid Container*/
+        .container{
+            /*
+             - Valor grid: O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo de grade.
+             - o valor grid habilita o grid layout.
+             -  todos os filhos diretos do contêiner se tornam itens de grade. 
+             - inicialmente o valor grid, fornece uma grid de uma coluna somente, assim o filhos os itens grid continuam sendo exibidos um abaixo do outro como no fluxo normal do documento.
+            */
+            display: grid;
+            /*
+             -  usar a fr unidade para dimensionar com flexibilidade as linhas e colunas da grade.
+             - usando a propriedade abaixo para adicionar três colunas, a grid, adicona três faixas de colunas com 1fr cada.
+             - 1fr e o mesmo que 1 fração do espaço disponivel no conteiner grid. temos três colunas com a mesma quantidade de espaço.
+            */
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*
+             - A fr unidade distribui o espaço proporcionalmente.
+             - a primeira faixa agora obtem 2fr, 2 fração do espaço disponivel do conteiner grid, essa primeira coluna sera 2 vezes maior que as outras, as outras duas colunas so obtem 1fr do espaço disponivel do conteiner.
+            */
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple grid example</h1>
+
+    <div class="container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+    </div>
+
+</body>
+</html>

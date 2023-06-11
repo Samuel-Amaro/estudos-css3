@@ -1,0 +1,61 @@
+<!--
+    * A PROPRIEDADE FLEX-BASIS
+
+        A flex-basis propriedade especifica o tamanho inicial do item flexível antes que qualquer distribuição de espaço aconteça. O valor inicial para esta propriedade é auto. Se flex-basis estiver definido como auto para descobrir como calcular o tamanho inicial do item, o navegador primeiro verifica se o tamanho principal do item tem um tamanho absoluto definido. Este seria o caso se você tivesse dado ao seu item uma largura de 200 pixels. Nesse caso 200px seria o flex-basis para este item.
+
+        Se o seu item for dimensionado automaticamente(auto), será resolvido para o tamanho de seu conteúdo. Nesse ponto, seu conhecimento min- e max-content dimensionamento se tornam úteis, pois o flexbox terá o max-content tamanho do item como o flex-basis. O exemplo ao vivo a seguir pode ajudar a demonstrar isso.
+
+        Neste exemplo, criei uma série de caixas inflexíveis, com ambos flex-grow e flex-shrink definidos como 0. Aqui podemos ver como o primeiro item — que tem uma largura explícita de 150 pixels definida como tamanho principal — recebe um flex-basis de 150px, enquanto os outros dois itens não têm largura e, portanto, são dimensionados de acordo com a largura do conteúdo.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        .box :first-child{
+            /*define uma largura absoluta de 150px para o primeiro item, esse valor sera o mesmo que sera usado pelo flex-basis, o tamanho inicial do item-flexivel*/
+            width: 150px;
+            background-color: black;
+            color: white;
+        }
+
+        /*o restando dos outros itens flex, tera sua flex-basis seguinte o valor pdrão max-content, o tamanho do conteudo.*/
+        .box :nth-child(2){
+            background-color: green;
+            color: white;
+        }
+
+        .box :nth-child(3){
+            background-color: blue;
+            color: white;
+        }
+
+        .box > *{
+            /*os itens flexiveis terão o seguinte flex shorthand flex-grow: 0, flex-shrink: 0, flex-basis: auto, automatica, o tamanho inicial do item e resolvido para o tamnho de seu conteudo, max-content, largura não absoluta, maximo conteudo que puder, A flex-basis propriedade especifica o tamanho inicial do item flexível antes que qualquer distribuição de espaço aconteça. o valor padrão e auto, não tem largura definida e dimensionado automaticamente*/
+            flex: 0 0 auto;
+        }
+    </style>
+    <title>FlexBox</title>
+</head>
+<body>
+    <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+</body>
+</html>
+
+
+<!--
+    - Além da palavra-chave auto, você pode usar a palavra-chave content como o flex-basis. Isso resultará na flex-basis retirada do tamanho do conteúdo, mesmo que haja uma largura definida no item. Você também pode obter o mesmo efeito usando auto como base flexível e garantindo que seu item não tenha uma largura definida, para que seja dimensionado automaticamente.
+
+    Se você quiser que o flexbox ignore completamente o tamanho do item ao fazer a distribuição de espaço, defina flex-basis como 0. Isso essencialmente diz ao flexbox que todo o espaço está disponível e para compartilhá-lo proporcionalmente. Veremos exemplos disso à medida que avançamos para flex-grow.
+-->

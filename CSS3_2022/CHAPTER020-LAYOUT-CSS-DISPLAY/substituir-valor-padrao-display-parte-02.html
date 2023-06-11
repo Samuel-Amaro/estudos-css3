@@ -1,0 +1,29 @@
+<!--
+    - O exemplo a seguir exibe elementos <span> como elementos de bloco:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        span{
+            /*
+             - propriedade display e usada para definir como um elemento sera exibido,
+             - Cada elemento HTML tem um valor de exibição padrão dependendo do tipo de elemento que é. 
+             - o elemento <span> por padrão e exibido como um elemento inline(embutido) Um elemento embutido não inicia em uma nova linha e só ocupa a largura necessária 
+             - substituiremos seu valor padrão inline para ser exibido como um elemento block(bloco) começa em uma nova linha e ocupa toda a largura disponível (se estende para a esquerda e para a direita o máximo possível).
+             - obs a propriedade display não muda o tipo do elemento so muda a forma como o elemento e exibido, por isso não confunda.
+            */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exibir elementos de linha como elementos de bloco</h1>
+
+    <p>Uma propriedade de exibição com <span>um valor de "block" resulta em</span><span>uma quebra de linha entre cada elemento de extensão.</span></p>
+
+</body>
+</html>

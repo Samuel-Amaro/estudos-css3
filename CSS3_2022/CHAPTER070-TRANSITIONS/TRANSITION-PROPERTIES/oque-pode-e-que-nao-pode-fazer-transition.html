@@ -1,0 +1,47 @@
+<!--
+    * O QUE PODE E O QUE NÃO PODE FAZER TRANSITION
+
+        Ao escrever CSS, você pode especificar quais propriedades devem ter transições animadas.
+
+        Em geral, só é possível fazer a transição de elementos que podem ter um "estado intermediário" entre seus estados inicial e final. Por exemplo, é impossível adicionar transições para font-family, porque não está claro como deve ser o "estado intermediário" entre serife monospace. Por outro lado, é possível adicionar transições para font-size porque sua unidade é um comprimento que pode ser interpolado.
+
+        Aqui estão algumas propriedades comuns que você pode fazer a transição.
+
+        * TRANSFORM
+
+            A transform propriedade CSS é comumente transicionada porque é uma propriedade acelerada por GPU que resulta em uma animação mais suave que também consome menos bateria. Essa propriedade permite dimensionar, girar, transladar ou inclinar arbitrariamente um elemento.
+
+        * COLOR(COR)
+
+            Antes, durante e depois da interação, a cor pode ser um ótimo indicador de estado. Por exemplo, um botão pode mudar de cor se estiver passando o mouse. Essa mudança de cor pode fornecer feedback ao usuário de que o botão é clicável.
+
+            As propriedades color, background-color e border-color são apenas alguns lugares onde a cor pode ser alterada na interação.
+
+            As transições de cores geralmente não precisam estar atrás de uma preferência de movimento reduzida . Use seu melhor julgamento.
+
+        * SHADOWS(SOMBRAS)
+
+            As sombras geralmente são transicionadas para indicar a mudança de elevação, como o foco do usuário.
+
+        * FILTERS(FILTROS)
+
+            filter é uma poderosa propriedade CSS que permite adicionar efeitos gráficos em tempo real. A transição entre diferentes filter estados pode criar alguns resultados bastante impressionantes.
+
+        * ACIONADORES DE TRANSIÇÃO
+
+            Seu CSS deve incluir uma mudança de estado e um evento que acione essa mudança de estado para que as transições de CSS sejam ativadas. Um exemplo típico de tal gatilho é a :hover pseudo-classe . Essa pseudo classe corresponde quando o usuário passa o mouse sobre um elemento com o cursor.
+
+            Abaixo está uma lista de algumas pseudo classes e eventos que podem desencadear mudanças de estado em seus elementos.
+
+            :hover: corresponde se o cursor estiver sobre o elemento.
+
+            :focus: corresponde se o elemento estiver focado.
+
+            :focus-within: corresponde se o elemento ou qualquer um de seus descendentes estiver focado.
+
+            :target: corresponde quando o fragmento do URL atual corresponde ao id do elemento.
+            
+            :active: corresponde quando o elemento está sendo ativado (normalmente quando o mouse é pressionado sobre ele).
+            
+            class mudança do JavaScript: quando o CSS de um elemento é class alterado via JavaScript, o CSS fará a transição das propriedades qualificadas que foram alteradas.
+-->

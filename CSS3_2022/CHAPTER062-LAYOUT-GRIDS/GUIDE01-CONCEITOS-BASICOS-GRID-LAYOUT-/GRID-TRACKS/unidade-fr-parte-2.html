@@ -1,0 +1,62 @@
+<!--
+    No próximo exemplo, criamos um container .wrapper com uma coluna de 2fr e duas colunas de 1fr. Portanto, o espaço disponível será dividido em quatro partes. Duas partes serão para a primeira coluna e uma parte para cada um das próximas duas colunas.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns.
+             - Isso define o grid tracks(faixas de grade)
+             - cria uma grid com três colunas flexiveis.
+             - cria-se 4 espaços de tamanhos diferentes, que aumentam e diminuem de acordo com o espaço disponivel.
+             - a primeira coluna sera 2fr tera 2 fração do espaço disponivel no container(duas partes).
+             - a segunda e terceira coluna sera 1fr para cada uma. Uma fração do espaço disponivel no conteiner grid, para cada.
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três</div>
+        <div>Quatro</div>
+        <div>Cinco</div>
+    </div>
+
+</body>
+</htm

@@ -1,0 +1,29 @@
+<!--
+    - visibility:hidden; também oculta um elemento.
+
+    - No entanto, o elemento ainda ocupará o mesmo espaço de antes. O elemento ficará oculto, mas ainda afetará o layout:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        h1.hidden{
+            /*
+             - ocultando um elemento usando a propriedade visibility com o valor hidden, isso oculta o elemento da pagina o elemento não esta visivel mas ainda ocupa o espaço no layout
+            */
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Este é um título visível</h1>
+
+    <h1 class="hidden">Este é um título visível</h1>
+
+    <p>Observe que o título oculto ainda ocupa espaço.</p>
+
+</body>
+</html>

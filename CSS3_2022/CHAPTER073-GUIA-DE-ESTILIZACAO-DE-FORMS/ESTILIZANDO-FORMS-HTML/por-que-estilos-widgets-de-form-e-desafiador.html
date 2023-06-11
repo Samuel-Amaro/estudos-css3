@@ -1,0 +1,62 @@
+<!--
+    * POR QUE O ESTILO DE WIDGETS DE FORMULÁRIO É DESAFIADOR
+
+        Os controles de formulário foram adicionados ao HTML na especificação HTML 2 em 1995; CSS não foi lançado até o final de 1996, e não foi muito bem suportado pelos navegadores por alguns anos depois disso. Os navegadores dependiam do sistema operacional subjacente para gerenciar e renderizar controles de formulário.
+
+        E mesmo com CSS disponível para estilizar HTML, os fornecedores de navegadores historicamente têm relutado em tornar os controles de formulário estilizados porque os usuários estavam muito acostumados com a aparência visual de suas respectivas plataformas. Mas isso mudou. Os proprietários de sites querem estilos de formulário que se encaixem no design geral do site mais do que nunca, e a plataforma da web mudou para tornar isso mais possível.
+
+        Para alguns widgets de formulário, ainda é difícil reconstruir controles para torná-los estilizáveis, mas agora podemos usar CSS para estilizar muitos recursos de formulário, embora precisemos tomar cuidado extra para garantir que não quebramos a usabilidade.
+
+    * * NEM TODOS OS WIDGETS SÃO CRIADOS IGUAIS QUANDO O CSS ESTÁ ENVOLVIDO
+
+        Atualmente, algumas dificuldades permanecem ao usar CSS com formulários. Esses problemas podem ser divididos em três categorias:
+
+    * O BOM
+
+        Alguns elementos podem ser estilizados com poucos ou nenhum problema nas plataformas. Estes incluem os seguintes elementos:
+
+            <form>
+
+            <fieldset>e<legend>
+
+            Textos de uma única linha <input>(por exemplo, digite texto, url, email), exceto <input type="search">.
+
+            Várias linhas<textarea>
+
+            Botões (ambos <input>e <button>)
+
+            <label>
+            
+            <output>
+
+    * O MAL
+
+        Alguns elementos são mais difíceis de estilizar, exigindo CSS mais complexo ou alguns truques mais específicos:
+
+            Checkboxes and radio buttons
+
+            <input type="search">
+
+    * O FEIO
+
+        Alguns elementos não podem ser estilizados completamente usando CSS. Esses incluem:
+
+            <input type="color">
+
+            Controles relacionados à data, como
+            <input type="datetime-local">
+
+            <input type="range">
+
+            <input type="file">
+
+            Elementos envolvidos na criação de widgets suspensos, incluindo <select>, e .<option> <optgroup> <datalist>
+
+            <progress> e <meter>
+
+        O verdadeiro problema com todos esses controles é que eles têm uma estrutura muito complexa e, além de alguns estilos básicos (como alterar a largura ou a margem do controle), você geralmente não tem a capacidade de estilizar os componentes internos dos controles (como como o calendário do seletor de datas, ou o botão no <select> que faz com que a lista de opções seja exibida) que compõem esses widgets.
+
+        Se você deseja personalizar completamente esses widgets, realmente precisa criar seus próprios widgets usando HTML, CSS e JavaScript.
+
+        * Nota: existem alguns pseudo-elementos CSS proprietários disponíveis que permitem que você estilize componentes internos desses controles de formulário, como ::-moz-range-track, mas eles não são consistentes entre os navegadores, portanto, não são confiáveis. Mencioná-los-emos mais tarde também.
+-->

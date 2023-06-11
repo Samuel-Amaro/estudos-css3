@@ -1,0 +1,135 @@
+<!--
+    * FORMULÁRIO RESPONSIVO
+
+        - Redimensione a janela do navegador para ver o efeito. Quando a tela tiver menos de 600px de largura, empilhe as duas colunas uma sobre a outra em vez de uma ao lado da outra.
+
+        - Avançado: o exemplo a seguir usa consultas de mídia para criar um formulário responsivo. Você aprenderá mais sobre isso em um capítulo posterior.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        *{
+           box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            /*
+             - Use a resize propriedade para evitar que as áreas de texto sejam redimensionadas
+            */
+            resize: vertical;
+        }
+
+        label{
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover{
+            background-color: #45a049;
+        }
+
+        .container{
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25{
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75{
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <h2>Formulario Responsivo</h2>
+        </header>
+        <p>Redimensione a janela do navegador para ver o efeito. Quando a tela tiver menos de 600px de largura, empilhe as duas colunas uma sobre a outra em vez de uma ao lado da outra.</p>
+        <section class="container">
+            <form action="#" enctype="multipart/form-data" accept-charset="utf-8" autocomplete="on" method="post" name="form">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">Primeiro Nome</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="firstname" placeholder="Seu nome..."/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Ultimo Nome</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lastname" placeholder="Seu ultimo nome..."/>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-25">
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="country" id="country">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="subject" placeholder="Escreva algo..."></textarea>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <input type="submit" value="submit"/>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+
+</body>
+</html>

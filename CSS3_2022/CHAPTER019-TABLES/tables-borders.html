@@ -1,0 +1,45 @@
+<!--
+    * TABLE BORDERS(BORDAS DA TABELA)
+
+        - Para especificar as bordas da tabela em CSS, use a border propriedade.
+
+        - O exemplo abaixo especifica uma borda sólida para os elementos <table>, <th> e <td>:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table geral
+         - para as celulas de cabeçalho
+        - para as celulas de dados
+        */
+        table, th, td{
+            /*a shorthand border e usada para abreviar as seguintes propriedades individuais border-width, border-style, border-color, adicionar uma borda nos elementos*/
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Add uma border para a tabela:</h2>
+
+    <table>
+        <tr>
+            <th>Primeiro Nome</th>
+            <th>Ultimo Nome</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+
+</body>
+</html>

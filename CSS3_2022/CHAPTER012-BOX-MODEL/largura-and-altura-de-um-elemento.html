@@ -1,0 +1,62 @@
+<!--
+    * LARGURA(WIDTH) E ALTURA(HEIGHT) DE UM ELEMENTO
+
+        - Para definir a largura e a altura de um elemento corretamente em todos os navegadores, você precisa saber como funciona o modelo de caixa(BOX MODEL).
+
+        - Importante: Ao definir as propriedades de width e height de um elemento com CSS, basta definir a width e a height da área de conteúdo . Para calcular o tamanho total de um elemento, você também deve adicionar preenchimento, bordas e margens.
+
+        - Segue o cálculo:
+
+            320px(largura)
+            + 20px(padding-left + padding-right)
+            + 10px(border-left + border-right) = 350px de largura do elemento <div> de acordo com o box model
+
+        - A largura total de um elemento deve ser calculada assim:
+
+            Largura total do elemento = width + padding-left + padding-right + border-left + border-right + margin-left + margin-right;
+
+        - A altura total de um elemento deve ser calculada assim:
+
+            Altura total do elemento = width + padding-top + padding-bottom + border-top + border-bottom + margin-top + margin-bottom;
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*
+             -  O modelo de caixa(box model) CSS é essencialmente uma caixa que envolve cada elemento HTML.
+             - o box model nos permite adicicionar uma borda ao redor dos elementos e definir espaço entre os elementos.
+             - Ele consiste em: margins, borders, padding e o conteúdo real. 
+             - para definir a largura(width) e altura(height) de um elemento e necessario saber como funciona o box-model
+            */
+            
+           /*usando a propriedade width para definir uma largura para o elemento, define que o elemento tera uma largura de 320px, A largura de um elemento não inclui padding, border ou margin!*/
+           width: 320px;
+           /*
+            - usando a shorthand propriedade border para definir uma borda para o elemento, a shorthand e uma abreviação para border-width, border-style, border-color
+            - no box-model uma borda que contorna o preenchimento(padding) e o conteúdo(content)*/
+           border: 5px solid gray;
+           /*
+            - usando a propriedade padding para adicionar espaço ao redor do conteudo, entre a borda e o conteudo, usando a shorthand para especificar o mesmo valor de comprimento para todos os lados
+            - no box model Preenchimento(Padding) - Limpa uma área ao redor do conteúdo. O forro é transparente*/
+           padding: 10px;
+           /*
+            - usando a propriedade margin para adicionar espaço externo ao redor do elemento apos a border, usando a shorthand margin escificando um unico valor para todos os lados do elemento
+            - no box model margem(margin) - Limpa uma área fora da fronteira(border). A margem(margin) é transparente*/
+           margin: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calcula a largura total:</h2>
+
+    <img src="./klematis4_big.jpg" width="350" height="263" alt="Klematis"/>
+
+    <div>A imagem acima tem 350px de largura. A largura total deste elemento também é de 350px.</div>
+
+</body>    
+</html>

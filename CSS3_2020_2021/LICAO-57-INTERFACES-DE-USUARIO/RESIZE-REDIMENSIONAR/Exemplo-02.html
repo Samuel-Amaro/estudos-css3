@@ -1,0 +1,48 @@
+<!--
+    * REDIMENSIONAR CSS(RESIZE)
+
+      - A resize propriedade especifica se (e como) um elemento deve ser redimensionável pelo usuário.
+
+      - O exemplo a seguir permite que o usuário redimensione apenas a altura de um elemento <div>:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redimensionar interface usuário</title>
+    <style>
+        div{
+            border-top: 2px;
+            border-right: 2px;
+            border-bottom: 2px;
+            border-left: 2px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            width: 300px;
+            /*o elemento so podera ser redimensionado na vertical - so podera redimensionar a altura. O usuario so pode redimensionar a altura do elemento na vertical*/
+            resize: vertical;
+            /*caso haja um estouro de conteudo, caso o conteudo trasborde para fora da caixa, o navegador automaticamente ocultara o conteudo transbordado, para dentro da caixa, e add barra de rolagens somente quando for necessarias para poder visualizar o conteudo*/
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Redimensionar interface usuário - resize</h1>
+
+    <p><strong>Exemplo:</strong> seguir permite que o usuário redimensione apenas a altura de um elemento &lt;div&gt;:</p>
+
+    <div>
+        <p>Deixe o usuário redimensionar apenas a altura desse elemento div.</p>
+        <p>Para redimensionar: Clique e arraste o canto inferior direito deste elemento div.</p>
+    </div>
+
+</body>
+</html>

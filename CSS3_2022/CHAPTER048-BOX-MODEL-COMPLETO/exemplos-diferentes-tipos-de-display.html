@@ -1,0 +1,69 @@
+<!--
+    * EXEMPLOS DE DIFERENTES TIPOS DE DISPLAY
+
+        Vamos seguir em frente e dar uma olhada em alguns exemplos. Abaixo temos três elementos HTML diferentes, todos com um tipo de exibição externa de block. O primeiro é um parágrafo, que tem uma borda adicionada em CSS. O navegador renderiza isso como uma caixa de bloco, de modo que o parágrafo começa em uma nova linha e se expande até a largura total disponível para ele. 
+
+        A segunda é uma lista, que é apresentada usando display: flex. Isso estabelece um layout flexível para os itens dentro do contêiner, no entanto, a lista em si é uma caixa de bloco e - como o parágrafo - se expande para a largura total do contêiner e quebra em uma nova linha. 
+
+        Abaixo disso, temos um parágrafo em nível de bloco, dentro do qual estão dois <span> elementos. Esses elementos normalmente seriam inline, no entanto, um dos elementos tem uma classe de bloco, e nós a configuramos para display: block. 
+
+        No próximo exemplo, podemos ver como inline elementos se comportam. o <span> os elementos no primeiro parágrafo são embutidos por padrão e, portanto, não forçam quebras de linha.  
+            
+        Também temos um <ul> elemento definido para display: inline-flex, criando uma caixa embutida em torno de alguns itens flexíveis. 
+
+        Finalmente, temos dois parágrafos ambos definidos para display: inline. O contêiner flexível embutido e os parágrafos são executados juntos em uma linha, em vez de quebrar em novas linhas, como fariam se estivessem sendo exibidos como elementos em nível de bloco.    
+
+        No exemplo, você pode alterar display: inlinepara display: blockou display: inline-flex para display: flex para alternar entre esses modos de exibição. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p, ul{
+            /*adiciona uma borda nos paragrafos e na lista*/
+            border: 2px solid rebeccapurple;
+            padding: .5em;
+        }
+        .block, li{
+            border: 2px solid blue;
+            padding: .5em;
+        }
+        ul{
+            /*
+             - a propriedade display determina tipo de caixa aplicado a um elemento é definido por display valores de propriedade.
+             - refere-se ao externo valor display.
+             - o valor flex Isso estabelece um layout flexível para os itens dentro do contêiner, no entanto, a lista em si é uma caixa de bloco e - como o parágrafo - se expande para a largura total do contêiner e quebra em uma nova linha. 
+            */
+            display: flex;
+            list-style: none;
+        }
+        .block{
+             /*
+             - a propriedade display determina tipo de caixa aplicado a um elemento é definido por display valores de propriedade.
+             - display aplica uma caixa de tipo block externa ao elemento
+            */
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--
+        - elemento <p> e exibido como um tipo de exibição externa de block. que detalha se a caixa e de bloco ou inline.
+        - a caixa do elemento <p> ira se quebrar em uma nova linha
+        - ocupa 100% do espaço disponivel na horizontal fornecido pelo seu conteiner
+        - propriedade width e height são respeitadas
+        - propriedades, margin, border, padding, farão com que outros elementos sejam empurrados para fora da caixa
+    -->
+    <p>Eu sou um parágrafo. Um curto.</p>
+    <ul>
+        <li>Item Um</li>
+        <li>Item Dois</li>
+        <li>Item três</li>
+    </ul>
+    <p>Eu sou outro parágrafo. Algumas das <span class="block">palavras</span> foram agrupadas em um elemento span</p>
+</body>
+</html>

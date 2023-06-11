@@ -1,0 +1,59 @@
+/*
+ * CSS DROPDOWS - CRIE UM MENU SUSPENSO FLUTUANTE COM CSS
+*/
+
+/*
+ * DROPDOW BÁSICO
+
+  - Crie uma caixa suspensa que aparece quando o usuário move o mouse sobre um elemento.
+
+  - HTML) Use qualquer elemento para abrir o conteúdo suspenso, por exemplo, um elemento <span> ou <button>.
+
+  - Use um elemento de contêiner (como <div>) para criar o conteúdo suspenso e adicione o que quiser dentro dele.
+
+  - Envolva um elemento <div> em torno dos elementos para posicionar o conteúdo suspenso corretamente com CSS.
+
+  - CSS) A .dropdown(cair-para-baixo) classe usa position:relative, que é necessária quando queremos que o conteúdo suspenso seja colocado logo abaixo do botão suspenso (usando position:absolute).
+
+  - A .dropdown-content(conteudo-cair-para-baixo) classe contém o conteúdo suspenso real. Ele está oculto por padrão e será exibido ao passar o mouse (veja abaixo). Observe que o min-width está definido para 160px. Sinta-se à vontade para mudar isso. Dica: se você quiser que a largura do conteúdo suspenso seja tão ampla quanto o botão suspenso, defina width como 100% (e overflow:auto para permitir a rolagem em telas pequenas).
+
+  - Em vez de usar uma borda, usamos a box-shadow propriedade CSS para fazer o menu suspenso parecer um "cartão".
+
+  - O :hover seletor é usado para mostrar o menu suspenso quando o usuário move o mouse sobre o botão suspenso.
+
+*/
+
+/*para o elemento de bloco(conteiner)*/
+div.cair-para-baixo{
+    /*posição relativa do elemento, esta posicionado em relação a sua posição normal*/
+    position: relative;
+    /*elemento sera exibido como um elemento bloco-embutido onde pode colocar altura e largura, e os espaços são respeitados*/
+    display: inline-block;
+}
+
+/*para o elemento de bloco(conteiner)*/
+div.conteudo-cair-para-baixo{
+        /* o elemento não sera exibido*/
+        display: none;
+        /*o elemento com posição absoluta é posicionado em relação ao ancestral posicionado mais próximo no caso e seu elemento pai, uma div, (em vez de posicionado em relação à janela de visualização, como fixo).*/
+        position: absolute;
+        /*cor de fundo*/
+        background-color: #f9f9f9;
+        /*largura minima do elemento*/
+        min-width: 160px;
+        /*aplicando uma sombra ao elemento*/
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        /*add um espaço interno, em todos os lados do elemento, espaço interno entre a borda e o conteudo, da borda para o conteudo*/
+        padding-top: 12px;
+        padding-right: 12px;
+        padding-bottom: 16px;
+        padding-left: 16px;
+        /*para a sobreposição de um elemento sobre outro, eu especifico que quando acontecer sobreposição, esse elemento deve, vir primeiro, o proximo elemento, sobrepor esse elemento*/
+        z-index: 1;
+}
+
+/*para o elemento pai, que vai aceitar um estado de o mouse passar por cima do elemento, e o elemento do filho que não tem estado, mas e utilizado*/
+div.cair-para-baixo:hover > div.conteudo-cair-para-baixo{
+    /*o elemento sera exibido como um bloco, que quebra linha antes de ser exibido, e ocupa toda largura disponivel(se estenda para direita e esquerda o maximo que pode*/
+    display: block;
+}

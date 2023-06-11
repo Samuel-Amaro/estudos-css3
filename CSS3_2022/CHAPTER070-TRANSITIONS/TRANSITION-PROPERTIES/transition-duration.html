@@ -1,0 +1,120 @@
+<!--
+    * transition-duration
+
+        A transition-duration propriedade é usada para definir o tempo que uma transição levará para ser concluída.
+
+        transition-duration aceita unidades de tempo, em segundos ( s) ou milissegundos ( ms) e o padrão é 0s.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .square{
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            background-color: springgreen;
+            /*
+             - A transition-property propriedade especifica qual(is) estilo(s) deve(m) fazer a transição.
+             -  O transition-property aceita um ou mais nomes de propriedades CSS em uma lista separada por vírgulas.
+             - a transição de estilos desse elemento sera responsavel pelas propriedade transform.
+            */
+            transition-property: transform;
+            transition-timing-function: ease;
+            padding: 8px;
+        }
+
+        .square.td-instant{
+            /*
+             - a propriedade css transition-duration, definir o tempo que uma transição levará para ser concluída.
+             - neste exemplo tera 0s para realizar a transição de estilo.
+            */
+            transition-duration: 0s;
+        }
+
+        .square.td-speedy{
+            /*
+             - neste exemplo tera 200ms para realizar a transição de estilo.
+            */
+            transition-duration: 200ms;
+        }
+
+        .square.td-middling{
+            /*
+             - neste exemplo tera 800ms para realizar a transição de estilo.
+            */
+            transition-duration: 800ms;
+        }
+
+        .square.td-glacial{
+            /*
+             - neste exemplo tera 5s para realizar a transição de estilo.
+            */
+            transition-duration: 5s;
+        }
+
+        /*
+         - pseudo-class :is(), localiza todos elementos que possuem a pseudo-classes, :hover and :focus aplicadas.
+        */
+        .square:is(:hover, :focus){
+            /*
+             - a cada vez que o usuario passar o mouse, por cima de um elemento com pseudo-classe :hover ou :focus, o elemento tera uma transição de estilo, do estilo original ja existente nele para a propriedade css abaixo. que ja foi informada na propriedade transition-property
+            */
+
+            /*
+             - redimesinona o elemento no plano 2d
+             - 0.8 de quantidade de redimensionamento a ser aplicada em cada direção.
+            */
+            transform: scale(0.8);
+        }
+
+        .wrapper{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 32px;
+        }
+
+        /*
+         - seleciona todos os elementos .square filhos de indexação impar.
+        */
+        .wrapper .square:nth-child(odd){
+            justify-self: end;
+        }
+
+        /*
+         - seleciona todos os elementos .square filhos de indexação par.
+        */
+        .wrapper .square:nth-child(even) {
+            justify-self: start;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="square td-instant" tabindex="0">instant
+            <p class="duration">0ms</p>
+        </div>
+        <div class="square td-speedy" tabindex="0">speedy
+            <p class="duration">200ms</p>
+        </div>
+        <div class="square td-middling" tabindex="0">middling 
+            <p class="duration">800ms</p>
+        </div>
+        <div class="square td-glacial" tabindex="0">glacial
+            <p class="duration">5000ms</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!--
+    * O EIXO CRUZADO(CROSS AXIS)
+
+        As propriedades align-items e align-self controlam o alinhamento de nossos itens flexíveis no eixo cruzado, descendo as colunas se flex-direction for row e ao longo da linha se flex-direction for column.
+
+        Estamos fazendo uso do alinhamento de eixo cruzado no exemplo flex mais simples. Se adicionarmos display: flex a um contêiner, todos os itens filhos se tornarão itens flexíveis organizados em uma linha. Todos eles se estenderão para serem tão altos quanto o item mais alto, pois esse item está definindo a altura dos itens no eixo cruzado. Se o seu contêiner flexível tiver uma altura definida, os itens serão estendidos até essa altura, independentemente da quantidade de conteúdo no item.
+
+        A razão pela qual os itens ficam com a mesma altura é que o valor inicial de align-items, a propriedade que controla o alinhamento no eixo cruzado, é definido como stretch.
+
+        Podemos usar outros valores para controlar como os itens se alinham:
+
+            align-items: flex-start
+            align-items: flex-end
+            align-items: center
+            align-items: stretch
+            align-items: baseline
+
+        No exemplo ao vivo abaixo, o valor de align-itemsé stretch. Experimente os outros valores e veja como todos os itens se alinham no contêiner flex.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            /*
+             - align-items propriedade para alinhar nosso item no eixo cruzado(cross axis).
+             - que neste caso é o eixo do bloco que corre verticalmente.
+             - o valor padrão e strech, 
+             - A razão pela qual os itens ficam com a mesma altura é que o valor inicial de align-items, a propriedade que controla o alinhamento no eixo cruzado, é definido como stretch.
+             -  Todos eles se estenderão para serem tão altos quanto o item mais alto, pois esse item está definindo a altura dos itens no eixo cruzado. Se o seu contêiner flexível tiver uma altura definida, os itens serão estendidos até essa altura, independentemente da quantidade de conteúdo no item.
+            */
+            align-items: stretch;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três
+            <br/>Tem
+            <br/>Algum
+            <br/>Texto
+            <br/>Mais
+        </div>
+    </div>
+</body>
+</html>

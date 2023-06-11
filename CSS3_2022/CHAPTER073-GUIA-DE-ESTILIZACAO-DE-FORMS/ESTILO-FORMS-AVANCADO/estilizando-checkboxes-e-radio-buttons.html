@@ -1,0 +1,48 @@
+<!--
+    * ESTILIZANDO CAIXAS DE SELEÇÃO(CHECKBOXES) E BOTÕES DE OPÇÃO(RADIO BUTTONS)
+
+        Estilizar uma caixa de seleção ou um botão de opção é complicado por padrão. Os tamanhos das caixas de seleção e botões de opção não devem ser alterados com seus designs padrão, e os navegadores reagem de maneira muito diferente quando você tenta.
+
+        Por exemplo, considere este caso de teste simples:
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /*
+         - estilizar um radio button ou checkboxes e complicado por padrão. Os tamnhos das checkboxe e radio buttons não devem ser alterados com seus design padrão e os navegadores reagem de maneira muito diferente quando nos tentamos.
+         - Diferentes navegadores lidam com a caixa de seleção e abrangem de maneira diferente, geralmente de maneiras feias:
+         -tentando estilizar com o design padrão do SO aplicado nos controles
+        */
+        span{
+            display: inline-block;
+            background: red;
+        }
+
+        input[type="checkbox"] {
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <label for="">
+        <span>
+            <input type="checkbox" name="q5" value="true">
+        </span>
+        True
+    </label>
+    <label for="">
+        <span>
+            <input type="checkbox" name="q5" value="false">
+        </span>
+        False
+    </label>
+
+</body>
+</html>

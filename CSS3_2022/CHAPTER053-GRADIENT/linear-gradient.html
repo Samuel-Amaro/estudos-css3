@@ -1,0 +1,50 @@
+<!--
+    * LINEAR-GRADIENT(GRADIENTE LINEAR)
+
+        A função CSS linear-gradient() cria uma imagem que consiste em uma transição progressiva entre duas ou mais cores ao longo de uma linha reta. Seu resultado é um objeto do tipo de dados <gradient>, que é um tipo especial de <image>.
+
+    * SINTAXE
+
+        /*Um gradiente inclinado 45 graus,
+         começando azul e terminando vermelho*/
+        linear-gradient(45deg, blue, red);
+
+        /* Um gradiente que vai do canto inferior direito ao canto superior esquerdo, começando azul e terminando vermelho*/
+        linear-gradient(to left top, blue, red);
+
+        /*Color stop: Um gradiente indo de baixo para cima,
+         começando azul, ficando verde em 40% de seu comprimento,
+         e terminando em vermelho*/
+        linear-gradient(0deg, blue, green 40%, red);
+
+        /*Dica de cor: Um gradiente indo da esquerda para a direita,
+         começando vermelho, chegando à cor do ponto médio
+         10% do caminho através do comprimento do gradiente,
+         levando o resto dos 90% do comprimento para mudar para azul*/
+        linear-gradient(.25turn, red, 10%, blue);
+
+        /*Parada de cor em várias posições: um gradiente inclinado em 45 graus,
+         com uma metade inferior esquerda vermelha e uma metade superior direita azul,
+         com uma linha dura onde o gradiente muda de vermelho para azul*/
+        linear-gradient(45deg, red 0 50%, blue 50% 100%);
+
+    * VALORES
+
+        <side-or-corner(lateral ou canto)>: A posição do ponto inicial da linha de gradiente. Se especificado, consiste na palavra to e até duas palavras-chave: uma indica o lado horizontal (esquerdo-left ou direito-right) e a outra o lado vertical (superior-top ou inferior-bottom). A ordem das palavras-chave secundárias não importa. Se não especificado, o padrão é para baixo(bottom). Os valores para cima(to top), para baixo(to bottom), para a esquerda(to left) e para a direita(to right) são equivalentes aos ângulos de 0 graus, 180 graus, 270 graus e 90 graus, respectivamente. Os outros valores são traduzidos em um ângulo.
+
+        <angle-angulo>: O ângulo de direção da linha de gradiente. Um valor de 0deg é equivalente a top; valores crescentes giram no sentido horário a partir daí.
+
+        <linear-color-stop(parada de cor linear)>: O valor de <color> de uma parada de cor, seguido por uma ou duas posições de parada opcionais (cada uma sendo um <percentage> ou um <length> ao longo do eixo do gradiente).
+
+        <color-hint(dica cor)>: Uma dica de interpolação definindo como o gradiente progride entre as paradas de cores adjacentes. O comprimento define em que ponto entre duas paradas de cores a cor do gradiente deve atingir o ponto médio da transição de cores. Se omitido, o ponto médio da transição de cores é o ponto médio entre duas paradas de cores.
+
+    * DESCRIÇÃO
+
+        Como acontece com qualquer gradiente, um gradiente linear não tem dimensões intrínsecas ; isto é, não tem tamanho natural ou preferido, nem proporção preferida. Seu tamanho concreto corresponderá ao tamanho do elemento ao qual se aplica.
+
+        Para criar um gradiente linear que se repete para preencher seu contêiner, use a repeating-linear-gradient()função.
+
+        Como <gradient>s pertence ao <image> tipo de dados, eles só podem ser usados ​​onde <image>s pode ser usado. Por esse motivo, linear-gradient() não funcionará em background-color outras propriedades que usam o <color> tipo de dados.
+
+
+-->

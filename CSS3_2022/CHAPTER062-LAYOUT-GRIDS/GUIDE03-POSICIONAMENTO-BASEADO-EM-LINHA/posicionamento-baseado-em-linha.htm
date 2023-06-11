@@ -1,0 +1,144 @@
+<!--
+    * POSICIONAMENTO BASEADO EM LINHA
+
+        Agora passamos da criação de uma grade para a colocação de coisas na grade. Nossa grade sempre tem linhas — elas são numeradas começando com 1 e estão relacionadas ao modo de escrita do documento. Por exemplo, a linha de coluna 1 em inglês (escrita da esquerda para a direita) estaria no lado esquerdo da grade e a linha de linha 1 no topo, enquanto em árabe (escrita da direita para a esquerda), a linha de coluna 1 estaria do lado direito.
+
+        Podemos organizar as coisas de acordo com essas linhas especificando a linha inicial e final. Fazemos isso usando as seguintes propriedades:
+
+            grid-column-start
+            grid-column-end
+            grid-row-start
+            grid-row-end
+
+        Todas essas propriedades podem ter um número de linha como seu valor. Você também pode usar as propriedades abreviadas(shorthands):
+
+            grid-column
+            grid-row
+
+        Elas permitem que você especifique as linhas inicial e final de uma vez, separadas por uma barra /.
+
+        Em vez disso, vamos organizar todos os elementos do nosso site usando as linhas de grade. Adicione as seguintes regras na parte inferior do seu CSS:
+
+        Observação: você também pode usar o valor -1 para segmentar a coluna final ou a linha da linha e, em seguida, contar para dentro a partir do final usando valores negativos. Observe também que as linhas contam sempre a partir das bordas da grade explícita, não da grade implícita .
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Grid - line-based placement starting point</title>
+    <style>
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 
+            Arial, Helvetica, sans-serif;
+        }
+
+        /*Grid Container*/
+        .container {
+            /*
+             - Valor grid: O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo de grade.
+             - o valor grid habilita o grid layout.
+             -  todos os filhos diretos do contêiner se tornam itens de grade. 
+             - inicialmente o valor grid, fornece uma grid de uma coluna somente, assim o filhos os itens grid continuam sendo exibidos um abaixo do outro como no fluxo normal do documento.
+            */
+            display: grid;
+            /*
+             -  A propriedade CSS grid-template-columns define os nomes das linhas e as funções de dimensionamento das faixas das colunas da grade.
+             - exemplo de grid(grade) explicita. criada usando grid-template-columns. especifica explicitamente as faixas de colunas. as de linha são criadas implicitamente pelo proprio navegador, somente para conter o conteudo.
+             -  usar a fr unidade para dimensionar com flexibilidade as linhas e colunas da grade. 1fr e o mesmo que 1 fração do espaço disponivel no conteiner grid.
+             - usando a propriedade abaixo para adicionar faixas de coluna, criaremos duas faixas de coluna com a mesma proporção de espaço.
+             - primeira faixa tera 1fr de espaço disponivel no conteiner grid. a segunda sera 3x maior que a primeira, pois tera 3fr 3frações do espaço disponivel no conteiner grid.
+            */
+            grid-template-columns: 1fr 3fr;
+            /*
+             - adicionando intervalos entre faixas(colunas e linhas).
+             - gap É uma shorthand para intervalo de linha(row-gap) e intervalo de coluna(column-gap).
+             - a gap e uma shorthand para column-gap e row-gap, especificar somente um unico valor, e definido 20px de intervalo entre as linhas primeiro, e a propriedade assume o valor de 20px como o mesmo para o intervalo entre colunas.
+            */
+            grid-gap: 20px;
+        }
+
+        header,
+        footer {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+        }
+
+        aside {
+            border-right: 1px solid #999;
+        }
+
+        header{
+            /*
+             - posicionamento baseado em linha de grade
+             - shorthand grid-column.
+             - o valor antes da barra e a linha inicial, depois da barra e a linha final.
+             - o header elemento começa na linha 1 e termina na linha 3, posicionamento do header.
+            */
+            grid-column: 1 / 3;
+            /*
+             - shorthand grid-row
+             - posicionado na linha 1
+            */
+            grid-row: 1;
+        }
+
+        article{
+            /*coluna inicial e final 2*/
+            grid-column: 2;
+            /*linha inicial e final 2*/
+            grid-row: 2;
+        }
+
+        aside{
+            /*coluna inicial 1 e final 1*/
+            grid-column: 1;
+            /*linha inicial e final 2*/
+            grid-row: 2;
+        }
+
+        footer{
+            /*
+             -o valor antes da barra e a coluna inicial, depois da barra e a coluna final.
+             - o footer elemento começa na coluna 1 e termina na coluna 3, posicionamento do footer.*/
+            grid-column: 1/3;
+            /*linha inicial e final e 3*/
+            grid-row: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>This is my lovely blog</header>
+        <article>
+            <h1>My article</h1>
+            <p>Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae
+                convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin
+                eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo
+                et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est,
+                posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam
+                lorem. Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed
+                lobortis finibus. Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt eget
+                purus in interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+        </article>
+        <aside>
+            <h2>Other things</h2>
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est,
+                posuere sit amet dapibus ut, facilisis sed est.</p>
+        </aside>
+        <footer>Contact me@mysite.com</footer>
+    </div>
+
+</body>
+</html>

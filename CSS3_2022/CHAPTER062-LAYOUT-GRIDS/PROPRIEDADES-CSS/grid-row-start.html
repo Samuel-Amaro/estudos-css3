@@ -1,0 +1,59 @@
+<!--
+    * PROPRIEDADE CSS GRID-ROW-START
+
+        A propriedade CSS grid-row-start especifica a posição inicial de um item de grade dentro da linha da grade, contribuindo com uma linha, uma extensão(span) ou nada (automático) para seu posicionamento de grade, especificando assim a borda inicial em linha de sua área de grade.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        grid-row-start: auto;
+
+        /*VALORES <recuo personalizado>*/
+        grid-row-start: somegridarea;
+
+        /*VALORES <inteiro> +  <identificador-personalizado>*/
+        grid-row-start: 2;
+        grid-crow-start: somegridarea 4;
+
+        /*VALORES intervalo(span) + <inteiros> +  <identificador personalizado>*/
+        grid-row-start: span 3;
+        grid-row-start: span somegridarea;
+        grid-row-start: span somegridarea 5;
+
+        /*VALORES GLOBAIS*/
+        grid-row-start: inherit;
+        grid-row-start: initial;
+        grid-row-start: revert;
+        grid-row-start: revert-layer;
+        grid-row-start: unset;
+
+        Esta propriedade é especificada como um único valor <grid-line>. Um valor <grid-line> pode ser especificado como:
+
+            ou a palavra-chave auto
+
+            ou um valor <custom-ident>
+
+            ou um valor <integer>
+
+            ou ambos <custom-ident> e <integer>, separados por um espaço
+
+            ou a palavra-chave span junto com um <custom-ident> ou um <integer> ou ambos.
+
+    * VALORES
+
+        auto: Uma palavra-chave que indica que a propriedade não contribui em nada para o posicionamento do item de grade, indicando posicionamento automático, um intervalo(span) automático ou um intervalo(span) padrão de 1.
+
+        <custom-ident>: Se houver uma linha nomeada com o nome <custom-ident>-start, ela contribuirá com a primeira dessas linhas para o posicionamento do item de grade. 
+        Nota: As áreas de grade nomeadas geram automaticamente linhas nomeadas implícitas deste formulário, portanto, a especificação grid-row-start: foo; escolherá a borda final dessa área de grade nomeada (a menos que outra linha nomeada foo-end tenha sido especificada explicitamente antes dela).
+        Caso contrário, isso é tratado como se o inteiro 1 tivesse sido especificado junto com o <custom-ident>.
+
+
+        <integer> && <custom-ident>?: Contribui com a enésima linha de grade para o posicionamento do item de grade. Se um número inteiro negativo for fornecido, ele contará em sentido inverso, começando na borda final da grade explícita.
+        Se um nome for fornecido como <custom-ident>, apenas as linhas com esse nome serão contadas. Se não existirem linhas suficientes com esse nome, supõe-se que todas as linhas de grade implícitas tenham esse nome para encontrar essa posição.
+        Um <integer> valor de 0 é inválido.
+
+        span && [ <integer> || <custom-ident> ]: Contribui com uma extensão de grade para o posicionamento do item de grade de forma que a extremidade da coluna da área de grade do item de grade esteja n linhas a partir da borda inicial.
+        Se um nome for fornecido como <custom-ident>, apenas as linhas com esse nome serão contadas. Se não existirem linhas suficientes com esse nome, todas as linhas de grade implícitas no lado da grade explícita correspondente à direção da pesquisa são consideradas como tendo esse nome para fins de contagem desse intervalo.
+        Se o <integer> for omitido, o padrão será 1. Inteiros negativos e 0 são inválidos.
+        O <custom-ident> não pode tomar o spanvalor
+-->

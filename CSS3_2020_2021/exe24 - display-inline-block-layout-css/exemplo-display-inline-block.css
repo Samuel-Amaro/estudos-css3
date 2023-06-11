@@ -1,0 +1,38 @@
+/*
+ * EXEMPLO DE USO DO DISPLAY INLINE BLOCK
+
+  - CRIANDO UM MENU DE NAVEGAÇÃO NA HORIZONTAL;
+*/
+
+/*na caixa do link que e uma lista não ordenada*/
+.menu{
+    /*uma cor de fundo na caixa*/
+    background-color: yellow;
+    /*tirando o estilo da lista, o icon de lista não ordenada*/
+    list-style-type: none;
+    /*alinhando o conteudo dentro da caixa ao centro da caixa*/
+    text-align: center;
+    /*tirando os espaço externo ao redor da caixa da caixa para fora*/
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    /*tirando todo espaco interno da caixa, entre a borda e o conteudo*/
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+/*para cada item da lista não ordenada*/
+.menu > li {
+    /*cada caixa de item da lista, vai ficar na mesma linha, e não vai quebra a linha para o proximo elemento, e vai poder receber espaços internos, externos etcc....*/
+    display: inline-block;
+    /*tamanho da fonte*/
+    font-size: 20px;
+    /*add  espaco interno a cada item da caixa, entre a borda e o conteudo*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}

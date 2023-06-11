@@ -1,0 +1,83 @@
+/*
+  * CSS HORIZONTAL NAVIGATION BAR - BARRA DE NAVEGAÇÃO HORIZONTAL
+
+   - Existem duas maneiras de criar uma barra de navegação horizontal. Usando itens de lista embutidos(display: inline) ou flutuantes(float).
+*/
+
+/*
+ * ITENS DE LISTA EMBUTIDOS
+
+  - Uma maneira de construir uma barra de navegação horizontal é especificar os elementos <li> como embutidos, além do código "padrão" da página anterior:
+*/
+/*elemento lista não ordenada*/
+ul.barra-navegacao-horizontal-inline{
+    /*lista sem estilo*/
+    list-style-type: none;
+    /*tira todo espaço externo ao redor da lista, da borda para fora*/
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    /*tira todo espaço interno da lista, da borda para o conteudo*/
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+/*cada elemento de item da lista*/
+ul.barra-navegacao-horizontal-inline > li{
+    /*o elemento sera exibido como um elemento inline, sem quebra de linha, para o proximo elemento, todos os elementos desse tipo vão estar na mesa linha
+    - display: inline;- Por padrão, <li> elementos são elementos de bloco. Aqui, removemos as quebras de linha antes e depois de cada item da lista, para exibi-los em uma linha*/
+    display: inline;
+}
+
+/*********************************************************/
+
+/*
+ * ITENS DE LISTA FLUTUANTE
+
+  - Outra maneira de criar uma barra de navegação horizontal é flutuar os elementos <li> e especificar um layout para os links de navegação:
+*/
+
+/*elemento lista não ordenada*/
+ul.barra-navegacao-horizontal-flutuante{
+    /*lista sem estilo*/
+    list-style-type: none;
+    /*tira todo espaço externo ao redor da lista, da borda para fora*/
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    /*tira todo espaço interno da lista, da borda para o conteudo*/
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    /*estouro, trasbordamento, de conteudo, se o conteudo da caixa da lista for maior que a caixa, a overflow controla, esse conteudo, para ser ocultado ao passar da caixa*/
+    overflow: hidden;
+}
+
+/*para cada elemento de item da lista*/
+ul.barra-navegacao-horizontal-flutuante > li{
+    /*o elemento flutua para a esquerda, cada elemento, que e uma caixa, vai flutuar para a esquerda
+    - float: left; - use float para fazer os elementos do bloco deslizarem próximos uns dos outros*/
+    float: left;
+}
+
+/*para cada link que tem em cada elemento de item da lista*/
+ul.barra-navegacao-horizontal-flutuante > li > a{
+    /*- o elemento sera exibido como um elemento de bloco, que quebra de linha antes de ser exibido e depois de ser exibido na pagina, aceita preenchimento, espaços internos, externos etc...
+    - display: block; - Permite-nos especificar o preenchimento (e altura, largura, margens, etc., se desejar)*/ 
+    display: block;
+    /*- add espaço interno, entre a borda e o conteudo;
+    - Como os elementos do bloco ocupam toda a largura disponível, eles não podem flutuar um ao lado do outro. Portanto, especifique algum preenchimento para que tenham uma boa aparência
+    */
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px; 
+    /*-cor de fundo;
+    - background-color: #dddddd; - Adicione uma cor de fundo cinza a cada elemento*/
+    background-color: #dddddd;  
+}

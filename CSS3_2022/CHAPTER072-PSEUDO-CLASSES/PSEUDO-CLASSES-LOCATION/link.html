@@ -1,0 +1,45 @@
+<!--
+    * :link
+
+        A pseudoclasse CSS :link representa um elemento que ainda não foi visitado. Ele corresponde a todos os elementos não visitados <a> ou <area> que tenham um atributo href. 
+
+        /*Seleciona qualquer <a> que ainda não foi visitado*/
+        a:link {
+            color: red;
+        }
+
+        Os estilos definidos pela :link pseudoclasse serão substituídos por qualquer pseudoclasse relacionada ao link subsequente ( :active, :hover, ou :visited) que tenha pelo menos igual especificidade. Para estilizar os links adequadamente, coloque a :link regra antes de todas as outras regras relacionadas ao link, conforme definido pela ordem LVHA : :link— :visited— :hover— :active.
+
+        Nota: Use :any-link para selecionar um elemento independente de ter sido visitado ou não.
+
+    * SINTAXE
+
+        :link
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - A pseudoclasse CSS :link representa um elemento <a> ou <area> que possua o atributo href, que ainda não foi visitado.
+        */
+        a:link{
+           background-color: gold;
+           color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="#ordinary-target" target="_self" rel="next">This is an ordinary link.</a>
+    <br/>
+    <a href="" target="_self" rel="next">You've already visited this link.</a>
+    <br/>
+    <a>Placeholder link (won't get styled)</a>
+
+</body>
+</html>

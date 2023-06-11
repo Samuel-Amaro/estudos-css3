@@ -1,0 +1,131 @@
+<!--
+    * PROPRIEDADE CSS caption-side(lado da legenda)
+
+     - A caption-side propriedade especifica o posicionamento de uma legenda de tabela.
+
+    * SINTAXE CSS:
+
+        caption-side: top|bottom|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: top
+        DESCRIPTION: Coloca a legenda acima da tabela. Isso é padrão
+        -------------------------------------
+        VALUE: bottom
+        DESCRIPTION: Coloca a legenda abaixo da tabela
+        -------------------------------------
+        VALUE: inicial(initial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        -------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        -------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table geral
+         - para as celulas de cabeçalho
+        - para as celulas de dados
+        */
+        table, th, td{
+            /*a shorthand border e usada para abreviar as seguintes propriedades individuais border-width, border-style, border-color, adicionar uma borda nos elementos*/
+            border: 1px solid;
+        }
+        #table1{
+            /*
+             - a propriedade caption-side especifica o posicionamento de uma legenda de tabela
+             - o valor bottom, coloca a legenda abaixo da tabela
+            */
+            caption-side: bottom;
+        }
+        #table2{
+            /*
+             - o valor top, coloca a legenda acima da tabela. isso e padrão
+            */
+            caption-side: top;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade caption-side</h2>
+
+    <p>a propriedade caption-side especifica o posicionamento de uma legenda da tabela:</p>
+
+    <h2>caption-side: bottom</h2>
+
+    <table id="table1">
+        <caption>Table 1.1 Clientes</caption>
+        <thead>
+            <tr>
+                <th>Companhia</th>
+                <th>Contato</th>
+                <th>País</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbköp</td>
+                <td>Christina Berglund</td>
+                <td>Sweden</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>caption-side: top(default)</h2>
+
+    <table id="table2">
+        <caption>Table 1.1 Clientes</caption>
+        <thead>
+            <tr>
+                <th>Companhia</th>
+                <th>Contato</th>
+                <th>País</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbköp</td>
+                <td>Christina Berglund</td>
+                <td>Sweden</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

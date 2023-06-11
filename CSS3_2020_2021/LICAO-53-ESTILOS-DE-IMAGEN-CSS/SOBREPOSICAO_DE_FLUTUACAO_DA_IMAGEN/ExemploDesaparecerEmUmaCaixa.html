@@ -1,0 +1,106 @@
+<!--
+    * SOBREPOSIÇÃO DE PASSAR O MOUSE SOBRE A IMAGEN
+      - CRIE UM EFEITO DE SOBREPOSIÇÃO AO PAIRAR
+    * EXEMPLO:
+       - FADE EM UM CAIXA
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 02</title>
+    <style>
+        div.conteiner{
+            /*
+              - posição relativa ao fluxo normal da pagina
+              - O posicionamento relativo, Isso é muito semelhante ao posicionamento estático, exceto que, uma vez que o elemento posicionado tenha assumido seu lugar no fluxo de layout normal, você pode modificar sua posição final, incluindo fazê-lo sobrepor outros elementos na página.
+              - Se você salvar e atualizar neste estágio, não verá nenhuma alteração no resultado. Então, como você modifica a posição do elemento? Você precisa usar as propriedades top, bottom, left e right
+            */
+            position: relative;
+            /*o bloco tera 50% da largura da pagina, ou 50% do espaço que le e reservado, no caso ele vai ocupar 50% do espaço que o contem na horizontal*/
+            width: 50%;
+        }
+        img.imagen{
+            /*elemento de nivel de bloco, aceita especificar altura e largura, ao redor do conteudo*/
+            display: block;
+            /*a largura do elemento img e de 100%, pode ocupar 100% do espaço horizontal que le e reservado*/
+            width: 100%;
+            /*altura altomatica, proprio navegador define*/
+            height: auto;
+            /*elemento perde a transparencia e volta a sua cor normal*/
+            opacity: 1;
+            /* -  As transições CSS permitem que você altere os valores das propriedades suavemente, ao longo de um determinado período.
+            a curva de velocidade do efeito de transição, (ease) especifica um efeito de transição com início lento, depois rápido e, a seguir, fim lento (é o padrão).*/
+            transition-property: opacity; /*propriedade css que vai sofre a transição de valores*/
+            transition-duration: 0.5s; /*duração da transição*/
+            transition-timing-function: ease; /*curva de velocidade do efeito de transição*/
+            /*
+             * A propriedade CSS backface-visibility determina se deve ser exibido ou não a parte de trás do elemento para o usuário. A parte de trás de um elemento é sempre um fundo transparente, deixando, quando visível, uma imagem espelho da parte da frente a ser exibida.
+             * Há casos quando nós não queremos que a parte da frente de um elemento seja visível pela parte de trás, quando estamos fazendo um efeito de giro de cartões (colocando dois elementos lado a lado).
+             * Esta propriedade não possui nenhum efeito em transformações 2D quando não há nenhum tipo de perspectiva.
+             * Valores
+             * Esta propriedade tem dois valores (exclusivos):
+             * visible significa que a parte de trás estará visível, permitindo que a parte da frente seja exibida como espelho
+             * hidden significa que a parte de trás não é visível, sendo então escondida pela parte da frente do elemento
+            */
+            backface-visibility: hidden;
+        }
+        div.meio{
+            /*a duração de transição vai ser de 0.5s,  a curva de velocidade do efeito de transição, (ease) especifica um efeito de transição com início lento, depois rápido e, a seguir, fim lento (é o padrão)*/
+            transition-property: opacity; /*propriedade css que vai sofrer o efeito da transição*/
+            transition-duration: 0.5s; /*duração da transição*/
+            transition-timing-function: ease; /*curva de velocidade do efeito da transição*/
+            /*o elemento fica trasparente, o elemento existe no layout, mas a visibilidade fica dificil de velo, o elemento fica trasparente, fica opaco*/
+            opacity: 0;
+            /*Um elemento posicionado absolutamente não existe mais no fluxo normal de layout do documento. Em vez disso, ele fica em sua própria camada, separado de todo o resto. Isso é muito útil: significa que podemos criar recursos de IU isolados que não interferem na posição de outros elementos na página.
+            - Em segundo lugar, observe que a posição do elemento mudou - isso porque top (en-US) , bottom (en-US) , left (en-US) e right (en-US) se comportam de maneira diferente com o posicionamento absoluto. Em vez de especificar a direção em que o elemento deve se mover, eles especificam a distância que o elemento deve estar de cada lado do elemento que o contém. Portanto, neste caso, estamos dizendo que o elemento posicionado de forma absoluta deve ficar 30px do topo do "elemento que contém" e 30px da esquerda*/
+            position: absolute;
+            /*e elemento posicionado de forma absoluta se afasta do elemento que o contém, pelas seguintes propriedades*/
+            top: 50%; /*se afasta 50% do topo de cima para baixo*/
+            left: 50%; /*se afasta 50% da esquerda para a direita*/
+            /*O translate() método move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y).
+            propriedade CSS: tranform;
+            valor: metodo translate(deslocamentoEixoXPositivoOuNegatio, deslocamentoEixoYPositivoOuNegativo);  
+              -50%: para eixo x da esquerda;
+              -50%: eixo y para baixo;
+            */
+            transform: translate(-50%, -50%);
+        }
+        /*ao passar o mouse por cima do conteiner, as seguintes declarações css vão ser usadas, e uma delas vai mudar o valor da propriedade opacity esse e o termino do efeito da transição, onde muda o valor da propriedade, e também um elemento descentedente do tipo img  coma seguinte class*/
+        div.conteiner:hover img.imagen{
+            /*o elemento fica trasparente, o elemento existe no layout, mas a visibilidade fica dificil de velo, o elemento fica trasparente, fica opaco, fica um pouco menos transparente mas ainda continua opaco*/
+            opacity: 0.3;
+        }
+        /*ao passar o mouse por cima do conteiner, as seguintes declarações css vão ser usadas, e uma delas vai mudar o valor da propriedade opacity esse e o termino do efeito da transição, onde muda o valor da propriedade, e também um elemento descentedente do tipo div  coma seguinte class*/
+        div.conteiner:hover div.meio{
+            /*o elemento perde a trasnparencia e opacidade e volta a sua cor normal*/
+            opacity: 1;
+        }
+        div.text{
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            /*add espaço interno no elemento div, o espaço e adicionado entre o conteudo e border*/
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-right: 32px;
+            padding-left: 32px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Exemplo 02</h2>
+
+    <p><strong>Exemplo 02:</strong> Sobreposição de passar o mouse sobre a imagen</p>
+
+    <div class="conteiner">
+        <img src="imagem-de-avatar-de-homem-para-perfil (1).png" alt="Avatar" class="imagen">
+        <div class="meio">
+            <div class="text">John Doe</div>
+        </div>
+    </div>
+</body>
+</html>

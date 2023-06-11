@@ -1,0 +1,31 @@
+<!--
+    - O exemplo a seguir exibe elementos <a> como elementos de bloco:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        a{
+            /*
+             - propriedade display e usada para definir como um elemento sera exibido,
+             - Cada elemento HTML tem um valor de exibição padrão dependendo do tipo de elemento que é. 
+             - o elemento <a> por padrão e exibido como um elemento inline(embutido) Um elemento embutido não inicia em uma nova linha e só ocupa a largura necessária.
+             - substituiremos seu valor padrão inline para ser exibido como um elemento block(bloco)começa em uma nova linha e ocupa toda a largura disponível (se estende para a esquerda e para a direita o máximo possível).
+             - obs a propriedade display não muda o tipo do elemento so muda a forma como o elemento e exibido, por isso não confunda.
+            */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exibir links como elementos de blocos</h1>
+
+    <a href="#" target="_blank" rel="next">HTML</a>
+    <a href="#" target="_blank" rel="next">CSS</a>
+    <a href="#" target="_blank" rel="next">JavaScript</a>
+
+</body>
+</html>

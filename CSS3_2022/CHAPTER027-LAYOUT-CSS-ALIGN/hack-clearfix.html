@@ -1,0 +1,76 @@
+<!--
+    * O HACK DO CLEARFIX
+
+        - Nota: Se um elemento for mais alto que o elemento que o contém e estiver flutuando, ele transbordará para fora de seu contêiner. Você pode usar o "hack clearfix" para corrigir isso (veja o exemplo abaixo). 
+
+        - Em seguida, podemos adicionar o hack clearfix ao elemento que o contém para corrigir esse problema:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        div{
+            padding: 5px;
+            border: 3px solid #4CAF50;
+        }
+        .img1{
+           /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor right O elemento flutua à direita de seu contêiner
+             - o elemento <img> ira flutuar a direita do elemento <div> que o contem que o seu conteiner
+            */
+            float: right;
+        }
+        .img2{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor right O elemento flutua à direita de seu contêiner
+             - o elemento <img> ira flutuar a direita do elemento <div> que o contem que o seu conteiner
+             - a o elemento img2 e maior que o elemento que o contem um <div> assim, o conteuo transborda para fora
+            */
+            float: right;
+        }
+        .clear-right{
+            /*
+             - a propriedade css clear especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+             - o valor right - right(direita) - O elemento é empurrado abaixo dos elementos flutuantes à direita.
+             - o elemento <h2> que e o proximo elemento logo apos o elemento div ter sido fluatuado, precisa ser limpo, usamos a propriedade clear com o valor right para este elemento aparacer abaixo do elmeento flutuado a direita
+            */
+            clear: right;
+        }
+        .clearfix::after{
+            content: "";
+            /*
+             - a propriedade css clear especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+             - o valor both - both(ambos) - O elemento é empurrado abaixo dos elementos flutuantes esquerda e direita.
+            */
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Sem clearfix</h2>
+
+    <p>Esta imagem é flutuada para a direita. Também é mais alto que o elemento que o contém, então transborda para fora de seu contêiner:</p>
+    
+    <div>
+        <img class="img1" src="../CHAPTER025-LAYOUT-CSS-FLOAT/FLOAT/pineapple.jpg" alt="abacaxi" width="170" height="170"/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fasellus imperdiet...
+    </div>
+
+    <h2 class="clear-right">Com o novo clearfix</h2>
+
+    <p>Adicione o hack do clearfix ao elemento que o contém, para corrigir este problema:</p>
+
+    <div class="clearfix">
+        <img class="img2" src="../CHAPTER025-LAYOUT-CSS-FLOAT/FLOAT/pineapple.jpg" alt="Abacaxi" width="170" height="170"/>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fasellus imperdiet...
+    </div>
+
+</body>
+</html

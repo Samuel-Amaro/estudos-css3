@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de WebSite</title>
+    <style>
+        
+        /*
+          ** RODAPE - FOOTER - LAYOUT DE WEB SITE
+
+            - O rodapé é colocado na parte inferior da página. Muitas vezes contém informações como direitos autorais e informações de contato:
+        */
+
+        /*tira todos os espaços externo ao redor do corpo da pagina - na area de conteudo da pagina*/
+        body{
+             margin: 0;
+        }
+
+        /*no elemento header - cabeçalho*/
+        header{
+                /*cor de fundo*/
+                background-color: #f1f1f1;
+                /*add espaço interno ao elemento*/
+                padding-top: 20px;
+                padding-right: 20px;
+                padding-bottom: 20px;
+                padding-left: 20px;
+                /*alinhando o texto ao centro do elemento na vertical*/
+                text-align: center;
+        } 
+
+        /*para todos os elementos da pagina*/
+        *{
+            box-sizing: border-box;
+        }
+
+        /*para o elemento nav*/
+        nav.barra-navegacao{
+            /*cor de fundo do elemento*/
+            background-color: #333;
+            /*caso o conteudo seja maior que a area desse elemento, essa propriedade vai ocultar o conteudo que passar da area, o conteudo que ficar fora da area sera ocultado*/
+            overflow: hidden;
+        }
+
+        /*para cada elemento <a> que for filho do nav*/
+        nav.barra-navegacao > a{
+            /*flutua a esquerda, o elemento a flutua a esquerda, mas a esquerda de quem ? a cada elemento a adicionado a nav, sempre ficara fluturando a esquerda*/
+            float: left;
+            /*o elemento sera exibido como um elemento de bloco*/
+            display: block;
+            /*cor do conteudo do elemento*/
+            color: #f2f2f2;
+            /*alinhamento do texto*/
+            text-align: center;
+            /*add espaço interno*/
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 16px;
+            padding-right: 16px;
+            /*tira o sublinhado dos elementos*/
+            text-decoration: none;
+        }
+
+        /*para cada elemento <a> que for filho do nav, tera um pseudo-classe aplicado ao elemento, essa pseudo classe cpturara o estado do elemento quando o mouse, estiver por cima do elemento*/
+        nav.barra-navegacao > a:hover{
+            /*cor de fundo do elemento*/
+            background-color: #ddd;
+            /*cor do texto*/
+            color: black;
+        }    
+        
+        /*Crie três colunas desiguais que flutuam uma ao lado da outra - para o elemento article*/
+        article.coluna-lado, article.coluna-meio{
+            /*flutuação a esquerda, cada coluna tera um elemento sendo flutuado a sua esquerda*/
+            float: left;
+            /*espaço interno no elemento*/
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }    
+
+        /*para o elemento article*/
+        article.coluna-lado{
+            /*largura do elemento article, em relação ao conteiner que o contem, o elemento pode ocupar 25% da largura do conteiner na horizontal*/
+            width: 25%;
+        }
+
+        /*para o elemento article*/
+        article.coluna-meio{
+            /*largura do elemento article, em relação ao conteiner que o contem, o elemento pode ocupar 50% da largura do conteiner na horizontal*/
+            width: 50%;
+        }
+
+        /* Limpar flutua após as colunas - para o elemento section - aplicando um pseudo-elemento, que vai adicionar conteudo, apos o conteudo do section ter sido inserido no elemento - o after, inseri conteudo apos o conteudo do elemento*/
+        section.linha:after{
+            /*conteudo do elemento*/
+            content: "";
+            /*o elemento sera exibido como uma tabela*/
+            display: table;
+            /*limpa os float propriedade aplicada as colunas, a propriedade continua a existir e ser usada nas colunas, mas a limpeza e necessaria para que para o proximo conteudo apos as colunas não fique flutuando também, porque a propriedade float faz flutuar qualquer elemento flutue a esquerda das colunas, aplicando o clear: both nenhum elemento pode ser flutuado apos as colunas, dentro do elemento section, apos o conteudo do elemento ter sido exibido no caso as colunas, essa propriedade passa a ser valida para o proximo conteudo apos as colunas. como teste coloque um conteudo na string vazia. */
+            clear: both;
+        }
+        
+        /*para o elemento footer*/
+        footer.rodape{
+            /*cor de fundo do elemento*/
+            background-color: #f1f1f1;
+            /*espaço interno no elemento*/
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            /*alinhamento do texto no elemento*/
+            text-align: center;
+            /*o texto ficara posicionado fixamente, não se movera com a pagina, o elemento footer ficara fixo*/
+            position: fixed;
+            /*ele sera posicionado no inferior do site, a partir do inicio do inferior do site*/
+            bottom: 0;
+            /*e sua largura podera ocupar 100% da pagina na horizontal*/
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--tag semantica de cabeçalho-->
+    <header class="cabecalho">
+        <h1>Cabeçalho</h1>
+    </header>
+
+    <nav class="barra-navegacao">
+        <a href="#">Home</a>
+        <a href="#">Contato</a>
+        <a href="#">Sobre</a>
+        <a href="#">Redes Sociais</a>
+    </nav>
+
+    <h1>Rodapé - Layout de WebSites</h1>
+
+    <section class="linha">
+       
+        <article class="coluna-lado">
+            <h2>Lado</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos voluptas neque minus. </p>
+        </article><!--coluna 01-->
+
+        <article class="coluna-meio">
+                <h2>Conteúdo Principal</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore numquam sint, pariatur labore corrupti, enim placeat sunt reiciendis qui illo rem mollitia ratione. Provident, ratione quasi. Rerum quo repellendus suscipit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non deserunt accusamus veritatis maxime modi nisi obcaecati. Neque nostrum incidunt dicta inventore expedita totam iure quod, laboriosam animi adipisci veniam maxime.</p> 
+        </article><!--coluna 02-->
+
+        <article class="coluna-lado">
+                <h2>Lado</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+        </article><!--coluna 03-->
+
+    </section><!--linha-->
+
+    <footer class="rodape">
+        <p>Rodapé do WebSite</p>
+    </footer>
+
+</body>
+</html>

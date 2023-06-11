@@ -1,0 +1,94 @@
+<!--
+    * PROPRIEDADES LÓGICAS DE MARGIN, BORDER, E PADDING
+
+        Nas duas últimas lições, aprendemos sobre o modelo de caixa CSS e as bordas CSS. Nas propriedades margin, border e padding, você encontrará muitas instâncias de propriedades físicas, por exemplo margin-top, padding-left, e border-bottom. Da mesma forma que temos mapeamentos para largura e altura, existem mapeamentos para essas propriedades.
+
+        A margin-top propriedade é mapeada para margin-block-start— isso sempre se referirá à margem no início da dimensão do bloco.
+
+        A padding-left propriedade mapeia para padding-inline-start, o preenchimento aplicado ao início da direção em linha. Este será o local onde as frases começam nesse modo de escrita. A border-bottom propriedade mapeia para border-block-end, que é a borda no final da dimensão do bloco.
+
+        Você pode ver uma comparação entre as propriedades físicas e lógicas abaixo.
+
+        Se você alterar o modo de escrita das caixas alternando a writing-mode propriedade .box para vertical-rl, você verá como as propriedades físicas permanecem vinculadas à sua direção física, enquanto as propriedades lógicas alternam com o modo de escrita.
+
+        Você também pode ver que o <h2> tem um preto border-bottom. Você pode descobrir como fazer com que a borda inferior sempre fique abaixo do texto em ambos os modos de escrita?
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .box{
+            /*
+             - um conjunto de propriedades mapeadas. Elas substituem essencialmente propriedades físicas — coisas como width e height— por versões lógicas ou relativas de fluxo.
+             - A propriedade mapeada para width quando em um modo de escrita horizontal é chamada inline-size— refere-se ao tamanho na dimensão em linha.
+             - A propriedade CSS inline-size define o tamanho horizontal ou vertical do bloco de um elemento, dependendo de seu modo de escrita. Corresponde à propriedade largura ou altura, dependendo do valor do modo de escrita.
+             - Se o modo de escrita estiver orientado verticalmente, o valor de inline-size está relacionado à altura do elemento; caso contrário, está relacionado à largura do elemento.
+             - aqui no exemplo o valor de inline-size esta relacionado a largura do elemento, elemento escrito no modo vertical
+            */
+            inline-size: 200px;
+            /*
+             - Um modo de escrita em CSS refere-se a se o texto está sendo executado horizontalmente ou verticalmente.
+             - A writing-mode propriedade nos permite alternar de um modo de escrita para outro.
+             - A propriedade CSS do modo de escrita define se as linhas de texto são dispostas horizontalmente ou verticalmente, bem como a direção na qual os blocos progridem.
+             - Portanto, a writing-mode propriedade está, na realidade, definindo a direção na qual os elementos de nível de bloco são exibidos na página
+             - o valor horizontal-tb Direção de fluxo do bloco de cima para baixo. As frases correm horizontalmente.
+            */
+            writing-mode: horizontal-tb;
+        }
+
+        .logical{
+            /*
+             - o CSS desenvolveu recentemente um conjunto de propriedades mapeadas. Elas substituem essencialmente propriedades físicas
+             - Da mesma forma que temos mapeamentos para largura e altura, existem mapeamentos para essas propriedades.
+             - mapeamentos para prorpieade margins, borders, e paddings
+             - propriedades logicas
+            */
+            margin-block-start: 20px;
+            padding-inline-end: 2em;
+            padding-block-start: 2px;
+            border-block-start: 5px solid pink;
+            border-inline-end: 10px dotted rebeccapurple;
+            border-block-end: 1em double orange;
+            border-inline-start: 1px solid black;
+        }
+
+        .physical{
+            /*
+             - propriedades fisicas
+             - propriedades que estão vinculadas às dimensões físicas da tela, e elas fazem mais sentido quando em um modo de escrita horizontal.
+            */
+            margin-top: 20px;
+            padding-right: 2em;
+            padding-top: 2px;
+            border-top: 5px solid pink;
+            border-right: 10px dotted rebeccapurple;
+            border-bottom: 1em double orange;
+            border-left: 1px solid black;
+        }
+        
+        .vertical{
+            /*
+             - Direção de fluxo do bloco da direita para a esquerda. As frases correm verticalmente.
+            */
+            writing-mode: vertical-rl;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box physical">
+            <h2>Physical Properties</h2>
+            <p>Um parágrafo. Demonstrando Propriedades Lógicas em CSS.</p>
+        </div>
+        <div class="box logical">
+            <h2>Propriedades Logicas</h2>
+            <p>Um parágrafo. Demonstrando Propriedades Lógicas em CSS.</p>
+        </div>
+    </div>
+
+</body>
+</html>

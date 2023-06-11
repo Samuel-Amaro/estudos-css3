@@ -1,0 +1,70 @@
+<!--
+    * CENTRALIZAR LINKS AND ADICIONAR BORDAS
+
+        - Adicione text-align:center a <li> ou <a> para centralizar os links.
+
+        - Adicione a border propriedade para <ul> adicionar uma borda ao redor da barra de navegação. Se você também quiser bordas dentro da barra de navegação, adicione um border-bottom a todos os elementos <li>, exceto o último:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            border: 1px solid #555;
+        }
+
+        li{
+            text-align: center;
+            border-bottom: 1px solid #555;
+        }
+
+        li a{
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        /*
+         - pseudo-classe :last-child(ultimo filho), selecionada elemento <li> que e o ultimo filho de seu pai
+        */
+        li:last-child{
+            border-bottom: none;
+        }
+
+        li a.active{
+            background-color: #04AA6D;
+            color: white;
+        }
+        /*
+         - muda a cor do fundo do link e do texto quando o usuario passar o mouse sobre o link, uma pseudo-classe que captura o estado especial de quando o usuario passa o mouse sobre o elemento <a>
+         - a pseudo-class not(selector), seleciona todo elemento que não seja o selector
+         - todo elemento <a> que o usuario estiver passando o mouse por cima e esse elemento for descedente de uma <li> e não for o elemento <a class="active">
+        */
+        li a:hover:not(.active){
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Barra de navegação vertical(Navigation Bar)</h2>
+
+    <p>Neste exemplo, centralizamos os links de navegação e adicionamos uma borda à barra de navegação.</p>
+
+    <ul>
+        <li><a class="active" href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+</body>
+</html>

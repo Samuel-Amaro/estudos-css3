@@ -1,0 +1,43 @@
+<!--
+    * POLYGON()
+
+       A função CSS polygon() é um dos tipos de dados <basic-shape>. 
+
+    * SINTAXE
+        
+       clip-path: polygon(50% 2.4%, 34.5% 33.8%, 0% 38.8%, 25% 63.1%, 19.1% 97.6%);
+
+    * VALORES
+
+        <fill-rule>: Um valor opcional de nonzero(o padrão quando omitido) ou evenodd, que especifica a regra de preenchimento.
+
+        [<length-percentage><length-percentage>]#: Três ou mais pares de valores (um polígono deve pelo menos desenhar um triângulo). Esses valores são coordenadas desenhadas com referência à caixa de referência.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        .shape{
+            /*
+             - faz o elemento img flutuar a esquerda do elemento pai que o contem. ira flutuar a esquerda da div
+            */
+            float: left;
+            width: 200px;
+            height: 200px;
+            /*
+             - A especificação CSS Shapes permite a quebra de texto em torno de uma forma não retangular.
+            */
+            shape-outside: polygon(0px 0px, 0px 189px, 100.48% 94.71%, 200px 120px, 80.67% 37.17%);   
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="shape"></div>
+        <p>Em uma noite de novembro do ano de 1782, segundo a história, dois irmãos sentaram-se sobre sua fogueira de inverno na pequena cidade francesa de Annonay, observando as grinaldas de fumaça cinzenta da lareira enrolarem-se na ampla chaminé. Seus nomes eram Stephen e Joseph Montgolfier, eles eram fabricantes de papel por profissão e eram conhecidos como possuidores de mentes pensantes e um profundo interesse em todo conhecimento científico e novas descobertas. Antes daquela noite — uma noite memorável, como estava para provar —, centenas de milhões de pessoas assistiram às crescentes coroas de fumaça de suas fogueiras sem tirar nenhuma inspiração especial do fato.</p>
+    </div>
+</body>
+</html>

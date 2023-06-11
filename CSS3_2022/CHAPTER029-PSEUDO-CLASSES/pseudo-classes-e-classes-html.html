@@ -1,0 +1,34 @@
+<!--
+    * PSEUDO CLASSES É CLASSES HTML
+
+        - Pseudo-classes podem ser combinadas com classes HTML:
+
+        - Quando você passa o mouse sobre o link no exemplo, ele muda de cor:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - um pseudo-classe e usada para definir uma estado especial  de um elemento.
+         - aqui e quando o usuario passar o mouse sobre o elemento
+         - o seletor especifico, seleciona um elemento <a> com uma class especifica, o estado a:hover quando o usuario passa o mouse sobre o link, este estado de um link ao ser estilizado para funcionar tem que vir depois de  a:link e a:visited*/
+        a.highlight:hover{
+            color: #ff0000;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Pseudo-classe é Classes HTML</h2>
+
+    <p>Quando você passa o mouse sobre o primeiro link abaixo, ele muda de cor e tamanho da fonte:</p>
+
+    <p><a class="highlight" href="#" target="_blank" rel="external">Sintaxe CSS</a></p>
+    <p><a href="#" target="_blank" rel="external">Tutorial CSS</a></p>
+
+</body>
+</html>

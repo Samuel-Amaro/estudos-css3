@@ -1,0 +1,64 @@
+<!--
+    - Além disso, os links podem ter estilos diferentes dependendo do estado em que estão.
+
+    - Os quatro estados de links são:
+
+        a:link - um link normal e não visitado
+        a:visited - um link que o usuário visitou
+        a:hover - um link quando o usuário passa o mouse sobre ele
+        a:active - um link no momento em que é clicado
+
+    - Ao definir o estilo para vários estados de link, existem algumas regras de ordem:
+
+        - a:hover DEVE vir depois de a:link e a:visited
+
+        - a:active DEVE vir depois de a:hover
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        /**
+         - alguns regras ao definir o estilo de varios estados de um link, algumas regras de ordem:
+
+            - a:hover deve vir depois de a:link e a:visited
+
+            - a:active deve vir depois de a:hover
+        */
+
+        /*o estado a:link e um link normal e não visitado*/
+        a:link{
+            /*esta propriedade color e usada para definir uma cor para o texto do elemento, aqui enquanto o link tiver o estado de normal e não visitado a cor do texto do link e vermelho*/
+            color: red;
+        }
+        /*o estado a:visited um estado em que o usuario visitou o link*/
+        a:visited{
+            /*esta propriedade color e usada para definir uma cor para o texto do elemento, aqui enquanto o link tiver o estado de visitado, usuario visitou o link o texto do link fica verde*/
+            color: green;
+        }
+        /*o estado a:hover quando o usuario passa o mouse sobre o link, este estado de um link ao ser estilizado para funcionar tem que vir depois de  a:link e a:visited*/
+        a:hover{
+            /*esta propriedade color e usada para definir uma cor para o texto do elemento, aqui quando o usuario passa o mouse por cima do link o texto do link ficara na cor rosa*/
+            color: hotpink;
+        }
+        /*o estado a:active e um link no momento em que e clicado, este estado ao ser estilizado para funcionar deve vir depois do estado a:hover*/
+        a:active{
+            /*esta propriedade color e usada para definir uma cor para o texto do elemento, aqui quando o lick for cliado por um usuario o texto do link sera azul*/
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Estilizando um link dependendo do estado</h1>
+
+    <p><b><a href="#" target="_blank" rel="external">Este é um link</a></b></p>
+
+    <p><b>Nota:</b> a:hover DEVE vir depois de a:link e a:visited na definição CSS para ser eficaz.</p>
+
+    <p><b>Nota:</b> a:active DEVE vir depois de a:hover na definição CSS para ser eficaz.</p>
+
+</body>
+</html>

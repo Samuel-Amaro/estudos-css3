@@ -1,0 +1,51 @@
+<!--
+    * POSICIONAMENTO FIXED
+
+        O posicionamento fixo remove nosso elemento do fluxo de documentos da mesma forma que o posicionamento absoluto. No entanto, em vez de os deslocamentos serem aplicados a partir do contêiner, eles são aplicados a partir da viewport. Como o item permanece fixo em relação à janela de visualização, podemos criar efeitos como um menu que permanece fixo à medida que a página rola abaixo dele.
+
+        Para este exemplo, nosso HTML contém três parágrafos de texto para que possamos rolar pela página, além de uma caixa com a propriedade de position: fixed.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        
+        body{
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p{
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .positioned{
+            background-color: rgb(253, 213, 213);
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            padding: 20px;
+            border: 1px solid rgb(250, 145, 145);
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Posicionamento Fixed</h1>
+
+    <div class="positioned">Fixed</div>
+    
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus assumenda quam suscipit maxime, similique, obcaecati, reiciendis quasi praesentium sapiente voluptatum dolorum saepe sed. Neque itaque sequi soluta nam officia beatae! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est corrupti, officiis beatae dolores provident tenetur iure, repellendus dolorum repellat tempora id laborum incidunt numquam itaque porro sapiente? Assumenda, beatae cupiditate? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus aliquam perspiciatis consectetur iure quod laboriosam distinctio, itaque doloremque deserunt minima? Itaque deserunt hic necessitatibus autem at illum incidunt, excepturi dolorum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius impedit excepturi obcaecati nesciunt neque doloremque laboriosam earum illum, maiores culpa, doloribus, vitae sed perspiciatis cupiditate nam inventore ipsam! Veniam, ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus impedit expedita dignissimos laborum ex? Facere dolores repellat tenetur dolorem rerum dolorum numquam alias obcaecati eveniet! Ab error hic quod iusto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quos esse vitae repellat temporibus earum a eos deleniti nulla tenetur unde, illo dolore alias consequuntur amet assumenda necessitatibus magni dolorum.</p>
+    <p>Eu sou um elemento básico de nível de bloco. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nesciunt saepe iste voluptatem esse ab quidem facere, dicta corrupti cum commodi fugit magnam earum provident error voluptatum a perferendis possimus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium suscipit doloribus vitae nulla itaque necessitatibus. Saepe, animi dolores tempora temporibus voluptatem, harum a fugiat architecto nesciunt ea, quas molestiae. Aliquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis sed deleniti ut modi ea ipsum est. Totam a temporibus odit laborum ut tempore sapiente exercitationem molestias! Aliquam quo quas temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorum at aliquid quae deleniti harum, officiis, sapiente laborum sint reprehenderit molestias quaerat deserunt, accusamus quas. Cum, voluptatum eveniet! Aspernatur, recusandae! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore tenetur natus quo explicabo ex reiciendis non, eveniet perferendis rem repudiandae nemo. Eligendi vitae ipsam ab sequi minima vel omnis veritatis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit animi vero eum aliquid sunt eveniet doloribus eius? Porro distinctio eveniet sit qui sunt, expedita saepe minus, aliquam vitae quos numquam!</p>
+    <p>Eu sou um elemento básico de nível de bloco. Lorem, ipsum dolor sit amet consectetur adipisicing elit. A voluptatem neque fuga ea blanditiis repellat modi asperiores non deleniti. Modi minus ea accusantium, ab amet cupiditate commodi possimus repellat culpa? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro asperiores quia nemo? Similique facere vitae vel at enim, in officiis maiores quasi hic. Delectus aperiam commodi maiores aliquid aspernatur dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum. Aspernatur explicabo quasi pariatur alias, officiis cupiditate itaque iste ad esse temporibus iusto, perferendis doloribus praesentium voluptates, odio ut. Cupiditate? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, a tempore. Aliquam provident debitis id corrupti praesentium commodi! Perferendis a id dicta numquam cum inventore totam repudiandae et officia ex? Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, dolorem? Voluptates aperiam unde, magni sed delectus alias error modi. Itaque labore dicta ad, cumque minus ex cum distinctio officia magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quis consequuntur amet optio, iusto magni laboriosam excepturi nobis delectus tenetur nostrum. Repellendus dolor doloribus fugit qui ea, fuga voluptas voluptatibus!</p>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!--
+    * BARRA DE NAVEGAÇÃO(NAVIGATION BAR) CSS
+
+        - Ter uma navegação fácil de usar é importante para qualquer site
+
+        - Ter uma navegação fácil de usar é importante para qualquer site
+
+    * BARRA DE NAVEGAÇÃO - LISTA DE LINKS
+
+        - Uma barra de navegação precisa de HTML padrão como base.
+
+        - Em nossos exemplos, construiremos a barra de navegação a partir de uma lista HTML padrão.
+
+        - Uma barra de navegação é basicamente uma lista de links, então usar os elementos <ul> e <li> faz todo o sentido:
+
+        - Agora vamos remover os marcadores e as margens e preenchimento da lista:
+
+        - O código no exemplo acima é o código padrão usado nas barras de navegação vertical e horizontal, sobre o qual você aprenderá mais nos próximos capítulos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Neste exemplo, removemos os marcadores da lista e seu preenchimento(padding) e margem(margin) padrão.</p>
+
+    <ul>
+        <li><a href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+    <p>Observação: usamos href="#" para links de teste. Em uum site, real, seriam URLs.</p>
+
+</body>
+</html>

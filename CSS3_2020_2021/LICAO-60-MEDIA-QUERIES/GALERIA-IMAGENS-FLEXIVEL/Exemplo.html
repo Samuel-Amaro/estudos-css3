@@ -1,0 +1,123 @@
+<!--
+    * GALERIA DE IMAGENS FLEXÍVEL
+
+      - Neste exemplo, usamos consultas de mídia junto com o flexbox para criar uma galeria de imagens responsiva:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de imagens com media querys e flexbox</title>
+    <style>
+        img.imagen{
+            width: 100%;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: Arial;
+        }
+        header{
+            text-align: center;
+            padding-top: 32px;
+            padding-right: 32px;
+            padding-bottom: 32px;
+            padding-left: 32px;
+        }
+        div.row{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            flex : Exibe um elemento como um flex container em nível de bloco*/
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 0px;
+            padding-right: 4px;
+            padding-bottom: 0px;
+            padding-left: 4px;
+        }
+        /*cria quatro colunas iguais que ficam próximas uma da outra*/
+        div.column{
+            flex: 25%;
+            /*largura maxima que o elemento pode ter e de 25% do espaço na horizontal de seu elemento pai, no caso row, ocupa no maximo 25% em relação da largura de seu elemento pai row. se o conteudo do elemento for maio que a largura maxima, o elemento ajustara a altura altomaticamente*/
+            max-width: 25%;
+            padding-top: 0px;
+            padding-right: 4px;
+            padding-bottom: 0px;
+            padding-left: 4px;
+        }
+        div.column img{
+            margin-top: 8px;
+            /*alinha os elementos no centro, alinhamento na vertical, alinha o elemento img no centro de seu elemento pai, que e o column, na vertical*/
+            vertical-align: middle;
+        }
+        /*Layout responsivo - cria um layout de duas colunas em vez de quatro colunas, para telas de 800px ou menos de largura, a viewreport sendo 800px ou menos essa media query e aplicada*/
+        @media screen and (max-width: 800px) {
+            div.column{
+                flex: 50%;
+                /*largura maxima que o elemento pode ter e de 50% do espaço na horizontal de seu elemento pai, no caso row, ocupa no maximo 50% em relação da largura de seu elemento pai row. se o conteudo do elemento for maio que a largura maxima, o elemento ajustara a altura altomaticamente*/
+                max-width: 50%;
+            }
+        }
+        /*Layout responsivo - faz com que as duas colunas sejam empilhadas  uma em cima da outra, em vez de uma ao lado da outra, isso e para telas que tenham a viewreport de 600px ou menos de largura, quando atingir 600px ou menos da largura da janela, essa media e aplicada*/
+        @media screen and (max-width: 600px) {
+            div.column{
+                flex: 100%;
+                /*largura maxima que o elemento pode ter e de 100% do espaço na horizontal de seu elemento pai, no caso row, ocupa no maximo 100% em relação da largura de seu elemento pai row. se o conteudo do elemento for maio que a largura maxima, o elemento ajustara a altura altomaticamente*/
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Galeria de imagens com media query e flexbox</h1>
+        <h2>Grade de imagens responsivas</h2>
+    </header>
+
+    <p>Redimensione a janela do navegador para ver o efeito de resposta.</p>
+
+    <!--Grade de fotos-->
+    <div class="row">
+        <div class="column">
+            <img src="wedding.jpg" alt="imagen" class="imagen">
+            <img src="rocks.jpg" alt="imagen" class="imagen">
+            <img src="falls2.jpg" alt="imagen" class="imagen">
+            <img src="paris.jpg" alt="imagen" class="imagen">
+            <img src="nature.jpg" alt="imagen" class="imagen">
+            <img src="mist.jpg" alt="imagen" class="imagen">
+            <img src="paris.jpg" alt="imagen" class="imagen">
+        </div>
+        <div class="column">
+            <img src="underwater.jpg" alt="imagen" class="imagen">
+            <img src="ocean.jpg" alt="imagen" class="imagen">
+            <img src="wedding.jpg" alt="imagen" class="imagen">
+            <img src="mountainskies.jpg" alt="imagen" class="imagen">
+            <img src="rocks.jpg" alt="imagen" class="imagen">
+            <img src="underwater.jpg" alt="imagen" class="imagen">
+        </div>
+        <div class="column">
+            <img src="wedding.jpg" alt="imagen" class="imagen">
+            <img src="rocks.jpg" alt="imagen" class="imagen">
+            <img src="falls2.jpg" alt="imagen" class="imagen">
+            <img src="paris.jpg" alt="imagen" class="imagen">
+            <img src="nature.jpg" alt="imagen" class="imagen">
+            <img src="mist.jpg" alt="imagen" class="imagen">
+            <img src="paris.jpg" alt="imagen" class="imagen">
+        </div>
+        <div class="column">
+            <img src="underwater.jpg" alt="imagen" class="imagen">
+            <img src="ocean.jpg" alt="imagen" class="imagen">
+            <img src="wedding.jpg" alt="imagen" class="imagen">
+            <img src="mountainskies.jpg" alt="imagen" class="imagen">
+            <img src="rocks.jpg" alt="imagen" class="imagen">
+            <img src="underwater.jpg" alt="imagen" class="imagen">
+        </div>
+    </div>
+
+</body>
+</html>

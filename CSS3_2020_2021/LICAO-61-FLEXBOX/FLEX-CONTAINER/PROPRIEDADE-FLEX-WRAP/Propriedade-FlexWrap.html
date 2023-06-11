@@ -1,0 +1,91 @@
+<!--
+    * A PROPRIEDADE FLEX-WRAP(ENVOLTORIO FLEXIVEL)
+
+      - A flex-wrap propriedade especifica se os itens flexíveis devem ser agrupados ou não.
+
+      - Especifica se os itens flexíveis devem ser agrupados ou não, se não houver espaço suficiente para eles em uma linha flexível
+
+      - A flex-wrap propriedade especifica se os itens flexíveis devem ser agrupados ou não.
+
+      -  Se os elementos não forem itens flexíveis, a flex-wrap propriedade não tem efeito.
+
+      - Um problema que aparece quando você tem uma quantidade fixa de elementos com a mesma largura e altura no seu esquema é que eventualmente seus elementos filhos flexbox irão sobrepor seu elemento pai (container), quebrando o laioute.
+
+    * SINTAXE CSS:
+
+      flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      nowrap: Valor padrão. Especifica que os itens flexíveis não vão quebrar.
+
+      wrap(enrolar): Especifica que os itens flexíveis serão embalados se necessário
+
+      wrap-reverse(envoltório reverso): Especifica que os itens flexíveis serão agrupados, se necessário, na ordem inversa
+
+    - Os exemplos abaixo possuem 12 flex items, para melhor demonstrar a flex-wrap propriedade.
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Wrap</title>
+    <style>
+        i{
+            color: rgb(228, 119, 119);
+        }
+        div.flex-container{
+             /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*quando a muito elementos flexiveis dentro de um conteiner flex, começa a quebrar o layout do conteiner, para resolver isso deve-se definer se os itens flexiveis devem ser agrupados ou não, o valor wrap especifica que os itens flexiveis serão embalados, agrupados se necessario*/
+            flex-wrap: wrap;
+            /*define a direção dos elementos flexiveis que o conteiner agrupa, no caso vai agrupar de forma horizontal por linha, todos os elementos na mesma linha mas, na ordem reversa, da direita para a esquerda*/
+            /*flex-direction: column;*/
+            background-color: dodgerblue;
+        }
+        div.flex-container > div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Propriedade flex-wrap - FlexBox</h1>
+
+    <p>O "flex-wrap: wrap;" especifica que os itens flexíveis serão agrupados, se necessário:</p>
+
+    <p><strong>Exemplo:</strong>O <i>wrap</i> valor especifica que os itens flexíveis serão agrupados, se necessário:</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+
+    <p>Tente redimensionar a janela do navegador</p>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!--
+    * GRUPO DE BOTÕES COM BORDA
+     
+     - Use a borderpropriedade para criar um grupo de botões com borda:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Botões Com Borda</title>
+    <style>
+        /*o elemento div que tiver um elemento descendente como button.button*/
+        div.btn-group button.button{
+            background-color: #4CAF50;
+            /*definindo a borda para o botao*/
+            border-top: 1px;
+            border-right: 1px;
+            border-left: 1px;
+            border-bottom: 1px;
+            border-style: solid;
+            border-color: green;
+            padding-top: 15px;
+            padding-right: 32px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*
+             * Os flutuadores têm sido comumente usados ​​para criar layouts inteiros de sites da Web com várias colunas de informações flutuantes, de forma que fiquem lado a lado (o comportamento padrão seria as colunas ficarem abaixo uma da outra, na mesma ordem em que aparecem na fonte).
+             - Então, vamos pensar sobre como o float funciona - o elemento com o float definido (o <button> elemento neste caso) é retirado do fluxo de layout normal do documento e preso ao lado esquerdo de seu contêiner pai ( <body>, em este caso). Qualquer conteúdo que vier abaixo do elemento flutuante no fluxo de layout normal agora o envolverá, preenchendo o espaço à direita dele até o topo do elemento flutuante. Pronto, isso vai parar.
+            */
+            float: left;
+        }
+        /*o elemento div que tiver um elemento descendente como button.button, tendo um seletor de estado, aplicado, vai mudar o estado do elemento aplicando as regras css*/
+        div.btn-group button.button{
+            background-color: #3E8E41;    
+        }
+        p.limpar-float{
+            /*limpa o float aplicado. Vimos que o flutuador é removido do fluxo normal e que outros elementos serão exibidos ao lado dele, portanto, se quisermos impedir que o elemento seguinte se mova para cima, precisamos limpá-lo; isso é conseguido com a clearpropriedade.*/
+            clear: left;
+        }
+        /*o elemento div que tenha elemento button com descendente, esta sendo um aplicado um seletor nele de negação, para que não selecione o ultimo elemento button, o elemento div, não vai ter o seu ultimo elemento descendente selecionado*/
+        div.btn-group button.button:not(:last-child){
+            border-right: none;/*impedir bordas duplas*/
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Grupo de Botões</h2>
+
+    <p>Adicione bordas para criar um grupo de botões com bordas</p>
+
+    <div class="btn-group">
+        <button class="button button1">10px</button>
+
+        <button class="button button2">12px</button>
+
+        <button class="button button3">16px</button>
+
+        <button class="button button4">20px</button>
+
+        <button class="button button5">24px</button>
+    </div>
+    
+    <p class="limpar-float">Lembre-se de limpar os flutuadores depois, ou então este elemento p também flutuará próximo aos botões.</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!--
+    * MIN AND MAX SIZES(TAMANHOS MINIMOS E MAXIMOS)
+
+        Além de dar às coisas um tamanho fixo, podemos pedir ao CSS para dar a um elemento um tamanho mínimo ou máximo. Se você tem uma caixa que pode conter uma quantidade variável de conteúdo e sempre quer que ela tenha pelo menos uma certa altura, você pode definir a min-height propriedade nela. A caixa sempre terá pelo menos essa altura, mas ficará mais alta se houver mais conteúdo do que a caixa tem espaço em sua altura mínima.
+
+        No exemplo abaixo você pode ver duas caixas, ambas com uma definição min-height de 150 pixels. A caixa à esquerda tem 150 pixels de altura; a caixa à direita tem conteúdo que precisa de mais espaço e, portanto, cresceu mais de 150 pixels.
+
+        Isso é muito útil para lidar com quantidades variáveis ​​de conteúdo, evitando estouro.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .box{
+            border: 5px solid darkblue;
+            /*
+             - A width propriedade CSS define a largura de um elemento. Por padrão, ele define a largura da área de conteúdo , mas se box-sizing estiver definido como border-box, ele define a largura da área da borda .
+             - define a largura de um elemento, usando um comprimento de unidade absoluta.
+             - define a largura como um valor absoluto de 300px
+            */
+            width: 200px;
+            /*
+             - A propriedade CSS min-height define a altura mínima de um elemento. Ele impede que o valor usado da propriedade height fique menor que o valor especificado para min-height.
+             - o valor 150px, Define o min-height como um valor absoluto.
+            */
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box"></div>
+        <div class="box">Ambas as caixas têm um conjunto de altura mínima, esta caixa contém conteúdo que precisará de mais espaço do que a altura atribuída e, portanto, cresce a partir do mínimo.</div>
+    </div>
+        
+</body>
+</html>

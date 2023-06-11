@@ -1,0 +1,73 @@
+/*
+ * Conteúdo suspenso alinhado à direita
+
+   - Se você quiser que o menu suspenso vá da direita para a esquerda, em vez de da esquerda para a direita, adicione right: 0;
+*/
+
+/*para o elemento de botão*/
+button.botao-suspenso{
+    /*cor de fundo*/
+    background-color: #4CAF50;
+    /*cor do texto*/
+    color: white;
+    /*espaço interno dentro do elemento*/
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    /*tamanho da fonte*/
+    font-size: 16px;
+    /*sem borda(preenchimento), borda não existe*/
+    border: none;
+    /*cursor do mouse muda*/
+    cursor: pointer;
+}
+
+/*para o elemento de conteiner(bloco, caixa)*/
+div.menu-suspenso{
+    /*posicionamento do elemento dentro do layout da pagina, posicionamento relativo, em relação a sua posição normal*/
+    position: relative;
+    /*como o elemento sera exibido no layout da pagina, como um elemento de bloco-embutido, que não quebra linha depois de se posicionar, mas aceita congi de largura e altura etc...*/
+    display: inline-block;
+}
+
+/*para o elemento de bloco de conteiner(caixa)*/
+div.conteudo-menu-suspenso{
+    /*elemento não sera exibido no layout da pagina*/
+    display: none;
+    /*o eleemento sera posicionado como absoluto em relação a seu pai, que e outro elemento de bloco*/
+    position: absolute;
+    /*começa a seu posicionamento no layou a partir da direta, da direita para esquerda*/
+    right: 0;
+    /*cor de fundo do elemento*/
+    background-color: #f9f9f9;
+    /*largura minima do elemento*/
+    min-width: 160px;
+    /*aplicando uma sombra ao elemento*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /*o elemento filho ira se sobrepor sobre o pai, para especificar, que o elemento filho deve ser sobreposto sobre o pai, uso o z-index para o elemento filho aparecer primeiro*/
+    z-index: 1;
+
+}
+
+/*para o elemento de bloco de conteiner(caixa) que tiver links como filho*/
+div.conteudo-menu-suspenso > a{
+    /*cor do texto*/
+    color: black;
+    /*espaço interno no elemento*/
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    /*tira o sublinhado do link*/
+    text-decoration: none;
+    /*o elemento sera exibido como um elemento de bloco*/
+    display: block;
+}
+
+/*para o elemento de conteiner(caixa), aplicando um seletor de estado, que vai capturar o estado de quando o mouse estiver sobre ele(pai) e tambem sobre o filho dele*/
+div.menu-suspenso:hover > div.conteudo-menu-suspenso{
+    /*o elemento sera exibido no layout como*/
+    display: block;
+}
+

@@ -1,0 +1,14 @@
+<!--
+    * A META TAG DA VIEW PORT
+
+        Se você observar a fonte HTML no exemplo acima, verá o seguinte elemento incluído no cabeçalho do documento:
+
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        Esta é a metatag da janela de visualização — ela existe como uma forma de controlar como os navegadores móveis renderizam o conteúdo. Isso é necessário porque, por padrão, a maioria dos navegadores móveis se baseia na largura da janela de visualização. Sites não responsivos geralmente parecem muito ruins quando renderizados em uma janela de visualização estreita, portanto, os navegadores móveis geralmente renderizam o site com uma largura de janela de visualização maior do que a largura real do dispositivo por padrão (geralmente 980 pixels) e, em seguida, reduzem o resultado renderizado para que ele se ajuste no visor.
+
+        Isso é muito bom, mas significa que sites responsivos não funcionarão como esperado. Se a largura da janela de visualização for relatada como 980 pixels, os layouts móveis (por exemplo, criados usando uma consulta de mídia de @media screen and (max-width: 600px) { ... }) não serão renderizados conforme o esperado.
+
+        Para remediar isso, incluir uma meta tag da janela de visualização como a acima em sua página informa ao navegador "não renderize o conteúdo com uma janela de visualização de 980 pixels - renderize-o usando a largura real do dispositivo e defina um nível de escala inicial padrão para melhor consistência." As consultas de mídia serão iniciadas conforme o esperado.
+
+-->

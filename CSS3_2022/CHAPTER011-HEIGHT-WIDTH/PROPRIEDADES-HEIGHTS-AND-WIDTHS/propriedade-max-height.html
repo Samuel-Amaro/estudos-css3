@@ -1,0 +1,70 @@
+<!--
+    * PROPRIEDADE CSS MAX-HEIGHT(ALTURA MAXIMA)
+
+    * DEFINIÇÃO E USO
+
+        - A max-height propriedade define a altura máxima de um elemento.
+
+        - Se o conteúdo for maior que a altura máxima, ele transbordará. Como o contêiner manipulará o conteúdo transbordante é definido pela propriedade overflow.
+
+        - Se o conteúdo for menor que a altura máxima, a max-height propriedade não terá efeito.
+
+        - Nota: Isso evita que o valor da propriedade height fique maior que max-height. O valor da max-height propriedade substitui a propriedade height.
+
+    * SINTAXE CSS:
+
+        max-height: none|length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: none(nenhum);
+        DESCRIPTION: Sem altura máxima. Isso é padrão
+        ----------------------------------
+        VALUE: length(comprimento).
+        DESCRIPTION: Define a altura máxima em px, cm, etc.
+        ----------------------------------
+        VALUE: %
+        DESCRIPTION: Define a altura máxima em porcentagem do bloco que contém
+        ----------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ----------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai
+        ----------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.ex1{
+            /*
+             - a propriedade max-height define uma altura maxima para um elemento.
+             - Se o conteúdo for maior que a altura máxima, ele transbordará.
+             - Se o conteúdo for menor que a altura máxima, a max-height propriedade não terá efeito.
+             - define uma altura maxima de 50px para o elemento
+            */
+            max-height: 50px;
+            /*
+             - a propriedade overflow auto, define como manipulara o conteudo transbordante do elemento. o conteudo que for maior que a altura maxima definida tranborda, e quem controla como o conteudo transabordado e tratado e a propriedade overflow, com o valor auto
+            */
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade max-height(altura maxima)</h1>
+
+    <h2>A propriedade max-height: none(default).</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sempre diam em erat pulvinar, em pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Mecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat.</p>
+
+    <h2>max-height: 50px:</h2>
+
+    <p class="ex1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sempre diam em erat pulvinar, em pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Mecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat.</p>
+    
+</body>
+</html>

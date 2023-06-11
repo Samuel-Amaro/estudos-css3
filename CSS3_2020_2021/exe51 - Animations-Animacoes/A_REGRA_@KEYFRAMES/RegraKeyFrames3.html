@@ -1,0 +1,56 @@
+<!--
+    - O exemplo a seguir mudará a cor de fundo e a posição do elemento <div> quando a animação estiver 25% concluída, 50% concluída e novamente quando a animação estiver 100% concluída:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regra @KeyFrames</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            /*nome da animação, esse nome, vinculo os quadros chaves a essa animação, que vai representar um elemento HTML*/
+            animation-name: exemplo;
+            /*duração da animação especificada*/
+            animation-duration: 4s;
+        }
+        /*especificando os quadros chaves de uma animação*/
+        @keyframes exemplo{
+            /*quando animação tiver 0% concluida anima essas propriedade css, cor de fundo, se posiciona na esquerda no 0, e topo 0*/
+            0%{background-color: red; left: 0; top: 0;}
+            /*quando animção tiver 25% concluida anima essa propriedade css, cor de fundo, se afasta 200px da esquerda e continua no topo*/
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            /*quando animção tiver 50% concluida anima essa propriedade css, se afasta 200px da esquerda e 200px do topo*/
+            50%{background-color: blue; left: 200px; top: 200px;}
+            /*quando animção tiver 75% concluida anima essa propriedade css, cor de fundo, volta a 0 esquerda, e continua 200px afastado do topo*/
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            /*quando animação tiver 100% concluida anima essa propriedade css, cor de fundo, volta a sua posição original*/
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Animações EM CSS</h1>
+    
+    <p>Exemplo:</p>
+    
+    <h2>A Regra @keyframes(quadros-chave)</h2>
+    
+    <p><strong>Exemplo: </strong> O exemplo a seguir mudará a cor de fundo e a posição do elemento &lt;div&gt; quando a animação estiver 25% concluída, 50% concluída e novamente quando a animação estiver 100% concluída:</p>
+    
+    <p><strong>Nota:</strong> Quando uma animação termina, ela volta ao estilo original.</p>
+
+    <div></div>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--
+    * PROPRIEDADE CSS min-height(ALTURA MINIMA)
+
+    * DEFINIÇÃO E USO
+
+        - A min-height propriedade define a altura mínima de um elemento.
+
+        - Se o conteúdo for menor que a altura mínima, a altura mínima será aplicada.
+
+        - Se o conteúdo for maior que a altura mínima, a min-height propriedade não tem efeito.
+
+        - Nota: Isso evita que o valor da propriedade height fique menor que min-height.
+
+    * SINTAXE CSS:
+
+        min-height: lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: lenght(comprimento);
+        DESCRIPTION: Define a altura em px, cm, etc. valor padrão e 0.
+        ----------------------------------
+        VALUE: %;
+        DESCRIPTION: Define a altura minima em porcentagem do bloco que o contém
+        ----------------------------------
+        VALUE: initial(inicial);
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ----------------------------------
+        VALUE: inherit(herança)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        ----------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p{
+            /*usando a propriedade background-color, para especificar uma cor de fundo para um elemento.*/
+            background-color: yellow;
+        }
+        p.ex1{
+            /* a propriedade min-height define a altura minima de um elemento, se o conteudo deste elemento for menor que a altura minima especificada a altura minima sera aplicada. se o conteudo for maior que a min-heght altura especificada a propriedade não tem efeito.
+            - especifica que o elemento possui uma altura minima de 100px. especificando um valor de comprimento px. obs: a altura minima so e aplicada se o conteuodo for menor que a min-height especificada, no elemento aqui funciona porque o conteudo e menor que min-height*/
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade min-height(altura minima)</h1>
+
+    <h2>A propriedade min-height: none(default).</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sempre diam em erat pulvinar, em pulvinar felis blandit...</p>
+
+    <h2>min-height: 200px:</h2>
+
+    <p class="ex1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sempre diam em erat pulvinar, em pulvinar felis blandit...</p>
+    
+</body>
+</html>

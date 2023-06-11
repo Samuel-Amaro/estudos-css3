@@ -1,0 +1,26 @@
+/*
+ * ENTRADAS ACOLCHOADAS
+
+   - Use a padding propriedade para adicionar espaço dentro do campo de texto.
+
+   - Dica: quando você tem muitas entradas uma após a outra, também pode querer adicionar algumas margin, para adicionar mais espaço fora delas:
+*/
+
+/*seleciona os campos de entrada de texto, usando seletor de atributo e valor*/
+input[type=text]{
+
+    /*o elemento pode ocupar 100% da largura da pagina na horizontal*/
+    width: 100%;
+    /*espaço interno*/
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*espaço externo*/
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    /*Observe que definimos a box-sizingpropriedade como border-box. Isso garante que o preenchimento e, eventualmente, as bordas sejam incluídos na largura e altura total dos elementos.*/
+    box-sizing: border-box;
+}

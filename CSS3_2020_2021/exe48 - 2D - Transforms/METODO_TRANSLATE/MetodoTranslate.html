@@ -1,0 +1,51 @@
+<!--
+    * O MÉTODO TRANSLATE()
+     
+       - O translate() método move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y).
+
+       - O exemplo a seguir move o elemento <div> 50 pixels para a direita e 100 pixels para baixo de sua posição atual:
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D Transforms</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            /**
+              propriedade CSS: tranform;
+              valor: metodo translate(deslocamentoEixoXDireitaPositivo, deslocamentoEixoYBaixoPositivo);  
+              50px: para eixo x direita;
+              100px: eixo y baixo;
+            **/
+            transform: translate(50px, 100px);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS 2D Transforms</h1>
+    
+    <h2>O Método translate()</h2>
+    
+    <p><strong>Exemplo:</strong>O exemplo a seguir move o elemento &lt;div&gt; 50 pixels para a direita e 100 pixels para baixo de sua posição atual:</p>
+    
+    <p><strong>Exemplo </strong>O método translate () move um elemento de sua posição atual:</p>
+
+    <div>Este elemento div é movido 50 pixels para a direita e 100 pixels para baixo de sua posição atual.</div>
+
+</body>
+</html>

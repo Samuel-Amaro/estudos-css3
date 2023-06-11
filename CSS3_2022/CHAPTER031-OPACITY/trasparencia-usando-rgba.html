@@ -1,0 +1,92 @@
+<!--
+    * TRASPARENCIA USANDO RGBA
+
+        - Se você não deseja aplicar opacidade a elementos filho, como no exemplo acima, use valores de cor RGBA. O exemplo a seguir define a opacidade da cor de fundo e não do texto:
+
+        - Você aprendeu em nosso capítulo CSS Colors que você pode usar RGB como um valor de cor. Além de RGB, você pode usar um valor de cor RGB com um canal alfa (RGB A) - que especifica a opacidade de uma cor.
+
+        - Um valor de cor RGBA é especificado com: rgba(red, green, blue, alpha). O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (totalmente opaco).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Background-Color</title>
+    <style type="text/css">
+        div{
+            /*
+             - usando a propriedade shorthand brackground, a cor e especificada pelo seu valor rgb, usando a formula rgb(red, gren, blue), especificando somente o paramentro green com o valor 128, e os outros paramentros especificados com valores 0
+             - todos os elementos <div> tera cor de fundo verde 
+            */
+            background: rgb(0, 128, 0);
+        }
+        div.first{
+            /*
+             - a propriedade background e um shorthand para background, especificamos a cor do elemento usando um valor rgba, usando a formular rgba(red, green, blue, alfa), o paramentro alfa especifica a opacidade da cor, o quanto de transparencia a cor ira possuir, neste caso ira possui 0.1 muita transparencia na cor
+             - especificamos somente uma cor de fundo transparente ao elemento, que não afete o texto(conteudo) do elemento.
+            */
+            background: rgba(0, 128, 0, 0.1);
+        }
+        div.second{
+            /*
+             - neste caso ira possui 0.3 muita transparencia na cor, mas menos que a caixa de cima
+             - especificamos somente uma cor de fundo transparente ao elemento, que não afete o texto(conteudo) do elemento.
+            */
+            background: rgba(0, 128, 0, 0.3);
+        }
+        div.third{
+            /*
+             - neste caso ira possui 0.6 transparencia na cor, menos transparencia que as duas caixas acima.
+             - especificamos somente uma cor de fundo transparente ao elemento, que não afete o texto(conteudo) do elemento.
+            */
+            background: rgba(0, 128, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Caixas transparentes 2</h1>
+
+    <p>Resultado com opacidade:</p>
+
+    <!--
+        - CSS INLINE(embutido)
+        - O style atributo é usado para adicionar estilos a um elemento, como cor, fonte, tamanho e muito mais.
+        - usando o css inline para aplicar um estilo unico a somente ao elemento div abaixo
+        - usando o atributo style e como valor as propriedades css, formando declarações css separadas por (;)
+        - a propriedade css opacity, especifica a opacidade/transparência de um elemento.
+    -->
+
+    <div style="opacity: 0.1;">
+        <h1>10% opacity</h1>
+    </div>
+    <div style="opacity: 0.3;">
+        <h1>30% opacity</h1>
+    </div>
+    <div style="opacity: 0.6;">
+        <h1>60% opacity</h1>
+    </div>
+    <div>
+        <h1>opacity 1(default)</h1>
+    </div>
+
+    <p>Resultado com rgba():</p>
+
+    <div class="first">
+        <h1>10% opacity</h1>
+    </div>
+    <div class="second">
+        <h1>30% opacity</h1>
+    </div>
+    <div class="third">
+        <h1>60% opacity</h1>
+    </div>
+    <div>
+        <h1>opacity 1(default)</h1>
+    </div>
+
+    <p>Observe como o texto fica transparente, assim como a cor de fundo ao usar a propriedade opacity.</p>
+
+</body>
+</html>

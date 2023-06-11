@@ -1,0 +1,5 @@
+/*regra css, usando seletor de elemento e o bloco de declaração*/
+body{
+    /*declaração css, com propriedade : valor;*/
+    background-color: lavender;
+}

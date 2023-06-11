@@ -1,0 +1,38 @@
+<!--
+    * PLANOS DE FUNDO GRADIENTES
+
+        Um gradiente — quando usado como plano de fundo — funciona como uma imagem e também é definido usando a background-image propriedade.
+
+        Experimente alguns gradientes diferentes no exemplo abaixo. Nas duas caixas, respectivamente, temos um gradiente linear que se estende por toda a caixa e um gradiente radial com tamanho definido, que, portanto, se repete.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .a{
+            /*
+             - O tipo de dados CSS <gradient> é um tipo especial de <image> que consiste em uma transição progressiva entre duas ou mais cores.
+             - Gradientes lineares fazem a transição de cores progressivamente ao longo de uma linha imaginária. Eles são gerados com a linear-gradient() função.
+            */
+            background-image: linear-gradient(105deg, rgba(0, 249, 255, 1) 39%, rgba(51, 56, 57, 1) 96%);
+        }
+        .b{
+            /*
+             - Gradientes radiais fazem a transição de cores progressivamente de um ponto central (origem). Eles são gerados com a radial-gradient() função.
+            */
+            background-image: radial-gradient(circle, rgba(0, 249, 255, 1) 39%, rgba(51, 56, 57, 1) 96%);
+            background-size: 100px 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="box a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maxime laudantium nihil voluptatibus, ullam qui velit quia labore quod perferendis accusamus vel, praesentium porro commodi autem illum, quis doloribus alias.</div>
+        <div class="box b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quae ea perspiciatis culpa cumque repellat, magnam nostrum non nemo porro quos assumenda doloremque quidem dolore sed fuga labore, ratione inventore.</div>
+    </div>
+
+</body>
+</html>

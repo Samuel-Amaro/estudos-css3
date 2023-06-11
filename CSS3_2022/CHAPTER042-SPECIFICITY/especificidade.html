@@ -1,0 +1,32 @@
+<!--
+    * ESPECIFICIDADE(SPECIFICITY) CSS
+
+    * O QUE É ESPECIFICIDADE(qualidade daquilo que é específico; particularidade - definição formal dicionario)?
+
+        Se houver duas ou mais regras CSS que apontam para o mesmo elemento, o seletor com o maior valor de especificidade "vencerá" e sua declaração de estilo será aplicada a esse elemento HTML.
+
+        Pense na especificidade como uma pontuação/classificação que determina qual declaração de estilo será aplicada a um elemento.
+
+        Observe os seguintes exemplos:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - O seletor de elemento seleciona elementos HTML com base no nome do elemento.
+        */
+        p{
+            /*regra css que especifica uma cor para o texto do elemento*/
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Olá Mundo!</p>
+
+</body>
+</html>

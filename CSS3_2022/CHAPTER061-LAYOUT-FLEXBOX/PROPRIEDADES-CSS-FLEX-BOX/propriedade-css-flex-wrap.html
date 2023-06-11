@@ -1,0 +1,125 @@
+<!--
+    * PROPRIEDADE CSS FLEX-WRAP()
+
+        A propriedade CSS flex-wrap define se os itens flexíveis são forçados a ficarem na mesma linha ou se podem ser quebradas em varias linhas. Se o argumento for valido, ele define a direção em que as linhas são empilhadas.
+
+    * SINTAXE
+
+        flex-wrap: nowrap; /* Default value */
+        flex-wrap: wrap;
+        flex-wrap: wrap-reverse;
+
+        /* Global values */
+        flex-wrap: inherit;
+        flex-wrap: initial;
+        flex-wrap: unset; 
+
+    A propriedade flex-wrap é especificada como uma unica palavra-chave escolhida na lista de valores abaixo.
+
+    * VALORES
+
+        Os seguintes valores são aceitos :
+
+        nowrap(agora embrulhar): Os itens flexíveis são agrupados em uma unica linha, o que pode fazer com que o flex container transborde. O cross-start é equivalente ao início ou antes, dependendo do valor da flex-direction. Este é o valor padrão.
+
+        wrap(enrolar): Os itens flexíveis são quebrados em multiplas linhas. O cross-start é equivalente a iniciar ou antes dependendo do valor do flex-direction e cross-end é o oposto do especificado cross-start.
+
+        wrap-reverse: Se comporta da mesma maneira que o wrap mas a de linha ocorre na direção contrária, ou seja, para a linha acima.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .content,
+        .content1, 
+        .content2{
+            color: #fff;
+            font: 100 24px/100px sans-serif;
+            height: 150px;
+            text-align: center;
+        }
+
+        .content div, 
+        .content1 div,
+        .content2 div{
+            height: 50%;
+            width: 300px;
+        }
+
+        .red{
+            background-color: orangered;
+        }
+
+        .green{
+            background-color: yellowgreen;
+        }
+
+        .blue{
+            background-color: steelblue;
+        }
+
+        /*FlexBox Styles*/
+
+        /*flex container*/
+        .content{
+            /*
+             - vamos definir quais elementos serão caixas flexiveis.
+             - temos que definir um valor especial no elemento pai dos elementos que queremos afetar.
+             - queremos afetar os elementos <div>, assim o pai desses elementos e o elemento <div class="content">
+             - A propriedade CSS  display especifica o tipo de caixa de renderização usada por um elemento.
+             - o valor flex O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo flexbox.
+             - aqui estamos definindo o conteiner flex. o elemento que sera pai, de todos os elementos flexiveis. definindo o flex conteiner
+            */
+            display: flex;
+            /*
+             -  A propriedade CSS flex-wrap define se os itens flexíveis são forçados a ficarem na mesma linha ou se podem ser quebradas em varias linhas. Se o argumento for valido, ele define a direção em que as linhas são empilhadas.
+             - wrap(enrolar): Os itens flexíveis são quebrados em multiplas linhas.
+            */
+            flex-wrap: wrap;
+        }
+
+        /*flex container*/
+        .content1{
+            display: flex;
+            /*
+             - este e o valor padrão.
+             - valor nowrap Os itens flexíveis são agrupados em uma unica linha, o que pode fazer com que o flex container transborde.
+            */
+            flex-wrap: nowrap;
+        }
+
+        /*flex container*/
+        .content2{
+            display: flex;
+            /*
+             - o valor wrap-reverse Se comporta da mesma maneira que o wrap mas a quebra de linha ocorre na direção contrária, ou seja, para a linha acima. o wrap ocorre a quebra de linha na direção abaixo. a diferença entre os dois
+            */
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+</head>
+<body>
+
+    <h4>Este é um exemplo para flex-wrap: wrap</h4>
+    <div class="content">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">3</div>
+    </div>
+    <h4>Este é um exemplo para flex-wrap: nowrap</h4>
+    <div class="content1">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">3</div>
+    </div>
+    <h4>Este é um exemplo para flex-wrap: wrap-reverse</h4>
+    <div class="content2">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">3</div>
+    </div>
+
+</body>
+</html>

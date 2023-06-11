@@ -1,0 +1,105 @@
+<!--
+    * SOBREPOSIÇÃO DE PASSAR O MOUSE SOBRE A IMAGEM
+      - Crie um efeito de sobreposição ao pairar:
+    * EXEMPLO 
+        - DESLIZE PARA DENTRO DIREITA
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 06</title>
+    <style>
+        div.conteiner{
+            /*posição relativa ao fluxo normal da pagina*/
+            position: relative;
+            /*o bloco tera 50% da largura da pagina*/
+            width: 50%;
+        }
+        img.imagen{
+            /*elemento de nivel de bloco, aceita especificar altura e largura, ao redor do conteudo*/
+            display: block;
+            /*a largura do elemento img e de 100%, pode ocupar 100% do espaço horizontal que le e reservado*/
+            width: 100%;
+            /*altura altomatica, proprio navegador define*/
+            height: auto;
+        }
+        div.overlay{
+            /*Um elemento posicionado absolutamente não existe mais no fluxo normal de layout do documento. Em vez disso, ele fica em sua própria camada, separado de todo o resto. Isso é muito útil: significa que podemos criar recursos de IU isolados que não interferem na posição de outros elementos na página.
+            - Em segundo lugar, observe que a posição do elemento mudou - isso porque top (en-US) , bottom (en-US) , left (en-US) e right (en-US) se comportam de maneira diferente com o posicionamento absoluto. Em vez de especificar a direção em que o elemento deve se mover, eles especificam a distância que o elemento deve estar de cada lado do elemento que o contém. Portanto, neste caso, estamos dizendo que o elemento posicionado de forma absoluta deve ficar 30px do topo do "elemento que contém" e 30px da esquerda*/
+            position: absolute;
+            /*e elemento posicionado de forma absoluta se afasta do elemento que o contém, pelas seguintes propriedades*/
+            bottom: 0; /*não se afasta do inferior*/
+            left: 100%; /*se afasta 100% da esquerda, do elemento que o contem*/
+            right: 0; /*não se afasta da direita*/
+            background-color: #008CBA;
+            /*
+            - A overflow propriedade CSS controla o que acontece com o conteúdo que é muito grande para caber em uma área.
+            - A overflow propriedade especifica se é necessário cortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é muito grande para caber na área especificada.
+            - hidden(escondidos) - O estouro(overflow) é cortado e o resto do conteúdo ficará invisível;
+            */
+            overflow: hidden;
+            /*a largura do elemento não e definida*/
+            width: 0;
+            /*
+            -  As transições CSS permitem que você altere os valores das propriedades suavemente, ao longo de um determinado período.
+            - especificando uma transição, na propriedade de altura do elemento div
+            */
+            /*o elemento vai possui 100% de altura, isso e o elemento vai ocupar 100% da altura reservada a ele, isso e ele vai ocupar 100% do espaço na vertical reservado para ele*/
+            height: 100%;
+            /* - quando não e definida a propriedade padrão que vai sofrer transição a transition property possui um valor padrão o all elements, todos os elementos, :: antes e :: depois dos pseudo-elementos
+            - propriedade que vai ter o efeito da transição*/
+            transition-property: all; /*Todas as propriedades que podem passar por uma transição o farão., todas propriedades css que pode receber uma transição sera afetada por essa transição*/
+            transition-duration: 0.5s; /*duração do efeito da transição*/
+            transition-timing-function: ease; /*Especificando a curva de velocidade da transição,(ease) especifica um efeito de transição com início lento, depois rápido e, a seguir, fim lento (é o padrão)*/ 
+        }
+        /*ao passar o mouse por cima do elemento conteiner, e esse elemento tiver um elemento descendente com a class overlay*/
+        div.conteiner:hover div.overlay{
+            /*o elemento vai poder ter 100% de largura, vai poder ocupar 100% do espaço na horizontal reservado a ele*/
+            width: 100%;
+            left: 0;
+        }
+        div.text{
+            /*texto não se quebra de linha, o texto e todo disposto em uma linha unica, não ha quebra de linha*/
+            white-space: nowrap;
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            /*
+            - A overflow propriedade CSS controla o que acontece com o conteúdo que é muito grande para caber em uma área.
+            - A overflow propriedade especifica se é necessário cortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é muito grande para caber na área especificada.
+            - hidden(escondidos) - O estouro(overflow) é cortado e o resto do conteúdo ficará invisível;
+            */
+            overflow: hidden;
+            /*se afasta 50% de cima para baixo, do elemento que contém este elemento, ou do ancestral mais, proximo que tenha definido sua position*/
+            top: 50%;
+            /*se afasta 50% da esquerda para direita, do elemento que contém este elemento*/
+            left: 50%;
+            /*O translate() método move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y).
+            propriedade CSS: tranform;
+            valor: metodo translate(deslocamentoEixoXPositivoOuNegatio, deslocamentoEixoYPositivoOuNegativo);  
+            -50%: para eixo x da esquerda;
+            -50%: eixo y para baixo;
+            */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Deslize para dentro (direita):</h2>
+
+    <p><strong>Exemplo 04:</strong> Deslize para dentro direita</p>
+
+    <h3>Deslize na sobreposição da direita</h3>
+
+    <div class="conteiner">
+        <img src="imagem-de-avatar-de-homem-para-perfil (1).png" alt="Avatar" class="imagen">
+        <div class="overlay">
+            <div class="text">Olá, mundo!</div>
+        </div>
+    </div>
+</body>
+</html>

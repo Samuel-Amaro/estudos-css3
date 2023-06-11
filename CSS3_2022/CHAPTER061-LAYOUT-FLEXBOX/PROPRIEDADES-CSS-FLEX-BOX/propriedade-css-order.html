@@ -1,0 +1,87 @@
+<!--
+    * PROPRIEDADE CSS ORDER(ORDEM)
+
+        A propriedade CSS order define a ordem para colocar um item em um contêiner flexível ou de grade. Os itens em um contêiner são classificados por valor de ordem crescente e, em seguida, pela ordem do código-fonte.
+
+    * SINTAXE
+
+        /* <integer> values */
+        order: 5;
+        order: -5;
+
+        /* Global values */
+        order: inherit;
+        order: initial;
+        order: revert;
+        order: revert-layer;
+        order: unset;
+
+        Uma vez que a ordem destina-se apenas a afetar a ordem visual dos elementos e não sua ordem lógica ou de tabulação. A ordem não deve ser usada em mídia não visual, como fala.
+
+    * VALUES
+
+        <integer>: Representa o grupo ordinal a ser usado pelo item.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container*/
+        main {
+            /*
+             - vamos definir quais elementos serão caixas flexiveis.
+             - temos que definir um valor especial no elemento pai dos elementos que queremos afetar.
+             - queremos afetar os elementos filhos de <main>, assim o pai desses elementos e o elemento <main>
+             - A propriedade CSS  display especifica o tipo de caixa de renderização usada por um elemento.
+             - o valor flex O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo flexbox.
+             - aqui estamos definindo o conteiner flex. o elemento que sera pai, de todos os elementos flexiveis. definindo o flex conteiner
+            */
+            display: flex;
+            text-align: center;
+        }
+
+        /*FlexBox Styles*/
+
+        /*iten flex*/
+        main > article{
+            flex: 1;
+            /*
+             - A propriedade CSS order define a ordem para colocar um item em um contêiner flexível ou de grade. Os itens em um contêiner são classificados por valor de ordem crescente e, em seguida, pela ordem do código-fonte.
+             - o valor 2 define que este elemento sera o segundo elemento a ser colocado no conteiner flexivel
+            */
+            order: 2;
+        }
+
+        /*iten flex*/
+        main > nav {
+            width: 200px;
+            /*
+             - o valor 1 define que este elemento sera o segundo primeiro a ser colocado no conteiner flexivel
+            */
+            order: 1;
+        }
+        
+        /*iten flex*/
+        main > aside{
+            width: 200px;
+            /*
+             - o valor 3 define que este elemento sera o segundo terceiro a ser colocado no conteiner flexivel
+            */
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Header</header>
+    <main>
+        <article>Article</article>
+        <nav>Nav</nav>
+        <aside>Aside</aside>
+    </main>
+    <footer>footer</footer>
+
+</body>
+</html>

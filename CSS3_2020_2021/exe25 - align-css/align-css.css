@@ -1,0 +1,228 @@
+/*
+ * CSS LAYOUT - HORIZONTAL & VERTICAL ALIGN
+ * CSS LAYOUT - ALINHAMENTO HORIZONTAL E VERTICAL
+*/
+
+
+/*
+ * Center Align Elements - Elementos alinhado ao centro
+
+  - Para centralizar horizontalmente um elemento de bloco (como <div>), use margin: auto;
+  - Definir a largura do elemento impedirá que ele se estenda até as bordas do recipiente.
+  - O elemento então ocupará a largura especificada e o espaço restante será dividido igualmente entre as duas margens:
+  - Nota: O alinhamento ao centro não tem efeito se a width propriedade não estiver definida (ou definida como 100%).
+*/
+#bloco_centralizado{
+    /*o espaço externo da caixa definido como auto, faz centralizar a caixa ao centro da pagina na horizontal*/
+    margin: auto;
+    /*largura da caixa em relação a pagina, a caixa pode ocupar 60% da largura da pagina na horizontal*/
+    width: 60%;
+    /*add um preenchimento a caixa*/
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #73AD21;
+    /*add um espaço interno dentro da caixa, um espaço entre o conteudo e entre a borda*/
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+/*
+ * ALINHAR TEXTO AO CENTRO
+
+  - Para apenas centralizar o texto dentro de um elemento, use text-align: center;
+*/
+#conteudo_centralizado{
+    /*add um preenchimento a caixa*/
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #73AD21;
+    /*centralizando o conteudo da caixa*/
+    text-align: center;
+}
+
+
+/*
+ * ALINHAMENTO DE IMAGEN AO CENTRO DA PAGINA
+
+  - Para centralizar uma imagem, defina as margens esquerda e direita como auto e transforme-a em um block elemento:
+*/
+img{
+    /*a caixa da imagen vira um caixa de tipo bloco, que quebra a linha do proximo elemento*/
+    display: block;
+    /*no espaço externo ao redor da caixa, da caixa para fora do lado esquerdo, defino a margim como automatico para centralizar imagem*/
+    margin-left: auto;
+    /*no espaço externo ao redor da caixa, da caixa para fora do lado direito, defino a margin como automatico para centralizar imagem*/
+    margin-right: auto;
+    /*largura da caixa da imagen, e de 40%, isso e a caixa de imagen pode ocupar 40% da largura da pagina na horizontal*/
+}
+
+
+/*
+ * ALINHAMENTO Á ESQUERDA E Á DIREITA - USANDO A POSITION PROPRIEDADE
+
+  - Um método para alinhar elementos é usar position: absolute;
+  - Nota: Elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+*/
+
+#caixa_alinhada_direita_position{
+    /*a caixa vai possuir a posição absoluta, aonde essa posição e definida, pelas propriedades left,right,top,bottom, que forman a posiçaõ absoluta da caixa*/
+    position: absolute;
+    /*definindo a posição absoluta da caixa: começa da direita para a esquerda*/
+    right: 0;
+    /*largura da caixa*/
+    width: 300px;
+    /*definindo um preenchimento para a caixa*/
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #73AD21;
+    /*definindo um espaço interno dentro da caixa, entre a borda e o conteudo*/
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+
+/*
+ * ALINHAMENTO Á ESQUERDA E Á DIREITA - USANDO FLOAT 
+
+  - Outro método para alinhar elementos é usar a float propriedade:
+  - alinhando uma div a direita usando o float
+*/
+#caixa_alinhada_direita_float{
+    /*a caixa flutua para a direita*/
+    float: right;
+    /*largura da caixa*/
+    width: 300px;
+    /*definindo um preenchimento para a caixa*/
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #73AD21;
+    /*definindo um espaço interno dentro da caixa, entre a borda e o conteudo*/
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    /*esta prorpriedade limpar: direita, e aplicada sempre que um float elemento foi usado, para que não ocorra sobreposição nos proximos elementos que vier apos esse, isso e, essa limpeza quebra uma linha, para começar o novo elemento, ou pode começa o novo elemento, sendo flutuado ao lado oposto que este elemento esteja flutuando, e va qubrando linhas ate, ficar abaixo desse elemento*/
+    clear: right;
+}
+
+/*
+ * CENTRALIZAR VERTICALMENTE - USANDO PREENCHIMENTO(PADDING)
+
+  - Existem muitas maneiras de centralizar um elemento verticalmente em CSS. Uma solução simples é usar superior e inferior padding:
+*/
+#bloco_centrado_vertical{
+    /*um espaço interno entre a borda e o conteudo, na parte do topo, encima*/
+    padding-top: 70px;
+    /*um espaço interno entre a borda e o conteudo, na parte de botton, embaixo*/
+    padding-bottom: 70px;
+    /*definindo um preenchimento para a caixa*/
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #73AD21;
+}
+/*
+ - Para centralizar tanto vertical quanto horizontalmente, use padding e text-align: center:
+*/
+#bloco_centrado_horizontal_vertical{
+    /*um espaço interno entre a borda e o conteudo, na parte do topo, encima*/
+    padding-top: 70px;
+    /*um espaço interno entre a borda e o conteudo, na parte de botton, embaixo*/
+    padding-bottom: 70px;
+    /*definindo um preenchimento para a caixa*/
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #73AD21;
+    /*alinhando o texto no centro da caixa na horizontal*/
+    text-align: center;
+}
+
+
+/*
+    * CENTRALIZAR CONTEUDO VERTICALMENTE - USANDO A ALTURA DA LINHA - line-height
+
+     -  Outro truque é usar a line-height propriedade com um valor igual à height propriedade:
+     - Neste exemplo, usamos a propriedade line-height com um valor que é igual à propriedade height para centralizar o elemento div:
+*/
+#bloco_centrado_vertical_horizontal_altura_linha{
+    /*altura da linha*/
+    line-height: 200px;
+    /*definindo a altura da caixa*/
+    height: 200px;
+    /*definindo um preenchimento para a caixa*/
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #73AD21;
+    /*alinhando o texto ao centro da caixa na horizontal*/
+    text-align: center;
+}
+/*caso o conteudo dentro da caixa tenha muitas linhas, definido propriedades para a caixa do paragrafo que esta dentro da div*/
+#bloco_centrado_vertical_horizontal_altura_linha > p{
+    /*altura da linha*/
+    line-height: 1.5;
+    /*o modelo da caixa vai ser inline block, sem quebra linha para o proximo elemento, e respeita os espaços*/
+    display: inline-block;
+    /*alinhando o texto da caixa do paragrafo ao centro da caixa na vertical*/
+    vertical-align: middle;
+}
+
+
+/*
+ * CENTRALIZAR VERTICALMENTE - USANDO POSITION E TRASFORM
+
+  - Se paddinge line-height não forem opções, outra solução é usar o posicionamento(POSITION) e a transform propriedade:
+*/
+#bloco_position_trasform{
+     /*definindo a altura da caixa*/
+     height: 200px;
+     /*definindo um preenchimento para a caixa*/
+     border-top: 3px;
+     border-right: 3px;
+     border-bottom: 3px;
+     border-left: 3px;
+     border-style: solid;
+     border-color: #73AD21;
+     /*posicionamento da caixa e relative, esta posicionado em relação a sua posiçaõ normal no layout*/
+     position: relative;
+}
+
+#bloco_position_trasform > p{
+    /*tirando todo espaço externo ao redor da caixa do paragrafo, espaço externo da margin para fora*/
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    /*posicionamento da caixa do paragrafo e absoluta, isso e sua posição e definido nas seguintes sentidos topo,inferior,direita,esquerda, levando em consideração um elemento que esteja posicionado proximo a esss, porque a posiçaõ absoluta depende de um elemento ancestral para se posicionar em relação ao ancestral*/
+    position: absolute;
+    /*posicionando este paragrafo a 50% do topo da caixa que esta contendo este paragrafo, 50% afastado do topo, de cima para baixo*/
+    top: 50%;
+    /*posicionando este caixa de paragrafo 50% da esquerda da caixa que esta contendo esta caixa, 50% afastado da esquerda, da esquerda para direita*/
+    left: 50%;
+    /*faz a caixa ficar centralizada na vertical dentro caixa que contem esta*/
+    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}

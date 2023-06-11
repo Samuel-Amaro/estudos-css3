@@ -1,0 +1,62 @@
+<!--
+    * TEXTO DA IMAGEN
+
+      - COMO POSICIONAR UM TEXTO NA IMAGEN
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto na imagen</title>
+    <style>
+        aside.container{
+            /*permite que você modifique a posição de um elemento na página, movendo-o em relação à sua posição no fluxo normal - incluindo fazê-lo sobrepor outros elementos na página.*/
+            position: relative;
+        }
+        aside.center{
+            /*move um elemento completamente para fora do fluxo normal de layout da página, como se ele estivesse em sua própria camada separada. A partir daí, você pode fixá-lo em uma posição relativa às bordas do <html> elemento da página  (ou ao elemento ancestral posicionado mais próximo).*/
+            position: absolute;
+            /*se afasta 50% do topo, da borda do topo*/
+            top: 50%;
+            /*se afasta 50%px da esquerda, da borda da esquerda*/
+            left: 50%;
+            font-size: 18px;
+            /* O translate() método move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y).*/
+            /**
+              propriedade CSS: tranform;
+              valor: metodo translate(deslocamentoEixoXDireitaPositivo, deslocamentoEixoYBaixoPositivo);  
+              50px: para eixo x direita;
+              100px: eixo y baixo;
+              - desloca -50% no eixo x da direita, so que negativamente. 
+              - desloca -50% no eixo y negativamente para baixo.
+              - esse traslate faz o ajuste de deslocamento da direita e do bottom
+            **/
+            transform: translate(-50%, -50%);
+        }
+        img:hover{
+            /*a imagen pode ocupar 100% da largura do conteiner que a contem*/
+            width: 100%;
+            /*o proprio documento define a altura da imagen*/
+            height: auto;
+            /*imagen fica 80% transparente*/
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Estilos de Imagen</h1>
+    
+    <h2>Texto na imagen - CENTRO DA IMAGEN</h2>
+    
+    <p>Adicione algum texto a centro da imagen:</p>
+    
+    <aside class="container">
+        <img src="../img_5terre_wide.jpg" alt="Cinque Terre">
+        <aside class="center">Centralizado</aside>
+    </aside>
+</body>
+</html>

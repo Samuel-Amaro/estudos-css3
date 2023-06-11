@@ -1,0 +1,45 @@
+<!--
+    * FONTES DA WEB(WEB FONTS)
+
+    * RECAPITULAÇÃO DAS FAMÍLIAS DE FONTES
+
+        Como vimos em Texto fundamental e estilo de fonte, as fontes aplicadas ao seu HTML podem ser controladas usando a font-family propriedade. Isso leva um ou mais nomes de família de fontes. Ao exibir uma página da Web, um navegador percorrerá uma lista de valores de família de fontes até encontrar uma fonte disponível no sistema em que está sendo executado:
+
+        
+        p {
+            font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+        }
+
+        Este sistema funciona bem, mas tradicionalmente as opções de fontes dos desenvolvedores web eram limitadas. Há apenas um punhado de fontes que você pode garantir que estejam disponíveis em todos os sistemas comuns — as chamadas fontes seguras para a Web. Você pode usar a pilha de fontes para especificar as fontes preferidas, seguidas por alternativas seguras para a Web, seguidas pela fonte padrão do sistema. No entanto, isso aumenta sua carga de trabalho devido aos testes necessários para garantir que seus designs funcionem com cada fonte.
+
+    * FONTES DA WEB
+
+        Mas existe uma alternativa que funciona muito bem. (Ele ainda é suportado por navegadores mais antigos como o IE versão 6). CSS permite que você especifique arquivos de fontes, disponíveis na web, para serem baixados junto com seu site conforme ele é acessado. Isso significa que qualquer navegador que suporte esse recurso CSS pode exibir as fontes que você escolheu especificamente. Incrível! A sintaxe necessária é mais ou menos assim:
+
+        Em primeiro lugar, você tem um @font-face conjunto de regras no início do CSS, que especifica o(s) arquivo(s) de fonte para download:
+
+        @font-face {
+            font-family: "myFont";
+            src: url("myFont.woff2");
+        }
+
+        Abaixo disso, você usa o nome da família de fontes especificado dentro @font-face para aplicar sua fonte personalizada a qualquer coisa que desejar, normalmente:
+
+        html{
+            font-family: "myFont", "Bitstream Vera Serif", serif;
+        }
+
+        A sintaxe fica um pouco mais complexa do que isso. Entraremos em mais detalhes abaixo.
+
+        Aqui estão algumas coisas importantes a ter em mente sobre fontes da web:
+
+            1. As fontes geralmente não são gratuitas para uso. Você tem que pagar por eles e/ou seguir outras condições de licença, como creditar o criador da fonte em seu código (ou em seu site). Você não deve roubar fontes e usá-las sem dar os devidos créditos.
+            
+            2. Todos os principais navegadores suportam WOFF/WOFF2 (Web Open Font Format versões 1 e 2). Mesmo navegadores mais antigos, como o IE9 (lançado em 2011), suportam o formato WOFF.
+
+            3. WOFF2 suporta a totalidade das especificações TrueType e OpenType, incluindo fontes variáveis, fontes cromáticas e coleções de fontes.
+
+            4. A ordem em que você lista os arquivos de fonte é importante. Se você fornecer ao navegador uma lista de vários arquivos de fonte para download, o navegador escolherá o primeiro arquivo de fonte que puder usar. É por isso que o formato que você listar primeiro deve ser o formato preferido — ou seja, WOFF2 — com os formatos mais antigos listados depois. Os navegadores que não entendem um formato voltarão para o próximo formato da lista.
+
+            5. Se você precisar trabalhar com navegadores legados, deverá fornecer fontes da Web EOT (Embedded Open Type), TTF (TrueType Font) e SVG para download. Este artigo explica como usar o Fontsquirrel Webfont Generator para gerar os arquivos necessários.
+-->

@@ -1,0 +1,63 @@
+<!--
+    * USANDO BLOCOS DE NAVEGAÇÃO PARA CRIAR LINKS DE NAVEGAÇÃO
+
+        - Um uso comum para display: inline-block é exibir itens de lista horizontalmente em vez de verticalmente. O exemplo a seguir cria links de navegação horizontais:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .nav{
+            background-color: yellow;
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li{
+            /*
+             - A display propriedade especifica se/como um elemento é exibido.
+             - Cada elemento HTML tem um valor de exibição padrão dependendo do tipo de elemento que é. O valor de exibição padrão para a maioria dos elementos é block(bloco) ou inline(embutido).
+             - o valor inline-block(bloco embutido) exibe o elemento como um elemento de bloco embutido, o proprio elemento e formatado como um bloco inline, mas permite definir uma largura e uma altura no elemento. as margins/padding top e bottom são respeitados.  não adiciona uma quebra de linha após o elemento.
+            */
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+        }
+        nav{
+            background-color: lightblue;
+            text-align: center;
+        }
+        nav .nav-link{
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Links de navegação horizontal</h1>
+
+    <p>Por padrão, os itens da lista são exibidos verticalmente. Neste exemplo, usamos display: inline-block para exibi-los horizontalmente (lado a lado).</p>
+
+    <p><strong>Observação:</strong> Observação: se você redimensionar a janela do navegador, os links serão quebrados automaticamente quando ela ficar muito cheia.</p>
+
+    <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#clients">Our Clients</a></li>
+        <li><a href="#contact">Contato US</a></li>
+    </ul>
+
+    <nav>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#clients" class="nav-link">Our Clients</a>
+        <a href="#contact" class="nav-link">Contato US</a>
+    </nav>
+
+</body>
+</html>

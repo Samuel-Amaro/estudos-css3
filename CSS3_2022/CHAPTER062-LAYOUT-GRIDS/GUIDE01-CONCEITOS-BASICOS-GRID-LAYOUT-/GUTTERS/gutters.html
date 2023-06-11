@@ -1,0 +1,78 @@
+<!--
+    * GUTTERS
+
+        Gutters ou alleys (espaçamentos ou separadores) entre células do grid podem ser criadas usando a propriedade grid-column-gap e grid-row-gap ou de forma resumida grid-gap. No exemplo abaixo, criamos um espaço vazio de 10 pixels entre colunas e um espaço vazio de 1em entre linhas.
+
+        Qualquer espaço utilizado entre espaços vazios ou gaps deverá ser considerado antes do espaço ser designado para as faixas de tamanho flexível fr , e gaps agem para propósitos de tamanho como uma faixa de grid normal, entretanto você não pode colocar coisa alguma em um gap Em termos de posicionamento baseado em linhas, o gap age como uma linha preenchida (fat line).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*notação convencional*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com três colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - cada coluna tera 1fr de medida flexivel, uma fração do espaço disponivel no container grid para cada uma.
+             - Grids grandes, com muitas tracks(faixas) podem usar a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+             - usaremos a seguinte notação de repeat(3, 1fr);
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - gutters(espaçamentos ou separadores) entre células do grid.
+             - podem ser criadas usando a propriedade grid-column-gap, e grid-row-gap.
+             - cria-se um espaço vazio de 10px entre colunas, usando a propriedade grid-column-gap.
+            */
+            grid-column-gap: 10px;
+            /*
+             - cria-se um espaço vazio de 1em = 16px entre as celulas de linha do grid.
+            */
+            grid-row-gap: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+        <div class="box5">Cinco</div>
+    </div>
+
+</body>
+</htm

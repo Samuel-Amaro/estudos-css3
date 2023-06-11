@@ -1,0 +1,66 @@
+<!--
+    * COMBINANDO FLEX-GROW AND FLEX-BASIS
+
+        As coisas podem ficar confusas em termos de como flex-grow e flex-basis interagir. Vamos considerar o caso de três itens flexíveis de diferentes comprimentos de conteúdo e as seguintes flex regras aplicadas a eles:
+
+            flex: 1 1 auto;
+
+        Nesse caso, o flex-basis valor é auto e os itens não têm uma largura definida e, portanto, são dimensionados automaticamente. Isso significa que o flexbox está analisando o max-content tamanho dos itens. 
+
+        Estamos trabalhando com um flex-basis tamanho igual ao conteúdo para que o espaço disponível para distribuição seja subtraído do espaço total disponível (a largura do contêiner flexível), e o espaço restante é então dividido igualmente entre cada item. Nosso item maior acaba maior porque começou com um tamanho maior, mesmo que tenha a mesma quantidade de espaço disponível atribuído a ele como os outros:
+
+        Se o que você realmente quer são três itens de tamanhos iguais, mesmo que comecem em tamanhos diferentes, você deve usar isso:
+
+            flex: 1 1 0;
+
+        Aqui estamos dizendo que o tamanho do item para os propósitos de nosso cálculo de distribuição de espaço é 0- todo o espaço está disponível e como todos os itens têm o mesmo flex-grow fator, cada um recebe uma quantidade igual de espaço distribuído. O resultado final são três itens flexíveis de largura igual.
+
+        Tente alterar o flex-grow fator de 1 para 0 neste exemplo ao vivo para ver o comportamento diferente:
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        .box :first-child{
+            background-color: black;
+            color: white;
+        }
+
+        .box :nth-child(2){
+            background-color: green;
+            color: white;
+        }
+
+        .box :nth-child(3){
+            background-color: blue;
+            color: white;
+        }
+
+        .box > *{
+            /*os itens flexiveis terão o seguinte flex shorthand flex-grow: 1, flex-shrink: 1, flex-basis: 0.
+            aqui ficara três itens flexiveis de tamnhos iguais, mesmo que comecem em tamanhos diferentes.
+            a flex-basis tera o tamanho para os propositos de calcula de distribuição de espaço como 0, tamanho 0, não possui tamanho inicial definido.
+            a flex grow tera o fator de 1, cada item recebe uma quantidade igual de espaço distribuido positivo.
+            os três crescem e diminuem igualmente, distribuindo espaço uniformemente.
+            */
+            flex: 1 1 0;
+        }
+    </style>
+    <title>FlexBox</title>
+</head>
+<body>
+    <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three has more content</div>
+    </div>
+</body>
+</html>

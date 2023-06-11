@@ -1,0 +1,42 @@
+<!--
+    * ORIENTAÇÃO(ORIENTATION): RETRATO(PORTRAIT)/ PAISAGEM(LANDSCAPE)
+
+      - As consultas de mídia também podem ser usadas para alterar o layout de uma página, dependendo da orientação do navegador.
+
+      - Você pode ter um conjunto de propriedades CSS que só serão aplicadas quando a janela do navegador for mais larga do que sua altura, uma chamada orientação "Paisagem"(LANDSCAPE):
+
+      - EXEMPLO : Use uma cor de fundo azul claro se a orientação estiver no modo paisagem:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientação da pagina</title>
+    <style>
+        /*corpo da pagina*/
+        body{
+            /*cor padrão da pagina*/
+            background-color: lightgreen;
+        }
+        /*uma media query que sera aplica somente quando apenas o dispositivo for do tipo tela e ele estiver uma orientação paisagem*/
+        @media only screen and (orientation: landscape) {
+            /*corpo da pagina*/
+            body{
+                /*cor de fundo da pagina*/
+                background-color: lightblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Orientação da pagina</h1>
+
+    <p><strong>Exemplo:</strong> Use uma cor de fundo azul claro se a orientação estiver no modo paisagem:</p>
+
+    <p>Redimensione a janela do navegador. Quando a largura deste documento é maior que a altura, a cor de fundo é "azul claro", caso contrário, é "verde claro".</p>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!--
+    * PROPRIEDADE ALIGN-CONTENT(ALINHAMENTO CONTEUDO)
+
+        A propriedade CSS align-content define a distribuição entre e ao redor dos items do conteúdo do eixo transversal(cross axis - direção vertical) de uma flexbox ou do eixo de bloco de uma grid.
+
+        Esta propriedade não tem efeito em contêineres flexíveis de linha única (ou seja, aqueles com flex-wrap: nowrap).
+
+    * SINTAXE
+
+        /*ALINHAMENTO POSICIONAL BÁSICO*/
+        /* align-content NÃO ACEITA VALORES LEFT E RIGHT*/
+
+        /* Embala os itens ao redor do centro */
+        align-content: center;  
+
+        /* Embala os itens desde o início */
+        align-content: start;  
+
+        /* Empacotar itens do final */    
+        align-content: end;       
+        
+        /* Embalar itens flexíveis desde o início */
+        align-content: flex-start; 
+
+        /* Empacotar itens flexíveis do final */
+        align-content: flex-end;  
+
+        /*ALINHAMENTO NORMAL*/
+        align-content: normal;
+
+        /*ALINHAMENTO DA LINHA DE BASE*/
+        align-content: baseline;
+        align-content: first baseline;
+        align-content: last baseline;
+
+        /*ALINHAMENTO DISTRIBUÍDO*/
+
+        /* Distribuir os itens uniformemente O primeiro item está alinhado com o início, o último está alinhado com o final*/
+        align-content: space-between;
+
+        /* Distribuir os itens uniformemente Os itens têm um espaço de metade do tamanho em cada extremidade */
+        align-content: space-around; 
+
+        /* Distribuir os itens uniformemente Os itens têm espaço igual ao redor deles */
+        align-content: space-evenly; 
+
+        /* Distribuir os itens uniformemente Estique itens de tamanho 'automático' para caber o recipiente */
+        align-content: stretch;      
+
+        /*ALINHAMENTO DE ESTOURO(OVERFLOW)*/
+        align-content: safe center;
+        align-content: unsafe center;
+
+        /*VALORES GLOBAIS*/
+        align-content: inherit;
+        align-content: initial;
+        align-content: unset;
+
+    * VALUE
+
+        start(inicio): Os itens são empacotados alinhados uns com os outros contra a borda inicial do contêiner de alinhamento no eixo cruzado(cross axis).
+
+        end(fim): Os itens são embalados alinhados uns com os outros contra a borda final do contêiner de alinhamento no eixo transversal(cross axis).
+
+        flex-start(inicio flexivel): Os itens são embalados alinhados uns com os outros contra a borda do contêiner de alinhamento, dependendo do lado de partida cruzada(cross axis) do contêiner flexível. Isso se aplica apenas a itens de layout flexível. Para itens que não são filhos de um contêiner flexível, esse valor é tratado como start.
+
+        flex-end(final flexivel): Os itens são embalados alinhados uns com os outros contra a borda do contêiner de alinhamento, dependendo do lado da extremidade transversal(cross axis) do contêiner flexível. Isso se aplica apenas a itens de layout flexível. Para itens que não são filhos de um contêiner flexível, esse valor é tratado como end.
+
+        center(centro): Os itens são embalados alinhados uns com os outros no centro do contêiner de alinhamento ao longo do eixo transversal(cross axis).
+
+        normal(normal): Os itens são empacotados em sua posição padrão como se nenhum valor de alinhamento de conteúdo fosse definido.
+
+        baseline, firtbaseline, lastbaseline: Especifica a participação no alinhamento da primeira ou última linha de base: alinha a linha de base de alinhamento do primeiro ou último conjunto de linha de base da caixa com a linha de base correspondente no primeiro ou último conjunto de linha de base compartilhado de todas as caixas em seu grupo de compartilhamento de linha de base. a linha de base é a linha sobre a qual a maioria das letras "senta" e abaixo da qual se estendem os descendentes. O alinhamento de fallback para a primeira linha de base é start, o da última linha de base é end.
+
+        space-between(espaço entre): Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo cruzado(cross axis). O espaçamento entre cada par de itens adjacentes é o mesmo. O primeiro item está alinhado com a borda inicial do contêiner de alinhamento no eixo cruzado e o último item está alinhado com a borda final do contêiner de alinhamento no eixo cruzado.
+
+        space-around(espaço ao redor): Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo cruzado. O espaçamento entre cada par de itens adjacentes é o mesmo. O espaço vazio antes do primeiro e depois do último item é igual a metade do espaço entre cada par de itens adjacentes.
+
+        space-evenly(espaçar uniformemente): Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo cruzado. O espaçamento entre cada par de itens adjacentes, a borda inicial e o primeiro item, e a borda final e o último item, são exatamente iguais.
+
+        stretch(esticar): Se o tamanho combinado dos itens ao longo do eixo cruzado for menor que o tamanho do contêiner de alinhamento, todos os itens de dimensionamento automático terão seu tamanho aumentado igualmente (não proporcionalmente), respeitando as restrições impostas por max-height/max-width (ou funcionalidade equivalente), para que o tamanho combinado preencha exatamente o contêiner de alinhamento ao longo do eixo cruzado.
+
+        safe(seguro): Usado junto com uma palavra-chave de alinhamento(align). Se a palavra-chave escolhida significar que o item estoura no contêiner de alinhamento causando perda de dados, o item é alinhado como se o modo de alinhamento fosse iniciado.
+
+        unsafe(inseguro): Usado junto com uma palavra-chave de alinhamento(align). Independentemente dos tamanhos relativos do item e do contêiner de alinhamento e se o estouro que causa perda de dados pode ocorrer, o valor de alinhamento fornecido é respeitado.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        #container{
+            height: 200px;
+            width: 240px;
+            /*
+             - Pode ser alterado na amostra ao vivo
+             - A propriedade CSS align-content define a distribuição entre e ao redor dos items do conteúdo do eixo transversal(cross axis - direção vertical) de uma flexbox ou do eixo de bloco de uma grid.
+             - Os itens são embalados alinhados uns com os outros no centro do contêiner de alinhamento ao longo do eixo transversal(cross axis).
+            */
+            align-content: center;
+            background-color: #8c8c8c;
+        }
+
+        /*flex container*/
+        .flex{
+            display: flex;
+            /*
+             -  A propriedade CSS flex-wrap define se os itens flexíveis são forçados a ficarem na mesma linha ou se podem ser quebradas em varias linhas. Se o argumento for valido, ele define a direção em que as linhas são empilhadas.
+             - wrap(enrolar): Os itens flexíveis são quebrados em multiplas linhas.
+            */
+            flex-wrap: wrap;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 50px);
+        }
+
+        /*flex container*/
+        div > div{
+            box-sizing: border-box;
+            border: 2px solid #8c8c8c;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #item1{
+            background-color: #8cffa0;
+            min-height: 30px;
+        }
+
+        #item2{
+            background-color: #a0c8ff;
+            min-height: 50px;
+        }
+
+        #item3{
+            background-color: #ffa08c;
+            min-height: 40px;
+        }
+
+        #item4{
+            background-color: #ffff8c;
+            min-height: 60px;
+        }
+
+        #item5{
+            background-color: #ff8cff;
+            min-height: 70px;
+        }
+
+        #item6{
+            background-color: #8cffff;
+            min-height: 50px;
+            font-size: 30px;
+        }
+
+        select{
+            font-size: 16px;
+        }
+
+        .row{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container" class="flex">
+        <div id="item1">1</div>
+        <div id="item2">2</div>
+        <div id="item3">3</div>
+        <div id="item4">4</div>
+        <div id="item5">5</div>
+        <div id="item6">6</div>
+    </div>
+
+    <div class="row">
+        <label for="display">display: </label>
+        <select id="display">
+            <option value="flex">flex</option>
+            <option value="grid">grid</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label for="values">align-content:</label>
+        <select id="values">
+            <option value="normal">normal</option>
+            <option value="stretch">stretch</option>
+            <option value="flex-start">flex-start</option>
+            <option value="flex-end">flex-end</option>
+            <option value="center" selected>center</option>
+            <option value="space-between">space-between</option>
+            <option value="space-around">space-around</option>
+            <option value="space-evenly">space-evenly</option>
+            <option value="start">start</option>
+            <option value="end">end</option>
+            <option value="baseline">baseline</option>
+            <option value="first baseline">first baseline</option>
+            <option value="last baseline">last baseline</option>
+            <option value="safe center">safe center</option>
+            <option value="unsafe center">unsafe center</option>
+            <option value="safe right">safe right</option>
+            <option value="unsafe right">unsafe right</option>
+            <option value="safe end">safe end</option>
+            <option value="unsafe end">unsafe end</option>
+            <option value="safe flex-end">safe flex-end</option>
+            <option value="unsafe flex-end">unsafe flex-end</option>
+        </select>
+    </div>
+</body>
+</html>

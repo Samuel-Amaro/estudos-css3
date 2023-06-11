@@ -1,0 +1,53 @@
+<!--
+    * O SELETOR DE ID CSS
+
+        - O seletor id usa o atributo id de um elemento HTML para selecionar um elemento específico.
+
+        - O id de um elemento é único dentro de uma página, então o seletor de id é usado para selecionar um elemento único!
+
+        - Para selecionar um elemento com um id específico, escreva um caractere hash (#), seguido do id do elemento.
+
+        - Nota: Um nome de id não pode começar com um número!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--
+        - Um CSS interno é usado para definir um estilo para uma única página HTML.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento.
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style>
+        /*
+            - uma regra css formada por:
+
+            seletor{
+                //bloco de declaração
+            }
+            
+            - um seletor de id, seleciona um elemento com base no id atributo para selecionar um elemento especifico, como o id e um valor unico e exclusivo so seleciona um elemento unico e especifico, a regra css abaixo ira ser aplicada a um elemento p que possua um id atributo com o valor (para1), isso ira selecionar p elemento html <p> que irei estilizar, seleciona so um elemento html <p> que possua o id especificado.
+            - para selecionar um elemento com um id especifico, escrever o caractere hash(#) seguido do id elemento.
+        */
+        #para1{ /*bloco de declaração*/
+            /*
+             - declaração css, e separada por (;)
+             - uma declaração e composta por uma propriedade e valor que são separadas por (:)
+            */
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        - O atributo HTML id é usado para especificar um id exclusivo para um elemento HTML.
+        - O id atributo é usado para apontar para uma declaração de estilo específica em uma folha de estilo.
+    -->
+    <p id="para1">Olá Mundo!</p>
+    <p>Este parágrafo não é afetado pelo estilo.</p>
+
+</body>
+</html>

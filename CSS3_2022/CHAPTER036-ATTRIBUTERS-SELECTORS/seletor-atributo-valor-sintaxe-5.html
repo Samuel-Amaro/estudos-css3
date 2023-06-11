@@ -1,0 +1,43 @@
+<!--
+    * SELETOR DE [attribute$="value"] CSS
+
+        - O [attribute$="value"] seletor é usado para selecionar elementos cujo valor de atributo termina com um valor especificado.
+
+        - O exemplo a seguir seleciona todos os elementos com um valor de atributo de classe que termina com "test":
+
+        - Nota: O valor não precisa ser uma palavra inteira!  
+
+    * SINTAXE CSS:
+
+        attribute $= value {
+            css declarations;
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seletor de atributos
+         - estilizando elementos que possuem um atributo ou valor de atributo especifico.
+         -  O [attribute$="value"] seletor é usado para selecionar elementos cujo valor de atributo termina com um valor especificado.
+         - no exemplo abaixo o seletor ira selecionar todos os elementos que tenham o atributo class especificado cujo valor do atributo termina com "test"
+        */
+        [class$="test"] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Seletor [attribute$="value"] CSS</h2>
+    
+    <div class="first_test">O primeiro elemento div.</div>
+    <div class="second">O segundo elemento div.</div>
+    <div class="my-test">O terceiro elemento div.</div>
+    <p class="mytest">Este é algum texto em um parágrafo.</p>
+
+</body>
+</html>

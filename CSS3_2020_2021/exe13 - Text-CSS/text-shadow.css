@@ -1,0 +1,15 @@
+/*
+ * CSS TEXT SHADOW( EFEITO DE SOMBRA NO TEXTO)
+
+  - A text-shadow propriedade adiciona sombra ao texto.
+  - Em seu uso mais simples, você especifica apenas a sombra horizontal (2px) e a sombra vertical (2px):
+*/
+h1{
+    text-shadow: 2px 2px;
+}
+h2{
+    text-shadow: 2px 2px red;
+}
+h3{
+    text-shadow: 2px 2px 5px red;
+}

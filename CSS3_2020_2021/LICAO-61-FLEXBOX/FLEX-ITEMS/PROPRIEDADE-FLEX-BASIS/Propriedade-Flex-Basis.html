@@ -1,0 +1,84 @@
+<!--
+    * A PROPRIEDADE FLEX-BASIS(base flexível)
+
+     - A flex-basis propriedade especifica o comprimento inicial de um item flexível.
+
+     - Especifica o comprimento inicial de um item flexível.
+
+    * DEFINIÇÃO E USO
+
+      - A flex-basis propriedade especifica o comprimento inicial de um item flexível.
+      
+      - A propriedade CSS define o tamanho principal inicial de um item flexível. Ele define o tamanho da caixa de conteúdo, a menos que seja definido de outra forma com .flex-basis box-sizing
+
+      - Observação: se o elemento não for um item flexível, a flex-basis propriedade não terá efeito.
+
+    * SINTAXE CSS:
+
+      flex-basis: number|auto|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      <'width'> : Um absoluto <length>, a <percentage>da propriedade de tamanho principal do contêiner flexível pai ou a palavra-chave auto. Os valores negativos são inválidos. O padrão é auto. number: Uma unidade de comprimento, ou porcentagem, especificando o comprimento inicial do (s) item (ns) flexível (is);
+
+      content: Indica o dimensionamento automático, com base no conteúdo do item flexível.
+
+      auto: Valor padrão. O comprimento é igual ao comprimento do item flexível. Se o item não tiver comprimento especificado, o comprimento será de acordo com seu conteúdo
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itens Flex - Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*especificando o tipo de alinhamento vertical que os itens flexiveis que são filhos diretos deste container vão ter, isso so e usando quando os itens flexiveis não usam todo espaço reservado disponivel no eixo cruzado para eles. stretch(esticam): Predefinição. Os itens são esticados para caber no contêiner; itens são esticados para prencher o recipiente(container na vertical)*/
+            align-items: stretch;
+            background-color: #f1f1f1;
+        }
+        /*filhos diretos do container flex são itens flex*/
+        div.flex-container > div{
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        /*esta propriedade especifica um comprimento inicial de um item flexivel, neste exemplo estou especificando que o terceiro item flexivel que e filho direito do conteiner flex tera uma largura de 200px definida inicialmente, dependendo da flex-direction, se for row(o comprimento e largura cresce em horizontal) se for column(e altura cresce na vertical)*/
+        div#fb-200{
+           flex-basis: 300px; 
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Itens Flex - Flex Box</h1>
+
+    <p><strong>Exemplo:</strong> Defina o comprimento inicial do terceiro item flexível para 200 pixels:</p>
+
+    <h2>A propriedade flex-basis</h2>
+
+    <p><strong>Exemplo:</strong> Defina o comprimento inicial do terceiro item flexível para 200 pixels:</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div id="fb-200">3</div>
+        <div>4</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--
+    * MAIS EXEMPLOS DE TRANSIÇÃO
+
+     - As propriedades de transição CSS podem ser especificadas uma a uma, assim:
+
+     transition : Uma propriedade abreviada para definir as quatro propriedades de transição em uma única propriedade;
+
+     transition-delay : Especifica um atraso (em segundos) para o efeito de transição
+
+     transition-duration : Especifica quantos segundos ou milissegundos um efeito de transição leva para completar
+
+     transition-property : Especifica o nome da propriedade CSS o efeito de transição é para
+
+     transition-timing-function : Especifica a curva de velocidade do efeito de transição
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transições</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background: red;
+            /**
+              - especificando propriedade por propriedade uma a uma;
+            **/
+
+            /*especifica em qual propriedade css a transição vai ser aplicada*/
+            transition-property: width;
+            /*a duração do efeito de transição na propriedade*/
+            transition-duration: 2s;
+            /*(transition-timing-function) espeicificando como sera a curva de velocidade do efeito de transição na propriedade, (linear)especifica um efeito de transição com mesma velocidade no inicio e fim*/
+            transition-timing-function: linear;
+            /*antes de o efeito de transição ocorrer vai haver um atraso proposital para que o efeito demore 1 segundo antes de ocorre, especifica um atraso em tempo, antes da transição ocorrer*/
+            transition-delay: 1s;
+
+            /* ou usando a prorpriedade abreviada(shorthand) transition:
+            */
+            /*transition: width 2s linear 1s;*/
+        }
+        /**
+         - para que o efeito de transição funcione na propriedade especificada, a propriedade precisa receber um novo valor, para que a transição ocorra, esse valor, neste exemplo e obtido dinamicamente, por meio de um passar do mouse sobre um elemento
+        */
+        div:hover{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transição</h1>
+    
+    <h2>As propriedades de transições especificadas uma a uma</h2>
+
+    <p><strong>Exemplo:</strong> Passe o mouse sobre o elemento div abaixo para ver o efeito de transição:</p>
+
+    <div></div>
+</body>
+</html>

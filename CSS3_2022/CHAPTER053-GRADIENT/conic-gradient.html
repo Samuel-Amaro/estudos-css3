@@ -1,0 +1,44 @@
+<!--
+    * CONIC-GRADIENT() - gradiente conico
+
+        A função CSS conic-gradient() cria uma imagem que consiste em um gradiente com transições de cores giradas em torno de um ponto central (em vez de irradiar do centro). Exemplos de gradientes cônicos incluem gráficos de pizza e rodas de cores. O resultado da função conic-gradient() é um objeto do tipo de dados <gradient>, que é um tipo especial de <image>.
+
+    * SINTAXE
+
+        /* Um gradiente cônico girado 45 graus, começando azul e terminando vermelho */
+        conic-gradient(from 45deg, blue, red);
+
+        /* Uma caixa roxa azulada: o gradiente vai do azul ao vermelho, mas apenas o quadrante inferior direito é visível, pois o centro do gradiente cônico está no canto superior esquerdo */
+        conic-gradient(from 90deg at 0 0, blue, red);
+
+        /* Roda de cores */
+        background: conic-gradient(
+            hsl(360, 100%, 50%),
+            hsl(315, 100%, 50%),
+            hsl(270, 100%, 50%),
+            hsl(225, 100%, 50%),
+            hsl(180, 100%, 50%),
+            hsl(135, 100%, 50%),
+            hsl(90, 100%, 50%),
+            hsl(45, 100%, 50%),
+            hsl(0, 100%, 50%)
+        );
+
+    * VALORES
+
+        <angle(angulos)>: Precedido pelo termo-chave from, e tomando um ângulo como seu valor, define a rotação do gradiente no sentido horário.
+
+        <position(posição)>: Usando os mesmos valores de comprimento, ordem e termo-chave que a propriedade background-position, a posição define o centro do gradiente. Se omitido, o valor padrão é center, significando que o gradiente será centralizado.
+
+        <angular-color-stop(parada de cor angular)>: Um valor de <color> de uma parada de cor, seguido por uma ou duas posições de parada opcionais (um <ângulo> ao longo do eixo da circunferência do gradiente).
+
+        <color-hint(dica de cor):> Uma dica de interpolação definindo como o gradiente progride entre as paradas de cores adjacentes. O comprimento define em que ponto entre duas paradas de cores a cor do gradiente deve atingir o ponto médio da transição de cores. Se omitido, o ponto médio da transição de cores é o ponto médio entre duas paradas de cores.
+
+    * DESCRIÇÃO:
+
+        Como em qualquer gradiente, um gradiente cônico não possui dimensões intrínsecas ; isto é, não tem tamanho natural ou preferido, nem proporção preferida. Seu tamanho concreto corresponderá ao tamanho do elemento ao qual se aplica ou ao tamanho do <image> se estiver definido como algo diferente do tamanho do elemento.
+
+        Para criar um gradiente cônico que se repete para preencher uma rotação de 360 ​​graus, use a repeating-conic-gradient() função.
+
+        Como <gradient>s pertence ao <image> tipo de dados, eles só podem ser usados ​​onde <image>s pode ser usado. Por esse motivo, conic-gradient()não funcionará em background-color outras propriedades que usam o <color>tipo de dados.
+-->

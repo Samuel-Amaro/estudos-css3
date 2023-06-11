@@ -1,0 +1,85 @@
+<!--
+    * DICA DE FERRAMENTA BÁSICA
+
+      - Crie uma dica de ferramenta que aparece quando o usuário move o mouse sobre um elemento:
+
+      - Exemplo Explicado
+
+         - HTML: use um elemento de contêiner (como <div>) e adicione a "tooltip"classe a ele. Quando o usuário passa o mouse sobre este <div>, ele mostra o texto da dica de ferramenta.
+
+        - O texto da dica de ferramenta é colocado dentro de um elemento embutido (como <span>) com class="tooltiptext".
+
+        - CSS: O tooltipuso da classe position:relative, que é necessário para posicionar o texto da dica de ferramenta ( position:absolute).
+
+        - A tooltiptext classe contém o texto de dica de ferramenta real. Ele está oculto por padrão e ficará visível ao pairar (veja abaixo). Também adicionamos alguns estilos básicos: largura de 120px, cor de fundo preta, cor de texto branca, texto centralizado e preenchimento superior e inferior de 5px.
+
+        - A border-radius propriedade CSS é usada para adicionar cantos arredondados ao texto da dica de ferramenta.
+
+        - O :hover seletor é usado para mostrar o texto da dica de ferramenta quando o usuário move o mouse sobre o <div> com class="tooltip".
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Basic</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        div.tooltip{
+            position: relative;
+            display: inline-block;
+            border-bottom-width: 1px;
+            border-bottom-style: dotted;
+            border-bottom-color: black;
+        }
+        /*seletor do elemento div e seu respectivo descendente identificado por classe*/
+        div.tooltip  span.tooltiptext{
+            /*
+            visibility: A propriedade CSS de visibilidade pode mostrar ou ocultar um elemento sem afetar o layout de um documento (ou seja, o espaço é criado para elementos independentemente de serem visíveis ou não). 
+            hidden A caixa do elemento é invisível (não desenhada), mas ainda afeta o layout normalmente. Os descendentes do elemento ficarão visíveis se tiverem sido visibility configurados como visible. 
+            */
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 0px;
+            padding-left: 0px;
+            /*posição do elemento em relação ao seu elemento pai mais proximo*/
+            position: absolute;
+            /*esta propriedade define que este elemento deve sobrepor o elemento pai dele*/
+            z-index: 1;
+        }
+        /*ao passar o mouse por cima do elemento div e seu respectivo descendente especificado*/
+        div.tooltip:hover span.tooltiptext{
+            /*elemento se torna visivel no layout*/
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Dica de ferramenta Básica - Tooltip</h1>
+
+    <p><strong>Exemplo:</strong>Crie uma dica de ferramenta que aparece quando o usuário move o mouse sobre um elemento:</p>
+
+    <p>Passe o mouse sobre o texto abaixo:</p>
+
+    <div class="tooltip">
+        Passe o mouse sobre mim
+        <span class="tooltiptext">Texto de dica de ferramenta</span>
+    </div>
+
+    <p>Observe que a posição do texto da dica de ferramenta não é muito boa. Volte para o tutorial e continue lendo sobre como posicionar a dica de ferramenta de maneira desejável.</p>
+
+
+
+</body>
+</html>

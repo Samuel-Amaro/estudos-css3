@@ -1,0 +1,32 @@
+<!--
+    * CENTRALIZE UMA IMAGEN
+
+      - Para centralizar uma imagem, defina as margens esquerda e direita como auto e transforme-a em um block elemento:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos de Imagens</title>
+    <style>
+        img{
+            width: 50%;
+            /*o elemento <img> sera exibido como um elemento em bloco, antes de ser renderizado no layout do documento, ele quebra uma linha antes*/
+            display: block;
+            /*a margen externa esquerda, isso e da border a algum elemento ou o proprio documento na esquerda, ou algum elemento ancestral, configura sua medida automaticamente*/
+            margin-left: auto;
+            /*mesma coisa a direita*/
+            margin-right: auto;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Estilos de Imagens</h1>
+    <h2>Centralize uma imagen</h2>
+    <p><strong>Exemplo:</strong> Para centralizar uma imagem, defina as margens esquerda e direita como automáticas e transforme-as em um elemento de bloco.</p>
+    <img src="../paris.jpg" alt="Paris">
+</body>
+</html>

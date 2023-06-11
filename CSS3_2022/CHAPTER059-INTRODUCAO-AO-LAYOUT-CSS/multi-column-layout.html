@@ -1,0 +1,40 @@
+<!--
+    * MULTI COLUMN LAYOUT(LAYOU DE MULTIPLAS COLUNAS)
+
+        O módulo CSS de layout de várias colunas nos fornece uma maneira de dispor o conteúdo em colunas, semelhante a como o texto flui em um jornal. Embora a leitura de colunas para cima e para baixo seja menos útil em um contexto da Web devido aos usuários terem que rolar para cima e para baixo, organizar o conteúdo em colunas pode, no entanto, ser uma técnica útil.
+
+        Para transformar um bloco em um contêiner de várias colunas, usamos a column-count propriedade, que informa ao navegador quantas colunas gostaríamos de ter, ou a column-width propriedade, que informa ao navegador para preencher o contêiner com o maior número possível de colunas de um largura especificada .
+
+        No exemplo abaixo, começamos com um bloco de HTML dentro de um <div> elemento contendo uma classe de container.
+
+        Estamos usando um column-width de 200 pixels nesse contêiner, fazendo com que o navegador crie quantas colunas de 200 pixels couberem. Qualquer espaço deixado entre as colunas será compartilhado.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        .container{
+            /*
+             - informa ao navegador para preencher o contêiner com o maior número possível de colunas de um largura especificada .
+            */
+            column-width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1>Multi-column Layout</h1>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quidem atque temporibus molestias mollitia doloremque quia aspernatur quaerat fugit iure in, debitis facilis, hic quibusdam officiis, tenetur dicta. Enim, expedita. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, facilis nihil enim ea voluptatem hic maxime temporibus repudiandae minus voluptas cumque magni possimus doloremque tempore quia officia nisi maiores fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit laborum tenetur similique repellendus, accusantium, quos totam iusto non consequuntur consequatur mollitia unde aliquid fugiat at eos? Nesciunt harum consectetur maiores?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quisquam fugit enim nobis, tempore ad quas maiores voluptatem, distinctio dolor eius rerum culpa eveniet quo obcaecati minima dolorem fugiat sequi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, laborum magnam, eum possimus corporis, repellendus eius nulla nemo cumque magni pariatur rem facere nostrum atque amet ut. Vel, fuga soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde quod quaerat ratione quos blanditiis natus adipisci deleniti delectus voluptatibus tenetur molestiae omnis repellat facilis, nam, sunt deserunt corrupti! Aliquid.</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis adipisci sint neque quo ab voluptate, amet corrupti nobis, commodi doloribus recusandae officia ducimus in. Suscipit saepe fugiat ullam possimus. Quam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta cum vitae, commodi quod fuga minima vero, voluptatum ex in aliquam eaque perspiciatis rerum, delectus nesciunt nisi? Commodi, expedita aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque repudiandae dolorum sunt praesentium adipisci unde nobis. Numquam doloremque, voluptas modi excepturi quo dolore fugit aliquid, officia nesciunt, ab ipsum non?</p>
+    </div>
+
+</body>
+</html>

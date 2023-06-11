@@ -1,0 +1,110 @@
+<!--
+    * USANDO ALIGN-SELF(ALINHAMENTO PRÓPRIO)
+
+        Neste próximo exemplo, estou usando a align-self propriedade, para demonstrar os diferentes valores de alinhamento. A primeira área mostra o comportamento padrão de align-self, que é esticar(stretch). O segundo item, tem um align-self valor de start, o terceiro ende o quarto center
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container*/
+        .wrapper{
+            display: grid;
+            /*faixa de colunas explicita - faixa de 8 colunas flexiveis diminue e crescem de acordo com o espaço no conteiner-grip*/
+            grid-template-columns: repeat(8, 1fr);
+            /*espaço entre faixas de colunas e linhas - cria um espaço vazio de 10px*/
+            gap: 10px;
+            /*altura das faixas de linhas implicitas*/
+            grid-auto-rows: 100px;
+            /*
+             - posicionando areas no grid - definido o layout da grid - grid completa
+             - definimos 4 areas de grade, onde itens estão posicionados.
+             - area de grade abrange uma ou mais celulas por linha ou por coluna. cada item dentro de uma area de grade sera alinhado. temos quatro areas.
+            */
+            grid-template-areas: 
+                "a a a a b b b b"
+                "a a a a b b b b"
+                "c c c c d d d d"
+                "c c c c d d d d";
+        }
+
+        /*iten-grid*/
+        .item1{
+            /*define nome da area*/
+            grid-area: a;
+            /*o comportamento padrão de align-self, que é esticar(stretch)*/
+            /*align-self: strech;*/
+        }
+
+        /*iten-grid*/
+        .item2{
+            /*define nome da area*/
+            grid-area: b;
+            /*
+             - a propriedade align-self controlam o alinhamento no eixo do bloco.
+             - para definir o alinhamento de um item individualmente no eixo do bloco usar a propriedade align-self
+             - alinha a area definida no grid no eixo de bloco.
+             - estamos alterando o alinhamento do item dentro da área da grade em que você o colocou. 
+             - estamos alterando o alinhamento somente do iten que esta dentro da area b
+            */
+            align-self: start;
+        }
+
+        /*iten-grid*/
+        .item3{
+            /*define nome da area*/
+            grid-area: c;
+            /*
+             - estamos alterando o alinhamento somente do iten que esta dentro da area c
+            */
+            align-self: end;
+        }
+
+        /*iten-grid*/
+        .item4{
+            /*define nome da area*/
+            grid-area: d;
+            /*
+             - estamos alterando o alinhamento somente do iten que esta dentro da area d
+            */
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+</body>
+</html>

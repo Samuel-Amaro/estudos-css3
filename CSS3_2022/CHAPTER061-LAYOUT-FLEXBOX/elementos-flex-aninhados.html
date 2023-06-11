@@ -1,0 +1,141 @@
+<!--
+    * ELEMENTOS FLEX ANINHADOS
+
+        É possível criar layouts bem complexos com flexbox. É perfeitamente aceitável configurar um elemento flex para também ser um container, para que seus filhos também se comportem como caixas flex. 
+
+        O HTML desse exemplo é relativamente simples. Temos um elemento <section> contendo três <article>. O terceiro desses <article> contém três elementos <div>:
+
+        Vamos dar uma olhada no código que usamos no layout.
+
+        Em seguida, configuramos alguns valores flex nos próprios elementos <article>. Veja especialmente a segunda regra aqui — estamos configurando para que o terceiro <article> tenha seus filhos arranjados como elementos flex também, mas desta vez eles estarão dispostos em coluna.   
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>Complex flexbox example</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            background: purple;
+            height: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+
+        /* Add your flexbox CSS below here */
+
+        /*
+         - define o elemento <section> como flex-container e seus filhos flex-itens
+         - Primeiro, configuramos para que os filhos da <section> se arranjem como elementos flex.
+        */
+        section {
+            display: flex;
+        }
+
+        /*
+         - Em seguida, configuramos alguns valores flex nos próprios elementos <article>. Veja especialmente a segunda regra aqui — estamos configurando para que o terceiro <article> tenha seus filhos arranjados como elementos flex também, mas desta vez eles estarão dispostos em coluna.
+        */
+        article {
+            flex: 1 200px;
+        }
+
+        /*
+         - o terceiro elemento <article> filho  de um pai qualquer
+        - sera um flex container, e seus filhos serão flex-itens
+        */
+        article:nth-of-type(3) {
+            flex: 3 200px;
+            display: flex;
+            flex-flow: column;
+        }
+
+        /*
+         - Depois, selecionamos o primeiro elemento <div>. Primeiro usamos flex:1 100px; para efetivamente dar a ele a altura de 100px, depois configuramos para que seus filhos (os elementos <button>) se arranjem como elementos flex. Aqui, nós os arranjamos em uma linha que os envolvem, e os alinhamos no centro do espaço disponível, como fizemos no exemplo do botão individual que vimos anteriormente.
+         - o terceiro elemento <article> de um pai qualquer, que tenha o primeiro filho o elemento <div>, fara o elemento div, de um flex-item para um flex-container
+        */
+        article:nth-of-type(3) div:first-child {
+            flex: 1 100px;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        /*
+         - Finalmente, configuramos alguns tamanhos no botão, mas o mais interessante é que demos a ele o valor 1 para a propriedade flex. Isso dá um resultado interessante, que você verá se redimensionar a largura da janela do seu navegador. Esses botões tomarão o máximo de espaço que puderem e ficarão ao máximo na mesma linha, se puderem, mas quando não puderem mais caber na mesma linha, os que estão muito apertados irão para novas linhas de forma que o layout não quebre e o conteúdo ainda esteja legível ao usuário.
+        */
+        button {
+            flex: 1 auto;
+            margin: 5px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Complex flexbox example</h1>
+    </header>
+
+    <section>
+        <article>
+            <h2>First article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Second article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <div>
+                <button>Smile</button>
+                <button>Laugh</button>
+                <button>Wink</button>
+                <button>Shrug</button>
+                <button>Blush</button>
+            </div>
+            <div>
+                <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                    carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore
+                    hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia
+                    iPhone photo booth health goth gastropub hammock.</p>
+            </div>
+            <div>
+                <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo
+                    8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings
+                    cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art
+                    party.</p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

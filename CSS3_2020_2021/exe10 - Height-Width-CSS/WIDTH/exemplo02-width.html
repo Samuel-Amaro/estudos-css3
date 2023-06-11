@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 02</title>
+    <style>
+        img.normal{
+            /*o proprio navegador calcula a largura*/
+            width: auto;
+        }
+        img.big{
+            /*a imagen tem 50% de largura da pagina, em relação ao corpo da pagina, o elemento que contem a img e o porprio body, então a img ocupa 50% da largura da pagina*/
+            width: 50%;
+        }
+        img.small{
+            /*a imagen tem 10% de largura da pagina. em relação ao corpo da pagina a img so ocupa 10% da largura da pagina. outras 90% e da pagina., o elemento que contem a img e o porprio body, então a img ocupa 10% da largura da pagina*/
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exemplo 02 de largura</h1>
+
+    <p><strong>Exemplo 02:</strong> Definindo uma largura de uma imagen. Defina a largura de um elemento &gt;img&lt; usando um valor percentual:</p>
+
+    <img class="normal" src="logocss.gif" alt="imagen" width="95px" height="84px">
+    <br>
+    <img class="big" src="logocss.gif" alt="imagen" width="95px" height="84px">
+    <br>
+    <img class="small" src="logocss.gif" alt="imagen" width="95px" height="84px">
+
+</body>
+</html>

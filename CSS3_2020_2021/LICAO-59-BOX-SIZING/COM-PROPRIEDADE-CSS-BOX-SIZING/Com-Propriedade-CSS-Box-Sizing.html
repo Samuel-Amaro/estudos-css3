@@ -1,0 +1,72 @@
+<!--
+    * COM A PROPRIEDADE CSS Box-Sizing
+
+      - A box-sizing propriedade nos permite incluir o preenchimento e a borda na largura e altura total de um elemento.
+
+      - Se você definir box-sizing: border-box;um elemento, o preenchimento e a borda serão incluídos na largura e na altura:
+
+      - Como o resultado de usar o box-sizing: border-box;é muito melhor, muitos desenvolvedores desejam que todos os elementos em suas páginas funcionem dessa maneira.
+
+      - O código abaixo garante que todos os elementos sejam dimensionados de forma mais intuitiva. Muitos navegadores já usam box-sizing: border-box;para muitos elementos de formulário (mas não todos - é por isso que as entradas e as áreas de texto parecem diferentes na largura: 100%;).
+
+      - Aqui está o mesmo exemplo acima, box-sizing: border-box; adicionado a ambos os elementos <div>:
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo box-sizing</title>
+    <style>
+        div.div1{
+            width: 300px; /*300px + 0px(padding-rigth)  + 0px(padding-left) + 1px(border-right) + 1px(border-left) = 300px largura final estatica com box sizing especificado*/
+            height: 100px; /*100px + 0px(padding-top)  + 0px(padding-bottom) + 1px(border-top) + 1px(border-bottom) = 100px altura final com box sizing especificado*/
+            /*especificando a border*/
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: blue;
+            border-style: solid;
+            /*especificando o box-sizing no elemento*/
+            box-sizing: border-box;
+        }
+        div.div2{
+            width: 300px; /*300px + 50px direita(padding) + 50px esquerda(padding) + 1px direita(border) + 1px esquerda(border) = 300px largura final statica com box sizing definido*/
+            height: 100px; /*100px + 50px(padding-top) + 50px(padding-bottom) + 1px (border-top) + 1px (border-bottom) = 102px altura final statica com box sizing definido*/
+            /*especificando a border*/
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: red;
+            border-style: solid;
+            /*especificando o padding(preenchimento)*/
+            padding-top: 50px;
+            padding-right: 50px;
+            padding-bottom: 50px;
+            padding-left: 50px;
+            /*especificando o box-sizing no elemento*/
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exemplo box-sinzing</h1>
+
+    <p><strong>Exemplo:</strong> Aqui está o mesmo exemplo acima, box-sizing: border-box; adicionado a ambos os elementos &lt;div&gt;</p>
+
+    <h2>Com a propriedade: CSS box-sizing: border-box;</h2>
+
+    <div class="div1">Ambos os divs têm o mesmo tamanho agora!</div>
+
+    <br>
+
+    <div class="div2">Viva!</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!--
+    * :nth-last-of-type()
+
+        A pseudo-classe :nth-last-of-type() CSS combina elementos com base em sua posição entre irmãos do mesmo tipo (nome da tag), contando a partir do final.
+
+        /*Seleciona cada quarto elemento <p>
+         entre qualquer grupo de irmãos,
+         contando para trás a partir do último*/
+        p:nth-last-of-type(4n) {
+            color: lime;
+        }
+
+        Nota: Esta pseudo-classe é essencialmente a mesma que :nth-of-type, exceto que conta os itens para trás a partir do final , não para frente desde o início.
+
+    * Sintaxe
+
+        A nth-last-of-type pseudoclasse é especificada com um único argumento, que representa o padrão para os elementos correspondentes, contando a partir do final.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - Seleciona o segundo elemento <p>
+         entre qualquer grupo de irmãos,
+         contando para trás a partir do último, seleciona o penultimo elemento elemento span. 
+        */
+        span:nth-last-of-type(2) {
+            background-color: lime;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <span>This is a span.</span>
+        <span>This is another span.</span>
+        <em>This is emphasized.</em>
+        <span>Wow, this span gets limed!!!</span>
+        <del>This is struck through.</del>
+        <span>Here is one last span.</span>
+    </div>
+      
+      
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--
+    * position: absolute;
+
+        - Um elemento com position: absolute;é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+
+        - No entanto; se um elemento posicionado absoluto não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+
+        - Nota: Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        div.relative{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            /*define a largura do elemento, como uma largura absoluta um tamanho especifico em px*/
+            width: 400px;
+            /*define a altura de um elemento com um valor absoluto em px*/
+            height: 200px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+        div.absolute{
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancentral desta div com position absolute e uma div com postion relative, que esta em sua posição normal
+             - Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+            */
+            position: absolute;
+            /*
+             -  As propriedades top, right, bottom e left são usadas para posicionar o elemento. em relação ao elemento ancentral mais proximo, se não tiver sera o body o padrão.
+            */
+            top: 80px;
+            right: 0;
+            /*define a largura do elemento, como uma largura absoluta um tamanho especifico em px*/
+            width: 200px;
+            /*define a altura de um elemento com um valor absoluto em px*/
+            height: 100px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>position: absolute;</h2>
+
+    <p>Um elemento com position: absoluto; é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização, como fixo):</p>
+
+    <div class="relative">Este elemento div tem position: relative;
+        <div class="absolute">Este elemento div tem position: absolute;</div>
+    </div>
+
+</body>
+</html>

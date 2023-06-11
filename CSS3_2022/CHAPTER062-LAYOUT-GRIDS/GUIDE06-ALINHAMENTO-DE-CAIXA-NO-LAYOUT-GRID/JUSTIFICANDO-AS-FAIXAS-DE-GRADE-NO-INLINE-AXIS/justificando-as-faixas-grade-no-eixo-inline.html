@@ -1,0 +1,112 @@
+<!--
+    * JUSTIFICANDO AS FAIXAS DE GRADE NO EIXO INLINE
+
+        No eixo inline, podemos usar justify-content para executar o mesmo tipo de alinhamento que usamos align-content no eixo do bloco.
+
+        Usando o mesmo exemplo, estou configurando justify-content para space-around. Isso mais uma vez faz com que faixas que abrangem mais de uma faixa de coluna ganhem espaço extra:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /*Grid Container*/
+        .wrapper{
+            display: grid;
+            /*faixa de colunas explicita - faixa de 3 colunas com medidas de tamanho fixas especificando a largura da coluna não diminuem e nem crescem*/
+            grid-template-columns: repeat(3, 100px);
+            /*faixa de linhas explicita - faixa de 3 linhas com medidas de tamanho fixa especificando a altura da linhas que nem crescem e diminuem*/
+            grid-template-rows: repeat(3, 100px);
+            /*espaço entre faixas de colunas e linhas - cria um espaço vazio de 10px*/
+            gap: 10px;
+            /*altura e largura do conteiner grid*/
+            width: 500px;
+            height: 500px;
+            /*
+             - posicionando areas no grid - definido o layout da grid - grid completa
+             - definimos 4 areas de grade, onde itens estão posicionados.
+             - area de grade abrange uma ou mais celulas por linha ou por coluna. cada item dentro de uma area de grade sera alinhado. temos quatro areas.
+            */
+            grid-template-areas: 
+                "a a b"
+                "a a b"
+                "c d d";
+
+             /*
+             - na faixa de linhas temos um total de 300px de espaço na vertical para faixas de linhas, e menor que o conteiner grid, então sobra espaço.
+             - na faixa de colunas temos 3 colunas que juntas soman 300px de espaço na horizontal e menor que o conteiner.
+             - temos uma situação em que nossas faixas de grade usam uma área menor que o contêiner de grade, você pode alinhar as próprias faixas de grade dentro desse contêiner.
+             - propriedade align-content alinha as faixas de grade dentro do conteiner no eixo de bloco na vertical, na direção dos blocos onde são dispostos.
+             - usando o valor de distribuição de espaço space-between. Vale a pena notar que usar esses valores de distribuição de espaço pode fazer com que os itens em sua grade fiquem maiores. 
+             - A align-content propriedade é aplicada ao contêiner de grade, pois funciona em toda a grade.
+            */
+            align-content: space-between;
+            /*
+             - propriedade justify-content alinha as faixas de grade dentro do conteiner no eixo de inline na horizontal, na direção em que flue o texto dos blocos, no modo de escrita tradicional da esquerda para direita.
+             - usando o valor de distribuição de espaço space-around. Isso mais uma vez faz com que faixas que abrangem mais de uma faixa de coluna ganhem espaço extra.
+             - A justify-content propriedade é aplicada ao contêiner de grade, pois funciona em toda a grade.
+            */
+            justify-content: space-around;
+        }
+
+        /*iten-grid*/
+        .item1{
+            /*define nome da area*/
+            grid-area: a;
+        }
+
+        /*iten-grid*/
+        .item2{
+            /*define nome da area*/
+            grid-area: b;
+        }
+
+        /*iten-grid*/
+        .item3{
+            /*define nome da area*/
+            grid-area: c;
+        }
+
+        /*iten-grid*/
+        .item4{
+            /*define nome da area*/
+            grid-area: d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+</body>
+</html>

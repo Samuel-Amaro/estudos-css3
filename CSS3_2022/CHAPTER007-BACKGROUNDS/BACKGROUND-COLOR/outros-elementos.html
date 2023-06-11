@@ -1,0 +1,49 @@
+<!--
+    * OUTROS ELEMENTOS
+
+        - Você pode definir a cor de fundo para qualquer elemento HTML:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Background-Color</title>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*regra css, usando seletor de elemento e o bloco de declaração, 
+        seletor h1, seleciona o elemento html <h1>*/
+        h1{
+            /*
+             - declaração css, com propriedade : valor;
+             - a propriedade css, background-color especifica a cor de fundo de um elemento, neste elemento, especifica a cor de fundo de um elemento <h1> de um titulo de maior nivel no documento.
+            */
+            background-color: green;
+        }
+        /*regra css, seletor div para elementos <div>*/
+        div{
+            /*especifica a cor de fundo para elementos <div>, a cor e especificada pelo seu nome predefinido*/
+            background-color: lightblue;
+        }
+        /*regra css, seletor p para elementos <p>*/
+        p{
+            /*especifica a cor de fundo para elementos <p>, a cor e especificada pelo seu nome predefinido*/
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exemplo de cor de fundo CSS!</h1>
+
+    <div>
+        Este é um texto dentro de um elemento div:
+        <p>Este parágrafo tem sua própria cor de fundo.</p>
+        Ainda estamos no elemento div:
+    </div>
+
+</body>
+</html>

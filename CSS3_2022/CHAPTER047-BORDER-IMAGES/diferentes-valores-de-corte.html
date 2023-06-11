@@ -1,0 +1,61 @@
+<!--
+    * CSS border-image - DIFERENTES VALORES DE CORTE
+
+        - Diferentes valores de fatia alteram completamente a aparência da borda:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        #borderimg1{
+            /*
+             - especifica uma borda transparente não visivel pelo usuario
+             - para a propriedade css border-image funcionar precisa também da conjunto propriedades css border
+            */
+            border: 10px solid transparent;
+            padding: 15px;
+            /*
+             - especificando uma imagen para ser usada como borda ao redor de um elemento.
+             - a propriedade border-image, permite especificar uma imagem a ser usada em vez da borda normal ao redor de um elemento.
+             - A propriedade tem três partes: especificar a imagen a ser usada como borda, onde cortar a imagen, definir se as seções do meio devem ser repetidas ou esticadas.
+             - o primeiro valor especifica a imagen a ser usada como borda
+             - o segundo valor especifica onde cortar a imagen
+             - o terceiro valor define se as seções do meio devem ser repetidas ou esticadas, definimos para que a seção do meio seja repetida
+            */
+            border-image: url(border.png) 30 round;
+        }
+        #borderimg2{
+            border: 10px solid transparent;
+            padding: 15px;
+            /*
+             - o primeiro valor especifica a imagen a ser usada como borda
+             - o segundo valor especifica onde cortar a imagen
+             - o terceiro valor define se as seções do meio devem ser repetidas ou esticadas, definimos para que a seção do meio seja repetida
+            */
+            border-image: url(border.png) 20% round;
+        }
+        #borderimg3{
+            border: 10px solid transparent;
+            padding: 15px;
+            /*
+             - o primeiro valor especifica a imagen a ser usada como borda
+             - o segundo valor especifica onde cortar a imagen
+             - o terceiro valor define se as seções do meio devem ser repetidas ou esticadas, definimos para que a seção do meio seja repetida
+            */
+            border-image: url(border.png) 30% round;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade border-image</h1>
+    <p>Aqui, as seções do meio da imagem são esticadas para criar a borda:</p>
+    <p id="borderimg1">border-image: url(border.png) 50 round;</p>
+    <p id="borderimg2">border-image: url(border.png) 20% round;</p>
+    <p id="borderimg3">border-image: url(border.png) 30% round;</p>
+    <p><strong>Nota:</strong> o Internet Explorer 10 e versões anteriores não oferecem suporte à propriedade border-image.</p>
+
+</body>
+</html>

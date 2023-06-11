@@ -1,0 +1,96 @@
+<!--
+    * transition-delay
+
+        Use a transition-delay propriedade para especificar a hora em que uma transição será iniciada. Se transition-durationnão for especificado, as transições serão iniciadas instantaneamente porque o valor padrão é 0s. Esta propriedade aceita uma unidade de tempo, por exemplo segundos ( s) ou milissegundos ( ms).
+
+        Esta propriedade é útil para transições escalonadas, alcançadas definindo um tempo mais longo transition-delaypara cada elemento subsequente em um grupo.
+
+        transition-delay também é útil para depuração. Definir o atraso para um valor negativo pode iniciar uma transição ainda mais na linha do tempo.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .rectangle{
+            width: 150px;
+            max-height: 100px;
+            border-radius: 8px;
+            background-color: gold;
+            border: 5px solid gold;
+            text-align: right;
+            padding: 8px;
+            margin-bottom: 4px;
+        }
+
+        /*o primeiro elemento qualquer que seja o primeiro filho de .rectangle*/
+        .rectangle:nth-child(1){
+            /*
+             - Use a transition-delay propriedade para especificar a hora em que uma transição será iniciada. Se transition-duration não for especificado, as transições serão iniciadas instantaneamente porque o valor padrão é 0s.
+            */
+            transition-delay: 0s;
+        }
+
+        /*o segundo elemento qualquer que seja o segundo filho de .rectangle*/
+        .rectangle:nth-child(2){
+            /*
+             - Use a transition-delay propriedade para especificar a hora em que uma transição será iniciada. Se transition-duration não for especificado, as transições serão iniciadas instantaneamente porque o valor padrão é 0s.
+             - a transição de estilo do elemento sera iniciada apos passar 100ms de atraso.
+            */
+            transition-delay: 100ms;
+        }
+    
+        /*o terceiro elemento qualquer que seja o terceiro filho de .rectangle*/
+        .rectangle:nth-child(3){
+            /*
+             - Use a transition-delay propriedade para especificar a hora em que uma transição será iniciada. Se transition-duration não for especificado, as transições serão iniciadas instantaneamente porque o valor padrão é 0s.
+             - a transição de estilo do elemento sera iniciada apos passar 200ms de atraso.
+            */
+            transition-delay: 200ms;
+        }
+
+        /*o quarto elemento qualquer que seja o quarto filho de .rectangle*/
+        .rectangle:nth-child(4){
+            /*
+             - Use a transition-delay propriedade para especificar a hora em que uma transição será iniciada. Se transition-duration não for especificado, as transições serão iniciadas instantaneamente porque o valor padrão é 0s.
+             - a transição de estilo do elemento sera iniciada apos passar 500ms de atraso.
+            */
+            transition-delay: 500ms;
+        }
+
+        /*o quinto elemento qualquer que seja o quinto filho de .rectangle*/
+        .rectangle:nth-child(5){
+            /*
+             - Use a transition-delay propriedade para especificar a hora em que uma transição será iniciada. Se transition-duration não for especificado, as transições serão iniciadas instantaneamente porque o valor padrão é 0s.
+             - a transição de estilo do elemento sera iniciada apos passar 1000ms de atraso.
+            */
+            transition-delay: 1000ms;
+        }
+
+        /*
+         - pseudo-class :is(), localiza todos elementos que possuem a pseudo-classes, :hover and :focus aplicadas.
+        */
+        .rectangle:is(:hover, :focus){
+            background-color: transparent;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="rectangle" tabindex="0">no delay</div>
+    <div class="rectangle" tabindex="0">100ms delay</div>
+    <div class="rectangle" tabindex="0">200ms delay</div>
+    <div class="rectangle" tabindex="0">500ms delay</div>
+    <div class="rectangle" tabindex="0">1000ms delay</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet"/>
+    <style type="text/css">
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 20px auto;
+            max-width: 460px;
+        }
+
+        fieldset {
+            padding: 10px 30px 0;
+        }
+
+        legend {
+            color: white;
+            background: black;
+            padding: 5px 10px;
+        }
+
+        /*
+         - ao adicionar um vazio <span> para receber o conteudo gerado
+         - O problema imediato com isso foi que o span estava caindo em uma nova linha abaixo da entrada porque a input e o label são definidos com width: 100%. Para corrigir isso, estilizamos o pai <div> para se tornar um contêiner flexível, mas também dizemos a ele para envolver seu conteúdo em novas linhas se o conteúdo ficar muito longo:
+        */
+        fieldset > div {
+            margin-bottom: 20px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        button, label, input {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+        }
+
+        input {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;
+        }
+
+        input:hover, input:focus {
+            background-color: #eee;
+        }
+
+        /*
+         - Agora para o conteúdo gerado. Nós o criamos usando este CSS:
+         - Definimos o <span> para position: relative para que possamos definir o conteúdo gerado position: absolute e posicioná-lo em relação ao <span> em vez do <body> (O conteúdo gerado age como se fosse um nó filho do elemento no qual é gerado, para fins de posicionamento ).
+        */
+
+        input + span {
+            position: relative;
+        }
+
+        /*elemento input que possua o atributo required definido nele, que possua um elemento span como irmão proximo seguinte, iremos adicionar um conteudo apos o conteudo original do span*/
+        input:required + span::after {
+            font-size: 0.7rem;
+            position: absolute;
+            content: "required";
+            color: white;
+            background-color: black;
+            padding: 5px 10px;
+            top: -26px;
+            left: -70px;
+        }
+
+        button {
+            width: 60%;
+            margin: 0 auto;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <fieldset>
+            <legend>Feedback form</legend>
+            <!--
+                - Em primeiro lugar, adicionaremos um parágrafo ao topo do formulário para dizer o que você está procurando:
+            -->
+            <p>Required fields are labelled with "required".</p>
+            <div>
+                <label for="fname">First name:</label>
+                <input id="fname" name="fname" type="text" required/>
+                <!--
+                    - Como as entradas de formulário não suportam diretamente ter conteúdo gerado colocado nelas (isso ocorre porque o conteúdo gerado é colocado em relação à caixa de formatação de um elemento, mas as entradas de formulário funcionam mais como elementos substituídos e, portanto, não têm um), adicionaremos um vazio <span> para pendurar o conteúdo gerado em:
+                -->
+                <span></span>
+            </div>
+            <div>
+                <label for="email">Email address(inclua se quiser uma resposta)</label>
+                <input type="email" id="email" name="email"/>
+                <span></span>
+            </div>
+            <div>
+                <button type="button">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        /**
+         * * USANDO CONTEÚDO GERADO COM PSEUDO-CLASSES
+         * 
+         * Em artigos anteriores, vimos o uso de conteúdo gerado , mas achamos que agora seria um bom momento para falar sobre isso com um pouco mais de detalhes.
+         * 
+         * A ideia é que podemos usar os pseudo-elementos ::before e ::after junto com a propriedade content para fazer um pedaço de conteúdo aparecer antes ou depois do elemento afetado. O pedaço de conteúdo não é adicionado ao DOM, então é invisível para leitores de tela; faz parte dos estilos do documento. Por ser um pseudo elemento, ele pode ser direcionado com estilos da mesma forma que qualquer nó DOM real.
+         * 
+         * Isso é realmente útil quando você deseja adicionar um indicador visual a um elemento, como um rótulo(LABEL) ou ícone, mas não deseja que ele seja captado por tecnologias assistivas.
+         * 
+         * Isso é realmente útil - os leitores de tela já informam seus usuários quando um botão de opção(radio button) ou caixa de seleção(checkbox) que eles encontram é marcado/selecionado, então você não quer que eles leiam outro elemento DOM que indique a seleção - isso pode ser confuso. Ter um indicador puramente visual resolve esse problema.
+         * 
+         * Nota: Isso também mostra como você pode combinar uma pseudoclasse e um pseudoelemento, se necessário.
+         * 
+         * De volta ao nosso exemplo obrigatório/opcional de antes, desta vez não alteraremos a aparência da entrada em si — usaremos o conteúdo gerado para adicionar um rótulolabel) indicador
+         * 
+         * Em primeiro lugar, adicionaremos um parágrafo ao topo do formulário para dizer o que você está procurando:
+         * 
+         
+            <p>Required fields are labelled with "required".</p>
+
+         * Os usuários de leitores de tela terão a leitura "obrigatória" como uma informação extra quando chegarem a cada entrada necessária, enquanto os usuários com visão receberão nosso rótulo.
+         * 
+         * Como as entradas de formulário não suportam diretamente ter conteúdo gerado colocado nelas (isso ocorre porque o conteúdo gerado é colocado em relação à caixa de formatação de um elemento, mas as entradas de formulário funcionam mais como elementos substituídos e, portanto, não têm um), adicionaremos um vazio <span> para pendurar o conteúdo gerado em:
+         
+            <div>
+                <label for="fname">First name: </label>
+                <input id="fname" name="fname" type="text" required>
+                <span></span>
+            </div>
+
+         * O problema imediato com isso foi que o span estava caindo em uma nova linha abaixo da entrada porque a input e o label são definidos com width: 100%. Para corrigir isso, estilizamos o pai <div> para se tornar um contêiner flexível, mas também dizemos a ele para envolver seu conteúdo em novas linhas se o conteúdo ficar muito longo:
+
+            fieldset > div {
+                margin-bottom: 20px;
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+         
+         * O efeito que isso tem é que o label e a input ficam em linhas separadas porque são ambos width: 100%, mas o <span> tem uma largura de 0 para que possa ficar na mesma linha que a entrada.
+         * 
+         * Agora para o conteúdo gerado. Nós o criamos usando este CSS:
+         
+            input + span {
+                position: relative;
+            }
+
+            input:required + span::after {
+                font-size: 0.7rem;
+                position: absolute;
+                content: "required";
+                color: white;
+                background-color: black;
+                padding: 5px 10px;
+                top: -26px;
+                left: -70px;    
+            }
+
+         * 
+         * Definimos o <span> para position: relative para que possamos definir o conteúdo gerado position: absolute e posicioná-lo em relação ao <span> em vez do <body> (O conteúdo gerado age como se fosse um nó filho do elemento no qual é gerado, para fins de posicionamento ).
+         * 
+         * Em seguida, damos ao conteúdo gerado o conteúdo "required", que é o que queríamos que nosso rótulo dissesse, e o estilizamos e posicionamos como queremos.
+        */
+
+
+    </script>
+</body>
+</html>

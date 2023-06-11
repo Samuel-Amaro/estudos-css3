@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation</title>
+    <style>
+
+        /*
+          * Barra de navegação vertical fixa de altura total
+           - Crie uma navegação lateral "fixa" de altura total:
+        */
+        /*seletor body, onde vai todo o conteudo do documento html*/
+        body{
+             /*tira todos os espaços externo*/
+             margin: 0;   
+        }
+
+        /*elemento lista não ordenada*/
+        ul.barra-navegação-lateral{
+                /*lista sem estilo*/
+                list-style-type: none;
+                /*tira todo espaço externo ao redor da lista, da borda para fora*/
+                margin-top: 0;
+                margin-right: 0;
+                margin-bottom: 0;
+                margin-left: 0;
+                /*tira todo espaço interno da lista, da borda para o conteudo*/
+                padding-top: 0;
+                padding-right: 0;
+                padding-bottom: 0;
+                padding-left: 0;
+                /*largura do elemento, a lista pode ocupar 25% da largura da pagina, em relação a largura total na horizontal*/
+                width: 25%;
+                /*cor de fundo*/
+                background-color: #f1f1f1;
+                /*o elemento ul, tem sua posição fixa, ele não se move junto com a pagina, quando a pagina for rolada, esse elemento fixa fixo*/
+                position: fixed;
+                /*altura do elemento, esse elemento pode ocupar, 100% da altura da pagina*/
+                height: 100%;
+                /*trasbordamento,estouro, se o conteudo do elemento for maior que a caixa que o contem, o overflow controla isso automaticamente add, barras de rolagem*/
+                overflow: auto;
+                /*posiciona esse elemento a partir do top, de cima para baixo*/
+                top: 0;
+                /*posicionar esse elemento na esquerda, da esquerda para direita*/
+                left: 0;
+        }
+        /*elemento main (conteudo principal da pagina)*/
+        main.conteudo-principal{
+            /*add um espaço externo ao redor do elemento, um espaço externo no lado esquerdo, da esquerda para direita, esse espaço e de 25%, em relação a da largura total da pagina*/
+            margin-left: 25%;
+            /* espaço interno, entre a borda e o conteudo do elemento*/
+            padding-right: 1px;
+            padding-left: 16px;
+            /*altura do elemento*/
+            height: 1000px;
+        }       
+
+        /*para cada link que tem na lista*/
+        ul.barra-navegação-lateral > li > a{
+                /*o elemento a, sera exibido como um elemento de bloco, que podera reeber espaços configurações de estilo, preenchimento, espaço interno, externo, aumenta a area de conteudo etc...., quebra de linha para o proximo elemento*/
+                display: block;
+                /*cor do texto*/
+                color: #000;
+                /*add um espaço interno dentro do elemento, entre a borda e o conteudo*/
+                padding-top: 8px;
+                padding-bottom: 16px;
+                /*tira o estilo do link, tira o sublinhado*/
+                text-decoration: none;
+        }
+
+        /*para o elemento a que tem a class, vai ter uma configuração de estilo, para ele ficar destacado, de maneira diferente dos outros links*/
+        ul.barra-navegação-lateral > li > a.link-ativo{
+                /*cor de fundo do elemento*/
+                background-color: #4CAF50;
+                /*cor do texto*/
+                color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- lista de links não ordenada-->
+    <ul class="barra-navegação-lateral">
+        <li><a class="link-ativo" href="#home">Sobre</a></li>
+        <li><a href="#news">Notícia</a></li>
+        <li><a href="#contact">Contato</a></li>
+        <li><a href="#about">Sobre</a></li>
+    </ul>
+    
+    <main class="conteudo-principal">
+        <h1>Barra de navegação vertical fixa de altura total - Side Navigation(barra de navegação lateral)</h1>
+        <h2>Navegação lateral fixa de altura total</h2>
+        <h3>Tente rolar esta área e veja como o sidenav se fixa na página</h3>
+        <p>Observe que este elemento div tem uma margem esquerda de 25%. Isso ocorre porque a navegação lateral está configurada para 25% da largura. Se você remover a margem, o sidenav irá se sobrepor / sentar em cima deste div.</p>
+        <p>Observe também que definimos overflow: auto para sidenav. Isso adicionará uma barra de rolagem quando o sidenav for muito longo (por exemplo, se tiver mais de 50 links dentro dele).</p>
+        <p>Algum texto..</p>
+        <p>Algum texto..</p>
+        <p>Crie uma navegação lateral "fixa" de altura total:</>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, praesentium odio officiis dolorem quibusdam neque voluptatibus molestiae sapiente magnam, facilis vel maiores ullam esse veritatis eos sequi. Illum, autem quaerat.</p>
+        <p>Algum texto..</p>
+        <p>Algum texto..</p>
+        <p>Algum texto..</p>
+        <p>Algum texto..</p>
+        <p>Algum texto..</p>
+        <p>Algum texto..</p>
+        <p>Algum texto..</p>
+    </main>
+    
+</body>
+</html>

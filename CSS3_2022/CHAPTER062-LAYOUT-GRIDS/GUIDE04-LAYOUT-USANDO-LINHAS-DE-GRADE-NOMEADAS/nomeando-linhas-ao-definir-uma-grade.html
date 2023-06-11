@@ -1,0 +1,148 @@
+<!--
+    * NOMEANDO LINHAS AO DEFINIR UMA GRADE
+
+        Você pode atribuir um nome a algumas ou todas as linhas em sua grade ao definir sua grade com as propriedades grid-template-rowse grid-template-columns. Para demonstrar, usarei o layout simples criado no guia sobre posicionamento baseado em linhas. Desta vez vou criar a grade usando linhas nomeadas.
+
+        Ao definir a grade, nomeio minhas linhas entre colchetes. Esses nomes podem ser o que você quiser. Defini um nome para o início e o fim do contêiner, tanto para linhas quanto para colunas. Em seguida, defina o bloco central da grade content-startrepetidamente content-end, tanto para colunas quanto para linhas, embora você não precise nomear todas as linhas em sua grade. Você pode optar por nomear apenas algumas linhas-chave para seu layout.
+
+        Todo o resto sobre o posicionamento baseado em linha ainda funciona da mesma maneira e você pode misturar linhas nomeadas e números de linha. A nomeação de linhas é útil ao criar um design responsivo em que você redefine a grade, em vez de precisar redefinir a posição do conteúdo alterando o número da linha em suas consultas de mídia, você pode garantir que a linha sempre tenha o mesmo nome em suas definições.
+
+        DANDO ÁS LINHAS VÁRIOS NOMES
+
+            Você pode querer dar a uma linha mais de um nome, talvez denotando o fim da barra lateral e o início principal, por exemplo. Para fazer isso, adicione os nomes dentro dos colchetes com espaços em branco entre eles [sidebar-end main-start]. Você pode então se referir a essa linha por qualquer um dos nomes.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .box{
+            border: 2px solid #ffa94d;
+            border-radius: 5px;
+            background-color: #ffd8a8;
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - NOMEANDO LINHAS AO DEFINIR UMA GRADE
+             - Você pode atribuir um nome a algumas ou todas as linhas em sua grade ao definir sua grade com as propriedades grid-template-rows e grid-template-columns.
+             -  Desta vez vou criar a grade usando linhas nomeadas.
+             - DEFINE UM NOME PARA O INICIO E O FIM DO CONTEINER, TANTO PARA LINHAS QUANTO PARA COLUNAS. O CONTEINER PARA LINHAS E PARA COLUNAS.
+             - Ao definir a grade, nomeio minhas linhas entre colchetes. Esses nomes podem ser o que você quiser.
+            */
+            grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];
+            /*
+             - para definir linhas, faixa de linhas.
+             - especificando as faixas de linha de forma explicita.
+             - linhas nomeadas
+            */
+            grid-template-rows: [main-start] 100px [content-start] 100px [content-end] 100px [main-end];
+        }
+
+        /*iten grid*/
+        .box1{
+            /*
+             - POSICIONANDO ITENS POR NOME DE LINHAS
+             - Uma vez que as linhas tenham nomes, podemos usar o nome para colocar o item em vez do número da linha.
+             - Podemos usar o posicionamento baseado em nome de linha para controlar onde esses itens ficam na grade
+             - o primeiro iten grid e posicionado contra a linha nomeada main-start na faixa de colunas e se estende até a linha content-start na faixa de colunas pois por padrão se estende por somente uma faixa. assim não precisa especificar o grid-column-end.
+            */
+            grid-column-start: main-start;
+            /*
+             - começa na linha main-start da faixa de linhas
+            */
+            grid-row-start: main-start;
+            /*
+             - termina na linha main-end
+            */
+            grid-row-end: main-end;
+        }
+
+        /*iten grid*/
+        .box2{
+            /*
+             - o segundo iten grid e posicionado contra a linha content-start da faixa de colunas. e se estende até a linha content-end na faixa de colunas pois por padrão se estende por somente uma faixa. assim não precisa especificar o grid-column-end.
+            */
+            grid-column-start: content-start;
+            /*
+             - começa na linha main-start da faixa de linhas. e se estende até a linha content-end na faixa de linhas pois por padrão se estende por somente uma faixa. 
+            */
+            grid-row-start: main-start;
+        }
+
+        /*iten grid*/
+        .box3{
+            /*
+             - o terceiro iten grid e posicionado contra a linha content-end da faixa de colunas. e se estende até a linha main-end na faixa de colunas pois por padrão se estende por somente uma faixa. 
+            */
+            grid-column-start: content-end;
+            /*
+             - começa na linha main-start da faixa de linhas.
+            */
+            grid-row-start: main-start;
+            /*
+             - e se extende atá a linha content-end da faixa de linhas.
+            */
+            grid-row-end: content-end;
+        }
+
+        /*iten grid*/
+        .box4{
+            /*
+             - o quarto iten grid e posicionado contra a linha content-start da faixa de colunas.
+            */
+            grid-column-start: content-start;
+            /*
+             - se estende até a main-end linha na faixa de colunas
+            */
+            grid-column-end: main-end;
+            /*
+             - começa na linha content-end da faixa de linhas. e se estende até a linha main-end na faixa de linhas pois por padrão se estende por somente uma faixa. 
+            */
+            grid-row-start: content-end;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+    </div>
+
+</body>
+</html>

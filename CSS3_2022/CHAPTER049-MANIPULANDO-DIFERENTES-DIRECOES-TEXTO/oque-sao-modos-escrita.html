@@ -1,0 +1,41 @@
+<!--
+    * OQUE SÃO MODOS DE ESCRITA?
+
+        Um modo de escrita em CSS refere-se a se o texto está sendo executado horizontalmente ou verticalmente. A writing-mode propriedade nos permite alternar de um modo de escrita para outro. Você não precisa estar trabalhando em um idioma que usa um modo de escrita vertical para querer fazer isso - você também pode alterar o modo de escrita de partes do seu layout para fins criativos.
+
+        No exemplo abaixo, temos um título exibido usando writing-mode: vertical-rl. O texto agora é executado verticalmente. O texto vertical é comum no design gráfico e pode ser uma maneira de adicionar uma aparência mais interessante ao seu design da web.
+
+    Os três valores possíveis para a writing-mode propriedade são:
+
+        horizontal-tb: Direção de fluxo do bloco de cima para baixo. As frases correm horizontalmente.
+
+        vertical-rl: Direção de fluxo do bloco da direita para a esquerda. As frases correm verticalmente.
+
+        vertical-lr: Direção de fluxo do bloco da esquerda para a direita. As frases correm verticalmente.
+
+    Portanto, a writing-mode propriedade está, na realidade, definindo a direção na qual os elementos de nível de bloco são exibidos na página — de cima para baixo, da direita para a esquerda ou da esquerda para a direita. Isso então dita a direção que o texto flui nas frases.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /*
+             - Um modo de escrita em CSS refere-se a se o texto está sendo executado horizontalmente ou verticalmente.
+             - A writing-mode propriedade nos permite alternar de um modo de escrita para outro.
+             - o valor vertical-lr O texto agora é executado verticalmente.
+             - writing-mode propriedade está, na realidade, definindo a direção na qual os elementos de nível de bloco são exibidos na página.
+             - o valor vertical-lr Direção de fluxo do bloco da esquerda para a direita. As frases correm verticalmente.
+            */
+            writing-mode: vertical-lr;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jogue com os modos de escrita</h1>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!--
+    * TRACK LISTINGS COM A NOTAÇÃO repeat()
+
+        Grids grandes, com muitas tracks(faixas) podem usar a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas). Por exemplo a definição de grid a seguir:
+
+            wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*notação convencional*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com três colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - cada coluna tera 1fr de medida flexivel, uma fração do espaço disponivel no container grid para cada uma.
+             - Grids grandes, com muitas tracks(faixas) podem usar a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+             - usaremos a seguinte notação de repeat(3, 1fr);
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: repeat(3, 1fr);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três</div>
+        <div>Quatro</div>
+        <div>Cinco</div>
+    </div>
+
+</body>
+</htm

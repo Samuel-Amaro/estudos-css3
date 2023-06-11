@@ -1,0 +1,53 @@
+<!--
+    * BACKGROUND COLOR(COR DE FUNDO)
+
+        - A background-color propriedade pode ser usada para especificar uma cor de fundo para links:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        /**
+         - alguns regras ao definir o estilo de varios estados de um link, algumas regras de ordem:
+
+            - a:hover deve vir depois de a:link e a:visited
+
+            - a:active deve vir depois de a:hover
+        */
+
+        /*o estado a:link e um link normal e não visitado*/
+        a:link{
+            /*a propriedade background-color especifica uma cor de fundo para o link, a cor de fundo sera amarela quando ele não for visitado*/
+            background-color: yellow;
+        }
+        /*o estado a:visited um estado em que o usuario visitou o link*/
+        a:visited{
+            /*a propriedade background-color especifica uma cor de fundo para o link, a cor de fundo sera cyan quando o link for visitado*/
+            background-color: cyan;
+        }
+        /*o estado a:hover quando o usuario passa o mouse sobre o link, este estado de um link ao ser estilizado para funcionar tem que vir depois de  a:link e a:visited*/
+        a:hover{
+            /*a propriedade background-color especifica uma cor de fundo para o link, a cor de fundo sera azul claro quando o usuario passar o mouse por cima do link*/
+            background-color: lightgreen;
+        }
+        /*o estado a:active e um link no momento em que e clicado, este estado ao ser estilizado para funcionar deve vir depois do estado a:hover*/
+        a:active{
+            /*a propriedade background-color especifica uma cor de fundo para o link, a cor de fundo sera hotpink  quando o usuario clicar no link para visitalo*/
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Estilizando um link com a propriedade background-color</h1>
+
+    <p><b><a href="#" target="_blank" rel="external">Este é um link</a></b></p>
+
+    <p><b>Nota:</b> a:hover DEVE vir depois de a:link e a:visited na definição CSS para ser eficaz.</p>
+
+    <p><b>Nota:</b> a:active DEVE vir depois de a:hover na definição CSS para ser eficaz.</p>
+
+</body>
+</html>

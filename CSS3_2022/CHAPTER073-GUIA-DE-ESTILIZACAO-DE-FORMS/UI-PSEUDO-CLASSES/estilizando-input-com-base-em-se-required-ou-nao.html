@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*elemento input que possua o atributo required definido nele*/
+        input:required{
+            border: 1px solid black;
+        }
+
+        /*elemento input que não tenha o atributo required definido*/
+        input:optional{
+            border: 1px solid silver;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <fieldset>
+            <legend>Feedback form</legend>
+            <div>
+                <label for="fname">First name:</label>
+                <input id="fname" name="fname" type="text" required/>
+            </div>
+            <div>
+                <label for="email">Email address(inclua se quiser uma resposta)</label>
+                <input type="email" id="email" name="email"/>
+            </div>
+            <div>
+                <button type="button">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        /**
+         * * ESTILIZANDO INPUTS COM BASE EM SE ELAS SÃO REQUIREDS OU NÃO
+         * 
+         * Um dos conceitos mais básicos em relação à validação de formulários do lado do cliente é se uma entrada de formulário é obrigatória (deve ser preenchida antes que o formulário possa ser enviado) ou opcional.
+         * 
+         * <input>, <select> e <textarea> os elementos têm um required atributo disponível que, quando definido, significa que você precisa preencher esse controle antes que o formulário seja enviado com êxito. Por exemplo:
+         * 
+         * Aqui, o nome e o sobrenome são obrigatórios, mas o endereço de e-mail é opcional.
+         * 
+         * Você pode combinar esses dois estados usando as pseudo-classes e :required. :optional Por exemplo, se aplicarmos o seguinte CSS ao HTML acima:
+         * 
+         * Você também pode tentar enviar o formulário sem preenchê-lo, para ver as mensagens de erro de validação do lado do cliente que os navegadores fornecem por padrão.
+         * 
+         * A forma acima não é ruim, mas também não é ótima. Para começar, estamos sinalizando o status obrigatório versus opcional usando apenas a cor, o que não é ótimo para daltônicos. Em segundo lugar, a convenção padrão na web para status obrigatório é um asterisco (*), ou a palavra "obrigatório" sendo associada aos controles em questão.
+         * 
+         * Na próxima seção, veremos um exemplo melhor de indicação de campos obrigatórios usando :required, que também explora o uso de conteúdo gerado.
+         * 
+         * Nota: Você provavelmente não usará a :optional pseudoclasse com muita frequência. Os controles de formulário são opcionais por padrão, então você pode apenas fazer seu estilo opcional por padrão e adicionar estilos na parte superior para os controles necessários.
+         * 
+         * Observação: se um botão de opção em um grupo de botões de opção com o mesmo nome tiver o required atributo, todos os botões de opção serão inválidos até que um seja selecionado, mas apenas aquele com o atributo atribuído realmente corresponderá .:required
+        */
+    </script>
+</body>
+</html>

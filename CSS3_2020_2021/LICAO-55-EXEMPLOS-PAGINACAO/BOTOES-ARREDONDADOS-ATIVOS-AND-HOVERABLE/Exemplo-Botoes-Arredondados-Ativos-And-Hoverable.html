@@ -1,0 +1,74 @@
+<!--
+    * BOTÕES ARREDONDADOS ATIVOS AND HOVERABLE
+
+      - Adicione a border-radius propriedade se desejar um botão arredondado "ativo" e "focalizado":
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de botão arredondado e ativo e hoverable</title>
+    <style>
+        aside.pagination{
+            /*
+             - Exibe um elemento como um contêiner de bloco de nível embutido(inline). O próprio elemento é formatado como um elemento embutido(inline), mas você pode aplicar valores de altura e largura como um elemento block.
+            */
+            display: inline-block;
+        }
+        /*o elemento aside se tiver elementos a como filho direto ou descentede*/
+        aside.pagination a{
+            color: black;
+            /*
+             - Então, vamos pensar sobre como o float funciona - o elemento com o float definido (o <a> elemento neste caso) é retirado do fluxo de layout normal do documento e preso ao lado esquerdo de seu contêiner pai ( <aside>, em este caso). Qualquer conteúdo que vier abaixo do elemento flutuante no fluxo de layout normal agora o envolverá, preenchendo o espaço à direita dele até o topo do elemento flutuante.
+            */
+            float: left;
+            padding-top: 8px;
+            padding-right: 16px;
+            padding-bottom: 8px;
+            padding-left: 16px;
+            text-decoration: none;
+        }
+
+        /*o elemento aside que tiver um elemento a que contenha uma classe active aplica e que esse elemento seja descendente de aside*/
+        aside.pagination a.active{
+            background-color: #4CA450;
+            color: white;
+            /*arredonda os cantos da caixa dos elementos*/
+            border-radius: 5px;
+        }
+
+        /*se o asside elemento tiver um elemento a que seja descendente dele e que contenha  uma class active aplicada e um :pseudo classe hover que de passar o mouse por cima do elemento a, e mudar o seu estado, ativo, esse elemento vai ter o seu seletor negado e não receber as regras de css aplicadas abaixo*/
+        aside.pagination a:hover:not(.active) {
+            background-color: #ddd;
+            /*arredonda os cantos da caixa dos elementos para 5px*/
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exemplo de botão arredondado e ativo e hoverable</h1>
+
+    <p><strong>Exemplo:</strong> Adicione a border-radius propriedade se desejar um botão arredondado "ativo" e "focalizado":</p>
+
+    <h2>Botões arredondados ativos e flutuantes</h2>
+
+    <aside class="pagination">
+        <!--representa um caractere especial (<<)-->
+        <a href="#">&laquo;</a>
+        <a href="#" target="_self" rel="next">1</a>
+        <a class="active" href="#" target="_self" rel="next">2</a>
+        <a href="#" target="_self" rel="next">3</a>
+        <a href="#" target="_self" rel="next">4</a>
+        <a href="#" target="_self" rel="next">5</a>
+        <a href="#" target="_self" rel="next">6</a>
+        <!--representa um caractere especial (>>) -->
+        <a href="#" target="_self" rel="next">&raquo;</a>
+    </aside>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+/*
+ * CSS OUTLINE OFFSET
+
+  - A outline-offsetpropriedade adiciona espaço entre um contorno e a borda / borda de um elemento. O espaço entre um elemento e seu contorno é transparente.
+*/
+#c1{
+    /*definindo uma borda*/
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    /*definindo uma borda*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: black;
+    /*definindo o contorno*/
+    outline-width: 1px;
+    outline-color: red;
+    outline-style: solid;
+    /*definindo o deslocamento entre a borda e o contorno, configurando um espaço entre esses dois elementos*/
+    outline-offset: 15px;
+}

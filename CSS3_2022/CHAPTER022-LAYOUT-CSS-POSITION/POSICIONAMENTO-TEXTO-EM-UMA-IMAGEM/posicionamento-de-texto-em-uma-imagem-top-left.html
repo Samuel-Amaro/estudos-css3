@@ -1,0 +1,65 @@
+<!--
+    * POSICIONAMENTO TEXTO EM UMA IMAGEM
+
+        - Como posicionar o texto sobre uma imagem:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        .container{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+        }
+        .topleft{
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancentral desta div com position absolute e um elemento img, que esta em sua posição normal
+             - Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+            */
+            position: absolute;
+            /*
+             -  As propriedades top, right, bottom e left são usadas para posicionar o elemento. em relação ao elemento ancentral mais proximo, se não tiver sera o body o padrão.
+            */
+            top: 8px;
+            left: 16px;
+            /*
+             - esta propriedade css e usada para especifica o tamanho da fonte em um valor de tamanho especifico usando px
+            */
+            font-size: 18px;
+        }
+        img{
+            /*
+             - esta propriedade define a largura do elemento o valor 
+             100% Define a largura em porcentagem do bloco que o contém
+            */
+            width: 100%;
+            /*
+             - esta propriedade define a altura de um elemento.
+             - o valor  auto o navegador calcula a altura. Isso é padrão
+            */
+            height: auto;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Texto da imagen</h2>
+
+    <p>Adicione algum texto a uma imagem no canto superior esquerdo:</p>
+
+    <div class="container">
+        <img src="img_5terre_wide.jpg" alt="Cinque terre" width="1000" height="300"/>
+        <div class="topleft">Top Left</div>
+    </div>
+
+</body>
+</html>

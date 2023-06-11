@@ -1,0 +1,97 @@
+<!--
+    * BARRA DE NAVEGAÇÃO FIXA SUPERIOR
+
+        - Faça com que a barra de navegação fique na parte superior ou inferior da página, mesmo quando o usuário rolar a página:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        body{
+            margin: 0;
+        }
+        aside{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #333;
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor fixed define que o elemento é posicionado em relação à janela de visualização(viewport)-(é a área visível do usuário de uma página da web. Varia de acordo com o dispositivo - será menor em um telefone celular do que em uma tela de computador.), o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada.
+             - As propriedades top, right, bottom e left são usadas para posicionar o elemento.
+            */
+            position: fixed;
+            top: 0;
+            /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - o valor hidden, recorta o conteudo transbordante, e não adiciona barra de rolagem, oculta o conteudo transbordante
+            */
+            overflow: hidden;
+        }
+
+        nav a{
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            float: left;
+        }
+
+        nav a.active{
+            background-color: #04AA6D;
+        }
+        /*
+         - muda a cor do fundo do link e do texto quando o usuario passar o mouse sobre o link, uma pseudo-classe que captura o estado especial de quando o usuario passa o mouse sobre o elemento <a>
+         - a pseudo-class not(selector), seleciona todo elemento que não seja o selector
+         - todo elemento <a> que o usuario estiver passando o mouse por cima e esse elemento for descedente de uma <li> e não for o elemento <a class="active">
+        */
+        nav a:hover:not(.active){
+            background-color: #111;
+        }
+        main{
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #1abc9c;
+            height: 1500px;
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <nav>
+            <a class="active" href="#home" target="_self" rel="next">Home</a>
+            <a href="#news" target="_self" rel="next">News</a>
+            <a href="#contact" target="_self" rel="next">Contact</a>
+            <a href="#about" target="_self" rel="next">About</a>
+        </nav>
+    </aside>
+    <main>
+        <header>
+            <h1>Barra de navegação superior fixa</h1>
+            <h2>Role esta página para ver o efeito</h2>
+            <h2>A barra de navegação permanecerá na parte superior da página durante a rolagem</h2>
+        </header>
+        <section>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+            <p>Algum texto.. Algum texto.. Algum texto..</p>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--
+    * position: fixed;
+
+      - Um elemento com position: fixed; é posicionado em relação à janela de visualização(viewport), o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada. As propriedades top, right, bottom e left são usadas para posicionar o elemento.
+
+      - Um elemento fixo não deixa uma lacuna na página onde normalmente estaria localizado.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        div.fixed{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor fixed define que o elemento é posicionado em relação à janela de visualização(viewport)-(é a área visível do usuário de uma página da web. Varia de acordo com o dispositivo - será menor em um telefone celular do que em uma tela de computador.), o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada.
+             - As propriedades top, right, bottom e left são usadas para posicionar o elemento.
+            */
+            position: fixed;
+            /*
+             - a propriedade css top, right, bottom, left são usadas para posicionar o elemento
+            */
+            bottom: 0;
+            right: 0;
+            /*define a largura do elemento, como uma largura absoluta um tamanho especifico em px*/
+            width: 300px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>position: fixed;</h2>
+
+    <p>Um elemento com posição: fixo; está posicionado em relação à janela de visualização, o que significa que sempre permanece no mesmo lugar, mesmo que a página seja rolada:</p>
+
+    <div class="fixed">Este elemento div tem posição: fixed;</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--
+    * FUNCTIONS DE REFERENCIA 
+
+        As funções a seguir são usadas como um valor de propriedades para referenciar um valor definido em outro lugar.
+
+        attr(): Usado para recuperar o valor de um atributo do elemento selecionado e usá-lo na folha de estilo.
+
+    * attr()
+
+        Nota: A attr()função pode ser usada com qualquer propriedade CSS, mas o suporte para propriedades diferentes content é experimental e o suporte para o parâmetro type-or-unit é escasso.
+
+        A função CSS attr() é usada para recuperar o valor de um atributo do elemento selecionado e usá-lo na folha de estilo. Também pode ser usado em pseudo-elementos, caso em que o valor do atributo no elemento de origem do pseudo-elemento é retornado.
+
+        /* Simple usage */
+        attr(data-count);
+        attr(title);
+
+        /* With type */
+        attr(src url);
+        attr(data-count number);
+        attr(data-width px);
+
+        /* With fallback */
+        attr(data-count number, 0);
+        attr(src url, "");
+        attr(data-width px, inherit);
+        attr(data-something, "default");
+
+    * SINTAXE
+
+        * VALORES
+
+            attribute-name: O nome de um atributo no elemento HTML referenciado no CSS.
+
+            string: O valor do atributo é tratado como um CSS <string>. Ele NÃO é reanalisado e, em particular, os caracteres são usados ​​como estão, em vez de escapes CSS sendo transformados em caracteres diferentes.
+
+            Valor padrão: uma string vazia.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        [data-foo]::before{
+            content: attr(data-foo) " ";
+        }
+        
+    </style>    
+</head>
+<body>
+    
+    <p data-foo="hello">world</p>
+
+</body>
+</html>

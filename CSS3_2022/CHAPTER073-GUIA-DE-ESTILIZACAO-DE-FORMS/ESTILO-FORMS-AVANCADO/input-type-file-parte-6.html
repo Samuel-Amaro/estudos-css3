@@ -1,0 +1,215 @@
+<!--
+    * TIPO DE ENTRADA DE ARQUIVO
+
+        As entradas do tipo arquivo geralmente são boas — como você viu em nosso exemplo, é bastante fácil criar algo que se encaixe bem com o resto da página — a linha de saída que faz parte do controle herdará a fonte pai se você disser a entrada para fazer isso, e você pode estilizar a lista personalizada de nomes e tamanhos de arquivos da maneira que desejar; nós o criamos afinal.
+
+        O único problema com os seletores de arquivos é que o botão que você pressiona para abrir o seletor de arquivos é completamente impossível de ser estilizado - não pode ser dimensionado ou colorido e nem aceita uma fonte diferente.
+
+        Uma maneira de contornar isso é aproveitar o fato de que, se você tiver um rótulo associado a um controle de formulário, clicar no rótulo ativará o controle. Então você pode ocultar a entrada real do formulário usando algo assim:
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>Ugly controls basic styling</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        form>div {
+            margin-bottom: 20px;
+        }
+
+        button,
+        label,
+        input,
+        select,
+        progress,
+        meter {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 1rem;
+            top: 6px;
+            right: 10px;
+            position: absolute;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"],
+        input[type="color"],
+        select {
+            box-shadow: inset 1px 1px 3px ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        input[type="range"] {
+            appearance: none;
+            background-color: red;
+            height: 2px;
+            padding: 0;
+            outline: 1px solid transparent;
+        }
+
+        input[type="color"] {
+            border: 0;
+            padding: 0;
+        }
+
+        /**
+         - O único problema com os seletores de arquivos é que o botão que você pressiona para abrir o seletor de arquivos é completamente impossível de ser estilizado - não pode ser dimensionado ou colorido e nem aceita uma fonte diferente.
+          - 
+         - Uma maneira de contornar isso é aproveitar o fato de que, se você tiver um rótulo associado a um controle de formulário, clicar no rótulo ativará o controle. Então você pode ocultar a entrada real do formulário usando algo assim:
+        */
+        input[type="file"] {
+            height: 0;
+            padding: 0;
+            opacity: 0;
+        }
+
+        /**
+         - E, em seguida, estilize o rótulo para agir como um botão, que, quando pressionado, abrirá o seletor de arquivos conforme o esperado:
+        */
+
+        label[for="file"] {
+            box-shadow: 1px 1px 3px #ccc;
+            background: linear-gradient(to bottom, #eee, #ccc);
+            border: 1px solid rgb(169, 169, 169);
+            border-radius: 5px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        label[for="file"]:hover {
+            background: linear-gradient(to bottom, #fff, #ddd);
+        }
+
+        label[for="file"]:active {
+            box-shadow: inset 1px 1px 3px #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form>
+        <div>
+            <label for="select">Select box:</label>
+            <div class="select-wrapper">
+                <select id="select" name="select">
+                    <option>Banana</option>
+                    <option>Cherry</option>
+                    <option>Lemon</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="myFruit">"Favorite fruit?" datalist:</label>
+            <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+            <datalist id="mySuggestion">
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Blackberry</option>
+                <option>Blueberry</option>
+                <option>Lemon</option>
+                <option>Lychee</option>
+                <option>Peach</option>
+                <option>Pear</option>
+            </datalist>
+        </div>
+        <div>
+            <label for="date1">Datetime local: </label>
+            <input id="date1" name="date1" type="datetime-local">
+        </div>
+        <div>
+            <label for="range">Range: </label>
+            <input id="range" name="range" type="range">
+        </div>
+        <div>
+            <label for="color">Color: </label>
+            <input id="color" name="color" type="color">
+        </div>
+        <div>
+            <label for="file">File picker: </label>
+            <input id="file" name="file" type="file" multiple>
+            <ul id="file-list">
+
+            </ul>
+        </div>
+        <div>
+            <label for="progress">Progress: </label>
+            <progress max="100" value="75" id="progress">75/100</progress>
+        </div>
+        <div>
+            <label for="meter">Meter: </label>
+            <meter id="meter" min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+        </div>
+        <div><button>Submit?</button></div>
+    </form>
+
+    <script>
+        const fileInput = document.querySelector('#file');
+        const fileList = document.querySelector('#file-list');
+
+        fileInput.addEventListener('change', updateFileList);
+
+        function updateFileList() {
+            while (fileList.firstChild) {
+                fileList.removeChild(fileList.firstChild);
+            }
+
+            let curFiles = fileInput.files;
+
+            if (!(curFiles.length === 0)) {
+                console.log('test');
+                for (let i = 0; i < curFiles.length; i++) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = 'File name: ' + curFiles[i].name + '; file size ' + returnFileSize(curFiles[i].size) + '.';
+                    fileList.appendChild(listItem);
+                }
+            }
+        }
+
+        function returnFileSize(number) {
+            if (number < 1024) {
+                return number + 'bytes';
+            } else if (number >= 1024 && number < 1048576) {
+                return (number / 1024).toFixed(1) + 'KB';
+            } else if (number >= 1048576) {
+                return (number / 1048576).toFixed(1) + 'MB';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+/*
+ * * BACKGROUND SIZE CSS - TAMANHO DO FUNDO
+
+   - A background-size propriedade CSS permite que você especifique o tamanho das imagens de fundo.
+   - 
+   - O tamanho pode ser especificado em comprimentos, porcentagens ou usando uma das duas palavras-chave: contain or cover.
+   - 
+   O exemplo a seguir redimensiona uma imagem de fundo para muito menor do que a imagem original (usando pixels):
+*/
+
+div#exemplo1{
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: black;
+    border-style: solid;
+    background: url(flor-fundo-trasparente.jpg);
+    background-size: 100px 80px;
+    background-repeat: no-repeat;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+div#exemplo2{
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: black;
+    border-style: solid;
+    background: url(flor-fundo-trasparente.jpg);
+    background-repeat: no-repeat;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+/**
+ * Os outros dois valores possíveis para background-size são contain e cover.
+ * 
+ * A contain palavra-chave dimensiona a imagem de plano de fundo para ficar o maior possível (mas sua largura e altura devem caber dentro da área de conteúdo). Como tal, dependendo das proporções da imagem de fundo e da área de posicionamento do fundo, pode haver algumas áreas do fundo que não são cobertas pela imagem de fundo.
+ * 
+ * A coverpalavra-chave dimensiona a imagem de plano de fundo para que a área de conteúdo seja completamente coberta pela imagem de plano de fundo (sua largura e altura são iguais ou excedem a área de conteúdo). Como tal, algumas partes da imagem de fundo podem não ser visíveis na área de posicionamento de fundo.
+ * 
+ * O exemplo a seguir ilustra o uso de containe cover:
+*/
+
+div.bloco1{
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: black;
+    border-style: solid;
+    height: 120px;
+    width: 150px;
+    background: url(flor-fundo-trasparente.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+div.bloco2{
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: black;
+    border-style: solid;
+    height: 120px;
+    width: 150px;
+    background: url(flor-fundo-trasparente.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.bloco3{
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-color: black;
+    border-style: solid;
+    height: 120px;
+    width: 150px;
+    background: url(flor-fundo-trasparente.jpg);
+    background-repeat: no-repeat;
+}

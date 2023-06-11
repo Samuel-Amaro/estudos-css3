@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinadores CSS</title>
+    <link rel="stylesheet" href="combinadores.css">
+</head>
+<body>
+    <h1>Combinadores CSS</h1>
+    
+    <!--SELETOR DESCENDENTE (espaço)-->
+    <h2>Seletor com combinador descendente</h2>
+    <p>O seletor descendente corresponde a todos os elementos que são descendentes de um elemento especificado.</p>
+    <p><b>O exemplo a seguir seleciona todos os elementos <p> dentro dos elementos</b></p>
+    <div id="seletor_descendente">
+        <p>Paragrafo 01 descendente do div.</p>
+        <p>Paragrafo 02 descendente do div.</p>
+        <section>
+            <p>Paragrafo 03 descendente do div.</p>
+        </section>
+    </div>
+    <p>Paragrafo 04 não e descendente do div.</p>
+    <p>Paragrafo 05 não e descendente do div.</p>
+
+    <!--SELETOR FILHO (>)-->
+    <h2>Seletor com combinador filho (>)</h2>
+    <p>O exemplo a seguir seleciona todos os elementos <p> filhos de um elemento div:</p>
+    <div id="seletor_filho">
+            <p>Paragrafo 01 na div</p>
+            <p>Paragrafo 02 na div</p>
+            <p>Paragrafo 03 na div</p>
+    </div>
+    <p>Paragrafo 04 não esta na div</p>
+
+    <!--SELETOR IRMÃO ADJACENTE (+)-->
+    <h2>Seletor com combinador de irmão adjacente (+)</h2>
+    <p>O exemplo a seguir seleciona o primeiro elemento p que é colocado imediatamente após os elementos div:<p/>
+    <p><b>adjacente:</b> significa imediatamente a seguir</p>
+    <div class="seletor_irmao_adjacente">
+        <p>Paragrafo dentro da div</p>
+        <p>Paragrafo dentro da div</p>
+    </div>
+    <p>Paragrafo depois da div.</p>
+    <p>Paragrafo Depois da div</p>
+    <div class="seletor_irmao_adjacente">
+        <p>Paragrafo dentro da div</p>
+        <p>Paragrafo dentro da div</p>
+    </div>
+    <p>Paragrafo depois da div.</p>
+    <p>Paragrafo Depois da div</p>
+
+
+    <!--SELETOR GERAL DE IRMÃOS (~)-->
+    <h2>Seletor com combinador geral de irmãos (~)</h2>
+    <p>O exemplo a seguir seleciona todos os elementos p que são irmãos dos elementos div: </p>
+    <p>Paragrafo 1</p>
+    <div id="seletor_geral_irmaos">
+        <p>Paragrafo 2</p>
+    </div>
+    <p>Paragrafo 03</p>
+    <p>Paragrafo 04</p>
+</body>
+</html>

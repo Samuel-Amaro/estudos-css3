@@ -1,0 +1,95 @@
+<!--
+    * TAMANHO DA PAGINAÇÃO
+
+      - Altere o tamanho da paginação com a font-size propriedade:
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de tamanho da paginação</title>
+    <style>
+        aside.pagination{
+            /*
+             - Exibe um elemento como um contêiner de bloco de nível embutido(inline). O próprio elemento é formatado como um elemento embutido(inline), mas você pode aplicar valores de altura e largura como um elemento block.
+            */
+            display: inline-block;
+        }
+        /*o elemento aside se tiver elementos a como filho direto ou descentede*/
+        aside.pagination a{
+            color: black;
+            /*
+             - Então, vamos pensar sobre como o float funciona - o elemento com o float definido (o <a> elemento neste caso) é retirado do fluxo de layout normal do documento e preso ao lado esquerdo de seu contêiner pai ( <aside>, em este caso). Qualquer conteúdo que vier abaixo do elemento flutuante no fluxo de layout normal agora o envolverá, preenchendo o espaço à direita dele até o topo do elemento flutuante.
+            */
+            float: left;
+            /*add espaço interno entre borda e conteudo*/
+            padding-top: 8px;
+            padding-right: 16px;
+            padding-bottom: 8px;
+            padding-left: 16px;
+            text-decoration: none;
+            /*
+             - add um efeito de transição.
+             - As transições CSS permitem que você altere os valores das propriedades suavemente, ao longo de um determinado período.
+            */
+            /*a propriedade CSS à qual você deseja adicionar um efeito a e a que muda a cor de fundo do elemento*/
+            transition-property: background-color;
+            /*a duração do efeito da transição - sera de 3 segundos a cor de fundo permanecera por 3 segundos*/
+            transition-duration: 0.3s;
+            /*add uma borda no elemento*/
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            /*tamanho da fonte, tamanho da letra*/
+            font-size: 22px;
+        }
+
+        /*o elemento aside que tiver um elemento a que contenha uma classe active aplica e que esse elemento seja descendente de aside*/
+        aside.pagination a.active{
+            background-color: blue;
+            color: white;
+            /*add uma borda no elemento*/
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: #4CA450;
+        }
+
+        /*se o asside elemento tiver um elemento a que seja descendente dele e que contenha  uma class active aplicada e um :pseudo classe hover que de passar o mouse por cima do elemento a, e mudar o seu estado, ativo, esse elemento vai ter o seu seletor negado e não receber as regras de css aplicadas abaixo*/
+        aside.pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exemplo de tamanho de paginação</h1>
+
+    <p><strong>Exemplo:</strong> Altere a propriedade font-size para tornar a paginação menor ou maior.</p>
+
+    <h2>Tamanho de paginação</h2>
+
+    <aside class="pagination">
+        <!--representa um caractere especial (<<)-->
+        <a href="#">&laquo;</a>
+        <a href="#" target="_self" rel="next">1</a>
+        <a class="active" href="#" target="_self" rel="next">2</a>
+        <a href="#" target="_self" rel="next">3</a>
+        <a href="#" target="_self" rel="next">4</a>
+        <a href="#" target="_self" rel="next">5</a>
+        <a href="#" target="_self" rel="next">6</a>
+        <!--representa um caractere especial (>>) -->
+        <a href="#" target="_self" rel="next">&raquo;</a>
+    </aside>
+
+</body>
+</html>

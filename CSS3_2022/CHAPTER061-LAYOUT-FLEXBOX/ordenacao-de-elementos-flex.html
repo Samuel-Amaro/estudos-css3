@@ -1,0 +1,94 @@
+<!--
+    * ORDENAÇÃO DE ELEMENTOS FLEX
+
+        O flexbox também tem uma funcionalidade para alteração da ordem dos elementos flex no layout, sem afetar a ordem no código fonte HTML. Esta é mais uma coisa que é impossível fazer nos métodos tradicionais de esquema de layouts.
+
+        O código para fazer isso é bem simples: experimente adicionar o seguinte CSS ao final do código do exemplo da barra de botões:
+
+        Atualize seu navegador, você verá que o botão "Smile" foi movido para o final do eixo principal. Vamos falar sobre como isso funciona com mais detalhes:
+
+            Por padrão, todos os elementos flex possuem uma propriedade order com valor 0 (zero).
+
+            Elementos flex com valores maiores de order, aparecerão depois na tela, do que elementos com valores menores, os quais aparecem antes.
+
+            Elementos flex com o mesmo valor aparecerão de acordo com a ordem que possuem no documento HTML. Logo, se você tiver quatro elementos com os seguintes valores para order: 2, 1, 1 e 0, eles aparecerão na tela na seguinte ordem: 4º, 2º, 3º e 1º elemento, respectivamente.
+
+            O 3º elemento aparece depois do 2º pois ele tem o mesmo valor para order mas está definido depois no documento fonte.
+
+            Você também pode usar valores negativos para fazer elementos aparecerem antes do(s) elemento(s) definidos com order 0 (zero). Por exemplo, Você poderia fazer com que o botão "Blush" aparecesse no começo do eixo principal (horizontal), usando a seguinte regra:
+
+            button:last-child {
+                order: -1;
+            }
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>Flexbox align 0 — starting code</title>
+    <style type="text/css">
+
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 70%;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        button {
+            font-size: 18px;
+            line-height: 1.5;
+            width: 15%;
+        }
+
+        div {
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        /* Add your flexbox CSS below here */
+
+        /*define o elemento <div> como o flex conteiner*/
+        div{
+            display: flex;
+            /*
+             - propriedade align-items controla onde os elementos flex ficam no eixo transversal(vertical).
+             - O valor center que usamos no exemplo, faz com que os elementos mantenham suas dimensões intrínsecas, mas que seja centralizados ao longo do eixo transversal(vertical)
+            */
+            align-items: center;
+            /*
+             - justify-content (en-US) controla onde os elementos flex ficam no eixo principal(horizontal).
+             - A propriedade CSS justify-content define como o navegador distribui o espaço entre e ao redor dos itens de conteúdo ao longo do eixo principal(main axis) de um contêiner flexível
+             - valor space-around Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo principal. O espaçamento entre cada par de itens adjacentes é o mesmo. O espaço vazio antes do primeiro e depois do último item é igual a metade do espaço entre cada par de itens adjacentes.
+            */
+            justify-content: space-around;
+        }
+
+        /*primeiro elemento button filho de um elemento pai qualquer*/
+        button:first-child{
+            /*
+             - A propriedade CSS order define a ordem para colocar um item em um contêiner flexível ou de grade. Os itens em um contêiner são classificados por valor de ordem crescente e, em seguida, pela ordem do código-fonte.
+             -  Por padrão, todos os elementos flex possuem uma propriedade order com valor 0 (zero).
+             - Elementos flex com valores maiores de order, aparecerão depois na tela, do que elementos com valores menores, os quais aparecem antes.
+             -  Elementos flex com o mesmo valor aparecerão de acordo com a ordem que possuem no documento HTML. 
+             - o valor 1 especifica que este elemento sera o ultimo a aparecer na tela, pois o restante dos elementos vem antes pois o seu numero de ordem definidos por padrão e 0. isso e são mostrados primeiro antes desse elemento.
+            */
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <button>Smile</button>
+        <button>Laugh</button>
+        <button>Wink</button>
+        <button>Shrug</button>
+        <button>Blush</button>
+    </div>
+
+</body>
+</html>

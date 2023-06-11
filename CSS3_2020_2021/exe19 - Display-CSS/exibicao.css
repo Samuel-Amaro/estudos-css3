@@ -1,0 +1,86 @@
+/*
+ * LAYOUT CSS - A PROPRIEDADE DE EXIBIÇÃO(DISPLAY)
+
+  - A display propriedade é a propriedade CSS mais importante para controlar o layout.
+
+  * A PROPRIEDADE DE EXIBIÇÃO DISPLAY
+    
+    - A display propriedade especifica se/como um elemento é exibido.
+    - Cada elemento HTML tem um valor de exibição padrão dependendo de que tipo de elemento ele é. O valor de exibição padrão para a maioria dos elementos é block ou inline.
+
+  * ELEMENTOS DE NIVEL DE BLOCO - BLOCK-LEVEL
+
+   - Um elemento de nível de bloco sempre começa em uma nova linha e ocupa toda a largura disponível (se estende para a esquerda e para a direita o máximo que pode).
+*/
+#conteiner_block_level{
+     padding-top: 2px;
+     padding-right: 2px;
+     padding-bottom: 2px;
+     padding-left: 2px;
+     border-top: 2px;
+     border-right: 2px;
+     border-bottom: 2px;
+     border-left: 2px;
+     border-style: solid;
+     border-color: brown;
+}
+/*
+ * ELEMENTOS INLINE
+   - Um elemento embutido não começa em uma nova linha e só ocupa a largura necessária.
+*/
+.img_display_inline{
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: brown;
+}
+/*
+ * MOSTRAR NENHUM - MOSTRAR NONE
+
+  - display: none; 
+  é comumente usado com JavaScript para ocultar e mostrar elementos sem excluí-los e recriá-los. Dê uma olhada em nosso último exemplo nesta página se você quiser saber como isso pode ser alcançado.
+*/
+/*
+ * SUBSTITUIR O VALOR DE EXIBIÇÃO PADRÃO
+
+ - Conforme mencionado, cada elemento tem um valor de exibição padrão. No entanto, você pode substituir isso.
+ - Alterar um elemento inline para um elemento de block, ou vice-versa, pode ser útil para fazer a página parecer de uma maneira específica e ainda seguir os padrões da web.
+ - Um exemplo comum é criar <li> elementos inline para menus horizontais:
+*/
+.ex_inline{
+    display: inline;
+}
+/*
+ * Nota: Definir a propriedade display de um elemento altera apenas como o elemento é exibido , NÃO que tipo de elemento ele é. Portanto, um elemento embutido com display: block;
+ não pode ter outros elementos de bloco dentro dele.
+*/
+
+/*
+ * O exemplo a seguir exibe elementos <span> como elementos de bloco:
+*/
+.ex_display_block{
+    display: block;
+}
+
+/*
+ * OCULTAR UM ELEMENTO - DISPLAY: NONE OU VIIBILITY: HIDDEN;
+
+ - Ocultar um elemento pode ser feito definindo a displaypropriedade como none. O elemento ficará oculto e a página será exibida como se o elemento não estivesse lá:
+*/
+.conteiner_display_none{
+    background-color: black;
+    color: white;
+    display: none;/*oculta a div*/
+}
+/*
+    * visibility:hidden; também esconde um elemento.
+    - No entanto, o elemento ainda ocupará o mesmo espaço de antes. O elemento ficará oculto, mas ainda afetará o layout:
+*/
+.conteiner_visibility{
+    background-color: aqua;
+    color: black;
+    /*visibilidade: oculto*/
+    visibility: hidden;/*oculta a div mas ocupa espaço no layout ainda hidden = oculto*/
+}

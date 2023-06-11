@@ -1,0 +1,54 @@
+<!--
+    * BORDER COLOR(COR DA BORDA)
+
+        - A border-color propriedade é usada para definir a cor das quatro bordas.
+
+        - A cor pode ser definida por:
+
+            - name - especifique um nome de cor, como "red"
+            - HEX - especifique um valor HEX, como "#ff0000"
+            - RGB - especifique um valor RGB, como "rgb(255,0,0)"
+            - HSL - especifique um valor HSL, como "hsl(0, 100%, 50%)"
+            - transparente(transparent)
+
+        - Se border-color não estiver definido, herda a cor do elemento.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.one{
+            /*a declaração css abaixo, possui a propriedade border-style e o valor solid, a propriedade border-style, especifica que tipo de borda exibir, o valor solid, especifica para exibir uma borda solida*/
+            border-style: solid;
+            /*a propriedade border-color e usada para definir a cor das quatro bordas, especificamos a cor pelo seu nome predefinido*/
+            border-color: red;
+        }
+        p.two{
+            /*a declaração css abaixo, possui a propriedade border-style e o valor solid, a propriedade border-style, especifica que tipo de borda exibir, o valor solid, especifica para exibir uma borda solida*/
+            border-style: solid;
+            /*a propriedade border-color e usada para definir a cor das quatro bordas, especificamos a cor pelo seu nome predefinido*/
+            border-color: green;
+        }
+        p.three{
+            /*a declaração css abaixo, possui a propriedade border-style e o valor solid, a propriedade border-style, especifica que tipo de borda exibir, o valor solid, especifica para exibir uma borda solida*/
+            border-style: solid;
+            /*a propriedade border-color e usada para definir a cor das quatro bordas, especificamos a cor pelo seu nome predefinido*/
+            border-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade border-color</h2>
+
+    <p>Esta propriedade especifica a cor das quatro bordas:</p>
+
+    <p class="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio accusamus dolores ipsum id veritatis incidunt velit cum aliquid, mollitia quod? Doloribus velit, recusandae esse labore temporibus ex ut consectetur.</p>
+    <p class="two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quis dolores totam quia dicta, architecto doloremque error ad ipsam, iusto modi fugiat! Ratione debitis error aliquam commodi cumque nulla in.</p>
+    <p class="three">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium commodi itaque dolorem incidunt, possimus recusandae at deserunt repellendus ipsum? Molestiae architecto cum, ea maiores ducimus dignissimos animi nobis amet.</p>
+
+    <p><b>Nota:</b> A propriedade <q>border-color</q> não funciona se for usada sozinha. Use a propriedade <q>border-style</q> para definir as bordas primeiro.</p>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!--
+    * PROPRIEDADE CSS BACKGROUND-SIZE(TAMANHO DED FUNDO)
+
+    * DEFINIÇÃO E USO
+
+        - A background-size propriedade especifica o tamanho das imagens de fundo.
+
+        - Existem quatro sintaxes diferentes que você pode usar com esta propriedade: a sintaxe da palavra-chave ("auto", "cover"-COBRIR e "contain"-CONTER), a sintaxe de um valor (configura a largura da imagem (a altura se torna "auto"), a sintaxe de dois valores (primeiro valor: largura da imagem, segundo valor: altura) e a sintaxe de fundo múltiplo (separada por vírgula).
+
+    * SINTAXE CSS
+
+        background-size: auto|length|cover|contain|initial|inherit;
+
+    * VALORES DE PROPRIEDADE
+
+        VALUE: auto valor padrão.
+        DESCRIPTION: A imagem de fundo é exibida em seu tamanho original
+        ------------------------------------
+        VALUE: lenght(comprimento)
+        DESCRIPTION: Define a largura e a altura da imagem de fundo. O primeiro valor define a largura, o segundo valor define a altura. Se apenas um valor for fornecido, o segundo será definido como "auto".
+        ------------------------------------
+        VALUE: porcentagem
+        DESCRIPTION: Define a largura e a altura da imagem de fundo em porcentagem do elemento pai. O primeiro valor define a largura, o segundo valor define a altura. Se apenas um valor for fornecido, o segundo será definido como "auto"
+        ------------------------------------
+        VALUE: cover
+        DESCRIPTION: Redimensione a imagem de fundo para cobrir todo o container, mesmo que tenha que esticar a imagem ou cortar um pouco de uma das bordas
+        ------------------------------------
+        VALUE: contain(conter)
+        DESCRIPTION: Redimensione a imagem de fundo para se certificar de que a imagem está totalmente visível
+        ------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ------------------------------------
+        VALUE: inherit(herda)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        #example1{
+            /*usando a shorthand border para definir uma borda no elemento, a shorthand e um abreviação para as seguintes propriedades individuais: border-witdh, border-style, border-color*/
+            border: 2px solid black;
+            /*usando a shorthand padding para especificar um espaço interno entre o conteudo e borda, um unico valor adicionar o mesmo espaço ao redor de todo conteudo do elemento*/
+            padding: 25px;
+            /*
+             - shorthand background, e uma propriedade abreviada para 
+             background-color
+             background-image
+             background-repeat
+             background-attachment
+             background-position
+             - especificamos um unico valor para propriedaded background somente a propriedade background-image, o valor url e para vincular imagen ao fundo do elemento
+            */
+            background: url('mountain.jpg');
+            /*
+             - a propriedade background-repeat define se/como uma imagem de fundo será repetida.
+             - o valor no-repeat A imagem de fundo não é repetida. A imagem será mostrada apenas uma vez
+            */
+            background-repeat: no-repeat;
+            /*
+             - a propriedade background-size especifica o tamanaho da imagens de fundo
+             - a sintaxe da palavra-chave, o  valor auto a imagen de fundo e exibida em seu tamanho original
+            */
+            background-size: auto;
+        }
+        #example2{
+            /*usando a shorthand border para definir uma borda no elemento, a shorthand e um abreviação para as seguintes propriedades individuais: border-witdh, border-style, border-color*/
+            border: 2px solid black;
+            /*usando a shorthand padding para especificar um espaço interno entre o conteudo e borda, um unico valor adicionar o mesmo espaço ao redor de todo conteudo do elemento*/
+            padding: 25px;
+            /*
+             - shorthand background, e uma propriedade abreviada para 
+             background-color
+             background-image
+             background-repeat
+             background-attachment
+             background-position
+             - especificamos um unico valor para propriedaded background somente a propriedade background-image, o valor url e para vincular imagen ao fundo do elemento
+            */
+            background: url('mountain.jpg');
+            /*
+             - a propriedade background-repeat define se/como uma imagem de fundo será repetida.
+             - o valor no-repeat A imagem de fundo não é repetida. A imagem será mostrada apenas uma vez
+            */
+            background-repeat: no-repeat;
+            /*
+             - a propriedade background-size especifica o tamanaho da imagens de fundo
+             - a sintaxe de dois valores (primeiro valor: largura da imagem, segundo valor: altura)
+             - definimos que o tamanho da imagen de fundo  a ser exibida sera de 300px de width, e 100px de height
+            */
+            background-size: 300px 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>background-size: auto(default)</h2>
+    <div id="example1">
+        <h2>Hello World</h2>
+        <p>A imagem de fundo é exibida em seu tamanho original.</p>
+    </div>
+    <h2>backgorund-size: 300px 100px</h2>
+    <div id="example2">
+        <h2>Hello World</h2>
+        <p>Aqui, a imagem de fundo é definida para 300px de largura e 100px de altura.</p>
+    </div>
+</body>
+</html>

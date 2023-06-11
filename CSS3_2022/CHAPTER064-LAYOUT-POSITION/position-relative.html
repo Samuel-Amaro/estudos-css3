@@ -1,0 +1,79 @@
+<!--
+    * POSITION RELATIVE
+
+        O posicionamento relativo é o primeiro tipo de posição que veremos. Isso é muito semelhante ao posicionamento estático, exceto que, uma vez que o elemento posicionado tenha tomado seu lugar no fluxo normal, você pode modificar sua posição final, inclusive fazendo com que ele se sobreponha a outros elementos na página. Vá em frente e atualize a position declaração em seu código:
+
+        Se você salvar e atualizar neste estágio, não verá nenhuma alteração no resultado. Então, como você modifica a posição do elemento? Você precisa usar as propriedades top, bottom, lefte right, que explicaremos na próxima seção.
+
+        * APRESENTADNDO A PARTE TOP(SUPERIOR), BOTTOM(INFERIOR), LEFT(ESQUERDA) E RIGHT(DIREITA)
+
+            top, bottom, left e right são usados ​​ao lado position para especificar exatamente para onde mover o elemento posicionado. Para testar isso, adicione as seguintes declarações à .positioned regra em seu CSS:
+
+            Nota: Os valores dessas propriedades podem levar qualquer unidade que você razoavelmente esperaria: pixels, mm, rems, %, etc.
+
+            Legal né? Ok, então isso provavelmente não era o que você estava esperando. Por que ele se moveu para baixo e para a direita se especificamos o topo e a esquerda ? Isso pode parecer contra-intuitivo. Você precisa pensar nisso como se houvesse uma força invisível que empurra o lado especificado da caixa posicionada, movendo-a na direção oposta. Então, por exemplo, se você especificar top: 30px;, é como se uma força empurrasse a parte superior da caixa, fazendo com que ela se movesse para baixo em 30px.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic document flow</title>
+
+    <style type="text/css">
+        body {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        .positioned{
+            /*
+             -  O posicionamento permite que você retire elementos do fluxo normal de documentos e faça com que eles se comportem de maneira diferente.
+             - Para ativar um tipo específico de posicionamento em um elemento, usamos a position propriedade.
+             - o valor position relative Isso é muito semelhante ao posicionamento estático, exceto que, uma vez que o elemento posicionado tenha tomado seu lugar no fluxo normal, você pode modificar sua posição final, inclusive fazendo com que ele se sobreponha a outros elementos na página. 
+             - inicialmente não verá nenhuma alteração no resultado. do posicionamento do elemento. continuara posicionado no mesmo lugar.
+            */
+            position: relative;
+            background: yellow;
+            /*
+             - para modificar a posição do elemento posicionado relativamente, Você precisa usar as propriedades top, bottom, left e right.
+             - top, bottom, left e right são usados ​​ao lado position para especificar exatamente para onde mover o elemento posicionado.
+             - essas propriedades elas são contra intuitivas, Você precisa pensar nisso como se houvesse uma força invisível que empurra o lado especificado da caixa posicionada, movendo-a na direção oposta.
+             - no exemplo abaixo o valor 30px empurra a caixa 30px para baixo, é como se uma força empurrasse a parte superior da caixa, fazendo com que ela se movesse para baixo em 30px.
+             - direção oposta de top e bottom
+            */
+            top: 30px;
+            /*
+             - direção oposta de left e right
+             - aqui left: 30px e como se uma força empurrase a parte esquerda da caixa, fazendo com que ela se movesse para a direita em 30px
+            */
+            left: 30px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1>Fluxo básico de documentos</h1>
+
+    <p>Sou um elemento básico de nível de bloco. Meus elementos de nível de bloco adjacentes ficam em novas linhas abaixo de mim.</p>
+
+    <p class="positioned">Por padrão, abrangemos 100% da largura de nosso elemento pai e nossa altura é tão alta quanto nosso conteúdo filho. Nossa largura e altura totais são nosso conteúdo + preenchimento + largura/altura da borda.</p>
+
+    <p>Estamos separados por nossas margens. Por causa do recolhimento da margem, somos separados pela largura de uma de nossas margens, não de ambas.</p>
+
+    <p>elementos inline <span>como este</span> e <span>este</span> ficam na mesma linha um do outro, e nós de texto adjacentes, se houver espaço na mesma linha. Elementos inline transbordantes <span>se encaixam em uma nova linha, se possível — como esta contendo texto</span>, ou apenas vá para uma nova linha se não, assim como esta imagem fará: <img src="long.jpg "></p>
+
+  </body>
+</html>

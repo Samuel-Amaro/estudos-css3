@@ -1,0 +1,38 @@
+<!--
+    * overflow: visible;
+
+        - Por padrão, o overflow é visible, o que significa que não é recortado e renderizado fora da caixa do elemento:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        div{
+            background-color: coral;
+            width: 200px;
+            /*
+             - a overflow propriedade so funcionada para elementos com display block e com uma altura especificada
+            */
+            height: 65px;
+            border: 1px solid;
+            /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - o valor visible - valor padrão. o overflow(o conteudo que transborda para fora da caixa) não e cortado, o conteudo e renderizado fora da caixa do elemento.
+            */
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>overflow: visible</h2>
+
+    <p>Por padrão, o overflow é visível, o que significa que não é recortado e renderizado fora da caixa do elemento:</p>
+
+    <div>Você pode usar a propriedade overflow quando quiser ter um melhor controle do layout. A propriedade overflow especifica o que acontece se o conteúdo transbordar da caixa de um elemento.</div>
+
+</body>
+</html>

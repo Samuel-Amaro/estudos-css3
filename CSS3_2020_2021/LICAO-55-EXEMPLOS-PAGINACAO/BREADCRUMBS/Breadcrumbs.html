@@ -1,0 +1,58 @@
+<!--
+    * BREADCRUMBS(MIGALHAS DE PÃO)
+
+      - Outra variação de paginação é a chamada "breadcrumbs":
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de paginação</title>
+    <style>
+        ul.breadcrumb{
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-right: 16px;
+            padding-left: 16px;
+            list-style: none;
+            background-color: #eee;
+        }
+        ul.breadcrumb li{
+            /*elemento e exibido como um elemento embutido(inline) que so ocupa o espaço que seu conteudo precisa, não aceita largura e altura, e não quebra de linha*/ 
+            display: inline;
+        }
+        /*a lista que possui um descentende elemento li que possui um elemento adjacente igual a ele que seja irmão dele, que sejam elementos filhos da mesma lista, aplicando um pseudo-elemento no irmão para estilizar o elemento antes do conteudo aparecer*/
+        ul.breadcrumb li+li:before{
+            /*add espaço interno no elemento*/
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-right: 1px;
+            padding-left: 1px;
+            color: black;
+            /*conteudo do elemento, antes do conteudo verdadeiro ser mostrado*/
+            content: "/\00a0"; /*uma contra barra/ */
+        }
+        ul.breadcrumb li a{
+            /*cor das ancoras*/
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de paginação</h1>
+
+    <p><strong>Exemplo:</strong> Outra variação de paginação é a chamada "breadcrumbs"</p>
+
+    <h2>Paginação breadcrumb</h2>
+
+    <ul class="breadcrumb">
+       <li><a href="#">Home</a></li>
+       <li><a href="#">Pictures</a></li>
+       <li><a href="#">Summer</a></li>
+       <li>Italy</li>  
+    </ul>
+</body>
+</html>

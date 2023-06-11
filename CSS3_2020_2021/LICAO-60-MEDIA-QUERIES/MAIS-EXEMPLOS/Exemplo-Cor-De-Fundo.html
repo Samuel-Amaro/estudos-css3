@@ -1,0 +1,49 @@
+<!--
+    # MEDIAS QUERYES CSS - EXEMPLOS
+
+    ## consultas de mídia css - Mais Exemplos
+
+      - Vejamos mais alguns exemplos do uso de consultas de mídia.
+
+      - As consultas de mídia são uma técnica popular para fornecer uma folha de estilo personalizada para diferentes dispositivos. Para demonstrar um exemplo simples, podemos alterar a cor de fundo para diferentes dispositivos:
+
+      - Você se pergunta por que usamos exatamente 992px e 600px? Eles são o que chamamos de "pontos de interrupção típicos" para dispositivos. 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo medi query</title>
+    <style>
+        body{
+            /*cor de fundo padrão*/
+            background-color: tan;
+            color: black;
+        }
+        /*em telas com largura de 992px ou menos, a cor de fundo é azul, se for tela e o dispositivo tiver 992px de largura maxima, na sua viewreport ou menos isso sera aplicado*/
+        @media screen and (max-width: 992px) {
+            body{
+                background-color: blue;
+                color: white;
+            }
+        }
+        /*em telas com a viewreport que tenha a largura de 600px ou menos, a cor de fundo é verde oliva*/
+        @media screen and (max-width: 600px){
+            body{
+                background-color: olive;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Redimensione a janela do navegador para ver o efeito!</h1>
+
+    <p>Por padrão, a cor de fundo do documento é "tan". Se o tamanho da tela for 992 px ou menos, a cor mudará para "azul". Se for 600 px ou menos, mudará para "verde-oliva".</p>
+
+</body>
+</html>

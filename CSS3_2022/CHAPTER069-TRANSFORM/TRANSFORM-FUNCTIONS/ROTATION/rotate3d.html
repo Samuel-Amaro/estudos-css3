@@ -1,0 +1,62 @@
+<!--
+    * rotate3d()
+
+        A função CSS rotate3d() define uma transformação que gira um elemento em torno de um eixo fixo no espaço 3D, sem deformá-lo. Seu resultado é um tipo de dados <transform-function>.
+
+        No espaço 3D, as rotações têm três graus de liberdade, que juntos descrevem um único eixo de rotação. O eixo de rotação é definido por um vetor [x, y, z] e passa pela origem (conforme definido pela propriedade transform-origin). Se, conforme especificado, o vetor não for normalizado (ou seja, se a soma do quadrado de suas três coordenadas não for 1), o agente do usuário o normalizará internamente. Um vetor não normalizável, como o vetor nulo, [0, 0, 0], fará com que a rotação seja ignorada, mas sem invalidar toda a propriedade CSS.
+
+        Nota: Ao contrário das rotações no plano 2D, a composição das rotações 3D geralmente não é comutativa. Em outras palavras, a ordem em que as rotações são aplicadas afeta o resultado.
+
+    * SINTAXE
+
+        A quantidade de rotação criada por rotate3d() é especificada por três <number>s e um <angle>. Os <number>s representam as coordenadas x, y e z do vetor que denota o eixo de rotação. O <angle> representa o ângulo de rotação; se positivo, o movimento será no sentido horário; se negativo, será no sentido anti-horário.
+
+            rotate(x, y, z, a)
+
+    * VALUES
+
+        x: É um <número> que descreve a coordenada x do vetor que denota o eixo de rotação que pode estar entre 0 e 1.
+
+        y: É um <número> que descreve a coordenada y do vetor que denota o eixo de rotação que pode estar entre 0 e 1.
+
+        z: É um <número> que descreve a coordenada z do vetor que denota o eixo de rotação que pode estar entre 0 e 1.
+
+        a: É um <angle> que representa o ângulo de rotação. Um ângulo positivo denota uma rotação no sentido horário, um ângulo negativo denota uma rotação no sentido anti-horário.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            perspective: 800px;
+        }
+
+        div {
+            width: 80px;
+            height: 80px;
+            background-color: skyblue;
+        }
+
+        .rotated {
+            /*
+             - A função CSS rotate3d() define uma transformação que gira um elemento em torno de um eixo fixo no espaço 3D, sem deformá-lo.
+             - No espaço 3D, as rotações têm três graus de liberdade, que juntos descrevem um único eixo de rotação. O eixo de rotação é definido por um vetor [x, y, z] e passa pela origem (conforme definido pela propriedade transform-origin)
+             -  A quantidade de rotação criada por rotate3d() é especificada por três <number>s e um <angle>.
+             - valor 0, 1, 0 são as cordenada x, y, z é um <número> que descreve a coordenadas x, y, z do vetor que denota o eixo de rotação que pode estar entre 0 e 1
+             - o valor 60deg e um angulo que especica que o elemento sera rotacionado 60 graus no sentido horario
+            */
+            transform: rotate3d(0, 1, 0,60deg);
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div>Normal</div>
+    <div class="rotated">Rotated</div>
+
+</body>
+</html>

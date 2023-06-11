@@ -1,0 +1,48 @@
+<!--
+    * CSS TEXT(TEXTO)
+
+        - CSS tem muitas propriedades para formatar texto.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*
+            - usando a shorthand propriedade border para definir uma borda para o elemento, a shorthand e uma abreviação para border-width, border-style, border-color
+            - no box-model uma borda que contorna o preenchimento(padding) e o conteúdo(content)*/
+            border: 1px solid gray;
+            /*
+            - usando a propriedade padding para adicionar espaço ao redor do conteudo, entre a borda e o conteudo, usando a shorthand para especificar o mesmo valor de comprimento para todos os lados
+            - no box model Preenchimento(Padding) - Limpa uma área ao redor do conteúdo. O forro é transparente*/
+            padding: 8px;
+        }
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            color: #4CAF50;
+        }
+        p{
+            text-indent: 50px;
+            text-align: justify;
+            letter-spacing: 3px;
+        }
+        a{
+            text-decoration: none;
+            color: #008CBA;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Formatação de texto</h1>
+        <p>Este texto é estilizado com algumas das propriedades de formatação de texto. O título usa as propriedades text-align, text-transform e color. O parágrafo é recuado, alinhado e o espaço entre os caracteres é especificado. O sublinhado é removido deste link colorido <a target="_blank" href="#" rel="next"><q>Experimente você mesmo link.</q></a></p>
+    </div>
+    
+    
+
+</body>    
+</html>

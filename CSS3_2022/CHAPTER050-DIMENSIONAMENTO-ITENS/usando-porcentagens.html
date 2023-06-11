@@ -1,0 +1,32 @@
+<!--
+    * USANDO PORCENTAGENS
+
+        De muitas maneiras, porcentagens agem como unidades de comprimento e, como discutimos na lição sobre valores e unidades, elas podem ser usadas de forma intercambiável com comprimentos. Ao usar uma porcentagem, você precisa estar ciente do que é uma porcentagem. No caso de uma caixa dentro de outro contêiner, se você der à caixa filho uma largura percentual, ela será uma porcentagem da largura do contêiner pai.
+
+        Isso ocorre porque as porcentagens são resolvidas em relação ao tamanho do bloco que o contém. Sem nenhuma porcentagem aplicada <div>, ocuparíamos 100% do espaço disponível, pois é um elemento de nível de bloco. Se dermos uma largura percentual, isso se tornará uma porcentagem do espaço que normalmente preencheria.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .box{
+            border: 5px solid darkblue;
+            /*
+             - A width propriedade CSS define a largura de um elemento. Por padrão, ele define a largura da área de conteúdo, mas se box-sizing estiver definido como border-box, ele define a largura da área da borda .
+             - define a largura de um elemento, usando uma unidade relativa.
+             - o valor 50%, Define a largura como uma porcentagem da largura do bloco que o contém. 
+             - o elemento ira ocupar 50% da largura do elemento pai, no caso o body, o elemento ira ocupar 50% da largura do body
+             - ocupa 50% do espaço disponivel
+            */
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">Eu tenho uma largura percentual.</div>
+        
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--
+    * O PSEUDO-ELEMENTO ::first-letter(primeira letra)
+
+        - O ::first-letter pseudoelemento é usado para adicionar um estilo especial à primeira letra de um texto.
+
+        - Nota: O ::first-letter pseudoelemento só pode ser aplicado a elementos de nível de bloco.
+
+        - As seguintes propriedades se aplicam ao pseudoelemento ::first-letter: 
+
+            font properties
+            color properties 
+            background properties
+            margin properties
+            padding properties
+            border properties
+            text-decoration
+            vertical-align (only if "float" is "none")
+            text-transform
+            line-height
+            float
+            clear
+
+        - O exemplo a seguir formata a primeira letra do texto em todos os elementos <p>: 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::first-letter pseudoelemento é usado para adicionar um estilo especial à primeira letra de um texto.
+         - o ::first-letter pseudo elemento so pode ser aplicado a elementos de nivel de bloco
+         - estilizando a primeira letra do texto(conteudo) de um elemento <p>
+        */
+        p::first-letter{
+            color: #ff0000;
+            /*
+             - a propriedade font-size especifica o tamanho da fonte
+             - o valor xx-large define o tamanho da fonte para xx-large
+            */
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Você pode usar o pseudo-elemento ::first-letter para adicionar um efeito especial ao primeiro caractere de um texto!</p>
+
+</body>
+</html>

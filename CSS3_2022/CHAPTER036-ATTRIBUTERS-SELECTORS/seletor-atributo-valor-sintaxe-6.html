@@ -1,0 +1,47 @@
+<!--
+    * SELETOR DE [attribute*="value"]
+
+        - O [attribute*="value"] seletor é usado para selecionar elementos cujo valor de atributo contém um valor especificado.
+
+        - O exemplo a seguir seleciona todos os elementos com um valor de atributo de classe que contém "te":
+
+        - Nota: O valor não precisa ser uma palavra inteira!  
+
+    * DEFINIÇÃO E USO
+
+        - O seletor [attribute*=value] corresponde a cada elemento cujo valor de atributo contém um valor especificado 
+
+    * SINTAXE CSS:
+
+        [attribute*=value] {
+            css declarations;
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seletor de atributos
+         - estilizando elementos que possuem um atributo ou valor de atributo especifico.
+         - O [attribute*="value"] seletor é usado para selecionar elementos cujo valor de atributo contém um valor especificado.
+         - no exemplo abaixo o seletor ira selecionar todos os elementos que tenham o atributo class especificado cujo valor de atributo contenha o valor "te" não precisa ser uma palavra inteira
+        */
+        [class*="te"] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Seletor [attribute*="value"] CSS</h2>
+    
+    <div class="first_test">O primeiro elemento div.</div>
+    <div class="second">O segundo elemento div.</div>
+    <div class="my-test">O terceiro elemento div.</div>
+    <p class="mytest">Este é algum texto em um parágrafo.</p>
+
+</body>
+</html>

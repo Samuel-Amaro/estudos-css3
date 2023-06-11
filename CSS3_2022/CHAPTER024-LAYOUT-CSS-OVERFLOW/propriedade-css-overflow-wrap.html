@@ -1,0 +1,76 @@
+<!--
+    * PROPRIEDADE CSS OVERFLOW-WRAP(ENVOLVIMENTO DE TRANSBORDO)
+
+        - A overflow-wrap propriedade especifica se o navegador pode ou não quebrar linhas com palavras longas, se elas estourarem o contêiner.
+
+    * SINTAXE CSS:
+
+        overflow-wrap: normal|anywhere|break-word|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: normal
+        DESCRIPTION: As palavras longas não quebram, mesmo que transbordem o contêiner. Isso é padrão
+        -------------------------------------
+        VALUE: anywhere(em qualquer lugar)
+        DESCRIPTION: Palavras longas quebrarão se transbordarem o contêiner
+        -------------------------------------
+        VALUE: break-word(quebrar palavra)
+        DESCRIPTION: Palavras longas serão quebradas se transbordarem o contêiner
+        -------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        -------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        -------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        div{
+            width: 150px;
+            border: 1px solid black;
+        }
+        div.a{
+            /*
+             - a propriedade overflow-wrap especifica se o navegador pode ou não quebrar linhas com palavras longas, se elas estourarem(transbordarem o conteiner)
+             - o valor normal As palavras longas não quebram, mesmo que transbordem o contêiner. Isso é padrão
+            */
+            overflow-wrap: normal;
+        }
+        div.b{
+            /*
+             - o valor break-word Palavras longas serão quebradas se transbordarem o contêiner
+            */
+            overflow-wrap: break-word;
+        }
+        div.c{
+            /*
+             - o valor anywhere Palavras longas quebrarão se transbordarem o contêiner
+            */
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade overflow-wrap</h1>
+
+    <h2>overflow-wrap: normal(default):</h2>
+
+    <div class="a">Esta div contém uma palavra muito longa: estaéumapalavramuitomuitomuitomuitomuitolonga. A palavra longa não será quebrada e passará para a proxima linha.</div>
+
+
+    <h2>overflow-wrap: break-word:</h2>
+
+    <div class="b">Esta div contém uma palavra muito longa: estaéumapalavramuitomuitomuitomuitomuitolonga. A palavra longa não será quebrada e passará para a proxima linha.</div>
+
+    <h2>oveflow-wrap: anywhere</h2>
+
+    <div class="c">Esta div contém uma palavra muito longa: estaéumapalavramuitomuitomuitomuitomuitolonga. A palavra longa não será quebrada e passará para a proxima linha.</div>
+</body>
+</html>

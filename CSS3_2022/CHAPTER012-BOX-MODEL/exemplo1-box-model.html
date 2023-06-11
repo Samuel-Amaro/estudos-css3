@@ -1,0 +1,46 @@
+<!--
+    * EXEMPLO 01 BOX MODEL(O MODELO DE CAIXA)
+
+        - O modelo de caixa nos permite adicionar uma borda ao redor dos elementos e definir o espaço entre os elementos. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*
+             -  O modelo de caixa(box model) CSS é essencialmente uma caixa que envolve cada elemento HTML.
+             - o box model nos permite adicicionar uma borda ao redor dos elementos e definir espaço entre os elementos.
+             - Ele consiste em: margins, borders, padding e o conteúdo real. 
+            */
+            
+           /*usando a propriedade background-color para poder especificar um cor de fundo para o elemento*/
+           background-color: lightgrey;
+           /*usando a propriedade width para definir uma largura para o elemento, define que o elemento tera uma largura de 300px, A largura de um elemento não inclui padding, border ou margin!*/
+           width: 300px;
+           /*
+            - usando a shorthand propriedade border para definir uma borda para o elemento, a shorthand e uma abreviação para border-width, border-style, border-color
+            - no box-model uma borda que contorna o preenchimento(padding) e o conteúdo(content)*/
+           border: 15px solid green;
+           /*
+            - usando a propriedade padding para adicionar espaço ao redor do conteudo, entre a borda e o conteudo, usando a shorthand para especificar o mesmo valor de comprimento para todos os lados
+            - no box model Preenchimento(Padding) - Limpa uma área ao redor do conteúdo. O forro é transparente*/
+           padding: 20px;
+           /*
+            - usando a propriedade margin para adicionar espaço externo ao redor do elemento apos a border, usando a shorthand margin escificando um unico valor para todos os lados do elemento
+            - no box model margem(margin) - Limpa uma área fora da fronteira(border). A margem(margin) é transparente*/
+           margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Demostrando o modelo de caixa(box-model)</h2>
+
+    <p>O modelo de caixa CSS é essencialmente uma caixa que envolve cada elemento HTML. Ele consiste em: bordas(borders), preenchimento(padding), margens(margins) e o conteúdo real.</p>
+
+    <div>Este texto é o conteúdo da caixa. Adicionamos um padding de 50px, uma margin de 20px e uma border verde de 15px. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum.</div>
+</body>    
+</html>

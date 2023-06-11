@@ -1,0 +1,43 @@
+<!--
+    * :scope
+
+        A pseudoclasse CSS :scope representa elementos que são um ponto de referência para os seletores corresponderem.
+
+        /* Seleciona um elemento com escopo */
+        :scope {
+            background-color: lime;
+        }
+
+        Atualmente, quando usado em uma folha de estilo, :scope é o mesmo que :root, pois não há neste momento uma maneira de estabelecer explicitamente um elemento com escopo. Quando usado a partir de uma API DOM como querySelector(), querySelectorAll(), matches() ou Element.closest(), :scope corresponde ao elemento no qual o método foi chamado.
+
+    * Sintaxe
+
+        :scope
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+
+    <p id="para">
+        This is a paragraph. It is not an interesting paragraph. Sorry about that.
+    </p>
+    <p id="output"></p>
+
+    <script type="text/javascript">
+        
+        let paragraph = document.getElementById("para");
+        let output = document.getElementById("output");
+
+        if (paragraph.matches(":scope")) {
+            output.innerText = "Yep, the element is its own scope as expected!";
+        }
+
+    </script>
+</body>
+</html>

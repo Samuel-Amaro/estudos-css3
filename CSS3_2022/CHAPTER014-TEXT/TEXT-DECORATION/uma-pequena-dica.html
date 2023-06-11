@@ -1,0 +1,27 @@
+<!--
+    * UMA PEQUENA DICA
+
+        - Todos os links em HTML são sublinhados por padrão. Às vezes, você vê que os links são estilizados sem sublinhado. O text-decoration: none; é usado para remover o sublinhado dos links, assim:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        a{
+            /* 
+             - a propriedade text-decoration e uma shorthand para text-decoration-line, text-decoration-color, text-decoration-style, text-decoration-thickness
+             - especificando somente um valor para a primeira propriedade text-decoration-line, o valor none nesta propriedade não especifica nenhuma linha para a decoração de texto
+            */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Usando text-decoration: none;</h1>
+    
+    <p>Um link sem sublinhado <a href="https://www.w3shools.com" target="_blank" rel="next">W3Schools.com</a></p>
+</body>
+</html>

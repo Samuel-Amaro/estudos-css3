@@ -1,0 +1,13 @@
+<!--
+    * ITENS DE GRADE ANÔNIMOS
+
+        Há uma menção na especificação de itens de grade anônimos. Eles são criados se você tiver uma string de texto dentro de seu contêiner de grade, que não esteja envolvida em nenhum outro elemento. No exemplo abaixo, temos três itens de grade, supondo que você tenha definido o pai com uma classe de gridcomo display: grid. O primeiro é um item anônimo, pois não possui marcação, este item sempre será tratado através das regras de posicionamento automático. Os outros dois são itens de grade incluídos em uma div, eles podem ser colocados automaticamente ou você pode colocá-los com um método de posicionamento em sua grade.
+
+            <div class="grid">
+                I am a string and will become an anonymous item
+                <div>A grid item</div>
+                <div>A grid item</div>
+            </div>
+
+        Itens anônimos são sempre colocados automaticamente porque não há como segmentá-los. Portanto, se você tiver algum texto desempacotado por algum motivo em sua grade, esteja ciente de que ele pode aparecer em algum lugar inesperado, pois será colocado automaticamente de acordo com as regras de posicionamento automático.
+-->

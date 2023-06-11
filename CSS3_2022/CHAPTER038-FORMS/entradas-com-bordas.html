@@ -1,0 +1,47 @@
+<!--
+    * ENTRADAS COM BORDAS
+
+        - Use a border propriedade para alterar o tamanho e a cor da borda e use a border-radius propriedade para adicionar cantos arredondados:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid red;
+            /*
+             - propriedade border-radius e usada para adicionar bordas arredondadas a um elementos
+             - A border-radius propriedade define o raio dos cantos do elemento.
+             - a propriedade aceita de um a quatro valores, um valor - border-radius: o valor se aplica a todos os quatro cantos, que são arredondados igualmente.
+             - a propriedade border radius e uma shorthand para
+
+                border-top-left-radius,
+                border-top-right-radius,    
+                border-bottom-right-radius,
+                border-bottom-left-radius
+
+             - define que a forma dos cantos tera 4px de arredondamento
+            */
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Campos de entrada com bordas</h2>
+
+    <form>
+        <label for="fname">Primeiro Nome</label>
+        <input type="text" id="fname" name="fname"/>
+        <label for="lname">Ultimo Nome</label>
+        <input type="text" id="lname" name="lname"/>
+    </form>
+
+</body>
+</html>

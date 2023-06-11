@@ -1,0 +1,64 @@
+<!--
+    * A PROPRIEDADE FLEX-SHRINK
+
+        A flex-shrink propriedade especifica o fator de redução flexível , que determina quanto o item flexível diminuirá em relação ao restante dos itens flexíveis no contêiner flexível quando o espaço livre negativo for distribuído.
+
+        Essa propriedade lida com situações em que o navegador calcula os flex-basis valores dos itens flexíveis e descobre que eles são muito grandes para caber no contêiner flexível. Desde que flex-shrink tenha um valor positivo, os itens encolherão para que não transbordem o contêiner.
+
+        Assim, onde se flex-grow trata de adicionar espaço disponível, flex-shrink consegue tirar espaço para que as caixas caibam no seu recipiente sem transbordar.
+
+        No próximo exemplo ao vivo, tenho três itens em um contêiner flexível; Dei a cada um uma largura de 200 pixels e o contêiner tem 500 pixels de largura. Com flex-shrink definido para 0 os itens não é permitido encolher e assim eles transbordam da caixa.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid green;
+            padding: 10px;
+            width: 500px;
+        }
+
+        .box :first-child{
+            background-color: black;
+            color: white;
+        }
+
+        .box :nth-child(2){
+            background-color: green;
+            color: white;
+        }
+
+        .box :nth-child(3){
+            background-color: blue;
+            color: white;
+        }
+
+        .box > *{
+            /*
+             - flex shorthand
+                - flex-grow: 0 -> especifica o fator de crescimento flexivel que determina o quanto o item flexivel crescera em relação ao restante dos itens flexiveis no conteiner flexivel quando o espaço live positivo for distribuido.
+                - flex-shrink: 0 -> A flex-shrink propriedade especifica o fator de redução flexível , que determina quanto o item flexível diminuirá em relação ao restante dos itens flexíveis no contêiner flexível quando o espaço livre negativo for distribuído.
+                - flex-basis: auto -> A flex-basis propriedade especifica o tamanho inicial do item flexível antes que qualquer distribuição de espaço aconteça. O valor inicial para esta propriedade é auto. Se o seu item for dimensionado automaticamente(auto), será resolvido para o tamanho de seu conteúdo.
+            */
+            flex: 0 0 auto;
+            width: 200px;
+        }
+
+        /**
+         - Altere o flex-shrink valor para 1e você verá cada item encolher na mesma quantidade, para que todos os itens agora caibam na caixa. Eles se tornaram menores do que sua largura inicial para fazê-lo.
+        */
+    </style>
+    <title>FlexBox</title>
+</head>
+<body>
+    <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three has more content</div>
+    </div>
+</body>
+</html>

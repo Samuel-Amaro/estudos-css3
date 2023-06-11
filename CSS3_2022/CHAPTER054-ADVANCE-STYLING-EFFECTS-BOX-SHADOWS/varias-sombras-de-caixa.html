@@ -1,0 +1,46 @@
+<!--
+    * VÁRIAS SOMBRAS DE CAIXA
+
+        Você também pode especificar várias sombras de caixa em uma única box-shadow declaração, separando-as com vírgulas:
+
+        Fizemos algo divertido aqui criando uma caixa elevada com várias camadas coloridas, mas você pode usá-la da maneira que quiser, por exemplo, para criar uma aparência mais realista com sombras baseadas em várias fontes de luz.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        p{
+            margin: 0;
+        }
+
+        article{
+            max-width: 500px;
+            padding: 10px;
+            background-color: red;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+        }
+
+        .multiple{
+            /**
+             - usando a propriedade box-shadow para criar uma sombra externa ao redor do elemento.
+             - especificando mais de uma sombra para a caixa, separando as declarações por virgula
+             - a primeira declaração de sombra: 5px de deslocamento a direita da caixa na horizontal, 5px de deslocamento vertical abaixo da caixa, e 5px de quantidade de desfoque da sombra, a sombra na cor preta.
+             - a segunda declaração de sombra: 2px a direita, 2px abaixo da caixa do elemento, 1px de quantidade de desfoque sombra de cor preta.
+             - a terceira declaração: 3px a direita, 3px abaixo da caixa, 1px de quantidade de desfoque sombra de cor vermelha
+             - etc...
+            */
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7), 2px 2px 1px black, 3px 3px 1px red, 4px 4px 1px red, 5px 5px 1px black, 6px 6px 1px black;
+        }
+    </style>
+</head>
+<body>
+
+    <article class="multiple">
+        <p><strong>Aviso:</strong> O termostato do transcender cósmico atingiu um nível crítico.</p>
+    </article>
+
+</body>
+</html>

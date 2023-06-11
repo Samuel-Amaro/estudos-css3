@@ -1,0 +1,13 @@
+/*
+ * FONT VARIANT(VARIANTE DE FONTE)
+
+  - A font-variant propriedade especifica se um texto deve ou não ser exibido em uma fonte versalete.
+
+  - Em uma fonte em caixa baixa, todas as letras minúsculas são convertidas em letras maiúsculas. No entanto, as letras maiúsculas convertidas aparecem em um tamanho de fonte menor do que as letras maiúsculas originais no texto.
+*/
+.normal{
+    font-variant: normal;
+}
+.pequeno{
+    font-variant: small-caps;
+}

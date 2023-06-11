@@ -1,0 +1,62 @@
+<!--
+    Mais uma vez podemos mudar flex-direction para column para ver como esta propriedade se comporta quando estamos trabalhando por coluna. Como antes, precisamos de espaço suficiente no eixo cruzado para ter algum espaço livre depois de exibir todos os itens.
+
+    Nota: O valor space-evenly não está definido na especificação flexbox e é uma adição posterior à especificação de alinhamento de caixa. O suporte do navegador para esse valor não é tão bom quanto o dos valores definidos na especificação do flexbox.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex.
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 400px;
+            width: 500px;
+            /*
+             - usar a align-content propriedade para controlar a distribuição de espaço entre as linhas. 
+             - space-between, o que significa que o espaço disponível é compartilhado entre as linhas flexíveis, que são colocadas alinhadas com o início e o fim do contêiner no eixo cruzado(cross axis).
+            */
+            align-content: space-between;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            padding: 20px;
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            flex:1 1 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div class="selected">Três</div>
+        <div>Quatro</div>
+        <div>Cinco</div>
+        <div>Seis</div>
+        <div>Sete</div>
+        <div>Oito</div>
+    </div>
+</body>
+</html>

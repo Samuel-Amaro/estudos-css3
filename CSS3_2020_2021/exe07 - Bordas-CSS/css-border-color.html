@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Border Color</title>
+    <style>
+        /*
+         * CSS BORDER COLOR
+           - A border-colorpropriedade é usada para 
+           definir a cor das quatro bordas;
+           - Se border-colornão estiver definido, ele herda a cor do elemento
+        */
+        #one{
+            border-style: solid;
+            border-color: red;
+        }
+        #two{
+            border-style: solid;
+            border-color:green;
+        }
+        #three{
+            border-style: dotted;
+            border-color: blue;
+        }
+        /*
+         * CORES LATERAIS ESPECIFICAS
+           - A border-colorpropriedade pode ter de um a quatro valores (para a borda superior, borda direita, borda inferior e borda esquerda). 
+        */
+        #five{
+             border-style: solid;
+             border-color: red green blue yellow;
+             /*superior(Vermelho), direita(verde), inferior(azul),esquerda(amarelo)*/
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Border Color</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eaque, provident quas totam veritatis ratione sed nemo est cum, dignissimos doloribus, corrupti praesentium voluptate excepturi officiis eligendi quis omnis pariatur?</p>
+    <p id="one">Borda Vermelha</p>
+    <p id="two">Borda verde</p>
+    <p id="three">Borda Azul</p>
+    <h2>Borda colorida</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis accusamus dolor nihil vel cumque. Deleniti iste tempore optio eius ipsum fugit modi animi libero! Debitis iste voluptatibus accusantium labore esse?</p>
+    <p id="five">borda colorida</p>
+</body>
+</html>

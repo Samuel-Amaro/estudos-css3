@@ -1,0 +1,90 @@
+<!--
+    * MEDIA QUERYS PARA COLUNAS
+
+      - Um uso comum de consultas de mídia é criar um layout flexível. Neste exemplo, criamos um layout que varia entre quatro, duas e colunas de largura total, dependendo dos diferentes tamanhos de tela:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo media querys para colunas</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /*cria quatro colunas iguais que flutuam lado a lado, isso para telas grandes*/
+        div.column{
+            /*faz o elemento div.column fluatuar a esquerda de seu elemento pai, que no caso e div.row, o elemento sai do fluxo normal da pagina*/
+            float: left;
+            width: 25%;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+        /*limpar os flutuadores após as colunas*/
+        div.row:after{
+            /*apos o conteudo do elemento div.row ser mostrado, devera aplicar os seguintes regras css*/
+            content: "";/*conteudo do elemento*/
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento. 
+            o display table : Deixe o elemento se comportar como um elemento <table> como uma tabela*/
+            display: table;
+            /*limpa o flutuador de ambos os lados da direita e esquerda, para que o proximo elemento no fluxo da pagina se comporte normalmente e não flutue sem necessidade a esse elemento*/
+            clear: both;
+        }
+        div#coluna-01{
+            background-color: #aaa;
+        }
+        div#coluna-02{
+            background-color: #bbb;
+        }
+        div#coluna-03{
+            background-color: #ccc;
+        }
+        div#coluna-04{
+            background-color: #ddd;
+        }
+        /*em telas com largura de 992px ou menos, vá de quatro colunas para duas colunas, usando a view report para se basear a largura da tela, telas de tablets e notebooks de proporções menores, isso para telas medias*/
+        @media screen and (max-width: 992px){
+            div.column{
+                width: 50%;
+            }
+        }
+        /*em telas com largura de 600px ou menos, empilhe as colunas uma em cima da outra, em vez de uma ao lado da outra, telas de tablets e telefones, isso para telas pequenas*/
+        @media screen and (max-width: 600px) {
+            div.column{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Layout responsivo de quatro colunas</h2>
+
+    <p><strong>Redimensione a janela do navegador para ver o efeito de resposta. </strong>Em telas com largura de 992 px ou menos, as colunas serão redimensionadas de quatro colunas para duas colunas. Em telas com largura de 600 px ou menos, as colunas serão empilhadas uma em cima da outra, em vez de uma ao lado da outra.</p>
+
+    <div class="row">
+        <div class="column" id="coluna-01">
+            <h2>Column 1</h2>
+            <p>Algum texto...</p>
+        </div>
+        <div class="column" id="coluna-02">
+            <h2>Column 2</h2>
+            <p>Algum texto...</p>
+        </div>
+        <div class="column" id="coluna-03">
+            <h2>Column 3</h2>
+            <p>Algum texto...</p>
+        </div>
+        <div class="column" id="coluna-04">
+            <h2>Column 4</h2>
+            <p>Algum texto...</p>
+        </div>
+    </div>
+
+</body>
+</html>

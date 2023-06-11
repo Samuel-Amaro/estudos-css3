@@ -1,0 +1,163 @@
+<!--
+    * LINHAS DE GRADE IMPLÍCITAS DE ÁREAS NOMEADAS
+
+        Vimos como as linhas nomeadas criam uma área nomeada, e isso também funciona ao contrário. As áreas de modelo nomeadas criam linhas nomeadas que você pode usar para colocar seus itens. Se pegarmos o layout criado no guia de Grid Template Areas, podemos usar as linhas criadas por nossas áreas para ver como isso funciona.
+
+        Neste exemplo, adicionei um div extra com uma classe de overlay. Nomeamos áreas criadas usando a grid-area propriedade e, em seguida, um layout criado em grid-template-areas. Os nomes das áreas são:
+
+            hd
+            ft
+            main
+            sd
+
+        Isso nos dá linhas de coluna e linha:
+
+            hd-start
+            hd-end
+            sd-start
+            sd-end
+            main-start
+            main-end
+            ft-start
+            ft-end
+
+        Você pode ver as linhas nomeadas na imagem, observe que algumas linhas têm dois nomes - por exemplo sd-end, e main-start referem-se à mesma linha de coluna.
+
+        Posicionar overlay usando essas linhas nomeadas implícitas é o mesmo que posicionar um item usando linhas que nomeamos.   
+        
+        Dado que temos essa capacidade de posicionar linhas criadas de áreas nomeadas e áreas de linhas nomeadas, vale a pena dedicar um pouco de tempo para planejar sua estratégia de nomenclatura ao começar a criar seu layout de grade. Ao selecionar nomes que farão sentido para você e sua equipe, você ajudará todos a usar os layouts que você criar com mais facilidade.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com nove colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - usando a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+            */
+            grid-template-columns: repeat(9, 1fr);
+            /*
+             - espefica a altura das linhas implicitas
+            */
+            grid-auto-rows: minmax(100px, auto);
+            /*
+             - Aqui vamos, especificar a localização das áreas definidas por nome, especificando o valor na grid-template-areas propriedade.
+             - criando o layout, cria todo o layout no conteiner de grade ao inves de especificar nos proprios itens grid.
+            */
+            grid-template-areas: 
+                "hd hd hd hd hd hd hd hd hd"
+                "sd sd sd main main main main main main"
+                "ft ft ft ft ft ft ft ft ft";
+        }
+
+        /*iten grid*/
+        .header{
+            /*
+             - a propriedade grid-area e usada para posicionar uma area de grade
+             - Definindo uma área dando-lhe um nome. pode ser o nome que eu quiser.
+             - isso não cria um layout, mas nomeia areas para serem usdas em um layout.
+             - nomendo a area do primeiro iten de grid.
+             - as areas definidas criam-linhas nomeadas de forma implicita, isso nos da linhas de faixas de coluna e linhas de faixa de linhas.
+             - aqui as linhas nomeadas ficam como: hd-start, hd-end, em ambas faixas.
+            */
+            grid-area: hd;
+        }
+
+        /*iten grid*/
+        .footer{
+            /*
+            - nomendo a area do segundo iten de grid.
+            - as areas definidas criam-linhas automaticamente nomeadas de forma implicita, isso nos da linhas de faixas de coluna e linhas de faixa de linhas.
+            - aqui as linhas nomeadas ficam como: ft-start, ft-end, em ambas faixas.
+            */
+            grid-area: ft;
+        }
+
+        /*iten grid*/
+        .content{
+            /*
+            - nomendo a area do terceiro iten de grid.
+            - as areas definidas criam-linhas automaticamente nomeadas de forma implicita, isso nos da linhas de faixas de coluna e linhas de faixa de linhas.
+            - aqui as linhas nomeadas ficam como: main-start, main-end, em ambas faixas.
+            */
+            grid-area: main;
+        }
+
+        /*iten grid*/
+        .sidebar{
+            /*
+            - nomendo a area do quarto iten de grid.
+            - as areas definidas criam-linhas automaticamente nomeadas de forma implicita, isso nos da linhas de faixas de coluna e linhas de faixa de linhas.
+            - aqui as linhas nomeadas ficam como: sd-start, sd-end, em ambas faixas.
+            */
+            grid-area: sd;
+        }
+        
+        .wrapper > div.overlay{
+            /*
+             - o elemento overlay ira sobrepor todos os outros elementos na ordem especificada.
+            */
+            z-index: 10;
+            /*
+             - AS AREAS DE MODELO NOMEADAS CRIAM LINHAS NOMEADAS IMPLICITAS QUE EU POSSO USAR PARA COLOCAR MEUS ITENS.
+             - usando as linhas criadas por nossas areas de forma implicita, para ver como funciona. 
+             - posicionar as linhas nomeadas implicitas e o mesmo que posionar um item usando linhas que nomeamos.
+             - especificamos que o item grid overlay ira se posicionada na linha main-start da faixa de colunas e se estendera até a linha main-end
+            */
+            grid-column: main-start / main-end;
+            /*
+             - na faixa de linhas o elemento sera posicinado na linha hd-start e se estendera até a linha ft-end.
+            */
+            grid-row: hd-start / ft-end;
+            border: 4px solid rgb(92, 148, 13);
+            background-color: rgba(92, 148, 13, 0.4);
+            color: rgb(92, 148, 13);
+            font-size: 150%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+        <div class="overlay">Overlay</div>
+    </div>
+
+</body>
+</html>

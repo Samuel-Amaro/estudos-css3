@@ -1,0 +1,127 @@
+<!--
+    * CSS BORDER STYLE
+
+        - A border-style propriedade especifica que tipo de borda exibir.
+
+        - A border-style propriedade define o estilo das quatro bordas de um elemento. Esta propriedade pode ter de um a quatro valores.
+
+        - Os seguintes valores são permitidos:
+
+            dotted(pontilhado) - Define uma borda pontilhada
+
+            dashed(tracejadas) - Define uma borda tracejada
+
+            solid(solido) - Define uma borda sólida
+
+            double(duplo) - Define uma borda dupla
+
+            groove(sulco) - Define uma borda ranhurada 3D. O efeito depende do valor da cor da borda
+
+            ridge(cume) - Define uma borda 3D estriada. O efeito depende do valor da cor da borda
+
+            inset(inserir) - Define uma borda de inserção 3D. O efeito depende do valor da cor da borda
+            
+            outset(inicio) - Define uma borda inicial 3D. O efeito depende do valor da cor da borda
+
+            none(nenhum) - Não define borda
+
+            hidden(escondido) - Define uma borda oculta
+
+        - A border-style propriedade pode ter de um a quatro valores (para a borda superior(border-top), borda direita(border-right), borda inferior(border-bottom) e borda esquerda(border-left)).
+
+        border-style: dotted solid double dashed;
+
+            border-top is dotted
+            border-right is solid
+            border-bottom is double
+            border-left is dashed
+
+        border-style: dotted solid double;
+
+            border-top is dotted
+            border-left a right are solid
+            border-bottom is double
+
+        border-style: dotted solid;
+
+            border-top é border-bottom e dotted
+            border-right e left é solid
+
+        border-style: dotted;
+
+            todas as quatro bordas são dotted
+
+        - Nota: Nenhuma das OUTRAS propriedades de borda CSS (sobre as quais você aprenderá mais nos próximos capítulos) terá QUALQUER efeito a menos que a border-style propriedade seja definida!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.dotted{
+            /*a declaração css abaixo, possui a propriedade border-style e o valor dotted, a propriedade border-style, especifica que tipo de borda exibir, o valor dotted, especifica para exibir uma borda pontilhada*/
+            border-style: dotted;
+        }
+        p.dashed{
+            /*exibe uma borda tracejada*/
+            border-style: dashed;
+        }
+        p.solid{
+            /*exibe uma borda solida*/
+            border-style: solid;
+        }
+        p.double{
+            /*exibe uma borda dupla*/
+            border-style: double;
+        }
+        p.groove{
+            /*exibe uma borda uma borda nanhurada em 3D*/
+            border-style: groove;
+        }
+        p.ridge{
+            /*exibe uma borda uma borda 3D estriada*/
+            border-style: ridge;
+        }
+        p.inset{
+            /*exibe uma borda de inserção 3D*/
+            border-style: inset;
+        }
+        p.outset{
+            /*exibe uma borda inicial 3D*/
+            border-style: outset;
+        }
+        p.none{
+            /*valor none não tem borda definida*/
+            border-style: none;
+        }
+        p.hidden{
+            /*valor hidden define uma borda oculta*/
+            border-style: none;
+        }
+        p.mix{
+            /*a declaração css abaixo, possui a propriedade border-style, que pode ter de um a quatro valores no exemplo abaixo iremos definir os quatros valores para a border-top, border-right, border-bottom, border-left de um elemento, cada borda ira exibir um tipo de borda diferente de acordo com os valores especificados para cada um*/
+            border-style: dotted dashed solid double;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade estilo de borda(border-style)</h2>
+
+    <p>Esta propriedade especifica que tipo de borda exibir:</p>
+
+    <p class="dotted">Uma borda dotted(pontilhada)</p>
+    <p class="dashed">Uma borda dashed(tracejada)</p>
+    <p class="solid">Uma borda solid(solida)</p>
+    <p class="double">Uma borda double(dupla)</p>
+    <p class="groove">Uma borda groove(sulco)</p>
+    <p class="ridge">Uma borda ridge(cume)</p>
+    <p class="inset">Uma borda inset(inserir)</p>
+    <p class="outset">Uma borda outset(inicial)</p>
+    <p class="none">Uma borda nenhum(none)</p>
+    <p class="hidden">Uma borda hidden(oculta)</p>
+    <p class="mix">Uma borda mix(mista)</p>
+
+</body>
+</html>

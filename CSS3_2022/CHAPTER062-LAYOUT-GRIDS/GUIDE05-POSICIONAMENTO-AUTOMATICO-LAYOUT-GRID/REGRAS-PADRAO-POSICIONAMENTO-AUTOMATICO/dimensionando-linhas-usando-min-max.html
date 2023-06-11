@@ -1,0 +1,89 @@
+<!--
+    * DIMENSIONANDO LINHAS USANDO MINMAX()
+
+        Você pode usar minmax() em seu valor para grid-auto-rows habilitar a criação de linhas com um tamanho mínimo, mas depois crescer para caber no conteúdo se for mais alto.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .box{
+            border: 2px solid #ffa94d;
+            border-radius: 5px;
+            background-color: #ffd8a8;
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma faixa de colunas com 3 colunas de tamanhos iguais que crescem e diminuem de acordo com o espaço disponivel no container grid.
+             - usando a notação repeat
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - espaçamentos entre faixas de linhas e colunas. define uma espaço vazio de 10px que ira ficar entre faixas de linhas e colunas na grid.
+            */
+            gap: 10px;
+            /*
+             - por padrão as linhas criadas automaticamente na grid implicita e que elas sejam dimensionadas automaticamente. Isso significa que elas conterão o conteudo adicionado a eles sem causar um estouro
+             - com a propriedade grid-template-rows: minmax(100px, auto), podemos controlar o tamanho das linhas implicitas, fazendo assim com que todas as linhas criadas tenham um tamanho minimo de 100 pixels de altura, mas que possam crescer para caber no conteudo se for mais alto, o valor auto, permite isso como tamanho max.
+            */
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        /*
+         - NÃO HA INFORMAÇÕES DO DEV PARA POSICIONAR OS ITENS, ASSIM AUTOMATICAMENTE OS ITENS SE POSICIONARÃO NA GRADE UM EM CADA CELULA DA GRADE, SE A GRADE NÃO TIVER LINHAS EXPLICITAS SUFICIENTES PARA COLOCAR TODOS OS ITENS, NOVAS LINHAS IMPLICITAS SERÃO CRIADAS. 
+        */
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+        <div class="box5">
+            Cinco
+            <br/>Esta célula
+            <br/>Tem extra
+            <br/>conteúdo.
+            <br/>Max é automático
+            <br/>para que a linha se expanda
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--
+    * PSEUDO-CLASSES AÇÃO USUARIO
+
+        Essas pseudoclasses requerem alguma interação do usuário para serem aplicadas, como manter o ponteiro do mouse sobre um elemento.
+
+    * :hover
+
+        A pseudoclasse CSS :hover corresponde quando o usuário interage com um elemento com um dispositivo apontador, mas não necessariamente o ativa. Geralmente é acionado quando o usuário passa o mouse sobre um elemento com o cursor (ponteiro do mouse).
+
+        /*Seleciona qualquer elemento <a> quando "pairado"*/
+        a:hover {
+            color: orange;
+        }
+
+        Os estilos definidos pela :hover pseudoclasse serão substituídos por qualquer pseudoclasse relacionada ao link subsequente ( :link, :visited, ou :active) que tenha pelo menos igual especificidade. Para estilizar os links adequadamente, coloque a :hover regra após as regras :link e :visited, mas antes de :active um, conforme definido pela ordem LVHA : :link— :visited— :hover— :active.
+
+        Nota: A :hoverpseudo-classe é problemática em telas sensíveis ao toque. Dependendo do navegador, a :hoverpseudoclasse pode nunca corresponder, corresponder apenas por um momento depois de tocar em um elemento ou continuar a corresponder mesmo depois que o usuário parar de tocar e até que o usuário toque em outro elemento. Os desenvolvedores da Web devem certificar-se de que o conteúdo seja acessível em dispositivos com recursos limitados ou inexistentes.
+
+    * Sintaxe
+
+        :hover
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        a{
+            background-color: powderblue;
+            transition: background-color 0.5s;
+        }
+
+        /*
+         - A pseudoclasse CSS :hover corresponde quando o usuário interage com um elemento com um dispositivo apontador, mas não necessariamente o ativa.
+         - Geralmente é acionado quando o usuário passa o mouse sobre um elemento com o cursor (ponteiro do mouse).
+         - Para estilizar os links adequadamente, coloque a :hover regra após as regras :link e :visited, mas antes de :active um, conforme definido pela ordem LVHA : :link— :visited— :hover— :active.
+        */
+        a:hover{
+            /*
+             - ao passar o mouse sobre o elemento <a> tera um transição de estilo de uma cor de fundo para outra.
+            */
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" target="_blank" rel="external">Try hovering over this link.</a>
+
+
+</body>
+</html>

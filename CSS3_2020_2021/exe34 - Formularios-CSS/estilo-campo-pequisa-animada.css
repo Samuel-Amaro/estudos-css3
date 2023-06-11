@@ -1,0 +1,43 @@
+/*
+ * CAMPO DE ENTRADA DE PESQUISA ANIMADA
+
+   - Neste exemplo, usamos a transition propriedade CSS para animar a largura da entrada de pesquisa quando ela obtém o foco.
+*/
+
+/*seleciona o campo de entrada, pelo seletor de atributo e valor de atributo*/
+input[type=text]{
+    /*largura do elemento*/
+    width: 130px;
+    /*Observe que definimos a box-sizingpropriedade como border-box. Isso garante que o preenchimento e, eventualmente, as bordas sejam incluídos na largura e altura total dos elementos.*/
+    box-sizing: border-box;
+    /*borda - preenchimento*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-color: #ccc;
+    border-style: solid;
+    /*arredondando cantos*/
+    border-radius: 4px;
+    /*tamanho da fonte*/
+    font-size: 16px;
+    /*cor de fundo*/
+    background-color: white;
+    /*add imagen ao fundo do elemento*/
+    background-image: url('search.png');
+    /*posicionando a imagen no elemento*/
+    background-position: 10px 10px;
+    /*não e para imagen se repetir*/
+    background-repeat: no-repeat;
+    /*espaço interno*/
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 40px;
+}
+
+/*seleciona o elemento campo de entrada, input type text, e aplica um seletor de mudança de estado, esse seletor vai captura o estado do elemento quando ele estiver focado, estiver sido clicado, pelo mouse do usuario*/
+input[type=text]:focus{
+    /*largura do elemento em relação a sua pagina, largura do elemento em relação a pagina na horizontal, pode ocupar todo o espaço da pagina na horizontal*/
+    width: 100%;
+} 

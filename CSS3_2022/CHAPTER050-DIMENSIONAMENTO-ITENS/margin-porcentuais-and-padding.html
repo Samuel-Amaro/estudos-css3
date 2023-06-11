@@ -1,0 +1,44 @@
+<!--
+    * MARGENS PERCENTUAIS E PADDING
+
+        Se você definir margins e padding como porcentagem, poderá notar algum comportamento estranho. No exemplo abaixo temos uma caixa. Demos à caixa interna a margin de 10% e a padding de 10%. O preenchimento e a margem na parte superior e inferior da caixa são do mesmo tamanho que a margem esquerda e direita.
+
+        Você pode esperar, por exemplo, que a porcentagem das margens superior e inferior seja uma porcentagem da altura do elemento e a porcentagem das margens esquerda e direita seja uma porcentagem da largura do elemento. No entanto, este não é o caso!
+
+        Quando você usa margem e preenchimento definidos em porcentagens, o valor é calculado a partir do tamanho embutido(inline-size) do bloco que o contém - portanto, a largura ao trabalhar em um idioma horizontal(modo de escrita horizontal). Em nosso exemplo, todas as margens e preenchimento são 10% da largura. Isso significa que você pode ter margens e preenchimento de tamanhos iguais ao redor da caixa. Este é um fato que vale a pena lembrar se você usar porcentagens dessa maneira.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .box{
+            border: 5px solid darkblue;
+            /*
+             - A width propriedade CSS define a largura de um elemento. Por padrão, ele define a largura da área de conteúdo , mas se box-sizing estiver definido como border-box, ele define a largura da área da borda .
+             - define a largura de um elemento, usando um comprimento de unidade absoluta.
+             - define a largura como um valor absoluto de 300px
+            */
+            width: 300px;
+            /*
+             - A propriedade CSS inline-size define o tamanho horizontal ou vertical do bloco de um elemento, dependendo de seu modo de escrita. Corresponde à propriedade largura ou altura, dependendo do valor do modo de escrita.
+             -  Se o modo de escrita estiver orientado verticalmente, o valor de inline-size está relacionado à altura do elemento; caso contrário, está relacionado à largura do elemento.
+             - no caso aqui o modo de escrita padrão e horizontal-tb, assim o valor de inline-size esta relacionado a largura.
+             - Em nosso exemplo, todas as margens e preenchimento são 10% da largura.
+             - a margin, e 10% da largura do bloco que contem este elemento o body
+            */
+            margin: 10%;
+            /*
+             - a padding e 10% da largura do bloco que contem este elemento. o body
+            */
+            padding: 10%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">Eu tenho margem e preenchimento definidos para 10% em todos os lados..</div>
+        
+</body>
+</html>

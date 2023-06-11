@@ -1,0 +1,93 @@
+<!--
+    * POSICIONAMENTO AUTOMÁTICO POR COLUNA
+
+        Você também pode pedir à grade para colocar itens automaticamente por coluna. Usando a propriedade grid-auto-flow com um valor de column. Nesse caso, a grade adicionará itens nas linhas que você definiu usando grid-template-rows. Quando ele preenche uma coluna, ele se move para a próxima coluna explícita ou cria uma nova trilha de coluna na grade implícita. Assim como as faixas de linha implícitas, essas faixas de coluna serão dimensionadas automaticamente. Você pode controlar o tamanho das faixas de coluna implícitas com grid-auto-columns, isso funciona da mesma maneira que grid-auto-rows.
+
+        Neste próximo exemplo, criei uma grade com três faixas de linha de 200 pixels de altura. Estou colocando automaticamente por coluna e as colunas criadas terão uma largura de coluna de 300 pixels, depois uma largura de coluna de 100 pixels até que haja trilhas de coluna suficientes para conter todos os itens.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .box{
+            border: 2px solid #ffa94d;
+            border-radius: 5px;
+            background-color: #ffd8a8;
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir linhas no grid, usar a propriedade grid-template-rows. define um grid explicito de linhas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma faixa de linhas com 3 linhas de tamanhos iguais fixos iguais que nem crescem e diminuem, são tamanhos fixos.
+             - usando a notação repeat
+            */
+            grid-template-rows: repeat(3, 200px);
+            /*
+             - espaçamentos entre faixas de linhas e colunas. define uma espaço vazio de 10px que ira ficar entre faixas de linhas e colunas na grid.
+            */
+            gap: 10px;
+            /*
+             - Você também pode pedir à grade para colocar itens automaticamente por coluna. Usando a propriedade grid-auto-flow com um valor de column
+             - Quando ele preenche uma coluna, ele se move para a próxima coluna explícita ou cria uma nova faixa de coluna na grade implícita. Assim como as faixas de linha implícitas, essas faixas de coluna serão dimensionadas automaticamente
+            */
+            grid-auto-flow: column;
+            /*
+             - usando a propriedade grid-auto-columns para definir o tamanho das colunas implicitas.
+             - Estou colocando automaticamente por coluna e as colunas criadas terão uma largura de coluna de 300 pixels, depois uma largura de coluna de 100 pixels até que haja faixas de coluna suficientes para conter todos os itens.
+            */
+            grid-auto-columns: 300px 100px;
+        }
+
+        /*
+         - NÃO HA INFORMAÇÕES DO DEV PARA POSICIONAR OS ITENS, ASSIM AUTOMATICAMENTE OS ITENS SE POSICIONARÃO NA GRADE POR COLUNA. USANDO A PROPRIEDADE GRID-AUTO-FLOW COM VALOR DE COLUMN. Quando ele preenche uma coluna, ele se move para a próxima coluna explícita ou cria uma nova trilha de coluna na grade implícita. Assim como as faixas de linha implícitas, essas faixas de coluna serão dimensionadas automaticamente.
+        */
+        
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+        <div class="box5">Cinco</div>
+        <div class="box6">Seis</div>
+        <div class="box7">Sete</div>
+        <div class="box8">Oito</div>
+    </div>
+
+</body>
+</html>

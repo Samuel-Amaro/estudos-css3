@@ -1,0 +1,57 @@
+<!--
+    * CASCATA E HERANÇA
+
+    * REGRAS DE CONFLITOS
+
+        CSS - Cascading Style Sheets, cascata (a primeira palavra) é muito importante compreender - a maneira como a cascata se comporta é a chave para entender CSS.
+
+        Em algum momento, você estará trabalhando em um projeto e descobrirá que o CSS que você pensou que deveria ser aplicado a um elemento não está funcionando. Normalmente, o problema é que você criou duas regras que poderiam se aplicar ao mesmo elemento. A cascata e o conceito intimamente relacionado com especificidade que são mecanismos que controlam qual regra se aplica quando existe tal conflito. A regra que define o estilo do seu elemento pode não ser a esperada, portanto, você precisa entender como esses mecanismos funcionam.
+
+        Também é importante aqui é o conceito de herança, o que significa que algumas propriedades CSS por padrão herdam os valores definidos no elemento pai do elemento atual, e outras não. Isso também pode causar algum comportamento que você não esperava.
+
+        Vamos começar dando uma olhada rápida nas nestes itens com os quais estamos lidando (cascata, especificidade e herança), então vamos ver como elas interagem entre si e com o CSS. Isso pode parecer um conjunto de conceitos difíceis de entender, mas a medida que você pratica mais a escrita de CSS, o funcionamento vai se tornando mais óbvio para você.
+
+    * THE CASCADE - A CASCATA
+
+        Stylesheets cascade (Cascata) — em um nível muito simples, significa que a ordem das regras CSS é importante; quando se aplicam duas regras com especificidade igual, a que vier por último no CSS é a que será usada.
+
+    * SPECIFICITY - ESPECIFICIDADE
+
+        A especificidade é como o navegador decide/verifica qual regra se aplica se várias regras têm seletores diferentes, que poderiam ser aplicadas ao mesmo elemento. É basicamente uma medição de qual das regras/caracteristicas específica será a mais indicada/específica de um seletor:
+
+            Um seletor de elemento é menos específico - ele selecionará todos os elementos daquele tipo que aparecem em uma página - portanto, obterá uma pontuação mais baixa.
+
+            Um seletor de classe é mais específico - ele selecionará apenas os elementos em uma página que possuem um valor de atributo de classe específico - portanto, obterá uma pontuação mais alta.
+
+    * INHERITANCE - HERANÇA
+
+        A herança também precisa ser entendida neste contexto - alguns valores de propriedade CSS definidos em elementos pais são herdados por seus elementos filhos e outros não.
+
+        Por exemplo, se você definir uma cor e uma família de fontes em um elemento, todos os elementos dentro dele também serão estilizados com essa cor e fonte, a menos que você tenha aplicado cores e valores de fonte diferentes diretamente a eles.
+
+        Algumas propriedades não herdam - por exemplo, se você definir um width de 50% em um elemento, todos os seus descendentes não terão uma largura de 50% da largura de seus pais. Se fosse esse o caso, CSS seria muito frustrante de usar!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        body{
+            color: blue;
+        }
+        span{
+            color: black
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        - o elemento p herda a cor de texto definida em seu elmeento pai, a cor do texto sera azul também
+    -->
+    <p>As the body has been set to have a color of blue this is inherited through the descendants.</p>
+    <p>We can change the color by targetting the element with a selector, such as this <span>span</span>.</p>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!--
+    * LINHAS DE GRID
+
+        Devemos observar que quando definimos um grid definimos as faixas do grid, não as linhas. O grid então nos devolve linhas numeradas para usarmos ao posicionar itens. Em nossa grid de 3 colunas por duas linhas, temos quatro linhas de colunas.
+
+        Linhas são numeradas de acordo a forma de escrita do documento. Em uma linguagem da esquerda para a direita, a linha 1 está à esquerda do grid. Em uma linguagem da direita para a esquerda, ela está no lado direito do grid. Linhas também podem ser nomeadas, e veremos como fazer isso em um guia posterior nessa série.
+
+        POSICIONANDO ITENS CONTRA LINHAS
+
+            Exploraremos posicionamento de itens baseado em linhas em um artigo posterior. O exemplo a seguir mostra como fazer isso de forma simples. Quando posicionar um item, focamos a linha - ao invés do rastro.
+
+            Nesse exemplo eu estou posicionando os primeiros dois itens do nosso grid de três colunas, usando as propriedades grid-column-start , grid-column-end, grid-row-start e grid-row-end. Da esquerda para a direita, o primeiro item é posicionado contra a linha da coluna 1, e vai até a linha da coluna 4, que no nosso caso é a linha do extremo direito do grid. Começa na linha 1 e termina na linha 3, tendo uma expansão de duas linhas.
+
+            O segundo item inicia na linha da coluna 1, e expande uma linha. Esse é o padrão, então não preciso especificar a linha final. Também vai da linha 3 a linha 5. Os outros itens serão posicionados de acordo com espaço disponível no grid.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*notação convencional*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com três colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - cada coluna tera 1fr de medida flexivel, uma fração do espaço disponivel no container grid para cada uma.
+             - Grids grandes, com muitas tracks(faixas) podem usar a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+             - usaremos a seguinte notação de repeat(3, 1fr);
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - usamos grid-auto-rows para garantir que as trilhas criadas na grid implícita tenham uma tamanho.
+             - podemos definir um tamanho minimo ou maximo em grids implicitas e explicitas, usando a function minmax(min, max);
+             - usamos o minmax(min, max) como valor para o grid-auto-rows, o primeiro paramentro e o tamanho minimo da grid-implicita, podera ter no minimo 100px de medida fixa, e o segundo paramentro e o tamanho max, o valor auto, o tamanho vai olhar para o conteúdo e, assim, esticar para que a linha tenha o espaço necessário.
+            */
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        /*iten grid*/
+        .box1{
+            /*
+             - POSICIONAMENTO DE ITENS CONTRA LINHAS
+             - ao posicionar um item focamos a linha e não no rastro
+             - o primeiro iten grid e posicionado contra a linha de coluna 1
+            */
+            grid-column-start: 1;
+            /*
+             - e vai até a linha da coluna 4, a linha do extremo direito do grid.
+            */
+            grid-column-end: 4;
+            /*
+             - começa na linha 1 
+            */
+            grid-row-start: 1;
+            /*
+             - termina na linha 3, tem a expansão de duas linhas
+            */
+            grid-row-end: 3;
+        }
+
+        /*iten grid*/
+        .box2{
+            /*
+             - POSICIONAMENTO DE ITENS CONTRA LINHAS
+             - ao posicionar um item focamos a linha e não no rastro
+             - o segundo iten grid e posicionado contra a linha de coluna 1, e expande uma linha. esse e o padrão.
+            */
+            grid-column-start: 1;
+            /*
+             - começa na linha 3 
+            */
+            grid-row-start: 3;
+            /*
+             - termina na linha 5, tem a expansão de duas linhas
+            */
+            grid-row-end: 5;
+
+            /*OS OUTROS ITENS SERÃO POSICIONADOS DE ACORDO COM O ESPAÇO DISPONIVEL NO GRID*/
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+        <div class="box5">Cinco</div>
+    </div>
+
+</body>
+</htm

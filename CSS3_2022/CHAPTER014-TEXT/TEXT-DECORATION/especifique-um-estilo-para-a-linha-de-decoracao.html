@@ -1,0 +1,95 @@
+<!--
+    * ESPECIFIQUE UM ESTILO PARA A LINHA DE DECORAÇÃO
+
+        - A text-decoration-style propriedade é usada para definir o estilo da linha de decoração.
+
+    * DEFINIÇÃO E USO
+
+        - A text-decoration-style propriedade define o estilo da decoração do texto (como solid, wavy, dotted, dashed, double).
+
+    * SINTAXE CSS:
+
+        text-decoration-style: solid|double|dotted|dashed|wavy|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: solid(solido) Valor padrão
+        DESCRIPTION: A linha será exibida como uma única linha
+        -------------------------------------
+        VALUE: double(dupla)
+        DESCRIPTION: A linha será exibida como uma linha dupla
+        -------------------------------------
+        VALUE: dotted(pontilhado)
+        DESCRIPTION: A linha será exibida como uma linha pontilhada
+        -------------------------------------
+        VALUE: dashed(tracejada)
+        DESCRIPTION: A linha aparecerá como uma linha tracejada
+        -------------------------------------
+        VALUE: wavy(ondulado)
+        DESCRIPTION: A linha será exibida como uma linha ondulada
+        -------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão
+        -------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        -------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /*a propriedade css, text-decoration-line e usada para adicionar uma linha de decoração ao texto, o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*a propriedade css, text-decoration-style propriedade e usada para definir o estilo da linha de decoração, o valor solid fara linha de decoração a ser exibida como uma linha unica*/
+            text-decoration-style: solid;
+        }
+        h2{
+            /*
+             - A text-decoration-line propriedade define o tipo de decoração de texto a ser usado
+             - o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto**/
+            text-decoration-line: underline;
+            /*o valor double fara linha de decoração a ser exibida como uma linha dupla*/
+            text-decoration-style: double;
+        }
+        h3{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*o valor dotted fara linha de decoração a ser exibida como uma linha pontilhada*/
+            text-decoration-style: dotted;
+        }
+        p.ex1{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*o valor dashed fara linha de decoração a ser exibida como uma linha tracejada*/
+            text-decoration-style: dashed;
+        }
+        p.ex2{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*o valor wavy fara linha de decoração a ser exibida como uma linha ondulada*/
+            text-decoration-style: wavy;
+        }
+        p.ex3{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*o valor wavy fara linha de decoração a ser exibida como uma linha ondulada*/
+            text-decoration-style: wavy;
+            /*especifica uma cor roxa para a linha de decoração e decoração do texto*/
+            text-decoration-color: purple;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Título 1</h1>
+    <h2>Título 2</h2>
+    <h3>Título 3</h3>
+    <p class="ex1">Um parágrafo</p>
+    <p class="ex2">Outro parágrafo.</p>
+    <p class="ex3">Outro parágrafo.</p>
+</body>
+</html>

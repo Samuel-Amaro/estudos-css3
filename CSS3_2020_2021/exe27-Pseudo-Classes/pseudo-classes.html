@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes</title>
+    <link rel="stylesheet" href="pseudo-classes.css">
+</head>
+<body>
+    <h1>Pseudo-Classes CSS</h1>
+    <p><b>Sintaxe:</b> A sintaxe das pseudoclasses: </p>
+    <pre>
+        <code>
+            selector:pseudo-class{
+                proprety: value;
+            }
+        </code>
+    </pre>
+    <h2>Pseudo-classes âncora</h2>
+    <p><b>Os links podem ser exibidos de diferentes maneiras:</b></p>
+    <a href="#" target="_blank" rel="self">Este e um Link</a>
+    <h2>Pseudo classes e classes CSS</h2>
+    <p>Quando você passa o mouse sobre o link no exemplo, ele muda de cor:</p>
+    <p><a class="destacar" href="#" terget="_blank" rel="self">Link</a></p>
+    <h2>Passe o mouse sobre div</h2>
+    <p>Um exemplo de uso da :hover pseudoclasse em um elemento div:</p>
+    <p>Passe o mouse sobre o elemento div abaixo para alterar sua cor de fundo:</p>
+    <div>
+        Passe o mouse sobre min
+    </div>
+    <h2>Dica de ferramenta simples</h2>
+    <p>Passe o mouse sobre um elemento div para mostrar um elemento p (como uma dica):</p>
+    <div id="conteiner">Passe o mouse sobre min para ver o elemento p
+        <p id="elemento_escondido">Aqui esta o elemento p!</p>
+    </div>
+    <h2>CSS - A: Pseudo classe do primeiro filho</h2>
+    <p>Corresponde ao primeiro elemento p</p>
+    <p>No exemplo a seguir, o seletor corresponde a qualquer elemento p que seja o primeiro filho de qualquer elemento, mas aqui neste exemplo vai corresponder a qualquer elemento p que seja primeiro filho de um elemento article:</p>
+    <article>
+        <p class="filho-p">este e um texto</p>
+        <p class="filho-p">este e um texto</p>
+    </article>
+    <h2>Corresponde ao primeiro elemento i em todos os elementos p</h2>
+    <p>No exemplo a seguir, o seletor corresponde ao primeiro elemento i em todos os elementos p:</p>
+    <p class="filho-p-a">Eu sou uma pessoa <i>forte</i> Eu sou uma pessoa <i>forte</i></p>
+    <p class="filho-p-a">Eu sou uma pessoa <i>forte</i> Eu sou uma pessoa <i>forte</i></p>
+    <h2>Corresponde a todos os elementos i em todos os primeiros elementos p filho</h2>
+    <p>No exemplo a seguir, o seletor corresponde a todos os elementos i em elementos p que são o primeiro filho de outro elemento:</p>
+    <aside>
+        <p>Eu sou uma pessoa <i>forte</i> Eu sou uma pessoa <i>forte</i></p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, quae error cumque eaque impedit distinctio, odit, corrupti temporibus commodi vel esse. Hic itaque ut, dolorum a at nobis assumenda voluptatibus.  <i>forte</i></p>
+    </aside>
+    <aside>
+        <p>Eu sou uma pessoa <i>forte</i> Eu sou uma pessoa <i>forte</i></p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores rerum, laudantium illo reprehenderit assumenda quae veniam voluptates similique esse totam ducimus adipisci aliquam iure error provident. Iste nesciunt pariatur iure?  <i>forte</i></p>
+    </aside>
+    <h2>CSS - A pseudo classe: lang</h2>
+    <p>No exemplo abaixo, :lang define as aspas para elementos q com lang = "no":</p>
+    <p>Neste exemplo,: lang define as aspas para elementos q com lang = "no":</p>
+    <p>Algum texto <q lang="no">Uma citação em um parágrafo</q> Algum texto.</p>
+</body>
+</html>

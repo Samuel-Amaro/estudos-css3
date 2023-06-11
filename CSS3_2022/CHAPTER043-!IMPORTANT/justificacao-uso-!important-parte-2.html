@@ -1,0 +1,45 @@
+<!--
+    - A aparência de um botão às vezes pode mudar se o colocarmos dentro de outro elemento com maior especificidade, e as propriedades entrarem em conflito. Aqui está um exemplo disso:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - seletor de classe, seleciona um ou varios elementos que possua o seguinte valor de classe.
+        */
+        .button{
+            background-color: #8c8c8c;
+            color: white;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        /*
+         - seletor de id, seleciona um elemento a, que seja descendente de um elemento que possua o valor de id myDiv
+        */
+        #myDiv a{
+            color: red;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>Standard button: <a class="button" href="#" target="_top" rel="next">CSS Tutorial</a></p>
+
+    <div id="myDiv">
+        <p>Um botão de link dentro do myDiv: <a href="#" target="_top" rel="next">HTML Tutorial</a></p>
+        <p>Um botão de link dentro do myDiv:  
+        <!--
+            - elemento html que suas propriedades css background-color e color entram em conflito por causa da especificidade
+        -->
+        <a class="button" href="#" target="_top" rel="next">HTML Tutorial</a></p>
+    </div>
+    
+
+</body>
+</html>

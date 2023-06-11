@@ -1,0 +1,26 @@
+<!--
+    * GRID
+
+        A grid abreviação vai um passo além e também define as propriedades usadas pela grade implícita. Então você estará configurando:
+
+            grid-template-rows
+            grid-template-columns
+            grid-template-areas
+            grid-auto-rows
+            grid-auto-columns
+            grid-auto-flow
+
+        Você pode usar essa sintaxe exatamente da mesma forma que a grid-template abreviação, apenas esteja ciente de que, ao fazer isso, você redefinirá os outros valores definidos pela propriedade.
+
+        .wrapper {
+            display: grid;
+            grid: "hd hd hd hd   hd   hd   hd   hd   hd" minmax(100px, auto)
+            "sd sd sd main main main main main main" minmax(100px, auto)
+            "ft ft ft ft   ft   ft   ft   ft   ft" minmax(100px, auto)
+            / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+        }
+
+        Revisitaremos a outra funcionalidade oferecida por essa abreviação posteriormente nestes guias, quando examinarmos o posicionamento automático e a propriedade grid-auto-flow.
+
+        Se você trabalhou com esses guias iniciais, agora deve estar em condições de criar layouts de grade usando posicionamento baseado em linha ou áreas nomeadas. Dedique algum tempo para construir alguns padrões de layout comuns usando grade, embora haja muitos novos termos para aprender, a sintaxe é relativamente direta. À medida que desenvolve exemplos, é provável que surja algumas perguntas e casos de uso para coisas que ainda não abordamos. No restante desses guias, veremos mais alguns detalhes incluídos na especificação - para que você possa começar a criar layouts avançados com ela.
+-->

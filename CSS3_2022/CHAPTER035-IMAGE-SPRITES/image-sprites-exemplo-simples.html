@@ -1,0 +1,70 @@
+<!--
+    * IMAGE SPRITES - EXEMPLO SIMPLES
+
+        - Em vez de usar três imagens separadas, usamos esta única imagem ("img_navsprites.gif"):
+
+        - Com CSS, podemos mostrar apenas a parte da imagem que precisamos.
+
+        - No exemplo a seguir, o CSS especifica qual parte da imagem "img_navsprites.gif" mostrar:
+
+    * EXEMPLO EXPLICADO
+
+        - <img id="home" src="img_trans.gif"> - Define apenas uma pequena imagem transparente porque o atributo src não pode ficar vazio. A imagem exibida será a imagem de fundo que especificamos em CSS
+
+        - Esta é a maneira mais fácil de usar sprites de imagem, agora queremos expandi-la usando links e efeitos de foco.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        #home{
+            /*
+             - Em vez de usar três imagens separadas, usamos esta única imagem ("img_navsprites.gif"):
+             - esta unica imagem e uma coleção de três imagens em uma so
+             - Com CSS, podemos mostrar apenas a parte da imagem que precisamos.
+             - aqui especificamos apenas a parte da imagen que desejamos mostrar, temos uma imagen com três imagens de coleção mas mostramos somente a primeira imagen da coleção, sendo que so e uma imagen.
+             - a height e width especifica a parte da imagen que queremos usar
+            */
+            width: 46px;
+            height: 46px;
+            /*
+             -  A background propriedade é uma propriedade abreviada para:
+                background-color
+                background-image
+                background-position
+                background-size
+                background-repeat
+                background-origin
+                background-clip
+                background-attachment
+
+                background-image: url(img_navsprites.gif);
+                background-position: 0 0; -> 0px left horizontal 0px top  vertical
+            */
+            background: url(img_navsprites.gif) 0 0;
+        }
+        #next{
+            /*
+             - aqui especificamos apenas a parte da imagen que desejamos mostrar, temos uma imagen com três imagens de coleção mas mostramos somente a terceira imagen da coleção, sendo que so especificamos a posição em que ela estava.
+            */
+            width: 43px;
+            height: 44px;
+            /**
+                background-image: url(img_navsprites.gif);
+                background-position: -91px 0; -> -91px horizontal 0px vertical
+            */
+            background: url(img_navsprites.gif) -91px 0;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        - define apenas uma pequena imagem transparente porque o atributo src não pode ficar vazio. a imagen exibida sera a imagem de fundo especificada por css
+    -->
+    <img id="home" src="./img_trans.gif" width="1" height="1"/>
+    <img id="next" src="./img_trans.gif" width="1" height="1"/>
+
+</body>
+</html>

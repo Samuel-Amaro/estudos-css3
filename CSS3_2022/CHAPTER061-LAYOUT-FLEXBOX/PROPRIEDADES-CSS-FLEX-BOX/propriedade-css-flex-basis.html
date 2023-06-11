@@ -1,0 +1,176 @@
+<!--
+    * PROPRIEDADE CSS flex-basis(base flexível)
+
+        A propriedade CSS flex-basis define o tamanho principal inicial de um item flex. Ele define o tamanho da caixa de conteúdo, a menos que seja definido de outra forma com dimensionamento de caixa(box-sizing).
+
+    * SINTAXE
+
+        /* Specify <'width'> */
+        flex-basis: 10em;
+        flex-basis: 3px;
+        flex-basis: auto;
+
+        /* Intrinsic sizing keywords */
+        flex-basis: fill;
+        flex-basis: max-content;
+        flex-basis: min-content;
+        flex-basis: fit-content;
+
+        /* Automatically size based on the flex item's content */
+        flex-basis: content;
+
+        /* Global values */
+        flex-basis: inherit;
+        flex-basis: initial;
+        flex-basis: revert;
+        flex-basis: revert-layer;
+        flex-basis: unset; 
+
+        A flex-basis propriedade é especificada como a palavra-chave content ou um <'width'>.
+
+    * VALORES
+
+        <'width'>: Um <comprimento> absoluto, um <percentage> da propriedade main size do contêiner flex pai ou a palavra-chave auto. Os valores negativos são inválidos. Padrões para automático.
+
+        <content>: Indica o dimensionamento automático, baseado no conteúdo do item flexível.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /**flex container*/
+        .container{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            /*
+             - vamos definir quais elementos serão caixas flexiveis.
+             - temos que definir um valor especial no elemento pai dos elementos que queremos afetar.
+             - queremos afetar os elementos <li>, assim o pai desses elementos e o elemento <ul class="container">
+             - A propriedade CSS  display especifica o tipo de caixa de renderização usada por um elemento.
+             - o valor flex O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo flexbox.
+             - aqui estamos definindo o conteiner flex. o elemento que sera pai, de todos os elementos flexiveis. definindo o flex conteiner
+            */
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /*flex itens*/
+        .flex{
+            background-color: #6AB6D8;
+            padding: 10px;
+            margin-bottom: 50px;
+            border: 3px solid #2E86BB;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            position: relative;
+        }
+        /*
+         - flex itens
+         - pseudoelemento ::after, inserir um conteudo apos o conteudo o original do elemento.
+        */
+        .flex::after{
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 100%;
+            margin-top: 10px;
+            width: 100%;
+            color: #333;
+            font-size: 12px;
+        }
+
+        /*flex itens*/
+        .flex1{
+            /*
+             - A propriedade CSS flex-basis define o tamanho principal inicial de um item flex. Ele define o tamanho da caixa de conteúdo.
+             - o valor auto, significa "olhar para minha propriedade width ou height";
+             - o valor auto e o valor padrão. o valor auto olha para width se flex-direction for row, e olha para height se flex-direction for column, assim neste exemplo, auto usar o valor definido originalmente em widht para o elemento.
+            */
+            flex-basis: auto;
+        }
+
+        /*
+         - flex itens
+         - inserindo um conteudo apos o conteudo original do elemento, usando um pseudo-elemento.
+        */
+        .flex1::after{
+            content: 'auto';
+        }
+
+        /*flex item*/
+        .flex2{
+            /*
+             - define que o tamanho principal inicial do item flex, o tamanho da sua caixa de conteudo sera max-content, sua caixa podera ter o seu tamanho de forma intriseca, dimensionamento intriseco, natural, podera caber o maximo de conteudo
+            */
+            flex-basis: max-content;
+        }
+        .flex2::after{
+            content: 'max-content';
+        }
+        
+        /*flex itens*/
+        .flex3{
+            /*
+             - o tamanho inicial do item flex, o tamanho da sua caixa de conteudo sera min-content, podera caber so o minimo de conteudo, e um dimensionamento intriseco.
+            */
+            flex-basis: min-content;
+        }
+        .flex3::after{
+            content: 'min-content';
+        }
+
+        /*flex itens*/
+        .flex4{
+            /*
+              - o tamanho inicial do item flex, o tamanho da sua caixa de conteudo sera fit-content, podera caber so conteudo adequado, e um dimensionamento intriseco.
+            */
+            flex-basis: fit-content;
+        }
+        .flex4::after{
+            content: 'fit-content';
+        }
+
+        /*flex itens*/
+        .flex5{
+            /*
+             - o tamanho inicial do item flex, o tamanho da sua caixa de conteudo sera content, Dimensionar automaticamente com base no conteúdo do item flexível. e dimensionado de acordo com o conteudo
+            */
+            flex-basis: content;
+        }
+        .flex5::after{
+            content: 'content';
+        }
+
+        /*item flex*/
+        .flex6{
+            /*
+             - o tamanho inicial do item flex, o tamanho da sua caixa de conteudo sera fill, tem que encher o espaço todo de conteudo da caixa de conteudo, e um dimensionamento intriseco
+            */
+            flex-basis: fill;
+        }
+        .flex6::after{
+            content: 'fill';
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="container">
+        <li class="flex flex1">1: flex-basis test</li>
+        <li class="flex flex2">2: flex-basis test</li>
+        <li class="flex flex3">3: flex-basis test</li>
+        <li class="flex flex4">4: flex-basis test</li>
+        <li class="flex flex5">5: flex-basis test</li>
+    </ul>
+
+    <ul class="container">
+        <li class="flex flex6">6: flex-basis test</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!--
+    * USO DE PALAVRAS-CHAVE DE TAMANHOS DIFERENTES
+
+       - O parâmetro de tamanho define o tamanho do gradiente. Pode ter quatro valores:
+
+         - CLOSEST-SIDE(lado mais próximo).
+         - 
+         - FARTHEST-SIDE(lado mais distante).
+         - 
+         - CLOSEST-CORNER(esquina mais proxima).
+         - 
+         - FARTHEST-CORNER(canto mais distante).
+
+       - Um gradiente radial com palavras-chave de tamanhos diferentes:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradiente Radial</title>
+    <style>
+        div#grad1{
+            height: 150px;
+            width: 150px;
+            background-image: radial-gradient(closest-side at 60% 55%,red,yellow,black);
+        }
+        div#grad2{
+            height: 150px;
+            width: 150px;
+            background-image: radial-gradient(farthest-side at 60% 55%,red,yellow,black);
+        }
+        div#grad3{
+            height: 150px;
+            width: 150px;
+            background-image: radial-gradient(closest-corner at 60% 55%,red,yellow,black);
+        }
+        div#grad4{
+            height: 150px;
+            width: 150px;
+            background-image: radial-gradient(farthest-corner at 60% 55%,red,yellow,black);
+        }
+    </style>
+</head>
+<body>
+    <h1>Gradiente Radial</h1>
+    <h2>Uso de Palavras-chave de tamanhos diferentes</h2>
+    <p><strong>Exemplo:</strong> Um gradiente radial com palavras-chave de tamanhos diferentes:</p>
+    <h3>Lado mais proximo:</h3>
+    <div id="grad1"></div>
+    <h3>Lado mais distante</h3>
+    <div id="grad2"></div>
+    <h3>esquina mais proxima:</h3>
+    <div id="grad3"></div>
+    <h3>canto mais distante(padrão):</h3>
+    <div id="grad4"></div>
+</body>
+</html>

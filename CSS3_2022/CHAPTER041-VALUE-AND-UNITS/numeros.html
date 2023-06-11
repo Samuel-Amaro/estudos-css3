@@ -1,0 +1,47 @@
+<!--
+    * NÚMEROS(NUMBER)
+
+        Alguns tipos de valor aceitam números, sem nenhuma unidade adicionada a eles. Um exemplo de propriedade que aceita um número sem unidade é a opacity propriedade, que controla a opacidade de um elemento (o quão transparente ele é). Esta propriedade aceita um número entre 0(totalmente transparente) e 1(totalmente opaco).
+
+        No exemplo abaixo, tente alterar o valor de opacity para vários valores decimais entre 0 e 1 e veja como a caixa e seu conteúdo ficam mais ou menos opacos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            background-color: lightblue;
+            border: 5px solid darkblue;
+            padding: 10px;
+            margin: 1em auto;
+            /*
+             - Alguns tipos de valor aceitam números, sem nenhuma unidade adicionada a eles. Um exemplo de propriedade que aceita um número sem unidade é a opacity propriedade
+            */
+            opacity: 0.4;
+        }
+
+        .wrapper{
+            background-image: url(balloons\ \(2\).jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box">Eu sou uma caixa com opacidade</div>
+    </div>
+
+</body>
+</html>

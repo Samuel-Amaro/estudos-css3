@@ -1,0 +1,44 @@
+<!--
+    * TEXT ALIGNMENT(ALINHAMENTO DE TEXTO)
+
+        - A text-align propriedade é usada para definir o alinhamento horizontal de um texto.
+
+        - Um texto pode ser alinhado à esquerda(left) ou à direita(right), centralizado(center) ou justificado(justify).
+
+        - O exemplo a seguir mostra o texto alinhado ao centro e alinhado à esquerda e à direita (o alinhamento à esquerda é o padrão se a direção do texto for da esquerda para a direita e o alinhamento à direita é o padrão se a direção do texto for da direita para a esquerda):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        h1{
+            /*
+             - elementos do tipo block ocupam toda largura disponivel e quebra uma linha
+             - elementos do tipo inline ocupam somente o espaço necessario e não quebram a linha.
+            */
+
+            /*a propriedade css text-align e usada para definir o alinhamento horizontal de um texto, o valor center alinha o texto ao centro*/
+            text-align: center;
+        }
+        h2{
+            /*a propriedade css text-align e usada para definir o alinhamento horizontal de um texto, o valor left alinha o texto a esquerda, a direção do texto e da esquerda para direita*/
+            text-align: left;
+        }
+        h3{
+            /*a propriedade css text-align e usada para definir o alinhamento horizontal de um texto, o valor right alinha o texto a direita, a direção do texto e da direita para a esquerda*/
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Título 1(center)</h1>
+    <h2>Título 2(left)</h2>
+    <h3>Título 3(right)</h3>
+
+    <p>Os três títulos acima estão alinhados ao centro, à esquerda e à direita.</p>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!--
+    * PROPRIEDADE CSS RIGHT(DIREITA)
+
+        - A right propriedade afeta a posição horizontal de um elemento posicionado. Esta propriedade não tem efeito em elementos não posicionados.
+
+            - Se position: absolute; ou position: fixed; - a propriedade right define a borda direita de um elemento para uma unidade à direita da borda direita de seu ancestral posicionado mais próximo.
+
+            - Se position: relative; - a propriedade right define a borda direita de um elemento para uma unidade à esquerda/direita de sua posição normal.
+
+            - Se posição: sticky; - a propriedade right se comporta como sua posição é relativa quando o elemento está dentro da viewport, e como sua posição é fixed quando está fora.
+
+            - Se position: static; - a propriedade certa não tem efeito.
+
+    * SINTAXE CSS
+
+        right: auto|lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: auto(automatico)
+        DESCRIPTION: Permite que o navegador calcule a posição da borda direita. Isso é padrão
+        ------------------------------------
+        VALUE: lenght(comprimento)
+        DESCRIPTION: Define a posição da borda direita em px, cm, etc. Valores negativos são permitidos.
+        ------------------------------------
+        VALUE: %
+        DESCRIPTION: Define a posição da borda direita em % do elemento contido.
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        div.a{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            width: 400px;
+            height: 200px;
+            border: 3px solid red;
+        }
+        div.b{
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - O elemento é posicionado em relação ao seu primeiro elemento ancestral posicionado (não estático), uma div com position relative
+             - Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+            */
+            position: absolute;
+            /*
+             - A right propriedade afeta a posição horizontal de um elemento posicionado.
+             - Se position: absolute; ou position: fixed; - a propriedade right define a borda direita de um elemento para uma unidade à direita da borda direita de seu ancestral posicionado mais próximo.
+             - aqui definimos que a borda direita do elemento tera 0 unidade a direita da borda do elemento que o contem(ou do elemento ancestral mais proximo com position diferente de static)
+            */
+            right: 0;
+            width: 100px;
+            height: 120px;
+            border: 3px solid blue;
+        }
+        div.c{
+            position: absolute;
+            /*
+             - aqui definimos que a borda direita do elemento ancentral tera 150px unidade a direita da borda do elemento que o contem(ou do elemento ancestral mais proximo com position diferente de static), a borda do elemento ancestral tera uma unidade de 150px a direita
+            */
+            right: 150px;
+            width: 200px;
+            height: 120px;
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>a propriedade left</h1>
+
+    <div class="a">
+        Este div elemento possui position: relative;
+        <div class="b">Este elemento div tem position: absolute é colocado 150 pixels à esquerda da borda direita do elemento posicionado que o contém. </div>
+        <div class="c">Este elemento div tem posição: absoluta e direita: 0.</div>
+    </div>
+
+</body>
+</html>

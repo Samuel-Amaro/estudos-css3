@@ -1,0 +1,51 @@
+<!--
+    * TEXTO DA IMAGEN
+
+      - - como posicionar o texto em uma imagen
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto na imagen</title>
+    <style>
+        aside.container{
+            /*permite que você modifique a posição de um elemento na página, movendo-o em relação à sua posição no fluxo normal - incluindo fazê-lo sobrepor outros elementos na página.*/
+            position: relative;
+        }
+        aside.bottomRight{
+            /*move um elemento completamente para fora do fluxo normal de layout da página, como se ele estivesse em sua própria camada separada. A partir daí, você pode fixá-lo em uma posição relativa às bordas do <html> elemento da página  (ou ao elemento ancestral posicionado mais próximo).*/
+            position: absolute;
+            /*se afasta 8px do inferior da border, se afasta 8px da borda inferior do elemento img*/
+            bottom: 8px;
+            /*se afasta 16px da direita, da border*/
+            right: 16px;
+            font-size: 18px;
+        }
+        img{
+            /*a imagen pode ocupar 100% da largura do conteiner que a contem*/
+            width: 100%;
+            /*o proprio documento define a altura da imagen*/
+            height: auto;
+            /*imagen fica 80% transparente*/
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Estilos de Imagen</h1>
+    
+    <h2>Texto na imagen - Canto Inferior Direito Da Imagen</h2>
+    
+    <p>Adicione algum texto a uma imagem no canto inferior direito:</p>
+    
+    <aside class="container">
+        <img src="../img_5terre_wide.jpg" alt="Cinque Terre">
+        <aside class="bottomRight">Inferior Direito</aside>
+    </aside>
+    
+</body>
+</html>

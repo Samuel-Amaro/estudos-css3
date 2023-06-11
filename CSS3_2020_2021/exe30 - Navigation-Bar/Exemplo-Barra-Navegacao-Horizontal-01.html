@@ -1,0 +1,110 @@
+<!--
+    * EXEMPLO DE BARRA DE NAVEGAÇÃO HORIZONTAL
+
+     - Crie uma barra de navegação horizontal básica com uma cor de fundo escura e altere a cor de fundo dos links quando o usuário move o mouse sobre eles:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra Navegação Horizontal</title>
+    <style>
+        /*para um elemento de lista não ordenada*/
+        ul.barra-navegacao-horizontal{
+            /*lista sem estilo*/
+            list-style-type: none;
+            /*tira todo espaço externo ao redor da lista, da borda para fora*/
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            /*tira todo espaço interno da lista, da borda para o conteudo*/
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            /*estouro, trasbordamento, de conteudo, se o conteudo do elemento ul for maior que a caixa, a overflow controla, esse conteudo, para ser ocultado ao passar da caixa, ao trasbordar, ou estourar*/
+            overflow: hidden;
+            /*cor de fundo do elemento*/
+            background-color: #333;
+        }
+
+        /*para cada elemento li, para cada item da lista*/
+        ul.barra-navegacao-horizontal > li{
+            /*o elemento flutua para a esquerda, cada elemento, que e uma caixa, vai flutuar para a esquerda
+            - float: left; - use float para fazer os elementos do bloco deslizarem próximos uns dos outros*/
+            float: left;  
+        }
+
+        /*para cada link da lista*/
+        ul.barra-navegacao-horizontal > li > a{
+            /*- o elemento sera exibido como um elemento de bloco, que quebra de linha antes de ser exibido e depois de ser exibido na pagina, aceita preenchimento, espaços internos, externos etc...
+            - display: block; - Permite-nos especificar o preenchimento (e altura, largura, margens, etc., se desejar)*/ 
+            display: block;
+            /*cor do texto*/
+            color: white;
+            /*alinha o texto ao centro*/
+            text-align: center;
+            /*add  espaço interno ao elemento a, entre a borda e o conteudo*/
+            padding-right: 16px;
+            padding-left: 16px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            /*tira o estilo do link, o sublinhado*/
+            text-decoration: none;
+        }
+        /*para cada item da lista, tem um pseudo-elemento ativo, que faz mudar o estado, ao passar o mouse por cima do elemento muda sua cor*/
+        ul.barra-navegacao-horizontal > li > a:hover{
+            /*cor de fundo*/
+            background-color: #111;
+        }
+
+        /*
+            * LINK DE NAVEGAÇÃO ATIVO/ATUAL
+              - Adicione uma classe "ativa" ao link atual para permitir que o usuário saiba em qual página ele está
+        */
+        /*elemento a, com uma class*, esse elemento vai ser destacado*/
+        a.link-ativo{
+            background-color: #4CAF50;
+        }
+
+        /*
+         * ALINHAR LINKS Á DIREITA
+
+          - Alinhe os links à direita flutuando os itens da lista à direita
+        */
+
+        /*elemento li, item da lista, que contem, um link com destaque*/
+        ul.barra-navegacao-horizontal > li.link-flutua-direita{
+            /*esse elemento vai flutuar a direita*/
+            float: right;
+        }
+
+        /*
+         * DIVISORES DE BORDA
+
+          - Adicione a border-right propriedade a <li> para criar divisores de link:
+        */
+        /*para cada elemento de item da lista*/
+        ul.barra-navegacao-horizontal > li{
+             /*prenchimento(borda) a direita do elemento*/
+             /*para add prenchimento so em um lado do elemento tem que usar shorthand, porque na declaração tradiconal, acaba add prenchimento em todo o elemento*/
+             border-right: 1px solid #bbb;
+             
+        }
+    </style>
+</head>
+<body>
+    <!-- lista não ordenada, em cada item da lista tem um link-->
+    <ul class="barra-navegacao-horizontal">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">Noticías</a></li>
+        <li><a href="#contact">Contato</a></li>
+        <li class="link-flutua-direita"><a class="link-ativo" href="#about">Sobre</a></li>
+    </ul>
+
+    <h1>Barra de Navegação Horizontal - Horizontal Navigation</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod consectetur aliquam veritatis cumque dolore quam nam adipisci deleniti quia! Necessitatibus rem sint ab obcaecati rerum velit dolores quisquam eius! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita vel dolor placeat corrupti distinctio assumenda esse consectetur unde? Culpa omnis nam, dolorem sint velit expedita nesciunt exercitationem magni quis architecto. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit vero vel est neque consectetur sapiente repellendus autem ipsam quo id iste, expedita magni distinctio, ullam nulla perferendis nisi eum eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis commodi dolore molestiae similique, quaerat maiores necessitatibus est facilis, velit, aperiam doloribus sed optio accusamus voluptatum nemo illo id natus assumenda.</p>
+</body>
+</html>

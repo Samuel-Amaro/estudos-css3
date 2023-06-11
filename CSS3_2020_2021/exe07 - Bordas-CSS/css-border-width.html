@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Largura da borda</title>
+    <style>
+        /*
+         * LARGURA DA BORDA CSS
+           - A border-widthpropriedade especifica a largura das quatro bordas.
+           - A largura pode ser definida como um tamanho específico (em px, pt, cm, em, etc) ou usando um dos três valores predefinidos: fino, médio ou grosso:
+        */
+        #um{
+           border-style: solid;
+           border-width: 5px;  
+        }
+        #dois{
+            border-style: solid;
+            border-width: medium;  
+        }
+        #tres{
+           border-style: dotted;
+           border-width: 2px;  
+        }
+        #quatro{
+            border-style: dotted;
+            border-width: thick;
+        }
+        /*
+         * LARGURAS LATERAIS ESPECIFICAS
+           - A border-width propriedade pode ter de um a quatro valores (para a borda superior, borda direita, borda inferior e borda esquerda):
+        */
+        #cinco{
+              border-style: solid;
+              border-width: 5px 20px; /*shorthand: 5px(superior e inferior); 20px(direita e esquerda);*/
+        }
+        #seis{
+             border-style: solid;
+             border-width: 20px 5px; /*shorthand*/
+        }
+        #sete{
+             border-style: solid;
+             border-width: 25px 10px 4px 35px;
+             /*topo(25px),direita(10px),inferior(4px),esquerda(4px)*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Largura da borda CSS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, nisi culpa aspernatur natus voluptatum consequuntur doloremque, minus ipsam minima mollitia modi doloribus in deserunt, repellat ullam sunt nulla incidunt at!</p>
+    <p id="um">Largura da borda</p>
+    <p id="dois">Largura de borda media</p>
+    <p id="tres">2px Largura de borda</p>
+    <p id="quatro">espessura da borda</p>
+    <p id="cinco">espessura superior e inferior e direta e esquerda</p>
+    <p id="seis">espessura superior e inferior e direta e esquerda</p>
+    <p id="sete">espessura superior e inferior e direta e esquerda</p>
+</body>
+</html>

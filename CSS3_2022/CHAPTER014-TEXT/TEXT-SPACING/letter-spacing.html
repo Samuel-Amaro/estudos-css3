@@ -1,0 +1,57 @@
+<!--
+    * LETTER SPACING(ESPAÇAMENTO ENTRE LETRAS)
+
+        - A letter-spacing propriedade é usada para especificar o espaço entre os caracteres em um texto.
+
+        - O exemplo a seguir demonstra como aumentar ou diminuir o espaço entre os caracteres:
+
+    * SINTAXE CSS:
+
+        letter-spacing: normal|lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: normal
+        DESCRIPTION: Define o espaço normal entre os caracteres. Isso é padrão
+        --------------------------------------
+        VALUE: length(comprimento)
+        DESCRIPTION: Define um comprimento que é usado como espaço entre os caracteres (valores negativos também são permitidos).
+        --------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        --------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        --------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p{
+            /*
+             - a propriedade css letter-spacing e usada para especificar o espaço entre os caracteres em um texto, o valor 5px define um comprimento que e usado como espaço entre os caracteres
+             - defini que queremos ter 5px de espaço entre os caracteres de um paragrafo.
+            */
+            letter-spacing: 5px;
+        }
+        h3{
+            /*
+             - o valor -2px define um comprimento que e usado como espaço entre os caracteres, valores negativos também são permitidos
+             - defini que queremos ter -2px de espaço entre os caracteres de um titulo de nivel 3.
+            */
+            letter-spacing: -2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Usando letter-spacing</h1>
+    
+    <h2>Este é um título 1</h2>
+    <h3>Este é um título 2</h3>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!--
+    * :focus
+
+        A pseudoclasse CSS :focus representa um elemento (como uma entrada de formulário) que recebeu foco. Geralmente é acionado quando o usuário clica ou toca em um elemento ou o seleciona com a tecla do teclado Tab. 
+
+        /*Seleciona qualquer <input> quando focado*/
+        input:focus {
+            color: red;
+        }
+
+        Nota: Esta pseudo-classe aplica-se apenas ao próprio elemento focado. Use :focus-within se desejar selecionar um elemento que contenha um elemento em foco.
+
+    * Sintaxe
+
+        :focus
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /*
+         - A pseudoclasse CSS :focus representa um elemento (como uma entrada de formulário) que recebeu foco
+         - seleciona .red-input quando focado.
+        */
+        .red-input:focus {
+            background: yellow;
+            color: red;
+        }
+
+        /*
+         - seleciona .blue-input quando focado.
+        */
+        .blue-input:focus {
+            background: yellow;
+            color: blue;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <input type="text" class="red-input" value="I'll be red when focused."/>
+    </div>
+    <div>
+        <input type="text" class="blue-input" value="I'll be blue when focused."/>
+    </div>
+
+
+</body>
+</html>

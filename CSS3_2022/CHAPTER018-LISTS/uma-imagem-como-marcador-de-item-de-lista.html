@@ -1,0 +1,46 @@
+<!--
+    * UMA IMAGEN COMO MARCADOR DE ITEM DE LISTA
+
+        - A list-style-image propriedade especifica uma imagem como o marcador de item da lista:
+
+        - A list-style-image propriedade substitui o marcador de item de lista por uma imagem.
+
+        - Observação: sempre especifique também a propriedade list-style-type . Esta propriedade é usada se a imagem por algum motivo não estiver disponível.
+
+    * VALORES DE PROPRIEDADE:
+
+        value: none(nenhum)
+        description: Nenhuma imagem será exibida. Em vez disso, a propriedade list-style-type definirá que tipo de marcador de lista será renderizado. Isso é padrão
+        ------------------------------------
+        value: url;
+        description: O caminho para a imagem a ser usada como marcador de item de lista
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        ul{
+            /*
+             - a propriedade list-style-image propriedade especifica uma imagen como o marcador de item da lista:
+             - especificando a imagen quadrado.png como o marcador do item da lista não ordenada
+            */
+            list-style-image: url('quadrado-16.png');
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>A propriedade list-style-image</h1>
+
+    <p>A propriedade list-style-image especifica uma imagem como o marcador de item da lista:</p>
+    
+    <ul>
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca-Cola</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!--
+    * SETAS DE DICA DE FERRAMENTA
+
+      - Para criar uma seta que deve aparecer de um lado específico da dica de ferramenta, adicione conteúdo "vazio" após a dica de ferramenta, com a classe do pseudoelemento ::after junto com a content propriedade. A própria seta é criada usando bordas. Isso fará com que a dica de ferramenta pareça um balão de fala.
+
+      * * SETA INFERIOR
+
+       - Este exemplo demonstra como adicionar uma seta na parte inferior da dica de ferramenta:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seta Inferior</title>
+    <style>
+        body{
+            /*todo texto que estiver no corpo do documento sera centralizado*/
+            text-align: center;
+        }
+        p.dica{
+            position: relative;
+            display: inline-block;
+            border-bottom-width: 1px;
+            border-bottom-style: dotted;
+            border-bottom-color: black;
+        }
+        /**
+         - usando uma combinação de seletor, pega todos os elementos span que são descendentes do elemento p
+         - essa configuração afeta somente o elemento <span>
+        **/
+        p.dica span.textodicaferramenta{
+            /**
+                - A propriedade CSS de visibilidade pode mostrar ou ocultar um elemento sem afetar o layout de um documento (ou seja, o espaço é criado para elementos independentemente de serem selecionados ou não). 
+                - valor: hidden A caixa do elemento é invisível (não desenhada), mas ainda afeta o layout normalmente. Os descendentes do elemento ficarão visíveis se tiverem sido visibilityconfigurados como visible.
+            **/
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 0px;
+            padding-right: 0px;
+
+            /*posição da dica*/
+            /**
+              - move um elemento completamente para fora do fluxo normal de layout da página, como se ele estivesse em sua própria camada separada. A partir daí, você pode fixá-lo em uma posição relativa às bordas do <html> elemento da página  (ou ao elemento ancestral posicionado mais próximo). Isso é útil para criar efeitos de layout complexos, como caixas com guias onde diferentes painéis de conteúdo ficam em cima uns dos outros e são mostrados e ocultos conforme desejado, ou painéis de informações que ficam fora da tela por padrão, mas podem ser deslizados na tela usando um botão de controle.
+            **/
+            position: absolute;
+            /**
+              - A z-index propriedade CSS define a ordem z de um elemento posicionado e seus descendentes ou flex items. Os elementos sobrepostos com um índice z maior cobrem aqueles com um menor.
+              - o elemento span e sobreposto por cima do elemento <p>
+            **/
+            z-index: 1;
+            /*se afasta 150% do seu elemento ancestral <p> na parte inferior, se afasta 150% do inferior do seu elemento ancestral*/
+            bottom: 150%;
+            /*se aproxima 50% da esquerda do seu elemento ancestral, se aproxima 50% da esquerda do elemento<p>*/
+            left: 50%;
+            /*add a seguinte medida de espaço externo a esquerda entre o elemento ancestral <p> e entre o elemento <span>, faz o elemento se centralizar*/
+            margin-left: -60px;
+        }
+        /*
+        
+         - usando seletor combinado para selecionar o descendente <span> do elemento <p>
+         -  O ::after pseudoelemento pode ser usado para inserir algum conteúdo após o conteúdo de um elemento;
+        */
+        p.dica span.textodicaferramenta::after{
+            /*
+             - A propriedade CSS content é usada com os pseudoelementos ::before e ::after para gerar conteúdo em um elemento. Objetos inseridos usando a propriedade content são elementos substituídos anônimos.
+             - objeto: <string> (en-US) Um ou mais caracteres de texto.
+             - não sera inserido nenhum conteudo apos o conteudo padrão do elemento ter sido renderizado.
+             - o elemento vai ser renderizado, mas não vai ter nenhum conteudo, vai ter o elemento no layout afetando os outros elementos, mas ele não possui conteudo, ele existe mas não possui conteudo.
+            */
+            content: "";
+            /*o elemento e posicionado absolutamente em torno do seu ancestral, que e o <span>*/ 
+            position: absolute;
+            /*se afasta 100% do superior do seu ancestral, se posciona no bottom: 0*/
+            top: 100%;
+            /*se aproxima 50% da esquerda*/
+            left: 50%;
+            /*para torna o elemento centralizado entre o elemento <p> e o elemento <span>*/
+            margin-left: -5px;
+            /*add borda ao elemento gerado apos o conteudo do <span> ter sido renderizado, mesmo não tendo conteudo o elemento pode receber propriedades css, essas bordas adicionadas dão o efeito visual de uma seta abaixo do elemento <span>, somente mostrando a border top*/
+            border-top-width: 5px;
+            border-right-width: 5px;
+            border-left-width: 5px;
+            border-bottom-width: 5px;
+            border-style: solid;
+            border-top-color: black;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+        /** 
+          - o elemento <p> ao receber o passar do mouse por cima de si, vai fazer algo
+          - o <span> vai ser oque vai fazer algo, porque ele esta sendo especificado, por causa do seletor de combinação espaço, que seleciona o descendente do elemento <p> que no caso e <span>
+        **/
+        p.dica:hover span.textodicaferramenta{
+            /*A caixa do elemento é visível.*/
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h1>Setas de Dica de Ferramenta</h1>
+    <h2>Dica de ferramenta superior com Seta Inferior</h2>
+    <p><strong>Exemplo:</strong> Este exemplo demonstra como adicionar uma seta na parte inferior da dica de ferramenta:</p>
+    <p>Passe o mouse sobre o texto abaixo:</p>
+    <p  class="dica">Passe o mouse sobre min<span class="textodicaferramenta">Texto de dica</span></p>
+</body>
+</html>

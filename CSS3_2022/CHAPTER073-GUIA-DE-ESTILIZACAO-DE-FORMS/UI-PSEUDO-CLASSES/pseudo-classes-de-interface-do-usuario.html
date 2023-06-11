@@ -1,0 +1,30 @@
+<!--
+    * PSEUDOCLASSES DE INTERFACE DO USUÁRIO
+
+        Nos artigos anteriores, abordamos o estilo de vários controles de formulário, de maneira geral. Isso incluiu algum uso de pseudo-classes, por exemplo, usando :checked para direcionar uma caixa de seleção somente quando ela é selecionada. Neste artigo, exploraremos em detalhes as diferentes pseudoclasses de interface do usuário disponíveis em navegadores modernos para estilizar formulários em diferentes estados.
+
+    * QUAIS PSEUDO-CLASSES TEMOS DISPONÍVEIS?
+
+        As pseudo-classes originais disponíveis para nós (a partir do CSS 2.1 ) que são relevantes para formulários são:
+
+            :hover: seleciona um elemento apenas quando o ponteiro do mouse passa sobre ele.
+
+            :focus: Seleciona um elemento somente quando ele está focado (ou seja, sendo guiado por meio do teclado).
+
+            :active: seleciona um elemento somente quando ele está sendo ativado (ou seja, enquanto está sendo clicado, ou quando a tecla Return / Enter está sendo pressionada no caso de uma ativação do teclado).
+
+        Essas pseudoclasses básicas devem ser familiares para você agora. Mais recentemente, o CSS Selector Level 3 e o CSS Basic UI Level 3 adicionaram mais pseudoclasses relacionadas a formulários HTML que fornecem várias outras condições de segmentação úteis das quais você pode aproveitar. Discutiremos isso com mais detalhes nas seções abaixo, mas brevemente, os principais que veremos são:
+
+            :required e :optional: Destinos obrigatórios ou controles de formulário opcionais.
+
+            :valid and :invalid, and :in-range and :out-of-range: Controles de formulário de destino que são válidos/inválidos de acordo com as restrições de validação de formulário definidas neles ou dentro do intervalo/fora do intervalo.
+
+            :enabled and :disabled, and :read-only and :read-write: Controles de formulário habilitados ou desabilitados de destino (por exemplo, com o disabled atributo HTML definido) e controles de formulário de leitura-gravação ou somente leitura (por exemplo, com o readonly atributo HTML definido).
+
+            :checked, :indeterminate, e :default: direcionam respectivamente as caixas de seleção e botões de opção que estão marcados, em um estado indeterminado (nem marcados ou não marcados), e a opção padrão selecionada quando a página é carregada (por exemplo, um <input type="checkbox"> com o checked atributo definido ou um <option> elemento com o selected atributo definido ).
+
+        Existem muitos outros também, mas os listados acima são os mais obviamente úteis. Alguns dos outros visam resolver problemas de nichos muito específicos, ou ainda não muito bem suportados em navegadores. Os listados acima têm um suporte muito bom para navegadores, mas é claro que você deve testar suas implementações de formulário com cuidado para garantir que funcionem para seu público-alvo.
+
+        Nota: Várias pseudoclasses discutidas aqui estão relacionadas ao estilo de controles de formulário com base em seu estado de validação (seus dados são válidos ou não?) Você aprenderá muito mais sobre como definir e controlar restrições de validação em nosso próximo artigo — Client-side validação de formulário — mas por enquanto vamos manter as coisas simples em relação à validação de formulário, para que não confunda as coisas.
+
+-->

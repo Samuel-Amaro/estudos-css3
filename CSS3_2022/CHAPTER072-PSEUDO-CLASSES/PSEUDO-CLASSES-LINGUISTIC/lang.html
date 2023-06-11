@@ -1,0 +1,62 @@
+<!--
+    * PSEUDO CLASSE LINGUISTA
+
+    * PSEUDO CLASSE :lang
+
+        A pseudo-classe CSS lang() corresponde a elementos com base na linguagem em que eles estão determinados.:
+
+        /*Seleciona qualquer <p> em inglês (en)*/
+        p:lang(en) {
+            quotes: '\201C' '\201D' '\2018' '\2019';
+        }
+
+        Nota: Em HTML, o idioma é determinado por uma combinação do lang atributo, do <meta> elemento e possivelmente por informações do protocolo (como cabeçalhos HTTP). Para outros tipos de documentos, pode haver outros métodos de documentos para determinar o idioma.
+
+        * SINTAXE
+
+            :lang(<codigo-idioma>)
+
+        * PARAMENTRO
+
+            <language-code>: A <string> representando o idioma que você deseja segmentar. Os valores aceitáveis ​​são especificados na especificação HTML .
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - A pseudo-classe CSS lang() corresponde a elementos com base na linguagem em que eles estão determinados.
+         - seleciona elementos que estão definidos para o idioma em ingles <en> que tenham o elemento q como filho direto
+        */
+        :lang(en) > q{
+            quotes: '\201C' '\201D' '\2018' '\2019';
+        }
+
+        /*
+         - A pseudo-classe CSS lang() corresponde a elementos com base na linguagem em que eles estão determinados.
+         - seleciona elementos que estão definidos para o idioma em francês <fr> que tenham o elemento q como filho direto
+        */
+        :lang(fr) > q{
+            quotes: '<< ' ' >>';
+        }
+
+        /*
+         - A pseudo-classe CSS lang() corresponde a elementos com base na linguagem em que eles estão determinados.
+         - seleciona elementos que estão definidos para o idioma em alemão <de> que tenham o elemento q como filho direto
+        */
+        :lang(de) > q{
+            quotes: '>>' '<<' '\2039' '\203A';
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div lang="en"><q>This English quote has a <q>nested</q> quote inside.</q></div>
+    <div lang="fr"><q>This French quote has a <q>nested</q> quote inside.</q></div>
+    <div lang="de"><q>This German quote has a <q>nested</q> quote inside.</q></div>
+
+</body>
+</html>

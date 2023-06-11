@@ -1,0 +1,46 @@
+<!--
+    Para "forçar" todos os botões a terem a mesma aparência, não importa o que aconteça, podemos adicionar a !important regra às propriedades do botão, assim:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - seletor de classe, seleciona um ou varios elementos que possua o seguinte valor de classe.
+        */
+        .button{
+            /*
+             - a regra css !important é usada para adicionar mais importância a uma propriedade/valor do que o normal.
+             - essa regra !important substituira(ignorara toda a especificidade envolvida)
+             - aplicara a cor de fundo vermelha a todos os elementos com a class de valor button, ignorara as especificidades envolvidas e regras css aplicadas anteriormente, serão substituidas pela propriedade e valor abaixo.
+            */
+            background-color: #8c8c8c !important;
+            color: white !important;
+            padding: 5px !important;
+            border: 1px solid black !important;
+        }
+
+        /*
+         - seletor de id, seleciona um elemento a, que seja descendente de um elemento que possua o valor de id myDiv
+        */
+        #myDiv a{
+            color: red;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>Standard button: <a class="button" href="#" target="_top" rel="next">CSS Tutorial</a></p>
+
+    <div id="myDiv">
+        <p>Um botão de link dentro do myDiv: <a href="#" target="_top" rel="next">HTML Tutorial</a></p>
+        <p>Um botão de link dentro do myDiv:  
+        <a class="button" href="#" target="_top" rel="next">HTML Tutorial</a></p>
+    </div>
+    
+</body>
+</html>

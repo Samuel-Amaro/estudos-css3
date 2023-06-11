@@ -1,0 +1,35 @@
+<!--
+    * CALC()
+
+        A função CSS calc() permite realizar cálculos ao especificar valores de propriedade CSS. Ele pode ser usado em qualquer lugar onde um <length> <frequency> <angle> <time> <percentage> <number> ou <integer> seja permitido. 
+
+        /* propriedade: calc(expressão) */
+        width: calc(100% - 80px);
+
+
+    * SINTAXE
+
+        A função calc() recebe uma simples expressão como parâmetro e o resultado desta expressão é utilizado como valor. Pode ser uma simples expressão, combinando os seguintes operadores, utilizando padrão operator precedence rules:
+
+        + ADIÇÃO
+
+        - SUBTRAÇÃO
+
+        * Multiplicação. Pelo menos um dos argumentos deve ser um <number>.
+
+        / Divisão. O operador da direita deve ser um <number>.
+
+        Os operandos na expressão podem ser qualquer valor de sintaxe <length> Você pode usar unidades diferentes para cada valor em sua expressão, se desejar. Você também pode usar parênteses para estabelecer a ordem de computação quando necessário.
+
+    * NOTAS
+
+        Divisão por 0 (zero) resulta em um erro gerado pelo HTML parser.
+
+        Os operadores + e - devem estar cercados por espaço em branco. Por exemplo, calc (50% -8px) será analisado como uma porcentagem seguida por um comprimento negativo - uma expressão inválida — enquanto calc (50% - 8px) é uma porcentagem seguida por um operador de subtração e um comprimento. Da mesma forma, calc (8px + -50%) é tratado como um comprimento seguido por um operador de adição e uma porcentagem negativa.
+
+        Os operadores * e / não requerem espaço em branco, mas adicioná-lo para consistência é permitido e recomendado.
+
+        Expressões matemáticas envolvendo porcentagens de larguras e alturas em colunas de tabela, grupos de coluna de tabela, linhas de tabela, grupos de linhas de tabela e células de tabela em tabelas de layout automáticas e fixas podem ser tratadas como se auto tivesse sido especificado.
+
+        É permitido aninhar funções calc (), em cujo caso as internas são tratadas como parênteses simples.
+-->

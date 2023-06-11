@@ -1,0 +1,174 @@
+/*
+ * PSEUDO CLASSES CSS
+
+ * OQUE SÃO PSEUDO-CLASSES ?
+
+  - Uma pseudoclasse é usada para definir um estado especial de um elemento.
+
+  - Por exemplo, pode ser usado para:
+    
+    Definir o estilo de um elemento quando o usuário passa o mouse sobre ele;
+    Estilizar links visitados e não visitados de maneira diferente;
+    Defina o estilo de um elemento quando ele receber o foco;
+
+ * SINTAXE:
+    
+    selector = seletor;
+    pseudo-class = nome da pseudo-classe;
+    proprety = propriedade;
+    value = valor da propriedade css;
+
+    selector:pseudo-class{
+            proprety: value;
+    }
+
+*/
+
+/*
+ * PSEUDO-CLASSES ÂNCORA(link)
+
+  - Os links podem ser exibidos de diferentes maneiras:
+  - Nota: a:hover DEVE vir depois a:link e a:visited na definição CSS para ser eficaz! a:active DEVE vir depois a:hover na definição de CSS para ser eficaz! Nomes de pseudoclasse não diferenciam maiúsculas de minúsculas.
+*/
+
+/*link não visitado - estado: link - pseudo-classe link*/
+a:link{
+    color: #FF0000;
+}
+
+/*link visitado - estado: visitou - pseudo-classe visited*/
+a:visited{
+    color: #00FF00;
+}
+
+/*mouse sobre o link - estado: hover - pseudo-classe hover*/
+a:hover{
+    color: #FF00FF;
+}
+
+/*link selecionado - estado: ativo - pseudo-classe active*/
+a:active{
+    color: #0000FF;
+}
+
+/****************************************************************************/
+
+/*
+ * PSEUDO CLASSES E CLASSES CSS
+
+  - As pseudo classes podem ser combinadas com classes CSS:
+  - Quando você passa o mouse sobre o link no exemplo, ele muda de cor:
+*/
+
+
+/*mouse sobre o link, ele muda de cor - estado: hover - pseudo-classe hover*/
+.destacar:hover{
+    color: #FF0000;
+}
+
+/********************************************************************/
+
+/*
+ * passe o mouse sobre <div>:
+
+    - Um exemplo de uso da :hoverpseudoclasse em um elemento <div>:
+*/
+div{
+   /*cor de fundo do elemento div*/ 
+   background-color: green; 
+   /*cor para o texto*/
+   color: white;
+   /*add um espaço interno ao elemento div, entre  o conteudo do elemento div e a borda do elementodiv*/
+   padding-top: 25px;
+   padding-right: 25px;
+   padding-bottom: 25px;
+   padding-left: 25px;
+   /*alinhando o texto ao centro do elemento div*/
+   text-align: center;
+}
+
+/*ao passar o mouse sobre a div, ela muda de cor devido ao estado hover da pseudo class-hover*/
+div:hover{
+    background-color: blue;
+}
+
+
+/******************************************************************/
+
+/*
+ * DICA DE FERRAMENTA SIMPLES
+
+  - Passe o mouse sobre um elemento <div> para mostrar um elemento <p> (como uma dica):
+*/
+
+#elemento_escondido{
+    /* o elemento p não e exibido para o usuario, não e exibido na pagina*/
+    display: none;
+    /*cor de fundo do elemento*/
+    background-color: yellow;
+    /*add um espaço interno ao elemento p, entre  o conteudo do elemento p e a borda do elemento p*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+/*elemento div, ao passar o mouse sobre a div, mostrara o elemento p, mudando seu display, tudo isso feito ao estado hover, a pseudo-classe hover*/
+#conteiner:hover > #elemento_escondido{
+    /*o elemento p vira um bloco, um conteiner, e exibido para o usuario com um bloco*/
+    display: block;
+}
+
+/****************************************************************************/
+
+/*
+ * CSS - A: Pseudo classe do primeiro filho
+
+  - A :first-child pseudoclasse corresponde a um elemento especificado que é o primeiro filho de outro elemento.
+
+ * Corresponde ao primeiro elemento <p>
+
+  - No exemplo a seguir, o seletor corresponde a qualquer elemento p que seja o primeiro filho de qualquer elemento, mas aqui neste exemplo vai corresponder a qualquer elemento p que seja primeiro filho de um elemento article:
+*/
+
+.filho-p:first-child{
+    color: blue;
+}
+
+
+/************************************************************************/
+
+/*
+  * CORRESPONDE AO PRIMEIRO ELEMENTO i em todos os elementos p
+
+   - No exemplo a seguir, o seletor corresponde ao primeiro elemento <i> em todos os elementos <p>:
+*/
+
+.filho-p-a > i:first-child{
+    color: blue;
+}
+
+/*****************************************************************/
+
+/*
+ * CORRESPONDE A TODOS OS ELEMENTOS <i> em todos os primeiros elementos <p> filho
+
+  - No exemplo a seguir, o seletor corresponde a todos os elementos <i> em elementos <p> que são o primeiro filho de outro elemento:
+
+*/
+
+p:first-child > i{
+    color: blue;
+}
+
+/*********************************************************************/
+
+/*
+ * CSS - A ´PSEUDO CLASSE: lang
+
+  - A :langpseudo classe permite definir regras especiais para diferentes idiomas.
+  - No exemplo abaixo, :langdefine as aspas para elementos <q> com lang = "no":
+*/
+q:lang(no){
+    quotes: "~" "~";
+}

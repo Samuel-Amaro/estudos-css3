@@ -1,0 +1,61 @@
+/**
+
+ * * PROPRIEDADE BACKGROUND-CLIP - CLIPE DE FUNDO
+ * 
+ * A background-clip propriedade CSS especifica a área de pintura do fundo.
+ * 
+ * A propriedade assume três valores diferentes:
+
+    - border-box - (padrão) o fundo é pintado na borda externa da borda;
+    - 
+    - (padding-box) - caixa de preenchimento - o fundo é pintado na borda externa do preenchimento;
+    - 
+    - content-box(Caixa de conteudo) - o fundo é pintado dentro da caixa de conteúdo
+
+ * 
+ * O exemplo a seguir ilustra a background-clip propriedade:
+**/
+
+div.bloco1{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: dotted;
+    border-color: black;
+    padding-top: 35px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    background: yellow;
+}
+
+div.bloco2{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: dotted;
+    border-color: black;
+    padding-top: 35px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    background: yellow;
+    background-clip: padding-box;
+}
+
+div.bloco3{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: dotted;
+    border-color: black;
+    padding-top: 35px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    background: yellow;
+    background-clip: content-box;
+}

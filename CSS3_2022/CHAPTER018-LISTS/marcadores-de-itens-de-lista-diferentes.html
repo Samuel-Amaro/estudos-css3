@@ -1,0 +1,160 @@
+<!--
+    * MARCADORES DE ITENS DE LISTA DIFERENTES
+
+        - A list-style-type propriedade especifica o tipo de marcador de item de lista.
+
+        - O list-style-type especifica o tipo de marcador de item de lista em uma lista.
+
+    * SINTAXE CSS:
+
+        list-style-type: value;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: disc(disco)
+        DESCRIPTION: Valor padrão. O marcador é um círculo preenchido
+        --------------------------------------
+        VALUE: armenian(armenio)
+        DESCRIPTION: O marcador é a numeração tradicional armênia
+        --------------------------------------
+        VALUE: circle(circulo)
+        DESCRIPTION: O marcador é um círculo
+        --------------------------------------
+        VALUE: cjk-ideographic
+        DESCRIPTION: O marcador são números ideográficos simples
+        --------------------------------------
+        VALUE: decimal(decimal)
+        DESCRIPTION: O marcador é um número
+        --------------------------------------
+        VALUE: decimal-lead-zero
+        DESCRIPTION: O marcador é um número com zeros à esquerda (01, 02, 03, etc.)
+        --------------------------------------
+        VALUE: georgian
+        DESCRIPTION: O marcador é numeração georgiana tradicional
+        --------------------------------------
+        VALUE: hebraico
+        DESCRIPTION: O marcador é a numeração hebraica tradicional
+        --------------------------------------
+        VALUE: hiragana
+        DESCRIPTION: O marcador é a numeração tradicional Hiragana
+        --------------------------------------
+        VALUE: hiragana-iroha
+        DESCRIPTION: O marcador é tradicional Hiragana iroha
+numeração
+        --------------------------------------
+        VALUE: katakana
+        DESCRIPTION: O marcador é a numeração tradicional do Katakana
+        --------------------------------------
+        VALUE: katakana-iroha
+        DESCRIPTION: O marcador é a numeração tradicional Katakana iroha
+        --------------------------------------
+        VALUE: lower-alpha(alfa inferior)
+        DESCRIPTION: O marcador é alfa inferior (a, b, c, d, e, etc.)
+        --------------------------------------
+        VALUE: lower-greek(grego inferior)
+        DESCRIPTION: O marcador é grego inferior
+        --------------------------------------
+        VALUE: lower-latin(latim inferior)
+        DESCRIPTION: O marcador é latim inferior (a, b, c, d, e, etc.)
+        --------------------------------------
+        --------------------------------------
+        VALUE: lower-roman(romano inferior)
+        DESCRIPTION: O marcador é lower-roman (i, ii, iii, iv, v, etc.)
+        --------------------------------------
+        VALUE: none(nehum)
+        DESCRIPTION: Nenhum marcador é mostrado
+        --------------------------------------
+        VALUE: square(quadrado)
+        DESCRIPTION: O marcador é um quadrado
+        --------------------------------------
+        VALUE: upper-alpha(alfa superior)
+        DESCRIPTION: O marcador é alfa superior (A, B, C, D, E, etc.)
+        --------------------------------------
+        VALUE: upper-greek(grego superior)
+        DESCRIPTION: O marcador é grego superior
+        --------------------------------------
+        --------------------------------------
+        VALUE: upper-latin(latim superior)
+        DESCRIPTION: O marcador é latim superior (A, B, C, D, E, etc.)
+        --------------------------------------
+        VALUE: upper-roman(romano superior)
+        DESCRIPTION: O marcador é upper-roman (I, II, III, IV, V, etc.)
+        --------------------------------------
+        VALUE: inicial(initial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão
+        --------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        --------------------------------------
+
+        - O exemplo a seguir mostra alguns dos marcadores de itens de lista disponíveis:
+
+        - Nota: Alguns dos valores são para listas não ordenadas e alguns para listas ordenadas. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        ul.a{
+            /*
+             - a propriedade list-style-type propriedade especifica o tipo de marcador de item de lista
+             - o valor circle(circulo) especifica que o marcador da lista não ordenada sera circle
+            */
+            list-style-type: circle;
+        }
+        ul.b{
+            /*
+            - o valor square(quadrado) especifica que o marcador da lista não ordenada sera square
+            */
+            list-style-type: square;
+        }
+        ol.c{
+            /*
+            - o valor upper-roman especifica que o marcador da lista ordenada sera upper-roman(numero romano)
+            */
+            list-style-type: upper-roman;
+        }
+        ol.d{
+            /*
+            - o valor lower-alpha especifica que o marcador da lista ordenada sera lower-alpha
+            */
+            list-style-type: lower-alpha;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>A propriedade do tipo de estilo de lista(list-style-type)</h1>
+
+    <p>Exemplo de listas não ordenadas</p>
+    
+    <ul class="a">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca-Cola</li>
+    </ul>
+
+    <ul class="b">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca-Cola</li>
+    </ul>
+
+    <p>Exemplo de listas ordenadas:</p>
+    
+    <ol class="c">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca-Cola</li>
+    </ol>
+
+    <ol class="d">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca-Cola</li>
+    </ol>
+
+</body>
+</html>

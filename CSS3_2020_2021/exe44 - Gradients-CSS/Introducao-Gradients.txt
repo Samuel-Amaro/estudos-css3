@@ -1,0 +1,10 @@
+ * GRADIENTES CSS
+
+    - Os gradientes CSS permitem que você exiba transições suaves entre duas ou mais cores especificadas.
+    - 
+    - CSS define dois tipos de gradientes:
+
+        - Gradientes lineares (desce / sobe / esquerda / direita / diagonalmente)
+        (to bottom, to top, to right, to left, to bottom right, etc.)
+        - 
+        - Gradientes radiais (definidos por seu centro)

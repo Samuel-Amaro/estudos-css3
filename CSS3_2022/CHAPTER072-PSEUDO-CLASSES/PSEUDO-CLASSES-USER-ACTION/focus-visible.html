@@ -1,0 +1,59 @@
+<!--
+    * :focus-visible
+
+        A :focus-visible pseudo-classe se aplica enquanto um elemento corresponde à :focus pseudo-classe e o UA (User Agent) determina por meio de heurística que o foco deve ser evidenciado no elemento. (Muitos navegadores mostram um "anel de foco" por padrão neste caso.)
+
+        Este seletor é útil para fornecer um indicador de foco diferente com base na modalidade de entrada do usuário (mouse vs. teclado).
+
+    * Sintaxe
+
+        :focus-visible
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        input, button {
+            margin: 10px;
+        }
+
+        /*
+         - A pseudoclasse CSS :focus representa um elemento (como uma entrada de formulário) que recebeu foco.
+         - seleciona .focus-only quando focado.
+        */
+        .focus-only:focus {
+            outline: 2px solid black;
+        }
+
+        /*
+         - A :focus-visible pseudo-classe se aplica enquanto um elemento corresponde à :focus pseudo-classe e o UA (User Agent) determina por meio de heurística que o foco deve ser evidenciado no elemento.
+         - o :focus-visible seletor usa o comportamento do UA para determinar quando corresponder.
+        */
+        .focus-visible-only:focus-visible {
+            outline: 4px dashed darkorange;
+        }
+
+    </style>
+</head>
+<body>
+
+    <input type="text" value="Default styles"/>
+    <br/>
+    <button type="button">Default styles</button>
+    <br/>
+    <input type="text" class="focus-only" value=":focus only"/>
+    <br/>
+    <button type="button" class="focus-only">:focus only</button>
+    <br/>
+    <input type="text" class="focus-visible-only" value=":focus-visible only"/>
+    <br/>
+    <button type="button" class="focus-visible-only">:focus-visible only</button>
+
+
+
+</body>
+</html>

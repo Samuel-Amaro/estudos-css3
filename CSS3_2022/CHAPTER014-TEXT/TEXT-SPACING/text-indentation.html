@@ -1,0 +1,48 @@
+<!--
+    * TEXT INDENTATION(RECUO DE TEXTO)
+
+        - A text-indent propriedade é usada para especificar o recuo da primeira linha de um texto:
+
+        - Nota: Valores negativos são permitidos. A primeira linha será recuada para a esquerda se o valor for negativo.
+    
+    * SINTAXE CSS:
+
+        text-indent: lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: lenght(comprimento)
+        DESCRIPTION: Define um recuo fixo em px, pt, cm, em, etc. O valor padrão é 0.
+        ------------------------------------
+        VALUE: %
+        DESCRIPTION: Define o recuo em % da largura do elemento pai
+        ------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ------------------------------------
+        VALUE: inherit(herda)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p{
+            /*a propriedade text-indent, e usada para especificar um recuo na primeira linha de um bloco de texto, o valor 50px especifica um recuo fixo em px
+            - um bloco de texto e um elemento html que contenha um texto. por mais que tenha um elemento com varios texto a propriedade css so ira recuar a primeira linha de todo o texto do elemento.
+            */
+            text-indent: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Usando recuo de texto</h1>
+    
+    <p>Nos meus anos mais jovens e vulneráveis, meu pai me deu alguns conselhos que tenho revirado em minha mente desde então. "Sempre que você sentir vontade de criticar alguém", ele me disse, "lembre-se de que nem todas as pessoas deste mundo tiveram as vantagens que você teve."</p>
+
+</body>
+</html>

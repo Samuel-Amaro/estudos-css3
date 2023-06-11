@@ -1,0 +1,72 @@
+<!--
+    * CSS OUTLINE-OFFSET
+
+       - A outline-offset propriedade adiciona espaço entre um contorno e a borda ou borda de um elemento.
+
+       - Nota: o contorno difere das bordas! Ao contrário da borda, o contorno é desenhado fora da borda do elemento e pode se sobrepor a outro conteúdo. Além disso, o contorno NÃO faz parte das dimensões do elemento; a largura e a altura totais do elemento não são afetadas pela largura do contorno.
+
+       - O exemplo a seguir usa a outline-offset propriedade para adicionar espaço entre a borda e o contorno:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>outline-offset - deslocamento de contorno</title>
+    <style>
+        div.ex1{
+            /*especificando um espaço externo*/
+            margin-top: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            /*especificando a borda*/
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            /*especificando o deslocamento do contorno*/
+            outline-width: 4px;
+            outline-style: solid;
+            outline-offset: 15px;
+            outline-color: red;
+        }
+        div.ex2{
+            /*especificando um espaço externo*/
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            /*especificando a borda*/
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            /*especificando o deslocamento do contorno*/
+            outline-width: 5px;
+            outline-style: dashed;
+            outline-color: blue;
+            outline-offset: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Deslocamento de contorno - outline-offset</h1>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir usa a outline-offset propriedade para adicionar espaço entre a borda e o contorno:</p>
+
+    <div class="ex1">Este div tem um contorno vermelho sólido de 4 pixels, 15 pixels fora da borda da borda.</div>
+
+    <br>
+
+    <div class="ex2">Este div tem um contorno azul tracejado de 5 pixels 5 pixels fora da borda da borda.</div>
+
+</body>
+</html>

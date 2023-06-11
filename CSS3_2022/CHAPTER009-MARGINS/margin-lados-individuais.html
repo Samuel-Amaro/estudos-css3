@@ -1,0 +1,55 @@
+<!--
+    * MARGIN - INDIVIDUAL SIDES(MARGIN LADOS INDIVIDUAIS)
+
+        - CSS tem propriedades para especificar a margem para cada lado de um elemento:
+
+            margin-top
+            margin-right
+            margin-bottom
+            margin-left
+
+        - Todas as propriedades de margem podem ter os seguintes valores:
+
+            auto - o navegador calcula a margem
+            lenght(comprimento) - especifica uma margem em px, pt, cm, etc..
+            % - especifica uma margem em % da largura do elemento que o contém
+            hinherit(herda) - especifica que a margem deve ser herdada do elemento pai
+
+        DICA: valores negativos são permitidos
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*shorthand de border, border-width, border-style, border-color, define uma borda para um elemento*/
+            border: 1px solid black;
+            /*
+             - margens são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas.
+             - especificando a margen para cada lado de um elemento de forma individual usando propriedadeds css
+             - cria espaços ao redor do elemento, apos a borda do elemento, cria espaços externos, ao redor do elemento ou entre elementos
+             - usamos valores de comprimento usando a unidade px
+            */
+            /*cria um espaço externo ao redor do elemento de 100px de comprimento, na parte superior do elemento*/
+            margin-top: 100px; 
+            /*cria um espaço externo ao redor de 100px de comprimento na parte inferior do elemento*/
+            margin-bottom: 100px;
+            /*cria um espaço externo de 150px de comprimento na parte do lado direito do elemento*/
+            margin-right: 150px;
+            /*cria um espaço externo de 80px de comprimento do lado esquerdo do elemento*/
+            margin-left: 80px; 
+            /*especifica uma cor de fundo para o elemento usando a propriedade abaixo*/
+            background-color: lightblue; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Usando propriedade de margem individuais</h2>
+
+    <div>Este elemento div tem uma margen superior de 100px, uma margem direita de 150px, uma margem inferior de 100px e uma margem esquerda de 80px</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            /*
+             - Um contorno(outline) é uma linha que é desenhada em torno de elementos, FORA das bordas, para fazer o elemento "se destacar".
+            */
+            outline: none;
+        }
+        /*
+         - Uma pseudo-classe e usada para definir um estado especial de um elemento.
+         - seleciona o elemento input com o atributo type e valor de atributo text que tem o foco
+        */
+        input[type=text]:focus{
+            border: 3px solid #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Campo de entrada com borda preta em :focus</h2>
+
+    <p>Aqui, o campo de entrada recebe uma cor de borda preta quando recebe o foco (clicado). Também adicionamos a propriedade de transição CSS para animar a cor da borda (leva 0,5 segundos para alterar a cor em foco):</p>
+
+    <form>
+        <label for="fname">Primeiro Nome</label>
+        <input type="text" id="fname" name="fname" value="John"/>
+        <label for="lname">Último Nome</label>
+        <input type="text" id="lname" name="lname" value="Doe"/>
+    </form>
+
+</body>
+</html>

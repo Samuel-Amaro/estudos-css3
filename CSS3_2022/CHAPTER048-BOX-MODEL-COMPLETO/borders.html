@@ -1,0 +1,74 @@
+<!--
+    * BORDERS
+
+        A borda é desenhada entre a margem e o preenchimento de uma caixa. Se você estiver usando o modelo de caixa padrão, o tamanho da borda será adicionado ao width e height da caixa. Se estiver a usar o modelo de caixa alternativo então o tamanho do contorno torna a caixa de conteúdo mais pequena pois ocupa um pouco do que está disponível width e height. 
+
+        Para estilizar bordas, há um grande número de propriedades — há quatro bordas e cada borda tem um estilo, largura e cor que podemos querer manipular. 
+
+        Você pode definir a largura, estilo ou cor de todas as quatro bordas de uma só vez usando o border propriedade.
+
+        Para definir as propriedades de cada lado individualmente, você pode usar: 
+            
+            border-top
+            border-right
+            border-bottom
+            border-left
+
+        Para definir a largura, o estilo ou a cor de todos os lados, use o seguinte: 
+         
+            border-width
+            border-style
+            border-color
+
+        Para definir a largura, o estilo ou a cor de um único lado, você pode usar uma das propriedades mais granulares à mão: 
+
+            border-top-width
+            border-top-style
+            border-top-color
+            border-right-width
+            border-right-style
+            border-right-color
+            border-bottom-width
+            border-bottom-style
+            border-bottom-color
+            border-left-width
+            border-left-style
+            border-left-color
+
+        No exemplo abaixo, usamos várias taquigrafias e taquigrafias para criar bordas. Brinque com as diferentes propriedades para verificar se você entende como elas funcionam. As páginas MDN para as propriedades da borda fornecem informações sobre os diferentes estilos de borda que você pode escolher. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .container{
+            /*
+             - A border é desenhada entre a margin e o padding de uma caixa.
+             - Para definir as propriedades de cada lado individualmente, você pode usar: 
+            */
+            border-top: 5px dotted green;
+            border-right: 1px solid black;
+            border-bottom: 20px solid rgb(23, 45, 145);
+        }
+        .box{
+            /*
+             - Para definir a largura, o estilo ou a cor de um único lado, você pode usar uma das propriedades mais granulares à mão:
+            */
+            border: 1px solid #333333;
+            border-top-style: dotted;
+            border-right-width: 20px;
+            border-bottom-color: hotpink;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <div class="box">Mude minhas bordas.</div>
+    </div>
+
+</body>
+</html>

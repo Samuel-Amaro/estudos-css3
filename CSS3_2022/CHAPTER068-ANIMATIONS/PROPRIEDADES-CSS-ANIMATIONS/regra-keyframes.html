@@ -1,0 +1,81 @@
+<!--
+    * @keyframes(quadros chaves) - regra css
+
+        A regra de CSS @keyframes controla as etapas intermediárias em uma sequência de animação CSS definindo estilos para quadros-chave (ou waypoints) ao longo da sequência de animação. Isso dá mais controle sobre as etapas intermediárias da sequência de animação do que sobre as transições.
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+        JavaScript pode acessar a regra @keyframes com a interface de modelo de objeto CSS CSSKeyframesRule (en-US).
+
+        Para usar keyframes crie uma regra @keyframes com um nome que é usado pela propriedade animation-name para corresponder uma animação à sua declaração de keyframe. Cada regra @keyframes contém uma lista de estilos de seletores de keyframe, que especifica porcentagens ao longo da animação quando o keyframe ocorre e um bloco contendo os estilos desse keyframe.
+
+        Você pode listar as porcentagens de quadro-chave em qualquer ordem; eles serão tratados na ordem em que devem ocorrer.
+
+    * LISTA DE KEYFRAMES VÁLIDAS
+
+        Se uma regra de KEYFRAME não especificar os estados inicial ou final da animação (ou seja, 0%/from e 100%/to, os navegadores usarão os estilos existentes do elemento para os estados inicial/final. Isso pode ser usado para animar um elemento de seu estado inicial e volta.
+
+        As propriedades que não podem ser animadas nas regras de quadro-chave são ignoradas, mas as propriedades com suporte ainda serão animadas.
+
+    * RESOLVENDO DUPLICATAS
+
+        Se existirem vários conjuntos de KEYFRAMES para um determinado nome, o último encontrada pelo analisador é usado. @keyframes regras não em cascata, por isso animações nunca keyframes derivam mais do que um conjunto de regras.
+
+        Se um determinado deslocamento de tempo de animação for duplicado, o último quadro-chave da @keyframes regra para essa porcentagem será usado para esse quadro. Não há nenhuma cascata dentro de uma @keyframes regra se vários quadros especificar os mesmos valores percentuais.
+
+    * QUANDO AS PROPRIEDADES SÃO DEIXADAS DE FORA DE ALGUNS KEYFRAMES
+
+        As propriedades que não são especificadas em cada KEYFRAME são interpoladas, se possível — as propriedades que não podem ser interpoladas são eliminadas da animação. Por exemplo:
+
+        @keyframes identifier {
+            0% { top: 0; left: 0; }
+            30% { top: 50px; }
+            68%, 72% { left: 50px; }
+            100% { top: 100px; left: 100%; }
+        }
+
+        Aqui, a propriedade TOP é animada usando os KEYFRAME 0%, 30% e 100%, e a propriedade LEFT é animada usando os keyframes 0%, 68% e 100%.
+
+    * QUANDO UM KEYFRAME É DEFINIDA VÁRIAS VEZES
+
+        Se um KEYFRAME for definido várias vezes, mas nem todas as propriedades afetadas estiverem em cada KEYFRAME, somente os valores especificados no keyframe mais recente serão considerados. Por exemplo:
+
+        @keyframes identifier {
+            0% { top: 0; }
+            50% { top: 30px; left: 20px; }
+            50% { top: 10px; }
+            100% { top: 0; }
+        }
+
+        Neste exemplo, no keyframe de 50%, o valor usado é top: 10px e todos os outros valores nesse keyframe são ignorados.
+
+        Os quadros-chave em cascata não padrão são suportados a partir do Firefox 14. Para o exemplo acima, significa que no quadro-chave de 50%, o valor restante: 20px será considerado. Isso ainda não está definido na especificação, mas está sendo discutido.
+
+    * SINTAXE
+
+    * VALORES
+
+        custom-ident: Um nome que identifica a lista keyframe. Isso deve corresponder a produção identificador na sintaxe CSS.
+
+        from: Um deslocamento inicial de 0%.
+
+        to: Um deslocamento final de 100%.
+
+        <percentage>: Uma porcentagem do tempo na sequência de animação em que o keyframe  especificado deve ocorrer.
+
+    * SINTAXE FORMAL
+
+        @keyframe <keyframes-name>{
+            <keyframe-block-list>    
+        }
+-->

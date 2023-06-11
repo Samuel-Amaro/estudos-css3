@@ -1,0 +1,77 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION-DURATION
+
+        A propriedade CSS animation-duration define o tempo que uma animação leva para completar um ciclo.
+
+        Muitas vezes, é conveniente usar a propriedade abreviada animation para definir todas as propriedades de animação de uma só vez.
+
+    * SINTAXE
+
+        /* uma animação */
+        animation-duration: 6s;
+        animation-duration: 120ms;
+
+        /* multiplas animações*/
+        animation-duration: 1.64s, 15.22s;
+        animation-duration: 10s, 35s, 230ms;
+
+        /*valores globais*/
+        animation-duration: inherit;
+        animation-duration: initial;
+        animation-duration: revert;
+        animation-duration: revert-layer;
+        animation-duration: unset;   
+        
+    * VALORES
+
+        <time>: O tempo que uma animação leva para completar um ciclo. Isso pode ser especificado em segundos ( s) ou milissegundos ( ms). O valor deve ser positivo ou zero e a unidade é necessária. Um valor de 0s, que é o valor padrão, indica que nenhuma animação deve ocorrer.
+
+        Nota: Os valores negativos são inválidos, fazendo com que a declaração seja ignorada. Algumas implementações anteriores, prefixadas, podem considerá-las idênticas a 0s.
+
+        Observação: quando você especifica vários valores separados por vírgulas em uma animation-*propriedade, eles serão atribuídos às animações especificadas na animation-namepropriedade de maneiras diferentes, dependendo de quantas houver. 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .box{
+            background-color: rebeccapurple;
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box:hover{
+            animation-name: rotate;
+            /*
+             - a animação tera uma duração de 0.7 segundos
+            */
+            animation-duration: 0.7s;
+            /*
+             - A animação é reproduzida para trás a cada ciclo. Em outras palavras, cada vez que a animação cicla, a animação será redefinida para o estado final e começará novamente. As etapas de animação são executadas para trás e as funções de tempo também são invertidas. Por exemplo, uma ease-in função de tempo torna-se ease-out.
+            */
+            animation-direction: reverse;
+        }
+
+        @keyframes rotate{
+            
+            0%{
+                transform: rotate(0);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>

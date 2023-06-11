@@ -1,0 +1,33 @@
+# ANIMAÇÕES
+
+ - CSS permite a animação de elementos HTML sem usar JavaScript ou Flash!.
+
+ - Neste capítulo, você aprenderá sobre as seguintes propriedades:
+
+    - @keyframes(quadros-chave)
+'   
+    - animation-name(nome da animação)
+    
+    - animation-duration(duração da animação)
+    
+    - animation-delay(atraso de animação)
+    
+    - animation-iteration-count(contagem de iteração de animação)
+
+    - animation-direction(direção da animação)
+    
+    - animation-timing-function(função de tempo de animação)
+    
+    - animation-fill-mode(modo de preenchimento de animação)
+    
+    - animation(animação)
+
+## O QUE SÃO ANIMAÇÕES CSS ?
+
+    - Uma animação permite que um elemento mude gradualmente de um estilo para outro.
+
+    - Você pode alterar quantas propriedades CSS quiser, quantas vezes quiser.
+
+    - Para usar animação CSS, você deve primeiro especificar alguns quadros-chave para a animação.
+
+    - Os quadros-chave contêm os estilos que o elemento terá em determinados momentos.

@@ -1,0 +1,36 @@
+<!--
+    Os seletores contextuais são mais específicos do que um seletor de elemento único - A folha de estilo incorporada está mais próxima do elemento a ser estilizado. Então na seguinte situação
+
+    a última regra será aplicada.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--
+        - seletores contextuais, folhas de estilo externa e interna(local).
+        - o estilo a ser aplicado e a ultima regra especificada
+        - seletores iguais, mesma especificidade, apontando para o mesmo elemento e aplicando a mesma regra. qual sera aplicado?
+        - a ultima folha incorporada sera aplicada. a ultima regra.
+    -->
+    <link href="./style-exemplo-7.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+        /*
+         - seletor de elemento, seleciona o elemento h1 que seja descendente de um elemento com o id de vaLor content
+        */
+        #content h1{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <main id="content">
+        <header>
+            <h1>Este e um cabeçalho</h1>
+        </header>
+    </main>
+
+</body>
+</html>

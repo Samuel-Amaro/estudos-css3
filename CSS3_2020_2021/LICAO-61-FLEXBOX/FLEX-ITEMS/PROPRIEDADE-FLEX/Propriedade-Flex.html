@@ -1,0 +1,113 @@
+<!--
+    * A PROPRIEDADE FLEX(FLEXIVEL)
+
+      - A flex propriedade é uma propriedade estenográfica(SHORTHAND) para os flex-grow, flex-shrink e flex-basis propriedades.
+
+      - Uma propriedade abreviada para as propriedades flex-grow, flex-shrink e flex-basis.
+
+    * DEFINIÇÃO E USO
+
+     - A flexpropriedade é uma propriedade abreviada para:
+
+        * flex-grow
+        * flex-shrink
+        * flex-basis
+
+     - A flex propriedade define o comprimento flexível em itens flexíveis.
+
+     - Observação: se o elemento não for um item flexível, a flex propriedade não terá efeito.
+
+     - A propriedade flex do CSS, define como um ítem será posicionado para no espaço disponível dentro de seu contêiner.
+
+    * SINTAXE CSS:
+
+      flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;
+
+      - SINTAXE DE UM VALOR: a <number>: Neste caso, é interpretado como flex: <number> 1 0; o <flex-shrink> valor é considerado 1 e o <flex-basis> valor é considerado 0. uma das palavras-chave: none, auto ou initial;
+
+      - SINTAXE DE DOIS VALORES: o primeiro valor deve ser a <number> e é interpretado como <flex-grow>. O segundo valor deve ser um dos seguintes:
+        
+        a <number>: então é interpretado como <flex-shrink>.
+
+        um valor válido para width: então é interpretado como <flex-basis>.
+
+     - SINTAXE DE TRÊS VALORES: os valores devem estar na seguinte ordem:
+
+       1. um <number> para <flex-grow>.
+        
+       2. um <number> para <flex-shrink>.
+
+       3. um valor válido para width para <flex-basis>.
+
+    * VALORES DE PROPRIEDADE:
+
+     flex-grow: Um número que especifica quanto o item crescerá em relação ao resto dos itens flexíveis;
+
+     flex-shrink: Um número que especifica o quanto o item encolherá em relação ao resto dos itens flexíveis; 
+
+     flex-basis: O comprimento do item. Valores legais: "auto", "inherit" ou um número seguido por "%", "px", "em" ou qualquer outra unidade de comprimento;
+
+     auto: O mesmo que 1 1 auto;
+
+     initial: o mesmo que 0 1 auto;
+
+     none: o mesmo que 0 0 auto;
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itens Flex - Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*especificando o tipo de alinhamento vertical que os itens flexiveis que são filhos diretos deste container vão ter, isso so e usando quando os itens flexiveis não usam todo espaço reservado disponivel no eixo cruzado para eles. stretch(esticam): Predefinição. Os itens são esticados para caber no contêiner; itens são esticados para prencher o recipiente(container na vertical)*/
+            align-items: stretch;
+            background-color: #f1f1f1;
+        }
+        /*filhos diretos do container flex são itens flex*/
+        div.flex-container > div{
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        /*esta propriedade css, e uma shorthand , uma propriedade abreviada para flex-grow, flex-shrink, flex-basis, para controlar o comprimento de um item flexivel, o item a seguir não crescera(0), não diminuira(0) e tera um comprimento estatico inicial de 200px*/
+        div#f-0-0-200{
+           flex: 0 0 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Itens Flex - Flex Box</h1>
+
+    <p><strong>Exemplo:</strong> Faça com que o terceiro item flexível não cresça(0), não diminua(0) e com um comprimento inicial de 200 pixels:</p>
+
+    <h2>A propriedade flex</h2>
+
+    <p><strong>Exemplo:</strong> Faça com que o terceiro item flexível não cresça(0), não diminua(0) e com um comprimento inicial de 200 pixels:</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div id="f-0-0-200">3</div>
+        <div>4</div>
+    </div>
+
+</body>
+</html>

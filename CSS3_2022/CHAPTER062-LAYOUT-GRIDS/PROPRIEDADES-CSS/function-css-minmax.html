@@ -1,0 +1,52 @@
+<!--
+    * FUNCTION CSS minmax(min, max)
+
+        A função CSS minmax() define um intervalo de tamanho maior ou igual a min e menor ou igual a max. É usado com grades CSS.
+
+    * SINTAXE
+
+        /*valores <LARGURA INFLEXIVEL>, <LARGURA FAIXA>*/
+        minmax(200px, 1fr)
+        minmax(400px, 50%)
+        minmax(30%, 300px)
+        minmax(100px, max-content)
+        minmax(min-content, 400px)
+        minmax(max-content, auto)
+        minmax(auto, 300px)
+        minmax(min-content, auto)
+
+        /*VALORES <largura fixa> <largura faixa>*/
+        minmax(200px, 1fr)
+        minmax(30%, 300px)
+        minmax(400px, 50%)
+        minmax(50%, min-content)
+        minmax(300px, max-content)
+        minmax(200px, auto)
+
+        /*VALORES <LARGURA INFLEXIVEL>, <LARGURA FIXA>*/
+        minmax(400px, 50%)
+        minmax(30%, 300px)
+        minmax(min-content, 200px)
+        minmax(max-content, 200px)
+        minmax(auto, 300px)
+
+        Uma função que recebe dois parâmetros, min e max.
+
+        Cada parâmetro pode ser um valor <length>, <percentage>, <flex> ou um dos valores de palavra-chave max-content, min-content ou auto.
+
+        Se max < min, então max é ignorado e minmax(min,max) é tratado como min. No máximo, um valor <flex> define o fator flex de uma faixa de grade; é inválido no mínimo.
+
+    * VALORES
+
+        <lenght-comprimento>: Um comprimento não negativo.
+
+        <porcentagem>: Uma porcentagem não negativa em relação ao tamanho embutido do contêiner de grade em faixas de grade de coluna e o tamanho de bloco do contêiner de grade em faixas de grade de linha. Se o tamanho do contêiner de grade depender do tamanho de suas faixas, o <percentage> deverá ser tratado como automático. O agente do usuário pode ajustar as contribuições de tamanho intrínseco da trilha ao tamanho do contêiner da grade e aumentar o tamanho final da trilha pelo valor mínimo que resultaria em honrar a porcentagem.
+
+        <flex>: Uma dimensão não negativa com a unidade fr especificando o fator de flexibilidade da pista. Cada trilha de tamanho <flex> ocupa uma parte do espaço restante em proporção ao seu fator de flexibilidade.
+
+        max-content: Representa a maior contribuição de conteúdo máximo dos itens de grade que ocupam a trilha de grade.
+
+        min-content: Representa a maior contribuição de conteúdo mínimo dos itens de grade que ocupam a trilha de grade.
+
+        auto: No máximo, idêntico ao max-content. No mínimo, representa o maior tamanho mínimo (conforme especificado por min-width/min-height) dos itens da grade que ocupam a trilha da grade.
+-->

@@ -1,0 +1,121 @@
+<!--
+    * TRANSITION TIMING FUNCTION
+
+        Use a transition-timing-function propriedade para variar a velocidade de uma transição CSS ao longo do transition-duration.
+
+        Por padrão, o CSS fará a transição de seus elementos em uma velocidade constante ( transition-timing-function: linear). As transições lineares podem acabar parecendo um tanto artificiais: na vida real, os objetos têm peso e não podem parar e começar instantaneamente. Entrar ou sair de uma transição pode tornar suas transições mais vivas e naturais.
+
+        Nosso módulo sobre CSS Animation tem uma boa visão geral das funções de temporização.
+
+        Você pode usar o DevTools para experimentar diferentes funções de temporização em tempo real.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .square{
+            width: 150px;
+            max-height: 100px;
+            border-radius: 8px;
+            background-color: lightcoral;
+            text-align: center;
+            /*
+             - A transition-property propriedade especifica qual(is) estilo(s) deve(m) fazer a transição.
+             -  O transition-property aceita um ou mais nomes de propriedades CSS em uma lista separada por vírgulas.
+             - a transição de estilos desse elemento sera responsavel pela propriedade width.
+            */
+            transition-property: width;
+            /*
+             - a propriedade css transition-duration, definir o tempo que uma transição levará para ser concluída.
+             - neste exemplo tera 1s para realizar a transição de estilo.
+            */
+            transition-duration: 1s;
+            padding: 8px;
+            margin-bottom: 4px;
+        }
+
+        .square.ttf-linear{
+            /*
+             -  Use a transition-timing-function propriedade para variar a velocidade de uma transição CSS ao longo do transition-duration.
+             -  Por padrão, o CSS fará a transição de seus elementos em uma velocidade constante(linear)
+            */
+            transition-timing-function: linear;
+        }
+
+        .square.ttf-ease{
+            /*
+             - Igual a cubic-bezier(0.25, 0.1, 0.25, 1.0), o valor padrão, aumenta a velocidade no meio da transição, desacelerando no final.
+            */
+            transition-timing-function: ease;
+        }
+
+        .square.ttf-ease-in{
+            /*
+             - ease-in: Igual a cubic-bezier(0.42, 0, 1.0, 1.0), inicia lentamente, com a velocidade de transição aumentando até completar.
+            */
+            transition-timing-function: ease-in;
+        }
+
+        .square.ttf-ease-out{
+            /*
+             -  ease-out: Igual a cubic-bezier(0, 0, 0.58, 1.0), inicia a transição rapidamente, desacelerando a transição continua.
+            */
+            transition-timing-function: ease-out;
+        }
+
+        .square.tff-ease-in-out{
+            /*
+             - ease-in-out: Igual a cubic-bezier(0.42, 0, 0.58, 1.0), inicia a transição lentamente, acelera e depois desacelera novamente.
+            */
+            transition-timing-function: ease-in-out;
+        }
+
+        .square.tff-steps{
+            /*
+             - Exibe a transição ao longo de n paradas ao longo da transição, exibindo cada parada por períodos de tempo iguais.
+             - a transição e exibida durante três paradas.
+            */
+            transition-timing-function: steps(3);
+        }
+
+        .square.tff-steps{
+            /*
+             - uma curva cúbica-Bezier definida pelo autor
+            */
+            transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        /*
+         - pseudo-class :is(), localiza todos elementos que possuem a pseudo-classes, :hover and :focus aplicadas.
+        */
+        .square:is(:hover, :focus){
+            /*
+             - a cada vez que o usuario passar o mouse, por cima de um elemento com pseudo-classe :hover ou :focus, o elemento tera uma transição de estilo, do estilo original ja existente nele para a propriedade css width. que ja foi informada na propriedade transition-property
+            */
+            width: 50%;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="square ttf-linear" tabindex="0">linear</div>
+    <div class="square ttf-ease" tabindex="0">ease</div>
+    <div class="square ttf-ease-in" tabindex="0">ease-in</div>
+    <div class="square ttf-ease-out" tabindex="0">ease-out</div>
+    <div class="square ttf-ease-in-out" tabindex="0">ease-in-out</div>
+    <div class="square ttf-steps" tabindex="0">steps</div>
+    <div class="square ttf-cubic" tabindex="0">cubic</div>
+
+</body>
+</html>

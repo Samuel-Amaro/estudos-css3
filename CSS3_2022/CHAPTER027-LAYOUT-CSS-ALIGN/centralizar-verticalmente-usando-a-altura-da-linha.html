@@ -1,0 +1,44 @@
+<!--
+    * CENTRALIZAR VERTICALMENTE - USANDO A ALTURA DA LINHA
+
+        - Outro truque é usar a line-height propriedade com um valor igual à height propriedade:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .center{
+            /*
+             - essa propriedade e usada para especficar a altura de um elemento.
+            */
+            height: 200px;
+            /*
+             - a propriedade line-height e usada para especificar o espaço entre as linhas de um texto
+             - e usada para especificar a altura de uma linha
+             - se especificar um numer como valor da propriedade um número que será multiplicado pelo tamanho da fonte atual para definir a altura da linha
+             - o numero para a propriedade e 1.5 e a fonte atual do elemento e 16 assim 1.5 x 16px = 24px sera altura da linha, o tamanho do espaço entre as linhas
+            */
+            line-height: 1.5;
+            border: 3px solid #73AD21;
+            /*
+             - essa propriedade especifica o alinhamento horizontal de um texto dentro de um elemento
+             - o valor center alinha o texto ao centro(centralizado)
+            */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Centralizar com altura da linha</h2>
+
+    <p>Neste exemplo, usamos a propriedade line-height com um valor igual à propriedade height para centralizar o elemento div:</p>
+
+    <div class="center">
+        <p>Estou verticalmente e horizontalmente centrado</p>
+    </div>
+
+</body>
+</html>

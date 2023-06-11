@@ -1,0 +1,48 @@
+<!--
+    Os seletores de ID têm uma especificidade mais alta do que os seletores de atributo
+     
+    Observe as três linhas de código a seguir:
+
+    a primeira regra é mais específica que as outras duas e, portanto, será aplicada.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - especificidade com varios seletores diferentes, varios blocos de declaração css apontando para o mesmo elemento e aplicando a mesma regra css, qual sera aplicada ?
+        */
+
+        /*
+         - seletor de elemento com um id especifico
+         - o seletor mais especifico entre os aqui usados e o de id, especificando o elemento, a regra css dentro do bloco de declaração sera a regra aplicada
+        */
+        div#a{
+            background-color: green;
+        }
+
+        /*
+         - seletor de id, seleciona um elemento com o id especificado
+        */
+        #a {
+            background-color: yellow;
+        }
+
+        /*
+         - seletor de atributo, seleciona o elemento div com o atributo id com o valor a
+        */
+        div[id=a] {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="a">Este é uma div</div>
+    
+</body>
+</html>

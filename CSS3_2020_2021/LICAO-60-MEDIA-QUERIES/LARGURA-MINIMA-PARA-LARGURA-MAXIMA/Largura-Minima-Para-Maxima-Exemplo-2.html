@@ -1,0 +1,38 @@
+<!--
+    * USANDO UM VALOR ADICIONAL: No exemplo abaixo, adicionamos uma consulta de mídia adicional à nossa já existente usando uma vírgula (isso se comportará como um operador OR):
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /*
+             * tipo de midia e tela, isso e quando a view report estiver com largura maxima de 900px ou menos se for mais não aplicara, e quando a view report estiver com largura minima de 600px ou mais se for menos não aplicara aplicara essa media query nos seguintes elementos, ou quando a viewreport estiver com uma largura minima de 1100px definida ou mais aplicara essa media query
+            */
+            @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+                 div.example{
+                     font-size: 50px;
+                     padding-top: 50px;
+                     padding-right: 50px;
+                     padding-bottom: 50px;
+                     padding-left: 50px;
+                     border-top: 8px;
+                     border-right: 8px;
+                     border-bottom: 8px;
+                     border-left: 8px;
+                     border-style: solid;
+                     border-color: black;
+                     background: yellow;
+                 }   
+            }
+        </style>
+    </head>
+    <body>
+
+        <h2>Alterar a aparência do DIV em diferentes tamanhos de tela</h2>
+
+        <div class="example">Exemplo DIV.</div>
+
+        <p>Quando a largura do navegador estiver entre 600 e 900px OU acima de 1100px, altere a aparência do DIV <strong>Redimensione a janela do navegador para ver o efeito</strong></p>
+    </body>
+</html>

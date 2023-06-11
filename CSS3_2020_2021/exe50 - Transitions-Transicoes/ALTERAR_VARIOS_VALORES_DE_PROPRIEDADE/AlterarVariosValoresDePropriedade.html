@@ -1,0 +1,50 @@
+<!--
+    * ALTERAR VÁRIOS VALORES DE PROPRIEDADE
+
+      - O exemplo a seguir adiciona um efeito de transição para as propriedades de largura e altura, com uma duração de 2 segundos para a largura e 4 segundos para a altura:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /**
+             - propriedade transition, usando a shorthand;
+             - a propriedade abaixo seta um efeito de transição na propriedade css width, por 2 segundos, e na propriedade height por 4s.
+             fazendo um efeito de transição. 
+             - a altura vai ter uma transição mais duradoura do que a largura por causa que o tempo e maior.
+            **/
+            transition: width 2s, height 4s;
+        }
+        /**
+         * para o efeito de transição funcionar, as propriedades que estão recebendo o efeito precisa receber novos valores dinamicamente, isso e feito quando o usuario passa o mouse por cima do elemento, para que novos valores sejam setados.
+        **/
+        div:hover{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TRANSIÇÕES</h1>
+    
+    <h2>Propriedade transition</h2>
+    
+    <h3>Alterar varios valores de propriedade</h3>
+
+    <p><strong>Exemplo:</strong>O exemplo a seguir adiciona um efeito de transição para as propriedades de largura e altura, com uma duração de 2 segundos para a largura e 4 segundos para a altura:</p>
+
+    <p>Passe o mouse sobre o elemento div abaixo para ver o efeito de transição:</p>
+
+    <div></div>
+
+</body>
+</html>

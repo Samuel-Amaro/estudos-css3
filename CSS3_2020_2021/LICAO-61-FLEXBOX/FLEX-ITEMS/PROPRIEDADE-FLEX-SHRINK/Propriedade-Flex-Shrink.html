@@ -1,0 +1,90 @@
+<!--
+    * A PROPRIEDADE FLEX-SHRINK(encolher flexivel)
+
+      - A flex-shrink propriedade especifica o quanto um flex item irá encolher em relação ao resto dos flex items.
+
+      - O valor deve ser um número, o valor padrão é 1.
+
+      - Especifica o quanto um item flexível irá encolher em relação ao resto dos itens flexíveis dentro do mesmo contêiner.
+
+    * DEFINIÇÃO E USO
+
+      - A flex-shrink propriedade especifica como o item será reduzido em relação ao restante dos itens flexíveis dentro do mesmo contêiner.
+
+      - A propriedade CSS define o fator de redução da flexibilidade de um item flexível. Se o tamanho de todos os itens flexíveis for maior do que o contêiner flexível, os itens encolherão para caber de acordo com .flex-shrink flex-shrink
+
+      - Em uso, flex-shrink é usado junto com as outras propriedades flex flex-grow e flex-basis, normalmente definido usando a flex abreviação.
+
+      - Observação: se o elemento não for um item flexível, a flex-shrink propriedade não terá efeito.
+
+    * SINTAXE CSS:
+
+      flex-shrink: number|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      number: Um número que especifica o quanto o item encolherá em relação ao restante dos itens flexíveis. O valor padrão é 1;
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itens Flex - Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*especificando o tipo de alinhamento vertical que os itens flexiveis que são filhos diretos deste container vão ter, isso so e usando quando os itens flexiveis não usam todo espaço reservado disponivel no eixo cruzado para eles. stretch(esticam): Predefinição. Os itens são esticados para caber no contêiner; itens são esticados para prencher o recipiente(container na vertical)*/
+            align-items: stretch;
+            background-color: #f1f1f1;
+        }
+        /*filhos diretos do container flex são itens flex*/
+        div.flex-container > div{
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        /*especificando a propriedade flex-shrink no elemento iten flex, esta propriedade e responsavel por dizer o quanto um elemento item flex ira encolher em relação aos outros elementos dentro do mesmo conteiner, especificando um valor, Um número que especifica o quanto o item encolherá em relação ao restante dos itens flexíveis. O valor padrão é 1; neste exemplo o valor 0, diz que este elemento não precisa enconlher tanto quanto igual ao outros, proporcionalmente os outros irão encolher e este elemento ira crescer, usando a logica contraria, o valor 0 diz que não e para reduzir, nenhum pouco, manter sua proporçaõ normal, e não encolher*/
+        div#fs-0{
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Itens Flex - Flex Box</h1>
+
+    <p><strong>Exemplo:</strong> Não deixe o terceiro item flexível encolher tanto quanto os outros itens flexíveis:</p>
+
+    <h2>A propriedade flex-shrink</h2>
+
+    <p><strong>Exemplo:</strong> Não deixe o terceiro item flexível encolher tanto quanto os outros itens flexíveis:</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div id="fs-0">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+
+</body>
+</html>

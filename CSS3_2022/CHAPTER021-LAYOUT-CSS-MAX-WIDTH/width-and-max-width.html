@@ -1,0 +1,61 @@
+<!--
+    * LAYOUT CSS - WIDTH AND MAX WIDTH
+
+    * USANDO LARGURA, LARGURA MÁXIMA E MARGIN: AUTO
+
+        - Conforme mencionado no capítulo anterior; um elemento de nível de bloco sempre ocupa toda a largura disponível (se estende para a esquerda e para a direita o máximo possível).
+
+        - Definir o width(LARGURA) de um elemento de nível de bloco impedirá que ele se estenda até as bordas de seu contêiner. Em seguida, você pode definir as margens como automáticas, para centralizar horizontalmente o elemento em seu contêiner. O elemento ocupará a largura especificada e o espaço restante será dividido igualmente entre as duas margens:
+
+        - Nota: O problema com o <div> acima ocorre quando a janela do navegador é menor que a largura do elemento. O navegador adiciona uma barra de rolagem horizontal à página.
+
+        - Usar max-width(LARGURA MAXIMA) em vez disso, nessa situação, melhorará o manuseio de janelas pequenas pelo navegador. Isso é importante ao tornar um site utilizável em dispositivos pequenos:
+
+        - Dica: Redimensione a janela do navegador para menos de 500px de largura, para ver a diferença entre as duas divs!
+
+        - Aqui está um exemplo das duas divs acima:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        div.ex1{
+            /*define a largura do elemento, como uma largura absoluta um tamanho especifico em px*/
+            width: 500px;
+            /*usando shorthand margin que e um abreviação para margin-top, margin-right, margin-bottom, margin-left, propriedades individuais para adicionar uma espço externo ao redor do elemento, depois da borda, o valor auto, o valor auto(o navegador calcula a margem, para todos os lados)*/
+            margin: auto;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }    
+        div.ex2{
+            /*
+            - A max-width propriedade é usada para definir a largura máxima de um elemento.
+            - usamos um valor de comprimento com unidade px
+            - usar max-width para ajudar no manuseio de janelas pequenas pelo navegador
+            - definimos que o elemento <div> tera uma largura maxima de 500px
+            - Se o conteúdo for maior que a largura máxima, ele alterará automaticamente a altura do elemento.
+            - Se o conteúdo for menor que a max-width, a max-width propriedade não terá efeito.
+            */
+            max-width: 500px;
+            /*usando shorthand margin que e um abreviação para margin-top, margin-right, margin-bottom, margin-left, propriedades individuais para adicionar uma espço externo ao redor do elemento, depois da borda, o valor auto, o valor auto(o navegador calcula a margem, para todos os lados)*/
+            margin: auto;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Largura máxima(max-width) do CSS</h2>
+
+    <div class="ex1">Este elemento div tem largura de 500px;</div>
+
+    <br/>
+
+    <div class="ex2">Este elemento div tem max-width: 500px</div>
+
+    <p><strong>Dica:</strong> Arraste a janela do navegador para uma largura menor que 500px, para ver a diferença entre as duas divs!</p>
+</body>
+</html>

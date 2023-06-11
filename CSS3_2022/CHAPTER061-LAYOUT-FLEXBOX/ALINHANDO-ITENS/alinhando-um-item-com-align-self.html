@@ -1,0 +1,76 @@
+<!--
+    * ALINHANDO UM ITEM COM ALIGN-SELF
+
+        A align-items propriedade define a align-self propriedade em todos os itens flexíveis como um grupo. Isso significa que você pode declarar explicitamente a align-self propriedade para direcionar um único item. A align-self propriedade aceita todos os mesmos valores align-items mais um valor de auto, que irá redefinir o valor para aquele que está definido no contêiner flex.
+
+        Neste próximo exemplo ao vivo, o contêiner flex tem align-items: flex-start, o que significa que os itens estão todos alinhados ao início do eixo cruzado. Eu direcionei o primeiro item usando um first-child seletor e configurei esse item para align-self: stretch; outro item foi selecionado usando sua classe de selected e dado align-self: center. Você pode alterar o valor de align-items ou alterar os valores de align-self nos itens individuais para ver como isso funciona.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            /*
+             - align-items propriedade para alinhar nosso item no eixo cruzado(cross axis).
+             - que neste caso é o eixo do bloco que corre verticalmente.
+             - flex-start, o que significa que os itens estão todos alinhados ao início do eixo cruzado.
+            */
+            align-items: flex-start;
+            height: 200px;
+        }
+
+        .box > *:first-child{
+            /*
+             - declarar explicitamente a align-self propriedade para direcionar um único item. A align-self propriedade aceita todos os mesmos valores align-items mais um valor de auto.
+             - o valo strech o elemento se estendera. por todo o eixo vertical
+            */
+            align-self: stretch;
+        }
+
+        .box .selected{
+            /*
+             - valor center, alinha o elemento ao centro do eixo vertical.
+            */
+            align-self: center;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div class="selected">Três
+            <br/>Tem
+            <br/>Algum
+            <br/>Texto
+            <br/>Mais
+        </div>
+        <div>Quatro</div>
+    </div>
+</body>
+</html>

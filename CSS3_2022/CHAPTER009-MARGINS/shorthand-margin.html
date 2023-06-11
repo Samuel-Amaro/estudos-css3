@@ -1,0 +1,105 @@
+<!--
+    * SHORTHAND MARGIN - PROPRIEDADE ABREVIADA DE MARGEN
+
+        - Para encurtar o código, é possível especificar todas as propriedades de margem em uma propriedade.
+
+        - A margin propriedade é uma propriedade abreviada para as seguintes propriedades de margem individuais:
+
+            margin-top
+            margin-right
+            margin-bottom
+            margin-left
+
+        - Então, aqui está como funciona:
+        
+        - Se a margin propriedade tiver quatro valores:
+
+            margin: 25px 50px 75px 100px;
+
+                - a margem superior é de 25px
+                - a margem direita é 50px
+                - a margem inferior é de 75px
+                - margem esquerda é 100px     
+                
+        - Se a margin propriedade tiver três valores:
+
+            margin: 25px 50px 75px;
+
+                - a margem superior é de 25px
+                - as margens direita e esquerda são 50px
+                - a margem inferior é de 75px
+
+        - Se a margin propriedade tiver dois valores:
+
+            margin: 25px 50px;
+
+                - as margens superior e inferior são 25px
+                - as margens direita e esquerda são 50px
+
+        - Se a margin propriedade tiver um valor:
+
+            margin: 25px;
+
+                - todas as quatro margens são 25px
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*shorthand de border, border-width, border-style, border-color, define uma borda para um elemento*/
+            border: 1px solid black;
+            /*especifica uma cor de fundo para os elementos div*/
+            background-color: lightblue; 
+        }
+        #fourvalues{
+            /*
+             - margens são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas.
+             - cria espaços ao redor do elemento, apos a borda do elemento, cria espaços externos, ao redor do elemento ou entre elementos
+             - usamos valores de comprimento usando a unidade px
+             - usando a shorthand margin, para encurtar codigo e especificar as propriedades margin top, margin right, margin bottom, margin left em uma unica propriedade:
+             - especificando 4 valores
+            */
+            margin: 25px 50px 75px 100px; /*25px margin-top, 50px margin-right, 75px margin-bottom, 100px margin-left*/
+        }
+        #threevalues{
+            /*- usando a shorthand margin, para encurtar codigo e especificar as propriedades margin top, margin right, margin bottom, margin left em uma unica propriedade:
+            - especificando somente três valores
+            */
+            margin: 25px 50px 75px; /*25px margin-top, 50px margin-right e margin-left, 75px margin-bottom*/
+        }
+        #twovalues{
+            /*- usando a shorthand margin, para encurtar codigo e especificar as propriedades margin top, margin right, margin bottom, margin left em uma unica propriedade:
+            - especificando somente dois valores
+            */
+            margin: 25px 50px; /*25px margin-top e margin-bottom, 50px margin-right e margin-left*/
+        }
+        #onevalue{
+            /*- usando a shorthand margin, para encurtar codigo e especificar as propriedades margin top, margin right, margin bottom, margin left em uma unica propriedade:
+            - especificando somente um valor
+            */
+            margin: 25px; /*25px margin-top e margin-bottom, margin-right e margin-left*/
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A shorthand margin - 4 valores</h2>
+
+    <div id="fourvalues">Este elemento div tem uma margem superior de 25px, uma margem direita de 50px, uma margem inferior de 75px e uma margem esquerda de 100px.</div>
+
+    <h2>3 valores</h2>
+
+    <div id="threevalues">Este elemento div tem uma margem superior de 25px, uma margem direita e esquerda de 50px e uma margem inferior de 75px.</div>
+
+    <h2>2 Valores</h2>
+
+    <div id="twovalues">Este elemento div tem uma margem superior e inferior de 25px e uma margem direita e esquerda de 50px.</div>
+
+    <h2>1 Valor</h2>
+
+    <div id="onevalue">Este elemento div tem uma margem superior, inferior, esquerda e direita de 25px.</div>
+</body>
+</html>

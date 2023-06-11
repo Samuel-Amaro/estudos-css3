@@ -1,0 +1,80 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION TIMING FUNCTION
+
+        A propriedade CSS animation-timing-function define como uma animação progride pela duração de cada ciclo.
+
+        Muitas vezes, é conveniente usar a propriedade abreviada animation para definir todas as propriedades de animação de uma só vez.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        animation-timing-function: ease;
+        animation-timing-function: ease-in;
+        animation-timing-function: ease-out;
+        animation-timing-function: ease-in-out;
+        animation-timing-function: linear;
+        animation-timing-function: step-start;
+        animation-timing-function: step-end;
+
+        /*valores função*/
+        animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        animation-timing-function: steps(4, end);
+
+        /*palavra-chave steps function*/
+        animation-timing-function: steps(4, jump-start);
+        animation-timing-function: steps(10, jump-end);
+        animation-timing-function: steps(20, jump-none);
+        animation-timing-function: steps(5, jump-both);
+        animation-timing-function: steps(6, start);
+        animation-timing-function: steps(8, end);
+
+        /*multiplas animações*/
+        animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
+
+        /*valores globais*/
+        animation-timing-function: inherit;
+        animation-timing-function: initial;
+        animation-timing-function: revert;
+        animation-timing-function: revert-layer;
+        animation-timing-function: unset;
+
+        As funções de temporização podem ser especificadas em keyframes individuais em uma regra @keyframes. Se nenhuma animation-timing-function for especificada em um keyframe, o valor correspondente de função de temporização de animação do elemento ao qual a animação é aplicada será usado para esse keyframe.
+
+        A função de temporização de um keyframe é aplicada propriedade a propriedade a partir do quadro-chave no qual ele é especificado até o próximo quadro-chave que especifica essa propriedade ou até o final da animação se não houver nenhum quadro-chave subsequente especificando essa propriedade. Como resultado, uma função de temporização de animação especificada em 100% ou para quadro-chave nunca será usada.
+
+    * VALORES
+
+        <easing-function>: A função de atenuação que corresponde a uma determinada animação, conforme determinado pelo nome da animação.
+
+        Os valores de palavras-chave non-step (ease, linear, easy-in-out, etc.) representam cada uma curva de Bézier cúbica com valores fixos de quatro pontos, com o valor da função cubic-bezier() permitindo um valor não predefinido. As funções de temporização de passo dividem o tempo de entrada em um número especificado de intervalos que são iguais em comprimento. É definido por um número de passos e uma posição de passo.
+
+        ease: Igual a cubic-bezier(0.25, 0.1, 0.25, 1.0), o valor padrão, aumenta a velocidade no meio da animação, diminuindo a velocidade no final.
+
+        linear: Igual a cúbico-bezier(0,0, 0,0, 1,0, 1,0), anima a uma velocidade uniforme.
+
+        ease-in: Igual a cúbico-bezier(0.42, 0, 1.0, 1.0), começa lentamente, com a velocidade de transição da propriedade animadora aumentando até completar.
+
+        ease-out: Igual a cubic-bezier(0, 0, 0,58, 1.0), inicia rapidamente, desacelerando a animação continua. •
+
+        ease-in-out: Igual a cubic-bezier (0.42, 0, 0.58, 1.0), com as propriedades de animação em transição lenta, acelerando e desacelerando novamente.
+
+        cubic-bezier(p1, p2, p3, p4): Um autor definiu curva cubic-bezier, onde os valores de p1 e p3 devem estar no intervalo de 0 a 1.
+
+        steps(n, <jumpterm>): Exibe uma iteração de animação ao longo de n paradas ao longo da transição, exibindo cada parada por períodos de tempo iguais. Por exemplo, se n é 5, há 5 etapas. Se a animação se mantém temporariamente em 0%, 20%, 40%, 60% e 80%, em 20%, 40%, 60%, 80% e 100%, ou faz 5 paradas entre 0% e 100% ao longo a animação ou faz 5 paradas incluindo as marcas de 0% e 100% (nos 0%, 25%, 50%, 75% e 100%) depende de qual dos seguintes termos de salto é usado:
+
+            Jump-start: Indica uma função contínua à esquerda, para que o primeiro salto aconteça quando a animação começar;
+
+            jump-end: Indica uma função contínua à direita, para que o último salto aconteça quando a animação terminar;
+
+            jump-none: Não há salto em nenhuma das extremidades. Em vez disso, mantendo a marca de 0% e a marca de 100%, cada uma por 1/n da duração.
+
+            jump-both: Inclui pausas nas marcas de 0% e 100%, adicionando efetivamente uma etapa durante a iteração da animação.
+
+            start: O mesmo que jump-start.
+
+            end: O mesmo que jump-end.
+
+        step-start: Igual a passos(1, jump-start)
+
+        step-end: Igual a passos(1, jump-end)
+-->

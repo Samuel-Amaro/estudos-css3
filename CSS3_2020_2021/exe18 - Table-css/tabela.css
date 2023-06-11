@@ -1,0 +1,39 @@
+/*
+ * TABLE CSS(TABELAS CSS)
+
+  - A aparência de uma tabela HTML pode ser bastante melhorada com CSS;
+  - Para especificar as bordas da tabela em CSS, use a border propriedade.
+  O exemplo abaixo especifica uma borda preta para os elementos <table>, <th> e <td>:
+*/
+.bd{
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: black;
+}
+.bd > tr,th,td{
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: black;
+}
+/*
+ * TABELA DE LARGURA TOTAL
+
+  - A tabela acima pode parecer pequena em alguns casos. Se você precisa de uma tabela que deve ocupar toda a tela (largura total), adicione width: 100% ao elemento <table>:
+*/
+.lg{
+    width: 100%;
+}
+/*
+ * RECOLHER BORDAS DA MESA
+
+  - A border-collapse propriedade define se as bordas da tabela devem ser reduzidas em uma única borda:
+*/
+.rc{
+    border-collapse: collapse;
+}

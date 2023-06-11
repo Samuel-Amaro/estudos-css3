@@ -1,0 +1,55 @@
+<!--
+    * BORDAS ARREDONDADAS CSS(BORDER RADIUS)
+
+        - A border-radius propriedade é usada para adicionar bordas arredondadas a um elemento:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.normal{
+            /*
+            - a propriedade border e uma shorthand, para especificar todas as propriedades individuais da borda em uma propriedade, e uma shorthand para as serguintes propriedades individuais: border-width, border-style, border-color
+            - o primeiro valor especifica a cor da borda pelo seu nome predefinido, o segundo valor especifica que tipo de borda a ser exibida e solida, e o segundo valor e um tamanho especifico da borda, especifica a largura  usando a unidade px
+            - */
+            border: 2px solid red;
+            padding: 5px;
+        }
+        p.round1{
+            /*usando shorthand para border-width, border-style, border-color*/
+            border: 2px solid red;
+            /*a proopriedade border radius e usada para adicionar bordas arredondadas a um elemento, o valor e um tamanho especifico com unidade px*/
+            border-radius: 5px;
+            padding: 5px;
+        }
+        p.round2{
+            /*usando shorthand para border-width, border-style, border-color*/
+            border: 2px solid red;
+            /*a proopriedade border radius e usada para adicionar bordas arredondadas a um elemento*/
+            border-radius: 8px;
+            padding: 5px;
+        }
+        p.round3{
+            /*usando shorthand para border-width, border-style, border-color*/
+            border: 2px solid red;
+            /*a proopriedade border radius e usada para adicionar bordas arredondadas a um elemento*/
+            border-radius: 12px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade border-radius</h2>
+
+    <p>Esta propriedade é usada para adicionar bordas arredondadas a um elemento:</p>
+
+    <p class="normal">Borda normal. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, sunt. Id debitis vel ex sequi architecto ullam minima optio laboriosam ipsa, aut odit sunt labore corrupti eveniet molestias quisquam! Quisquam.</p>
+    <p class="round1">Borda redonda. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, voluptatum. Ut, maiores quis repellendus totam rem voluptatem quidem inventore aut consequuntur ipsum molestiae obcaecati adipisci blanditiis cupiditate, nam est ipsam.</p>
+    <p class="round2">Borda arredondada. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam adipisci iure dolor facilis ipsam? Accusamus tempore sapiente laboriosam quae consequatur omnis dicta accusantium corporis aut? Doloremque ducimus sapiente maxime adipisci.</p>
+    <p class="round3">Borda mais arredondada. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nam doloremque explicabo blanditiis, ipsum cum quisquam illo numquam saepe incidunt possimus necessitatibus? Voluptatem necessitatibus vero asperiores at repudiandae sequi enim!</p>
+
+</body>
+</html>

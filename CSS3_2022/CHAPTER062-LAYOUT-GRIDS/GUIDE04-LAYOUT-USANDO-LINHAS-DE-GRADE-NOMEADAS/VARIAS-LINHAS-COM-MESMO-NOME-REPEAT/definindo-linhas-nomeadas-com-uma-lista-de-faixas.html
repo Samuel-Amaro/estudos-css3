@@ -1,0 +1,99 @@
+<!--
+    * DEFININDO LINHAS NOMEADAS COM UMA LISTA DE FAIXAS
+
+        A sintaxe de repetição também pode receber uma lista de faixas, não precisa ser apenas um tamanho de faixa única que está sendo repetida. O código abaixo criaria uma grade de oito faixas, com uma coluna de largura de 1fr mais estreita chamada col1-start seguida por uma coluna de 3fr mais larga chamada col2-start.
+
+        .wrapper {
+            grid-template-columns: repeat(4, [col1-start] 1fr [col2-start] 3fr);
+        }
+
+        Se a sua sintaxe de repetição colocar duas linhas próximas uma da outra, elas serão mescladas e criarão o mesmo resultado que fornecer vários nomes a uma linha em uma definição de faixa não repetida. A definição a seguir cria quatro 1fr faixas, cada uma com uma linha inicial e final.
+
+        .wrapper {
+            grid-template-columns: repeat(4, [col-start] 1fr [col-end] );
+        }
+
+        Se escrevermos esta definição sem usar a notação de repetição, ficaria assim.
+
+        .wrapper {
+            grid-template-columns: [col-start] 1fr [col-end col-start] 1fr [col-end col-start] 1fr [col-end col-start] 1fr [col-end];
+        }
+
+        Se você usou uma lista de faixas, pode usar a palavra-chave span não apenas para abranger várias linhas, mas também para abranger várias linhas de um determinado nome.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com 12 colunas de tamanhos diferentes, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel e nomeado as linhas da faixa de coluna.
+             - usando a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+             - O código abaixo criaria uma grade de 12 faixas, com uma 1fr coluna de largura mais estreita chamada col1-start seguida por uma 3fr coluna mais larga chamada col2-start. cria 12 colunas com 12 linhas nomeadas.
+            */
+            grid-template-columns: repeat(6, [col1-start] 1fr [col2-start] 3fr);
+        }
+
+        /*iten grid*/
+        .item1{
+            /*
+             - posicionando itens na grid.
+             - temos varias linhas chamadas col1-start e col2-start.
+             - para usar a primeira linha usamos col1-start somente vem a primeira linha da faixa de colunas mais a esquerda
+             - para endereçar outra linha use o nome da linha, mais o numero dessa linha.
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na primeira linha nomeada col1-start e se estende até a 2 linha chamada col2-start2
+            */
+            grid-column: col1-start / col2-start 2;
+        }
+
+        /*iten grid*/
+        .item2{
+            /*
+             - usando a palavra-chave span também para posicionar itens no grid
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na segunda linha nomeada col1-start e se estende até a por mais 2 linhas chamadas col1-start. abrange até as proximas três linhas. va até a 4 linha também chamada col1-start
+            */
+            grid-column: col1-start 2 / span 2 col1-start;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Eu sou colocado de col1-start line 1 para col2-start line 2</div>
+        <div class="item2">Eu sou colocado na linha 2 da col1-start, abrangendo 2 linhas chamadas col1-start</div>
+    </div>
+
+</body>
+</html>

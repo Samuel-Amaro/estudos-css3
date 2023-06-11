@@ -1,0 +1,50 @@
+<!--
+    * ROTATE() - GIRAR
+
+        A função CSS rotate() define uma transformação que gira um elemento em torno de um ponto fixo no plano 2D, sem deformá-lo. Seu resultado é um tipo de dados <transform-function>.
+
+        O ponto fixo em que o elemento gira – mencionado acima – também é conhecido como origem de transformação(transform-origem). O padrão é o centro(center) do elemento, mas você pode definir sua própria origem de transformação personalizada usando a propriedade transform-origin.
+
+    * SINTAXE
+
+        A quantidade de rotação criada por rotate() é especificada por um <angle>. Se positivo, o movimento será no sentido horário; se negativo, será no sentido anti-horário. Uma rotação de 180° é chamada de reflexão pontual.
+
+            rotate(a)
+
+    * VALORES
+
+        a: É um <angle> que representa o ângulo de rotação. O sentido de rotação depende do sentido de escrita. Em um contexto da esquerda para a direita, um ângulo positivo denota uma rotação no sentido horário, um ângulo negativo um no sentido anti-horário. Em um contexto da direita para a esquerda, um ângulo positivo denota uma rotação no sentido anti-horário, um ângulo negativo denota uma rotação no sentido horário.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        div {
+            width: 80px;
+            height: 80px;
+            background-color: skyblue;
+        }
+
+        .rotated {
+            /*
+             - A função CSS rotate() define uma transformação que gira um elemento em torno de um ponto fixo no plano 2D, sem deformá-lo.
+             - O ponto fixo em que o elemento gira – mencionado acima – também é conhecido como origem de transformação(transform-origem). O padrão é o centro(center) do elemento
+             - A quantidade de rotação criada por rotate() é especificada por um <angle>. Se positivo, o movimento será no sentido horário; se negativo, será no sentido anti-horário.
+             - rotaciona o elemento para 45 graus no sentido horario. baseado no ponto fixo do center, do centro do elemento.
+            */
+            transform: rotate(45deg); /* Equal to rotateZ(45deg) */
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div>Normal</div>
+    <div class="rotated">Rotated</div>
+
+</body>
+</html>

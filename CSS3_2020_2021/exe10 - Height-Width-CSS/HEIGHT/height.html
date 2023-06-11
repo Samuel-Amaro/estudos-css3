@@ -1,0 +1,85 @@
+<!--
+    * PROPRIEDADE CSS height
+
+      - Define a altura de um elemento.
+
+    * DEFINIÇÃO E USO:
+
+      - A height propriedade define a altura de um elemento.
+
+      - Se height: auto;o elemento irá ajustar automaticamente sua altura para permitir que seu conteúdo seja exibido corretamente.
+
+      - Se height for definido com um valor numérico (como pixels, (r)em, porcentagens), se o conteúdo não couber na altura especificada, ele transbordará. A forma como o contêiner lidará com o conteúdo transbordando é definida pela propriedade overflow .
+
+      - Observação: as propriedades min-height e max-height substituem a height propriedade.
+
+      - VALOR PADRÃO: auto;
+
+      - INHERITED: no;
+
+    * SINTAXE CSS:
+
+       height: auto|length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE: 
+
+      VALUE: auto;
+      DESCRIPTION: O navegador calcula a altura. Este é o padrão;
+
+      VALUE: length;
+      DESCRIPTION: Define a altura em px, cm, etc.
+
+      VALUE: %;
+      DESCRIPTION: Define a altura maxima em porcentagem do bloco que o contém;
+
+      VALUE: initial;
+      DESCRIPTION: Define esta propriedade com seu valor padrão. 
+
+      VALUE: inherit;
+      DESCRIPTION: Herda essa propriedade de seu elemento pai. 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura elemento</title>
+    <style>
+        div.a{
+            height: auto; /*O navegador calcula a altura. o elemento irá ajustar automaticamente sua altura para permitir que seu conteúdo seja exibido corretamente*/
+            border-top: 1px;
+            border-right: 1px;
+            border-left: 1px;
+            border-bottom: 1px;
+            border-color: black;
+            border-style: solid;
+        }
+        div.b{
+            height: 50px; /*Define a altura em px. se o conteúdo não couber na altura especificada, ele transbordará. A forma como o contêiner lidará com o conteúdo transbordando é definida pela propriedade overflow. isso define uma largura estatica. que e pre-definida e calculada pelo dev*/
+            border-top: 1px;
+            border-right: 1px;
+            border-left: 1px;
+            border-bottom: 1px;
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Altura de um elemento</h1>
+
+    <p><strong>Exemplo 01:</strong>Defina a altura de dois elementos &lt;div&gt;:</p>
+
+    <h2>height: auto(default)</h2>
+
+    <div class="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem recusandae cupiditate perspiciatis voluptate consequatur delectus atque eum hic doloribus? Vitae exercitationem, commodi porro sunt ad sapiente. Eos esse quam sint. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, voluptatum. Iure quae, veritatis expedita natus consectetur, voluptate explicabo quidem fugit harum alias culpa suscipit nihil sequi minima. Eius, blanditiis nulla! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, reiciendis fugiat. Architecto laudantium nostrum quod, quas fugit, id, dolorem eum distinctio non quaerat voluptates nobis fuga at voluptatum sequi quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vitae nam amet adipisci hic sint expedita dignissimos eligendi odit distinctio blanditiis fuga, quasi tempora et facere, non voluptas maiores dolor?</div>
+
+    <h2>height: 50px</h2>
+
+    <div class="b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, incidunt voluptates ab voluptas recusandae perspiciatis autem nostrum quo consequatur obcaecati, odit perferendis numquam, ad sint tempora quos rerum harum ullam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ipsa quod consequatur, sunt vero tenetur quisquam. Harum, quidem nesciunt iure fugit suscipit dolor dicta delectus illum debitis totam accusantium sit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae aperiam aliquid laborum. Consequuntur iure porro quaerat corrupti qui tempore, aliquid odio voluptas perspiciatis, vero optio ea nisi molestias quisquam voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi architecto incidunt, deserunt sint numquam cumque ullam fugiat harum cupiditate temporibus saepe ipsa voluptatem. Deserunt praesentium, fuga voluptatibus ut itaque non.</div>
+
+</body>
+</html>

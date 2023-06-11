@@ -1,0 +1,71 @@
+<!--
+    * USANDO OVERFLOW(ESTOURO)
+
+        Um método alternativo é definir a overflow propriedade do wrapper para um valor diferente de visible.
+
+        Remova o CSS clearfix que você adicionou na última seção; em vez disso, adicione overflow: auto às regras para wrapper. Mais uma vez, a caixa deve limpar.
+
+        Este exemplo funciona criando o que é conhecido como contexto de formatação de bloco (BFC). Isso é como um mini layout dentro de sua página, dentro do qual tudo está contido. Isso significa que nosso elemento flutuante está contido dentro do BFC e o plano de fundo é executado por trás de ambos os itens. Isso geralmente funcionará; no entanto, em certos casos, você pode encontrar barras de rolagem indesejadas ou sombras cortadas devido a consequências não intencionais do uso de estouro.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        body{
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            font: 0.9em/1.2 Arial, Helvetica, sans-serif; /*0.9em = 14.4px*/
+        }
+
+        .box{
+            /*
+             - o <div> elemento neste caso) é retirado do fluxo de layout normal do documento e preso ao lado esquerdo de seu contêiner pai ( <div class="wrapper">, neste caso).
+             - Qualquer conteúdo que venha abaixo do elemento flutuante no fluxo de layout normal agora o envolverá, preenchendo o espaço à direita dele até o topo do elemento flutuante. Aí vai parar.
+            */
+            float: left;
+            margin: 15px;
+            width: 150px;
+            height: 150px;
+            border-radius: 5px;
+            background-color: rgb(207, 232, 220);
+            padding: 1em; /*16px*/
+        }
+
+        .special{
+            background-color: rgb(79, 185, 227);
+            padding: 10px;
+            color: #fff;
+        }
+
+        /*
+         -  Agora você sabe como limpar algo seguindo um elemento flutuante, mas vamos ver o que acontece se você tiver um ponto flutuante alto e um parágrafo curto, com uma caixa envolvendo ambos os elementos.
+         - USANDO OVERLFLOW PARA LIMPAR
+        */
+        .wrapper{
+            background-color: rgb(79, 185, 227);
+            padding: 10px;
+            color: #fff;
+            /*
+             - overflow para controlar conteudo que estão tranbordando passando o conteiner pai. o valor auto adiciona barras de rolagem na direção que o conteudo estava transbordando.
+             - Este exemplo funciona criando o que é conhecido como block formatting context(contexto de formatação de bloco (BFC)). Isso é como um mini layout dentro de sua página, dentro do qual tudo está contido. Isso significa que nosso elemento flutuante está contido dentro do BFC e o plano de fundo é executado por trás de ambos os itens.
+            */
+            overflow: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Exemplo de flutuação simples</h1>
+    <div class="wrapper">
+        <div class="box">Float</div>
+        <p class="special">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. </p>
+    </div>
+    <p class="cleared">Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+    <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam lorem. Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+</body>
+</html>

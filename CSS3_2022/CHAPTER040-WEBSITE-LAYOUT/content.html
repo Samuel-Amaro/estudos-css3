@@ -1,0 +1,107 @@
+<!--
+    * CONTENT(CONTEUDO)
+
+        O layout nesta seção geralmente depende dos usuários-alvo. O layout mais comum é um (ou combiná-los) dos seguintes:
+
+            1 coluna (geralmente usado para navegadores móveis)
+            2 colunas (geralmente usado para tablets e laptops)
+            Layout de 3 colunas (usado apenas para desktops)
+
+        Vamos criar um layout de 3 colunas e alterá-lo para um layout de 1 coluna em telas menores:
+
+        Dica: Para criar um layout de 2 colunas, altere a largura para 50%. Para criar um layout de 4 colunas, use 25%, etc.
+
+        Dica: Uma forma mais moderna de criar layouts de colunas é usar CSS Flexbox. No entanto, ele não é compatível com o Internet Explorer 10 e versões anteriores. Se você precisar de suporte ao IE6-10, use floats (como mostrado acima).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Layout WebSite</title>
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+        
+        body{
+            margin: 0;
+        }
+
+        /*estilizando o header*/
+        header{
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /*estilizando a barra de navegação superior*/
+        .topnav{
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /*estilizando os links menu navegação superior*/
+        .topnav a{
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /*mudar a cor ao pairar sobre o elemento*/
+        .topnav a:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        /*Crie três colunas iguais que flutuem uma ao lado da outra - layout de três colunas usados apenas para desktops*/
+        .column{
+            float: left;
+            width: 33.33%;
+            padding: 15px;
+        }
+
+        /*Limpar floats após as colunas*/
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /*Layout responsivo - faz com que as três colunas se empilhem umas sobre as outras em vez de uma ao lado da outra - layout de uma coluna usado para navegação movéis*/
+        @media screen and (max-width: 600px) {
+            .column{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Cabeçalho</h1>
+    </header>
+    <nav class="topnav">
+        <a href="#" target="_top" rel="next">Link</a>
+        <a href="#" target="_top" rel="next">Link</a>
+        <a href="#" target="_top" rel="next">Link</a>
+    </nav>
+    <main class="row">
+        <aside class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit numquam molestiae corrupti recusandae facere dignissimos culpa, inventore nam porro atque velit corporis repellendus! Facilis aliquid iusto quam porro. Culpa!</p>
+        </aside>
+        <aside class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit numquam molestiae corrupti recusandae facere dignissimos culpa, inventore nam porro atque velit corporis repellendus! Facilis aliquid iusto quam porro. Culpa!</p>
+        </aside>
+        <aside class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit numquam molestiae corrupti recusandae facere dignissimos culpa, inventore nam porro atque velit corporis repellendus! Facilis aliquid iusto quam porro. Culpa!</p>
+        </aside>
+    </main>
+</body>
+</html>

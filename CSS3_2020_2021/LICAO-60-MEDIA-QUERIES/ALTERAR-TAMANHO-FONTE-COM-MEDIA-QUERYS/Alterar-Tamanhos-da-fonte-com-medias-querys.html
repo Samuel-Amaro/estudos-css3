@@ -1,0 +1,45 @@
+<!--
+    * ALTERAR O TAMANHO DA FONTE COM MEDIAS QUERYS
+
+      - Você também pode usar consultas de mídia para alterar o tamanho da fonte de um elemento em diferentes tamanhos de tela:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar tamanhos de fonte usando medias querys</title>
+    <style>
+        div.example{
+            background-color: lightgrey;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+        /*para telas com uma largura minina de 600px ou mais, a fonte sera essa, isso para telas medias, acima de 600px a min-width não e aplicada, so se aplica quando a min-width da viewreport for menor que o 600px*/
+        @media screen and (min-width: 600px) {
+            div.example{
+                font-size: 80px;
+            }
+        }
+        /*para telas com uma largura maxima de 600px ou menos, a fonte sera essa, isso para telas grandes, essa media query so e aplicada, quando a view report for 600px ou menos de largura*/
+        @media screen and (max-width: 600px) {
+              div.example{
+                  font-size: 30px;
+              }  
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Alterar o tamanho da fonte de um elemento em diferentes tamanhos de tela</h2>
+
+    <div class="example">Exemplo DIV</div>
+
+    <p>Quando a largura do navegador é de 600 px ou menos, defina o tamanho da fonte do DIV para 30 px. Quando for 601 px ou mais largo, defina o tamanho da fonte para 80 px. Redimensione a janela do navegador para ver o efeito.</p>
+
+</body>
+</html>

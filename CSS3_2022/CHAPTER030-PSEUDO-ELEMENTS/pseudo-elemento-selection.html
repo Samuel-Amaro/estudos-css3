@@ -1,0 +1,36 @@
+<!--
+    * PSEUDO ELEMENTO ::SELECTION(SELEÇÃO)
+
+        - O ::selection pseudoelemento corresponde à parte de um elemento selecionado por um usuário.
+
+        - As seguintes propriedades CSS podem ser aplicadas a ::selection: color, background, cursor e outline.
+
+        - O exemplo a seguir torna o texto selecionado vermelho em um fundo amarelo:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::selection pseudoelemento corresponde à parte de um elemento selecionado por um usuário.
+         - ira selecionar o elemento selecionado por um usuario
+        */
+        ::selection{
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+   <h1>Selecione algum texto nesta página:</h1>
+
+   <p>Este é um parágrafo.</p>
+   
+   <div>Este é algum texto em um elemento div.</div>
+
+</body>
+</html>

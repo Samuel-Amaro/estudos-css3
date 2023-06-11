@@ -1,0 +1,59 @@
+<!--
+    * TEXT DECORATION(DECORAÇÃO DE TEXTO)
+
+        - A text-decoration propriedade é usada principalmente para remover sublinhados de links:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        /**
+         - alguns regras ao definir o estilo de varios estados de um link, algumas regras de ordem:
+
+            - a:hover deve vir depois de a:link e a:visited
+
+            - a:active deve vir depois de a:hover
+        */
+
+        /*o estado a:link e um link normal e não visitado*/
+        a:link{
+            /* 
+             - a propriedade text-decoration e uma shorthand para text-decoration-line, text-decoration-color, text-decoration-style, text-decoration-thickness
+             - especificando somente um valor para a primeira propriedade text-decoration-line, o valor none nesta propriedade não especifica nenhuma linha para a decoração de texto
+            */
+            text-decoration: none;
+        }
+        /*o estado a:visited um estado em que o usuario visitou o link*/
+        a:visited{
+            text-decoration: none;
+        }
+        /*o estado a:hover quando o usuario passa o mouse sobre o link, este estado de um link ao ser estilizado para funcionar tem que vir depois de  a:link e a:visited*/
+        a:hover{
+            /*
+             - especificando somente um valor para a primeira propriedade text-decoration-line, o valor underline nesta propriedade Especifica que uma linha será exibida sob o texto
+            */
+            text-decoration: underline;
+        }
+        /*o estado a:active e um link no momento em que e clicado, este estado ao ser estilizado para funcionar deve vir depois do estado a:hover*/
+        a:active{
+            /*
+             - especificando somente um valor para a primeira propriedade text-decoration-line, o valor underline nesta propriedade Especifica que uma linha será exibida sob o texto
+            */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Estilizando um link com a propriedade text-decoration</h1>
+
+    <p><b><a href="#" target="_blank" rel="external">Este é um link</a></b></p>
+
+    <p><b>Nota:</b> a:hover DEVE vir depois de a:link e a:visited na definição CSS para ser eficaz.</p>
+
+    <p><b>Nota:</b> a:active DEVE vir depois de a:hover na definição CSS para ser eficaz.</p>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+/*
+ * CSS BOX MODEL
+
+  - Todos os elementos HTML podem ser considerados caixas. Em CSS, o termo "modelo de caixa" é usado para falar sobre design e layout.
+  - O modelo de caixa CSS é essencialmente uma caixa que envolve todos os elementos HTML. Consiste em: margens(MARGIN), bordas(BORDER), preenchimento(PADDING) e o conteúdo real(CONTENT).
+  - Explicação das partes:
+
+    conteúdo(content): o conteudo da caixa, onde o texto e as imagens aparecem;
+    preenchimento(paddig): limpa uma area ao redor do conteudo. o preenchimento e trasparente;
+    borda(border): uma borda que circunda o preenchimento e o conteudo;
+    margem(margin): limpa uma area fora da borda. a margem é transparenete
+*/
+#cx{
+    width: 300px;
+    border-style: solid;
+    border-top-width: 15px;
+    border-right-width: 15px;
+    border-bottom-width: 15px;
+    border-left-width: 15px;
+    border-color: green;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: lightgrey;
+}
+
+/*
+ * LARGURA E ALTURA DE UM ELEMENTO
+
+  - Para definir a largura e a altura de um elemento corretamente em todos os navegadores, você precisa saber como funciona o modelo de caixa.
+  - Importante: ao definir as propriedades de largura e altura de um elemento com CSS, você apenas define a largura e a altura da área de conteúdo . Para calcular o tamanho total de um elemento, você também deve adicionar preenchimento, bordas e margens.
+
+*/
+#cx2{
+    width: 320; /*largura*/
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top: 5px;
+    border-right: 5px;
+    border-bottom: 5px;
+    border-left: 5px;
+    border-style: solid;
+    border-color: gray;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+/*
+ * Calculo para largura total do elemento cx2
+
+  320 px(largura) + 20(padding esquerdo + direito) + 10px(borda esquerda + direita) + 0px(margem esquerda + direita)
+
+  - A largura total de um elemento deve ser calculada assim:
+
+    * Largura total do elemento = largura + padding esquerdo + padding direito + border esquerda + border direita + margin esquerda + margin direita
+
+  - A altura total de um elemento deve ser calculada assim:
+
+    * Altura total do elemento = altura + padding superior + padding inferior + border superior + border inferior + margin superior + margin inferior
+*/

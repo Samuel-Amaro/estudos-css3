@@ -1,0 +1,191 @@
+<!--
+    * SELECT AND DATALIST
+
+        Em navegadores modernos, seleções e listas de dados geralmente não são tão ruins para estilizar, desde que você não queira variar muito a aparência dos padrões.
+
+        Conseguimos que a aparência básica das caixas parecesse bem uniforme e consistente. O controle datalist é <input type="text"> de qualquer maneira, então sabíamos que isso não seria um problema.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>Ugly controls basic styling</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        form>div {
+            margin-bottom: 20px;
+        }
+
+        /*
+         - Aplicamos algum CSS de normalização global a todos os controles e seus rótulos, para que eles sejam dimensionados da mesma maneira, adotem sua fonte pai, etc., conforme mencionado no artigo anterior:
+        */
+        button,
+        label,
+        input,
+        select,
+        progress,
+        meter {
+            display: block;
+            font-family: inherit;
+            font-size: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            height: 30px;
+        }
+
+
+        /*
+         - Duas coisas são um pouco mais problemáticas. Em primeiro lugar, o ícone de "seta" do select que indica que é um menu suspenso difere entre os navegadores. Ele também tende a mudar se você aumentar o tamanho da caixa de seleção ou redimensionar de maneira feia. Para corrigir isso em nosso exemplo, primeiro usamos nosso velho amigo appearance: none para nos livrarmos completamente do ícone:
+        */
+        select {
+            appearance: none;
+        }
+
+        /*
+         - Em seguida, usamos o conteúdo gerado para gerar uma pequena seta para baixo e a colocamos no lugar certo usando o posicionamento:
+        */
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: "▼";
+            font-size: 1rem;
+            top: 6px;
+            right: 10px;
+            position: absolute;
+        }
+
+        /*
+         - Também adicionamos sombra uniforme e cantos arredondados aos controles nos quais fazia sentido:
+        */
+        input[type="text"],
+        input[type="datetime-local"],
+        input[type="color"],
+        select {
+            box-shadow: inset 1px 1px 3px ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        /**
+         - A segunda questão, um pouco mais importante, é que você não tem controle sobre a caixa que aparece contendo as opções quando você clica na <select>caixa para abri-la. Você notará que as opções não herdam a fonte definida no pai. Você também não pode definir consistentemente coisas como espaçamento e cores. Por exemplo, o Firefox será aplicado colore background-color, quando definido nos <option>elementos, o Chrome não. Nenhum deles aplicará qualquer tipo de espaçamento (por exemplo padding, ). O mesmo também vale para a lista de preenchimento automático que aparece para a lista de dados.
+         - 
+         - Se você realmente precisa de controle total sobre o estilo da opção, você terá que usar algum tipo de biblioteca para gerar um controle personalizado, ou construir seu próprio controle personalizado, ou no caso de selecionar usar o multiple atributo, o que torna todas as opções aparecem na página, evitando este problema específico:
+         - 
+         - Claro, isso também pode não se encaixar no design que você está procurando, mas vale a pena notar!
+        */
+    </style>
+</head>
+<body>
+
+    <form>
+        <div>
+            <label for="select">Select box:</label>
+            <!--
+                Em seguida, criamos nosso próprio ícone usando o conteúdo gerado. Colocamos um wrapper extra ao redor do controle, porque ::before/ ::afternão funciona em <select>elementos (isso ocorre porque o conteúdo gerado é colocado em relação à caixa de formatação de um elemento, mas as entradas de formulário funcionam mais como elementos substituídos — sua exibição é gerada pelo navegador e colocada no lugar - e, portanto, não tem um):
+            -->
+            <div class="select-wrapper">
+                <select id="select" name="select">
+                    <option>Banana</option>
+                    <option>Cherry</option>
+                    <option>Lemon</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="myFruit">"Favorite fruit?" datalist:</label>
+            <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+            <datalist id="mySuggestion">
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Blackberry</option>
+                <option>Blueberry</option>
+                <option>Lemon</option>
+                <option>Lychee</option>
+                <option>Peach</option>
+                <option>Pear</option>
+            </datalist>
+        </div>
+        <div>
+            <label for="date1">Datetime local: </label>
+            <input id="date1" name="date1" type="datetime-local">
+        </div>
+        <div>
+            <label for="range">Range: </label>
+            <input id="range" name="range" type="range">
+        </div>
+        <div>
+            <label for="color">Color: </label>
+            <input id="color" name="color" type="color">
+        </div>
+        <div>
+            <label for="file">File picker: </label>
+            <input id="file" name="file" type="file" multiple>
+            <ul id="file-list">
+
+            </ul>
+        </div>
+        <div>
+            <label for="progress">Progress: </label>
+            <progress max="100" value="75" id="progress">75/100</progress>
+        </div>
+        <div>
+            <label for="meter">Meter: </label>
+            <meter id="meter" min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+        </div>
+        <div><button>Submit?</button></div>
+    </form>
+
+    <script>
+        const fileInput = document.querySelector('#file');
+        const fileList = document.querySelector('#file-list');
+
+        fileInput.addEventListener('change', updateFileList);
+
+        function updateFileList() {
+            while (fileList.firstChild) {
+                fileList.removeChild(fileList.firstChild);
+            }
+
+            let curFiles = fileInput.files;
+
+            if (!(curFiles.length === 0)) {
+                console.log('test');
+                for (let i = 0; i < curFiles.length; i++) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = 'File name: ' + curFiles[i].name + '; file size ' + returnFileSize(curFiles[i].size) + '.';
+                    fileList.appendChild(listItem);
+                }
+            }
+        }
+
+        function returnFileSize(number) {
+            if (number < 1024) {
+                return number + 'bytes';
+            } else if (number >= 1024 && number < 1048576) {
+                return (number / 1024).toFixed(1) + 'KB';
+            } else if (number >= 1048576) {
+                return (number / 1048576).toFixed(1) + 'MB';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!--
+    * VÁRIOS PSEUDO-ELEMENTOS
+
+        - Vários pseudo-elementos também podem ser combinados.
+
+        - No exemplo a seguir, a primeira letra de um parágrafo será vermelha, em um tamanho de fonte xx grande. O restante da primeira linha será azul e em versalete. O restante do parágrafo será o tamanho e a cor da fonte padrão:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::first-letter pseudoelemento é usado para adicionar um estilo especial à primeira letra de um texto.
+         - o ::first-letter pseudo elemento so pode ser aplicado a elementos de nivel de bloco
+         - estilizando a primeira letra do texto(conteudo) de um elemento <p>
+        */
+        p::first-letter{
+            color: #ff0000;
+            /*
+             - a propriedade font-size especifica o tamanho da fonte
+             - o valor xx-large define o tamanho da fonte para xx-large
+            */
+            font-size: xx-large;
+        }
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::first-line pseudoelemento é usado para adicionar um estilo especial à primeira linha de um texto.
+         - estilizando a primeira linha de texto em um elemento <p>
+        */
+        p::first-line{
+            color: #0000ff;
+            /*
+             - a propriedade font-variant especifica se um texto deve ou não ser exibido em um font versalete
+             - o valor small-caps, exibe o texto em versalete, caracteres maiusculos com dimensões de caracteres minusculos.
+            */
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Você pode combinar os pseudo-elementos ::first-letter e ::first-line para adicionar um efeito especial à primeira letra e à primeira linha de um texto!</p>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+/*
+ * COMBINADORES CSS - COMBINATORS
+    
+  - Um combinador é algo que explica a relação entre os seletores.
+
+  - Um seletor CSS pode conter mais de um seletor simples. Entre os seletores simples, podemos incluir um combinador.
+
+  - Existem quatro combinadores diferentes em CSS:
+
+    - seletor descendente - descendant (espaço)
+    - seletor filho - child (>)
+    - seletor irmão adjacente - adjacent sibling (+)
+    - seletor imão geral - general sibling (~)
+*/
+
+/*
+ * SELETOR DE DESCENDENTE (espaço)
+
+  -O seletor descendente corresponde a todos os elementos que são descendentes de um elemento especificado.
+  - O exemplo a seguir seleciona todos os elementos <p> dentro dos elementos <div>: 
+*/
+#seletor_descendente p{
+    /*add uma cor de fundo a caixa do paragrafo*/
+    background-color: yellow;
+}
+
+
+/*
+ * SELETOR FILHO - CHILD (>)
+
+  - O seletor filho seleciona todos os elementos que são filhos de um elemento especificado.
+  - O exemplo a seguir seleciona todos os elementos <p> filhos de um elemento <div>:
+*/
+#seletor_filho > p{
+    /*add uma cor de fundo a caixa do paragrafo*/
+    background-color: yellow;
+}
+
+
+/*
+ * SELETOR DE IRMÃO ADJACENTE (+)
+
+   - O seletor irmão adjacente é usado para selecionar um elemento que está diretamente após outro elemento específico.
+   - Os elementos irmãos devem ter o mesmo elemento pai e "adjacente" significa "imediatamente a seguir".
+*/
+/*apos cada elemento div, tem um paragrafo, tem o mesmo pai, e os paragrafos estão adjacentes a div*/
+.seletor_irmao_adjacente + p{
+    /*add uma cor de fundo a caixa do paragrafo*/
+    background-color: yellow;
+}
+
+
+/*
+ * SELETOR GERAL DE IRMÃO (~)
+
+  - O seletor irmão geral seleciona todos os elementos que são irmãos de um elemento especificado.
+  - O exemplo a seguir seleciona todos os elementos <p> que são irmãos dos elementos <div>: 
+*/
+/*SELECIONA OS IRMÃO DO P QUE ESTÃO FORA DA DIV, E QUE SO ESTÃO ABAIXO DA DIV, NÃO ACIMA*/
+#seletor_geral_irmaos ~ p{
+    /*ADD UMA COR DE FUNDO PARA AS CAIXAS DO PARAGRAFO*/
+    background-color: yellow;
+}

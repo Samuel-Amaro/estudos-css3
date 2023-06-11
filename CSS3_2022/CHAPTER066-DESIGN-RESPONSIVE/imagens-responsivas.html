@@ -1,0 +1,15 @@
+<!--
+    * IMAGENS RESPONSIVAS
+
+        A abordagem mais simples para imagens responsivas foi descrita nos primeiros artigos de Marcotte sobre design responsivo. Basicamente, você pegaria uma imagem com o maior tamanho necessário e a reduziria. Essa ainda é uma abordagem usada hoje e, na maioria das folhas de estilo, você encontrará o seguinte CSS em algum lugar:
+
+        img {
+            max-width: 100%;
+        }
+
+        Existem desvantagens óbvias nessa abordagem. A imagem pode ser exibida muito menor do que seu tamanho intrínseco, o que é um desperdício de largura de banda — um usuário móvel pode baixar uma imagem várias vezes maior do que o que realmente vê na janela do navegador. Além disso, você pode não querer a mesma proporção de imagem no celular e no desktop. Por exemplo, pode ser bom ter uma imagem quadrada para celular, mas mostrar a mesma cena que uma imagem de paisagem no desktop. Ou, reconhecendo o tamanho menor de uma imagem no celular, você pode querer mostrar uma imagem totalmente diferente, uma que seja mais facilmente compreendida em um tamanho de tela pequeno. Essas coisas não podem ser alcançadas reduzindo uma imagem.
+
+        Imagens responsivas, usando o <picture> elemento e os atributos e resolvem esses dois problemas. Você pode fornecer vários tamanhos junto com "dicas" (metadados que descrevem o tamanho da tela e a resolução para a qual a imagem é mais adequada), e o navegador escolherá a imagem mais apropriada para cada dispositivo, garantindo que o usuário faça o download de um tamanho de imagem apropriado para o dispositivo que estão usando.<img> srcset sizes
+
+        Você também pode criar imagens diretas usadas em tamanhos diferentes, fornecendo um corte diferente ou uma imagem completamente diferente para diferentes tamanhos de tela.
+-->

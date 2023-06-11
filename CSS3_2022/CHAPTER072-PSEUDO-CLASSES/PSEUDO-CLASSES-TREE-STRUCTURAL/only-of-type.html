@@ -1,0 +1,49 @@
+<!--
+    * :only-of-type
+
+        A pseudoclasse :only-of-type CSS representa um elemento que não possui irmãos do mesmo tipo.
+
+        /*Seleciona cada <p>, mas somente se for o*/
+        /*apenas o elemento <p> dentro de seu pai*/
+        p:only-of-type {
+            background-color: lime;
+        }
+
+        Nota: Conforme definido originalmente, o elemento selecionado precisava ter um pai. Começando com Seletores Nível 4, isso não é mais necessário.
+
+    * Sintaxe
+
+        :only-of-type
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - seleciona o elemento <main> que não possui elemento irmãos do mesmo tipo
+        */
+        main:only-of-type {
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <div>I am `div` #1.</div>
+        <p>I am the only `p` among my siblings.</p>
+        <div>I am `div` #2.</div>
+        <div>I am `div` #3.
+          <i>I am the only `i` child.</i>
+          <em>I am `em` #1.</em>
+          <em>I am `em` #2.</em>
+        </div>
+    </main>
+    
+</body>
+</html>

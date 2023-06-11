@@ -1,0 +1,77 @@
+<!--
+    * CSS FLEX RESPONSIVE
+
+    * FLEXBOX RESPONSIVA
+
+      - Você aprendeu no capítulo Consultas de mídia CSS que pode usar consultas de mídia para criar layouts diferentes para dispositivos e tamanhos de tela diferentes.
+
+      - Por exemplo, se quiser criar um layout de duas colunas para a maioria dos tamanhos de tela e um layout de uma coluna para telas pequenas (como telefones e tablets), você pode alterar flex-directionde rowpara column em um ponto de interrupção específico (800px no exemplo abaixo):
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive FlexBox</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /**Especifica a direção dos itens flexíveis dentro de um flex container; A flex-direction propriedade define em qual direção o contêiner deseja empilhar os itens flexíveis.;  row: Valor padrão. Os itens flexíveis são exibidos horizontalmente, como uma linha;*/
+            flex-direction: row;
+            /*Especifica se os itens flexíveis devem ser agrupados ou não, se não houver espaço suficiente para eles em uma linha flexível; wrap(enrolar): Especifica que os itens flexíveis serão embalados se necessário. isso e necessario quando o layout se quebra ou quando a um overflow ao redimensionar o conteudo*/
+            flex-wrap: wrap;
+            font-size: 30px;
+            text-align: center;
+        }
+        div.flex-item-left{
+            background-color: #f1f1f1;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            /*shorthand para as propriedades flex-grow, flex-shrink, flex-basis, aqui neste exemplo assume so um valor na sintaxe, este valor e o valor de comprimento inicial informado e interpretado por flex-basis, o flex-grow: assume o valor padrão 1, e o flex-shrink: assume o valor 0, sendo especificado para não diminuir*/
+            flex: 50%;
+        }
+        div.flex-item-right{
+            background-color: dodgerblue;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            /*shorthand para as propriedades flex-grow, flex-shrink, flex-basis, aqui neste exemplo assume so um valor na sintaxe, este valor e o valor de comprimento inicial informado e interpretado por flex-basis, o flex-grow: assume o valor padrão 1, e o flex-shrink: assume o valor 0, sendo especificado para não diminuir*/
+            flex: 50%;
+        }
+        /*Layout Responsivo: faz um layout de uma coluna em vez de um layout de duas colunas. utilizando media query quando o tipo de media for tela de qualquer dispositivo, sendo que tenha a sua view report a sua janela de visualizaçaõ com a largura maxima de 800px ou menos, essa media sera aplicada*/
+        @media screen and (max-width: 800px) {
+             div.flex-container {
+                /**Especifica a direção dos itens flexíveis dentro de um flex container; A flex-direction propriedade define em qual direção o contêiner deseja empilhar os itens flexíveis.;  column: Os itens flexíveis são exibidos verticalmente, como uma coluna*/
+                flex-direction: column;
+             }   
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Responsive Flexbox</h1>
+
+    <p>O "flex-direction: row;" empilha os itens flex horizontalmente (da esquerda para a direita).</p>
+
+    <p>O "flex-direction: column;" empilha os itens flexíveis verticalmente (de cima para baixo).</p>
+
+    <p><strong>Redimensione a janela do navegador para ver se a direção muda quando o tamanho da tela é de 800 px ou menor.</strong></p>
+
+    <div class="flex-container">
+        <div class="flex-item-left">1</div>
+        <div class="flex-item-right">2</div>
+    </div>
+
+</body>
+</html>

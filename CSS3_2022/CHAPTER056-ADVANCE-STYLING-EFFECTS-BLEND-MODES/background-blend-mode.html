@@ -1,0 +1,47 @@
+<!--
+    * BACKGROUND-BLEND-MODE(MODO DE MESCLAGEM DE FUNDO)
+
+        Mais uma vez, vamos ver alguns exemplos para que possamos entender isso melhor. Primeiro, modo de mesclagem de plano de fundo — aqui mostraremos alguns <div>s simples, para que você possa comparar o original com a versão mesclada:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        div{
+            width: 250px;
+            height: 130px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            /*
+             - usando a shorthand background para especificar uma imagen de fundo
+            */
+            background: url(./colorful-heart.png) no-repeat center 20px;
+            /*
+             - especificando uma cor de fundo
+            */
+            background-color: green;
+        }
+
+        .multiply{
+            /*
+             - Os modos de mesclagem CSS nos permitem adicionar modos de mesclagem a elementos que especificam um efeito de mesclagem quando dois elementos se sobrepõem
+             - a cor final mostrada para cada pixel será o resultado de uma combinação da cor do pixel original e do pixel na camada abaixo isto.
+             - A propriedade CSS background-blend-mode define como as imagens de fundo de um elemento devem se misturar entre si e com a cor de fundo do elemento.
+             - o valor multiply faz a cor final é a cor de cima, independentemente da cor de baixo. O efeito é como dois pedaços opacos de papel sobrepostos.
+            */
+            background-blend-mode: multiply;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <div class="multiply"></div>
+
+</body>
+</html>

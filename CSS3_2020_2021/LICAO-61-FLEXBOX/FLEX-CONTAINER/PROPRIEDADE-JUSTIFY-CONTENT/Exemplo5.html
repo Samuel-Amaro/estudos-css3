@@ -1,0 +1,84 @@
+<!--
+    * A PROPRIEDADE  JUSTIFY-CONTENT(JUSTIFICAÇÃO DE CONTEÚDO)
+
+     - A justify-content propriedade é usada para alinhar os itens flexíveis:
+
+     - Alinha horizontalmente os itens flexíveis quando os itens não usam todo o espaço disponível no eixo principal
+
+     - Dica: Use a propriedade align-items para alinhar os itens verticalmente.
+
+    * SINTAXE CSS:
+
+      justify-content: flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit;
+
+    * VALORES DE PROPRIEADE:
+
+      flex-start(início flexível): Valor padrão. Os itens são posicionados no início do contêiner;
+
+      flex-end(final flexível): Os itens são posicionados no final do contêiner;
+
+      center(Centro): Os itens são posicionados no centro do contêiner;
+
+      space-between(espaço entre): Os itens terão espaço entre eles;
+
+      space-around(espaço ao redor): Os itens terão espaço antes, entre e depois deles;
+
+      space-evenly(espaço uniformemente): Os itens terão espaço igual ao seu redor; 
+
+      initial: Define esta propriedade com seu valor padrão;
+
+      inherit: Herda essa propriedade de seu elemento pai;
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade Justify-Content</title>
+    <style>
+        em{
+            color: rgb(219, 120, 120);
+        }
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*esta propriedade e responsavel por alinhar os itens flexiveis na disposição horizontal, isso e alinha os itens, quando não usa todo espaço disponivel no eixo principal, o valor space-between: Os itens terão espaço entre eles;
+            */
+            justify-content: space-between;
+            background-color: dodgerblue;
+        }
+        div.flex-container > div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Flex box</h1>
+
+    <p>O <em>space-between</em> valor exibe os itens flexíveis com espaço entre as linhas:</p>
+    
+    <h2>A propriedade Justify-Content</h2>
+
+    <p><strong>Exemplo: </strong>O "justify-content: <em>space-between"</em> exibe os itens flexíveis com espaço entre as linhas:</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+</body>
+</html>

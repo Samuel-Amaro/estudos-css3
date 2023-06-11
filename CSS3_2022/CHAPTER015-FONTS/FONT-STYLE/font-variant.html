@@ -1,0 +1,39 @@
+<!--
+    * FONT VARIANT(VARIAÇÃO DA FONTE)
+
+        - A font-variant propriedade especifica se um texto deve ou não ser exibido em uma fonte em versalete.
+
+        - Em uma fonte de letras minúsculas, todas as letras minúsculas são convertidas em letras maiúsculas. No entanto, as letras maiúsculas convertidas aparecem em um tamanho de fonte menor do que as letras maiúsculas originais no texto.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        p.normal{
+            /*
+             - a propriedade font-variant especifica se um texto deve ou não ser exibido em um font versalete
+             - versalete são caracteres maiúsculos com as mesmas dimensões de caracteres minúsculos. O versalete é utilizado em texto como um método de dar ênfase a determinada palavra ou expressão, em alternativa ao itálico ou quando o negrito é inapropriado, e o tamanho reduzido previne que palavras em letra maiúscula se destaquem por serem demasiado grandes, quando comparadas com o resto da mancha gráfica. 
+             - texto e exibido normalmente sem versalete
+            */
+            font-variant: normal;
+        }
+        p.small{
+            /*
+             - o valor small-caps, exibe o texto em versalete, caracteres maiusculos com dimensões de caracteres minusculos.
+            */
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>A propriedade font-variant</h1>
+
+    <p class="normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore saepe, perspiciatis quibusdam explicabo nisi! Quos facere cupiditate nisi, quo ut veritatis, officia libero id dolore commodi consectetur consequuntur corporis?</p>
+
+    <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore saepe, perspiciatis quibusdam explicabo nisi! Quos facere cupiditate nisi, quo ut veritatis, officia libero id dolore commodi consectetur consequuntur corporis?</p>
+
+</body>
+</html>

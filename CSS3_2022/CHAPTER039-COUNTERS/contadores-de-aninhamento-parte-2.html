@@ -1,0 +1,72 @@
+<!--
+    - Um contador também pode ser útil para fazer listas destacadas porque uma nova instância de um contador é criada automaticamente em elementos filho. Aqui usamos a counters() função para inserir uma string entre diferentes níveis de contadores aninhados:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ol{
+            /*
+             - Os contadores CSS são como "variáveis".
+             - criando um contador com  counter-reset- Cria ou redefine um contador
+             - cria um contador para listas ordenadas
+             - o valor especificado para a propriedade counter-reset e o nome do contador.
+            */
+            counter-reset: section;
+            /*
+             - remove os marcadores dos itens da lista
+            */
+            list-style-type: none;
+        }
+        /*
+         - usando uma pseudo-elemento, que e usado para estilizar partes especificas de um elemento
+         - o ::before pseudo-elemento seletor e usado para inserir um conteudo antes do conteudo real do elemento
+         - aqui vamos inserir o valor atual do contador section em cada elemento <li>, apos ser incrementado
+        */
+        li::before{
+            /*
+             - a counter-increment, propriedade, Incrementa um valor de contador.
+             - Os valores das variáveis ​​podem ser incrementados por regras CSS (que rastrearão quantas vezes elas são usadas).
+             - neste exemplo contaremos quantos elementos <li> tem na pagina
+             - o valor para a propriedade counter-increment, especifica o nome do contador a ser incrementado, o contador section
+            */
+            counter-increment: section;
+            /*
+             - a propriedade css, content Insere conteúdo gerado
+             - iremos inserir o valor atual do contador antes do conteudo real de cada elemento <li> 
+             - a função counters(name), adiciona o valor de um contador a um elemento, o section e o nome do contador a ter o seu valor adicionado em cada elemento <li> da pagina.
+            */
+            content: counters(section, ".") " ";
+        }
+    </style>
+</head>
+<body>
+    
+    <ol>
+        <li>item</li>
+        <li>item
+            <ol>
+                <li>item</li>
+                <li>item</li>
+                <li>item
+                    <ol>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ol>
+                </li>
+                <li>item</li>
+            </ol>    
+        </li>
+        <li>item</li>
+        <li>item</li>
+    </ol>
+
+    <ol>
+        <li>item</li>
+        <li>item</li>
+    </ol>
+</body>
+</html>

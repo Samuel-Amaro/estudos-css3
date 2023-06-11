@@ -1,0 +1,73 @@
+<!--
+    * ESPECIFIQUE A ESPESSURA DA LINHA DE DECORAÇÃO
+
+        - A text-decoration-thickness propriedade é usada para definir a espessura da linha de decoração.
+
+    * SINTAXE CSS:
+
+        text-decoration-thickness: auto|from-font|lenght|percentage|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: auto(automatico)
+        DESCRIPTION: O navegador escolhe a espessura da linha de decoração
+        -------------------------------------
+        VALUE: from-font
+        DESCRIPTION: Se um arquivo de fonte contiver informações sobre uma espessura preferencial, use esse valor. Se não, comporte-se como automático(auto)
+        -------------------------------------
+        VALUE: comprimento/porcentagem
+        DESCRIPTION: Especifica a espessura como comprimento ou %
+        -------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        -------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        -------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        h1{
+            /*a propriedade css, text-decoration-line e usada para adicionar uma linha de decoração ao texto, o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*a propriedade css text-decoration-thickness, e usada para definir a espessura da linha de decoração, o valor auto o proprio navegador escolhe a espessura da linha de decoração*/
+            text-decoration-thickness: auto;
+        }
+        h2{
+            /*
+             - A text-decoration-line propriedade define o tipo de decoração de texto a ser usado
+             - o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto**/
+            text-decoration-line: underline;
+            /*o valor 5px e um comprimento, especifica a espessura  da linha de decoração em px*/
+            text-decoration-thickness: 5px;
+        }
+        h3{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*o valor 25% e uma porcentagem, especifica a espessura da linha de decoração em porcentagem*/
+            text-decoration-thickness: 25%;
+        }
+        p.ex1{
+            /*o valor underline(sublinhdo) especifica que uma linha será exibida sob o texto*/
+            text-decoration-line: underline;
+            /*o valor double fara linha de decoração a ser exibida como uma linha dupla*/
+            text-decoration-style: double;
+            /*a propriedade text-decoration-color e usada para definir a cor da linha de decoração, especifica a cor da decoração do texto*/
+            text-decoration-color: red;
+            /*o valor 5px e um comprimento, especifica a espessura  da linha de decoração em px*/
+            text-decoration-thickness: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Título 1</h1>
+    <h2>Título 2</h2>
+    <h3>Título 3</h3>
+    <p class="ex1">Um parágrafo</p>
+</body>
+</html>

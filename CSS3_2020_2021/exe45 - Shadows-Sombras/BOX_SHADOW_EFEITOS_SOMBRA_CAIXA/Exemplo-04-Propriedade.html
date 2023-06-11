@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexa sombra a elementos</title>
+    <style>
+        div#exemplo1{
+            /*vai anexar multiplas sombras a um mesmo elemento. 
+            1 - 5px(direita do elemento - horizontal). 5px(baixo do elemento - vertical) cor: azul;
+            2 - 10px(direita do elemento - horizontal). 10px(baixo vertical). cor: vermelha;
+            3 - 15px(direita horizontal). 15px(baixo vertical) cor: verde;
+            */
+            box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        div#exemplo2{
+            /*vai anexar varias sombras ao mesmo elemento: 
+            1 - 5px(direita horizontal). 5px(vertical baixo). 8px(borrão da sombra espalhamento) cor: azul;
+            2 - 10px(direita horizontal). 10px(vertical baixo). 8px(borrão da sombra espalhamento) cor: vermelho;
+            3 - 15px(direita horizontal). 15px(vertical baixo). 8px(borrão da sombra espalhamento) cor: verde;*/
+            box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sombras anexadas a elementos</h1>
+
+    <p><strong>Exemplo 01:</strong>Defina várias sombras:</p>
+
+    <h2>box-shadow: 5px 10px blue, 10px 10px red, 15px 15px green:</h2>
+
+    <div id="exemplo1">Um elemento div com uma sombra. O primeiro valor é o deslocamento horizontal e o segundo valor é o deslocamento vertical. A cor da sombra será herdada da cor do texto.</div>
+
+    <h2>box-shadow: 5px 5px 8px blue, 10px 10px, 8px red, 15px 15px 8px green</h2>
+
+    <div id="exemplo2">Você também pode definir a cor da sombra. Aqui, a cor da sombra é cinza.</div>
+</body>
+</html>

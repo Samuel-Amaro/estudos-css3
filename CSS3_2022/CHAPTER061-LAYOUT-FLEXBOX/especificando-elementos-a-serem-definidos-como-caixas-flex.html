@@ -1,0 +1,98 @@
+<!--
+    * ESPECIFICANDO OS ELEMENTOS A SEREM DEFINIDOS COMO CAIXAS FLEX
+
+        Para iniciar, vamos definir quais elementos serão flexible boxes. Para isto, temos que definir um valor especial de display no elemento pai dos elementos que queremos afetar. neste caso são os elementos <article>, portanto vamos definir o valor no elemento <section> (que se torna um flex container):
+
+        Então, esta única declaração nos dá tudo que precisamos — incrivel, certo? Nós temos um layout de múltiplas colunas com tamanhos iguais, e todas as colunas tem a mesma altura. Isto porque o valor padrão dado aos flex items (os filhos do flex container) são configurados para resolver problemas comuns, como este. Voltaremos a este assunto depois.
+
+        Nota: Você pode definir também ao display o valor inline-flex se quiser colocar os items em linha como flexible boxes.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <title>Flexbox 0 — starting code</title>
+    <style type="text/css">
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            background: purple;
+            height: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+
+        /* Add your flexbox CSS below here */
+
+        section{
+            /*
+             - vamos definir quais elementos serão caixas flexiveis.
+             - temos que definir um valor especial no elemento pai dos elementos que queremos afetar.
+             - queremos afetar os elementos <article>, assim o pai desses elementos e o elemento <section>
+             - A propriedade CSS  display especifica o tipo de caixa de renderização usada por um elemento.
+             - o valor flex O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo flexbox.
+             - aqui estamos definindo o conteiner flex. o elemento que sera pai, de todos os elementos flexiveis. definindo o flex conteiner
+            */
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sample flexbox example</h1>
+    </header>
+
+    <section>
+        <article>
+            <h2>First article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Second article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Third article</h2>
+
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday
+                carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag
+                polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo
+                booth health goth gastropub hammock.</p>
+
+            <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo
+                8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings
+                cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.
+            </p>
+        </article>
+    </section>
+
+</body>
+</html>

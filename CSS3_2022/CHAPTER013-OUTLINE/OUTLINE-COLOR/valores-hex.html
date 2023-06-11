@@ -1,0 +1,75 @@
+<!--
+    * VALORES HEX 
+
+        - A cor do contorno também pode ser especificada usando um valor hexadecimal (HEX):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.ex1{
+            /*
+             - Um contorno(outline) é uma linha desenhada fora da borda do elemento.
+             - outline é uma linha que é desenhada em torno de elementos, FORA das bordas, para fazer o elemento "se destacar".
+             - a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: solid; /*outline solida*/
+            /*
+             - propriedade outline-color e usado para especificar a cor do contorno
+             - especificando uma cor por meio de seu valor hexadecimal, usando a formula #RRGGBB;
+            */
+            outline-color: #FF0000;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 2px solid black;
+        }
+        p.ex2{
+            /*- a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: dotted; /*outline pontilhada*/
+            /*
+             - propriedade outline-color e usado para especificar a cor do contorno
+             - especificando uma cor por meio de seu valor hexadecimal, usando a formula #RRGGBB;
+            */
+            outline-color: #0000FF;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 2px solid black;
+        }
+        p.ex3{
+            /*- a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: outset; /*outline com um esboço inicial 3D*/
+            /*
+             - propriedade outline-color e usado para especificar a cor do contorno
+             - especificando uma cor por meio de seu valor hexadecimal, usando a formula #RRGGBB;
+            */
+            outline-color: #bbbbbb;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 2px solid black;
+        }
+        p.ex4{
+            /*- a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: solid; /*outline solida*/
+            /*especifica a cor do contorno*/
+            outline-color: red;
+            /*
+             - a propriedade outline-width especifica a largura de uma outline(contorno)
+             - o valor 4px especifica um tamanho especifico para a linha de contorno do elemento em px.*/
+            outline-width: 4px;
+            /*usando a shorthand border, para especificar um borda, a shorthand abrevia as seguintes propriedades, border-width, border-style, border-color*/
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade outline-color(cor do contorno)</h2>
+    <p>A cor do contorno também pode ser especificada usando um valor hexadecimal (HEX):</p>
+    <p class="ex1">Um contorno vermelho solido</p>
+    <p class="ex2">Um contorno pontilhado azul</p>
+    <p class="ex3">Um contorno com esboço inicial 3D cinza.</p>
+
+</body>    
+</html>

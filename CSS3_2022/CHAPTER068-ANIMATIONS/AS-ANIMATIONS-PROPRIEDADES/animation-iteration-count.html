@@ -1,0 +1,85 @@
+<!--
+    * ANIMATION-ITERATION-COUNT
+
+        .my-element {
+            animation-iteration-count: 10;
+        }
+
+    A propriedade animation-iteration-count define quantas vezes a @keyframes linha do tempo deve ser executada. Por padrão, é 1, o que significa que quando a animação chegar ao final de sua linha do tempo, ela irá parar no final. O número não pode ser um número negativo.
+
+    Você pode usar a palavra- infinite(infinito) chave que fará o loop de sua animação, que é como funciona a demonstração "pulse" do início desta lição.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .animate{
+            /*
+             - Para usar your @keyframes em uma regra CSS, defina várias propriedades de animação
+            */
+
+            animation-name: grow;
+            /*
+             -  A propriedade animation-duration define quanto tempo a @keyframes linha do tempo deve ter. Deve ser um valor de tempo.
+             - a animação tera 1s
+            */
+            animation-duration: 1s;
+            /*
+             - A propriedade animation-iteration-count define quantas vezes a @keyframes linha do tempo deve ser executada.
+             - @keyframes sera executada 5 vezes
+            */
+            animation-iteration-count: 5; /*or infinite
+            */
+            
+            /*
+             - Para ajudar a recriar o movimento natural na animação, você pode usar funções de tempo que calculam a velocidade de uma animação em cada ponto.
+             - usando a function ease para calcular a velocidade da animação
+            */
+            animation-timing-function: ease;
+        }
+
+        /*
+         - keyframes são o mecanismo que você usa para atribuir estados(states) de animação a carimbos de data e hora(timestamp), ao longo de uma linha do tempo.
+         - grow o nome da regra de key-frames.
+        */
+        @keyframes grow {
+            /*inicio da animação*/
+            0%{
+                transform: scaleX(1.1)
+            }
+            /*fim da animação*/
+            50%{
+                transform: scaleX(1.8);
+                background: darkturquoise;
+            }
+        }
+
+        .grower{
+            width: 200px;
+            height: 80px;
+            background-color: lightseagreen;
+            position: relative;
+        }
+
+        body{
+            display: grid;
+            place-items: center;
+        }
+
+        .flow{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="flow">
+        <div class="grower animate"></div>
+    </div>
+
+</body>
+</html>

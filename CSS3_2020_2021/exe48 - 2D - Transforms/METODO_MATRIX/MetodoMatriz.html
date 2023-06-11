@@ -1,0 +1,53 @@
+<!--
+    * O MÉTODO DA MATRIX()
+
+      - O matrix() método combina todos os métodos de transformação 2D em um.
+
+      - O método matrix() usa seis parâmetros, contendo funções matemáticas, que permitem girar, dimensionar, mover (traduzir) e inclinar elementos.
+
+      - Os parâmetros são os seguintes: matrix (scaleX (), skewY (), skewX (), scaleY (), translateX (), translateY ())
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D TRANSFORM PROPRIEDADE</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            margin-left: 50px;
+        }
+
+        div#myDiv1{
+            transform: matrix(1, -0.3, 0, 1, 0, 0);
+        }
+        div#myDiv2{
+            transform: matrix(1, 0, 0.5, 1, 150, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 2D TRANSFORM PROPRIEDADE</h1>
+
+    <h2>O Método matrix()</h2>
+
+    <p><strong>Exemplo:</strong> O método matrix () combina todos os métodos de transformação 2D em um.</p>
+
+    <div>Este é um elemento div normal</div>
+
+    <div id="myDiv1">Usando o método matrix()</div>
+
+    <div id="myDiv2">Outro uso do método matrix()</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--
+    * VÁRIAS IMAGENS DE FUNDO
+
+        Também é possível ter várias imagens de fundo — você especifica vários background-image valores em um único valor de propriedade, separando cada um com uma vírgula.
+
+        Ao fazer isso, você pode acabar com imagens de fundo sobrepostas. Os planos de fundo serão sobrepostos com a última imagem de plano de fundo listada na parte inferior da pilha e cada imagem anterior empilhada sobre a que a segue no código.
+
+        Nota: Os gradientes podem ser misturados com imagens de fundo comuns.
+
+        As outras background-* propriedades também podem ter valores separados por vírgulas da mesma forma que background-image:
+
+            background-image: url(image1.png), url(image2.png), url(image3.png), url(image4.png);
+            background-repeat: no-repeat, repeat-x, repeat;
+            background-position: 10px 20px,  top right;
+
+        Cada valor das diferentes propriedades corresponderá aos valores na mesma posição nas outras propriedades. Acima, por exemplo, o valor de image1's background-repeatserá no-repeat. No entanto, o que acontece quando diferentes propriedades têm diferentes números de valores? A resposta é que os números menores de valores serão alternados - no exemplo acima, há quatro imagens de fundo, mas apenas dois background-position valores. Os dois primeiros valores de posição serão aplicados às duas primeiras imagens e, em seguida, eles voltarão a circular novamente — image3 receberão o valor da primeira posição e image4 o valor da segunda posição.
+
+        Vamos jogar. No exemplo abaixo eu incluí duas imagens. Para demonstrar a ordem de empilhamento, tente alternar qual imagem de fundo vem primeiro na lista. Ou brinque com as outras propriedades para alterar a posição, tamanho ou valores de repetição.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .box{
+            height: 150px;
+            /*
+             - Também é possível ter várias imagens de fundo — você especifica vários background-image valores em um único valor de propriedade, separando cada um com uma vírgula.
+            */
+            background-image: url(star\ \(3\).png), url(big-star.png);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="box"></div>
+    </div>
+
+</body>
+</html>

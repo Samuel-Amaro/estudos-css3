@@ -1,0 +1,48 @@
+<!--
+    * SELETOR DE [ATTRIBUTE-ATRIBUTO] CSS
+
+        - O [attribute] seletor é usado para selecionar elementos com um atributo especificado.
+
+        - O exemplo a seguir seleciona todos os elementos <a> com um atributo target:
+
+    * DEFINIÇÃO E USO
+
+        - O seletor [attribute] é usado para selecionar elementos com o atributo especificado.
+
+    * SINTAXE CSS
+
+        [attribute] {
+            css declarations;
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seletor de atributos
+         - estilizando elementos que possuem um atributo ou valor de atributo especifico
+         - O [attribute] seletor é usado para selecionar elementos com um atributo especificado.
+         - no exemplo abaixo o seletor de atributo seleciona todos os elementos <a> com um atributo target especificado <a target="">
+        */
+        a[target] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Seletor [atributo] CSS</h2>
+        <p>Os links com um atributo de destino recebem um fundo amarelo:</p>
+    </header>
+    <nav>
+        <a href="https://www.w3schools.com" rel="external">w3shools.com</a>
+        <a href="http://www.disney.com" target="_blank" rel="external">disney.com</a>
+        <a href="http://www.wikipedia.org" target="_blank" rel="external">wikipedia.org</a>
+    </nav>
+
+</body>
+</html>

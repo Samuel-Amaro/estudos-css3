@@ -1,0 +1,134 @@
+<!--
+    * TABELA RESPONSIVA CSS
+
+     - Uma tabela responsiva exibirá uma barra de rolagem horizontal se a tela for muito pequena para exibir o conteúdo completo:
+
+     - Adicione um elemento de contêiner (como <div>) ao overflow-x: auto redor do elemento <table> para torná-lo responsivo:
+
+     - Nota: No OS X Lion (no Mac), as barras de rolagem ficam ocultas por padrão e são exibidas apenas quando usadas (mesmo que "overflow:scroll" esteja definido).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table
+        */
+        table{
+            /*
+             - a propriedade width especifica uma largura para um elemento
+             - o valor em % Define a largura em porcentagem do bloco que o contém
+             - aqui o valor 100%, e que o elemento table ira ocupar 100% do espaço fornecido pelo elemento pai, no caso o elemento pai e o body, toda area visual do documento, assim o espaço fornecido e toda largura do documento
+            */
+            width: 100%;
+            /*
+             - a propriedade border-collapse define se as bordas da tabela devem ser recolhidas em uma unica borda
+             - recolhe a borda do elemento table
+             - isso e usado por causa que a tabela possui bordas duplas os elementos table, th, td possui bordas separadas.
+            */
+            border-collapse: collapse;
+        }
+        /*
+         - celulas de conteudo e de cabeçalho
+        */
+        td, th{
+            /*a propriedade padding shorthand e um abreviatura para as propriedades individuais, padding-top, padding-right, padding-bottom, padding-left, para adicionar espeço interno ao redor do conteudo das celulas entre o conteudo e a borda das celulas, a shorthand add o mesmo espaço a todos os lados*/
+            padding: 8px;
+            /*
+             - a propriedade text-align e usada para definir o alinhamento horizontal de um texto.
+             - o valor left, alinha o texto a esquerda. a direção do texto e da esquerda para direita. para celulas de cabeçalho
+            */
+            text-align: left;
+        }
+        /*
+         - usando o seletor :nth-child() passando argumento even para selecionar todas as linhas pares ou impares da tabela e adicionar um cor de fundo as selecionadas
+        */
+        tr:nth-child(even){
+            /*
+             - a propriedade background-color especifica um cor de fundo para o elemento
+            */
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tabela Responsiva</h2>
+
+    <p>Uma tabela responsiva exibirá uma barra de rolagem horizontal se a tela for muito pequena para exibir o conteúdo completo. Redimensione a janela do navegador para ver o efeito:</p>
+
+    <p>Para criar uma tabela responsiva, adicione um elemento container (como div) com overflow-x: auto ao redor do elemento table:</p>
+
+    <!--
+        - uma tabela responsiva exibirá uma barra de rolagem horizontal se a tela for muito pequena para exibir o conteúdo completo:
+        - para tornar a tabela responsiva adicionar a propriedade css overflow-x: auto ao conteiner da tabela
+    -->
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>Adam</td>
+                    <td>Johnson</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

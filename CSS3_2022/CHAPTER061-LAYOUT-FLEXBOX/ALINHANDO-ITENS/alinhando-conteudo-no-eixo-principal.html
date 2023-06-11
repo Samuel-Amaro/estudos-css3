@@ -1,0 +1,68 @@
+<!--
+    * ALINHANDO O CONTEÚDO NO EIXO PRINCIPAL
+
+        Agora que vimos como o alinhamento funciona no eixo cruzado, podemos dar uma olhada no eixo principal. Aqui temos apenas uma propriedade disponível para nós — justify-content. Isso ocorre porque estamos lidando apenas com itens como um grupo no eixo principal. Com justify-content nós controlamos o que acontece com o espaço disponível, caso haja mais espaço do que o necessário para exibir os itens.
+
+        Em nosso exemplo inicial com display: flex o contêiner, os itens são exibidos como uma linha e todos se alinham no início do contêiner. Isso se deve ao valor inicial de justify-content ser flex-start. Qualquer espaço disponível é colocado no final dos itens.
+
+        A justify-content propriedade aceita os mesmos valores que align-content.
+
+        justify-content: flex-start
+        justify-content: flex-end
+        justify-content: center
+        justify-content: space-between
+        justify-content: space-around
+        justify-content: space-evenly(não definido na especificação Flexbox)
+
+        No exemplo abaixo, o valor de justify-content é space-between. O espaço disponível após a exibição dos itens é distribuído entre os itens. O item esquerdo e direito se alinham com o início e o fim.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex.
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            /**/
+            justify-content: space-between;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            padding: 20px;
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            flex:1 1 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div class="selected">Três</div>
+        <div>Quatro</div>
+        <div>Cinco</div>
+        <div>Seis</div>
+        <div>Sete</div>
+        <div>Oito</div>
+    </div>
+</body>
+</html>

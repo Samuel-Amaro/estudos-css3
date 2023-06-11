@@ -1,0 +1,49 @@
+<!--
+    * :empty - vazio
+
+        A pseudoclasse :empty CSS representa qualquer elemento que não tenha filhos. Os filhos podem ser nós de elemento ou texto (incluindo espaços em branco). Comentários, instruções de processamento e CSS content não afetam se um elemento é considerado vazio. 
+
+        /*Seleciona qualquer <div> que não contém conteúdo*/
+        div:empty {
+            background: lime;
+        }
+
+    * Sintaxe
+
+        :empty
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .box {
+            background: pink;
+            height: 80px;
+            width: 80px;
+        }
+
+        /*
+         - seleciona qualquer elemento com a class .box que não contem conteudo
+        */
+        .box:empty {
+            background: lime;
+        }       
+
+    </style>
+</head>
+<body>
+
+    <div class="box"><!-- I will be lime. --></div>
+    <div class="box">I will be pink.</div>
+    <div class="box">
+    <!-- I will be pink in older browsers because of the whitespace around this comment. -->
+    </div>
+    <div class="box">
+    <p><!-- I will be pink in all browsers because of the non-collapsible whitespace and elements around this comment. --></p>
+    </div>
+
+</body>
+</html>

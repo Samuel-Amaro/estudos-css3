@@ -1,0 +1,145 @@
+/*
+ * BARRA DE NAVEGAÇÃO VERTICAL CSS - CSS VERTICAL NAVIGATION BAR
+ 
+  - Para construir uma barra de navegação vertical, você pode definir o estilo dos elementos <a> dentro da lista, além do código da página anterior:
+
+  - Uma barra de navegação precisa de HTML padrão como base.
+
+  - Em nossos exemplos, construiremos a barra de navegação a partir de uma lista HTML padrão.
+
+  - Uma barra de navegação é basicamente uma lista de links, portanto, usar os elementos <ul> e <li> faz todo o sentido:
+*/
+
+/*elemento lista não ordenada*/
+ul.links-navigation{
+    /*lista sem estilo*/
+    list-style-type: none;
+    /*tira todo espaço externo ao redor da lista, da borda para fora*/
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    /*tira todo espaço interno da lista, da borda para o conteudo*/
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+/*para cada elemento da lista*/
+ul.links-navigation > li > a{
+    /*a caixa e de tipo bloco, a exibição da caixa, qubra de linha para o proximo elemento se posicionar, exibir os links como elemento de bloco  torna toda a área do link clicável (não apenas o texto) e nos permite especificar a largura (e preenchimento, margem, altura, etc., se desejar)*/
+    display: block;
+    /*largura do elemento a*/
+    width: 60px;
+    /*cor de fundo*/
+    background-color: #dddddd;
+}
+
+/*************************************************/
+
+/*
+ * EXEMPLO DE BARRA DE NAVEGAÇÃO VERTICAL
+
+   - Crie uma barra de navegação vertical básica com uma cor de fundo cinza e altere a cor de fundo dos links quando o usuário move o mouse sobre eles:
+*/
+/*elemento lista não ordenada*/
+ul.barra-navegacao-vertical{
+     /*tira o estilo da lista, os marcadores*/
+     list-style-type: none;
+     /*tira todo espaço externo ao redor da lista, da borda para fora*/
+     margin-top: 0;
+     margin-right: 0;
+     margin-bottom: 0;
+     margin-left: 0;
+     /*tira todo espaço interno da lista, da borda para o conteudo*/
+     padding-top: 0;
+     padding-right: 0;
+     padding-bottom: 0;
+     padding-left: 0;
+     /*largura da caixa do elemento ul*/
+     width: 200px;
+     /*cor de fundo*/
+     background-color: #f1f1f1;
+}
+
+/*para cada link que esta dentro de um item da lista*/
+ul.barra-navegacao-vertical > li > a {
+    /*o elemento a, sera exibido como um elemento de bloco, que podera reeber espaços configurações de estilo, etc...., quebra de linha para o proximo elemento*/
+    display: block;
+    /*cor do texto*/
+    color: #000;
+    /*add um espaço interno dentro do elemento, entre a borda e o conteudo*/
+    padding-bottom: 16px;
+    padding-top: 8px;
+    /*tira o estilo do link, tira o sublinhado*/
+    text-decoration: none;
+}
+
+/*para cada link que esta dentro de um item da lista, vai ter uma pseudo-classe que muda seu estado, ao passar o mouse por cima de qualquer link vai mudar a cor*/
+ul.barra-navegacao-vertical > li > a:hover{
+    /*cor de fundo do elemento*/
+    background-color: #555;
+    /*cor do texto*/
+    color: white;
+}
+
+/*
+ * LINK DE NAVEGAÇÃO ATIVO/ATUAL
+
+  - Adicione uma classe "ativa-active" ao link atual para permitir que o usuário saiba em qual página ele está:
+*/
+/*para cada item da lista ordenada, que possui um link, vai ter seu estado mudado, com a pseudo-classe active, que tem a função de ao usuario ativar(clicar num link), vai mudar a cor do elemento e do texto*/
+ul.barra-navegacao-vertical > li > a:active{
+    /*cor de fundo*/
+    background-color: #4CAF50;
+    /*cor do texto*/
+    color: white;
+}
+
+/*
+ - Neste exemplo, criamos uma classe "ativa" com uma cor de fundo verde e um texto branco. A classe é adicionada ao link "Home".
+
+ - o link home vai ficar destacado, parecendo que esta ativo
+*/
+ul.barra-navegacao-vertical > li > a.link-ativo{
+    /*cor de fundo*/
+    background-color: #4CAF50;
+    /*cor do texto*/
+    color: white;    
+}
+
+/*
+  * CENTRALIZAR LINKS E ADICONAR BORDAS
+
+   - Adicione text-align:center a <li> ou <a> para centralizar os links.
+
+   - Adicione a border propriedade para <ul> adicionar uma borda ao redor da barra de navegação. Se você também quiser bordas dentro da barra de navegação, adicione um border-bottoma todos os elementos <li>, exceto o último:
+*/
+
+/*elemento lista não ordenada*/
+ul.barra-navegacao-vertical{
+    /*Add um preenchimento ao elemento, uma borda*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: #555;
+}
+
+/*elemento li, cada item da lista*/
+ul.barra-navegacao-vertical > li{
+    /*alinha o texto ao centro da caixa*/
+    text-align: center;
+    /*add um borda embaixo de cada item, um preenchimento na parte inferior do elemento*/
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #555;
+}
+
+/*elemeneto li, sendo usado com uma pseudo-classe seletor, que somente pega o ultimo elemento li, filho de ul*/
+ul.barra-navegacao-vertical > li:last-child{
+    /*tira a borda inferior do elemento, deixa sem borda*/
+    border-bottom: none;
+}

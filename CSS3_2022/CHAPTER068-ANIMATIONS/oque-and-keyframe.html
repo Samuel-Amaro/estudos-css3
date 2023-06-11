@@ -1,0 +1,111 @@
+<!--
+    * O QUE É KEY-FRAME(QUADRO-CHAVE)
+
+        Em software de animação, CSS e na maioria das outras ferramentas que permitem animar algo, os quadros-chave(KEY-FRAME) são o mecanismo que você usa para atribuir estados(states) de animação a carimbos de data e hora(timestamp), ao longo de uma linha do tempo.
+
+        Vamos usar o "pulser" como um contexto para isso. A animação inteira é executada por 1 segundo e é executada em 2 estados.
+
+        Há um ponto específico onde cada um desses estados de animação começa e termina. Você os mapeia na linha do tempo com quadros-chave.
+
+    * @keyframes
+
+        Agora que você sabe o que é um quadro-chave, esse conhecimento deve ajudá-lo a entender como a @keyframes regra CSS funciona. Aqui está uma regra básica com dois estados.
+
+        @keyframes my-animation {
+            from {
+                transform: translateY(20px);
+            }
+            to {
+                transform: translateY(0px);
+            }
+        }   
+
+        A primeira parte a ser observada é o ident personalizado (identificador personalizado) — ou em termos mais humanos, o nome da regra de key-frames. O identificador desta regra é my-animation. O identificador personalizado funciona como um nome de função. O que, como você aprendeu no módulo de funções , permite que você faça referência à regra de quadros-chave em outro lugar em seu código CSS.
+
+        A <custom-ident> é usado em vários lugares no CSS e permite que você forneça seu próprio nome para as coisas. Esses identificadores diferenciam maiúsculas de minúsculas e, em alguns casos, há palavras que você não pode usar. Por exemplo, ao nomear linhas em CSS Grid, você não pode usar a palavra span.
+
+        Dentro da regra de keyframes, from e to estão as palavras-chave que representam 0% e 100%, que são o início e o fim da animação. Você pode recriar a mesma regra assim:
+
+        @keyframes my-animation {
+            0% {
+                transform: translateY(20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        Você pode adicionar quantas posições quiser ao longo do período de tempo. Usando o contexto do exemplo "pulse", existem 2 estados, que se traduzem em 2 quadros-chave. Isso significa que você tem 2 posições dentro de sua regra de quadros-chave para representar as alterações para cada um desses quadros-chave.
+
+        @keyframes pulse {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.4);
+                opacity: 0.4;
+            }
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .pulser{
+            width: 30px;
+            height: 30px;
+            background-color: rebeccapurple;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        /*pseudoelemento ::after, adiciona um conteudo apos o conteudo do elemento ter sido exibido*/
+        .pulser::after{
+            animation: pulse 1000ms cubic-bezier(0.9, 0.7, 0.5, 0.9) infinite;
+        }
+
+        /*
+         - keyframes são o mecanismo que você usa para atribuir estados(states) de animação a carimbos de data e hora(timestamp), ao longo de uma linha do tempo.
+         - pulse o nome da regra de key-frames.
+        */
+        @keyframes pulse{
+            /*inicio da animação*/
+            0%{
+                opacity: 0;
+            }
+            /*fim da animação*/
+            50%{
+                transform: scale(1.4);
+                opacity: 0.4;
+            }
+        }
+
+        /*inserindo um conteudo no elemento apos o conteudo original*/
+        .pulser::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: blueviolet;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        body{
+            display: grid;
+            place-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="pulser"></div>
+
+</body>
+</html>

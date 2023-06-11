@@ -1,0 +1,80 @@
+<!--
+    * SUBSTITUINDO VARIÁVEIS GLOBAIS POR VARIÁVEIS LOCAIS
+
+      - Na página anterior, aprendemos que as variáveis ​​globais podem ser acessadas / usadas em todo o documento, enquanto as variáveis ​​locais podem ser usadas apenas dentro do seletor onde são declaradas.
+
+      - Às vezes, queremos que as variáveis ​​mudem apenas em uma seção específica da página. 
+
+      - Suponha que queremos uma cor diferente de azul para os elementos do botão. Então, podemos declarar novamente a variável --blue dentro do seletor de botão. Quando usamos var (- blue) dentro deste seletor, ele usará o valor da variável local --blue declarado aqui.
+
+      - Vemos que a variável --blue local substituirá a variável --blue global para os elementos do botão:
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maneira tradicional</title>
+    <style>
+        /*
+         - O :root seletor corresponde ao elemento raiz do documento.
+         - Em HTML, o elemento raiz é sempre o elemento html.
+        */
+        :root{
+            /*definindo nome e valor da variavel gloabal, podera ser usada em todo o documento*/
+            --blue: #6495ed; /*valor antigo: #1e90ff*/
+            --white: #faf0e6; /*valor antigo: #FFFFFF*/
+        }
+        body{
+            /*a propriedade background color, vai receber o valor de --blue por meio da função var*/
+            background-color: var(--blue); 
+        }
+        h2{
+            border-bottom: 2px solid var(--blue);
+        }
+        div.container{
+            color: var(--blue);
+            background-color: var(--white);
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
+        button{
+            /*Definindo uma variavel local do seletor, so pode ser usada dentro do escopo do seletor*/
+            --blue-local: #0000ff; 
+            background-color: var(--white);
+            color: var(--blue-local);
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: var(--blue-local);
+            border-style: solid;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Substituir variável global por variável local</h1>
+
+    <div class="container">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore beatae at cum, ratione molestiae enim commodi provident dolorum doloribus ipsum necessitatibus quibusdam odit suscipit doloremque sapiente perspiciatis! Repudiandae, dignissimos?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas veniam non vel eveniet temporibus facilis unde a laborum consectetur corrupti, natus incidunt distinctio, aut sed velit quibusdam harum tempora tenetur!</p>
+        <p>
+            <button>Yes</button>
+            <button>No</button>
+        </p>
+    </div>
+
+</body>
+</html>

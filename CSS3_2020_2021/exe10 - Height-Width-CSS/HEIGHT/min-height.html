@@ -1,0 +1,68 @@
+<!--
+    * PROPRIEDADE CSS min-height  
+
+     - Define a largura mínima de um elemento
+
+    * DEFINIÇÃO E USO
+
+     - A min-height propriedade define a altura mínima de um elemento.
+
+     - Se o conteúdo for menor que a altura mínima, a altura mínima será aplicada.
+
+     - Se o conteúdo for maior do que a altura mínima, a min-height propriedade não terá efeito.
+
+     Nota: Isso evita que o valor da propriedade height se torne menor que min-height.
+
+    * SINTAXE:
+
+      min-height: length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      VALUE: length;
+      DESCRIPTION: O valor padrão é 0. Define a altura mínima em px, cm, etc.
+
+      VALUE: %;
+      DESCRIPTION: Define a altura mínima em porcentagem do bloco que o contém;
+
+      VALUE: initial;
+      DESCRIPTION: Define esta propriedade com seu valor padrão;
+
+      VALUE: inherit;
+      DESCRIPTION: Herda essa propriedade de seu elemento pai.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura Minima Elemento</title>
+    <style>
+        /*seletor da tag p*/
+        p{
+            background-color: yellow;
+        }
+        p.ex1{
+            /*a altura minima do elemento e 200px. altura minima definida estaticamente. se o conteudo for menor que a altura minima a propriedade e aplicada. e se quiser poder aplicar a propriedade overflow*/
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Altura minima Elemento - min-height</h1>
+
+    <p><strong>Exemplo:</strong>Defina a altura mínima de um elemento &lt;p&gt; em 200 pixels:</p>
+
+    <h2>min-height: none(default)</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati qui dolorum debitis itaque reprehenderit id accusamus, deserunt accusantium at assumenda adipisci non fugiat, totam facilis, consectetur minima eum saepe voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum enim accusamus tenetur laboriosam quidem ut, nulla nihil commodi possimus est quibusdam officiis veritatis corrupti nam atque, nisi molestiae voluptates odit.</p>
+
+    <h2>min-height: 200px</h2>
+
+    <p class="ex1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati qui dolorum debitis itaque reprehenderit id accusamus, deserunt accusantium at assumenda adipisci non fugiat, totam facilis, consectetur minima eum saepe voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum enim accusamus tenetur laboriosam quidem ut, nulla nihil commodi possimus est quibusdam officiis veritatis corrupti nam atque, nisi molestiae voluptates odit.</p>
+
+</body>
+</html>

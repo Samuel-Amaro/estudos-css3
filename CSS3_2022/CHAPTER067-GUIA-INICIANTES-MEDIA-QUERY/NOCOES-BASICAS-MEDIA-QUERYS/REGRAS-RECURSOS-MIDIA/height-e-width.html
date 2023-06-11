@@ -1,0 +1,43 @@
+<!--
+    * HEIGHT(ALTURA) AND WIDTH(LARGURA)
+
+        O recurso que tendemos a detectar com mais frequência para criar designs responsivos (e que tem amplo suporte ao navegador) é a largura da janela de visualização(VIEWPORT), e podemos aplicar CSS se a janela de visualização estiver acima ou abaixo de uma certa largura - ou uma largura exata - usando o min-width, max-width e width recursos de mídia.
+
+        Esses recursos são usados ​​para criar layouts que respondem a diferentes tamanhos de tela. Por exemplo, para alterar a cor do texto do corpo para vermelho se a janela de visualização tiver exatamente 600 pixels, você usaria a consulta de mídia a seguir.
+
+        @media screen and (width: 600px) {
+            body {
+                color: red;
+            }
+        }
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Media Queries: width</title>
+    <style>
+      html {
+        font-size: 1em;
+      }
+
+      /*
+       - MEDIA QUERY
+       - tipo media e tela
+       - o tipo de recurso de midia especificado e largura, quando a largura da viewport for extamente 600px muda a cor do texto. aplica o css abaixo
+      */
+      @media screen and (width: 600px) {
+        body {
+          color: red;
+        }
+      }
+    </style>
+</head>
+<body>
+
+  <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+  <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+
+</body>
+</html>

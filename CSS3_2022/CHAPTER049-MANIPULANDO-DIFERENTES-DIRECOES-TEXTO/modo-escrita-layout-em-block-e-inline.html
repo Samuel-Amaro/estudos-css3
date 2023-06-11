@@ -1,0 +1,54 @@
+<!--
+    * MODOS DE ESCRITA E LAYOUT EM BLOCK E INLINE
+
+        Já discutimos o layout de bloco e inline e o fato de que algumas coisas são exibidas como elementos de bloco e outras como elementos inline. Como vimos descrito acima, block e inline estão vinculados ao modo de escrita do documento, e não à tela física. Os blocos só são exibidos de cima para baixo da página se você estiver usando um modo de escrita que exiba texto horizontalmente, como inglês.
+
+        Se olharmos para um exemplo, isso ficará mais claro. Neste próximo exemplo, tenho duas caixas que contêm um título e um parágrafo. O primeiro usa writing-mode: horizontal-tb, um modo de escrita que é escrito horizontalmente e de cima para baixo da página. O segundo usa writing-mode: vertical-rl; este é um modo de escrita que é escrito verticalmente e da direita para a esquerda.
+
+        Quando mudamos o modo de escrita, estamos mudando qual direção é bloco e qual é inline. No horizontal-tb modo de escrita, a direção do bloco é de cima para baixo; no vertical-rl modo de escrita, a direção do bloco corre horizontalmente da direita para a esquerda. Portanto, a dimensão do bloco é sempre a direção em que os blocos são exibidos na página no modo de escrita em uso. A dimensão inline é sempre a direção em que uma frase flui.
+
+    * DIRECTION(DIREÇÃO)
+
+        Além do modo de escrita, também temos direção de texto. Como mencionado acima, alguns idiomas, como o árabe, são escritos horizontalmente, mas da direita para a esquerda. Isso não é algo que você provavelmente usará em um sentido criativo - se você quiser alinhar algo à direita, existem outras maneiras de fazê-lo - no entanto, é importante entender isso como parte da natureza do CSS. A web não é apenas para idiomas que são exibidos da esquerda para a direita!
+
+        Devido ao fato de que o modo de escrita e a direção do texto podem mudar, os métodos de layout CSS mais recentes não se referem à esquerda e à direita, e superior e inferior. Em vez disso, eles falarão sobre início e fim junto com essa ideia de inline e block. Não se preocupe muito com isso agora, mas mantenha essas ideias em mente quando começar a analisar o layout; você achará realmente útil em sua compreensão de CSS.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .horizontal{
+            /*
+             - Um modo de escrita em CSS refere-se a se o texto está sendo executado horizontalmente ou verticalmente.
+             - A writing-mode propriedade nos permite alternar de um modo de escrita para outro.
+             - A propriedade CSS do modo de escrita define se as linhas de texto são dispostas horizontalmente ou verticalmente, bem como a direção na qual os blocos progridem.
+             - Portanto, a writing-mode propriedade está, na realidade, definindo a direção na qual os elementos de nível de bloco são exibidos na página
+             - o valor horizontal-tb Direção de fluxo do bloco de cima para baixo. As frases correm horizontalmente.
+            */
+            writing-mode: horizontal-tb;
+        }
+        
+        .vertical{
+            /*
+             - Direção de fluxo do bloco da direita para a esquerda. As frases correm verticalmente.
+            */
+            writing-mode: vertical-rl;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box horizontal">
+            <h2>Cabeçalho</h2>
+            <p>Um parágrafo. Demonstrando modos de escrita em CSS.</p>
+        </div>
+        <div class="box vertical">
+            <h2>Cabeçalho</h2>
+            <p>Um parágrafo. Demonstrando modos de escrita em CSS.</p>
+        </div>
+    </div>
+</body>
+</html>

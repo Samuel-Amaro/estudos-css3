@@ -1,0 +1,90 @@
+<!--
+    * PROPRIEDADE CSS flex-shrink(contração flexivel)
+
+        A propriedade CSS flex-shrink define o fator de redução flexível de um item flexível. Se o tamanho de todos os itens flexíveis for maior que o contêiner flexível, os itens encolherão para caber de acordo com o flex-shrink.
+
+        Em uso, flex-shrink é usado junto com as outras propriedades flex flex-grow e flex-basis, e normalmente definido usando a abreviação flex.
+
+    * SINTAXE
+
+        /* <number> values */
+        flex-shrink: 2;
+        flex-shrink: 0.6;
+
+        /* Global values */
+        flex-shrink: inherit;
+        flex-shrink: initial;
+        flex-shrink: revert;
+        flex-shrink: revert-layer;
+        flex-shrink: unset;
+
+        A propriedade flex-shrink é especificada como um único <number>.
+
+    * VALORES
+
+        <number>: Consulte <número>. Os valores negativos são inválidos. O padrão é 1.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container*/
+        #content{
+            /*
+             - vamos definir quais elementos serão caixas flexiveis.
+             - temos que definir um valor especial no elemento pai dos elementos que queremos afetar.
+             - queremos afetar os elementos <div>, assim o pai desses elementos e o elemento <div class="content">
+             - A propriedade CSS  display especifica o tipo de caixa de renderização usada por um elemento.
+             - o valor flex O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo flexbox.
+             - aqui estamos definindo o conteiner flex. o elemento que sera pai, de todos os elementos flexiveis. definindo o flex conteiner
+            */
+            display: flex;
+            width: 500px;
+        }
+
+        /*itens flex*/
+        #content div{
+            /*
+             - A propriedade CSS flex-basis define o tamanho principal inicial de um item flex. Ele define o tamanho da caixa de conteúdo.
+             - o valor 120px especifica uma largura, um comprimento absoluto, especifica que o elemento tem 120px de largura a caixa de conteudo.
+            */
+            flex-basis: 120px;
+            border: 3px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /*itens flex*/
+        .box{
+            /*
+             - A propriedade CSS flex-shrink define o fator de redução flexível de um item flexível. Se o tamanho de todos os itens flexíveis for maior que o contêiner flexível, os itens encolherão para caber de acordo com o flex-shrink.
+             - o valor 1 e padrão. o valor 1 e o fator de redução flexivel de um item flexivel.
+            */
+            flex-shrink: 1;
+        }
+
+        /*itens flexiveis*/
+        .box1{
+            /*
+             - o valor 2 e o fator de redução flexivel de um item flexivel.
+             - define que o item ira refuzir 2 vezes mais proporcionalmente do que os outros elementos flexiveis.
+            */
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <p>A largura do conteúdo é de 500px; a base flexível dos itens flexíveis é de 120px.</p>
+    <p>A, B, C têm flex-shrink: 1 set. D e E têm flex-shrink: 2 set</p>
+    <p>A largura de D e E é menor que os outros.</p>
+    <div id="content">
+        <div class="box" style="background-color: red;">A</div>
+        <div class="box" style="background-color: lightblue;">B</div>
+        <div class="box" style="background-color: yellow;">C</div>
+        <div class="box1" style="background-color: brown;">D</div>
+        <div class="box1" style="background-color: lightgreen;">E</div>
+    </div>
+
+</body>
+</html>

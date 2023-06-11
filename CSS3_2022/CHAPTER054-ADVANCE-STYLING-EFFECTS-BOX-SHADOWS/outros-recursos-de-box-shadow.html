@@ -1,0 +1,54 @@
+<!--
+    * OUTROS RECURSOS DE BOX-SHADOW(SOMBRA DE CAIXA)
+
+        Ao contrário de text-shadow, box-shadow tem uma palavra-chave de inserção(inset) disponível — colocar isso no início de uma declaração de sombra faz com que ela se torne uma sombra interna, em vez de uma sombra externa. Vamos dar uma olhada e ver o que queremos dizer.
+
+        Primeiro, usaremos um HTML diferente para este exemplo:
+
+        Aqui nós configuramos alguns estilos de botões junto com os estados de foco/passagem/atividade. O botão tem uma sombra de caixa preta simples definida por padrão, além de algumas sombras inseridas, uma clara e uma escura, colocadas em cantos opostos do botão para dar um bom efeito de sombreamento.
+
+        Quando o botão é pressionado, o estado ativo faz com que a primeira sombra da caixa seja trocada por uma sombra inserida muito escura, dando a aparência do botão sendo pressionado.
+
+        Nota: Há outro item que pode ser definido no box-shadow valor — outro valor de comprimento pode ser definido opcionalmente antes do valor de cor, que é um raio de dispersão . Se definido, isso faz com que a sombra fique maior do que a caixa original. Não é muito usado, mas vale a pena mencionar.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        button{
+            width: 150px;
+            font-size: 1.1rem;
+            line-height: 2;
+            border-radius: 10px;
+            border: none;
+            background-image: linear-gradient(to bottom right, #777, #ddd);
+            /*
+             - usando a propriedade box-shadow para criar uma sombra externa ao redor do elemento.
+             - especificando mais de uma sombra para a caixa do elemento, separando as declarações por virgula.
+             - a primeira declaração declara uma sombra externa, com 1px de deslocamento horizontal a direita, 1px de deslocamento vertical abaixo da caixa, e 1px de quantidade de desfoque aplicado a primeira sombra, a cor da sombra e especificado pelo valor rgba
+             - a segunda declaração devido a palavra chave inset, torna a sombra um sombra interna, assim uma sombra interna com deslocamento horizontal de 2px a direita, deslocamento vertical de 3px a baixo da caixa do elemento, e um 1px de quantidade de desoque aplicado a sombra interna, cor da sombra especificado pelo valor rgba.
+             - terceira declaração: uma sombra interna, com -2px de deslocamento horizontal a esquerda, -3px de deslocamento vertical acima da caixa do elemento e 5px de quantidade de desfoque aplicado a sombra e a cor da sombra especificado pelo valor rgba
+            */
+            box-shadow: 1px 1px 1px black, inset 2px 3px 5px rgba(0, 0, 0, 0.3), inset -2px -3px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        
+        button:focus, button:hover{
+            background-image: linear-gradient(to bottom right, #888, #eee);
+        }
+
+        button:active{
+            box-shadow: inset 2px 2px 1px black, inset 2px 3px 5px rgba(0, 0, 0, 0.3), inset -2px -3px 5px rgba(255, 255, 255, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+
+    <button>Pressione me!</button>
+
+</body>
+</html>

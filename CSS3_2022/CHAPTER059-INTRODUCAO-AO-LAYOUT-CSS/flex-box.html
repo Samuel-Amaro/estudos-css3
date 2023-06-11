@@ -1,0 +1,46 @@
+<!--
+    * FLEXBOX(CAIXAS FLEXIVEIS)
+
+        Flexbox é o nome abreviado para o módulo CSS Flexible Box Layout(layout de caixa flexível), projetado para facilitar o layout das coisas em uma dimensão - como uma linha ou uma coluna. Para usar o flexbox, você aplica display: flex ao elemento pai dos elementos que deseja dispor; todos os seus filhos diretos se tornam itens flexíveis . Podemos ver isso em um exemplo simples.
+
+        EXIBIÇÃO DE CONFIGURALÇÃO: FLEX - SETTING display: flex
+
+            A marcação HTML abaixo nos fornece um elemento de contenção(container) com uma classe de wrapper, dentro da qual estão três <div> elementos. Por padrão, eles seriam exibidos como elementos de bloco, ou seja, um abaixo do outro em nosso documento em inglês.
+
+            No entanto, se adicionarmos display: flex ao pai, os três itens agora se organizam em colunas. Isso ocorre porque eles se tornam itens flexíveis e são afetados por alguns valores iniciais que o flexbox define no contêiner flex. Eles são exibidos em uma linha porque a propriedade flex-direction do elemento pai tem um valor inicial de row. Todos eles parecem se estender em altura porque a propriedade align-items de seu elemento pai tem um valor inicial de stretch. Isso significa que os itens se estendem até a altura do contêiner flexível, que neste caso é definido pelo item mais alto. Todos os itens se alinham no início do contêiner, deixando espaço extra no final da linha.
+
+        SETTING PROPERTY flex
+
+            Além das propriedades que podem ser aplicadas a um contêiner flexível , também existem propriedades que podem ser aplicadas a itens flexíveis . Essas propriedades, entre outras coisas, podem alterar a maneira como os itens são flexíveis , permitindo que eles se expandam ou contraiam de acordo com o espaço disponível.
+
+            Como um exemplo simples, podemos adicionar a flex propriedade a todos os nossos itens filhos e dar a ela um valor de 1. Isso fará com que todos os itens cresçam e preencham o recipiente, em vez de deixar espaço no final. Se houver mais espaço, os itens ficarão mais largos; se houver menos espaço, eles se tornarão mais estreitos. Além disso, se você adicionar outro elemento à marcação, todos os outros itens ficarão menores para liberar espaço; os itens todos juntos continuam ocupando todo o espaço.
+
+    Nota: Esta foi uma introdução muito curta ao que é possível no Flexbox.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .wrapper{
+            display: flex;
+        }
+        .box1, .box2, .box3{
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+    </div>
+
+</body>
+</html>

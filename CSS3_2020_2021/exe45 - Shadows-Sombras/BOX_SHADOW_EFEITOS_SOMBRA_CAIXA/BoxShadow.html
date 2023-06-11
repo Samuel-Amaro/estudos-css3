@@ -1,0 +1,63 @@
+<!--
+    * CSS BOX-SHADOW(SOMBRA NA CAIXA)
+
+      * PROPRIEDADE CSS box-shadow
+
+        - A box-shadow propriedade CSS aplica sombra aos elementos.
+
+        - Em seu uso mais simples, você especifica apenas a sombra horizontal e a sombra vertical:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombra na caixa</title>
+    <style>
+        div#caixa1{
+            width: 300px;
+            height: 100px;
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            background-color: yellow;
+            /*aplicando uma sombra no elemento, sombra horizontal 10px , e sombra vertical 10px*/
+            box-shadow: 10px 10px; 
+        }
+        div#caixa2{
+            width: 300px;
+            height: 100px;
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            background-color: yellow;
+            /*aplicando uma sombra no elemento, sombra horizontal 10px , e sombra vertical 10px, e a cor da sombra e cinza*/
+            box-shadow: 10px 10px grey; 
+        }
+        div#caixa3{
+            width: 300px;
+            height: 100px;
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            background-color: yellow;
+            /*aplicando uma sombra no elemento div, sombra horizontal 10px , e sombra vertical 10px, e uma cor de sombra grey, e um desfoque da sombra em relação ao elemento 5px*/
+            box-shadow: 10px 10px 5px grey; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Box-shadow - sombra na caixa</h1>
+    <h2>Propriedade CSS box-shadow, que aplica sombra a caixas</h2>
+    <p><strong>Exemplo 1:</strong> Em seu uso mais simples, você especifica apenas a sombra horizontal(10px) e a sombra vertical(10px):</p>
+    <div id="caixa1">Este é um elemento div com uma sombra de caixa</div>
+    <p><strong>Exemplo 2:</strong> adiconando uma cor a sombra de um elemento de caixa</p>
+    <div id="caixa2">Este é um elemento div com uma sombra de caixa cinza</div>
+    <p><strong>Exemplo 3:</strong>adicionando um efeito de desfoque á sombra</p>
+    <div id="caixa3">Este é um elemento div amarelo com uma sombra de caixa cinza desfocada</div>
+</body>
+</html>

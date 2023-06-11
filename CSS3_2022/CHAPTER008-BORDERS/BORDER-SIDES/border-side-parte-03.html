@@ -1,0 +1,84 @@
+<!-- 
+    - Então, aqui está como funciona:
+
+    - Se a border-style propriedade tiver quatro valores:
+
+        - border-style: dotted solid double dashed;
+
+            - borda superior é pontilhada
+            - borda direita é sólida
+            - borda inferior é dupla
+            - borda esquerda é tracejada
+
+    - Se a border-style propriedade tiver três valores:
+
+        - border-style: dotted solid double;
+
+            - borda superior é pontilhada
+            - as bordas direita e esquerda são sólidas
+            - borda inferior é dupla
+
+    - Se a border-style propriedade tiver dois valores:
+
+        - border-style: dotted solid;
+
+            - as bordas superior e inferior são pontilhadas
+            - as bordas direita e esquerda são sólidas
+
+    - Se a border-style propriedade tiver um valor:
+
+        - border-style: dotted;
+
+            - todas as quatro bordas são pontilhadas
+
+    - A border-style propriedade é usada no exemplo acima. No entanto, também funciona com border-width e border-color.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        body{
+            text-align: center;
+        }
+        p.four{
+            /**
+             - A border-style propriedade especifica que tipo de borda exibir.
+             -  A border-style propriedade pode ter de um a quatro valores (para a borda superior(border-top), borda direita(border-right), borda inferior(border-bottom) e borda esquerda(border-left)).
+             - especificando 4 valores, borda top pontilhada, borda right solida, borda bottom dupla, borda left tracejada
+            */
+            border-style: dotted solid double dashed;
+        }
+        p.three{
+            /*
+             - especificando 3 valores, borda top pontilhada, borda right e left solida, borda bottom dupla.            
+            */
+            border-style: dotted solid double;
+        }
+        p.two{
+            /*
+             - especificando 2 valores, borda top e bottom pontilhada, borda right e left solida.      
+            */
+            border-style: dotted solid;
+        }
+        p.one{
+             /*
+             - especificando 1 valor todas as bordas exibira o mesmo tipo de borda 
+            */
+            border-style: dotted;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h2>Bordas individuais laterais</h2>
+
+    <p class="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio accusamus dolores ipsum id veritatis incidunt velit cum aliquid, mollitia quod? Doloribus velit, recusandae esse labore temporibus ex ut consectetur.</p>
+    <p class="two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quis dolores totam quia dicta, architecto doloremque error ad ipsam, iusto modi fugiat! Ratione debitis error aliquam commodi cumque nulla in.</p>
+    <p class="three">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium commodi itaque dolorem incidunt, possimus recusandae at deserunt repellendus ipsum? Molestiae architecto cum, ea maiores ducimus dignissimos animi nobis amet.</p>
+    <p class="four">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, voluptas? Tenetur corporis dolore harum. Praesentium, quasi. Magnam dolorum et velit ipsam quibusdam iure, est autem dolorem impedit, totam ex hic!</p>
+
+</body>
+</html>

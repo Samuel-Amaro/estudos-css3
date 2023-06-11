@@ -1,0 +1,62 @@
+<!--
+    * O MÉTODO SCALEX()
+
+      - O scaleX() método aumenta ou diminui a largura de um elemento.
+
+      O exemplo a seguir aumenta o elemento <div> para duas vezes de sua largura original: 
+
+      O exemplo a seguir diminui o elemento <div> para a metade de sua largura original: 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D TRANSFORM</title>
+    <style>
+        div{
+            margin-top: 150px;
+            margin-right: 150px;
+            margin-bottom: 150px;
+            margin-left: 150px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            /**
+              - propriedade css transform;
+              - metodo scaleX() -> aumenta ou diminui a largura de um elemento
+              - aqui a largura do elemento e aumentada 2 vezes em relação ao seu tamanho normal
+            **/
+            transform: scaleX(2);
+        }   
+        div#metade{
+            /**
+             - O exemplo a seguir diminui o elemento <div> para a metade de sua largura original: 
+            **/
+            transform: scaleX(0.5);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>CSS 3D TRANSFORM PROPRIEDADE</h1>
+
+    <h2>O Método scaleX()</h2>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir aumenta o elemento &lt;div&gt; para duas vezes de sua largura original: </p>
+
+    <div>Este elemento div é duas vezes maior que sua largura original</div>
+
+    <p><strong>Exemplo 02:</strong> O exemplo a seguir diminui o elemento &lt;div&gt; para a metade de sua largura original:</p>
+
+    <div id="metade">Este elemento div tem a metade de sua largura original</div>
+</body>
+</html>

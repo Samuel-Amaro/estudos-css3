@@ -1,0 +1,84 @@
+<!--
+    * Dica: Uma maneira mais moderna de criar layouts de coluna é usar CSS Flexbox (veja o exemplo abaixo). No entanto, ele não é compatível com o Internet Explorer 10 e versões anteriores. Se você precisar de suporte para IE6-10, use floats (como mostrado acima).
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de media querys com flexbox</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /*container do flexboxes*/
+        div.row{
+            /*
+            A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            flex : Exibe um elemento como um flex container em nível de bloco*/
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /*cria quatro colunas iguais que flutuam lado a lado, isso para telas grandes*/
+        div.column{
+            flex: 25%;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+        div#coluna-01{
+            background-color: #aaa;
+        }
+        div#coluna-02{
+            background-color: #bbb;
+        }
+        div#coluna-03{
+            background-color: #ccc;
+        }
+        div#coluna-04{
+            background-color: #ddd;
+        }
+        /*em telas com largura de 992px ou menos, vá de quatro colunas para duas colunas, usando a view report para se basear a largura da tela, telas de tablets e notebooks de proporções menores, isso para telas medias*/
+        @media screen and (max-width: 992px){
+            div.column{
+                flex: 50%;
+            }
+        }
+        /*em telas com largura de 600px ou menos, empilhe as colunas uma em cima da outra, em vez de uma ao lado da outra, telas de tablets e telefones, isso para telas pequenas*/
+        @media screen and (max-width: 600px) {
+            div.row{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Layout responsivo de quatro colunas com flex</h2>
+
+    <p><strong>Redimensione a janela do navegador para ver o efeito de resposta. </strong>Em telas com largura de 992 px ou menos, as colunas serão redimensionadas de quatro colunas para duas colunas. Em telas com largura de 600 px ou menos, as colunas serão empilhadas uma em cima da outra, em vez de uma ao lado da outra.</p>
+
+    <div class="row">
+        <div class="column" id="coluna-01">
+            <h2>Column 1</h2>
+            <p>Algum texto...</p>
+        </div>
+        <div class="column" id="coluna-02">
+            <h2>Column 2</h2>
+            <p>Algum texto...</p>
+        </div>
+        <div class="column" id="coluna-03">
+            <h2>Column 3</h2>
+            <p>Algum texto...</p>
+        </div>
+        <div class="column" id="coluna-04">
+            <h2>Column 4</h2>
+            <p>Algum texto...</p>
+        </div>
+    </div>
+
+</body>
+</html>

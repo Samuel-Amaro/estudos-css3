@@ -1,0 +1,65 @@
+<!--
+    * PROPRIEDADES E VALORES LÓGICOS
+
+        A razão para falar sobre modos de escrita e direção neste momento de seu aprendizado é que já vimos muitas propriedades que estão vinculadas às dimensões físicas da tela, e elas fazem mais sentido quando em um modo de escrita horizontal.
+
+        Vamos dar uma olhada em nossas duas caixas novamente - uma com um horizontal-tb modo de escrita e outra com vertical-rl. Eu dei a essas duas caixas um arquivo width. Você pode ver que quando a caixa está no modo de escrita vertical, ela ainda tem uma largura, e isso está fazendo com que o texto transborde.
+
+        O que realmente queremos neste cenário é essencialmente trocar a altura pela largura de acordo com o modo de escrita. Quando estamos no modo de escrita vertical, queremos que a caixa se expanda na dimensão do bloco, assim como no modo horizontal.
+
+        Para tornar isso mais fácil, o CSS desenvolveu recentemente um conjunto de propriedades mapeadas. Elas substituem essencialmente propriedades físicas — coisas como width e height— por versões lógicas ou relativas de fluxo.
+
+        A propriedade mapeada para width quando em um modo de escrita horizontal é chamada inline-size— refere-se ao tamanho na dimensão em linha. A propriedade para height é nomeada block-size e é o tamanho na dimensão do bloco. Você pode ver como isso funciona no exemplo abaixo, onde substituímos width por inline-size.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        .box{
+            /*
+             - um conjunto de propriedades mapeadas. Elas substituem essencialmente propriedades físicas — coisas como width e height— por versões lógicas ou relativas de fluxo.
+             - A propriedade mapeada para width quando em um modo de escrita horizontal é chamada inline-size— refere-se ao tamanho na dimensão em linha.
+             - A propriedade CSS inline-size define o tamanho horizontal ou vertical do bloco de um elemento, dependendo de seu modo de escrita. Corresponde à propriedade largura ou altura, dependendo do valor do modo de escrita.
+             - Se o modo de escrita estiver orientado verticalmente, o valor de inline-size está relacionado à altura do elemento; caso contrário, está relacionado à largura do elemento.
+            */
+            inline-size: 150px;
+        }
+
+        .horizontal{
+            /*
+             - Um modo de escrita em CSS refere-se a se o texto está sendo executado horizontalmente ou verticalmente.
+             - A writing-mode propriedade nos permite alternar de um modo de escrita para outro.
+             - A propriedade CSS do modo de escrita define se as linhas de texto são dispostas horizontalmente ou verticalmente, bem como a direção na qual os blocos progridem.
+             - Portanto, a writing-mode propriedade está, na realidade, definindo a direção na qual os elementos de nível de bloco são exibidos na página
+             - o valor horizontal-tb Direção de fluxo do bloco de cima para baixo. As frases correm horizontalmente.
+            */
+            writing-mode: horizontal-tb;
+        }
+        
+        .vertical{
+            /*
+             - Direção de fluxo do bloco da direita para a esquerda. As frases correm verticalmente.
+            */
+            writing-mode: vertical-rl;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box horizontal">
+            <h2>Cabeçalho</h2>
+            <p>Um parágrafo. Demonstrando modos de escrita em CSS.</p>
+            <p>Estas caixas têm uma largura.</p>
+        </div>
+        <div class="box vertical">
+            <h2>Cabeçalho</h2>
+            <p>Um parágrafo. Demonstrando modos de escrita em CSS.</p>
+            <p>Estas caixas têm uma largura.</p>
+        </div>
+    </div>
+</body>
+</html>

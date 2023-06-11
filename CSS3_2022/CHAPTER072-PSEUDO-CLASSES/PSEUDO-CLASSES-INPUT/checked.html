@@ -1,0 +1,92 @@
+<!--
+    * :checked
+
+        O seletor de pseudoclasse CSS :checked representa qualquer elemento de rádio(<input type="radio">), caixa de seleção(<input type="checkbox">) ou opção (<option> e um <select>) que está marcado ou alternado para um estado on. 
+
+        /*Corresponde a qualquer rádio, caixa de seleção ou opção marcada/selecionada*/
+        :checked {
+            margin-left: 25px;
+            border: 1px solid blue;
+        }
+
+        O usuário pode ativar esse estado marcando/selecionando um elemento ou desativá-lo desmarcando/desmarcando o elemento.
+
+    * Sintaxe 
+
+        :checked
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        div,
+        select {
+            margin: 8px;
+        }
+
+        select{
+            background-color: white;
+            border: 1px solid powderblue;
+        }
+
+        /*
+         - O seletor de pseudoclasse CSS :checked representa qualquer elemento de rádio(<input type="radio">), caixa de seleção(<input type="checkbox">) ou opção (<option> e um <select>) que está marcado ou alternado para um estado on. 
+         - seleciona elementos input que estejam com option marcadas/selecionadas e seus respectivos elementos labels que sejam irmão direto do elemento. 
+         - Rótulos para entradas verificadas
+        */
+        input:checked + label {
+            color: red;
+        }
+
+        /*
+         - seleciona elementos raio que estejam com option marcadas/selecionadas.
+        */
+        input[type="radio"]:checked {
+            box-shadow: 0 0 0 3px orange;
+        }
+
+        /*
+         - seleciona elementos checkbox que estejam com option marcadas/selecionadas.
+        */
+        input[type="checkbox"]:checked {
+            box-shadow: 0 0 0 3px hotpink;
+        }
+
+        /*
+         - seleciona elementos options que estejam com que tenham sido marcadas/selecionadas.
+        */
+        option:checked {
+            box-shadow: 10px 10px 0 3px lime;
+            color: red;
+            background-color: aliceblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div>
+        <input type="radio" name="my-input" id="yes">
+        <label for="yes">Yes</label>
+      
+        <input type="radio" name="my-input" id="no">
+        <label for="no">No</label>
+    </div>
+      
+    <div>
+        <input type="checkbox" name="my-checkbox" id="opt-in">
+        <label for="opt-in">Check me!</label>
+    </div>
+      
+    <select name="my-select" id="fruit">
+        <option value="opt1">Apples</option>
+        <option value="opt2">Grapes</option>
+        <option value="opt3">Pears</option>
+    </select>
+       
+</body>
+</html>

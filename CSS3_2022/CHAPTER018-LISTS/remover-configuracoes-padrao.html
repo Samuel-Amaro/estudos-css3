@@ -1,0 +1,45 @@
+<!--
+    * REMOVER CONFIGURAÇÕES PADRÃO
+
+        - A list-style-type: none propriedade também pode ser usada para remover os marcadores/balas. Observe que a lista também possui margem e preenchimento padrão. Para remover isso, adicione margin: 0 e padding: 0 a <ul> ou <ol>:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        ul.demo{
+            /*
+             - a propriedade list-style-position especifica a posição dos marcadores de item de lista
+             - o valor none, especifica nenhum marcador para os itens da lista
+            */
+            list-style-position: none;
+            /*nehum espaço externo ao redor do elemento*/
+            margin: 0;
+            /*nenhum espaço interno ao redor do conteudo*/
+            padding: 0;
+        }          
+    </style>
+</head>
+<body>
+    
+    <p>Lista padrão:</p>
+    <ul>
+        <li>Coffe</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <p>Remova marcadores, margem e preenchimento da lista:</p>
+
+    <ul class="demo">
+        <li>Coffe</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    
+
+</body>
+</html>

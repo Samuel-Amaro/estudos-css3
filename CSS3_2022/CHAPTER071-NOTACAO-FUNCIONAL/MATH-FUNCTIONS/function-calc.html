@@ -1,0 +1,56 @@
+<!--
+    * A FUNÇÃO calc()
+
+        - A calc() função executa um cálculo a ser usado como o valor da propriedade.
+
+    * SINTAXE CSS:
+
+        calc(expression)
+
+    * VALORES
+
+        VALUE: expression(expressão)
+        DESCRIPTION: Requerido. Uma expressão matemática. O resultado será usado como o valor. Os seguintes operadores podem ser usados: + - * /
+        --------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        #div1{
+            /*
+             -  a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento com o id #div1 não tem ancestral posicionado mais proximo com um posicionamento diferente de static, o elemento body, sera o ancestral
+            */
+            position: absolute;
+            /*
+             -  A left propriedade afeta a posição horizontal de um elemento posicionado.
+             - Se position: absolute; ou position: fixed; - a left propriedade define a border left de um elemento para uma unidade à esquerda da borda esquerda de seu ancestral posicionado mais próximo.
+             - elemento com id div1 esta posicionado a esquerda 50px a esquerda do body
+            */
+            left: 50px;
+            /*
+             - a function calc(expression) executa um cálculo a ter seu resultado usado como o valor da propriedade.
+             - o resultado do calculo abaixo passado para a function calc sera o valor da propriedade width
+            */
+            width: calc(100% - 100px);
+            border: 1px solid black;
+            background-color: yellow;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A function calc()</h1>
+
+    <p>Crie um div que se estenda pela janela, com um espaço de 50px entre os dois lados do div e as bordas da janela:</p>
+
+    <div id="div1">Algum texto...</div>
+
+</body>
+</html>

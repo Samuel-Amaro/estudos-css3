@@ -1,0 +1,25 @@
+* CORES CSS RGB
+  
+- Em CSS, uma cor pode ser especificada como um valor RGB, usando esta fórmula:
+  
+   rgb(vermelho, verde, azul); rgb(red, green, blue);
+
+- Cada parâmetro (vermelho, verde e azul) define a intensidade da cor entre 0 e 255.
+
+- Para exibir o preto, defina todos os parâmetros de cor para 0, como este: rgb (0, 0, 0).
+
+- Para exibir o branco, defina todos os parâmetros de cor para 255, como este: rgb (255, 255, 255).
+
+- Tons de cinza são frequentemente definidos usando valores iguais para todas as 3 fontes de luz:
+        rgb(60, 60, 60)
+
+ # VALOR RGBA
+
+  - Os valores de cores RGBA são uma extensão dos valores de cores RGB com um canal alfa - que especifica a opacidade de uma cor.
+
+  - Um valor de cor RGBA é especificado com:
+
+  rgba(vermelho,verde,azul,alfa)
+
+  - O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nem um pouco transparente):
+

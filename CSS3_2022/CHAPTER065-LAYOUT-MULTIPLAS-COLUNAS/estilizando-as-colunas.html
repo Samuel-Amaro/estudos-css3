@@ -1,0 +1,65 @@
+<!--
+    * ESTILIZANDO AS COLUNAS
+
+        As colunas criadas por multicol não podem ser estilizadas individualmente. Não há como tornar uma coluna maior do que outras colunas ou alterar o plano de fundo ou a cor do texto de uma única coluna. Você tem duas oportunidades para alterar a forma como as colunas são exibidas:
+
+            Alterando o tamanho da lacuna entre as colunas usando o column-gap.
+
+            Adicionando uma regra entre colunas com column-rule.
+
+        Usando seu exemplo acima, altere o tamanho da lacuna adicionando uma column-gap propriedade. Você pode brincar com valores diferentes — a propriedade aceita qualquer unidade de comprimento.
+
+        Agora adicione uma regra entre as colunas com column-rule. De maneira semelhante à borderpropriedade que você encontrou nas lições anteriores, column-ruleé uma abreviação para column-rule-color, column-rule-style, e column-rule-width, e aceita os mesmos valores que border.
+
+        Algo a ser observado é que a regra não ocupa nenhuma largura própria. Encontra-se através da lacuna que você criou com column-gap. Para liberar mais espaço em ambos os lados da régua, você precisará aumentar o column-gap tamanho.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Multicol starting point</title>
+    <style type="text/css">
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        /*container multicol - layou varias colunas*/
+        .container{
+            /*
+             - habilitamos o multicol, usando a propriedade column-count ou column-width.
+             - a propriedade column-count recebe um número como seu valor e cria esse número de colunas. 
+             - cria três colunas dentro do container
+             - As colunas que você cria têm larguras flexíveis — o navegador calcula quanto espaço atribuir a cada coluna.
+            */
+            column-count: 3;
+            /*
+             - Alterando o tamanho da lacuna entre as colunas usando o column-gap.
+             - a propriedade column-gap adiciona uma espaço vazio de 20px entre as colunas criadas.
+            */
+            column-gap: 20px;
+            /*
+             - Agora adicione uma regra entre as colunas com column-rule
+             - propriedade column-role shorthand e uma abreviação para column-rule-color, column-rule-style, column-rule-width, aceita os mesmo valores que border.
+             - Algo a ser observado é que a regra não ocupa nenhuma largura própria.
+            */
+            column-rule: 4px dotted rgb(79, 185, 227);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Simple multicol example</h1>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate.Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+        <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam lorem. Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    </div>
+</body>
+
+</html>

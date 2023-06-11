@@ -1,0 +1,69 @@
+<!--
+        Você pode fazer outras escolhas sobre imagens dentro de contêineres. Por exemplo, você pode querer dimensionar uma imagem para que ela cubra completamente uma caixa.
+
+        A object-fit propriedade pode ajudá-lo aqui. Ao usar object-fit o elemento substituído pode ser dimensionado para caber em uma caixa de várias maneiras.
+
+        Abaixo, usamos o valor cover, que reduz o tamanho da imagem, mantendo a proporção para que ela preencha perfeitamente a caixa. À medida que a proporção é mantida, algumas partes da imagem serão cortadas pela caixa.
+
+        Se usarmos contain como valor, a imagem será reduzida até ficar pequena o suficiente para caber dentro da caixa. Isso resultará em "letterboxing" se não for a mesma proporção da caixa.
+
+        Você também pode tentar o valor de fill, que preencherá a caixa, mas não manterá a proporção.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .box{
+            border: 5px solid darkblue;
+            /*
+             - A height propriedade CSS especifica a altura de um elemento. Por padrão, a propriedade define a altura da área de conteúdo . Se box-sizing estiver definido como border-box, no entanto, ele determina a altura da área da borda .
+             - define a altura de um elemento, usando um comprimento de unidade absoluta
+             - define a altura como um valor absoluto de 200px
+            */
+            height: 200px;
+            /*
+             - A width propriedade CSS define a largura de um elemento. Por padrão, ele define a largura da área de conteúdo , mas se box-sizing estiver definido como border-box, ele define a largura da área da borda.
+             - define a largura de um elemento, usando um comprimento de unidade absoluta.
+             - define a largura como um valor absoluto de 200px
+            */
+            width: 200px;
+        }
+        img{
+            /*
+             - define a altura da imagen, a imagen pode ocupar 100% do espaço vertical fornecido a ela, pode ocupar 100% do espaço vertical.
+            */
+            height: 100%;
+            /*
+             - define a largura de um elemento, usando uma unidade relativa.
+             - o valor 100%, Define a largura como uma porcentagem da largura do bloco que o contém. 
+             - o elemento ira ocupar 100% da largura do elemento pai, no caso o elemento div, o elemento ira ocupar 100% da largura disponivel
+             - ocupa 100% do espaço disponivel
+            */
+            width: 100%;
+        }
+        .cover{
+            /*
+             -  A propriedade CSS object-fit(AJUSTE AO OBJETO) define como o conteúdo de um elemento substituído, como um <img> ou <video>, deve ser redimensionado para caber em seu contêiner.
+             - cover: O conteúdo substituído é dimensionado para manter sua proporção enquanto preenche toda a caixa de conteúdo do elemento. Se a proporção do objeto não corresponder à proporção de sua caixa, o objeto será cortado para caber.
+            */
+            object-fit: cover;
+        }
+        .contain{
+            /*
+             - contain: O conteúdo substituído é dimensionado para manter sua proporção enquanto se ajusta à caixa de conteúdo do elemento. O objeto inteiro é feito para preencher a caixa, preservando sua proporção, de modo que o objeto será "caixa de letras" se sua proporção não corresponder à proporção da caixa.
+            */
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box"><img src="./star (4).png" alt="start" class="cover"/></div>
+        <div class="box"><img src="./balloons (3).jpg" alt="balloons" class="contain"/></div>
+    </div>
+
+</body>
+</html>

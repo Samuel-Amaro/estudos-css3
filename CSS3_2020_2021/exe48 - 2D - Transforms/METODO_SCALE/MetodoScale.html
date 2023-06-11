@@ -1,0 +1,66 @@
+<!--
+    * O MÉTODO SCALE()
+
+      - O scale() método aumenta ou diminui o tamanho de um elemento (de acordo com os parâmetros dados para largura e altura).
+
+      - O exemplo a seguir aumenta o elemento <div> para duas vezes de sua largura original e três vezes de sua altura original: 
+
+      - O exemplo a seguir diminui o elemento <div> para a metade de sua largura e altura originais:   
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D TRANSFORM</title>
+    <style>
+        div{
+            margin-top: 150px;
+            margin-right: 150px;
+            margin-bottom: 150px;
+            margin-left: 150px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            /**
+              - propriedade css transform
+              - o metodo scale aumenta ou diminui o tamanho de um elemento de acordo com os paramentros dados
+              - metodo scale(largura, altura);
+              - aqui o elemento e aumenta em duas vezes em relação a sua largura normal e aumenta 3 vezes em relação a sua altura normal.
+            **/
+            transform: scale(2,3);
+        }
+        div#metade{
+            /**
+             - valores que reduzem o tamnho do elemento para metade de largura e altura originais
+            **/
+            transform: scale(0.50, 0.50);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>CSS 2D PROPRIEDADE TRANSFORM</h1>
+
+    <h2>O Método scale()</h2>
+
+    <p><strong>Exemplo</strong> O exemplo a seguir aumenta o elemento &lt;div&gt; para duas vezes de sua largura original e três vezes de sua altura original: </p>
+
+    <p>O método scale () aumenta ou diminui o tamanho de um elemento.</p>
+
+    <div>Este elemento div é duas vezes de sua largura original e três vezes de sua altura original</div>
+
+    <p><strong>Exemplo 02: </strong> O exemplo a seguir diminui o elemento &lt;div&gt; para a metade de sua largura e altura originais: </p>
+
+    <div id="metade">Este elemento div é reduzido para sua metade de largura e altura originais</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!--
+    * APRESENTANDO O Z-INDEX
+
+        Todo esse posicionamento absoluto é divertido, mas há outro recurso que ainda não consideramos. Quando os elementos começam a se sobrepor, o que determina quais elementos aparecem sobre outros e quais elementos aparecem sob outros? No exemplo que vimos até agora, temos apenas um elemento posicionado no contexto de posicionamento, e ele aparece no topo, pois os elementos posicionados vencem os elementos não posicionados. E quando temos mais de um?
+
+        Tente adicionar o seguinte ao seu CSS para tornar o primeiro parágrafo absolutamente posicionado também:
+
+        Neste ponto, você verá o primeiro parágrafo colorido de limão, movido para fora do fluxo do documento e posicionado um pouco acima de onde estava originalmente. Ele também é empilhado abaixo do .positioned parágrafo original onde os dois se sobrepõem. Isso ocorre porque o .positioned parágrafo é o segundo parágrafo na ordem de origem e os elementos posicionados posteriormente na ordem de origem conquistam os elementos posicionados anteriormente na ordem de origem.
+
+        Você pode alterar a ordem de empilhamento? Sim, você pode, usando a z-index propriedade. "z-index" é uma referência ao eixo z. Você pode se lembrar de pontos anteriores do curso em que discutimos páginas da Web usando coordenadas horizontais (eixo x) e verticais (eixo y) para descobrir o posicionamento de coisas como imagens de fundo e deslocamentos de sombra projetada. Para idiomas que são executados da esquerda para a direita, (0,0) está no canto superior esquerdo da página (ou elemento), e os eixos x e y são executados para a direita e para baixo na página.
+
+        As páginas da Web também têm um eixo z: uma linha imaginária que vai da superfície da tela em direção ao seu rosto (ou qualquer outra coisa que você goste de ter na frente da tela). z-index os valores afetam onde os elementos posicionados ficam nesse eixo; valores positivos os movem para cima na pilha, valores negativos os movem para baixo na pilha. Por padrão, todos os elementos posicionados têm um z-index de auto, que é efetivamente 0.
+
+        Para alterar a ordem de empilhamento, tente adicionar a seguinte declaração à sua p:nth-of-type(1) regra:
+
+        Observe que z-index só aceita valores de índice sem unidade; você não pode especificar que deseja que um elemento esteja 23 pixels acima do eixo Z — não funciona assim. Valores mais altos irão acima dos valores mais baixos e cabe a você quais valores você usa. Usar valores de 2 ou 3 daria o mesmo efeito que valores de 300 ou 40000.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic document flow</title>
+
+    <style type="text/css">
+        body {
+            width: 500px;
+            margin: 0 auto;
+            /*
+             - Alterando o contexto de posicionamento, ou seja, a qual elemento o elemento posicionado absolutamente está posicionado em relação. Isso é feito definindo o posicionamento em um dos ancestrais do elemento: para um dos elementos dentro do qual ele está aninhado.
+             - o elemento posicionado absolutamente esta aninhando dentro do body
+            */
+            position: relative;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        .positioned{
+            /*
+             -  O posicionamento permite que você retire elementos do fluxo normal de documentos e faça com que eles se comportem de maneira diferente.
+             - Para ativar um tipo específico de posicionamento em um elemento, usamos a position propriedade.
+             - o valor absolute um elemento absolutamente posicionado não existe mais no fluxo normal de documentos. Em vez disso, ele fica em sua própria camada separada de todo o resto.
+             - O elemento posicionado de forma absoluta agora fica em relação ao <body> elemento.
+            */
+            position: absolute;
+            background: yellow;
+            /*
+             - para modificar a posição do elemento posicionado absolutamente, Você precisa usar as propriedades top, bottom, left e right.
+             - top, bottom, left e right são usados ​​ao lado position para especificar exatamente para onde mover o elemento posicionado.
+             - essas propriedades elas são contra intuitivas, Você precisa pensar nisso como se houvesse uma força invisível que empurra o lado especificado da caixa posicionada, movendo-a na direção oposta.
+             - top, bottom, left, e right se comportam de maneira diferente com o posicionamento absoluto. Em vez de posicionar o elemento com base em sua posição relativa dentro do fluxo normal do documento, eles especificam a distância que o elemento deve estar de cada um dos lados do elemento que o contém.
+             - no exemplo abaixo o elemento posicionado absoluto fica 30px para baixo da border-top do elemento body, o elemento que contem o elemento posicionado absoluto.
+            */
+            top: 30px;
+            /*
+             - no exemplo abaixo o elemento posicionado absoluto fica 30px para esquerda da border-left do elemento body, o elemento que contem o elemento posicionado absoluto.
+            */
+            left: 30px;
+        }
+
+        /*estiliza o primeiro paragrafo*/
+        p:nth-of-type(1){
+            position: absolute;
+            background: lime;
+            /*
+             - se afasta 10px para baixo da border-top do elemento body
+            */
+            top: 10px;
+            /*
+             - se afasta 30px para a esquerda da border-right do elemento body
+            */
+            right: 30px;
+            /*
+             - alterando a ordem de empilhamento, usando a propriedade z-index. "z-index" é uma referência ao eixo z. uma linha imaginária que vai da superfície da tela em direção ao seu rosto.
+             - z-index os valores afetam onde os elementos posicionados ficam nesse eixo; valores positivos os movem para cima na pilha, valores negativos os movem para baixo na pilha.
+             - Por padrão, todos os elementos posicionados têm um z-index de auto, que é efetivamente 0.
+             - o exemplo abaixo o elemento com o z-index 1 sera posicionado para cima na pilha, acima dos elementos que possuem o valor 0 especificado no z-index padrão.
+            */
+            z-index: 1;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1>Fluxo básico de documentos</h1>
+
+    <p>Sou um elemento básico de nível de bloco. Meus elementos de nível de bloco adjacentes ficam em novas linhas abaixo de mim.</p>
+
+    <p class="positioned">Por padrão, abrangemos 100% da largura de nosso elemento pai e nossa altura é tão alta quanto nosso conteúdo filho. Nossa largura e altura totais são nosso conteúdo + preenchimento + largura/altura da borda.</p>
+
+    <p>Estamos separados por nossas margens. Por causa do recolhimento da margem, somos separados pela largura de uma de nossas margens, não de ambas.</p>
+
+    <p>elementos inline <span>como este</span> e <span>este</span> ficam na mesma linha um do outro, e nós de texto adjacentes, se houver espaço na mesma linha. Elementos inline transbordantes <span>se encaixam em uma nova linha, se possível — como esta contendo texto</span>, ou apenas vá para uma nova linha se não, assim como esta imagem fará: <img src="long.jpg "></p>
+
+  </body>
+</html>

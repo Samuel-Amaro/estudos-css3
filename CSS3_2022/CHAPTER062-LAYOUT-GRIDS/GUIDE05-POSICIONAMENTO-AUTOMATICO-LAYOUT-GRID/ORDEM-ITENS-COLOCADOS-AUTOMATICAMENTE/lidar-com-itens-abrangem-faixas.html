@@ -1,0 +1,134 @@
+<!--
+    * LIDAR COM ITENS QUE ABRANGEM FAIXAS
+
+        Você pode usar as propriedades de veiculação enquanto ainda aproveita a veiculação automática. Neste próximo exemplo, adicionei ao layout definindo itens ímpares para abranger duas faixas, tanto para linhas quanto para colunas. Eu faço isso com as propriedades grid-column-ende grid-row-end e definindo o valor disso para span 2. O que isso significa é que a linha inicial do item será definida pelo posicionamento automático e a linha final abrangerá duas faixas.
+
+        Você pode ver como isso deixa lacunas na grade, pois para os itens colocados automaticamente, se a grade encontrar um item que não se encaixa em uma faixa, ela se moverá para a próxima linha até encontrar um espaço em que o item possa caber dentro.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .box{
+            border: 2px solid #ffa94d;
+            border-radius: 5px;
+            background-color: #ffd8a8;
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-column. define um grid explicito de colunas
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma faixa de colunas com 4 colunas de tamanhos iguais flexiveis que crescem e diminuem de acordo com o espaço disponivel no grid-container.
+             - usando a notação repeat
+            */
+            grid-template-columns: repeat(4, 1fr);
+            /*
+             - espaçamentos entre faixas de linhas e colunas. define uma espaço vazio de 10px que ira ficar entre faixas de linhas e colunas na grid.
+            */
+            gap: 10px;
+            /*
+             - usando a propriedade grid-auto-rows para definir o tamanho das linhas implicitas.
+             - cada linha implicita criada para caber os itens do grid conteudo tera 100px de altura
+            */
+            grid-auto-rows: 100px;
+        }
+
+         /*
+         - NÃO HA INFORMAÇÕES DO DEV PARA POSICIONAR OS ITENS, ASSIM AUTOMATICAMENTE OS ITENS SE POSICIONARÃO NA GRADE UM EM CADA CELULA DA GRADE, SE A GRADE NÃO TIVER LINHAS EXPLICITAS SUFICIENTES PARA COLOCAR TODOS OS ITENS, NOVAS LINHAS IMPLICITAS SERÃO CRIADAS. 
+         - O GRID POSICIONA PRIMEIRO OS ITENS QUE TENHAM UM POSIÇÃO NO EXEMPLO ABAIXO TEMOS DOIS ITENS BASEADOS EM POSICIONAMENTO DE LINHAS.
+         - OS OUTROS ITENS SÃO COLADOS AUTOMATICAMENTE NOS ESPAÇOS
+        */
+        
+        /*
+         - represeta os elementos 1 [=(4x0) + 1], 5[=(4x1) + 1], 9[=(4x2) + 1], 13[=(4x3) + 1] etc... dos itens grid
+        */
+        .wrapper div:nth-child(4n+1) {
+            /*
+             - faixa de colunas
+             - a linha inicial do item será definida pelo posicionamento automático e a linha final abrangerá duas faixas.
+            */
+            grid-column-end: span 2;
+            /*
+             - faixa de linhas
+             - a linha inicial do item será definida pelo posicionamento automático e a linha final abrangerá duas faixas.
+            */
+            grid-row-end: span 2;
+            background-color: #ffa94d;
+        }
+
+        .wrapper div:nth-child(2) {
+            /*
+             - posicionando o segundo irmão de uma lista de irmãos.
+             - posicionando o segundo iten grid, na linha 3 da faixa de colunas, e se estendera até a linha 4. por padrão so estende uma faixa
+            */
+            grid-column: 3;
+            /*
+             - começa na linha 2 da faixa de linhas e se estende até a 4 linha.
+            */
+            grid-row: 2 / 4;
+        }
+
+        .wrapper div:nth-child(5) {
+            /*
+             - posicionando o quinto elemento grid
+             - começa na linha 1 da faixa de colunas e termina na linha 3.
+            */
+            grid-column: 1 / 3;
+            /*
+             - começa na linha 1 da faixa de linhas e se estende até a 3 linha.
+            */
+            grid-row: 1 / 3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+        <div class="box5">Cinco</div>
+        <div class="box6">Seis</div>
+        <div class="box7">Sete</div>
+        <div class="box8">Oito</div>
+        <div class="box9">Nove</div>
+        <div class="box10">Dez</div>
+        <div class="box11">Onze</div>
+        <div class="box12">Doze</div>
+    </div>
+
+</body>
+</html>

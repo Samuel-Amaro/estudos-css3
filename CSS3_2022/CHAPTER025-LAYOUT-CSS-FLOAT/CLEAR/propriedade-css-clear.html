@@ -1,0 +1,83 @@
+<!--
+    * LAYOUT CSS - CLEAR(CLARO) E CLEARFIX(LIMPAR CORREÇÃO)
+
+    * A PROPRIEDADE CLEAR(CLARO)
+
+        - A clear propriedade controla o fluxo próximo aos elementos flutuantes.
+
+        - A clear propriedade especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+
+        - Quando usamos a float propriedade, e queremos o próximo elemento abaixo (não à direita ou à esquerda), teremos que usar a propriedade clear.
+
+        - A propriedade clear especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+
+        - A propriedade clear pode ter um dos seguintes valores:
+
+            - none(nenhum) - O elemento não é empurrado abaixo dos elementos flutuantes à esquerda ou à direita. Isso é padrão.
+            - left(esquerda) - O elemento é empurrado abaixo dos elementos flutuantes à esquerda.
+            - right(direita) - O elemento é empurrado abaixo dos elementos flutuantes à direita.
+            - both(ambos) - O elemento é empurrado abaixo dos elementos flutuantes esquerda e direita.
+            - inherit(herdar) - o elemento herda o valor clear de seu pai.
+
+        - Ao limpar floats, você deve combinar o clear com o float: Se um elemento flutuar para a esquerda, então você deve limpar para a esquerda. Seu elemento flutuante continuará flutuando, mas o elemento desmarcado aparecerá abaixo dele na página da web.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .div1{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor left, O elemento flutua à esquerda de seu contêiner.
+             - neste exemplo o elemento <div> com a class div1 ira flutuar a esquerda do <body> elemento pois e o elemento que contém o <div> elemento com a class div1
+            */
+            float: left;
+            padding: 10px;
+            border: 3px solid #73AD21;
+        }
+        .div2{
+            padding: 10px;
+            border: 3px solid red;
+        }
+        .div3{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor left, O elemento flutua à esquerda de seu contêiner.
+             - neste exemplo o elemento <div> com a class div1 ira flutuar a esquerda do <body> elemento pois e o elemento que contém o <div> elemento com a class div1
+            */
+            float: left;
+            padding: 10px;
+            border: 3px solid #73AD21;
+        }
+        .div4{
+            padding: 10px;
+            border: 3px solid red;
+            /*
+             - a propriedade css clear especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+             - o valor left(esquerda) - O elemento é empurrado abaixo dos elementos flutuantes à esquerda.
+            */
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Sem clear</h2>
+
+    <div class="div1">div1</div>
+    <div class="div2">div2 - Observe que div2 está depois de div1 no código HTML. No entanto, como div1 flutua para a esquerda, o texto em div2 flui em torno de div1.</div>
+
+    <br/>
+    <br/>
+
+    <h2>Com clear</h2>
+
+    <div class="div3">div3</div>
+    <div class="div4">Aqui, clear: left; move o div4 para baixo do div3 flutuante. O valor "left" limpa os elementos flutuados para a esquerda. Você também pode limpar "right" e "both".</div>
+
+</body>
+</html

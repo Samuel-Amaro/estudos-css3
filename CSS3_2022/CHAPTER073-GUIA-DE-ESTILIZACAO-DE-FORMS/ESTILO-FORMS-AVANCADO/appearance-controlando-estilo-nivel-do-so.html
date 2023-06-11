@@ -1,0 +1,64 @@
+<!--
+    * APPEARANCE: APARENCIA CONTROLANDO O ESTILO NO NÍVEL DO SISTEMA OPERACIONAL(SO)
+
+        No artigo anterior, dissemos que, historicamente, o estilo dos controles de formulário da Web foi em grande parte retirado do sistema operacional subjacente, o que é parte do problema de personalizar a aparência desses controles.
+
+        A appearance propriedade foi criada como uma forma de controlar qual estilo de sistema operacional ou de nível de sistema foi aplicado aos controles de formulário da web. De longe, o valor mais útil e provavelmente o único que você usará é none. Isso impede que qualquer controle ao qual você o aplique use estilo no nível do sistema, tanto quanto possível, e permite que você construa os estilos você mesmo usando CSS.
+
+        Por exemplo, vamos usar os seguintes controles:
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*usando propriedade appearance com valor none para controlar qual estilo de sistema operacional ou de nível de sistema foi aplicado aos controles de formulário da web, o valor none impede que os controles do form use o estilo no nivel do sistema, e eu possa construir os proprios estilos eu mesmo*/
+        input{
+            appearance: none;
+        }
+
+        /*
+         * * DOMANDO search boxes
+         * 
+         * <input type="search"> é basicamente apenas uma entrada de texto, então por que é appearance: none; útil aqui? A resposta é que as caixas de pesquisa do Safari têm algumas restrições de estilo — você não pode ajustar livremente, por exemplo height.font-size
+         * 
+         * Isso pode ser corrigido usando nosso amigo appearance: none;, que desativa a aparência padrão:
+        */
+        input[type="search"] {
+            appearance: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <p>
+            <label for="search">search: </label>
+            <input type="search" id="search" name="search"/>
+        </p>
+        <p>
+            <label for="text">text: </label>
+            <input id="text" name="text" type="text"/>
+        </p>
+        <p>
+            <label for="date">date: </label>
+            <input id="date" name="date" type="datetime-local"/>
+        </p>
+        <p>
+            <label for="radio">radio: </label>
+            <input id="radio" name="radio" type="radio"/>
+        </p>
+        <p>
+            <label for="checkbox">checkbox: </label>
+            <input id="checkbox" type="checkbox" name="checkbox">
+        </p>
+        <p>
+            <input type="submit" value="Submit"/>
+        </p>
+        <p>
+            <input type="button" value="button"/>
+        </p>
+    </form>
+</body>
+</html>

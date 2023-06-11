@@ -1,0 +1,72 @@
+<!--
+    * ENTENDENDO HERANÇA
+
+        Começaremos com herança. No exemplo abaixo, temos um <ul>, com dois níveis de listas não ordenadas aninhadas dentro dele. Demos ao <ul> externo uma borda, preenchimento e uma cor de fonte.
+
+        A cor foi aplicada aos filhos diretos, mas também aos filhos indiretos - os filhos imediatos <li> são aqueles dentro da primeira lista aninhada. Em seguida, adicionamos uma classe especial à segunda lista aninhada e aplicamos uma cor diferente a ela. Isso então é herdado por meio de seus filhos.
+
+        Coisas como larguras (conforme mencionado acima), margens, preenchimento e bordas não são herdadas. Se uma borda fosse herdada pelos filhos de nossa lista, cada lista e cada item da lista ganhariam uma borda - provavelmente não é um efeito que desejaríamos!
+
+        Quais propriedades são herdadas por padrão e quais não são, depende do bom senso.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - seletor de classe seleciona uma lista não ordenada com a class .main
+         - estiliza a primeira lista externa, e todos os elementos filhos diretos e indiretos(descendentes), exemplo de herança, as listas aninhadas, dentro do elemento herda os valores e propriedades aplicadas ao elemento pai
+        */
+        .main{
+            /*somente a propriedade color e herdada pelos elementos filhos neste exemplo de herança*/
+            color: rebeccapurple;
+            border: 2px solid #ccc;
+            padding: 1em;
+        }
+        /*
+         - estiliza a lista interna aninhada, sendo que os elementos filhos diretos e indiretos recebem essas propriedades css tmabém, exemplo de herança
+        */
+        .special{
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        - lista não ordenada externa
+    -->
+    <ul class="main">
+        <li>Item Um</li>
+        <li>Item Dois
+            <!--
+                - lista não ordenada interna aninhada
+            -->
+            <ul>
+                <li>2.1</li>
+                <li>2.2</li>
+            </ul>
+        </li>
+        <li>Item três
+            <!--
+                - lista não ordenada interna aninhada
+            -->
+            <ul class="special">
+                <li>3.1
+                    <!--
+                        - lista não ordenada interna aninhada
+                    -->
+                    <ul>
+                        <li>3.1.1</li>
+                        <li>3.1.2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>

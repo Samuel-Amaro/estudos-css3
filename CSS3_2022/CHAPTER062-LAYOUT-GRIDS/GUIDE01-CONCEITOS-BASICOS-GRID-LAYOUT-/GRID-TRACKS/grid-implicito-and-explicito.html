@@ -1,0 +1,74 @@
+<!--
+    * O GRID IMPLICITO E EXPLICITO
+
+        Ao criar nosso grid de exempo definimos nossa coluna de trilhas com a propriedade grid-template-columns, mas adicionalmente deixamos o grid criar as linhas necessárias para qualquer outro conteúdo. Estas linhas são criadas no grid implícito. O grid explícito é constituído por linhas e colunas que você define com grid-template-columns e grid-template-rows. Se você posicionar algo fora do grid definido, ou caso devido à quantidado de conteúdo mais trilhas de grid sejam necessárias, o grid então cria linhas e colunas no grid implícito. Estas trilhas serão seu tamanho definido automaticamente por padrão, resultando em seu tamanho ser basedo no conteúdo que elas contém.
+
+        Você também pode definir o tamanho do conjunto para trilhas criadas na grid implícita com as propriedades  grid-auto-rows (en-US) e grid-auto-columns (en-US).
+
+        No exemplo abaixo usamos grid-auto-rows para garantir que as trilhas criadas na grid implícita tem 200 pixels de altura.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*notação convencional*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com três colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - cada coluna tera 1fr de medida flexivel, uma fração do espaço disponivel no container grid para cada uma.
+             - Grids grandes, com muitas tracks(faixas) podem usar a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+             - usaremos a seguinte notação de repeat(3, 1fr);
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - usamos grid-auto-rows para garantir que as trilhas criadas na grid implícita tem 200 pixels de altura.
+            */
+            grid-auto-rows: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três</div>
+        <div>Quatro</div>
+        <div>Cinco</div>
+    </div>
+
+</body>
+</htm

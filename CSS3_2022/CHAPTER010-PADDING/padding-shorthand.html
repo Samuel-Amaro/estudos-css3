@@ -1,0 +1,129 @@
+<!--
+    * PADDING(PREENCHIMENTO) - SHORTHAND(PROPRIEDADE ABREVIADA)
+
+        - Para encurtar o código, é possível especificar todas as propriedades de preenchimento(PADDING) em uma propriedade.
+
+        - A padding propriedade é uma propriedade abreviada(SHORTHAND) para as seguintes propriedades de preenchimento individuais:
+
+            padding-top,
+            padding-right,
+            padding-bottom,
+            padding-left
+
+        - Então, aqui está como funciona:
+        - Se a padding propriedade tiver quatro valores:
+
+            padding: 25px 50px 75px 100px;
+
+            o padding-top é de 25px
+            o padding-right é de 50px
+            o padding-bottom é de 75px
+            o padding-left é de 100px
+
+        - Se a padding propriedade tiver três valores:
+
+            padding: 25px 50px 75px;
+
+            o padding-top é de 25px
+            os padding-right e padding-left são de 50px
+            o padding-bottom é de 75px
+
+        - Se a padding propriedade tiver dois valores:
+
+            padding: 25px 50px;
+
+            os padding-top e padding-bottom são de 25px
+            os padding-right e padding-left são de 50px
+
+        - Se a padding propriedade tiver um valor:
+
+            padding: 25px;
+            todos os quatro padding são 25px
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*shorthand para definir uma borda para um elemento, abreviatura para border-width, border-style, border-color*/
+            border: 1px solid #4CAF50;
+            /*usando a propriedade background-color podemos definir um cor de fundo para o elemento*/
+            background-color: lightblue;
+        }
+        #fourvalues{
+            /*
+             - as propriedades  css padding e usado para criar espaço ao redor do conteudo de um elemento, dentro de qualquer borda definida.
+             - a propriedade padding e uma shorthand para as seguintes propriedades de padding individuais, padding-top, padding-right, padding-bottom, padding-left.
+             - especificando 4 valores para shorthando padding.
+             - a padding shorthand abaixo especificado com quatro valores e o mesmo que:
+
+                padding-top: 25px;
+                padding-right: 50px
+                padding-bottom: 75px;
+                padding-left: 100px;
+
+            */
+            padding: 25px 50px 75px 100px;
+        }
+        #threevalues{
+            /*
+            - especificando 3 valores para shorthando padding.
+             - a padding shorthand abaixo especificado com três valores e o mesmo que:
+
+                padding-top: 25px;
+                padding-right: 50px
+                padding-bottom: 75px;
+                padding-left: 50px;
+
+            */
+            padding: 25px 50px 75px;
+        }
+        #twovalues{
+            /*
+            - especificando 2 valores para shorthando padding.
+             - a padding shorthand abaixo especificado com dois valores e o mesmo que:
+
+                padding-top: 25px;
+                padding-right: 50px
+                padding-bottom: 25px;
+                padding-left: 50px;
+
+            */
+            padding: 25px 50px;
+        }
+        #onevalue{
+            /*
+             - especificando 1 valor para shorthand padding.
+             - a padding shorthand abaixo especificado com 1 valor e o mesmo que:
+
+                padding-top: 25px;
+                padding-right: 25px
+                padding-bottom: 25px;
+                padding-left: 25px;
+
+            */
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A shorthand padding - 4 valores</h2>
+
+    <div id="fourvalues">Este elemento div tem um padding-top de 25px, um padding-right de 50px, um padding-bottom de 75px e um padding-left de 100px.</div>
+
+    <h2>A shorthand padding - 3 valores</h2>
+
+    <div id="threevalues">Este elemento div tem um padding-top de 25px, um padding-right e padding-left de 50px e um padding-bottom de 75px.</div>
+
+    <h2>A shorthand padding - 2 valores</h2>
+
+    <div id="twovalues">Este elemento div tem um padding-top e padding-bottom de 25px e um padding-right e padding-left de 50px.</div>
+
+    <h2>A shorthand padding - 1 valor</h2>
+
+    <div id="onevalue">Este elemento div tem um padding-top, padding-bottom, padding-left e padding-right de 25px.</div>
+</body>
+</html>

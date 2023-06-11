@@ -1,0 +1,48 @@
+<!--
+    * IMAGENS EM MINIATURA
+
+      - Use a border propriedade para criar imagens em miniatura.
+
+      - Imagem em miniatura:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos de imagens</title>
+    <style>
+        img{
+            /*aplica uma borda em torno do elemento <img>*, uma borda e a espessura, entre o espaçamento interno e externo*/
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: #ddd;
+            width: 150px;
+            /*arredonda as bordas aplicadas em torno do elemento html <img>*/
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            /*
+              ou usar a shorthand
+              border-radius: 8px;
+            */
+            /*add um espaçamento interno entre a imagen e o elemento <img>, espaço interno entre conteudo e border*/
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lição Estilos de Imagens</h1>
+    <h2>Imagens em miniatura</h2>
+    <p><strong>Exemplo:</strong> Use a propriedade border para criar imagens em miniatura:</p>
+    <img src="../paris.jpg" alt="Cidade Paris">
+</body>
+</html>

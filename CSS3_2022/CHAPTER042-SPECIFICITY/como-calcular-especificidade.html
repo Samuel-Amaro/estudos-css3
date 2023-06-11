@@ -1,0 +1,66 @@
+<!--
+    * COMO CALCULAR A ESPECIFICIDADE?
+
+        Memorize como calcular a especificidade!
+
+        Comece em 0, adicione 100 para cada valor de ID, adicione 10 para cada valor de classe (ou pseudoclasse ou seletor de atributo), adicione 1 para cada seletor de elemento ou pseudoelemento.
+
+        Nota: O estilo embutido(style-inline) recebe um valor de especificidade de 1000 e sempre recebe a prioridade mais alta!
+
+        Nota 2: Há uma exceção a esta regra: se você usar a !important regra, ela substituirá até mesmo os estilos embutidos(style-inline)!
+
+        A tabela abaixo mostra alguns exemplos de como calcular os valores de especificidade:
+
+        SELETOR: p -> seletor de elemento
+        VALOR DE ESPECIFICIDADE: 1
+        CALCULO: 1
+        --------------------------------------
+        SELETOR: p.test -> p(seletor de elemento) .test(seletor de class - valor de classe) -> seletor de classe especifico
+        VALOR DE ESPECIFICIDADE: 11
+        CALCULO: 1 + 10
+        --------------------------------------
+        SELETOR: p#demo -> p(seletor de elemento) #demo(seletor de id) -> seletor de elemento com id especifico
+        VALOR DE ESPECIFICIDADED: 101
+        CALCULO: 1 + 100
+        --------------------------------------
+        SELETOR: <p style="color: pink;"> - style inline
+        VALOR DE ESPECIFICIDADE: 1000
+        CALCULO: 1000
+        --------------------------------------
+        SELETOR: #demo -> seletor de id
+        VALOR DE ESPECIFICIDADE: 100
+        CALCULO: 100
+        --------------------------------------
+        SELETOR: .test -> seletor de classe
+        VALOR DE ESPECIFICIDADE: 10
+        CALCULO: 10
+        --------------------------------------
+        SELETOR: p.test1.test2 -> p(seletor de elemento)|.test(seletor de classe - valor de classe)| .test(seletor de classe)
+        VALOR DE ESPECIFICIDADED: 1 + 10 + 10
+        CALCULO: 21
+        --------------------------------------
+        SELETOR: #navbar p#demo -> #navbar(seletor de id) | p(seletor de elemento)| #demo(seletor de id)
+        VALOR DE ESPECIFICIDADE: 100 + 1 + 100
+        CALCULO: 201
+        --------------------------------------
+        SELETOR: * -> seletor universal
+        VALOR DE ESPECIFICIDADE: 0
+        CALCULO: 0(o seletor universal é ignorado)
+        --------------------------------------
+
+        O seletor com o maior valor de especificidade ganhará e entrará em vigor!
+
+        Considere estes três fragmentos de código:
+
+            A: h1
+            B: h1#content
+            C: <h1 id="content" style="color: pink;">Heading</h1>
+
+        A especificidade de A é 1 (um seletor de elemento)
+
+        A especificidade de B é 101 (uma referência de ID + um seletor de elemento)
+
+        A especificidade de C é 1000 (estilo embutido)
+
+        Como a terceira regra (C) tem o maior valor de especificidade (1000), esta declaração de estilo será aplicada.
+-->

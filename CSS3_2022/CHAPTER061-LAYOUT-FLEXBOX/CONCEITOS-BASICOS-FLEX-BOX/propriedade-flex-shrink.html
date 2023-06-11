@@ -1,0 +1,9 @@
+<!--
+    * PROPRIEDADE FLEX-SHRINK
+
+        Enquanto a propriedade flex-grow permite aumentar a largura dos elementos dentro do contêiner para completar o espaço disponível no eixo principal, a propriedade flex-shrink faz o oposto, controlando a redução dos mesmos. Caso não haja espaço suficiente para acomodar todos os elementos e o valor da propriedade flex-shrink seja um inteiro positivo, a largura pode ser reduzida a um valor menor do que a definida na propriedade flex-basis. Assim como na propriedade flex-grow, diferentes valores podem ser atribuídos a um elemento de modo que ele encolha mais do que os outros - um elemento cuja propriedade flex-shrink receba um valor inteiro maior irá diminuir mais do que os seus irmão que tenham valores menores.
+
+        O tamanho mínimo do elemento será levado em consideração ao se calcular a quantidade real de encolhimento que ocorrerá, o que significa que a propriedade flex-shrink se comporta de modo potencialmente menos consistente do que a propriedade flex-grow. Examinar-se-á mais detalhadamente o funcionamento desse algoritmo no artigo Taxas de Controle de Elementos Flex ao Longo do Eixo Principal.
+
+        Note que os valores para as propriedades flex-grow e flex-shrink são proporcionais.  Particularmente, se tivermos todos os nossos elementos definidos como flex: 1 1 200px e então quisermos que um deles cresça o dobro, temos de definir o elemento como flex: 2 1 200px. Entretanto, podemos escrever flex: 10 1 200px e flex: 20 1 200px se quisermos.
+-->

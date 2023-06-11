@@ -1,0 +1,101 @@
+<!--
+    * CANTOS ARREDONDADOS CSS(ROUNDED CORNERS)
+
+        Com a propriedade CSS border-radius, você pode dar "cantos arredondados" a qualquer elemento.
+
+    * PROPRIEDADE CSS border-radius(raio borda)
+
+        A propriedade CSS border-radius define o raio dos cantos de um elemento.
+
+        Dica: Esta propriedade permite adicionar cantos arredondados aos elementos!
+
+        Dica: A border-radius propriedade é, na verdade, uma propriedade abreviada para as propriedades border-top-left-radius, border-top-right-radius e .border-bottom-right-radius border-bottom-left-radius
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        #rcorners1{
+            /*
+             - A propriedade CSS border-radius define o raio dos cantos de um elemento.
+             - define que o elemento com o valor de id #rcorners1 tera os seus cantos arredondados para 25px
+            */
+            border-radius: 25px;
+            /*
+             - propriedade shorthand backgorund, uma propriedade abreviada:
+
+                background-color
+                background-image
+                background-position
+                background-size
+                background-repeat
+                background-origin
+                background-clip
+                background-attachment
+            
+            */
+            background: #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        #rcorners2{
+            /*
+             - A propriedade CSS border-radius define o raio dos cantos de um elemento.
+             - define que o elemento com o valor de id #rcorners2 tera os seus cantos arredondados para 25px
+            */
+            border-radius: 25px;
+            border: 2px solid #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        #rcorners3{
+            /*
+             - A propriedade CSS border-radius define o raio dos cantos de um elemento.
+             - define que o elemento com o valor de id #rcorners3 tera os seus cantos arredondados para 25px
+            */
+            border-radius: 25px;
+            /*
+             - propriedade shorthand backgorund, uma propriedade abreviada:
+
+                background-color
+                background-image: url(paper.gif);
+                background-position
+                background-size
+                background-repeat
+                background-origin
+                background-clip
+                background-attachment
+            
+            */
+            background: url(paper\ \(1\).gif);
+            /*
+             - especifica a posição inicial da imagen de fundo no elemento, no canto superior esquerdo
+            */
+            background-position: left top;
+            /*
+             - imagen de fundo se não preencher o espaço fornecido podera repetir a imagen tanto na horizontal quanto na vertical
+            */
+            background-repeat: repeat;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade border-radius</h1>
+
+    <p>Cantos arredondados para um elemento com uma cor de fundo especificada:</p>
+    <p id="rcorners1">Cantos arredondados!</p>
+    <p>Cantos arredondados para um elemento com uma borda:</p>
+    <p id="rcorners2">Cantos arredondados!</p>
+    <p>Cantos arredondados para um elemento com uma imagem de fundo:</p>
+    <p id="rcorners3">Cantos arredondados!</p>
+
+</body>
+</html>

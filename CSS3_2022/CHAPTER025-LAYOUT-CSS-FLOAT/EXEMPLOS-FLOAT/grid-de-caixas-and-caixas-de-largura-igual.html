@@ -1,0 +1,66 @@
+<!--
+    * GRADE DE CAIXAS/CAIXAS DE LARGURA IGUAL
+
+        - Com a float propriedade, é fácil flutuar caixas de conteúdo lado a lado:
+
+        - OQUE E DIMENSIONAMENTO DE CAIXA(BOX-SIZING)
+
+            Você pode criar facilmente três caixas flutuantes lado a lado. No entanto, quando você adiciona algo que aumenta a largura de cada caixa (por exemplo, preenchimento ou bordas), a caixa será quebrada. A box-sizing propriedade nos permite incluir o preenchimento e a borda na largura total (e altura) da caixa, garantindo que o preenchimento fique dentro da caixa e que não quebre
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+
+        .box{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor left, O elemento flutua à esquerda de seu contêiner.
+             - neste exemplo o elemento <div class="box"> ira fluar a esquerda do elemento <div class="clearfix">
+            */
+            float: left;
+            width: 33.33%;
+            padding: 50px;
+        }
+        .clearfix::after{
+            /*
+             - O novo e moderno hack do clearfix , no entanto, é mais seguro de usar, e o código a seguir é usado para a maioria das páginas da web:
+            */
+            content: "";
+            /*
+             - Quando usamos a float propriedade, e queremos o próximo elemento abaixo (não à direita ou à esquerda), teremos que usar a propriedade clear.
+             - A propriedade clear especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+             - both(ambos) - O elemento é empurrado abaixo dos elementos flutuantes esquerda e direita.
+            */
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Grid de boxes</h2>
+
+    <p>Caixas flutuantes lado a lado:</p>
+
+    <div class="clearfix">
+        <div class="box" style="background-color: #bbb;">
+            <p>Algum texto dentro da caixa.</p>
+        </div>
+        <div class="box" style="background-color: #ccc;">
+            <p>Algum texto dentro da caixa</p>
+        </div>
+        <div class="box" style="background-color: #ddd;">
+            <p>Algum texto dentro da caixa</p>
+        </div>
+    </div>
+
+    <p><strong>Nota:</strong> Aqui, usamos o hack do clearfix para cuidar do fluxo de layout. Também usamos a propriedade box-sizing para garantir que a caixa não quebre devido ao preenchimento extra. Tente remover este código para ver o efeito.</p>
+</body>
+</html>

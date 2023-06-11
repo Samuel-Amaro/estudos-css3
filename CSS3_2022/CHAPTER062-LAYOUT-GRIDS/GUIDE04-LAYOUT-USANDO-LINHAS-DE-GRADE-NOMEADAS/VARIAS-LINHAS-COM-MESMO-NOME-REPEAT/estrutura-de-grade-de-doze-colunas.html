@@ -1,0 +1,116 @@
+<!--
+    * ESTRUTURA DE GRADE DE DOZE COLUNAS
+
+        Se estiver trabalhando com um layout estrito de várias colunas, por exemplo, a demonstração de linhas nomeadas na última parte deste guia funciona muito bem. Se você considerar sistemas de grade, como os encontrados em estruturas(frameworks) como Foundation ou Bootstrap, eles são baseados em uma grade de 12 colunas. A estrutura então importa o código para fazer todos os cálculos para garantir que as colunas somam 100%. Com layout de grade, o único código que precisamos para nosso "framework" de grade é:
+
+        .wrapper {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(12, [col-start] 1fr);
+        }
+
+        Podemos então usar essa estrutura(framework) para fazer o layout de nossa página. Por exemplo, para criar um layout de três colunas com cabeçalho e rodapé, posso ter a seguinte marcação.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > * {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com 12 colunas de tamanhos diferentes, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel e nomeado as linhas da faixa de coluna, nomeia cada linha de coluna com um nome igual, todas linhas de coluna terão o mesmo nome.
+             - usando a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+            */
+            grid-template-columns: repeat(12, [col-start] 1fr);
+            /*espaçamento - cria um espaço vazio de 10px entre faixas de linhas e colunas na grid*/
+            gap: 10px;
+        }
+
+        /*iten grid*/
+        .main-header,
+        .main-footer{
+            /*
+             - posicionando itens na grid.
+             - temos varias linhas chamadas col-start, todas as linhas possui o mesmo nome.
+             - para usar a primeira linha usamos col-start somente vem a primeira linha da faixa de colunas mais a esquerda
+             - para endereçar outra linha use o nome da linha, mais o numero dessa linha.
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na primeira linha nomeada col-start e se estende até a ultima linha usando a palavra-chave span fazemos o iten de expandir abranger por 12 linhas de coluna
+            */
+            grid-column: col-start / span 12;
+        }
+
+        /*iten grid*/
+        .side1{
+            /*
+             - usando a palavra-chave span também para posicionar itens no grid
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na primeira linha nomeada col-start e se estende até 3 linhas expanda até as proximas três linhas. até a terceira linha de coluna abrange até as proximas três linhas.
+            */
+            grid-column: col-start / span 3;
+            /*posiciona-se na segunda linha e se expanda até a terceira linha na faixa de linhas por padrão so se extende por uma faixa*/
+            grid-row: 2;
+        }
+
+        /*iten grid*/
+        .content{
+            /*
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na quarta linha nomeada col-start e se estende até pelas proximas 6 linhas até a 10 linha de coluna.
+            */
+            grid-column: col-start 4 / span 6;
+            /*posiciona-se na segunda linha e se expanda até a terceira linha na faixa de linhas por padrão so se extende por uma faixa*/
+            grid-row: 2;
+        }
+
+        /*iten grid*/
+        .side2{
+            /*
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na decima linha nomeada col-start e se estende até pelas proximas 3 linhas até a 13 linha de coluna.
+            */
+            grid-column: col-start 10 / span 3;
+            /*posiciona-se na segunda linha e se expanda até a terceira linha na faixa de linhas por padrão so se extende por uma faixa*/
+            grid-row: 2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="main-header">eu sou o cabeçalho</header>
+        <aside class="side1">eu sou a barra lateral 1</aside>
+        <article class="content">Eu sou o artigo principal</article>
+        <aside class="side2">eu sou a barra lateral 2</aside>
+        <footer class="main-footer">eu sou o rodapé</footer>
+    </div>
+
+</body>
+</html>

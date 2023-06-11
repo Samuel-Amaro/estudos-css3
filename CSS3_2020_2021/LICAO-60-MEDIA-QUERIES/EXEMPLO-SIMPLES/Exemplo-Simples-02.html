@@ -1,0 +1,84 @@
+<!--
+    * EXEMPLOS SIMPLES DE CONSULTAS DE MIDIA QUERIES
+
+      - O exemplo a seguir mostra um menu que flutuará para a esquerda da página se a janela de visualização tiver 480 pixels de largura ou mais (se a janela de visualização tiver menos de 480 pixels, o menu ficará na parte superior do conteúdo):
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Simples</title>
+    <style>
+        div.wrapper{
+            /*se o conteudo for maior que o elemento, o valor auto, adiciona barras de rolagem apenas quando necessário ao elemento*/
+            overflow: auto;
+        }
+        main{
+            /*add 4px de espaço externo no elemento*/
+            margin-left: 4px;
+        }
+        div#leftsidebar{
+            /*nenhuma flutuação especificada*/
+            float: none;
+            /*a largura e definida pelo proprio navegador*/
+            width: auto;
+        }
+        ul#menulist{
+            margin: 0;
+            padding: 0;
+        }
+        li.menuitem{
+            background: #CDF0F6;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: #d4d4d4;
+            border-radius: 4px;
+            list-style-type: none;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-left: 4px;
+            margin-right: 4px;
+            padding-top: 2px;
+            padding-right: 2px;
+            padding-bottom: 2px;
+            padding-left: 2px;
+        }
+        /*quando o dispositivo for tela, de computador, telefone, ou tablet, do tipo tela, e a largura da viewreport(janela de visualização for igual a 480px ou superior) o menu ficara flutuando a esquerda do conteudo, se a janela viewreport for menor que 480px o menu ficar na parte superior do conteudo, sem flutuação, enquanto a janela de visualização for maior que 480px a media funciona, enquanto for menor aplica as regras css fora da media*/
+        @media screen and (min-width: 480px) {
+            div#leftsidebar{
+                /*add uma largura estatica ao conteiner*/
+                width: 200px;
+                /*faz um elemento flutuar, a esquerda de seu conteiner pai, o elemento sai do fluxo normal da pagina, e começa a flutuar a esquerda de seu conteiner pai, que e o wrapper*/
+                float: left;
+            }
+            main{
+                /*add um espaço externo na esquerda da caixa do elemento main*/
+                margin-left: 216px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="leftsidebar">
+            <ul id="menulist">
+                <li class="menuitem">Menu-item 1</li>
+                <li class="menuitem">Menu-item 2</li>
+                <li class="menuitem">Menu-item 3</li>
+                <li class="menuitem">Menu-item 4</li>
+                <li class="menuitem">Menu-item 5</li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <h1>Redimensione a janela do navegador para ver o efeito!</h1>
+        <p>Este exemplo mostra um menu que flutuará à esquerda da página se a janela de visualização tiver 480 pixels de largura ou mais. Se a janela de visualização tiver menos de 480 pixels, o menu ficará na parte superior do conteúdo.</p>
+    </main>
+</body>
+</html>

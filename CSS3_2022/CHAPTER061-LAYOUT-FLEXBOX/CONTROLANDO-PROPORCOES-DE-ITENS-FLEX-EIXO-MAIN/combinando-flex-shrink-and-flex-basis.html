@@ -1,0 +1,65 @@
+<!--
+    * COMBINANDO FLEX-SHRINK AND FLEX-BASIS
+
+        Você poderia dizer que flex-shrink funciona praticamente da mesma maneira que o flex-grow. No entanto, existem duas razões pelas quais não é exatamente o mesmo.
+
+        Embora geralmente seja sutil, definido na especificação é uma razão pela qual flex-shrink não é o mesmo para espaço negativo e flex-grow para espaço positivo:
+
+            "Observação: o fator de encolhimento flexível é multiplicado pelo tamanho da base flexível ao distribuir o espaço negativo. Isso distribui o espaço negativo na proporção de quanto o item é capaz de encolher, de modo que, por exemplo, um item pequeno não encolherá a zero antes de um maior item foi visivelmente reduzido."
+
+        A segunda razão é que o flexbox evita que itens pequenos sejam reduzidos para tamanho zero durante essa remoção do espaço livre negativo. Os itens serão colocados em seu min-content tamanho - o tamanho que eles se tornarão se aproveitarem as oportunidades de embalagem macia disponíveis para eles.
+
+        Você pode ver esse min-content piso acontecer no exemplo abaixo, onde flex-basis está resolvendo o tamanho do conteúdo. Se você alterar a largura no contêiner flexível - aumentando-o para 700px, por exemplo - e depois reduzir a largura do item flexível, poderá ver que os dois primeiros itens serão agrupados, mas nunca ficarão menores que esse min-content tamanho. À medida que a caixa fica menor, o espaço é removido do terceiro item.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid green;
+            padding: 10px;
+            width: 500px;
+        }
+
+        .box :first-child{
+            background-color: black;
+            color: white;
+        }
+
+        .box :nth-child(2){
+            background-color: green;
+            color: white;
+        }
+
+        .box :nth-child(3){
+            background-color: blue;
+            color: white;
+        }
+
+        .box > *{
+            /*
+             - flex shorthand
+                - flex-grow: 1 -> especifica o fator de crescimento flexivel que determina o quanto o item flexivel crescera em relação ao restante dos itens flexiveis no conteiner flexivel quando o espaço live positivo for distribuido.
+                - flex-shrink: 1 -> A flex-shrink propriedade especifica o fator de redução flexível , que determina quanto o item flexível diminuirá em relação ao restante dos itens flexíveis no contêiner flexível quando o espaço livre negativo for distribuído.
+                - flex-basis: auto -> A flex-basis propriedade especifica o tamanho inicial do item flexível antes que qualquer distribuição de espaço aconteça. O valor inicial para esta propriedade é auto. Se o seu item for dimensionado automaticamente(auto), será resolvido para o tamanho de seu conteúdo.
+            */
+            flex: 1 1 auto;
+        }
+
+        /**
+         -Na prática, o comportamento de encolhimento tende a dar resultados razoáveis. Normalmente, você não deseja que seu conteúdo desapareça completamente ou que as caixas fiquem menores que o conteúdo mínimo, portanto, as regras acima fazem sentido em termos de comportamento sensato para conteúdo que precisa ser reduzido para caber em um contêiner.
+        */
+    </style>
+    <title>FlexBox</title>
+</head>
+<body>
+    <div class="box">
+        <div>Item One</div>
+        <div>Item Two</div>
+        <div>Item Three has more content and so has a larger size</div>
+    </div>
+</body>
+</html>

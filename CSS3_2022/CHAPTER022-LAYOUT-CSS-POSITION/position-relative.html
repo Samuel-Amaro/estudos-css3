@@ -1,0 +1,40 @@
+<!--
+    * position: relative;
+
+        - Um elemento com position: relative;é posicionado em relação à sua posição normal.
+
+        - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal. Outros conteúdos não serão ajustados para caber em qualquer lacuna deixada pelo elemento.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        div.static{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            /*
+             - a propriedade css left, e usada para posicionar o elemento
+             - essa propriedade so funciona se a position propriedade tiver sido definida anteriormente
+            */
+            left: 30px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>position: relative;</h2>
+
+    <p>Um elemento com posição: relativa; está posicionado em relação à sua posição normal:</p>
+
+    <div class="static">Este elemento div tem posição: relative;</div>
+
+</body>
+</html>

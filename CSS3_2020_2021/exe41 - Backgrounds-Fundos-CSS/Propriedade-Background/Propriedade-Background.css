@@ -1,0 +1,60 @@
+/**
+ * * PROPRIEDADE BACKGROUND CSS - PROPRIEDADE FUNDO CSS
+ * 
+ * * DEFINIÇÃO E USO:
+ *
+ * A background propriedade é uma propriedade abreviada(SHORTHAND) para:
+
+    - background-color;
+    - 
+    - background-image;
+    - 
+    - backgrounnd-position;
+    - 
+    - background-size;
+    - 
+    - background-repeat;
+    - 
+    - background-origin;
+    - 
+    - background-clip;
+    - 
+    - background-attachment;
+
+ * Não importa se um dos valores acima está faltando, por exemplo: background:#ff0000 url(smiley.gif);  é permitido
+ * 
+ * * SINTAXE CSS:
+
+    background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+
+ * Se uma das propriedades na declaração abreviada for a propriedade bg-size, você deve usar uma / (barra) para separá-la da propriedade bg-position, por exemplo, background: url (smiley.gif) 10px 20px/50px 50px ; resultará em uma imagem de fundo, posicionada 10 pixels da esquerda, 20 pixels da parte superior, e o tamanho da imagem será de 50 pixels de largura e 50 pixels de altura.
+ * 
+ * Nota: Se estiver usando várias fontes de imagem de fundo, mas também quiser uma cor de fundo, o parâmetro da cor de fundo precisa ser o último da lista.
+ * 
+ * * VALORES DE PROPRIEDADES:
+
+    background-color: Especifica a cor de fundo a ser usada;
+
+    background-image : Especifica imagens de fundo um ou mais a serem usadas;
+
+    background-position: Especifica a posição das imagens de fundo;
+
+    background-size: Especifica o tamanho das imagens de fundo;
+
+    background-repeat: Especifica como repetir as imagens de fundo;
+
+    background-origin: Especifica a área de posicionamento das imagens de fundo;
+
+    background-clip: Especifica a área de pintura das imagens de fundo;
+
+    background-attachment: Especifica se as imagens de fundo são fixas ou rola com o resto da página;
+
+    initial: Define essa propriedade ao seu valor padrão;
+
+    inherit: Herda esta propriedade de seu elemento pai.
+**/
+
+body{
+    /*especificando uma cor de fundo no corpo da pagina, uma imagen no fundo da pagina, a imagen não se repete, e para ficar fixa na pagina, não rolar junto com o conteudo, e ficar no centro da pagina*/
+    background: lightseagreen url(flor-fundo-trasparente.jpg) no-repeat fixed center;
+}

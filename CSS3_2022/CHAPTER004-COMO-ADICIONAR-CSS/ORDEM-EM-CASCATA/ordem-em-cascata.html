@@ -1,0 +1,54 @@
+<!--
+    * ORDEM EM CASCATA
+
+        - Qual estilo será usado quando houver mais de um estilo especificado para um elemento HTML?
+
+        - Todos os estilos em uma página serão "cascatados" em uma nova folha de estilo "virtual" de acordo com as seguintes regras, onde o número um tem a prioridade mais alta:
+
+        1. Style inline (dentro de um elemento HTML)
+        2. Folhas de estilo externas(external) e internas(internal) (na seção principal)
+        3. Padrão do navegador
+
+        - Portanto, um estilo embutido(inline) tem a prioridade mais alta e substituirá os estilos externos(external) e internos(internal) e os padrões do navegador.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="witdh=device-width, initial-scale=1"/>
+    <!--
+        - css externo
+        - A <link> tag define o relacionamento entre o documento atual e um recurso externo.
+        - um referencia a folha de estilo externa
+        - usando a tag <link> para vincular a folha de estilo externa
+        - uma forma de adicionar css a página, e usando css externo, uma folha de estilo externa e usada para definir estilo de uma ou varias paginas ao mesmo tempo.
+    -->
+    <link type="text/css" rel="stylesheet" href="./mystyle.css"/>
+    <!--
+        - CSS INTERNO(INTERNAL - LOCAL)
+        - css interno e usado para estilizar somente um unico documento de forma local, o estilo so e aplicado a um documento.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style type="text/css">
+        /*regra css, usando seletor de elemento e o bloco de declaração*/
+        body{
+            /*declaração css, com propriedade : valor;*/
+            background-color: linen;
+        }
+    </style>
+    
+</head>
+<!--
+    - CSS INLINE(embutido)
+    - O style atributo é usado para adicionar estilos a um elemento, como cor, fonte, tamanho e muito mais.
+    - usando o css inline para aplicar um estilo unico a somente ao elemento body abaixo
+    - usando o atributo style e como valor as propriedades css, formando declarações css separadas por (;)
+-->
+<body style="background-color: lavender;">
+
+    <h1>Múltiplos estilos irão se transformar em um</h1>
+    <p>Aqui, a cor de fundo da página é definida com CSS embutido(CSS inline) e também com um CSS interno(CSS internal-local) e também com um CSS externo(CSS external).</p>
+    <p>Experimente remover estilos para ver como as folhas de estilo em cascata funcionam (tente remover primeiro o CSS embutido-inline, depois o interno-internal e depois o externo-external).</p>
+</body>
+</html>

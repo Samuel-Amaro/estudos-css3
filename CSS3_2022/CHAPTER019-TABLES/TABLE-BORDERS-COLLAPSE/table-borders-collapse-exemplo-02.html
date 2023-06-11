@@ -1,0 +1,50 @@
+<!--
+    - Se você quiser apenas uma borda ao redor da tabela, especifique apenas a border propriedade para <table>:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table
+        */
+        table{
+            /*a shorthand border e usada para abreviar as seguintes propriedades individuais border-width, border-style, border-color, adicionar uma borda nos elementos*/
+            border: 1px solid;
+            /*
+             - a propriedade width especifica uma largura para um elemento
+             - o valor em % Define a largura em porcentagem do bloco que o contém
+             - aqui o valor 100%, e que o elemento table ira ocupar 100% do espaço fornecido pelo elemento pai, no caso o elemento pai e o body, toda area visual do documento, assim o espaço fornecido e toda largura do documento
+            */
+            width: 100%;
+            /*
+             - a propriedade border-collapse define se as bordas da tabela devem ser recolhidas em uma unica borda
+             - isso e usado por causa que a tabela possui bordas duplas os elementos table, th, td possui bordas separadas.
+            */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Borda única ao redor da tabela</h2>
+
+    <table>
+        <tr>
+            <th>Primeiro Nome</th>
+            <th>Ultimo Nome</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+
+</body>
+</html>

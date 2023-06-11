@@ -1,0 +1,30 @@
+<!--
+    * PROPRIEDADE CSS GRID-TEMPLATE-ÁREAS
+
+        A grid-template-areas propriedade CSS especifica áreas de grade nomeadas, estabelecendo as células na grade e atribuindo nomes a elas.
+
+        Essas áreas não estão associadas a nenhum item de grade específico, mas podem ser referenciadas a partir das propriedades de posicionamento da grade grid-row-start, grid-row-end, grid-column-start, grid-column-end, e suas abreviações grid-row, grid-column e grid-area.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        grid-template-areas: none;
+
+        /*VALORES <string>*/
+        grid-template-areas: "a b";
+        grid-template-areas: "a b b"
+                            "a c d";
+
+        /* VALORES GLOBAIS*/
+        grid-template-areas: inherit;
+        grid-template-areas: initial;
+        grid-template-areas: revert;
+        grid-template-areas: revert-layer;
+        grid-template-areas: unset;
+
+    * VALORES
+
+        none: O contêiner de grade não define nenhuma área de grade nomeada.
+
+        <string>+: Uma linha é criada para cada string separada listada e uma coluna é criada para cada célula na string. Vários tokens de célula com o mesmo nome dentro e entre as linhas criam uma única área de grade nomeada que abrange as células de grade correspondentes. A menos que essas células formem um retângulo, a declaração é inválida.
+-->

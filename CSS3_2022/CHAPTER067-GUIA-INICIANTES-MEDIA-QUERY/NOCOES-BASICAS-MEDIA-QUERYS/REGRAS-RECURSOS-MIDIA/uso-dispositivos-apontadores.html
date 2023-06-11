@@ -1,0 +1,54 @@
+<!--
+    * USO DE DISPOSITIVOS APONTADORES
+
+        Como parte da especificação de Nível 4, o hover recurso de mídia foi introduzido. Esse recurso significa que você pode testar se o usuário tem a capacidade de passar o mouse sobre um elemento, o que significa essencialmente que ele está usando algum tipo de dispositivo apontador; a navegação pela tela sensível ao toque e pelo teclado não paira.
+
+        @media (hover: hover) {
+            body {
+                color: rebeccapurple;
+            }
+        }
+
+        Se soubermos que o usuário não pode passar o mouse, podemos exibir alguns recursos interativos por padrão. Para usuários que podem passar o mouse, podemos optar por disponibilizá-los quando um link é posicionado sobre o cursor.
+
+        Também no Nível 4 está o pointer recurso de mídia. Isso leva três valores possíveis, none, fine e coarse. Um fine ponteiro é algo como um mouse ou trackpad. Ele permite que o usuário alveje com precisão uma pequena área. Um coarse ponteiro é o seu dedo em uma tela sensível ao toque. O valor none significa que o usuário não possui dispositivo apontador; talvez eles estejam navegando apenas com o teclado ou com comandos de voz.
+
+        O uso pointer pode ajudá-lo a projetar interfaces melhores que respondam ao tipo de interação que um usuário está tendo com uma tela. Por exemplo, você pode criar áreas de hit maiores se souber que o usuário está interagindo com o dispositivo como uma tela sensível ao toque.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Media Queries: hover</title>
+    <style>
+
+      html {
+        font-size: 1em;
+      }
+
+      /*
+       - MEDIA QUERY
+       - tipo media e all, se você não indicar um tipo de mídia em sua consulta de mídia, a consulta de mídia será padrão para todos os tipos de mídia.
+       - o tipo de recurso de midia, uso de dispositivo apontadores, o hover recurso. e um recurso que significa que eu posso testar se o usuario tem a capacidade de passar o mouse sobre um elemento, o que significa essencialmente que ele está usando algum tipo de dispositivo apontador.
+       - computadores tem mouse, um dispositivo apontador.
+       - a navegação pela tela sensível ao toque e pelo teclado não paira.
+      */
+      @media(hover: hover) {
+        body {
+          color: rebeccapurple;
+        }
+      }
+
+    </style>
+</head>
+
+<body>
+
+    
+  <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+  <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+
+
+</body>
+
+</html>

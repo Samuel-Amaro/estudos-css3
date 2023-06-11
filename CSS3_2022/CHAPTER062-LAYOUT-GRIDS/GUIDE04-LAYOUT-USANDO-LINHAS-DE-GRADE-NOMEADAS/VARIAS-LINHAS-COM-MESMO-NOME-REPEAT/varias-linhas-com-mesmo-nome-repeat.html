@@ -1,0 +1,88 @@
+<!--
+    * VÁRIAS LINHAS COM O MESMO NOME COM REPEAT()
+
+        Se você quiser dar a todas as linhas em sua grade um nome exclusivo, você precisará escrever a definição da faixa à mão em vez de usar a sintaxe de repetição, pois você precisa adicionar o nome entre colchetes ao definir as faixas. Se você usar a sintaxe de repetição, acabará com várias linhas com o mesmo nome, mas isso também pode ser muito útil.
+
+        Depois de criar a grade, você pode colocar itens nela. Como temos várias linhas nomeadas, col-starts e você colocar um item para iniciar depois que a col-start grade da linha usar a primeira linha chamada col-start, no nosso caso, essa será a linha mais à esquerda. Para endereçar outra linha, use o nome, mais o número dessa linha. Para colocar nosso item da primeira linha chamada col-start até a 5ª, podemos usar:
+
+        Você também pode usar a palavra-chave span aqui. Meu próximo item será colocado a partir da 7ª linha nomeada col-start e abrangerá 3 linhas.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com 12 colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel e nomeado as linhas da faixa de coluna. 12 colunas e 12 linhas nomeadas com o mesmo nome.
+             - cria 12 colunas, mas com 12 linhas nomeadas, que possuem o mesmo nome.
+             - usando a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+            */
+            grid-template-columns: repeat(12, [col-start] 1fr);
+            /*
+             - espefica a altura das linhas implicitas
+            */
+        }
+
+        /*iten grid*/
+        .item1{
+            /*
+             - posicionando itens na grid.
+             - temos varias linhas chamadas col-start.
+             - para usar a primeira linha usamos col-start somente vem a primeira linha da faixa de colunas mais a esquerda
+             - para endereçar outra linha use o nome da linha, mais o numero dessa linha.
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na primeira linha nomeada col-start e se estende até a 5 linha também chamada col-start
+            */
+            grid-column: col-start / col-start 5;
+        }
+
+        /*iten grid*/
+        .item2{
+            /*
+             - usando a palaivra-chave span também para posicionar itens no grid
+             - aqui posicionamos nosso item na faixa de colunas na seguinte forma, inicia na setima linha nomeada col-start e se estende até a por mais 3 linnhas. abrange até as proximas três linhas. va até a 10 linha também chamada col-start
+            */
+            grid-column: col-start 7 / span 3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Sou colocado da linha col-start 1 até a col-start 5</div>
+        <div class="item2">Sou colocado a partir da linha 7 do col-start, abrangendo 3 linhas</div>
+    </div>
+
+</body>
+</html>

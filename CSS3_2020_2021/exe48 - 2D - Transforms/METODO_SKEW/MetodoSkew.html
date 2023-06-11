@@ -1,0 +1,62 @@
+<!--
+    * O MÉTODO SKEW()
+
+      - O skew() método inclina um elemento ao longo dos eixos X e Y de acordo com os ângulos fornecidos.
+
+      - O exemplo a seguir inclina o elemento <div> em 20 graus ao longo do eixo X e 10 graus ao longo do eixo Y:
+
+      - Se o segundo parâmetro não for especificado, ele terá valor zero. Portanto, o exemplo a seguir inclina o elemento <div> 20 graus ao longo do eixo X:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D TRANSFORM PROPRIEDADE</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+            margin-left: 50px;
+        }
+        div#inclinado{
+            /**
+             - propriedade CSS transform 2D;
+             - o metodo skew(anguloX, anguloY);
+             - inclina um elemento ao longo dos eixos X e Y de acordo com os angulos fornecidos.
+            **/            
+            transform: skew(20deg, 10deg);
+        }
+        div#myDiv{
+            /**
+             - so um paramentro informado so inclina o elemento no eixo X dentro do angulo fornecido, o segundo paramentro do eixo Y e zero, por não ter sido informado
+            **/
+            transform: skew(20deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 2D PROPRIEDADE TRANSFORM</h1>
+
+    <h2>O método skew()</h2>
+
+    <p><strong>Exemplo:</strong>O exemplo a seguir inclina o elemento &lt;div&gt; em 20 graus ao longo do eixo X e 10 graus ao longo do eixo Y:</p>
+
+    <div>Este é um elemento div normal</div>
+
+    <div id="inclinado">Este elemento div é inclinado 20 graus ao longo do eixo X e 10 graus ao longo do eixo Y</div>
+
+    <p><strong>Exemplo:</strong> Se o segundo parâmetro não for especificado, ele terá valor zero. Portanto, o exemplo a seguir inclina o elemento &lt;div&gt; 20 graus ao longo do eixo X:</p>
+
+    <div id="myDiv">Este elemento div é inclinado 20 graus ao lonogo do eixo X.</div>
+</body>
+</html>

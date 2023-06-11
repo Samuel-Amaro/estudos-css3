@@ -1,0 +1,41 @@
+<!--
+    * O SELETOR DE ELEMENTOS CSS
+
+        - O seletor de elemento seleciona elementos HTML com base no nome do elemento.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--
+        - Um CSS interno é usado para definir um estilo para uma única página HTML.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento.
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style>
+        /*
+            - uma regra css formada por:
+
+            seletor{
+                //bloco de declaração
+            }
+            
+            - um seletor de elemento(seleciona elementos HTML com base no nome do elemento), seleciona o seletor p que representa o elemento html <p> que irei estilizar, seleciona todos os elementos <p> do documento
+        */
+        p{ /*bloco de declaração*/
+            /*
+             - declaração css, e separada por (;)
+             - uma declaração e composta por uma propriedade e valor que são separadas por (:)
+            */
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Cada parágrafo será afetado pelo estilo.</p>
+    <p id="para1">Eu também!</p>
+    <p>E eu!</p>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!--
+    * CENTRALIZAR VERTICALMENTE - USANDO A POSITION E TRANSFORM
+
+        - Se padding e line-height não forem opções, outra solução é usar o posicionamento(position) e a transform propriedade:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .center{
+            height: 200px;
+            border: 3px solid #73AD21;
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+        }
+        .center p{
+            margin: 0;
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             -  Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+             - O elemento é posicionado em relação ao seu primeiro elemento ancestral posicionado (não estático)
+             - o elemento <p> possui o elemento <div class="center"> como seu elemento ancentral pois o <div> o contem
+            */
+            position: absolute;
+            /*
+             - A top propriedade afeta a posição vertical de um elemento posicionado. 
+             - Se position: absolute; ou position: fixed; - a propriedade top define a borda superior de um elemento para uma unidade acima/abaixo da borda superior de seu ancestral posicionado mais próximo.
+             - Define a posição da borda superior em % do elemento contido. Valores negativos são permitidos
+             - valor 50% define a border-top do elemento uma unidade acima/abaixo da border-top do elemento ancentral no caso o <div>, o elemento p tera sua border-top 50% afastada da border-top do elemento <div>
+            */
+            top: 50%;
+            /*
+             - Se position: absolute; ou position: fixed; - a left propriedade define a border left de um elemento para uma unidade à esquerda da borda esquerda de seu ancestral posicionado mais próximo.
+             - o valor left define 50% da border-left elemento <p> para a border-left do elemento <div> ancestral
+            */
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Centralizar com position e transform</h2>
+
+    <p>Neste exemplo, usamos o position e a propriedade transform para centralizar vertical e horizontalmente o elemento div:</p>
+
+    <div class="center">
+        <p>Estou verticalmente e horizontalmente centrado</p>
+    </div>
+
+</body>
+</html>

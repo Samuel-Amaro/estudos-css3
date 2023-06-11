@@ -1,0 +1,50 @@
+<!--
+    * TÉCNICAS DE POSICIONAMENTO
+
+        O posicionamento permite que você mova um elemento de onde ele seria colocado em fluxo normal para outro local. O posicionamento não é um método para criar os layouts principais de uma página; trata-se mais de gerenciar e ajustar a posição de itens específicos em uma página.
+
+        Existem, no entanto, técnicas úteis para obter padrões de layout específicos que dependem da position propriedade. Compreender o posicionamento também ajuda a entender o fluxo normal e o que significa mover um item para fora do fluxo normal.
+
+        Existem cinco tipos de posicionamento que você deve conhecer:
+
+            O posicionamento estático(static) é o padrão que cada elemento recebe. Significa apenas "colocar o elemento em sua posição normal no fluxo de layout do documento - nada de especial para ver aqui".
+
+            O posicionamento relativo(relative) permite modificar a posição de um elemento na página, movendo-o em relação à sua posição no fluxo normal, além de sobrepor outros elementos na página.
+
+            O posicionamento absoluto(absolute) move um elemento completamente para fora do fluxo de layout normal da página, como se estivesse em sua própria camada separada. A partir daí, você pode fixá-lo em uma posição relativa às bordas de seu ancestral posicionado mais próximo (que se torna <html> se nenhum outro ancestral estiver posicionado). Isso é útil para criar efeitos de layout complexos, como caixas com guias onde diferentes painéis de conteúdo ficam um em cima do outro e são exibidos e ocultos conforme desejado, ou painéis de informações que ficam fora da tela por padrão, mas podem ser feitos para deslizar na tela usando um botão de controle.
+
+            O posicionamento fixo(fixed) é muito semelhante ao posicionamento absoluto, exceto que ele fixa um elemento em relação à janela de visualização do navegador, não a outro elemento. Isso é útil para criar efeitos como um menu de navegação persistente que sempre permanece no mesmo lugar na tela enquanto o restante do conteúdo rola.
+
+            O posicionamento sticky é um método de posicionamento mais recente que faz com que um elemento aja como position: static até atingir um deslocamento definido da viewport, ponto em que ele age como position: fixed.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        
+        body{
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p{
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Posicionamento</h1>
+
+    <p>Eu sou um elemento básico de nível de bloco.</p>
+    <p class="positioned">Eu sou um elemento básico de nível de bloco.</p>
+    <p>Eu sou um elemento básico de nível de bloco.</p>
+
+</body>
+</html>

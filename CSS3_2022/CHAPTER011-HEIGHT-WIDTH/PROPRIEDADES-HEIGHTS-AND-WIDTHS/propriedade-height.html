@@ -1,0 +1,90 @@
+<!--
+    * PROPRIEDADE HEIGHT CSS
+
+    * DEFINIÇÃO E USO
+
+        - A height propriedade define a altura de um elemento.
+
+        - A altura de um elemento não inclui padding, border ou margins!
+
+        - Se height: auto; o elemento ajustará automaticamente sua altura para permitir que seu conteúdo seja exibido corretamente.
+
+        - Se height for definido como um valor numérico (como pixels, (r)em, porcentagens), se o conteúdo não se encaixar na altura especificada, ele transbordará. Como o contêiner manipulará o conteúdo transbordante é definido pela propriedade overflow.
+
+        - Nota: As propriedades min-height e max-height substituem a height propriedade.
+
+    * SINTAXE CSS
+
+        height: auto|lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE
+
+        VALUE: auto(automatico)
+        DESCRIPTION: O navegador calcula a altura. Isso é padrão
+        ----------------------------------
+        VALUE: lenght(comprimento);
+        DESCRIPTION: Define a altura em px, cm, etc.
+        ----------------------------------
+        VALUE: %;
+        DESCRIPTION: Define a altura em porcentagem do bloco que o contém
+        ----------------------------------
+        VALUE: initial(inicial);
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ----------------------------------
+        VALUE: inherit(herança)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        ----------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        #parent{
+           /*
+            - define a altura de um elemento.
+            - propriedade height define a altura de um elemento, especificando um comprimento(lenght) em px
+            - define que o elemento com o id parente tera uma altura de 100px
+            */
+            height: 100px;
+            /*
+             - define a largura de um elemento, usando uma valor de comprimento, especificado pela unidade px.
+             - o elemento com o id #parent tera uma largura de 250px
+            */
+            width: 250px;
+            /*
+             - usando a shorthand border para especificar uma borda para um elemento, a shorthand e um abreviação para border-width, border-style, border-color
+            */
+            border: 1px solid blue;
+        }
+        #child{
+            /*
+            - define a altura de um elemento.
+            - propriedade height define a altura com um valor de %, Define a altura em porcentagem do bloco que o contém, o elemento com o id #child tera a altura de 50% do espaço vertical do seu elemento.
+            - define que o elemento com o id #child tera uma altura que ocupara 50% do espaço vertical cedido pelo seu elemento pai.
+            */
+            height: 50%;
+            /*
+             - define a largura de um elemento, usando uma valor %, que define a largura em % do bloco que o contem, no caso o  elemento ocupara 75% do espaço horizontal do seu elemento pai.
+             - o elemento com o id #child tera um largura de 75%, que ocupara 75% do espaço horizontal cedido pelo seu elemento pai.
+            */
+            width: 75%;
+            /*
+             - usando a shorthand border para especificar uma borda para um elemento, a shorthand e um abreviação para border-width, border-style, border-color
+            */
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade height(altura)</h2>
+
+    <div id="parent">
+        <div id="child">Tenho metade da altura do meu pai.</div>
+    </div>
+    
+
+</body>
+</html>

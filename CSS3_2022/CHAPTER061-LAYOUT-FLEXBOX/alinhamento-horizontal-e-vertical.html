@@ -1,0 +1,109 @@
+<!--
+    * ALINHAMENTO HORIZONTAL E VERTICAL
+
+        Você também pode usar as funcionalidade do flexbox para alinhar elementos no eixo principal(main-axis) ou no eixo transversal(cross axis) o qual vamos transformá-lo num botão/barra de ferramentas bem feito e flexível. Neste momento você verá uma barra de menu horizontal, com alguns botões expremidos no canto superior esquerdo:
+
+        Agora, adicione o seguinte trecho ao final do CSS no arquivo do exemplo:
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        Atualize a página e você verá que os botões estão agora bem arranjados no centro, horizontalmente e verticalmente. Fizemos isso através de duas novas propriedades.
+
+        Nota: Nesse exemplo, o eixo principal é representado horizontalmente e o eixo transversal é o vertical.
+
+        align-items controla onde os elementos flex ficam no eixo transversal:
+
+            Por padrão, seu valor é stretch, que estica todos os elementos flex para preencher o elemento pai na direção do eixo transversal. Se o elemento pai não tem largura fixa na direção do eixo transversal, então todos os elementos flex esticarão até o mais comprido dos elementos flex. Foi assim que o nosso primeiro exemplo ficou com colunas de mesma altura por padrão.
+
+            O valor center que usamos no exemplo acima, faz com que os elementos mantenham suas dimensões intrínsecas, mas que seja centralizados ao longo do eixo transversal. É por isso que os botões do nosso exemplo atual estão centralizados verticalmente.
+
+            Você também pode colocar valores como flex-start e flex-end, os quais alinharão todos os elementos no início ou fim do eixo transversal, respectivamente. 
+
+        Você pode sobrescrever o comportamento de align-items para elementos individuais, usando a regra align-self nesses elementos. Por exemplo, experimente adicionar o seguinte trecho no seu CSS:
+
+            button:first-child{
+                align-self: flex-end;
+            }
+
+        justify-content (en-US) controla onde os elementos flex ficam no eixo principal(horizontal).
+
+            O valor padrão é flex-start, que faz com que todos os elementos estejam no início do eixo principal.
+
+            Você pode usar flex-end para que eles fiquem no final.
+
+            center também é um valor para justify-content (en-US), e fará com que os elementos flex fiquem no centro do eixo principal.
+
+            O valor que usamos acima, space-around, é útil pois ele distribui todos os elementos igualmente pelo eixo principal, com um pouquinho de espaço no final.
+
+            Existe um outro valor, space-between, o qual é muito similar ao space-around, exceto que ele não deixa nenhum espaço no final.
+
+        Nós sugerimos que você brinque um pouco mais com essas regras e seus valores para ver como funcionam ainda mais, antes de seguir nos estudos.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>Flexbox align 0 — starting code</title>
+    <style type="text/css">
+
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 70%;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        button {
+            font-size: 18px;
+            line-height: 1.5;
+            width: 15%;
+        }
+
+        div {
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        /* Add your flexbox CSS below here */
+
+        /*define o elemento <div> como o flex conteiner*/
+        div{
+            display: flex;
+            /*
+             - propriedade align-items controla onde os elementos flex ficam no eixo transversal(vertical).
+             - O valor center que usamos no exemplo, faz com que os elementos mantenham suas dimensões intrínsecas, mas que seja centralizados ao longo do eixo transversal(vertical)
+            */
+            align-items: center;
+            /*
+             - justify-content (en-US) controla onde os elementos flex ficam no eixo principal(horizontal).
+             - A propriedade CSS justify-content define como o navegador distribui o espaço entre e ao redor dos itens de conteúdo ao longo do eixo principal(main axis) de um contêiner flexível
+             - valor space-around Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo principal. O espaçamento entre cada par de itens adjacentes é o mesmo. O espaço vazio antes do primeiro e depois do último item é igual a metade do espaço entre cada par de itens adjacentes.
+            */
+            justify-content: space-around;
+        }
+
+        /*primeiro elemento button filho de um elemento pai qualquer*/
+        button:first-child{
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <button>Smile</button>
+        <button>Laugh</button>
+        <button>Wink</button>
+        <button>Shrug</button>
+        <button>Blush</button>
+    </div>
+
+</body>
+</html>

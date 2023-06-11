@@ -1,0 +1,56 @@
+<!--
+
+    * COMO OS ELEMENTOS SÃO DISPOSTOS POR PADRÃO ?
+
+        O processo começa quando as caixas de elementos individuais são dispostas de tal forma que qualquer preenchimento(padding), margem(margin) ou borda(border) que tenham seja adicionado ao seu conteúdo. Isso é o que chamamos de modelo de caixa(box model).
+
+        Por padrão, o conteúdo de um elemento de nível de bloco(block) preenche o espaço em linha disponível do elemento pai que o contém e cresce ao longo da dimensão do bloco para acomodar seu conteúdo. O tamanho dos elementos Inline é apenas o tamanho de seu conteúdo. Você não pode definir largura(width) ou altura(height) em elementos embutidos(inline) - eles apenas ficam dentro do conteúdo dos elementos de nível de bloco. Se você deseja controlar o tamanho de um elemento embutido(inline) dessa maneira, você precisa configurá-lo para se comportar como um elemento de nível de bloco (por exemplo, com display: block; ou display: inline-block;, que mistura características de ambos).
+
+        Isso explica como os elementos são estruturados individualmente, mas e a maneira como eles são estruturados quando interagem uns com os outros? O fluxo de layout normal (mencionado no artigo de introdução do layout) é o sistema pelo qual os elementos são colocados dentro da janela de visualização do navegador(viewport). Por padrão, os elementos de nível de bloco(block) são dispostos na direção do fluxo de bloco , que é baseada no modo de escrita do pai ( inicial : horizontal-tb ). Cada elemento aparecerá em uma nova linha abaixo do último, com cada um separado por qualquer margem que tenha sido especificada. Em inglês, por exemplo, (ou qualquer outro modo de escrita horizontal, de cima para baixo) os elementos de nível de bloco são dispostos verticalmente.
+
+        Os elementos embutidos(inline) se comportam de maneira diferente. Eles não aparecem em novas linhas; em vez disso, todos eles ficam na mesma linha junto com qualquer conteúdo de texto adjacente (ou quebrado), desde que haja espaço para eles fazerem isso dentro da largura do elemento de nível de bloco pai. Se não houver espaço, o conteúdo transbordante será movido para uma nova linha.
+
+        Se dois elementos adjacentes têm uma margem definida sobre eles e as duas margens se tocam, o maior dos dois permanece e o menor desaparece. Lembre-se de que isso é conhecido como colapso de margem(margin collapsing).
+
+        Vejamos um exemplo simples que explica tudo isso:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+
+        body{
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        p{
+            background: rgba(255, 84, 104, 0.3);
+            border: 2px solid rgb(255, 84, 104);
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span{
+            background: white;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Fluxo básico de documentos</h1>
+
+    <p>Eu sou um elemento básico de nível de bloco. Meus elementos de nível de bloco adjacentes ficam em novas linhas abaixo de mim.</p>
+
+    <p>Por padrão, abrangemos 100% da largura de nosso elemento pai e somos tão altos quanto nosso conteúdo filho. Nossa largura(width) e altura(height) totais são nosso conteúdo(content) + preenchimento(padding) + largura/altura da borda(border)</p>
+
+    <p>Estamos separados por nossas margens. Por causa do recolhimento da margem, somos separados pela largura de uma de nossas margens, não de ambas.</p>
+
+    <p>elementos inline <span>como este</span> e <span>este</span> ficam na mesma linha junto com nós de texto adjacentes, se houver espaço na mesma linha. Elementos inline transbordantes <span>serão colocados em uma nova linha, se possível(como esta que contém texto)</</span> ou apneas irão para uma nova linham se não, assim como esta imagen fará: <img src="./long.jpg" alt="imagen"/></p>
+
+</body>
+</html>

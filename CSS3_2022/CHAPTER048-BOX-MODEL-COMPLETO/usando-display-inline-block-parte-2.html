@@ -1,0 +1,51 @@
+<!--
+    Onde isso pode ser útil é quando você deseja dar a um link uma área de acerto maior adicionando padding. <a> é um elemento embutido como <span>; você pode usar display: inline-block para permitir que o preenchimento seja definido nele, tornando mais fácil para um usuário clicar no link. 
+
+    Você vê isso com bastante frequência nas barras de navegação. A navegação abaixo é exibida em uma linha usando flexbox e adicionamos preenchimento ao <a> elemento, pois queremos ser capazes de alterar o background-color quando o <a> é pairado. O preenchimento parece sobrepor a borda na <ul> elemento. Isto porque o <a> é um elemento embutido.     
+
+    Adicionar display: inline-block à regra com o .links-list a seletor, e você verá como ele corrige esse problema fazendo com que o preenchimento seja respeitado por outros elementos. 
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .links-list a{
+            background-color: rgb(179, 57, 81);
+            color: #fff;
+            text-decoration: none;
+            padding: 1em 2em;
+            /*
+             - a propriedade display determina tipo de caixa aplicado a um elemento é definido por display valores de propriedade.
+             - display aplica uma caixa de tipo block externa ao elemento
+             - o valor inline-block(bloco embutido)
+             
+                o width e height propriedades são respeitadas.
+            
+                padding, margin, e border fará com que outros elementos sejam empurrados para fora da caixa. 
+
+                No entanto, ele não quebra em uma nova linha e só se tornará maior que seu conteúdo se você adicionar explicitamente width e height propriedades 
+            */
+            display: inline-block;
+        }
+
+        .links-list a:hover{
+            background-color: rgb(66, 28, 40);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="links-list">
+            <li><a href="">Link Um</a></li>
+            <li><a href="">Link Dois</a></li>
+            <li><a href="">Link três</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

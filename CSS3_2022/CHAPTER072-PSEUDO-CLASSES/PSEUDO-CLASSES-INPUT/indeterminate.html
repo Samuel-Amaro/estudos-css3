@@ -1,0 +1,62 @@
+<!--
+    * :indeterminate
+
+        A pseudo-classe CSS :indeterminate representa qualquer elemento de formulário cujo estado seja indeterminado, como caixas de seleção que têm seu atributo HTML definido indeterminate como true, botões de opção que são membros de um grupo no qual todos os botões de opção estão desmarcados e elementos  <progress> indeterminados. 
+
+        /*Seleciona qualquer <input> cujo estado seja indeterminado*/
+        input:indeterminate {
+            background: lime;
+        }
+
+        Os elementos segmentados por este seletor são:
+
+            <input type="checkbox">elementos cuja indeterminatepropriedade é definida truepor JavaScript
+
+        <input type="radio">elementos, quando todos os botões de opção com o mesmo name valor no formulário estão desmarcados
+        
+        <progress> elementos em estado indeterminado
+
+    * Sintaxe
+
+        :indeterminate
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seleciona elementos <input> que possua o estado indeterminate, seleciona elementos label que possua um um elemento <input> com um estado indeterminado
+        */
+        input:indeterminate + label {
+            background: lime;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <fieldset>
+        <legend>Checkbox</legend>
+        <div>
+          <input type="checkbox" id="checkbox">
+          <label for="checkbox">This checkbox label starts out lime.</label>
+        </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Radio</legend>
+        <div>
+          <input type="radio" id="radio1" name="radioButton">
+          <label for="radio1">First radio label starts out lime.</label>
+        </div>
+        <div>
+          <input type="radio" id="radio2" name="radioButton">
+          <label for="radio2">Second radio label also starts out lime.</label>
+        </div>
+    </fieldset>
+      
+    
+</body>
+</html>

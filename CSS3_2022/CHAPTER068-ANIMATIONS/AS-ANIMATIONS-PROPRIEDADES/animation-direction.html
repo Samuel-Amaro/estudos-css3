@@ -1,0 +1,108 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION-DIRECTION
+
+        .my-element {
+            animation-direction: reverse;
+        }
+
+        Você pode definir em qual direção a linha do tempo passa pelos seus @keyframes com animation-direction:
+
+            normal: o valor padrão, que é para frente.
+
+            reverse: é executado para trás em sua linha do tempo.
+
+            alternate: para cada iteração de animação, a linha do tempo será executada para frente ou para trás em sequência.
+
+            alternate-reverse: o inverso de alternate.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .animate{
+            /*
+             - Para usar your @keyframes em uma regra CSS, defina várias propriedades de animação
+            */
+
+            animation-name: grow;
+            /*
+             -  A propriedade animation-duration define quanto tempo a @keyframes linha do tempo deve ter. Deve ser um valor de tempo.
+             - a animação tera 2s
+            */
+            animation-duration: 2s;
+            /*
+             - A propriedade animation-iteration-count define quantas vezes a @keyframes linha do tempo deve ser executada.
+             - @keyframes sera executada infinitamente, não vai para de animar.
+            */
+            animation-iteration-count: infinite; 
+            
+            /*
+             - Para ajudar a recriar o movimento natural na animação, você pode usar funções de tempo que calculam a velocidade de uma animação em cada ponto.
+             - usando a function linear para calcular a velocidade da animação
+            */
+            animation-timing-function: linear;
+
+            /*
+             - Você pode definir em qual direção a linha do tempo passa pelos seus @keyframes com animation-direction.
+             - o valor normal o valor padrão, que é para frente.
+             - reverse: é executado para trás em sua linha do tempo.
+            */
+            animation-direction: reverse;
+        }
+
+        /*
+         - keyframes são o mecanismo que você usa para atribuir estados(states) de animação a carimbos de data e hora(timestamp), ao longo de uma linha do tempo.
+         - grow o nome da regra de key-frames.
+        */
+        @keyframes grow {
+
+            /*inicio da animação na linha do tempo definida em animation-duration*/
+            0%{
+                transform: scaleX(1)
+            }
+
+            /*25% do tempo da linha do tempo de 2s*/
+            25%{
+                background: darkturquoise;
+            }
+
+            /*50% do tempo da linha do tempo de 2s*/
+            50%{
+                background-color: hotpink;
+            }
+
+            /*75% do tempo da linha do tempo de 2s*/
+            75%{
+                background-color: purple;
+                transform: scaleX(1.8);
+            }
+
+            /*100% do tempo da linha do tempo de 2s*/
+            100%{
+                background-color: lightseagreen;
+            }
+            
+        }
+
+        .grower{
+            width: 200px;
+            height: 80px;
+            background-color: lightseagreen;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="flow">
+        <div class="grower animate"></div>
+    </div>
+
+</body>
+</html>

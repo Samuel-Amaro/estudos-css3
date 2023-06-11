@@ -1,0 +1,47 @@
+/*
+ * CSS FONTS(FONTES CSS)
+
+  - É importante escolher a fonte certa para o seu site!
+
+  * A SELEÇÃO DA FONTE É IMPORTANTE
+
+   - A escolha da fonte certa tem um grande impacto na maneira como os leitores experimentam um site.
+   - A fonte certa pode criar uma identidade forte para sua marca.
+   - Usar uma fonte fácil de ler é importante. A fonte agrega valor ao seu texto. Também é importante escolher a cor e o tamanho do texto corretos para a fonte.
+ 
+  * FAMÍLIAS DE FONTES GENÉRICAS
+
+    - No CSS, existem cinco famílias de fontes genéricas:
+
+    1 - As fontes com serifa têm um pequeno traço nas bordas de cada letra. Eles criam uma sensação de formalidade e elegância;
+    2 - Fontes sem serifa possuem linhas limpas (sem pequenos traços anexados). Eles criam um visual moderno e minimalista.
+    3 - Fontes monoespaçadas - aqui todas as letras têm a mesma largura fixa. Eles criam uma aparência mecânica. 
+    4 - As fontes cursivas imitam a caligrafia humana.
+    5 - As fontes Fantasy são decorativas/divertidas.
+
+     * Todos os nomes de fontes diferentes pertencem a uma das famílias de fontes genéricas. 
+*/
+
+/*
+ * A PROPRIEDADE DA FAMILIA DE FONTES CSS
+
+  - Em CSS, usamos a font-family propriedade para especificar a fonte de um texto.
+
+  - A font-family propriedade deve conter vários nomes de fontes como um sistema "substituto", para garantir a compatibilidade máxima entre navegadores / sistemas operacionais. Comece com a fonte desejada e termine com uma família genérica (para permitir que o navegador escolha uma fonte semelhante na família genérica, se nenhuma outra fonte estiver disponível). Os nomes das fontes devem ser separados por vírgula;
+  
+*/
+#serifada{
+  font-family: 'Times New Roman', Times, serif;
+}
+#sem_Serifa{
+  font-family: Arial, Helvetica, sans-serif;
+}
+#monoespacada{
+  font-family: 'Courier New', Courier, monospace;
+}
+#cursiva{
+  font-family: cursive;
+}
+#fantasia{
+  font-family: fantasy;
+}

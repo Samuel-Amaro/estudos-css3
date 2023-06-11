@@ -1,0 +1,70 @@
+<!--
+    * PROPRIEDADE CSS ROW-GAP(GRID-ROW-GAP)
+
+        A propriedade CSS row-gap(intervalo de linha) define o tamanho da lacuna (calha) entre as linhas de um elemento.
+
+    * SINTAXE
+
+        /*VALORES COMPRIMENTO <lenght>*/
+        row-gap: 20px;
+        row-gap: 1em;
+        row-gap: 3vmin;
+        row-gap: 0.5cm;
+
+        /*VALOR PORCENTAGEM <porcentagem>*/
+        row-gap: 10%;
+
+        /*VALORES GLOBAIS*/
+        row-gap: inherit;
+        row-gap: initial;
+        row-gap: revert;
+        row-gap: revert-layer;
+        row-gap: unset;
+        
+    * VALORES
+
+        <lenght-percentage>: É a largura da calha que separa as linhas. Os valores <percentage> são relativos à dimensão do elemento
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /*flex container*/
+        #flexbox{
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            /*
+             - A propriedade CSS row-gap(intervalo de linha) define o tamanho da lacuna (calha) entre as linhas de um elemento.
+             - o valor 20px define que o elemento tera 20px de espaço em branco entre as linhas dos elementos flex. É a largura da calha que separa as linhas.
+            */
+            row-gap: 20px;
+        }
+
+        /*itens flex*/
+        #flexbox > div{
+            border: 1px solid green;
+            background-color: lime;
+            flex: 1 1 auto;
+            width: 100px;
+            height: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="flexbox">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+</html>

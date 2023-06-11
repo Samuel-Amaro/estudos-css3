@@ -1,0 +1,86 @@
+<!--
+    * HORIZONTAL DIVIDERS(DIVISORES HORIZONTAIS)
+
+        - Adicione a border-bottom propriedade a <th> e <td> para divisores horizontais:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table
+        */
+        table{
+            /*
+             - a propriedade width especifica uma largura para um elemento
+             - o valor em % Define a largura em porcentagem do bloco que o contém
+             - aqui o valor 100%, e que o elemento table ira ocupar 100% do espaço fornecido pelo elemento pai, no caso o elemento pai e o body, toda area visual do documento, assim o espaço fornecido e toda largura do documento
+            */
+            width: 100%;
+            /*
+             - a propriedade border-collapse define se as bordas da tabela devem ser recolhidas em uma unica borda
+             - recolhe a borda do elemento table
+             - isso e usado por causa que a tabela possui bordas duplas os elementos table, th, td possui bordas separadas.
+            */
+            border-collapse: collapse;
+        }
+        /*
+         - celulas de conteudo e de cabeçalho
+        */
+        td, th{
+            /*a propriedade padding shorthand e um abreviatura para as propriedades individuais, padding-top, padding-right, padding-bottom, padding-left, para adicionar espeço interno ao redor do conteudo das celulas entre o conteudo e a borda das celulas, a shorthand add o mesmo espaço a todos os lados*/
+            padding: 8px;
+            /*
+             - a propriedade text-align e usada para definir o alinhamento horizontal de um texto.
+             - o valor left, alinha o texto a esquerda. a direção do texto e da esquerda para direita. para celulas de cabeçalho
+            */
+            text-align: left;
+            /*
+             - a propriedade border-bottom shorthand e uma abreviatura para adicionar uma borda inferior no elemento, adiciona uma borda no lado inferior do elemento, e uma abreviatura para border-bottom-width, border-bottom-style, border-bottom-color, adiciona uma borda inferior nas celulas de conteudo e cabeçalho
+            */
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Divisores de tabela com bordas</h2>
+
+    <p>Adicione a propriedade border-bottom a th e td para divisores horizontais:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Primeiro Nome</th>
+                <th>Ultimo Nome</th>
+                <th>Poupança</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>$150</td>
+            </tr>
+            <tr>
+                <td>Joe</td>
+                <td>Swansom</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>Cleveland</td>
+                <td>Brown</td>
+                <td>$250</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

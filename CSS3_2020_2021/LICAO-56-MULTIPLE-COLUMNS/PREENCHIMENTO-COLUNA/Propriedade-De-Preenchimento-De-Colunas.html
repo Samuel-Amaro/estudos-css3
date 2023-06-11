@@ -1,0 +1,60 @@
+<!--
+    * PROPRIEDADE DE PREENCHIMENTO DE COLUNAS CSS
+
+    * DEFINIÇÃO E USO
+
+      - A column-fill propriedade especifica como preencher as colunas, balanceadas ou não.
+
+      - Dica: Se você adicionar uma altura a um elemento de várias colunas, poderá controlar como o conteúdo preencherá as colunas. O conteúdo pode ser equilibrado ou preenchido sequencialmente.
+
+    * SINTAXE CSS:
+
+      column-fill: balance|auto|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+     balance(balanceado) : Valor padrão. Preenche cada coluna com aproximadamente a mesma quantidade de conteúdo, mas não permite que as colunas sejam mais altas do que a altura (portanto, as colunas podem ser menores do que a altura, pois o navegador distribui o conteúdo uniformemente na horizontal) 
+
+     auto : Preenche cada coluna até atingir a altura, e faça isso até que fique sem conteúdo (portanto, este valor não preencherá necessariamente todas as colunas nem uniformemente)
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplas Colunas</title>
+    <style>
+        div{
+            /*o conteudo do elemento div, se dividira em 3 colunas*/
+            column-count: 3;
+            /*altura do elemento*/
+            height: 100px;
+        }
+
+        div.newspaper1{
+            /*as colunas são preenchidas de maneira automatica, Preenche cada coluna até atingir a altura, e faça isso até que fique sem conteúdo (portanto, este valor não preencherá necessariamente todas as colunas nem uniformemente)*/
+            column-fill: auto;
+        }
+        div.newspaper2{
+            /*
+             Preenche cada coluna com aproximadamente a mesma quantidade de conteúdo, mas não permite que as colunas sejam mais altas do que a altura (portanto, as colunas podem ser menores do que a altura, pois o navegador distribui o conteúdo uniformemente na horizontal) 
+            */
+            column-fill: balance;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Especificando como preencher colunas - column-fill</h1>
+
+    <h2>column-fill: auto</h2>
+
+    <div class="newspaper1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit excepturi debitis, commodi dolorem mollitia eaque explicabo ipsum ipsam repellat voluptatem incidunt aut, natus neque. Dolor eligendi pariatur tempora cupiditate unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laboriosam excepturi animi, et exercitationem nihil eligendi! Autem deleniti ab ipsum est, minus repellendus dignissimos, eos veniam delectus esse, quia officiis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere beatae, fuga illum repellendus vero eos tempora exercitationem suscipit consequuntur sequi eius error earum. Culpa quidem quasi neque fugiat exercitationem? Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem at maxime amet veritatis a, fuga unde nisi, atque ullam repellendus aperiam iusto nulla corrupti tenetur, quia blanditiis omnis vero quidem! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor dolorum soluta assumenda nam, fugiat voluptas tempora odio asperiores. Voluptatibus nihil dicta exercitationem sunt nulla numquam quae similique distinctio. Dicta, amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. A, repudiandae! Blanditiis saepe eos eius harum, repellat consequuntur delectus tenetur labore minima. Esse fuga illum nulla, harum cumque similique temporibus explicabo.</div>
+
+    <h2>column-fill: balance(default)</h2>
+
+    <div class="newspaper2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit excepturi debitis, commodi dolorem mollitia eaque explicabo ipsum ipsam repellat voluptatem incidunt aut, natus neque. Dolor eligendi pariatur tempora cupiditate unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laboriosam excepturi animi, et exercitationem nihil eligendi! Autem deleniti ab ipsum est, minus repellendus dignissimos, eos veniam delectus esse, quia officiis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere beatae, fuga illum repellendus vero eos tempora exercitationem suscipit consequuntur sequi eius error earum. Culpa quidem quasi neque fugiat exercitationem? Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem at maxime amet veritatis a, fuga unde nisi, atque ullam repellendus aperiam iusto nulla corrupti tenetur, quia blanditiis omnis vero quidem! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor dolorum soluta assumenda nam, fugiat voluptas tempora odio asperiores. Voluptatibus nihil dicta exercitationem sunt nulla numquam quae similique distinctio. Dicta, amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. A, repudiandae! Blanditiis saepe eos eius harum, repellat consequuntur delectus tenetur labore minima. Esse fuga illum nulla, harum cumque similique temporibus explicabo.</div>
+</body>
+</html>

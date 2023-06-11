@@ -1,0 +1,31 @@
+<!--
+    * MATH FUNCTION CSS CLAMP()
+
+        A função CSS clamp() fixa um valor entre um limite superior e inferior. permite selecionar um valor intermediário dentro de um intervalo de valores entre um mínimo e um máximo definidos. São necessários três parâmetros: um valor mínimo, um valor preferencial e um valor máximo permitido. A função pode ser usada em qualquer lugar onde <length>, <frequency>, <angle>. <time>, <percentage> ou <integer> seja permitido.
+
+        clamp(MIN, VAL, MAX) é resolvido como .max() (MIN, min()(VAL, MAX))
+
+    * SINTAXE
+
+        A clamp() função usa três expressões separadas por vírgula como seus parâmetros, na ordem de valor mínimo, valor preferencial e valor máximo.
+
+        O valor mínimo é o menor valor (mais negativo). Este é o limite inferior no intervalo de valores permitidos. Se o valor preferencial for menor que este valor, será utilizado o valor mínimo.
+
+        O valor preferencial é a expressão cujo valor será utilizado desde que o resultado esteja entre os valores mínimo e máximo.
+
+        O valor máximo é o maior valor de expressão (mais positivo) ao qual o valor da propriedade será atribuído se o valor preferencial for maior que esse limite superior.
+
+        As expressões podem ser funções matemáticas (consulte calc()para obter mais informações), valores literais, outras expressões que avaliam um tipo de argumento válido (como ) ou funções e <length> aninhadas . Para expressões matemáticas, você pode usar adição, subtração, multiplicação e divisão sem usar a própria função. Você também pode usar parênteses para estabelecer a ordem de cálculo quando necessário.min() max() calc()
+
+        Você pode usar unidades diferentes para cada valor em suas expressões e unidades diferentes em qualquer função matemática que componha qualquer um dos argumentos.
+
+        * NOTAS
+
+            Expressões matemáticas envolvendo porcentagens para larguras e alturas em colunas de tabela, grupos de colunas de tabela, linhas de tabela, grupos de linhas de tabela e células de tabela em tabelas de layout automático e fixo podem ser tratadas como se autotivessem sido especificadas.
+
+            É permitido aninhar max()e min()funcionar como valores de expressão, neste caso os internos são tratados como parênteses simples. As expressões são expressões matemáticas completas, então você pode usar adição direta, subtração, multiplicação e divisão sem usar a própria função calc().
+
+            A expressão pode ser valores combinando os operadores de adição ( + ), subtração ( - ), multiplicação ( * ) e divisão ( / ), usando regras de precedência de operador padrão. Certifique-se de colocar um espaço em cada lado dos operandos + e -. Os operandos na expressão podem ser qualquer <length>valor de sintaxe. Você pode usar unidades diferentes para cada valor em sua expressão. Você também pode usar parênteses para estabelecer a ordem de cálculo quando necessário.
+
+            Muitas vezes você vai querer usar min() e max() dentro de uma clamp()função.
+-->

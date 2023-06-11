@@ -1,0 +1,189 @@
+/*
+ * LAYOUT CSS - POSITION PROPRETY (LAYOUT CSS, PROPRIEDADE DE POSIÇÃO
+
+  - A position propriedade especifica o tipo de método de posicionamento usado para um elemento (estático - static, relativo - relative, fixo - fixed, absoluto - absolute ou aderente - sticky).
+  - existe cinco valores de posição diferentes:
+    static - estatico;
+    relative - relativo;
+    fixed - fixo;
+    absolute - absoluto;
+    sticky - aderente;
+  - Os elementos são posicionados usando as propriedades superior(top), inferior(bottom), esquerda(left) e direita(right). No entanto, essas propriedades não funcionarão a menos que a position propriedade seja definida primeiro. Eles também funcionam de forma diferente dependendo do valor da posição.
+*/
+/*
+ * POSITION STATIC - POSIÇÃO ESTATICA
+
+  - Os elementos HTML são posicionados estáticos por padrão.
+  - Os elementos posicionados estáticos não são afetados pelas propriedades superior, inferior, esquerda e direita;
+  - Um elemento com position: static; 
+  não é posicionado de nenhuma maneira especial; 
+  está sempre posicionado de acordo com o fluxo normal da página:
+*/
+#conteiner_Estatico{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: lightgray;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    position: static; /*posição do elemento e estatica*/
+}
+/*
+ * POSITION-RELATIVE (POSIÇÃO RELATIVA)
+
+  - Um elemento com position: relative;
+  está posicionado em relação à sua posição normal.
+  - Definir as propriedades superior, direita, inferior e esquerda de um elemento relativamente posicionado fará com que ele seja ajustado para longe de sua posição normal. Outro conteúdo não será ajustado para caber em qualquer lacuna deixada pelo elemento.
+*/
+#conteiner_relativo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: lightgray;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    left: 30px; /* o conteiner ficara 30px recuado para a direita, conta da esquerda para direita, o conteiner ficara longe da sua posição normal*/
+    position: relative; /*posição do elemento e relativo em relação ao layout-css*/
+}
+/*
+ * POSITION FIXED (POSIÇÃO FIXA)
+   
+   - Um elemento com position: fixed;
+   - é posicionado em relação à janela de visualização, o que significa que ele sempre permanece no mesmo lugar, mesmo se a página for rolada.
+   - As propriedades superior, direita, inferior e esquerda são usadas para posicionar o elemento.
+   - Um elemento fixo não deixa uma lacuna na página onde normalmente estaria localizado
+   - este conteiner vai ser posicionado fixadamente no topo superior direito  da pagina, e não vai mais sair de la, pode rolar a pagina redimensionar que ele vai permanecer la;
+*/
+#conteiner_fixo{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-style: normal;
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: lightgray;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    position: fixed; /*POSIÇÃO DO CONTEINER E FIXA, A PAGINA E ROLADA VERTICALMENTE OU HORIZONTALMENTE E ELE CONTINUA NA MESMA POSIÇÃO*/
+    max-width: 200px; /*largura maxima que o conteiner pode possui, e a largura maxima em qua a pagina pode ser redimensionada horizotalmente, isso e aplicado para que o conteiner não se quebre e seja adicionada uma barra de rolagem vertical para poder visualizar o elemento*/
+    right: 10px; /*o conteiner e para ficar posicionado 10px a direita*/
+    top: 2px; /*o conteiner e para ficar posicionado 2px para cima*/
+}
+/*
+ * POSITION ABSOLUTE;
+
+  - Um elemento com position: absolute;
+  é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização, como fixo).
+  - Contudo; se um elemento posicionado de forma absoluta não tiver ancestrais posicionados, ele usa o corpo do documento e se move junto com a rolagem da página.
+  - Um elemento "posicionado" é aquele cuja posição é qualquer coisa exceto static.
+*/
+
+/*esta div, e um elemento posicionado relativemnte como exemplo para que seja um elemento ancestral mais proximo posicionado em relação a div posicionada absolutamente*/
+#conteiner_relative_absolute{
+    position: relative; /*posição do conteiner e relativa, segue sua posição normal*/
+    width: 600px; /*largura do conteiner*/
+    height: 200px;/*altura do conteiner*/
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-style: normal;
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: lightgray;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+/*este conteiner so sera posicionado absolutamente se o conteiner acima existir, porque necessita de um elemento mais proximo a ele que esteja posicionado para poder obter a sua posição*/
+#conteiner_absolute{
+  position: absolute; /*posição do conteiner e absoluta, sua posição e baseada em um elemento ancestral mais proximo a ele que esteja posicionado*/
+  width: 200px; /*largura do conteiner*/
+  height: 400px;/*altura do conteiner*/
+  right: 0;/*começa a se posicionar no 0 direita*/
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+  border-top: 3px;
+  border-right: 3px;
+  border-bottom: 3px;
+  border-left: 3px;
+  border-style: solid;
+  border-color: lightgray;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+/*
+ * POSITION STICKY - POSIÇÃO PEGAJOSA;
+
+  - Um elemento com position: sticky;
+   é posicionado com base na posição de rolagem do usuário.
+  - Um elemento aderente(STICKY) alterna entre relative e fixed, dependendo da posição de rolagem. Ele é posicionado em relação até que uma determinada posição de deslocamento seja encontrada na janela de exibição - então, ele "se fixa" no lugar (como a posição: fixa).
+*/
+#conteiner_pegajoso{ 
+      position: sticky;/*posição do elemento e pagajoza, ao usuario rolar a pagina poderei fixar o elemento em um certo ponto da pagina, ao ir rolando a pagina, ao chegar neste elemento no topo superior este elemento ficara fixo, ao usuario ir rolando a pagina ate o final, subindo e descendo*/
+      top: 0; /*ao usuario ir rolando a pagina e este elemento, div ,chegar no top 0 da pagina, atingir a essa posiçaõ de rolagem, ao ir rolando a pagina, este elemento ficara pegajoso, devido a ter chegado no ponto, marcado durante a rolagem da pagina, e devido a sua configuração de posição, ele ficara fixo nesse ponto, da pagina, durante a rolagem da pagina*/
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      font-style: normal;
+      border-top: 3px;
+      border-right: 3px;
+      border-bottom: 3px;
+      border-left: 3px;
+      border-style: solid;
+      border-color: lightgray;
+      padding-top: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      padding-left: 15px;
+}
+
+/*
+ * ELEMENTOS SOBREPOSTOS - Overlapping elements
+
+  - Quando os elementos são posicionados, eles podem se sobrepor a outros elementos.
+  - A z-indexpropriedade especifica a ordem da pilha de um elemento (qual elemento deve ser colocado na frente ou atrás dos outros).
+  - Um elemento pode ter uma ordem de empilhamento positiva ou negativa:
+  - Um elemento com uma ordem de pilha maior está sempre na frente de um elemento com uma ordem de pilha inferior.
+  - Se dois elementos posicionados se sobrepõem sem um z-index especificado, o elemento posicionado por último no código HTML será mostrado no topo.
+  - a imagen vai se posicionar primeiro, depois o cabeçalho vai sobrepor a imagen, porque os dois estão no mesmo, local, mas a imagen, na ordem da pilha foi configurada para aparecer primeiro;
+*/
+img{
+  position: absolute;
+  left: 0px; /*se inicia na esquerda, bem no inicio da esquerda*/
+  top: 0px; /*se posiciona no topo da pagina no inicio do topo mesmo*/
+  z-index: -1;/* na ordem da pilha de elementos a imgen vem primeiro*/ 
+}

@@ -1,0 +1,101 @@
+<!--
+    * INDICE DE ROLAGEM
+
+        Um uso interessante e comum position: sticky é criar uma página de índice de rolagem onde diferentes títulos ficam no topo da página à medida que a alcançam. A marcação para tal exemplo pode ser assim:
+
+        O CSS pode ter a seguinte aparência. No fluxo normal, os <dt> elementos rolarão com o conteúdo. Quando adicionamos position: sticky ao <dt> elemento, juntamente com um top valor de 0, os navegadores de suporte colarão os títulos na parte superior da janela de visualização à medida que atingirem essa posição. Cada cabeçalho subsequente substituirá o anterior à medida que rola até essa posição.
+
+        Elementos fixos são "pegajosos" em relação ao ancestral mais próximo com um "mecanismo de rolagem", que é determinado pela propriedade de posição de seus ancestrais.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic document flow</title>
+
+    <style type="text/css">
+        body {
+            width: 500px;
+            margin: 0 auto;
+            height: 1400px;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        dt:nth-of-type(odd){
+            background-color: lightblue;
+            color: white;
+            padding: 10px;
+            /*
+             - O posicionamento permite que você retire elementos do fluxo normal de documentos e faça com que eles se comportem de maneira diferente.
+             - Para ativar um tipo específico de posicionamento em um elemento, usamos a position propriedade.
+             - o valor sticky Ele permite que um elemento posicionado aja como se estivesse relativamente posicionado até que seja rolado para um determinado limite (por exemplo, 10px do topo da janela de visualização), após o qual se torna fixo.
+            */
+            position: sticky;
+            /*
+             - o elemento agira como position relative até chegar o limite de 0 da viewport a partir disso agira como fixed, se torna fixo. 
+            */
+            top: 0px;
+            /*alinha o elemento com position sticky ao border-left da viewport*/
+            left: 0;
+            margin: 1em 0;
+            
+        }
+
+        dt:nth-of-type(even) {
+            background-color: black;
+            position: sticky;
+            color: white;
+            padding: 10px;
+            top: 40px;
+            /*alinha o elemento com position sticky ao border-left da viewport*/
+            left: 0;
+            margin: 1em 0;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1>Posicionamento Sticky</h1>
+
+    <dl>
+        <dt>A</dt>
+        <dd>Apple</dd>
+        <dd>Ant</dd>
+        <dd>Altimeter</dd>
+        <dd>Airplane</dd>
+        <dt>B</dt>
+        <dd>Bird</dd>
+        <dd>Buzzard</dd>
+        <dd>Bee</dd>
+        <dd>Banana</dd>
+        <dd>Beanstalk</dd>
+        <dt>C</dt>
+        <dd>Calculator</dd>
+        <dd>Cane</dd>
+        <dd>Camera</dd>
+        <dd>Camel</dd>
+        <dt>D</dt>
+        <dd>Duck</dd>
+        <dd>Dime</dd>
+        <dd>Dipstick</dd>
+        <dd>Drone</dd>
+        <dt>E</dt>
+        <dd>Egg</dd>
+        <dd>Elephant</dd>
+        <dd>Egret</dd>
+    </dl>
+
+  </body>
+</html>

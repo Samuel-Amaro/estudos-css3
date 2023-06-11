@@ -1,0 +1,40 @@
+<!--
+    * overflow: hidden;
+
+        - Com o hidden valor, o overflow é cortado e o restante do conteúdo fica oculto:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        div{
+            background-color: coral;
+            width: 200px;
+            /*
+             - a overflow propriedade so funcionada para elementos com display block e com uma altura especificada
+            */
+            height: 65px;
+            border: 1px solid;
+            /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - o valor hidden(oculto) - O overflow(conteudo que transborda para fora da caixa) é cortado e o restante do conteúdo ficará invisível
+            */
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>overflow: hidden</h2>
+
+    <p>Com o valor hidden, o estouro é cortado e o restante do conteúdo fica oculto:</p>
+
+    <p>Tente remover a propriedade overflow para entender como ela funciona.</p>
+
+    <div>Você pode usar a propriedade overflow quando quiser ter um melhor controle do layout. A propriedade overflow especifica o que acontece se o conteúdo transbordar da caixa de um elemento.</div>
+
+</body>
+</html>

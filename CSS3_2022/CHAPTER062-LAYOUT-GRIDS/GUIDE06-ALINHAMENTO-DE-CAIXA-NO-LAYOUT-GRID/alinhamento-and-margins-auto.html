@@ -1,0 +1,101 @@
+<!--
+    * ALINHAMENTO E MARGENS AUTOMÁTICAS
+
+        Outra maneira de alinhar itens dentro de sua área é usar margens automáticas. Se você já centralizou seu layout na janela de visualização, definindo as margens direita e esquerda do bloco de contêiner como auto, você sabe que uma margem automática absorve todo o espaço disponível. Ao definir a margem autoem ambos os lados, ele empurra o bloco para o meio, pois ambas as margens tentam ocupar todo o espaço.
+
+        Neste próximo exemplo, dei ao item 1 uma margem esquerda de auto. Você pode ver como o conteúdo agora é empurrado para o lado direito da área, pois a margem automática ocupa o espaço restante, depois que o espaço para o conteúdo desse item foi atribuído:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /*Grid Container*/
+        .wrapper{
+            display: grid;
+            /*faixa de colunas explicita - faixa de 3 colunas com medidas de tamanho fixas especificando a largura da coluna não diminuem e nem crescem*/
+            grid-template-columns: repeat(3, 100px);
+            /*faixa de linhas explicita - faixa de 3 linhas com medidas de tamanho fixa especificando a altura da linhas que nem crescem e diminuem*/
+            grid-template-rows: repeat(3, 100px);
+            /*espaço entre faixas de colunas e linhas - cria um espaço vazio de 10px*/
+            gap: 10px;
+            /*altura e largura do conteiner grid*/
+            width: 500px;
+            height: 500px;
+            /*
+             - posicionando areas no grid - definido o layout da grid - grid completa
+             - definimos 4 areas de grade, onde itens estão posicionados.
+             - area de grade abrange uma ou mais celulas por linha ou por coluna. cada item dentro de uma area de grade sera alinhado. temos quatro areas.
+            */
+            grid-template-areas: 
+                "a a b"
+                "a a b"
+                "c d d";
+        }
+
+        /*iten-grid*/
+        .item1{
+            /*define nome da area*/
+            grid-area: a;
+            /*
+             - o conteudo do iten grid 1 e empurrado para o lado direito da area, pois a margen automatica ocupa o espaço restante, depois que o espaço para o conteudo desse item foi atribuido.
+             - o proprio navegador defini o espaço na margin-left dentro da area em que o item se encontra.
+            */
+            margin-left: auto;
+        }
+
+        /*iten-grid*/
+        .item2{
+            /*define nome da area*/
+            grid-area: b;
+        }
+
+        /*iten-grid*/
+        .item3{
+            /*define nome da area*/
+            grid-area: c;
+        }
+
+        /*iten-grid*/
+        .item4{
+            /*define nome da area*/
+            grid-area: d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+    </div>
+
+</body>
+</html>

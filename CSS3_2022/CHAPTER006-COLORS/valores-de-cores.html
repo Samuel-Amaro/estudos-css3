@@ -1,0 +1,57 @@
+<!--
+    * VALORES DE CORES CSS
+
+        - Em CSS, as cores também podem ser especificadas usando valores RGB, valores HEX, valores HSL, valores RGBA e valores HSLA:
+
+        - O mesmo que o nome da cor "Tomato-tomate":
+
+            - rgb(255, 99, 71);
+            - #ff6347;
+            - hsl(9, 100%, 64%);
+
+        - Igual ao nome da cor "Tomato", mas 50% transparente:
+
+            - rgba(255, 99, 71, 0.5);
+            - hsla(9, 100%, 64%, 0.5);
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+
+    <p>O mesmo que o nome da cor "tomato":</p>
+
+     <!--
+        - CSS INLINE(embutido)
+        - O style atributo é usado para adicionar estilos a um elemento, como cor, fonte, tamanho e muito mais.
+        - usando o css inline para aplicar um estilo unico a somente ao elemento h1 abaixo
+        - usando o atributo style e como valor as propriedades css, formando declarações css separadas por (;)
+        - especificando cores usando o valor rgb         
+        - usando a propriedade background-color para definir uma cor de fundo para o elemento h1, especificando a cor pelo valor rgb
+    -->
+    <h1 style="background-color: rgb(255, 99, 71);">rgb(255, 99, 71)</h1>
+    <!--
+        - usando a propriedade background-color para definir uma cor de fundo para o elemento h1, especificando a cor pelo valor hex
+    -->
+    <h1 style="background-color: #ff6347;">#ff6347</h1>
+    <!--
+        - usando a propriedade background-color para definir uma cor de fundo para o elemento h1, especificando a cor pelo valor hsl
+    -->
+    <h1 style="background-color: hsl(9, 100%, 64%);">hsl(9, 100%, 64%)</h1>
+
+    <p>Igual ao nome da cor "tomato", mas 50% trasparente:</p>
+
+    <!-- usando a propriedade background-color para definir uma cor de fundo para o elemento h1, especificando a cor transparente pelo valor rgba
+    -->
+    <h1 style="background-color: rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5)</h1>
+    <!--
+        - usando a propriedade background-color para definir uma cor de fundo para o elemento h1, especificando a cor transparente pelo valor hsla
+    -->
+    <h1 style="background-color: hsla(9, 100%, 64%, 0.5);">hsla(9, 100%, 64%, 0.5)</h1>
+
+    <p>Além dos nomes de cores predefinidos, as cores podem ser especificadas usando RGB, HEX, HSL ou até cores transparentes usando valores de cores RGBA ou HSLA.</p>
+</body>
+</html>

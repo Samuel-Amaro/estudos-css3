@@ -1,0 +1,57 @@
+<!--
+    * O BOX MODEL AND CAIXAS INLINE
+
+        Todos os itens acima se aplicam totalmente às caixas de bloco. Algumas das propriedades também podem ser aplicadas a caixas embutidas, como aquelas criadas por um <span> elemento.
+            
+        No exemplo abaixo, temos um <span> dentro de um parágrafo e aplicaram um width, height, margin, border, e padding para isso. Você pode ver que a largura e a altura são ignoradas. A margem vertical, o preenchimento e a borda são respeitados, mas não alteram a relação de outro conteúdo com nossa caixa embutida e, portanto, o preenchimento e a borda se sobrepõem a outras palavras no parágrafo. O preenchimento horizontal, as margens e as bordas são respeitados e farão com que outros conteúdos se afastem da caixa. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - o span elemento e uma caixa inline
+         - A caixa não quebrará em uma nova linha.
+         - o width e height propriedades não serão aplicadas. 
+         - Preenchimento vertical(padding vertical), margens(margins) e bordas(borders) serão aplicados, mas não farão com que outras caixas embutidas se afastem da caixa. 
+         - Preenchimento horizontal(padding horizontal), margens(margin) e bordas(border) serão aplicados e farão com que outras caixas embutidas(inline) se afastem da caixa.
+        */
+        span{
+            /*
+             - A margem é um espaço invisível ao redor de sua caixa. Ele empurra outros elementos para longe da caixa. As margens podem ter valores positivos ou negativos.
+             - o elemento so aceita margin horizontais definidos nos lados top, e bottom
+            */
+            margin: 20px;
+            /*
+             - O preenchimento fica entre a borda e a área de conteúdo. Ao contrário das margens, você não pode ter quantidades negativas de preenchimento, portanto, o valor deve ser 0 ou um valor positivo.
+             - Podemos controlar o preenchimento em todos os lados de um elemento usando o padding propriedade
+             - so aceita padding vertical, no top e bottom
+            */
+            padding: 20px;
+            /*
+             - a propriedade width não e respeitada
+            */
+            width: 80px;
+            /*
+             - a propriedade height não e respeitada
+            */
+            height: 50px;
+            background-color: lightblue;
+            /*
+             - A borda é desenhada entre a margem e o preenchimento de uma caixa.
+             - Você pode definir a largura, estilo ou cor de todas as quatro bordas de uma só vez usando o border propriedade.
+            */
+            border: 2px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>Eu sou um parágrafo e este é um <span>span</span> dentro desse parágrafo. Um span é um elemento embutido e, portanto, não respeita largura e altura.
+    </p>
+
+</body>
+</html>

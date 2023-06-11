@@ -1,0 +1,57 @@
+<!--
+    * MULTIPLAS SOMBRAS
+
+      - Para adicionar mais de uma sombra ao texto, você pode adicionar uma lista de sombras separada por vírgulas.
+
+      - O exemplo a seguir mostra uma sombra brilhante de néon vermelha e azul:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplas Sombras</title>
+    <style>
+        h2#h2_1{
+            /**
+             * multiplas sombras aplicadas a um texto;
+             * sombra com sombra horizontal(0px), com sombra vertical(0px), e desfoque da sombra(3px), e a cor #FF00000;
+             * a outra sombra, sombra horizontal(0px), com sombra vertical(0px), e desfoque da sombra(5px), e a cor #0000FF;
+            */
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+        h2#h2_2{
+            color: white;
+            /**
+             * multiplas sombras aplicadas a um texto;
+             * sombra inicial com sombra horizontal(1px), com sombra vertical(1px), e desfoque da sombra(2px), e a cor black;
+             * a segunda sombra, sombra horizontal(0px), com sombra vertical(0px), e desfoque da sombra(25px), e a cor blue;
+             * a terceira sombra, sombra horizontal(0px), com sombra vertical(0px), e desfoque da sombra(5px), e a cor darkblue; 
+            */
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+        h2#h2_3{
+            color: yellow;
+            /*
+             * sombra inicial, com sombra horizontal -1px 0 sombra na vertical, e cor preta na sombra, sombra sem desfoque;
+             * segunda sombra, e 0 sombra na horizontal, 1px na sombra vertical cor preta, sombra sem desfoque;
+             * terceira sombra, 1px na sombra horizontal, 0 na sombra vertical cor preta, sem desfoque;
+             * quarta sombra, 0 na sombra horizontal, -1px na sombra vertical cor preta, sem desfoque; 
+            */
+            text-shadow: -1px 0 black,0 1px black, 1px 0  black, 0 -1px black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Multiplas Sombras</h1>
+    <p>Multiplas sombra a uma texto qualquer</p>
+    <p><strong>Exemplo 01:</strong> mostra uma sombra brilhante de néon vermelha e azul</p>
+    <h2 id="h2_1">Efeito de sombra do texto!</h2>
+    <p><strong>Exemplo 02:</strong> O exemplo a seguir mostra um texto branco com sombra preta, azul e azul-escura:</p>
+    <h2 id="h2_2">Efeito de sombra do texto!</h2>
+    <p><strong>Exemplo:</strong> Você também pode usar a propriedade text-shadow para criar uma borda plana ao redor de algum texto (sem sombras):</p>
+    <h2 id="h2_3">Borda ao redor do texto!</h2>
+</body>
+</html>

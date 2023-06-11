@@ -1,0 +1,30 @@
+<!--
+    * Em muitos navegadores, <textarea> é redimensionável por padrão. Aqui, usamos a propriedade resize para desativar o redimensionamento:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redimensionar textarea</title>
+    <style>
+        textarea#area{
+            /*elemento não e redimensionavel*/
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Redimensionar textarea</h1>
+
+    <p><strong>Exemplo:</strong> Em muitos navegadores, &lt;textarea&gt; é redimensionável por padrão. Aqui, usamos a propriedade resize para desativar o redimensionamento:</p>
+
+    <textarea name="area" id="area" cols="30" rows="10">Textarea - não redimensionavel</textarea>
+
+    <textarea name="area" id="area2" cols="30" rows="10">Textarea - redimensionavel(padrão)</textarea>
+
+</body>
+</html>

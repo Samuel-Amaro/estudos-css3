@@ -1,0 +1,61 @@
+<!--
+    * PROPRIEDADE CSS box-shadow(sombra da caixa)
+
+        A propriedade CSS box-shadow adiciona efeitos de sombra ao redor do quadro de um elemento. Você pode definir vários efeitos separados por vírgulas. Uma sombra de caixa é descrita por deslocamentos X e Y em relação ao elemento, raio de desfoque e dispersão e cor.
+
+        A propriedade box-shadow permite lançar uma sombra projetada do quadro de quase qualquer elemento. Se um raio de borda for especificado no elemento com uma sombra de caixa, a sombra de caixa assumirá os mesmos cantos arredondados. A ordenação z de várias sombras de caixa é a mesma de várias sombras de texto (a primeira sombra especificada está na parte superior).
+
+    * SINTAXE
+
+        /* valor palavra-chave */
+        box-shadow: none;
+
+        /* offset-x | offset-y | color */
+        box-shadow: 60px -16px teal;
+
+        /* offset-x | offset-y | blur-radius | color */
+        box-shadow: 10px 5px 5px black;
+
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+        /* inset | offset-x | offset-y | color */
+        box-shadow: inset 5em 1em gold;
+
+        /* Any number of shadows, separated by commas */
+        box-shadow: 3px 3px red, -1em 0 0.4em olive;
+
+        /* Global values */
+        box-shadow: inherit;
+        box-shadow: initial;
+        box-shadow: revert;
+        box-shadow: revert-layer;
+        box-shadow: unset;
+
+        Especifique uma única sombra de caixa usando:
+
+            Dois, três ou quatro valores de <comprimento>.
+            
+                Se apenas dois valores forem fornecidos, eles serão interpretados como valores <offset-x> e <offset-y>.
+            
+                Se um terceiro valor for fornecido, ele será interpretado como um <blur-radius>.
+            
+                Se um quarto valor for fornecido, ele será interpretado como um <spread-radius>.
+            
+            Opcionalmente, a palavra-chave inset.
+            
+            Opcionalmente, um valor <color>.
+            Para especificar várias sombras, forneça uma lista de sombras separadas por vírgulas.
+
+    * VALORES
+
+        <inset-inserir>: Se não for especificado (padrão), a sombra será considerada uma sombra projetada (como se a caixa fosse elevada acima do conteúdo). A presença da palavra-chave inset altera a sombra para uma dentro do quadro (como se o conteúdo estivesse pressionado dentro da caixa). As sombras inseridas são desenhadas dentro da borda (mesmo as transparentes), acima do plano de fundo, mas abaixo do conteúdo.
+
+        <offset-x> <offset-y>: Estes são dois valores de <comprimento> para definir o deslocamento da sombra. <offset-x> especifica a distância horizontal. Valores negativos colocam a sombra à esquerda do elemento. <offset-y> especifica a distância vertical. Valores negativos colocam a sombra acima do elemento. Veja <comprimento> para as unidades possíveis. Se ambos os valores forem 0, a sombra é colocada atrás do elemento (e pode gerar um efeito de desfoque se <blur-radius> e/ou <spread-radius> estiver definido).
+
+        <blur-radius(raio de desfoque)>: Este é um terceiro valor <length>. Quanto maior esse valor, maior o desfoque, então a sombra fica maior e mais clara. Valores negativos não são permitidos. Se não for especificado, será 0 (a borda da sombra é nítida).
+
+        <spread-radius(raio de propragação)>: Este é um quarto valor <length>. Valores positivos farão com que a sombra se expanda e cresça, valores negativos farão com que a sombra encolha. Se não for especificado, será 0 (a sombra terá o mesmo tamanho do elemento). 
+
+        <color(cor)>: Consulte os valores de <color> para possíveis palavras-chave e notações. Se não for especificado, o padrão é currentcolor.
+-->

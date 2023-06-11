@@ -1,0 +1,32 @@
+<!--
+    * TRANSITION-DELAY
+
+        A transition-delay propriedade CSS especifica a duração de espera antes de iniciar o efeito de transição de uma propriedade quando seu valor muda.
+
+        O atraso pode ser zero, positivo ou negativo:
+
+            Um valor de 0s(ou 0ms) iniciará o efeito de transição imediatamente.
+
+            Um valor positivo atrasará o início do efeito de transição por um determinado período de tempo.
+
+            Um valor negativo iniciará o efeito de transição imediatamente e no meio do efeito. Em outras palavras, o efeito será animado como se já estivesse em execução por um determinado período de tempo.
+
+        Você pode especificar vários atrasos, o que é útil ao fazer a transição de várias propriedades. Cada atraso será aplicado à propriedade correspondente conforme especificado pela transition-property propriedade, que atua como uma lista mestra. Se houver menos atrasos especificados do que na lista principal, a lista de valores de atraso será repetida até que haja o suficiente. Se houver mais atrasos, a lista de valores de atraso será truncada para corresponder ao número de propriedades. Em ambos os casos, a declaração CSS permanece válida.
+
+    * SINTAXE
+
+        /* <time> values */
+        transition-delay: 3s;
+        transition-delay: 2s, 4ms;
+
+        /* Global values */
+        transition-delay: inherit;
+        transition-delay: initial;
+        transition-delay: revert;
+        transition-delay: revert-layer;
+        transition-delay: unset;
+
+    * VALORES 
+
+        <time>: Indica o tempo de espera entre a alteração do valor de uma propriedade e o início do efeito de transição.
+-->

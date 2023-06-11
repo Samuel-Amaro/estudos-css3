@@ -1,0 +1,46 @@
+<!--
+    * ALINHAR Á ESQUERDA E À DIREITA - USANDO A POSITION
+
+        - Nota: Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .right{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor absolute define que um elemento é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o valor absolute o elemento é posicionado em relação ao seu primeiro elemento ancestral posicionado (não estático)
+             - Nota: Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+             - o elemento ancestral desta <div class="right"> e o <body> elemento, pois e o elemento que contém a <div class="right">
+            */
+            position: absolute;
+            /*
+             - A right propriedade afeta a posição horizontal de um elemento posicionado.
+             - Se position: absolute; ou position: fixed; - a propriedade right define a borda direita de um elemento para uma unidade à direita da borda direita de seu ancestral posicionado mais próximo.
+             - define 0px para a border-right do elemento <div class="right"> a direita da border-right do elemento <body> ancestral.
+             - o elemento se afasta 0px da border-right do elemento ancestral
+            */
+            right: 0px;
+            width: 300px;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Alinhar à direita com a propriedade position</h2>
+
+    <p>Um exemplo de como alinhar elementos à direita com a propriedade position:</p>
+
+    <div class="right">
+        <p>Nos meus anos mais jovens e vulneráveis, meu pai me deu alguns conselhos que tenho revirado em minha mente desde então.</p>
+    </div>
+
+</body>
+</html>

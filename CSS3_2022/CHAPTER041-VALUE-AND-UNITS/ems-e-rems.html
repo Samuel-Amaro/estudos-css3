@@ -1,0 +1,81 @@
+<!--
+    * ems e rems
+
+        em e rem são os dois comprimentos relativos que você provavelmente encontrará com mais frequência ao dimensionar qualquer coisa, de caixas a texto. Vale a pena entender como eles funcionam e as diferenças entre eles, especialmente quando você começa a abordar assuntos mais complexos, como estilo de texto ou layout CSS . O exemplo abaixo fornece uma demonstração.
+
+        O HTML ilustrado abaixo é um conjunto de listas aninhadas — temos três listas no total e ambos os exemplos têm o mesmo HTML. A única diferença é que o primeiro tem uma classe de ems e o segundo uma classe de rems.
+
+        Para começar, definimos 16px como o tamanho da fonte no <html> elemento.
+
+        Para recapitular, a unidade em significa "tamanho da fonte do meu elemento pai" no caso de tipografia. Os <li> elementos dentro do <ul> com um class de ems pegam seu tamanho de seu pai. Assim, cada nível sucessivo de aninhamento fica progressivamente maior, pois cada um tem seu tamanho de fonte definido como 1.3em- 1.3 vezes o tamanho de fonte do pai.
+
+        Para recapitular, a unidade rem significa "Tamanho da fonte do elemento raiz" . (rem significa "raiz em".) Os <li> elementos dentro do <ul> com a class de rems obtêm seu dimensionamento do elemento raiz ( <html>). Isso significa que cada nível sucessivo de aninhamento não fica cada vez maior.
+
+        No entanto, se você alterar o tamanho da fonte <html> no CSS, verá que todo o resto muda em relação a ele - tanto o texto rem quanto o tamanho em.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        html{
+            /*
+             - Para começar, definimos 16px como o tamanho da fonte no <html> elemento.
+            */
+            font-size: 16px;
+        }
+
+        .ems li{
+            /*
+             - unidade de comprimento relativo, em, relativo a Tamanho da fonte do elemento pai, no caso de propriedades tipográficas como font-size.
+             - 1.3em significa que 1.3em x tamanho da fonte do elemento pai = tamanho da fonte do elemento
+            */
+            font-size: 1.3em;
+        }
+
+        .rems li{
+            /*
+             - unidade de comprimento relativo rem, relativo a Tamanho da fonte do elemento raiz
+             - 1.3em significa 1.3em x 16px = 20.8px tamanho da fonte de cada item da lista. 16px e o tamanho da fonte do elemento raiz do documento o elemento html
+            */
+            font-size: 1.3rem;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <ul class="ems">
+        <li>Um</li>
+        <li>Dois</li>
+        <li>Três
+            <ul>
+               <li>Três A</li>
+               <li>Três B
+                   <ul>
+                       <li>Três B 2</li>
+                   </ul>
+               </li> 
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="rems">
+        <li>Um</li>
+        <li>Two</li>
+        <li>Três
+            <ul>
+                <li>Três A</li>
+                <li>Três B
+                    <ul>
+                        <li>Três B2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>

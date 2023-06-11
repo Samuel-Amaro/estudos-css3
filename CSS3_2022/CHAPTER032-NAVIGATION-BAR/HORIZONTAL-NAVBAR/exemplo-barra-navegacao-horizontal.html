@@ -1,0 +1,47 @@
+<!--
+    * EXEMPLO DE BARRA DE NAVEGAÇÃO HORIZONTAL
+
+        - Crie uma barra de navegação horizontal básica com uma cor de fundo escura e altere a cor de fundo dos links quando o usuário passar o mouse sobre eles:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li{
+            float: left;
+        }
+        
+        li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover{
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--
+    * ELEMENTOS FLEXBOX
+
+      - Para começar a usar o modelo Flexbox, você precisa primeiro definir um flex container.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos Flexbox</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            background-color: dodgerblue;
+        }
+
+        div.flex-container > div{
+            background-color: #f1f1f1;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <p><strong>Exemplo:</strong> O elemento acima representa um flex container (a área azul) com três flex items.</p>
+
+    <p>Um Layout Flexível deve ter um elemento pai com a propriedade display definida como flex .</p>
+
+    <p>O (s) elemento (s) filho (s) direto (s) do contêiner flexível tornam-se automaticamente itens flexíveis.</p>
+
+</body>
+</html>

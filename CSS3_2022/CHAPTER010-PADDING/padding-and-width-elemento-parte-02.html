@@ -1,0 +1,64 @@
+<!--
+    - Para manter a largura em 300px, não importa a quantidade de preenchimento(padding), você pode usar a box-sizing propriedade. Isso faz com que o elemento mantenha sua largura real; se você aumentar o preenchimento, o espaço de conteúdo disponível diminuirá.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div.ex1{
+            /*usando a propriedade background-color podemos definir um cor de fundo para o elemento*/
+            background-color: yellow;
+            /*
+             - a propriedade width especifica a largura da area de conteudo do elemento.
+             - define que o elemento tera 300px de largura para a area de conteudo do elemento.
+             - a area de conteudo e a parte dentro do padding(preenchimento), border(borda), e margen(margin) de um elemento. o box-model*/
+            width: 300px;
+        }
+        div.ex2{
+            /*usando a propriedade background-color podemos definir um cor de fundo para o elemento*/
+            background-color: lightblue;
+            /*
+             - a propriedade width especifica a largura da area de conteudo do elemento.
+             - define que o elemento tera 300px de largura para a area de conteudo do elemento
+             - a area de conteudo e a parte dentro do padding(preenchimento), border(borda), e margen(margin) de um elemento. o box-model*/
+            width: 300px;
+            /*
+             - as propriedades  css padding e usado para criar espaço ao redor do conteudo de um elemento, dentro de qualquer borda definida.
+             - a propriedade padding e uma shorthand para as seguintes propriedades de padding individuais, padding-top, padding-right, padding-bottom, padding-left.
+             - especificando 1 valor para shorthand padding.
+             - a padding shorthand abaixo especificado com 1 valor e o mesmo que:
+
+                padding-top: 25px;
+                padding-right: 25px
+                padding-bottom: 25px;
+                padding-left: 25px;
+
+             - o elemento div.ex2 possui uma largura especifica para a area de conteudo, assim o padding adicionado abaixo, ira influenciar na largura total da area de conteudo.
+             - o padding(preeenchimento) adicionado no elemento sera adicionado na width(largura) total do elemento.
+             - isso  e um resultado indesejavel.
+            */
+            padding: 25px;
+            /*
+             - a propriedade box-sizing faz com que o elemento mantenha sua largura real, sem ser interferida por um padding
+             - se você aumentar o padding, o espaço de conteúdo disponível diminuirá.
+            */
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Padding e width do elemento</h2>
+
+    <div class="ex1">Esta div tem 300px de largura.</div>
+
+    <br/>
+
+    <p>A largura desta &lt;div&gt; permanece em 300px, apesar dos 50px de padding-right e padding-left, por causa da propriedade box-sizing: border-box.</p>
+
+    <div class="ex2">A largura desta div é de 300px</div>
+</body>
+</html>

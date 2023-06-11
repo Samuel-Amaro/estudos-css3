@@ -1,0 +1,55 @@
+<!--
+    * PSEUDOCLASSES DE LOCALIZAÇÃO
+
+        Essas pseudoclasses estão relacionadas a links e a elementos direcionados no documento atual.
+
+    * :any-link(qualquer link)
+
+        Corresponde a um elemento se o elemento corresponder a :link ou :visited.
+
+        O seletor de pseudoclasse CSS :any-link representa um elemento que atua como âncora de origem de um hiperlink, independentemente de ter sido visitado. Em outras palavras, ele corresponde a cada elemento <a> ou <area> que possui um atributo href. Assim, ele corresponde a todos os elementos que correspondem a :link ou :visited
+
+        /*Seleciona qualquer elemento que seria correspondido por :link ou :visited*/
+        :any-link {
+            color: green;
+        }
+
+    * SINTAXE
+
+        :any-link
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - corresponde a cada elemento <a> ou <area> que possui um atributo href, Assim, ele corresponde a todos os elementos que correspondem a :link ou :visited 
+        */
+        a:any-link{
+            border: 1px solid blue;
+            color: orange;
+        }
+
+        /*
+         Webkit browsers
+        */
+        a:-webkit-any-link{
+            border: 1ps solid blue;
+            color: orange;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="https://example.com" target="_blank" rel="external">External link</a>
+    <br/>
+    <a href="#" target="_self" rel="next">Internal target link</a>
+    <br/>
+    <a>Placeholder link (won't get styled)</a>
+
+</body>
+</html>

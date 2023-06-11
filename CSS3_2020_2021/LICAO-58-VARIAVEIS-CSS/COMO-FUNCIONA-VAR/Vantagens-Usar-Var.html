@@ -1,0 +1,75 @@
+<!--
+    * As vantagens de usar var () são:
+
+      - torna o código mais fácil de ler (mais compreensível)
+
+      - torna muito mais fácil alterar os valores das cores
+
+      - Para alterar a cor azul e branco para um azul e branco mais suave, você só precisa alterar os dois valores de variáveis:
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maneira tradicional</title>
+    <style>
+        /*
+         - O :root seletor corresponde ao elemento raiz do documento.
+         - Em HTML, o elemento raiz é sempre o elemento html.
+        */
+        :root{
+            /*definindo nome e valor da variavel*/
+            --blue: #6495ed; /*valor antigo: #1e90ff*/
+            --white: #faf0e6; /*valor antigo: #FFFFFF*/
+        }
+        body{
+            /*a propriedade background color, vai receber o valor de --blue por meio da função var*/
+            background-color: var(--blue); 
+        }
+        h2{
+            border-bottom: 2px solid var(--blue);
+        }
+        div.container{
+            color: var(--blue);
+            background-color: var(--white);
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
+        button{
+            background-color: var(--white);
+            color: var(--blue);
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: var(--blue);
+            border-style: solid;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>A maneira tradicional</h1>
+
+    <div class="container">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolore beatae at cum, ratione molestiae enim commodi provident dolorum doloribus ipsum necessitatibus quibusdam odit suscipit doloremque sapiente perspiciatis! Repudiandae, dignissimos?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas veniam non vel eveniet temporibus facilis unde a laborum consectetur corrupti, natus incidunt distinctio, aut sed velit quibusdam harum tempora tenetur!</p>
+        <p>
+            <button>Yes</button>
+            <button>No</button>
+        </p>
+    </div>
+
+</body>
+</html>

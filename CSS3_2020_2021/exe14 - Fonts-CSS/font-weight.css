@@ -1,0 +1,11 @@
+/*
+ * FONT WEIGHT - ESPESSURA DA FONTE
+
+  - A font-weight propriedade especifica o peso de uma fonte:
+*/
+.normal{
+    font-weight: normal;
+}
+.negrito{
+    font-weight: bold;
+}

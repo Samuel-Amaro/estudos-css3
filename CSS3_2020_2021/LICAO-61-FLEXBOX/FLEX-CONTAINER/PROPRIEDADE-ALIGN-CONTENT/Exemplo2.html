@@ -1,0 +1,102 @@
+<!--
+    * A PROPRIEDADE ALIGN-CONTENT(alinha o conteúdo)
+
+     - A align-content propriedade é usada para alinhar as linhas flexíveis.
+
+     - Modifica o comportamento da propriedade flex-wrap. É semelhante a itens de alinhamento(align), mas em vez de alinhar itens flexíveis, ele alinha as linhas flexíveis.
+
+     - Nota: Deve haver várias linhas de itens para esta propriedade ter algum efeito!
+
+     - Dica: Use a propriedade justify-content para alinhar os itens no eixo principal (horizontalmente).
+
+    * SINTAXE CSS:
+
+      align-content: stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        stretch(esticam): Valor padrão. As linhas se estendem para ocupar o espaço restante;
+
+        center(centro): As linhas são compactadas em direção ao centro do flex container;
+
+        flex-start(início flexível): As linhas são compactadas em direção ao início do flex container;
+
+        flex-end(extremidade flexível): As linhas são embaladas em direção ao final do flex container;
+
+        space-between(espaço entre): As linhas são distribuídas uniformemente no flex container;
+
+        space-around(espaço ao redor): As linhas são distribuídas uniformemente no flex container, com espaços de meio tamanho em cada extremidade;
+
+        space-evenly(espaço uniformemente): As linhas são distribuídas uniformemente no flex container, com espaço igual ao redor delas; 
+
+     - Nestes exemplos, usamos um contêiner de 600 pixels de altura, com a flex-wrap propriedade definida como wrap, para demonstrar melhor a align-content propriedade.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade Align-Content</title>
+    <style>
+        i{
+            color: rgb(204, 69, 69);
+        }
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            height: 600px;
+            /*A propriedade flex-wrap, especifica se os elemtos flexiveis devem ser agrupados ou não, caso os elementos flexiveis não caibam e uma linha flexivel, o flex wrap com o valor wrap agrupa os elementos, para não quebrar o layout;
+            Especifica se os itens flexíveis devem ser agrupados ou não, se não houver espaço suficiente para eles em uma linha flexível;
+            Um problema que aparece quando você tem uma quantidade fixa de elementos com a mesma largura e altura no seu esquema é que eventualmente seus elementos filhos flexbox irão sobrepor seu elemento pai (container), quebrando o laioute.
+            wrap(enrolar): Especifica que os itens flexíveis serão embalados se necessário
+            */
+            flex-wrap: wrap;
+            background-color: dodgerblue;
+            /*
+             space-around(espaço ao redor): As linhas são distribuídas uniformemente no flex container, com espaços de meio tamanho em cada extremidade;
+            */
+            align-content: space-around;
+        }
+        div.flex-container > div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Flex Box - Layout Flexivel</h1>
+
+    <p><strong>Exemplo:</strong>O <i>space-around</i> valor exibe as linhas flexíveis com espaço antes, entre e depois delas:</p>
+
+    <h2>Propriedade Align-Content</h2>
+
+    <p><strong>Exemplo:</strong> O "align-content: space-around;" exibe as linhas flexíveis com espaço antes, entre e depois delas:</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+</body>
+</html>

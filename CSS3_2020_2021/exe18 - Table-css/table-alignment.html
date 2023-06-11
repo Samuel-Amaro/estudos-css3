@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento da tabela</title>
+    <style>
+        /*
+         * ALINHAMENTO DA TABELA HORIZONTAL
+
+          - A text-align propriedade define o alinhamento horizontal (como esquerda - left, direita - right ou centro - center) do conteúdo em <th> ou <td>.
+          - Por padrão, o conteúdo dos elementos <th> é alinhado ao centro e o conteúdo dos elementos <td> é alinhado à esquerda;
+          - Para alinhar ao centro o conteúdo dos elementos <td> também, use text-align: center:
+        */
+        td{
+           text-align: center; 
+        }
+        /*
+         * APLICANDO UM ESTILO NA TABELA
+        */
+        table{
+                border-top: 2px;
+                border-right: 2px;
+                border-bottom: 2px;
+                border-left: 2px;
+                border-style: solid;
+                border-color: blue;
+        }
+        table > tr,th,td{
+                border-top: 2px;
+                border-right: 2px;
+                border-bottom: 2px;
+                border-left: 2px;
+                border-style: solid;
+                border-color: blue;
+        }
+        /*
+         * Para alinhar o conteúdo à esquerda, force o alinhamento de <th> elementos a serem alinhados à esquerda, com text-align: left property:
+        */
+        .es{
+            text-align: left;
+        }
+        /*
+         * ALINHAMENTO VERTICAL
+
+          - A vertical-alignpropriedade define o alinhamento vertical (como superior - top, inferior - botton ou meio - middle) do conteúdo em <th> ou <td>.
+        */
+        .t{
+            height: 50px; /*altura da caixa onde vai o conteudo de cada item da tabela*/
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table Alignment</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae pariatur quae libero inventore nobis magni quidem voluptatem asperiores, amet quam facilis doloremque enim, perferendis qui harum. Natus beatae distinctio ducimus!</p>
+    <h2>Alinhamento Horizontal</h2>
+    <table>
+        <tr>
+            <th  class="es">Companhia</th>
+            <th  class="es">Contato</th>
+            <th  class="es">Pais</th>
+        </tr>
+        <tr>
+            <td>alfreds futterkiste</td>
+            <td>Maria anders</td>
+            <td>Alemanha</td>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>christina Berglund</td>
+            <td>Suecia</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco chang</td>
+            <td>Mexico</td>
+        </tr>
+        <tr>
+            <td>Ernst Handel</td>
+            <td>Roland mendel</td>
+            <td>Austria</td>
+        </tr>
+        <tr>
+            <td>troca da ilha</td>
+            <td>Helen Bennett</td>
+            <td>Reino Unido</td>
+        </tr>
+        <tr>
+            <td>Koniglich Essen</td>
+            <td>Philip Cramer</td>
+            <td>Alemanha</td>
+        </tr>
+        <tr>
+            <td>alfreds futterkiste</td>
+            <td>Maria anders</td>
+            <td>Alemanha</td>
+        </tr>
+    </table>
+    <h2>Alinhamento Vertical</h2>
+    <table>
+        <tr>
+            <th>Companhia</th>
+            <th>Contato</th>
+            <th>Pais</th>
+        </tr>
+        <tr>
+            <td class="t">alfreds futterkiste</td>
+            <td class="t">Maria anders</td>
+            <td class="t">Alemanha</td>
+        </tr>
+        <tr>
+            <td class="t">Berglunds snabbkop</td>
+            <td class="t">christina Berglund</td>
+            <td class="t">Suecia</td>
+        </tr>
+        <tr>
+            <td class="t">Centro comercial Moctezuma</td>
+            <td class="t">Francisco chang</td>
+            <td class="t">Mexico</td>
+        </tr>
+        <tr>
+            <td class="t">Ernst Handel</td>
+            <td class="t">Roland mendel</td>
+            <td class="t">Austria</td>
+        </tr>
+    </table>
+</body>
+</html>

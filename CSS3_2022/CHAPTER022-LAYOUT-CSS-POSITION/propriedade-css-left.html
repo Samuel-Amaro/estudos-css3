@@ -1,0 +1,96 @@
+<!--
+    * PROPRIEDADE CSS LEFT(ESQUERDA)
+
+        - A left propriedade afeta a posição horizontal de um elemento posicionado. Esta propriedade não tem efeito em elementos não posicionados.
+
+            - Se position: absolute; ou position: fixed; - a left propriedade define a border left de um elemento para uma unidade à esquerda da borda esquerda de seu ancestral posicionado mais próximo.
+
+            - Se position: relative; - a left propriedade define a border left de um elemento para uma unidade à esquerda/direita de sua posição normal.
+
+            - Se position: sticky; - a left propriedade se comporta como sua position relative quando o elemento está dentro da viewport, e como sua position fixed quando está fora.
+
+            - Se position: static; - a left propriedade não tem efeito.
+
+    * SINTAXE CSS:
+
+        left: auto|lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: auto
+        DESCRIPTION: Permite que o navegador calcule a posição da border left. Isso é padrão
+        ------------------------------------
+        VALUE: length 
+        DESCRIPTION: Define a posição da border-left em px, cm, etc. Valores negativos são permitidos. L
+        ------------------------------------
+        VALUE: %
+        DESCRIPTION: Define a posição da border-left em % do elemento contido. Valores negativos são permitidos
+        ------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        div.a{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            width: 400px;
+            height: 200px;
+            border: 3px solid red;
+        }
+        div.b{
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancentral desta div com position absolute e uma div com postion relative, que esta em sua posição normal
+             - Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+            */
+            position: absolute;
+            /*
+             - a propriedade css left afeta a posição horizontal de um elemento posicionado.
+             - Se position: absolute; ou position: fixed; - a left propriedade define a border left de um elemento para uma unidade à esquerda da borda esquerda de seu ancestral posicionado mais próximo.
+             - o valor auto Permite que o navegador calcule a posição da border left. Isso é padrão
+            */
+            left: auto;
+            width: 100px;
+            height: 120px;
+            border: 3px solid #73AD21;
+        }
+        div.c{
+            position: absolute;
+            /*
+             - o valor 150px define a posição da border-left do elemento, o elemento define 150px para a esquerda da border-left do elemento que o contem ou o ancestral mais proximo, da border-left do elemento ancestral para a direita, os 150px de left.
+            */
+            left: 150px;
+            width: 200px;
+            height: 120px;
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>a propriedade left</h1>
+
+    <div class="a">
+        Este div elemento possui position: relative;
+        <div class="b">Este elemento div tem position: absolute e left: auto.</div>
+        <div class="c">Este elemento div tem position: asbolute e é colocado 150 pixels à direita da border-left do elemento posicionado que o contém.
+        </div>
+    </div>
+
+    
+</body>
+</html>

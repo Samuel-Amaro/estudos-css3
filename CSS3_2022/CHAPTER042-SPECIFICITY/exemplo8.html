@@ -1,0 +1,38 @@
+<!--
+    Um seletor de classe supera qualquer número de seletores de elemento - um seletor de classe como .intro supera h1, p, div, etc:
+
+    O seletor universal (*) e os valores herdados têm uma especificidade de 0 - O seletor universal (*) e os valores herdados são ignorados!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /**
+         - especificidade, dois seletores diferentes apontando para o mesmo elemento e aplicando a mesma regra css, qual sera aplicada?
+         - seletores de classe são mais especificos que seletores de elementos 
+        */
+
+        /*
+         - seletor de classe, seleciona um elemento que possua o seguinte valor de classe
+        */
+       .intro{
+           background-color: yellow;
+       }
+
+       /*
+        - seletor de elemento, seleciona todos os elementos h1 no documento para aplicar o estilo
+       */
+       h1{
+           background-color: red;
+       }
+    </style>
+</head>
+<body>
+
+   <h1 class="intro">Este é um título</h1>
+
+</body>
+</html>

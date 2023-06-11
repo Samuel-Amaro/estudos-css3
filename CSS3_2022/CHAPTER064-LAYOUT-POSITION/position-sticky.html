@@ -1,0 +1,69 @@
+<!--
+    * POSITION STICKY(POSITION ESTICAR)
+
+        Há outro valor de posição disponível chamado position: sticky, que é um pouco mais novo que os outros. Este é basicamente um híbrido entre posição relativa e fixa. Ele permite que um elemento posicionado aja como se estivesse relativamente posicionado até que seja rolado para um determinado limite (por exemplo, 10px do topo da janela de visualização), após o qual se torna fixo.
+
+        * EXEMPLO BASICO
+
+            O posicionamento fixo pode ser usado, por exemplo, para fazer com que uma barra de navegação role com a página até um determinado ponto e depois fique no topo da página.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic document flow</title>
+
+    <style type="text/css">
+        body {
+            width: 500px;
+            margin: 0 auto;
+            height: 1400px;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        .positioned{
+            /*
+             - O posicionamento permite que você retire elementos do fluxo normal de documentos e faça com que eles se comportem de maneira diferente.
+             - Para ativar um tipo específico de posicionamento em um elemento, usamos a position propriedade.
+             - o valor sticky Ele permite que um elemento posicionado aja como se estivesse relativamente posicionado até que seja rolado para um determinado limite (por exemplo, 10px do topo da janela de visualização), após o qual se torna fixo.
+            */
+            position: sticky;
+            /*
+             - o elemento agira como position relative até chegar o limite de 30px abaixo da viewport a partir disso agira como fixed, se torna fixo. 
+            */
+            top: 30px;
+            /*afasta 30px para a direita da viewport no lado esquerdo - empurra o elemento 30px para a direita*/
+            left: 30px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1>Fluxo básico de documentos</h1>
+
+    <p>Sou um elemento básico de nível de bloco. Meus elementos de nível de bloco adjacentes ficam em novas linhas abaixo de mim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, alias! Accusamus, doloribus. Dolorum minima rerum provident fugiat, maxime, qui expedita laborum reprehenderit voluptas sit ducimus id, voluptate culpa at asperiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsum blanditiis repellat nesciunt excepturi! Veritatis, illo? Architecto, quis! Sint esse voluptatum provident rem ad recusandae temporibus maiores earum quaerat unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati corporis blanditiis earum aperiam rerum dolorum eligendi natus, modi explicabo assumenda commodi id a voluptas, dignissimos sit repudiandae accusamus sapiente laboriosam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium facere vel sunt obcaecati aliquam, minima adipisci dolorum, omnis repudiandae quos rerum impedit amet alias hic nihil architecto quam ad? Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dignissimos expedita impedit dicta itaque? Dicta nulla reprehenderit iure! Eaque aspernatur et quis quas adipisci aperiam repellendus nesciunt voluptate deserunt sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illum ducimus debitis at ut asperiores ipsam neque sunt numquam accusamus, laborum eaque minus repellat, optio, totam nesciunt corrupti vel sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aperiam suscipit deleniti eaque magni eius harum delectus adipisci provident, fugit esse enim nihil neque iusto a dolorem explicabo quibusdam placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sunt consequatur magnam repellendus, minima tempora, aperiam nobis totam soluta harum, quam distinctio repudiandae nemo enim amet. Illo eaque corporis aperiam.</p>
+
+    <p class="positioned">Por padrão, abrangemos 100% da largura de nosso elemento pai e nossa altura é tão alta quanto nosso conteúdo filho. Nossa largura e altura totais são nosso conteúdo + preenchimento + largura/altura da borda.</p>
+
+    <p>Estamos separados por nossas margens. Por causa do recolhimento da margem, somos separados pela largura de uma de nossas margens, não de ambas.</p>
+
+    <p>elementos inline <span>como este</span> e <span>este</span> ficam na mesma linha um do outro, e nós de texto adjacentes, se houver espaço na mesma linha. Elementos inline transbordantes <span>se encaixam em uma nova linha, se possível — como esta contendo texto</span>, ou apenas vá para uma nova linha se não, assim como esta imagem fará: <img src="long.jpg "></p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorum vel assumenda provident optio corrupti labore dicta odit, nobis vero unde officiis doloremque? Incidunt laudantium amet dignissimos cumque harum officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias cumque architecto provident eligendi tempora ipsum magni facere repellat, nobis blanditiis non perferendis dignissimos. Sed est totam repellat quisquam, hic ullam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque delectus doloremque quasi? Consectetur dolorem, rem distinctio incidunt in laboriosam vero commodi tenetur, exercitationem expedita quasi a quis voluptatum assumenda iste.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quaerat enim, repellendus ducimus dolorem rerum praesentium, tenetur sequi autem soluta voluptates. Cupiditate earum, consequatur illum dolorum blanditiis quisquam aliquam nisi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus labore delectus cumque culpa eos, dolorum impedit temporibus animi odit! Aliquid sint harum impedit quasi aliquam earum dignissimos, magnam eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam provident facilis fugiat sunt labore veritatis aperiam molestiae placeat soluta sapiente dolorem, nam non optio reprehenderit neque quia nulla quibusdam assumenda? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis sapiente quis voluptas excepturi, suscipit totam fugiat adipisci maiores odio saepe ratione ullam cum tempora vitae ipsam repellendus porro impedit ab?</p>
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+# MULTIPLE COLUMNS
+
+ ## LAYOUT DE MÚLTIPLAS COLUNAS CSS
+
+   - O layout CSS de várias colunas permite fácil definição de várias colunas de texto - assim como nos jornais:
+
+ ## PROPRIEDADES CSS MULTI-COLUNAS
+
+   * Neste capítulo, você aprenderá sobre as seguintes propriedades de várias colunas:
+
+      - column-count(contagem de colunas) : Especifica o número de colunas em que um elemento deve ser dividido.
+
+      - column-gap(LACUNA DA COLUNA) : Especifica a lacuna entre as colunas.
+
+      - column-rule-style(estilo da regra da coluna) : Especifica o estilo da regra entre as colunas
+
+      - column-rule-width(largura da regra da coluna) : Especifica a largura da regra entre as colunas
+
+      - column-rule-color(cor da regra da coluna) : Especifica a cor da regra entre as colunas
+
+      - column-rule(regra de coluna) :  Uma propriedade abreviada para definir todas as propriedades de regra de coluna.
+
+      - column-span(span de coluna) : Especifica em quantas colunas um elemento deve se estender
+
+      - column-width(largura da coluna) : Especifica uma largura ideal sugerida para as colunas

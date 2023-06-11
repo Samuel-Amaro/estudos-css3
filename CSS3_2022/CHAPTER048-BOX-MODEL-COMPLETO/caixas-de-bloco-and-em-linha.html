@@ -1,0 +1,31 @@
+<!--
+    * CAIXAS DE BLOCO(BLOCK) E EM LINHA(INLINE)
+
+        Em CSS, temos basicamente dois tipos de caixas — caixas de bloco(block boxes) e inline(inline boxes) . Essas características referem-se a como a caixa se comporta em termos de fluxo de página e em relação às demais caixas da página. As caixas também têm um tipo de exibição interna(inner display type) e um tipo de exibição externa(outer display type). Primeiro, explicaremos o que queremos dizer com caixa de bloco e caixa em linha. Em seguida, explicaremos o que significa um tipo de exibição interna e externa. 
+
+        Se uma caixa tiver um tipo de exibição externa de block(outer display type block), ele se comportará das seguintes maneiras: 
+
+            A caixa irá quebrar em uma nova linha.
+
+            A caixa se estenderá na direção em linha para preencher o espaço disponível em seu contêiner. Na maioria dos casos, isso significa que a caixa se tornará tão larga quanto seu recipiente, preenchendo 100% do espaço disponível. 
+
+            o width e height propriedades são respeitadas. 
+
+            Preenchimento(padding), margem(margin) e borda(border) farão com que outros elementos sejam empurrados para fora da caixa 
+
+        Alguns elementos HTML, como <h1> e <p>, usar block como seu tipo de exibição externa(outer display type) por padrão. 
+
+        Se uma caixa tiver um tipo de exibição externa de inline(outer display type inline), então: 
+
+            A caixa não quebrará em uma nova linha.
+
+            o width e height propriedades não serão aplicadas. 
+
+            Preenchimento vertical(padding vertical), margens(margins) e bordas(borders) serão aplicados, mas não farão com que outras caixas embutidas se afastem da caixa. 
+
+            Preenchimento horizontal(padding horizontal), margens(margin) e bordas(border) serão aplicados e farão com que outras caixas embutidas(inline) se afastem da caixa.
+            
+        Alguns elementos HTML, como <a>, <span>, <em> e <strong> usar inline como seu tipo de exibição externa(outer type display inline) por padrão. 
+
+        O tipo de caixa aplicado a um elemento é definido por display valores de propriedade, como block e inline, e refere-se ao externo valor display.
+-->

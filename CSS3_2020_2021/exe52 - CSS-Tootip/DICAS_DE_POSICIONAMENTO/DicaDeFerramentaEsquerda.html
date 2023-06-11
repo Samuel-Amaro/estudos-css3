@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamento Direita</title>
+    <style>
+        body{
+            /*todo texto que estiver no corpo do documento sera centralizado*/
+            text-align: center;
+        }
+        p.dica{
+            position: relative;
+            display: inline-block;
+            border-bottom-width: 1px;
+            border-bottom-style: dotted;
+            border-bottom-color: black;
+        }
+        /**
+         - usando uma combinação de seletor, pega todos os elementos span que são descendentes do elemento p
+         - essa configuração afeta somente o elemento <span>
+        **/
+        p.dica span.textodicaferramenta{
+            /**
+                - A propriedade CSS de visibilidade pode mostrar ou ocultar um elemento sem afetar o layout de um documento (ou seja, o espaço é criado para elementos independentemente de serem selecionados ou não). 
+                - valor: hidden A caixa do elemento é invisível (não desenhada), mas ainda afeta o layout normalmente. Os descendentes do elemento ficarão visíveis se tiverem sido visibilityconfigurados como visible.
+            **/
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 0px;
+            padding-right: 0px;
+
+            /*posição da dica*/
+            /**
+              - move um elemento completamente para fora do fluxo normal de layout da página, como se ele estivesse em sua própria camada separada. A partir daí, você pode fixá-lo em uma posição relativa às bordas do <html> elemento da página  (ou ao elemento ancestral posicionado mais próximo). Isso é útil para criar efeitos de layout complexos, como caixas com guias onde diferentes painéis de conteúdo ficam em cima uns dos outros e são mostrados e ocultos conforme desejado, ou painéis de informações que ficam fora da tela por padrão, mas podem ser deslizados na tela usando um botão de controle.
+            **/
+            position: absolute;
+            /**
+              - A z-index propriedade CSS define a ordem z de um elemento posicionado e seus descendentes ou flex items. Os elementos sobrepostos com um índice z maior cobrem aqueles com um menor.
+              - o elemento span e sobreposto por cima do elemento <p>
+            **/
+            z-index: 1;
+            /*se posiciona no meio do elemento <p>, de acordo com as propriedades do padding do elemento <p>*/
+            top: -5px;
+            /*se afasta 105% da esquerda*/
+            left: 105%;
+        }
+        /** 
+          - o elemento <p> ao receber o passar do mouse por cima de si, vai fazer algo
+          - o <span> vai ser oque vai fazer algo, porque ele esta sendo especificado, por causa do seletor de combinação espaço, que seleciona o descendente do elemento <p> que no caso e <span>
+        **/
+        p.dica:hover span.textodicaferramenta{
+            /*A caixa do elemento é visível.*/
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dicas de Ferramenta Certa Esquerda</h1>
+    <p><strong>Exemplo: </strong>Dica de ferramenta Posicionamento a Esquerda</p>
+    <p>Passe o mouse sobre o texto abaixo:</p>
+    <p  class="dica">Passe o mouse sobre min<span class="textodicaferramenta">Texto de dica</span></p>
+</body>
+</html>

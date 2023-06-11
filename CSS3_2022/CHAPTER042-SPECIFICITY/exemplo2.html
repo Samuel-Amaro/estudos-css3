@@ -1,0 +1,40 @@
+<!--
+    * EXEMPLO 2
+
+        Neste exemplo, adicionamos um seletor de classe (chamado "teste") e especificamos uma cor verde para essa classe. O texto agora será verde (mesmo que tenhamos especificado uma cor vermelha para o seletor de elemento "p". Isso ocorre porque o seletor de classe tem prioridade mais alta:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /**
+         -  Se houver duas ou mais regras CSS que apontam para o mesmo elemento, o seletor com o maior valor de especificidade "vencerá" e sua declaração de estilo será aplicada a esse elemento HTML.
+        */
+
+        /*
+         - seletor simples, seletor de elemento, seleciona o elemento pelo nome, seleciona todos os elementos p no documento
+        */
+        p{
+            /*regra css que especifica uma cor para o texto do elemento p*/
+            color: red;
+        }
+        
+        /*
+         -  O seletor de classe seleciona elementos HTML com um atributo de classe específico.
+         - seletor de classe, seleciona um ou mais elemento que possua a classe .test, seletor mais especifico que o seletor de elemento
+        */
+        .test{
+            /*regra css que especifica uma cor para o texto do elemento, sera aplica a cor de texto verde ao elemento, pois o seletor de classe tem prioriedade mais alta, e mais especifico*/
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="test">Olá Mundo!</p>
+    
+</body>
+</html>

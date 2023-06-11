@@ -1,0 +1,54 @@
+<!--
+    * FAZENDO AS COISAS EMBRULHAR(wrap)
+
+        O valor inicial da flex-wrap propriedade é nowrap. Isso significa que, se você tiver um conjunto de itens flexíveis muito largos para o contêiner, eles o sobrecarregarão. Se você quiser fazer com que eles se envolvam quando ficarem muito largos, você deve adicionar a flex-wrap propriedade com um valor de wrap, ou usar a abreviação flex-flow com valores de row wrap ou column wrap.
+
+        Os itens serão então embrulhados no contêiner. No próximo exemplo, tenho dez itens, todos com a capacidade flex-basis de 160px crescer e encolher. Quando a primeira linha chega a um ponto em que não há espaço suficiente para colocar outro item de 160 pixels, uma nova linha flexível é criada para os itens e assim por diante até que todos os itens sejam colocados. À medida que os itens podem crescer, eles se expandirão para mais de 160 px para preencher cada linha completamente. Se houver apenas um item na linha final, ele se estenderá para preencher toda a linha.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+    <style>
+        .box{
+            display: flex;
+            /*
+             - se você tiver um conjunto de itens flexíveis muito largos para o contêiner, eles o sobrecarregarão. Se você quiser fazer com que eles se envolvam quando ficarem muito largos, você deve adicionar a flex-wrap propriedade com um valor de wrap
+            */
+            flex-wrap: wrap;
+            background-color: #608BA8;
+            gap: 5px;
+            padding: 3px;
+        }
+
+        .box > *{
+            /*
+             - flex-grow: 1, flex-shrink: 1, flex-basis: 160px, pode crescer e encolher.
+             - Quando a primeira linha chega a um ponto em que não há espaço suficiente para colocar outro item de 160 pixels, uma nova linha flexível é criada para os itens e assim por diante até que todos os itens sejam colocados.
+            */
+            flex: 1 1 160px;
+            background-color: #DFE8EE;
+            color: black;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+        <div>Eight</div>
+        <div>Nine</div>
+        <div>Ten</div>
+    </div>
+
+</body>
+</html>

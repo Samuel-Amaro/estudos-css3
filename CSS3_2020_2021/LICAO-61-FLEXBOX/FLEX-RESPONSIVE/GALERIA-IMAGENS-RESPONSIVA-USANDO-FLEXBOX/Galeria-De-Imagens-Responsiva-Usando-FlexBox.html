@@ -1,0 +1,127 @@
+<!--
+    * GALERIA DE IMAGENS RESPONSIVA USANDO FLEXBOX
+
+      - Use o flexbox para criar uma galeria de imagens responsiva que varia entre quatro, duas ou imagens de largura total, dependendo do tamanho da tela:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens Responsiva</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header.header{
+            text-align: center;
+            padding-top: 32px;
+            padding-right: 32px;
+            padding-bottom: 32px;
+            padding-left: 32px;
+        }
+        aside.linha{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*Especifica se os itens flexíveis devem ser agrupados ou não, se não houver espaço suficiente para eles em uma linha flexível; wrap(enrolar): Especifica que os itens flexíveis serão embalados se necessário. isso e necessario quando o layout se quebra ou quando a um overflow ao redimensionar o conteudo*/
+            flex-wrap: wrap;
+            padding-top: 0px;
+            padding-right: 4px;
+            padding-bottom: 0px;
+            padding-left: 4px;
+        }
+        /*Crie quatro colunas iguais que fiquem lado a lado*/
+        div.coluna{
+            /*shorthand para as propriedades flex-grow, flex-shrink, flex-basis, aqui neste exemplo assume so um valor na sintaxe, este valor e o valor de comprimento inicial informado e interpretado por flex-basis, o flex-grow: assume o valor padrão 1 que diz para não crescer proporcionalmente em relação aos outros todos vão ficar com a mesmo proporção e comprimento, e o flex-shrink: assume o valor 0, sendo especificado para não diminuir, quando o flex basis aumentar ou diminuir*/
+            flex: 25%;
+            /*a largura maxima que essa coluna pode assumir em relação ao seu conteiner pai, esse elemento so pode ter 25% da largura do espaço horizontal disponivel no conteiner pai*/
+            max-width: 25%;
+            padding-top: 0px;
+            padding-right: 4px;
+            padding-bottom: 0px;
+            padding-left: 4px;
+        }
+        div.coluna img{
+            width: 100%;
+            margin-top: 8px;
+            /*imagen fica alinha no meio do conteiner*/
+            vertical-align: middle;
+        }
+        /*Layout responsivo - cria um layout de duas colunas em vez de quatro colunas, isso e usando media query, para quando o tipo de midia for tela e a viewreport(janela de visualização) estiver com uma largura maxima de 800px ou menos para que as regras css sejama aplicadas, simulado um layout de tablet e desktops*/
+        @media screen and (max-width: 800px){
+            div.coluna{
+                /*esse valor unico na sintaxe dessa shorthand o classifica para a propriedade flex-basis, comprimento final do item flex, e ocupar 100% do espaço de seu elemento pai na vertical ou horizontal de acordo com a linha flexivel de flex-direction*/
+                flex: 100%;
+                /*largura maxima que o elemento pode atingir em relação ao conteiner pai*/
+                max-width: 100%;
+            }
+        }
+        /*Layout responsivo - faz com que as duas colunas sejam empilhadas uma em cima da outra, em vez de uma ao lado da outra, isso e usando media query, para quando o tipo de midia for tela e a viewreport(janela de visualização) estiver com uma largura maxima de 600px ou menos para que as regras css sejama aplicadas, simulando um layout de telefone*/
+        @media screen and (max-width: 600px) {
+            div.coluna{
+                /*comprimento final do item flex, e ocupar 100% do espaço de seu elemento pai na vertical ou horizontal de acordo com a linha flexivel de flex-direction*/
+                flex: 100%;
+                /*largura maxima que o elemento pode atingir em relação ao conteiner pai*/
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--cabeçalho-->    
+    <header class="header">
+        <h1>Galeria de Imagens Responsiva</h1>
+        <p>Redimensione a janela do navegador para ver o efeito de resposta.</p>
+    </header>
+     
+    <main>
+        <!--Grade de Fotos-->
+        <aside class="linha flex-container" >
+            <div class="coluna">
+                <img src="imagens/wedding.jpg" alt="imagen">
+                <img src="imagens/rocks.jpg" alt="imagen">
+                <img src="imagens/falls2.jpg" alt="imagen">
+                <img src="imagens/paris.jpg" alt="imagen">
+                <img src="imagens/nature.jpg" alt="imagen">
+                <img src="imagens/mist.jpg" alt="imagen">
+                <img src="imagens/paris.jpg" alt="imagen">
+            </div>
+            <div class="coluna">
+                <img src="imagens/underwater.jpg" alt="imagen">
+                <img src="imagens/ocean.jpg" alt="imagen">
+                <img src="imagens/wedding.jpg" alt="imagen">
+                <img src="imagens/mountainskies.jpg" alt="imagen">
+                <img src="imagens/rocks.jpg" alt="imagen">
+                <img src="imagens/underwater.jpg" alt="imagen">
+            </div>
+            <div class="coluna">
+                <img src="imagens/wedding.jpg" alt="imagen">
+                <img src="imagens/rocks.jpg" alt="imagen">
+                <img src="imagens/falls2.jpg" alt="imagen">
+                <img src="imagens/paris.jpg" alt="imagen">
+                <img src="imagens/nature.jpg" alt="imagen">
+                <img src="imagens/mist.jpg" alt="imagen">
+                <img src="imagens/paris.jpg" alt="imagen">
+            </div>
+            <div class="coluna">
+                <img src="imagens/underwater.jpg" alt="imagen">
+                <img src="imagens/ocean.jpg" alt="imagen">
+                <img src="imagens/wedding.jpg" alt="imagen">
+                <img src="imagens/mountainskies.jpg" alt="imagen">
+                <img src="imagens/rocks.jpg" alt="imagen">
+                <img src="imagens/underwater.jpg" alt="imagen">
+            </div>
+        </aside>
+    </main>
+    
+
+</body>
+</html>

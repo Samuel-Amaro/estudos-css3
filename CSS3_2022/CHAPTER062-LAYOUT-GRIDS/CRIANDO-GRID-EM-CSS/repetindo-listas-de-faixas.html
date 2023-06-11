@@ -1,0 +1,70 @@
+<!--
+    * REPETINDO LISTAS DE FAIXAS
+
+        Você pode repetir toda ou apenas uma seção de sua lista de faixas usando a repeat() função CSS. Altere sua lista de faixas para o seguinte:
+
+        Agora você terá três 1frfaixas como antes. O primeiro valor passado para a repeat() função especifica o número de vezes que você deseja que a lista se repita, enquanto o segundo valor é uma lista de faixas, que pode ser uma ou mais faixas que você deseja repetir.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Grid starting point</title>
+    <style>
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        /*Grid Container*/
+        .container{
+            /*
+             - Valor grid: O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo de grade.
+             - o valor grid habilita o grid layout.
+             -  todos os filhos diretos do contêiner se tornam itens de grade. 
+             - inicialmente o valor grid, fornece uma grid de uma coluna somente, assim o filhos os itens grid continuam sendo exibidos um abaixo do outro como no fluxo normal do documento.
+            */
+            display: grid;
+            /*
+             -  usar a fr unidade para dimensionar com flexibilidade as linhas e colunas da grade.
+             - usando a propriedade abaixo para adicionar três colunas, a grid, adicona três faixas de colunas com 1fr cada.
+             - 1fr e o mesmo que 1 fração do espaço disponivel no conteiner grid. temos três colunas com a mesma quantidade de espaço.
+             - A fr unidade distribui o espaço proporcionalmente.
+             - a função repeat() e usada para repetir toda ou apenas uma seção da lista de faixas de colunas.
+             - a função aceita como primeiro valor o numero de vezes que eu desejo que a lista se repita, enquanto o segundo valor e uma lista de faixas, que pode ser uma ou mais faxias que você deseja repetir
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - adicionando intervalos entre faixas(colunas e linhas).
+             - gap É uma shorthand para intervalo de linha(row-gap) e intervalo de coluna(column-gap).
+             - a gap e uma shorthand para column-gap e row-gap, especificar somente um unico valor, e definido 20px de intervalo entre as linhas primeiro, e a propriedade assume o valor de 20px como o mesmo para o intervalo entre colunas.
+            */
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple grid example</h1>
+
+    <div class="container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+    </div>
+
+</body>
+</html>

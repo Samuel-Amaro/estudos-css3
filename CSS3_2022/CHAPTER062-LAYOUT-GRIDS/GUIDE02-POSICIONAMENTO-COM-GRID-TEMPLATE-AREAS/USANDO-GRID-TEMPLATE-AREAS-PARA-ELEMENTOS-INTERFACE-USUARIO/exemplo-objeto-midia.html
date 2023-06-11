@@ -1,0 +1,86 @@
+<!--
+    * USANDO GRID-TEMPLATE-AREAS PARA ELEMENTOS DE INTERFACE DO USUÁRIO(UI)
+
+        Muitos dos exemplos de grade que você encontrará on-line supõem que você usará a grade para o layout da página principal, no entanto, a grade pode ser tão útil para elementos pequenos quanto para os maiores. Usar grid-template-areas pode ser especialmente bom, pois é fácil ver no código como é o seu elemento.
+
+    * EXEMPLOS DE OBJETO DE MÍDIA
+
+        Como um exemplo muito simples, podemos criar um "objeto de mídia". Este é um componente com espaço para uma imagem ou outra mídia de um lado e conteúdo do outro. A imagem pode ser exibida à direita ou à esquerda da caixa.
+
+        Nossa grade é uma grade de trilha de duas colunas, com a coluna para a imagem dimensionada em 1fr e o texto 3fr. Se você quiser uma área de imagem de largura fixa, poderá definir a coluna da imagem como uma largura de pixel e atribuir a área de texto 1fr. Uma trilha de coluna única de 1fr então ocuparia o resto do espaço.
+
+        Damos à área da imagem um nome de área de grade img e a área de texto content, então podemos defini-los usando a grid-template-areas propriedade.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .media{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+            max-width: 400px;
+        }
+
+        /*Grid Container-todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .media{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com duas faixas de colunas. a primeira com 1fr e a segunda com 3fr, ambas vão crescer e diminuir de acordo com o espaço disponivel no container grid. a segunda faixa de coluna e 3 vezes maior e ocupa mais espaço que a primeira.
+            */
+            grid-template-columns: 1fr 3fr;
+            /*
+             - Aqui vamos, especificar a localização das áreas definidas por nome, especificando o valor na grid-template-areas propriedade.
+             - criando o layout, cria todo o layout no conteiner de grade ao inves de especificar nos proprios itens grid. posiciona os itens de acordo com suas areas.
+            */
+            grid-template-areas: "img content";
+            margin-bottom: 1em;
+        }
+
+        /*iten grid*/
+        .media .image{
+            /*
+             - a propriedade grid-area e usada para posicionar uma area de grade.
+             - Definindo uma área dando-lhe um nome. pode ser o nome que eu quiser.
+             - isso não cria um layout, mas nomeia areas para serem usdas em um layout.
+             - nomendo a area da imagen iten de grid.
+            */
+            grid-area: img;
+            background-color: #ffd8a8;
+        }
+
+        /*iten grid*/
+        .media .text{
+            /*
+            - nomendo a area do segundo iten de grid.
+            */
+            grid-area: content;
+            padding: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="media">
+        <div class="image"></div>
+        <div class="text">Este é um exemplo de objeto de mídia.Podemos usar grid-template-áreas para alternar entre a imagem e a parte do texto do objeto de mídia.</div>
+    </div>
+
+</body>
+</html>

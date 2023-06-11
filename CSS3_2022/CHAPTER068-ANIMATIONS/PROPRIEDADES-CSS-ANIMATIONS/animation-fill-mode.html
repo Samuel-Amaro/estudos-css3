@@ -1,0 +1,94 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION-FILL-MODE
+
+        A propriedade CSS animation-fill-mode define como uma animação CSS aplica estilos ao seu destino antes e depois de sua execução.
+
+        Muitas vezes, é conveniente usar a animação de propriedade abreviada para definir todas as propriedades de animação de uma só vez.
+
+    * SINTAXE
+
+        /*UMA ANIMAÇÃO*/
+        animation-fill-mode: none;
+        animation-fill-mode: forwards;
+        animation-fill-mode: backwards;
+        animation-fill-mode: both;
+
+        /*MULTIPLAS ANIMAÇÕES*/
+        animation-fill-mode: none, backwards;
+        animation-fill-mode: both, forwards, none;
+
+    * VALORES
+
+        none: A animação não aplicará nenhum estilo ao destino quando não estiver em execução. Em vez disso, o elemento será exibido usando quaisquer outras regras CSS aplicadas a ele. Este é o valor padrão.
+    
+        forwards(para frente): O destino reterá os valores calculados definidos pelo último keyframe encontrado durante a execução. O último keyframe depende do valor de animation-direction e animation-iteration-count:
+
+            animation-direction	 animation-iteration-count	last keyframe encountered
+            normal	             even or odd	             100% or to
+            reverse	             even or odd 	             0% or from
+            alternate	         even	                     0% or from
+            alternate	         odd	                     100% or to
+            alternate-reverse	 even	                     100% or to
+            alternate-reverse	 odd	                     0% or from
+
+        backwards(para tras): A animação aplicará os valores definidos no primeiro keyframe relevante assim que for aplicado ao destino e reterá isso durante o período de atraso da animação. O primeiro keyframe relevante depende do valor de animation-direction:
+
+        animation-direction	            first relevant keyframe
+         normal or alternate	        0% or from
+         reverse or alternate-reverse	100% or to
+
+        both: A animação seguirá as regras para frente e para trás, estendendo assim as propriedades da animação em ambas as direções.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .demo{
+            border-top: 100px solid #ccc;
+            height: 300px;
+        }
+        
+        .demo:hover .grows{
+            animation-name: grow;
+            /*
+             - a animação tera uma duração de 3 segundos
+            */
+            animation-duration: 3s;
+        }
+
+        .demo:hover .growsandstays{
+            animation-name: grow;
+            animation-duration: 3s;
+            /*
+             - A propriedade CSS animation-fill-mode define como uma animação CSS aplica estilos ao seu destino antes e depois de sua execução.
+             - forwards(para frente): O destino reterá os valores calculados definidos pelo último keyframe encontrado durante a execução. O último keyframe depende do valor de animation-direction e animation-iteration-count:
+            */
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes grow{
+            
+            0%{
+                font-size: 0;
+            }
+
+            100%{
+                font-size: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>Move your mouse over the gray box!</p>
+    <div class="demo">
+        <div class="growsandstays">This grows and stays big.</div>
+        <div class="grows">This just grows.</div>
+    </div>
+
+</body>
+</html>

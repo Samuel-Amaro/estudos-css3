@@ -1,0 +1,47 @@
+<!--
+    * GRADIENTE LINEAR - CSS
+
+    * USANDO VARIOS CORTES DE COR
+
+      - O exemplo a seguir mostra um gradiente linear (de cima para baixo) com vários pontos de cor
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradiente Linear</title>
+    <style>
+        div#grad1{
+            height: 200px;
+            /*definindo o fundo do elemento como um gradiente de 3 cores, uniformemente espaçadas*/
+            background-image: linear-gradient(red,yellow,green);
+        }
+        div#grad2{
+            height: 200px;
+            /*definindo o fundo do elemento como um gradiente de 7 cores, uniformemente espaçadas*/
+            background-image: linear-gradient(red,orange,yellow,green,blue,indigo, violet);
+        }
+        div#grad3{
+            height: 200px;
+            /*definindo o fundo do elemento como um gradiente de 3 cores, sendo que as cores não estão uniformemente variadas, porque o programador esta definindo a porcentagem das cores*/
+            background-image: linear-gradient(red 10%,yellow 85%,blue 90%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Gradiente Linear</h1>
+    <h2>Usando varias Cores</h2>
+    <h3>varias interrupções de cor</h3>
+    <p><strong>Nota:</strong> As paradas de cor são espaçadas uniformemente quando nenhuma porcentagem é especificada.</p>
+    <p><strong>Exemplo:</strong>  O exemplo a seguir mostra um gradiente linear (de cima para baixo) com vários pontos de cor</p>
+    <h2>3 interrupções de cor(espaçadas uniformemente):</h2>
+    <div id="grad1"></div>
+    <h2>7 interrupções de cor(espaçadas uniformemente):</h2>
+    <div id="grad2"></div>
+    <h2>3 interrupções de cor(não espaçadas uniformemente):</h2>
+    <div id="grad3"></div>
+</body>
+</html>

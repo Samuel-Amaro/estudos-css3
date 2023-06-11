@@ -1,0 +1,123 @@
+<!--
+    * BARRA DE NAVEGAÇÃO FIXA
+
+     - Faça a barra de navegação ficar na parte superior ou inferior da página, mesmo quando o usuário rolar a página:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra Navegação Horizontal superior fixa</title>
+    <style>
+        /*elemento body, elemento que mostra todo o conteudo da pagina, o seletor de conteudo do documento html, onde todo conteudo da pagina e mostrado*/
+        body{
+            /*tirando todo espaço externo*/
+            margin: 0;
+        }
+        /*para um elemento de lista não ordenada*/
+        ul.barra-navegacao-horizontal{
+            /*lista sem estilo*/
+            list-style-type: none;
+            /*tira todo espaço externo ao redor da lista, da borda para fora*/
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            /*tira todo espaço interno da lista, da borda para o conteudo*/
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            /*estouro, trasbordamento, de conteudo, se o conteudo do elemento ul for maior que a caixa, a overflow controla, esse conteudo, para ser ocultado ao passar da caixa, ao trasbordar, ou estourar*/
+            overflow: hidden;
+            /*cor de fundo do elemento*/
+            background-color: #333;
+            /*elemento ficara com posição fixa, a pagina pode ser rolada, mas o elemento fica fixo, não se move com a pagina*/
+            position: fixed;
+            /*o elemento ficara posicionado no inferior da pagina, no baixo, de baixo para cima a partir do inicio do inferior, de baixo para cima*/
+            bottom: 0;
+            /*o elemento podera ocupar toda a largura total da pagina, na horizontal, pode ocupar toda a largura da pagina*/
+            width: 100%;
+        }
+
+        /*para cada elemento li, para cada item da lista*/
+        ul.barra-navegacao-horizontal > li{
+            /*o elemento flutua para a esquerda, cada elemento, que e uma caixa, vai flutuar para a esquerda
+            - float: left; - use float para fazer os elementos do bloco deslizarem próximos uns dos outros*/
+            float: left;  
+        }
+
+        /*para cada link da lista*/
+        ul.barra-navegacao-horizontal > li > a{
+            /*- o elemento sera exibido como um elemento de bloco, que quebra de linha antes de ser exibido e depois de ser exibido na pagina, aceita preenchimento, espaços internos, externos etc...
+            - display: block; - Permite-nos especificar o preenchimento (e altura, largura, margens, etc., se desejar)*/ 
+            display: block;
+            /*cor do texto*/
+            color: white;
+            /*alinha o texto ao centro*/
+            text-align: center;
+            /*add  espaço interno ao elemento a, entre a borda e o conteudo*/
+            padding-right: 16px;
+            padding-left: 16px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            /*tira o estilo do link, o sublinhado*/
+            text-decoration: none;
+        }
+        /*para cada item da lista, tem um pseudo-elemento ativo, que faz mudar o estado, ao passar o mouse por cima do elemento muda sua cor*/
+        ul.barra-navegacao-horizontal > li > a:hover{
+            /*cor de fundo*/
+            background-color: #111;
+        }
+
+        /*
+            * LINK DE NAVEGAÇÃO ATIVO/ATUAL
+              - Adicione uma classe "ativa" ao link atual para permitir que o usuário saiba em qual página ele está
+        */
+
+        /*elemento a, com uma class*, esse elemento vai ser destacado*/
+        a.link-ativo{
+            background-color: #4CAF50;
+        }
+
+       
+        /*elemento que e responsavel por mostrar o conteudo principal do documento html*/
+        main{
+            /*add um espaço interno dentro do elemento, em todos os lados do elemento, entre a borda e o conteudo, da borda para o conteudo*/
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            /*cor de fundo do elemento*/
+            background-color: #1abc9c;
+            /*altura do elemento*/
+            height: 1500px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- lista não ordenada, em cada item da lista tem um link-->
+    <ul class="barra-navegacao-horizontal">
+        <li><a class="link-ativo" href="#home">Home</a></li>
+        <li><a href="#news">Noticías</a></li>
+        <li><a href="#contact">Contato</a></li>
+        <li><a href="#about">Sobre</a></li>
+    </ul>
+
+    <!-- conteudo principal da pagina--> 
+    <main>
+        <h1>Barra de navegação inferior fixa</h1>
+        <h2>Role esta página para ver o efeito</h2>
+        <h2>A barra de navegação ficará na parte inferior da página durenta enquanto rola</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minus dolorem! Incidunt, ad error! Laudantium officia reprehenderit, aut minima alias totam nobis non sit dolorum adipisci, debitis, voluptatibus facilis. Dolor.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quisquam eius ipsa sit? Ea voluptatum nam incidunt quasi, dicta quibusdam vero reprehenderit! Sed, minus laborum mollitia voluptates quibusdam quaerat esse.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odit quisquam ipsam dolorem et natus, magnam tempore ducimus at quam est perferendis debitis. Atque aut odio illum consequatur architecto veniam! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos excepturi voluptate nam quod laborum aut ab velit eligendi? Commodi, ullam culpa. Possimus adipisci, vel dolorem doloremque quam nostrum assumenda perspiciatis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ullam blanditiis quam quia assumenda temporibus, earum necessitatibus aliquam accusamus cum illo dolores magnam aliquid, minus nostrum ut repudiandae velit dolore! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam minima voluptatum, rerum maiores, officia sunt eos asperiores adipisci, molestias iste cum perferendis non porro et unde doloribus ipsum laudantium nobis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam quia debitis non aperiam distinctio natus quos? Nulla, praesentium, quod culpa quidem similique odit repellat iure ea accusantium necessitatibus voluptas fugiat!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quasi et alias velit incidunt qui, inventore cumque quae blanditiis numquam in ullam amet reiciendis sint minima magni. Aliquid, sint mollitia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio magnam odit perspiciatis facere accusantium unde eligendi deleniti a temporibus, nihil quisquam, culpa, nesciunt autem ipsum voluptatem? Expedita necessitatibus sint rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem a cumque possimus quas eius error. Possimus eos a vitae maxime perferendis alias blanditiis, tempore aut! Ullam facilis cupiditate odit necessitatibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, mollitia officiis facere facilis quaerat consequuntur officia dolores ipsa laboriosam quia veritatis, nulla autem dolor adipisci perspiciatis saepe, enim libero recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odio, ducimus accusantium, iure iusto rerum quisquam itaque cupiditate modi, autem dolor molestiae quo ex in dolorum blanditiis praesentium? Quia, nisi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ipsam rerum sequi! Dignissimos, amet corrupti itaque, obcaecati cupiditate, error incidunt reiciendis voluptatem harum eligendi voluptate beatae excepturi? Aut, ab fugit!</p>
+    </main>
+    
+    
+</body>
+</html>    

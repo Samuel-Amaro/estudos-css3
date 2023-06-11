@@ -1,0 +1,33 @@
+<!--
+    * PROPRIEDADE CSS COLUMN-WIDTH(LARGURA COLUNA)
+
+        A propriedade CSS column-width define a largura ideal da coluna em um layout de várias colunas. O contêiner terá tantas colunas quanto couber, sem que nenhuma delas tenha uma largura menor que o valor da largura da coluna. Se a largura do contêiner for mais estreita que o valor especificado, a largura da coluna única será menor que a largura da coluna declarada.
+
+        Essa propriedade pode ajudar você a criar designs responsivos que se adaptam a diferentes tamanhos de tela. Especialmente na presença da propriedade column-count (que tem precedência), você deve especificar todos os valores de comprimento relacionados para obter uma largura de coluna exata. No texto horizontal, são width, column-width, column-gap e column-rule-width.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        column-width: auto;
+
+        /*VALORES <comprimento>*/
+        column-width: 60px;
+        column-width: 15.5em;
+        column-width: 3.3vw;
+
+        /*VALORES GLOBAIS*/
+        column-width: inherit;
+        column-width: initial;
+        column-width: revert;
+        column-width: revert-layer;
+        column-width: unset;
+
+        A propriedade column-width é especificada como um dos valores listados abaixo.
+
+    * VALORES
+
+        <lenght>: Indica a largura ideal da coluna. A largura real da coluna pode diferir do valor especificado: pode ser mais larga quando necessário para preencher o espaço disponível e mais estreita quando o espaço disponível for muito pequeno. O valor deve ser estritamente positivo ou a declaração é inválida. Os valores percentuais também são inválidos.
+
+        <auto>: A largura da coluna é determinada por outras propriedades CSS, como column-count.
+
+-->

@@ -1,0 +1,61 @@
+<!--
+    * SHORTHAND TRANSITION
+
+        A propriedade CSS transition  é uma propriedade abreviada para transition-property transition-duration transition-timing-function transition-delay.
+
+        As transições permitem definir a transição entre dois estados de um elemento. Diferentes estados podem ser definidos usando pseudo-classes como :hover ou :active ou definidos dinamicamente usando JavaScript.
+
+    * PROPRIEDADES CONSTITUINTES
+
+        Esta propriedade é um atalho para as seguintes propriedades CSS:
+
+            transition-delay
+            transition-duration
+            transition-property
+            transition-timing-function
+
+    * SINTAXE
+
+        /*aplicar para 1 propriedade*/
+        /* property name | duration */
+        transition: margin-right 4s;
+
+        /* property name | duration | delay */
+        transition: margin-right 4s 1s;
+
+        /* property name | duration | easing function */
+        transition: margin-right 4s ease-in-out;
+
+        /* property name | duration | easing function | delay */
+        transition: margin-right 4s ease-in-out 1s;
+
+        /* aplicar para 2 propriedades*/
+        transition: margin-right 4s, color 1s;
+
+        /*Aplicar a todas as propriedades alteradas*/
+        transition: all 0.5s ease-out;
+
+        /* Global values */
+        transition: inherit;
+        transition: initial;
+        transition: revert;
+        transition: revert-layer;
+        transition: unset;
+
+        A transition propriedade é especificada como uma ou mais transições de propriedade única, separadas por vírgulas.
+
+        Cada transição de propriedade única descreve a transição que deve ser aplicada a uma única propriedade (ou os valores especiais all e none). Inclui:
+
+            zero ou um valor representando a propriedade à qual a transição deve ser aplicada. Este pode ser qualquer um de:
+
+                a palavra-chave none
+                a palavra-chave all
+                a <custom-ident> nomear uma propriedade CSS.
+
+             zero ou um <easing-function> valor representando a função de atenuação a ser usada.
+
+             zero, um ou dois <time> valores. O primeiro valor que pode ser analisado como uma hora é atribuído a transition-duration, e o segundo valor que pode ser analisado como uma hora é atribuído a transition-delay.
+
+            Veja como as coisas são tratadas quando as listas de valores de propriedade não têm o mesmo tamanho. Em resumo, as descrições de transição extras além do número de propriedades que estão sendo animadas são ignoradas.
+
+-->

@@ -1,0 +1,79 @@
+<!--
+    * BOTÃO NA IMAGEN
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão na Imagen</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div.container{
+            /*
+              - O posicionamento permite retirar elementos do fluxo normal de layout do documento e fazer com que se comportem de maneira diferente; por exemplo, sentados um em cima do outro, ou sempre permanecendo no mesmo lugar dentro da janela de visualização do navegador.
+              -  Toda a ideia de posicionamento é nos permitir substituir o comportamento básico do fluxo de documentos descrito acima, para produzir efeitos interessantes. 
+              - Isso é muito semelhante ao posicionamento estático, exceto que, uma vez que o elemento posicionado tenha tomado seu lugar no fluxo de layout normal, você pode modificar sua posição final, incluindo fazê-lo sobrepor outros elementos na página. 
+              - Então, como você modifica a posição do elemento? Você precisa usar as propriedades top, bottom, left e right.
+              -  Por mais ilógico que possa parecer à primeira vista, é apenas assim que funciona o posicionamento relativo - você precisa pensar em uma força invisível que empurra o lado especificado da caixa posicionada, movendo-a na direção oposta. Por exemplo, se você especificar top: 30px; uma força empurra a parte superior da caixa, fazendo com que ela se mova para baixo em 30px.
+            */
+            position: relative;
+            /*pode ocupar 100% da largura na horizontal do elemento que o contem, se o elemento for o body, ocupa toda a pagina*/
+            width: 100%;
+            /*largura maxima que o conteiner pode ter, não pode passar disso*/
+            max-width: 400px;
+        }
+        /*se o div container tiver um elemento descendete img*/
+        div.container  img{
+            /*pode ocupar 100% da largura na horizontal do elemento que o contem, se o elemento for o body, ocupa toda a pagina*/
+            width: 100%;
+            /*proprio navegador define a altura do elemento*/
+            height: auto;
+        }
+        /*se o elemento div.container tiver um elemento descendente button*/
+        div.container button.btn{
+            /*
+              - Um elemento posicionado absolutamente não existe mais no fluxo normal de layout do documento. Em vez disso, ele fica em sua própria camada, separado de todo o resto. Isso é muito útil: significa que podemos criar recursos de IU isolados que não interferem na posição de outros elementos na página.
+              - Em segundo lugar, observe que a posição do elemento mudou - isso porque top (en-US) , bottom (en-US) , left (en-US) e right (en-US) se comportam de maneira diferente com o posicionamento absoluto. Em vez de especificar a direção em que o elemento deve se mover, eles especificam a distância que o elemento deve estar de cada lado do elemento que o contém. 
+            */
+            position: absolute;
+            /*se afasta 50% do elemento que o contem*/
+            top: 50%;
+            /*se afasta 50% se aproximando para a direita*/
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            color: black;
+            padding-top: 16px;
+            padding-right: 30px;
+            padding-bottom: 16px;
+            padding-left: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /*se o elemento div.container tiver um elemento button.btn descendete, vai ter um seletor de estado aplicado nele, quando passa o mouse por cima do elemento ira mudar o seu estado*/
+        div.container button.btn:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Botão na Imagen</h2>
+
+    <p><strong>Exemplo:</strong> Adicionar um botão a uma imagem:</p>
+
+    <div class="container">
+        <img src="img_lights.jpg" alt="Imagen">
+        <button class="btn">Button</button>
+    </div>
+</body>
+</html>

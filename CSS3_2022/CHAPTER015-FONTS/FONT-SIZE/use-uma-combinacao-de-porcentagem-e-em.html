@@ -1,0 +1,68 @@
+<!--
+    * USE UMA COMBINAÇÃO DE PORCENTAGEM E EM
+
+        - A solução que funciona em todos os navegadores é definir um tamanho de fonte padrão em porcentagem para o elemento <body>:
+
+        - Nosso código agora funciona muito bem! Ele mostra o mesmo tamanho de texto em todos os navegadores e permite que todos os navegadores ampliem ou redimensionem o texto!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        body{
+            /*
+             - a propriedade font-size define o tamanho do texto
+             - define o tamanho do texto com porcentagem e um tamanho relativo 
+             - define um tamanho de fonte padrão para o corpo do documento
+            */
+            font-size: 100%;
+        }
+        h1{
+            /*
+             - a propriedade font-size define o tamanho do texto
+             - define o tamanho do texto com em e um tamanho relativo 
+              - Define o tamanho em relação aos elementos circundantes
+              - Permite que um usuário altere o tamanho do texto nos navegadores usamos o valor em
+              - 1em e igual a 16px
+              - calculando o tamanho de pixels para em usando esta formula: 
+                pixels/16 = em
+             - 40px/16px = 2.5em
+             - define o tamanho do texto do elemento h1 para 2.5em
+             - para calcular de em para pixels usar esta formula:
+                em * 16 = pixels
+            */
+            font-size: 2.5em;
+        }
+        h2{
+            /*
+              - 1em e igual a 16px
+              - calculando o tamanho de pixels para em usando esta formula: 
+                pixels/16 = em
+             - 30px/16px = 1.875em
+             - define o tamanho do texto do elemento h2 para 1.875em
+            */
+            font-size: 1.875em;
+        }
+        p{
+            /*
+              - 1em e igual a 16px
+              - calculando o tamanho de pixels para em usando esta formula: 
+                pixels/16 = em
+             - 14px/16px = 0.875em
+             - define o tamanho do texto do elemento h2 para 0.875em
+            */
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Este é um título 1</h1>
+    <h2>Este é um título 2</h2>
+    <p>Este e um paragrafo</p>
+    <p>Especificar o tamanho da fonte em porcentagem e em exibe o mesmo tamanho em todos os principais navegadores e permite que todos os navegadores redimensionem o texto!</p>
+
+</body>
+</html>

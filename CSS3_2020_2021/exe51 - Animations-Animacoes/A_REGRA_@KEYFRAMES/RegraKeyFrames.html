@@ -1,0 +1,59 @@
+<!--
+    # A REGRA @KEYFRAMES(QUADROS CHAVE)
+
+      - Quando você especifica estilos CSS dentro da @keyframes regra, a animação mudará gradualmente do estilo atual para o novo estilo em determinados momentos.
+
+      - Para fazer uma animação funcionar, você deve vincular a animação a um elemento.
+
+      - O exemplo a seguir vincula a animação "exemplo" ao elemento <div>. A animação durará 4 segundos e mudará gradualmente a cor de fundo do elemento <div> de "vermelho" para "amarelo":
+-->
+
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regra @KeyFrames</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*nome da animação*/
+            animation-name: exemplo_regra_key_frames;
+            /*duração da animação, especificado em s*/
+            animation-duration: 4s;
+        }
+        /*especificando os quadros chaves, para uma animação vinculada ao elemento div*/
+        @keyframes exemplo_regra_key_frames{
+                /**da cor de fundo vermelho*/
+                from{background-color: red;}
+                /*para a cor de fundo amarelo*/
+                to{background-color: yellow;}
+        }   
+    </style>
+</head>
+<body>
+
+    <h1>Animações EM CSS</h1>
+    
+    <p>Exemplo:</p>
+    
+    <h2>A Regra @keyframes(quadros-chave)</h2>
+    
+    <p><strong>Exemplo:</strong> O exemplo a seguir vincula a animação "exemplo" ao elemento &lt;div&gt;. A animação durará 4 segundos e mudará gradualmente a cor de fundo do elemento &lt;div&gt;  de "vermelho" para "amarelo":</p>
+    
+    <p><strong>Nota:</strong> Quando uma animação termina, ela volta ao estilo original.</p>
+
+    <div></div>
+</body>
+</html>
+
+<!--
+    - Observação: a animation-duration propriedade define quanto tempo uma animação deve levar para ser concluída. Se a animation-duration propriedade não for especificada, nenhuma animação ocorrerá, pois o valor padrão é 0s (0 segundos). 
+
+    - No exemplo acima, especificamos quando o estilo será alterado usando as palavras-chave "de(from)" e "para(to)" (que representa 0% (início - start) e 100% (completo - complete)).
+
+    - Também é possível usar por cento. Usando porcentagem, você pode adicionar quantas mudanças de estilo desejar.
+-->

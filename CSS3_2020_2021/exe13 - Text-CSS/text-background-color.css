@@ -1,0 +1,22 @@
+/*
+ * CSS TEXT(COR DO TEXTO) && CSS BACKGROUND(COR DO FUNDO)
+
+  - A colorpropriedade é usada para definir a cor do texto. A cor é especificada por:
+
+   um nome - como "vermelho;
+   um valor HEX - como "#FF0000";
+   um valor RGB - como "rgb(255,0,0)"
+*/
+/* 
+  * a cor de texto padrão de uma pagina é definida no seletor de corpo
+*/
+/*
+ * Nota: Para CSS compatível com W3C: Se você definir a color propriedade, também deve definir o background-color
+*/
+body{
+    color: white; /*cor do texto*/
+    background-color: black; /*cor do fundo*/
+}
+h1{
+   color: green; /*cor do titulo principal*/ 
+}

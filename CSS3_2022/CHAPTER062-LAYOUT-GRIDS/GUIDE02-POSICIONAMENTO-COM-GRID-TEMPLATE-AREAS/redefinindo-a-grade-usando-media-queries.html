@@ -1,0 +1,146 @@
+<!--
+    * REDEFININDO A GRADE USANDO MEDIA QUERIES(CONSULTAS DE MÍDIA)
+
+        Como nosso layout agora está contido em uma parte do CSS, fica muito fácil fazer alterações em diferentes pontos de interrupção. Você pode fazer isso redefinindo a grade, a posição dos itens na grade ou ambos ao mesmo tempo.
+
+        Ao fazer isso, defina os nomes para suas áreas fora de quaisquer consultas de mídia. Dessa forma, a área de conteúdo sempre será chamada main, não importa onde na grade ela seja colocada.
+
+        Para nosso layout acima, gostaríamos de ter um layout muito simples em larguras estreitas, definindo uma grade de coluna única e empilhando nossos itens.
+
+        Podemos então redefinir esse layout dentro de consultas de mídia para ir para nosso layout de duas colunas e talvez levá-lo para um layout de três colunas se o espaço disponível for ainda maior. Observe que, para o layout amplo, mantenho minha grade de trilha de nove colunas, redefino onde os itens são colocados usando grid-template-areas.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com somente uma unica coluna que aumenta e diminue seu tamanho de acordo com o espaço disponivel no container grid.
+            */
+            grid-template-columns: 1fr;
+            /*
+             - espefica a altura das linhas implicitas
+            */
+            grid-auto-rows: minmax(100px, auto);
+            /*
+             - Aqui vamos, especificar a localização das áreas definidas por nome, especificando o valor na grid-template-areas propriedade.
+             - criando o layout, cria todo o layout no conteiner de grade ao inves de especificar nos proprios itens grid.
+             - Para nosso layout acima, gostaríamos de ter um layout muito simples em larguras estreitas, definindo uma grade de coluna única e empilhando nossos itens.
+            */
+            grid-template-areas: 
+                "hd"
+                "main"
+                "sd"
+                "ft";
+        }
+
+        /*iten grid*/
+        .header{
+            /*
+             - a propriedade grid-area e usada para posicionar uma area de grade
+             - Definindo uma área dando-lhe um nome. pode ser o nome que eu quiser.
+             - isso não cria um layout, mas nomeia areas para serem usdas em um layout.
+             - nomendo a area do primeiro iten de grid.
+            */
+            grid-area: hd;
+        }
+
+        /*iten grid*/
+        .footer{
+            /*
+            - nomendo a area do segundo iten de grid.
+            */
+            grid-area: ft;
+        }
+
+        /*iten grid*/
+        .content{
+            /*
+            - nomendo a area do terceiro iten de grid.
+            */
+            grid-area: main;
+        }
+
+        /*iten grid*/
+        .sidebar{
+            /*
+            - nomendo a area do quarto iten de grid.
+            */
+            grid-area: sd;
+        }
+
+        /*
+         - Podemos então redefinir esse layout dentro de consultas de mídia(media queris) para ir para nosso layout de duas colunas e talvez levá-lo para um layout de três colunas se o espaço disponível for ainda maior.
+        */
+        @media (min-width: 500px) {
+            .wrapper{
+                /*
+                 - cria uma faixa de colunas explicita de 9 colunas com tamanhos iguais que crescem e diminuem de acordo com o espaço disponivel no grid-container, unidade de media flexivel fr
+                */
+                grid-template-columns: repeat(9, 1fr);
+                /*
+                 - Aqui vamos, especificar a localização das áreas definidas por nome, especificando o valor na grid-template-areas propriedade.
+                 - redefino onde os itens são colocados usando grid-template-areas
+                */
+                grid-template-areas: 
+                    "hd hd hd hd   hd   hd   hd   hd   hd"
+                    "sd sd sd main main main main main main"
+                    "sd sd sd ft   ft   ft   ft   ft   ft";
+            }
+        }
+
+        @media(min-width: 700px) {
+            /*
+             - redefino onde os itens são colocados usando grid-template-areas
+            */
+            .wrapper{
+                grid-template-areas: 
+                    "hd hd hd   hd   hd   hd   hd   hd hd"
+                    "sd sd main main main main main ft ft";
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!--
+    * * DICAS DA FERRAMENTA FADE IN (ANIMAÇÃO)
+
+      - Se você quiser esmaecer o texto da dica de ferramenta quando ele estiver prestes a ficar visível, você pode usar a transition propriedade CSS junto com a opacity propriedade, e ir de completamente invisível para 100% visível, em um número de segundos especificados (1 segundo em nosso exemplo):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamento Superior</title>
+    <style>
+        body{
+            /*todo texto que estiver no corpo do documento sera centralizado*/
+            text-align: center;
+        }
+        p.dica{
+            position: relative;
+            display: inline-block;
+            border-bottom-width: 1px;
+            border-bottom-style: dotted;
+            border-bottom-color: black;
+        }
+        /**
+         - usando uma combinação de seletor, pega todos os elementos span que são descendentes do elemento p
+         - essa configuração afeta somente o elemento <span>
+        **/
+        p.dica span.textodicaferramenta{
+            /**
+                - A propriedade CSS de visibilidade pode mostrar ou ocultar um elemento sem afetar o layout de um documento (ou seja, o espaço é criado para elementos independentemente de serem selecionados ou não). 
+                - valor: hidden A caixa do elemento é invisível (não desenhada), mas ainda afeta o layout normalmente. Os descendentes do elemento ficarão visíveis se tiverem sido visibilityconfigurados como visible.
+            **/
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 0px;
+            padding-right: 0px;
+
+            /*posição da dica*/
+            /**
+              - move um elemento completamente para fora do fluxo normal de layout da página, como se ele estivesse em sua própria camada separada. A partir daí, você pode fixá-lo em uma posição relativa às bordas do <html> elemento da página  (ou ao elemento ancestral posicionado mais próximo). Isso é útil para criar efeitos de layout complexos, como caixas com guias onde diferentes painéis de conteúdo ficam em cima uns dos outros e são mostrados e ocultos conforme desejado, ou painéis de informações que ficam fora da tela por padrão, mas podem ser deslizados na tela usando um botão de controle.
+            **/
+            position: absolute;
+            /**
+              - A z-index propriedade CSS define a ordem z de um elemento posicionado e seus descendentes ou flex items. Os elementos sobrepostos com um índice z maior cobrem aqueles com um menor.
+              - o elemento span e sobreposto por cima do elemento <p>
+            **/
+            z-index: 1;
+            /*se afasta 100% do seu elemento ancestral <p> na parte inferior, se afasta 100% do inferior do seu elemento ancestral, o 100% representa o tamanho do elemento ancestral ou o proprio tamanho do elemento que esta se afastando, se afasta 100% do inferior, isso e subindo, não descendo*/
+            bottom: 100%;
+            /*se aproxima 50% da esquerda do seu elemento ancestral, se aproxima 50% da esquerda do elemento<p>*/
+            left: 50%;
+            /*add a seguinte medida de espaço externo a esquerda entre o elemento ancestral <p> e entre o elemento <span>, faz o elemento se centralizar*/
+            margin-left: -60px;
+
+            /*add uma transição de 1 segundo no elemento <span> vai de opacidade para ser visivel em 1s*/
+            /*opacidade 0, o elemento fica trasnparente não aparece nada*/
+            opacity: 0;
+            /*aplicando uma propriedade de transição na propriedade opacity que vai de 0% a 100% opacity com duração de 1s, a transição do elemento saido do seu estado normal para a propriedade css opacity que deixa o elemento sem cor com opacity 0 e depois retorna ao estado normal com opacity 1 em 1s*/
+            transition: opacity 1s;
+        }
+        /** 
+          - o elemento <p> ao receber o passar do mouse por cima de si, vai fazer algo
+          - o <span> vai ser oque vai fazer algo, porque ele esta sendo especificado, por causa do seletor de combinação espaço, que seleciona o descendente do elemento <p> que no caso e <span>
+        **/
+        p.dica:hover span.textodicaferramenta{
+            /*A caixa do elemento é visível.*/
+            visibility: visible;
+            /*elemento fica visivel novamente sem opacidade*/
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dicas de Ferramenta Fade In ao pairar</h1>
+    <p><strong>Exemplo: </strong> Quando você move o mouse sobre o texto abaixo, o texto da dica de ferramenta aparecerá gradualmente e levará 1 segundo para passar de completamente invisível para visível.</p>
+    <p>Passe o mouse sobre o texto abaixo:</p>
+    <p  class="dica">Passe o mouse sobre min<span class="textodicaferramenta">Texto de dica</span></p>
+</body>
+</html>

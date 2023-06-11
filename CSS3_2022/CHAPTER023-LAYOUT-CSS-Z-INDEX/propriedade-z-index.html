@@ -1,0 +1,58 @@
+<!--
+    * LAYOUT CSS - A PROPRIEDADE Z-INDEX
+
+        - A z-index propriedade especifica a ordem de pilha de um elemento.
+
+    * A PROPRIEDADE Z-INDEX
+
+        - Quando os elementos são posicionados(position), eles podem se sobrepor a outros elementos.
+
+        - A z-index propriedade especifica a ordem de pilha de um elemento (qual elemento deve ser colocado na frente ou atrás dos outros).
+
+        - Um elemento pode ter uma ordem de pilha positiva ou negativa:
+
+        - Nota: z-index só funciona em elementos posicionados (position: absolute, position: relative, position: fixed ou position: sticy) e itens flex (elementos que são filhos diretos de display: flex elements).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        img{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancentral deste elemento img e o body, porque não ha elementos ancestrais com position diferente de static
+             - Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+            */
+            position: absolute;
+            /*
+             -  As propriedades top, right, bottom e left são usadas para posicionar o elemento. em relação ao elemento ancentral mais proximo, se não tiver sera o body(corpo do documento) o padrão.
+             - a propriedade left e usada para se afastar uma unidade especifica da border-left do elemento ancestral
+             - a propriedade top e usada para se afastar uma unidade da border-top do elemento ancestral pode se afastar para abaixo ou acima da borda de acordo com o unidade especificada
+            */
+            left: 0px;
+            top: 0px;
+            /*
+             - a propriedade z-index  especifica a ordem de pilha de um elemento.
+             - qual elemento deve ser colocado na frente ou atrás dos outros
+             - um elemento pode ter a ordem de pilha negativa ou positiva
+             - o elemento com ordem de pilha positivia e o elemento que vai ser colocado na frente o elemento com ordem de pilha negativa e o elemento que ser colocado atras
+             - aqui especificamos que o elemento img ira ficar atras do elemento body, pois o elemento img, esta com a z-index definida como negativa, atras.
+            */
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Este é um título</h1>
+
+    <img src="./img_tree.png" alt="imagen"/>
+
+    <p>Como a imagen tem um índice z de -1, ela será colocada atrás do texto.</p>
+
+</body>
+</html>

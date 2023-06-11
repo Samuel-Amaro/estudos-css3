@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        /**
+          ** NAVIGATION BAR - BARRA DE NAVEGAÇÃO - LAYOUT DE SITE
+
+           - Uma barra de navegação contém uma lista de links para ajudar os visitantes a navegar em seu site:
+        */
+
+        /*tira todos os espaços externo ao redor do corpo da pagina - na area de conteudo da pagina*/
+        body{
+            margin: 0;
+        }
+
+        /*no elemento header - cabeçalho*/
+        header{
+            /*cor de fundo*/
+            background-color: #f1f1f1;
+            /*add espaço interno ao elemento*/
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            /*alinhando o texto ao centro do elemento na vertical*/
+            text-align: center;
+        } 
+
+        /*para todos os elementos da pagina*/
+        *{
+            box-sizing: border-box;
+        }
+
+        /*para o elemento nav*/
+        nav.barra-navegacao{
+            /*cor de fundo do elemento*/
+            background-color: #333;
+            /*caso o conteudo seja maior que a area desse elemento, essa propriedade vai ocultar o conteudo que passar da area, o conteudo que ficar fora da area sera ocultado*/
+            overflow: hidden;
+        }
+
+        /*para cada elemento <a> que for filho do nav*/
+        nav.barra-navegacao > a{
+            /*flutua a esquerda, o elemento a flutua a esquerda, mas a esquerda de quem ? a cada elemento a adicionado a nav, sempre ficara fluturando a esquerda*/
+            float: left;
+            /*o elemento sera exibido como um elemento de bloco*/
+            display: block;
+            /*cor do conteudo do elemento*/
+            color: #f2f2f2;
+            /*alinhamento do texto*/
+            text-align: center;
+            /*add espaço interno*/
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 16px;
+            padding-right: 16px;
+            /*tira o sublinhado dos elementos*/
+            text-decoration: none;
+        }
+        
+        /*para cada elemento <a> que for filho do nav, tera um pseudo-classe aplicado ao elemento, essa pseudo classe cpturara o estado do elemento quando o mouse, estiver por cima do elemento*/
+        nav.barra-navegacao > a:hover{
+            /*cor de fundo do elemento*/
+            background-color: #ddd;
+            /*cor do texto*/
+            color: black;
+        }    
+
+    </style>
+    <title>Layout de Site</title>
+</head>
+<body>
+    
+    <!--tag semantica de cabeçalho-->
+    <header class="cabecalho">
+        <h1>Cabeçalho</h1>
+    </header>
+
+    <nav class="barra-navegacao">
+        <a href="#">Home</a>
+        <a href="#">Contato</a>
+        <a href="#">Sobre</a>
+        <a href="#">Redes Sociais</a>
+    </nav>
+
+    <h1>Barra de Navegação - Layout de Site</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id commodi, pariatur adipisci doloribus fugiat maiores voluptatibus tempore impedit cum soluta amet dicta fugit quae rerum quam non repellendus tenetur iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nostrum enim et ipsa? Est, velit possimus? Et, accusantium nulla asperiores modi illo quod dicta dolorem doloremque corporis debitis inventore error? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae debitis suscipit doloremque, amet provident reiciendis dolores exercitationem nemo ratione. Maxime architecto dolore porro exercitationem placeat accusamus nisi! Iusto, inventore voluptatibus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat repudiandae pariatur natus vero neque quibusdam quidem doloribus nostrum harum animi minima ducimus dignissimos, ex ab rem autem, soluta accusantium earum.</p>
+</body>
+</html>

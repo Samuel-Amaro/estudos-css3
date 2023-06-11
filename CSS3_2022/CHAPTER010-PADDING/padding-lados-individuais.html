@@ -1,0 +1,58 @@
+<!--
+    * PADDING(PREENCHIMENTO) - LADOS INDIVIDUAIS
+
+        - CSS tem propriedades para especificar o preenchimento para cada lado de um elemento:
+
+            padding-top
+            padding-right
+            padding-bottom
+            padding-left
+
+        - Todas as propriedades de preenchimento podem ter os seguintes valores:
+
+            - length - especifica um preenchimento em px, pt, cm, etc.
+            - % - especifica um preenchimento em % da largura do elemento que o contém
+            - inherit - especifica que o preenchimento deve ser herdado do elemento pai
+
+        - Nota: Valores negativos não são permitidos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*shorthand para definir uma borda para um elemento, abreviatura para border-width, border-style, border-color*/
+            border: 1px solid #4CAF50;
+            /*usando a propriedade background-color podemos definir um cor de fundo para o elemento*/
+            background-color: lightblue;
+            /*
+             - as propriedades  css padding e usado para criar espaço ao redor do conteudo de um elemento, dentro de qualquer borda definida.
+             - existem propriedades css individuais para definir o preenchimento de cada lado de um elemento(top, right, bottom, left)
+             - o padding-top propriedade css individual, define o valor do comprimento de 50px na parte superior, 50px de espaço na parte superior do conteudo, acima do conteudo entre o conteudo e a borda superior.
+            */
+            padding-top: 50px;
+            /*
+             - o padding-right propriedade css individual, define o valor do comprimento de 30px no lado direito do conteudo, 30px de espaço no lado direito do conteudo entre o conteudo e a borda direita do elemento.
+            */
+            padding-right: 30px;
+            /*
+             - o padding-bottom propriedade css individual define o valor do comprimento de 50px na parte inferior do conteudo, 50px de espaço na parte inferior do conteudo, abaixo do conteudo do elemento e entre a borda inferior do elemento, entre o conteudo e a borda.
+            */
+            padding-bottom: 50px;
+            /*
+             - o padding-left propriedade css individual define o valor do comprimento de 80px no lado esquerdo do conteudo do elemento, 80px de espaço no lado esquerdo do conteudo, lado esquerdo do conteudo do elemento e entre a borda esquerda do elemento, entre o conteudo e a borda.
+            */
+            padding-left: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Usando propriedades de padding individuais</h2>
+
+    <div>Este elemento div tem um padding-top de 50px, um padding-right de 30px, um padding-bottom de 50px e um padding-left de 80px.</div>
+
+</body>
+</html>

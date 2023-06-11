@@ -1,0 +1,50 @@
+<!--
+    * QUEBRA DE PALAVRAS CSS
+
+      - A word-break propriedade CSS especifica regras de quebra de linha.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebra de Palavras</title>
+    <style>
+        p.teste1{
+            width: 140px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #000000;
+            border-style: solid;
+            /**
+             * esta propriedade css, quebra linhas quando se tem hinfes(-) em palavras, a cada hifen se quebra para uma nova linha, quando o hifen se choca com o limite do elemento;
+            **/
+            word-break: keep-all;
+        }
+        p.teste2{
+            width: 140px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #000000;
+            border-style: solid;
+            /**
+             * esta propriedade css, quebra linhas em qualquer caractere, a quebra ocorre quando o conteudo se choca com o limite do elemento;
+            **/
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quebra de Palavras - word-break;</h1>
+    <p><strong>Exemplo:</strong></p>
+    <h2>A propriedade de quebra de palavras</h2>
+    <p class="teste1">Este e um paragrafo que tera sua linha interropidade-por- hifes</p>
+    <p class="teste2">Este parágrafo contém algum texto. As linhas serão interrompidas em qualquer caractere.</p>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!--
+    * PROPRIEDADE CSS animation-timing-function
+
+        Para ajudar a recriar o movimento natural na animação, você pode usar funções de tempo que calculam a velocidade de uma animação em cada ponto. Os valores calculados geralmente são curvos , fazendo com que a animação seja executada em velocidades variáveis ​​ao longo de animation-duration, e se um valor for calculado além do valor definido em @keyframes, faz com que o elemento pareça saltar.
+
+        Existem várias palavras-chave disponíveis como predefinições em CSS, que são usadas como valor para animation-timing-function : linear, ease, ease-in, ease-out, ease-in-out.
+
+        my-element {
+            animation-timing-function: ease-in-out;
+        }
+
+        Os valores parecem curvar-se com funções de atenuação porque a atenuação é calculada usando uma curva de bézier , que é usada para modelar a velocidade. Cada uma das palavras-chave da função de temporização, como ease, faz referência a uma curva bézier predefinida. Em CSS, você pode definir uma curva bézier diretamente, usando a cubic-bezier() função, que aceita quatro valores numéricos: x1, y1, x2, y2.
+
+        .my-element {
+            animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+        }
+
+        Esses valores traçam cada parte da curva ao longo dos eixos X e Y.
+
+        Compreender as curvas de bézier é complicado e ferramentas visuais, como este gerador de Lea Verou , são muito úteis.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .grower{
+            /*
+             - Para usar your @keyframes em uma regra CSS, defina várias propriedades de animação
+            */
+
+            animation-name: grow;
+            /*
+             -  A propriedade animation-duration define quanto tempo a @keyframes linha do tempo deve ter. Deve ser um valor de tempo.
+             - a animação tera 2segundos
+            */
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            /*
+             - Para ajudar a recriar o movimento natural na animação, você pode usar funções de tempo que calculam a velocidade de uma animação em cada ponto.
+             - usando a function de tempo linear para calcular a velocidade da animação.
+            */
+            animation-timing-function: linear;
+        }
+
+        /*
+         - keyframes são o mecanismo que você usa para atribuir estados(states) de animação a carimbos de data e hora(timestamp), ao longo de uma linha do tempo.
+         - grow o nome da regra de key-frames.
+        */
+        @keyframes grow{
+            /*inicio da animação*/
+            0%{
+                transform: scaleX(1);
+            }
+            /*fim da animação*/
+            50%{
+                transform: scaleX(1.8);
+                background-color: darkturquoise;
+            }
+        }
+
+        .grower{
+            width: 200px;
+            height: 80px;
+            background-color: lightseagreen;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="wrapper">
+            <article class="flow">
+                <h1>Named animaton timing functions</h1>
+                <figure class="callout">
+                    <p>Use o menu suspenso para alterar a função de tempo para ver o quanto eles afetam o animação geral.</p>
+                </figure>
+                <label>Mudar timing function</label>
+                <select>
+                    <option>linear</option>
+                    <option>ease</option>
+                    <option>ease-in</option>
+                    <option>ease-out</option>
+                    <option>ease-in-out</option>
+                </select>
+                <div class="grower"></div>
+            </article>
+        </div>
+    </main>
+
+</body>
+<script type="text/javascript">
+    const grower = document.querySelector('.grower');
+    const select = document.querySelector('select');
+
+    select.addEventListener('change', ({target}) => {
+    grower.style.animationTimingFunction = target.value;
+    });
+</script>
+</html>

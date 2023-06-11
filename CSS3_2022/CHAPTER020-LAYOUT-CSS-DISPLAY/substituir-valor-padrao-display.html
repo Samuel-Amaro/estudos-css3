@@ -1,0 +1,41 @@
+<!--
+    * SUBSTITUIR O VALOR PADRÃO DE DISPLAY PROPRIEDADE
+
+        - Como mencionado, cada elemento tem um valor de exibição padrão. No entanto, você pode substituir isso.
+
+        - Alterar um elemento inline para um elemento de bloco, ou vice-versa, pode ser útil para fazer a página parecer de uma maneira específica e ainda seguir os padrões da web.
+
+        - Um exemplo comum é criar elementos embutidos <li> para menus horizontais:
+
+        - Nota: Definir a propriedade display de um elemento altera apenas a forma como o elemento é exibido , NÃO o tipo de elemento que ele é. Portanto, um elemento inline com display: block;não pode ter outros elementos de bloco dentro dele.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        li{
+            /*
+             - propriedade display e usada para definir como um elemento sera exibido,
+             - Cada elemento HTML tem um valor de exibição padrão dependendo do tipo de elemento que é. 
+             - o elemento <li> por padrão e exibido como um elemento de bloco  começa em uma nova linha e ocupa toda a largura disponível (se estende para a esquerda e para a direita o máximo possível).
+             - substituiremos seu valor padrão block para ser exibido como um elemento inline(embutido) Um elemento embutido não inicia em uma nova linha e só ocupa a largura necessária.
+             - obs a propriedade display não muda o tipo do elemento so muda a forma como o elemento e exibido, por isso não confunda.
+            */
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>Exiba uma lista de links como um menu horizontal:</p>
+
+    <ul>
+        <li><a href="#" target="_blank" rel="next">HTML</a></li>
+        <li><a href="#" target="_blank" rel="next">CSS</a></li>
+        <li><a href="#" target="_blank" rel="next">JavaScript</a></li>
+    </ul>
+
+</body>
+</html>

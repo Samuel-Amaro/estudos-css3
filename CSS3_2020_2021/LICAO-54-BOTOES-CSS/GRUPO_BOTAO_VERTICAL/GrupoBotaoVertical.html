@@ -1,0 +1,60 @@
+<!--
+    * GRUPO DE BOTÃO VERTICAL
+
+      - Use em display:block vez de float:left para agrupar os botões abaixo um do outro, em vez de lado a lado:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Botões Vertical</title>
+    <style>
+        /*o elemento div que tiver um elemento descendente como button.button*/
+        div.btn-group button.button{
+            background-color: #4CAF50;
+            /*definindo a borda para o botao*/
+            border-top: 1px;
+            border-right: 1px;
+            border-left: 1px;
+            border-bottom: 1px;
+            border-style: solid;
+            border-color: green;
+            padding-top: 15px;
+            padding-right: 32px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /*o elemento div que tiver um elemento descendente como button.button, tendo um seletor de estado, aplicado, vai mudar o estado do elemento aplicando as regras css*/
+        div.btn-group button.button{
+            background-color: #3E8E41;    
+        }
+        /*o elemento div que tenha elemento button com descendente, esta sendo um aplicado um seletor nele de negação, para que não selecione o ultimo elemento button, o elemento div, não vai ter o seu ultimo elemento descendente selecionado*/
+        div.btn-group button.button:not(:last-child){
+            border-bottom: none;/*impedir bordas duplas*/
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Grupo de Botões Vertical</h2>
+
+    <div class="btn-group">
+        <button class="button button1">Botão</button>
+
+        <button class="button button2">Botão</button>
+
+        <button class="button button3">Botão</button>
+
+        <button class="button button4">Botão</button>
+
+    </div>
+
+</body>
+</html>

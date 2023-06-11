@@ -1,0 +1,71 @@
+<!--
+    * ALINHAMENTO, JUSTIFICAÇÃO E DISTRIBUIÇÃO DE ESPAÇO LIVRE ENTRE OS ELEMENTOS
+
+        Um atributo chave do flexbox é a capacidade de alinhar e justificar os elementos  flex nos eixos principal e transversal e distribuir o espaço entre eles.
+
+    * PROPRIEDADE ALIGN-ITEMS
+
+        A propriedade align-items irá alinhar os elementos no eixo transversal.
+
+        O valor inicial desta propriedade é stretch e é por essa razão que, por padrão, os elementos flex se estendem até a maior altura. De fato, eles se esticam para preencher o contêiner flex - o item mais alto define a altura deste.
+
+        Pode-se definir a propriedade align-items como flex-start, de modo que os elementos fiquem alinhados com topo do contêiner, flex-end para alinhá-los a partir da base ou center, para que o alinhamento seja centralizado.
+
+        Teste essa propriedade e seus possíveis valores no exemplo prático abaixo — colocou-se uma determinada  altura no contêiner flex, de modo que se perceba como os elementos podem ser movidos no interior do mesmo. Veja o que acontece ao definir cada um dos possíveis valores da propriedade align-items:
+
+            stretch
+            flex-start
+            flex-end
+            center
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            height: 150px;
+            /*
+             - A propriedade align-items irá alinhar os elementos no eixo transversal.
+             - Pode-se definir a propriedade align-items como flex-start, de modo que os elementos fiquem alinhados com topo do contêiner, 
+            */
+            align-items: flex-start;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="one">Um</div>
+        <div class="two">Dois</div>
+        <div class="three">Três 
+            <br/>tem
+            <br/>Mais 
+            <br/>Texto
+        </div>
+    </div>
+</body>
+</html>

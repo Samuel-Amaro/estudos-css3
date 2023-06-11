@@ -1,0 +1,37 @@
+# CSS HSL COLORS
+
+ * Valor HSL
+   - Em CSS, uma cor pode ser especificada usando matiz, saturação e luminosidade (HSL) na forma:
+
+   hsl(matiz,saturação,luminosidade)
+
+   - MATIZ:
+
+       - O matiz é um grau no disco de cores de 0 a 360. 0 é vermelho, 120 é verde e 240 é azul.
+
+       - A saturação é um valor percentual, 0% significa um tom de cinza e 100% é a cor total.
+
+       - A claridade também é uma porcentagem, 0% é preto, 50% não é nem claro nem escuro, 100% é branco
+
+   - SATURAÇÃO:
+     - A saturação pode ser descrita como a intensidade de uma cor;
+     - 100% é cor pura, sem tons de cinza;
+     - 50% é 50% cinza, mas você ainda pode ver a cor.
+     - 0% é completamente cinza, você não pode mais ver a cor;
+
+   - LEVEZA:
+     - A claridade de uma cor pode ser descrita como a quantidade de luz que você deseja dar à cor, onde 0% significa sem luz (preto), 50% significa 50% de luz (nem escuro nem claro) 100% significa claridade total (branco).
+     - Tons de cinza são frequentemente definidos definindo o matiz e saturação para 0, e ajuste a claridade de 0% a 100% para obter tons mais escuros/mais claros;
+       hsl(0, 0%, 0%)     hsl(0, 0%, 24%)
+
+  - VALOR HSLA:
+    
+    - Os valores de cor HSLA são uma extensão dos valores de cor HSL com um canal alfa - que especifica a opacidade de uma cor;
+    
+     hsla(matiz,saturação,luminosidade,alfa)
+
+    - O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nem um pouco transparente):
+
+
+
+

@@ -1,0 +1,39 @@
+<!--
+    * OCULTAR ELEMENTOS COM MEDIAS QUERYS
+
+      - Outro uso comum de consultas de mídia é ocultar elementos em diferentes tamanhos de tela:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocultar elementos com medias querys</title>
+    <style>
+        div.example{
+            background-color: yellow;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+        /*para telas medias em tablets, e telefones, dispositivos de leitura de tela, que tiverem a viewreport com uma largura de 600px ou menos*/
+        @media screen and (max-width: 600px) {
+            div.example{
+                /*O elemento foi completamente removido do layout*/
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>ocultar elementos em diferentes tamanhos de tela</h1>
+
+    <div class="example">Exemplo DIV.</div>
+
+    <p>Quando a largura do navegador for de 600 px ou menos, oculte o elemento div. Redimensione a janela do navegador para ver o efeito.</p>
+
+</body>
+</html>

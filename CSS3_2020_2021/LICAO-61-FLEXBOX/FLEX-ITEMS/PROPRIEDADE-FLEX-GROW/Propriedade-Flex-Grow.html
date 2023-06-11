@@ -1,0 +1,88 @@
+<!--
+    * A PROPRIEDADE FLEX-GROW(crescer flexivel)
+
+      - A flex-grow propriedade especifica quanto um flex item crescerá em relação ao resto dos flex items.
+
+      - O valor deve ser um número, o valor padrão é 0.
+
+      - Especifica quanto um item flexível irá crescer em relação ao resto dos itens flexíveis dentro do mesmo contêiner.
+
+      - e ver como podemos controlar qual a proporção de espaço os elementos flex pode tomar
+
+    * DEFINIÇÃO E USO
+
+      - A flex-grow propriedade especifica quanto o item crescerá em relação ao resto dos itens flexíveis dentro do mesmo contêiner.
+
+      - Observação: se o elemento não for um item flexível, a flex-grow propriedade não terá efeito.
+
+    * SINTAXE CSS:
+
+      flex-grow: number|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      number: Um número que especifica quanto o item crescerá em relação ao restante dos itens flexíveis. O valor padrão é 0
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itens Flex - Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*especificando o tipo de alinhamento vertical que os itens flexiveis que são filhos diretos deste container vão ter, isso so e usando quando os itens flexiveis não usam todo espaço reservado disponivel no eixo cruzado para eles. stretch(esticam): Predefinição. Os itens são esticados para caber no contêiner; itens são esticados para prencher o recipiente(container na vertical)*/
+            align-items: stretch;
+            background-color: #f1f1f1;
+        }
+        /*filhos diretos do container flex são itens flex*/
+        div.flex-container > div{
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        /*usando a propriedade flex-grow(crescer flexivel), vamos especificar o quanto um elemento deve crescer a mais em relação aos outros elementos dentro do mesmo conteiner, sendo que todos elementos tem que ser itens flexiveis. o valor especificado e relativo sem unidade que define quanto de espaço disponível pelo eixo principal cada elemento flex pode ter. Neste caso, estamos dando para cada elemento <div> o valor de 1, que significa que eles terão uma quantidade igual de espaço restante depois de coisas como preenchimento (padding) e margem (margin) forem definidos.  
+            */
+        div#fg-1{
+            flex-grow: 1;
+        }
+        div#fg-1{
+            flex-grow: 1;
+        }
+        div#fg-8{
+            /*este elemento que e um item flex, crescera 8 vezes em relação aos outros itens flex, ele ocupara 8 vezes mais do espaço disponivel que os outros elementos flex, no total vão existir 10 unidades na proporção total disponivel, pode se ver que esse eleemnto ocupa 8/10 do espço e outros ocupa, 1/10 assim na soma final da proporção vai resultar em 10 decimos do espaço*/
+            flex-grow: 8;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Itens Flex - Flex Box</h1>
+
+    <p><strong>Exemplo:</strong> Faça o terceiro item flexível crescer oito vezes mais rápido do que os outros itens flexíveis:</p>
+
+    <h2>A propriedade flex-grow</h2>
+
+    <p><strong>Exemplo:</strong> Faça o terceiro item flexível crescer oito vezes mais rápido do que os outros itens flexíveis:</p>
+
+    <div class="flex-container">
+        <div id="fg-1">1</div>
+        <div id="fg-1">2</div>
+        <div id="fg-8">3</div>
+    </div>
+</body>
+</html>

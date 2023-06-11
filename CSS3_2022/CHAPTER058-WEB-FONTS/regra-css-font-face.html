@@ -1,0 +1,75 @@
+<!--
+    * @font-face
+
+        A regra CSS @font-face especifica uma fonte personalizada com a qual exibir o texto; a fonte pode ser carregada de um servidor remoto ou de uma fonte instalada localmente no próprio computador do usuário.
+
+    * SINTAXE
+
+        @font-face {
+            font-family: "Open Sans";
+            src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+                url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+        }
+
+    * DESCRIPTORS(DESCRITORES)
+
+        substituição de subida(ascent-override): Define a métrica de subida para a fonte.
+
+        substituição de descida(descent-override): Define a métrica de descida para a fonte.
+
+        exibição de fonte(font-display): Determina como um tipo de fonte é exibido com base em se e quando foi baixado e está pronto para uso.
+
+        font-family: Especifica um nome que será usado como o valor de face da fonte para propriedades de fonte.
+
+        esticar a fonte(font-stretch): Um valor de alongamento de fonte. Aceita dois valores para especificar um intervalo suportado por um tipo de fonte, por exemplo font-stretch: 50% 200%;
+
+        font-style: Um valor de estilo de fonte. Aceita dois valores para especificar um intervalo que é suportado por um tipo de fonte, por exemplo, estilo de fonte: oblique 20deg 50deg;
+
+        font-weight: Um valor de peso da fonte. Aceita dois valores para especificar um intervalo suportado por um tipo de fonte, por exemplo, font-weight: 100 400;
+
+        font-variant: Um valor de variante de fonte.
+
+        configurações de recursos de fonte(font-feature-settings): Permite o controle sobre recursos tipográficos avançados em fontes OpenType.
+
+        configurações de variação de fonte(font-variation-settings): Permite controle de baixo nível sobre variações de fonte OpenType ou TrueType, especificando os nomes dos eixos de quatro letras dos recursos a serem variados, juntamente com seus valores de variação.
+
+        substituição de intervalo de linha(line-gap-override): Define a métrica de intervalo de linha para a fonte.
+
+        size-adjust experimental: Define um multiplicador para contornos de glifos e métricas associadas a essa fonte. Isso facilita a harmonização dos designs de várias fontes quando renderizadas no mesmo tamanho de fonte.
+
+        src: Especifica o recurso que contém os dados da fonte. Isso pode ser um URL para um local de arquivo de fonte remoto ou o nome de uma fonte no computador do usuário.
+
+        Para fornecer ao navegador uma dica sobre qual é o formato de um recurso de fonte — para que ele possa selecionar um adequado — é possível incluir um tipo de formato dentro de uma função format():
+
+            src: url(ideal-sans-serif.woff) format("woff"), url(basic-sans-serif.ttf) format("truetype");
+
+        Os tipos disponíveis são: "woff", "woff2", "truetype", "opentype", "embedded-opentype" e "svg".
+
+        unicode-range: O intervalo de pontos de código Unicode a serem usados ​​na fonte.
+
+    * DESCRIPTION(DESCRIÇÃO):
+
+        Se a função local() for fornecida, especificando um nome de fonte para procurar no computador do usuário, e se o agente do usuário encontrar uma correspondência, essa fonte local será usada. Caso contrário, o recurso de fonte especificado usando a função url() é baixado e usado.
+
+        Ao permitir que os autores forneçam suas próprias fontes, @font-face torna possível projetar conteúdo sem se limitar às chamadas fontes "seguras para a Web" (ou seja, as fontes que são tão comuns que são consideradas universalmente disponível). A capacidade de especificar o nome de uma fonte instalada localmente para procurar e usar torna possível personalizar a fonte além do básico, ao mesmo tempo em que é possível fazer isso sem depender de uma conexão com a Internet.
+
+        É comum usar url() e local() juntos, para que a cópia instalada do usuário da fonte seja usada, se disponível, voltando a baixar uma cópia da fonte se ela não for encontrada no dispositivo do usuário.
+
+        A regra @font-face pode ser usada não apenas no nível superior de um CSS, mas também dentro de qualquer regra de grupo condicional CSS.
+
+        FONT MIME TYPES
+
+        FORMAT: TrueType
+        MIME type: font/ttf
+        --------------------------------------
+        FORMAT: OpenType
+        MIME type: font/otf
+        --------------------------------------
+        FORMAT: Web Open Front Format(Formato Front Aberto da Web)
+        MIME type: font/woff
+        --------------------------------------
+        FORMAT: Web Open Font Format 2
+        MIME type: font/woff2
+        --------------------------------------
+        
+-->

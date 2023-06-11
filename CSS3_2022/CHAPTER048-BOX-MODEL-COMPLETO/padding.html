@@ -1,0 +1,51 @@
+<!--
+    * PADDING(PREENCHIMENTO)
+
+        O preenchimento fica entre a borda e a área de conteúdo. Ao contrário das margens, você não pode ter quantidades negativas de preenchimento, portanto, o valor deve ser 0 ou um valor positivo. O preenchimento é normalmente usado para empurrar o conteúdo para longe da borda. Qualquer plano de fundo aplicado ao seu elemento será exibido atrás do preenchimento. 
+
+        Podemos controlar o preenchimento em todos os lados de um elemento usando o padding propriedade, ou em cada lado individualmente usando as propriedades longhand equivalentes: 
+
+                padding-top
+                padding-right
+                padding-bottom
+                padding-left
+
+        Se você alterar os valores de preenchimento na classe .box no exemplo abaixo, você pode ver que isso muda onde o texto começa em relação à caixa.
+        
+        Você também pode alterar o preenchimento na classe .container,que abrirá espaço entre o recipiente e a caixa. O preenchimento pode ser alterado em qualquer elemento e criará espaço entre sua borda e o que estiver dentro do elemento. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .container{
+            /*
+              - O preenchimento fica entre a borda e a área de conteúdo. Ao contrário das margens, você não pode ter quantidades negativas de preenchimento, portanto, o valor deve ser 0 ou um valor positivo.
+             - Podemos controlar o preenchimento em todos os lados de um elemento.
+              - em cada lado individualmente usando as propriedades longhand equivalentes: 
+            */
+            padding-top: 0;
+            padding-right: 30px;
+            padding-bottom: 40px;
+            padding-left: 4em;
+        }
+        .box{
+            /*
+             - O preenchimento fica entre a borda e a área de conteúdo. Ao contrário das margens, você não pode ter quantidades negativas de preenchimento, portanto, o valor deve ser 0 ou um valor positivo.
+             - Podemos controlar o preenchimento em todos os lados de um elemento usando o padding propriedade,
+            */
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <div class="box">Mude minhas padding</div>
+    </div>
+
+</body>
+</html>

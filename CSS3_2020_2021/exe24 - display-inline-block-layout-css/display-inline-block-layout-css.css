@@ -1,0 +1,72 @@
+/*
+ * LAYOUT CSS - DISPLAY INLINE BLOCK
+
+ * O DISPLAY: VALOR inline-block
+
+  - Em comparação com display: inline, a principal diferença é que display: inline-block permite definir uma largura e altura no elemento.
+  - Além disso, com display: inline-block, as margens / preenchimentos superior e inferior são respeitados, mas com display: inline eles não são.
+  - Em comparação com display: block, a principal diferença é que display: inline-block não adiciona uma quebra de linha após o elemento, portanto, o elemento pode ficar próximo a outros elementos.
+  - O exemplo a seguir mostra os diferentes comportamentos de display: inline, display: inline-block e display: block:
+*/
+/*exemplo de display inline - exibir embutido*/
+.caixa_inline{
+    display: inline;/*a caixa fica embutida e não quebra de linha para o proximo elemento, e os espaços, interno e externo não pode ser add.*/
+    width: 100px; /*largura da caixa*/
+    height: 100px; /*altura da caixa*/
+    /*add um espaço interno entre a borda e conteudo da caixa*/
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    /*add uma preenchimento a caixa, entre o espaço externo e interno da caixa*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: blue;
+    /*cor de fundo da caixa*/
+    background-color: yellow;
+}
+
+/*exemplo de display: inline-block; bloco-inline*/
+.caixa_inline_block{
+    display: inline-block;/*a caixa fica embutida e não quebra de linha apos o elemento e permite add bordas, espaçoes na caixa etc..*/
+    width: 100px; /*largura da caixa*/
+    height: 100px; /*altura da caixa*/
+    /*add um espaço interno entre a borda e conteudo da caixa*/
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    /*add uma preenchimento a caixa, entre o espaço externo e interno da caixa*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: blue;
+    /*cor de fundo da caixa*/
+    background-color: yellow;
+}
+
+/*exemplo de display: block; - exibir: bloco;*/
+.caixa_block{
+    display: block;/*a caixa fica em formato de bloco e quebra de linha apos a caixa*/
+    width: 100px; /*largura da caixa*/
+    height: 100px; /*altura da caixa*/
+    /*add um espaço interno entre a borda e conteudo da caixa*/
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    /*add uma preenchimento a caixa, entre o espaço externo e interno da caixa*/
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-left: 1px;
+    border-style: solid;
+    border-color: blue;
+    /*cor de fundo da caixa*/
+    background-color: yellow;
+}

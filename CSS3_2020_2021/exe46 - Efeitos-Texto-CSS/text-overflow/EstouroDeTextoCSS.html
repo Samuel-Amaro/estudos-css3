@@ -1,0 +1,110 @@
+<!--
+
+    * EFEITOS DE TEXTO CSS
+
+      * ESTOURO DE TEXTO CSS, QUEBRA DE LINHA, REGRAS DE QUEBRA DE LINHA E MODOS DE ESCRITA
+
+        - Neste capítulo, você aprenderá sobre as seguintes propriedades:
+
+            - text-overflow
+            - 
+            - word-wrap
+            - 
+            - word-break
+            - 
+            - writing-mode
+
+    * ESTOURO DE TEXTO CSS
+
+      - A text-overflow propriedade CSS especifica como o conteúdo transbordado que não é exibido deve ser sinalizado para o usuário
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estouro de texto</title>
+    <style>
+        p.teste1{
+            white-space: nowrap;
+            width: 200px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #000000;
+            /**
+             * propriedade css que define como um conteudo que e maior que o elemento que o conten, deve mostrar o conteudo que ultrapassa os limite do elemento;
+             * aqui o conteudo que passa os limites do elemento deve ser ocultado
+            **/
+            overflow: hidden;
+            border-style: solid;
+            /**
+             * propriedade css que define como o texto deve se comportar se for maior que o elemento que o contem
+            **/
+            text-overflow: clip;
+        }
+        p.teste2{
+            white-space: nowrap;
+            width: 200px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #000000;
+            /**
+             * propriedade css que define como um conteudo que e maior que o elemento que o conten, deve mostrar o conteudo que ultrapassa os limite do elemento;
+             * aqui o conteudo que passa os limites do elemento deve ser ocultado
+            **/
+            overflow: hidden;
+            border-style: solid;
+            /**
+             * propriedade css que define como o texto deve se comportar se for maior que o elemento que o contem;
+             * o texto que ultrapassa os limites do elemento, vai ter trs pontos add no final onde o conteudo ultrapassa os limites.
+            **/
+            text-overflow: ellipsis;
+        }
+        p.teste3{
+            white-space: nowrap;
+            width: 200px;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: #000000;
+            /**
+             * propriedade css que define como um conteudo que e maior que o elemento que o conten, deve mostrar o conteudo que ultrapassa os limite do elemento;
+             * aqui o conteudo que passa os limites do elemento deve ser ocultado
+            **/
+            overflow: hidden;
+            border-style: solid;
+            /**
+             * propriedade css que define como o texto deve se comportar se for maior que o elemento que o contem;
+             * o texto que ultrapassa os limites do elemento, vai ter trs pontos add no final onde o conteudo ultrapassa os limites.
+            **/
+            text-overflow: ellipsis;
+        }
+        p.teste3:hover{
+            /*o conteudo que foi ocultado devido ter passado os limites do elemento pode ser exibido com essa propriedade*/
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <h1>A propriedade text-overflow</h1>
+    <p>Os dois paragrafos a seguir contêm um texto longo que não cabe na caixa</p>  
+    <h2>text-overflow: clip;</h2>
+    <p><strong>Exemplo 01:</strong></p>
+    <p class="teste1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis error amet maxime beatae hic, eligendi doloribus modi corrupti mollitia veritatis at ut distinctio nemo quibusdam cupiditate minus libero consequuntur exercitationem.</p>
+    <h2>text-overflow: ellipsis;</h2>
+    <p><strong>Exemplo 02:</strong></p>
+    <p class="teste2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nobis velit dolores vitae quo. Incidunt dignissimos aspernatur repudiandae inventore nostrum quas nam nihil commodi, ad numquam similique earum, molestias voluptatem.</p>
+    <h2>Mostrando conteudo que não estava visivel</h2>
+    <p><strong>Exemplo 03:</strong>Passe o mouse sobre os dois divs abaixo para ver o texto completo.</p>
+    <p class="teste3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ullam suscipit esse accusamus cumque, vero mollitia vel minima repudiandae sunt sint dolore dolores nam in perferendis incidunt quia deleniti unde!</p>
+    <p class="teste4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quas possimus saepe exercitationem dolorem qui et architecto reiciendis, minus odio itaque beatae culpa alias pariatur deserunt, id accusantium, eligendi mollitia.</p>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!--
+    * PROPRIEDADE CSS FLEX-GROW(crescer flexivel)
+
+        A propriedade CSS flex-grow define o fator de crescimento flexível do tamanho principal de um item flexível.
+
+    * SINTAXE
+
+        /* <number> values */
+        flex-grow: 3;
+        flex-grow: 0.6;
+
+        /* Global values */
+        flex-grow: inherit;
+        flex-grow: initial;
+        flex-grow: revert;
+        flex-grow: revert-layer;
+        flex-grow: unset;
+
+        A propriedade flex-grow é especificada como um único <number>.
+
+    * VALORES
+
+        <number>
+        Consulte <número>. Os valores negativos são inválidos. O padrão é 0.
+
+    * DESCRIPTION(DESCRIÇÃO)
+
+        Esta propriedade especifica quanto espaço restante no contêiner flexível deve ser atribuído ao item (o fator de crescimento flexível).
+
+        O tamanho principal é a largura ou a altura do item, que depende do valor da direção flexível(flex-direction).
+
+        O espaço restante é o tamanho do contêiner flexível menos o tamanho de todos os tamanhos dos itens flexíveis juntos. Se todos os itens irmãos tiverem o mesmo fator de crescimento flexível, todos os itens receberão a mesma parte do espaço restante, caso contrário, será distribuído de acordo com a proporção definida pelos diferentes fatores de crescimento flexível.
+
+        flex-grow é usado junto com as outras propriedades flex flex-shrink e flex-basis, e normalmente definido usando a abreviação flex para garantir que todos os valores sejam definidos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container*/
+        #content{
+            /*
+             - vamos definir quais elementos serão caixas flexiveis.
+             - temos que definir um valor especial no elemento pai dos elementos que queremos afetar.
+             - queremos afetar os elementos <div>, assim o pai desses elementos e o elemento <div>
+             - A propriedade CSS  display especifica o tipo de caixa de renderização usada por um elemento.
+             - o valor flex O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo flexbox.
+             - aqui estamos definindo o conteiner flex. o elemento que sera pai, de todos os elementos flexiveis. definindo o flex conteiner
+            */
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: stretch;
+        }
+
+        .box{
+            /*
+             -  A propriedade CSS flex-grow define o fator de crescimento flexível do tamanho principal de um item flexível.
+             - Esta propriedade especifica quanto espaço restante no contêiner flexível deve ser atribuído ao item (o fator de crescimento flexível).
+             - O tamanho principal é a largura ou a altura do item, que depende do valor da direção flexível(flex-direction).
+             - aqui neste exemplo definimos que o fator de crescimento de todos os itens com class .box e 1, o tamanho principal aqui e a largura pois a direção flexivel e row.
+             - Se todos os itens irmãos tiverem o mesmo fator de crescimento flexível, todos os itens receberão a mesma parte do espaço restante
+            */
+            flex-grow: 1;
+            border: 3px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .box1{
+            /*
+             - aqui neste exemplo definimos que o fator de crescimento de todos os itens com class .box1 e 2, o tamanho principal aqui e a largura pois a direção flexivel e row.
+             - os itens com a class .box1 devem receber a proporção de 2 do espaço restante disponivel do conteiner flexivel.
+            */
+            flex-grow: 2;
+            border: 3px solid rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h4>Este e um Flex-Grow</h4>
+    <h5>A,B,C and F are flex-grow: 1 . D and E are flex-grow: 2.</h5>
+    <div id="content">
+        <div class="box" style="background-color: red;">A</div>
+        <div class="box" style="background-color: lightblue">B</div>
+        <div class="box" style="background-color: yellow;">C</div>
+        <div class="box1" style="background-color: brown;">D</div>
+        <div class="box1" style="background-color: lightgreen;">E</div>
+        <div class="box" style="background-color: brown;">F</div>
+    </div>
+
+</body>
+</html>

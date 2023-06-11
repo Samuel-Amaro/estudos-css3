@@ -1,0 +1,76 @@
+<!--
+    * :in-range
+
+        A pseudo-classe CSS :in-range representa um elemento <input> cujo valor atual está dentro dos limites de intervalo especificados pelos atributos min e max.
+
+        /*Seleciona qualquer <input>, mas somente quando tem um intervalo especificado e seu valor está dentro desse intervalo*/
+        input:in-range {
+            background-color: rgba(0, 255, 0, 0.25);
+        }
+
+        Essa pseudoclasse é útil para dar ao usuário uma indicação visual de que o valor atual de um campo está dentro dos limites permitidos.
+
+        Nota: Esta pseudo-classe aplica-se apenas a elementos que têm (e podem ter) uma limitação de intervalo. Na ausência de tal limitação, o elemento não pode estar "dentro do alcance" nem "fora do alcance".
+
+    * Sintaxe
+
+        :in-range
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        li {
+            list-style: none;
+            margin-bottom: 1em;
+        }
+
+        input {
+            border: 1px solid black;
+        }
+
+        /*
+         - A pseudo-classe CSS :in-range representa um elemento <input> cujo valor atual está dentro dos limites de intervalo especificados pelos atributos min e max.
+         - Seleciona qualquer <input>, mas somente quando tem um intervalo especificado e seu valor está dentro desse intervalo
+        */
+        input:in-range {
+            background-color: rgba(0, 255, 0, 0.25);
+        }
+
+        input:out-of-range {
+            background-color: rgba(255, 0, 0, 0.25);
+            border: 2px solid red;
+        }
+
+        /*
+         - Seleciona qualquer <input>, mas somente quando tem um intervalo especificado e seu valor está dentro desse intervalo.
+         - seleciona o elemento label que seje irmão do elemento <input> selecionado, o label ira reber um conteudo, apos o conteudo original ter sido renderizado.
+        */
+        input:in-range + label::after {
+            content: 'okay.';
+        }
+
+        input:out-of-range + label::after {
+            content: 'out of range!';
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <form action="" id="form1">
+        <ul>Values between 1 and 10 are valid.
+          <li>
+            <input id="value1" name="value1" type="number" placeholder="1 to 10" min="1" max="10" value="12" />
+            <label for="value1">Your value is </label>
+          </li>
+        </ul>
+    </form>
+      
+      
+</body>
+</html>

@@ -1,0 +1,43 @@
+/*
+ * CSS COUNTERS - CONTADORES CSS
+
+   - Os contadores CSS são "variáveis" mantidas por CSS cujos valores podem ser incrementados por regras CSS (para rastrear quantas vezes são usados). Os contadores permitem ajustar a aparência do conteúdo com base em seu posicionamento no documento.
+
+ * NUMERAÇÃO AUTOMÁTIA COM CONTADORES
+
+   - Os contadores CSS são como "variáveis". Os valores das variáveis ​​podem ser incrementados por regras CSS (que rastrearão quantas vezes são usadas).
+
+   - Para trabalhar com contadores CSS, usaremos as seguintes propriedades:
+
+     counter-reset - Cria ou zera um contador;
+
+     counter-increment - Incrementa um valor de contador;
+
+     content - Insere conteúdo gerado;
+
+     counter()ou counters() função - Adiciona o valor de um contador a um elemento;
+
+  - Para usar um contador CSS, primeiro ele deve ser criado com counter-reset.
+*/
+
+/*no corpo da pagina - conteudo da pagina*/
+body{
+    /*cria ou zera um contador no elemento section do html*/
+    counter-reset: section;
+}
+
+/*para cada titulo de h2, aplicando um pseudo elemento, que so pegara o estado antes de mostrar o conteudo do elemento. um pseudo elemento ::before e  usado para inserir algum conteúdo antes do conteúdo de um elemento;*/
+h2::before{
+    /* 
+      * Incrementa um valor de contador;
+      * counter-increment: contadorElemento;
+    */
+    counter-increment: section;
+    /*
+      * content: Insere conteúdo gerado no elemento;  
+      * counter(elemento): Adiciona o valor de um contador a um elemento;
+      * vai gerar um conteudo concatenado no elemento: no elemento secion tem que aparecer um conteudo nesse formato: "Section + valor + espaço em branco: + conteudo do elemento";
+    */
+    content: "Section " counter(section) ": ";
+}
+

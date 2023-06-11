@@ -1,0 +1,51 @@
+<!--
+    * ITENS COLLAPSED(RECOLHIDOS)
+
+        A especificação flexbox detalha o que deve acontecer se um item flexível for recolhido pela configuração visibility: collapsed  e um item. Consulte a documentação do MDN para a visibility propriedade. A especificação descreve o comportamento da seguinte forma:
+
+        "Especificar visibilidade:recolher em um item flexível faz com que ele se torne um item flexível recolhido, produzindo um efeito semelhante a visibilidade:recolher em uma linha de tabela ou coluna de tabela: o item flexível recolhido é removido inteiramente da renderização, mas deixa para trás um "strut" que mantém o tamanho cruzado da linha flexível estável. Assim, se um contêiner flexível tiver apenas uma linha flexível, os itens recolhíveis ou descolados dinamicamente podem alterar o tamanho principal do contêiner flexível, mas é garantido que não afetará seu tamanho cruzado e não fará com que o restante do layout da página "oscile". A quebra de linha flexível é refeita após o recolhimento, portanto, o tamanho cruzado de um contêiner flexível com várias linhas pode ou não mudar." - Itens recolhidos
+
+        Esse comportamento é útil se você deseja direcionar itens flexíveis usando JavaScript para mostrar e ocultar conteúdo, por exemplo. O exemplo na especificação demonstra um desses padrões.
+
+        No exemplo ao vivo a seguir, tenho um contêiner flex não encapsulado. O terceiro item tem mais conteúdo do que os outros ainda está definido visibility: collapsee, portanto, o contêiner flexível está retendo um suporte da altura necessária para exibir esse item. Se você remover visibility: collapsedo CSS ou alterar o valor para visible, verá o item desaparecer e o espaço redistribuir entre os itens não recolhidos; a altura do contêiner flexível não deve mudar.
+
+        Nota: Use o Firefox para os dois exemplos abaixo, pois o Chrome e o Safari tratam o colapso como oculto.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+    <style>
+      .box {
+        /*container flex não wrap*/
+        display: flex;
+      }
+
+      .box > * {
+        flex: 1 1 200px;
+        background-color: #dfe8ee;
+        color: black;
+        border-radius: 4px;
+      }
+
+      .hide{
+        /*terceiro item tem mais conteudo do que os outros ainda esta definido visibility e portanto o container flexivel esta retendo suporte de altura necessaria para exibir esse item, ele esta recolido, ele se torna um item flexivel recolhido(collapsed) o item recolido e removido inteiramente da renderização mas deixa para tras um "strut" que mantem o tamanmho cruzado(cross-axis) da linha flexivel estave*/
+        visibility: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>One</div>
+      <div>Two</div>
+      <div class="hide">
+        Three <br />
+        has <br />
+        extra <br />
+        text
+      </div>
+    </div>
+  </body>
+</html>

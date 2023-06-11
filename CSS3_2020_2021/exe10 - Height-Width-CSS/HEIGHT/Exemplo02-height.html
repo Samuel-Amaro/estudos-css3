@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura de um Elemento</title>
+    <style>
+        div#parent{
+            /*Define a altura em px. se o conteúdo não couber na altura especificada, ele transbordará. A forma como o contêiner lidará com o conteúdo transbordando é definida pela propriedade overflow. isso define uma largura estatica. que e pre-definida e calculada pelo dev*/
+            height: 100px;
+            width: 250px;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: blue;
+            border-style: solid;
+        }
+        div#child{
+            /*Define a altura em porcentagem do bloco que o contém; este elemento sera 50% da altura de seu elemento pai. ocupa 50% da altura do elemento pai. ocupa metade da altura do elemento que o contem*/
+            height: 50%;
+            width: 75%;
+            border-top: 2px;
+            border-right: 2px;
+            border-left: 2px;
+            border-bottom: 2px;
+            border-color: red;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Altura de um elemento - height</h1>
+
+    <p><strong>Exemplo:</strong> Defina a altura de um elemento em 50% da altura do elemento pai:</p>
+
+    <div id="parent">
+        <div id="child">Tenho metade da altura do meu pai.</div>
+    </div>
+
+</body>
+</html>

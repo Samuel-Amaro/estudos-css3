@@ -1,0 +1,55 @@
+<!--
+    * PROPRIEDADE flex-direction
+
+        A propriedade flex-direction permite alterar a direção na qual os elementos flex serão exibidos ao longo do eixo principal. Definindo a propriedade flex-direction como row-reverse (linha reversa) ainda teremos os elementos dispostos em uma linha, entretanto, as linhas inicial e final serão trocadas.
+
+        Se mudarmos a flex-direction para a column (coluna), o eixo principal exibirá os elemento em uma coluna. Trocando o valor para column-reverse (coluna reversa) fará com que as linhas inicial e final sejam novamente trocadas.
+
+        No exemplo prático abaixo tem-se a propriedade flex-direction definida como row-reverse. Experimente os outros valores - row, column e column-reverse - para ver o que acontece com o conteúdo.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            /*
+             -  A propriedade flex-direction permite alterar a direção na qual os elementos flex serão exibidos ao longo do eixo principal.
+             - flex-direction como row-reverse (linha reversa) ainda teremos os elementos dispostos em uma linha, entretanto, as linhas inicial e final serão trocadas. linha inicial vira border-right, e linha final vira border-left
+            */
+            flex-direction: row-reverse;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três</div>
+    </div>
+</body>
+</html>

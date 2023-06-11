@@ -1,0 +1,76 @@
+<!--
+    * IMAGEN SUSPENSA
+
+        - Como adicionar uma imagem e outro conteúdo dentro da caixa suspensa.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        div.dropdown{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            display: inline-block;
+        }
+
+        div.dropdown-content{
+            display: none;
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancestral deste elemento <div class="dropdow-content"> e o elemento <div class="dropdown"> pois contem o elemento, e o pai do elemento e possui a position diferente de static
+            */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            /*
+             - a propriedade z-index  especifica a ordem de pilha de um elemento.
+             - qual elemento deve ser colocado na frente ou atrás dos outros
+             - um elemento pode ter a ordem de pilha negativa ou positiva
+             - o elemento com ordem de pilha positiva e o elemento que vai ser colocado na frente o elemento com ordem de pilha negativa e o elemento que ser colocado atras
+            */
+            z-index: 1;
+        }
+
+        /*
+         - o usuario ao passar o mouse por cima do elemento div.dropdown, o elemento descendente recebera o seguinte estilo abaixo
+        */
+        div.dropdown:hover .dropdown-content{
+            display: block;
+        }
+
+       .desc{
+           padding: 15px;
+           text-align: center;
+       }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <h2>Imagen suspensa</h2>
+        </header>
+        <p>Mova o mouse sobre a imagem abaixo para abrir o conteúdo suspenso.</p>
+    </main>
+
+    <div class="dropdown">
+        <img src="./img_5terre (4).jpg" alt="Cinque Terre" width="100" height="50"/>
+        <div class="dropdown-content">
+            <img src="./img_5terre (4).jpg" alt="Cinque Terre" width="300" height="200"/>
+            <div class="desc">Linda Cinque Terre</div>
+        </div>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam repellendus voluptas, illum quas dicta molestiae id. Aliquid vitae alias inventore facere accusantium et ullam voluptatibus sint. Maxime obcaecati ea voluptate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe doloremque molestiae mollitia culpa, eligendi rem, quasi sequi aut aspernatur neque nostrum cumque praesentium aperiam laudantium minus iure quam eius libero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem a labore itaque ex, molestias voluptates beatae delectus rem corporis iure nostrum fuga suscipit non tempore autem nam dolores. Itaque, corrupti?</p>
+
+</body>
+</html>

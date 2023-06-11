@@ -1,0 +1,46 @@
+<!--
+    * LARGURAS LATERAIS ESPECIFICAS
+
+        - A border-width propriedade pode ter de um a quatro valores (para a borda superior(BORDER-TOP), borda direita(BORDER RIGHT), borda inferior(BORDER BOTTOM) e borda esquerda(BORDER-LEFT)):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.one{
+            /*a declaração css abaixo, possui a propriedade border-style e o valor solid, a propriedade border-style, especifica que tipo de borda exibir, o valor solid, especifica para exibir uma borda solida*/
+            border-style: solid;
+            /*a propriedade border-width, especifica a largura das quatro bordas: border-top, border-right, border-bottom, border-left, pode ter de um a quatro valores, pode ser definda com tamanho especifico, ou usando valores predefinidos, aqui usaremos tamanhos especificos com unidade px
+            - passamos dois valores, o primeiro valor e para as bordas top e bottom, o segundo valor para as bordas laterais, right, e left*/
+            border-width: 5px 20px; /*5px top e bottom, 20px right e left*/
+        }
+        p.two{
+            /*exibe um borda solida*/
+            border-style: solid;
+            /*define o tamanho da borda, por meio de um valor especifico usando unidade px,  
+            - passamos dois valores, o primeiro valor e para as bordas top e bottom, o segundo valor para as bordas laterais, right, e left*/
+            border-width: 20px 5px; /*20px top e bottom, e 5px left e right*/
+        }
+        p.three{
+            /*exibe um borda solida*/
+            border-style: solid;
+            /*define o tamanho da borda, por meio de um tamanho especifico, usando a unidade px
+            - passamos  quatro valores, o primeiro valor e para as border-top, o sergundo para a border-right, o terceiro para border-bottom, o quarto para border-left */
+            border-width: 25px 10px 4px 35px; /*25px top, 10px right, 4px bottom, 35px left*/
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade de largura de borda(border-width)</h2>
+
+    <p>A border-width propriedade pode ter de um a quatro valores (para a borda superior(BORDER-TOP), borda direita(BORDER RIGHT), borda inferior(BORDER BOTTOM) e borda esquerda(BORDER-LEFT)):</p>
+
+    <p class="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio accusamus dolores ipsum id veritatis incidunt velit cum aliquid, mollitia quod? Doloribus velit, recusandae esse labore temporibus ex ut consectetur.</p>
+    <p class="two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quis dolores totam quia dicta, architecto doloremque error ad ipsam, iusto modi fugiat! Ratione debitis error aliquam commodi cumque nulla in.</p>
+    <p class="three">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium commodi itaque dolorem incidunt, possimus recusandae at deserunt repellendus ipsum? Molestiae architecto cum, ea maiores ducimus dignissimos animi nobis amet.</p>
+
+</body>
+</html>

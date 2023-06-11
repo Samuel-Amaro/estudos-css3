@@ -1,0 +1,31 @@
+/*configurando o seletor de imagen*/
+#conteiner_geral > img{
+    width: 100%;/*a imagen pode ocupar toda a largura da pagina horizontalmente*/
+    height: auto;/*altura automatica, o propria pagina define*/
+}
+/*
+ * o conteiner geral que armazena tudo esta posicionado relativamente, em sua posiçaõ normal;
+*/
+#conteiner_geral{
+    position: relative;
+}
+/*conteiner que mostra o texto do topo superior esquerdo, tem o posicionamento absoluto, isso e sua posiçaõ e baseada no conteiner_geral, que e o elemento mais proximo e que esta posicionado, assim este conteiner toma ele como ancestral posicionado para se obter sua posiçaõ absoluta*/
+#conteiner_superior_esquerdo{
+    position: absolute; /*posição absoluta em relação ao conteiner_geral, este conteiner esta dentro do conteiner geral*/
+    top: 8px; /*posicionado a partir do topo 8px de cima para baixo e esquerda 16px da esquerda para direita*/
+    left: 16px;
+    font-size: 18px;
+}
+/*mesma coisa so muda posicionamento, posicionado no topo 8px de cima para baixo, e a partir da  da direita para esquerda 0px direita*/
+#conteiner_superior_direito{
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    font-size: 18px;
+}
+/*mesma coisa so muda poscionamento, posicionado no inferior a partir do 5px de baixo para cima, e na esquerda 5px da esquerda para direita*/
+#conteiner_inferior_direito{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: medium;

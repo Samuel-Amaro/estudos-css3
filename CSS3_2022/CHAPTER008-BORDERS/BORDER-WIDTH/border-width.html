@@ -1,0 +1,67 @@
+<!--
+    * LARGURA DA BORDA CSS
+
+        - A border-width propriedade especifica a largura das quatro bordas.
+
+        - A largura pode ser definida como um tamanho específico (em px, pt, cm, em, etc) ou usando um dos três valores predefinidos: fino(THIN), médio(MEDIUM) ou grosso(THICK):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.one{
+            /*a declaração css abaixo, possui a propriedade border-style e o valor solid, a propriedade border-style, especifica que tipo de borda exibir, o valor solid, especifica para exibir uma borda solida*/
+            border-style: solid;
+            /*a propriedade border-width, especifica a largura das quatro bordas: border-top, border-right, border-bottom, border-left, o valor pode ser definda com tamanho especifico, ou usando valores predefinidos, aqui usaremos tamanhos especificos com unidade px*/
+            border-width: 5px;
+        }
+        p.two{
+            /*exibe um borda solida*/
+            border-style: solid;
+            /*define o tamanho da borda, por meio de um  dos três valores predefinidos, usando o tamanho medio*/
+            border-width: medium;
+        }
+        p.three{
+            /*exibe um borda pontilhada*/
+            border-style: dotted;
+            /*define o tamanho da borda, por meio de um tamanho especifico, usando a unidade px*/
+            border-width: 2px;
+        }
+        p.four{
+            /*exibe um borda pontilhada*/
+            border-style: dotted;
+            /*define o tamanho da borda, por meio de um  dos três valores predefinidos, usando o tamanho thick(grosso)*/
+            border-width: thick;
+        }
+        p.five{
+            /*exibe um borda dupla*/
+            border-style: double;
+            /*define o tamanho da borda, por meio de um tamanho especifico, usando a unidade px*/
+            border-width: 15px;
+        }
+        p.six{
+            /*exibe um borda dupla*/
+            border-style: double;
+            /*define o tamanho da borda, por meio de um  dos três valores predefinidos, usando o tamanho thick(grosso)*/
+            border-width: thick;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade de largura de borda(border-width)</h2>
+
+    <p>Esta propriedade especifica a largura das quatro bordas:</p>
+
+    <p class="one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio accusamus dolores ipsum id veritatis incidunt velit cum aliquid, mollitia quod? Doloribus velit, recusandae esse labore temporibus ex ut consectetur.</p>
+    <p class="two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quis dolores totam quia dicta, architecto doloremque error ad ipsam, iusto modi fugiat! Ratione debitis error aliquam commodi cumque nulla in.</p>
+    <p class="three">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium commodi itaque dolorem incidunt, possimus recusandae at deserunt repellendus ipsum? Molestiae architecto cum, ea maiores ducimus dignissimos animi nobis amet.</p>
+    <p class="four">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, voluptas? Tenetur corporis dolore harum. Praesentium, quasi. Magnam dolorum et velit ipsam quibusdam iure, est autem dolorem impedit, totam ex hic!</p>
+    <p class="five">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum error, ratione officiis quibusdam, fugiat voluptatem nihil, sunt consectetur quod modi impedit voluptate maxime quidem quos. Nulla accusamus optio facilis beatae.</p>
+    <p class="six">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod voluptas velit nam rerum, non quia reprehenderit fugiat laudantium. Ab, odio tempore? Omnis dolore veniam obcaecati nobis at cum enim commodi.</p>
+
+    <p><b>Nota:</b> A propriedade <q>border-width</q> não funciona se for usada sozinha. Sempre especifique a propriedade <q>border-style</q> para definir as bordas primeiro.</p>
+</body>
+</html>

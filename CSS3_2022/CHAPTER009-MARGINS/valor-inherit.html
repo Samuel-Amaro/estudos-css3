@@ -1,0 +1,44 @@
+<!--
+    * VALOR HERDADO(INHERIT)
+
+        - Este exemplo permite que a margem esquerda do elemento <p class="ex1"> seja herdada do elemento pai (<div>):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        div{
+            /*shorthand de border, border-width, border-style, border-color, define uma borda para um elemento div*/
+            border: 1px solid red;
+            /*
+             - margens são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas
+             - cria espaços ao redor do elemento, cria espaços externos, ao redor do elemento ou entre elementos
+             - usando a propriedade margin-left para especificar um margen individual no lado esquerdo do elemento
+             - especificando um valor de comprimento usando unidade px 
+            */
+            margin-left: 100px; 
+        }
+        p.ex1{
+            /*
+             - usando a propriedade margin-left para especificar um margen individual no lado esquerdo do elemento
+             - especificando um valor hinherit(herda) especifica que a margem deve ser herdada do elemento pai 
+             - o elemento p ira ter o mesmo espaço externo definido no elemento pai <div>
+            */
+            margin-left: inherit;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Uso de valor: inherit</h2>
+
+    <p>Deixe a margem esquerda ser herdada do elemento pai:</p>
+
+    <div>
+        <p class="ex1">Este parágrafo tem uma margem esquerda herdada (do elemento div).</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!--
+    * PROPRIEDADE CSS BOTOM(INFERIOR)
+
+        - A bottom propriedade afeta a posição vertical de um elemento posicionado. Esta propriedade não tem efeito em elementos não posicionados.
+
+            - Se position: absolute; ou position: fixed; - a bottom propriedade define a border bottom de um elemento para uma unidade acima/abaixo da border-bottom de seu ancestral posicionado mais próximo.
+
+            - Se position: relative; - a bottom propriedade faz com que a borda inferior do elemento se mova acima/abaixo de sua posição normal.
+
+            - Se position: sticky; - a bottom propriedade se comporta como sua posição é relativa quando o elemento está dentro da viewport, e como sua posição é fixa quando está fora.
+
+            - Se postion: static; - a bottom propriedade não tem efeito.
+
+    * SINTAXE CSS:
+
+        bottom: auto|lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: auto
+        DESCRIPTION: Permite que o navegador calcule a posição da border bottom. Isso é padrão
+        ------------------------------------
+        VALUE: length 
+        DESCRIPTION: Define a posição da border-bottom em px, cm, etc. Valores negativos são permitidos. L
+        ------------------------------------
+        VALUE: %
+        DESCRIPTION: Define a posição da border-bottom em % do elemento contido. Valores negativos são permitidos
+        ------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        div.parent{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            /*define a altura de um elemento com um valor absoluto em px*/
+            height: 200px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid red;
+        }
+        div.absolute{
+            /*
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancentral desta div com position absolute e uma div com postion relative, que esta em sua posição normal
+             - Os elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos.
+            */
+            position: absolute;
+            /*
+             - esta propriedade define a largura do elemento o valor 
+             100% Define a largura em porcentagem do bloco que o contém, o elemento ira ocupar 50% do espaço horizontal fornecido ao elemento*/
+            width: 50%;
+            /*
+             - a propriedade bottom afeta a posição vertical de um elemento posicionado. 
+             - Se position: absolute; ou position: fixed; - a bottom propriedade define a border bottom de um elemento para uma unidade acima/abaixo da border-bottom de seu ancestral posicionado mais próximo.
+             - a propriedade bottom 10px afasta 10px acima da borda do elemento que o contem, de baixo para cima, afasta 10px da borda do elemento pai.
+            */
+            bottom: 10px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+        div.relative{
+            /*
+             - o valor relative define que o elemento é posicionado em relação à sua posição normal.
+             - Definir as propriedades top, right, bottom e left de um elemento relativamente posicionado fará com que ele seja ajustado para fora de sua posição normal
+            */
+            position: relative;
+            /*
+             - esta propriedade define a largura do elemento o valor 
+             100% Define a largura em porcentagem do bloco que o contém, o elemento ira ocupar 50% do espaço horizontal fornecido ao elemento*/
+            width: 50%;
+            /*
+             - a propriedade bottom afeta a posição vertical de um elemento posicionado. 
+             - Se position: relative; - a bottom propriedade faz com que a borda inferior do elemento se mova acima/abaixo de sua posição normal.
+             - a propriedade bottom com o valor 10px faz o elemento se mover acima da sua posição normal. move 10px acima
+            */
+            bottom: 10px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+        div.fixed{
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor fixed define que o elemento é posicionado em relação à janela de visualização(viewport)-(é a área visível do usuário de uma página da web. Varia de acordo com o dispositivo - será menor em um telefone celular do que em uma tela de computador.), o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada.
+             - As propriedades top, right, bottom e left são usadas para posicionar o elemento.
+            */
+            position: fixed;
+            /*
+             - esta propriedade define a largura do elemento o valor 
+             100% Define a largura em porcentagem do bloco que o contém, o elemento ira ocupar 50% do espaço horizontal fornecido ao elemento*/
+             width: 50%;
+             /*
+             - a propriedade bottom afeta a posição vertical de um elemento posicionado. 
+             - Se position: absolute; ou position: fixed; - a bottom propriedade define a border bottom de um elemento para uma unidade acima/abaixo da border-bottom de seu ancestral posicionado mais próximo.
+             - a propriedade bottom com o valor 10px faz o elemento se mover acima da border-bottom do seu elemento pai. de baixo para cima, acima da border-bottom do elemento que o contem.
+            */
+            bottom: 10px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+        div.sticky{
+            /*
+             - o valor sticky é posicionado com base na posição de rolagem do usuário.
+             - Um elemento adesivo(sticky) alterna entre relative e fixed, dependendo da posição de rolagem.
+             - Ele é posicionado em relative até que uma determinada posição de deslocamento seja encontrada na viewport - então ele "gruda" no lugar (como position:fixed).
+            */
+            position: sticky;
+            /*
+             - esta propriedade define a largura do elemento o valor 
+             100% Define a largura em porcentagem do bloco que o contém, o elemento ira ocupar 50% do espaço horizontal fornecido ao elemento*/
+             width: 50%;
+            /*
+             - a propriedade bottom afeta a posição vertical de um elemento posicionado. 
+             - Se position: sticky; - a bottom propriedade se comporta como sua posição é relativa quando o elemento está dentro da viewport, e como sua posição é fixa quando está fora. 
+             - a propriedade bottom com o valor 10px faz o elemento se mover acima da sua posição normal. move 10px acima
+            */
+            bottom: 10px;
+            /*shorthand propriedade border, uma abreviatura para border-width, border-style, border-color, propriedades individuais para definir uma borda no elemento*/
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>a propriedade bottom</h1>
+
+    <div class="parent">
+        Este div elemento possui position: relative;
+        <div class="absolute"><strong>position: absolute e bottom: 10px</strong> A borda inferior deste div é colocada 10 pixels acima da borda inferior do elemento que o contém.</div>
+    </div>
+    <br/>
+    <div class="parent">
+        Este div elemento possui position: relative;
+        <div class="relative"><strong>position: relative e bottom: 5px</strong> A borda inferior deste div é colocada 5px acima da sua posição normal</div>
+    </div>
+    <br/>
+    <div class="fixed"><strong>position: fixed e bottom: 10px</strong><br/> a border bottom desta div e colocada a 10 pixels da parte inferior da viewport</div>
+    <br/>
+    <div class="parent">
+        este elemento div: tem position: relative;
+        <div class="sticky"><strong>position: fixed e bottom 10px</strong><br/> Este div é sticky.</div>
+    </div>
+
+</body>
+</html>

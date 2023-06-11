@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            border: 2px solid gray;
+            /* Adjusts the position of the checkboxes on the text baseline */
+            vertical-align: -2px;
+            outline: none;
+        }
+
+        input[type="radio"]::before {
+            display: block;
+            content: " ";
+            width: 10px;
+            height: 10px;
+            border-radius: 6px;
+            background-color: red;
+            font-size: 1.2em;
+            transform: translate(3px, 3px) scale(0);
+            transform-origin: center;
+            transition: all 0.3s ease-in;
+        }
+
+        /*
+         - O seletor de pseudoclasse CSS :checked representa qualquer elemento de rádio(<input type="radio">), caixa de seleção(<input type="checkbox">) ou opção (<option> e um <select>) que está marcado ou alternado para um estado on. 
+         - um elemento radio com checked especificado, inserimos um conteudo antes do conteudo original no radio
+        */
+        input[type="radio"]:checked::before {
+            transform: translate(3px, 3px) scale(1);
+            transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+        }
+
+        input~span {
+            position: relative;
+        }
+
+        /*
+         - A pseudoclasse CSS :default seleciona elementos de formulário que são o padrão em um grupo de elementos relacionados.
+         - <input type="checkbox"> e <input type="radio"> corresponder se eles tiverem o checked atributo.
+         - adiciona um conteudo apos o conteudo geral de um elemento input selecionado por padrão, especificado com checkd atributo
+        */
+        input:default~span::after {
+            font-size: 0.7rem;
+            position: absolute;
+            content: "Default";
+            color: white;
+            background-color: black;
+            padding: 5px 10px;
+            right: -65px;
+            top: -3px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <fieldset>
+            <legend>Choose your favourite fruit</legend>
+
+            <p>
+                <input type="radio" name="fruit" value="cherry" id="cherry">
+                <label for="cherry">Cherry</label>
+                <span></span>
+            </p>
+            <p>
+                <input type="radio" name="fruit" value="banana" id="banana" checked>
+                <label for="banana">Banana</label>
+                <span></span>
+            </p>
+            <p>
+                <input type="radio" name="fruit" value="strawberry" id="strawberry">
+                <label for="strawberry">Strawberry</label>
+                <span></span>
+            </p>
+        </fieldset>
+    </form>
+
+    <script type="text/javascript">
+        /*
+         * * :default é :indeterminate
+         * 
+         * Como mencionado acima, a :default pseudo-classe corresponde a rádios/caixas de seleção marcadas por padrão, no carregamento da página, mesmo quando desmarcadas. Isso pode ser útil para adicionar um indicador a uma lista de opções para lembrar ao usuário quais eram os padrões (ou opções iniciais), caso ele queira redefinir suas escolhas.
+         * 
+         * Além disso, os rádios/caixas de seleção mencionados acima serão correspondidos pela :indeterminate pseudo-classe quando estiverem em um estado em que não estejam marcados nem desmarcados. Mas o que isso significa? Os elementos que são indeterminados incluem:
+         * 
+            * <input/radio> entradas, quando todos os botões de opção em um grupo de mesmo nome estão desmarcados 
+            * 
+            * <input/checkbox> entradas cuja indeterminate propriedade é definida como true via JavaScript
+            * 
+            * <progress> elementos que não têm valor.
+            * 
+         * Isso não é algo que você provavelmente usará com muita frequência. Um caso de uso pode ser um indicador para informar aos usuários que eles realmente precisam selecionar um botão de opção antes de seguir em frente.
+         * 
+         *  Vejamos algumas versões modificadas do exemplo anterior que lembram ao usuário qual era a opção padrão e estilizam os botões de opção quando indeterminados. Ambos têm a seguinte estrutura HTML para as entradas:
+         * 
+         
+            <p>
+                <input type="radio" name="fruit" value="cherry" id="cherry">
+                <label for="cherry">Cherry</label>
+                <span></span>
+            </p>
+
+         * Para o :default exemplo, adicionamos o checked atributo à entrada do botão de opção do meio, para que ele seja selecionado por padrão quando carregado. Em seguida, estilizamos isso com o seguinte CSS:
+         * 
+         
+            input ~ span {
+                position: relative;
+            }
+
+            input:default ~ span::after {
+                font-size: 0.7rem;
+                position: absolute;
+                content: "Default";
+                color: white;
+                background-color: black;
+                padding: 5px 10px;
+                right: -65px;
+                top: -3px;
+            }
+
+         * 
+         * Isso fornece um pequeno rótulo "Padrão" no que foi originalmente selecionado quando a página foi carregada. Observe aqui que estamos usando o combinador irmão geral (~) em vez do combinador irmão adjacente ( +) — precisamos fazer isso porque o <span> não vem logo após o <input> na ordem de origem.
+         * 
+         * Por :indeterminateexemplo, não temos um botão de opção selecionado padrão - isso é importante - se houvesse, não haveria estado indeterminado para estilizar. Estilizamos os botões de opção indeterminados com o seguinte CSS:
+         
+            input[type="radio"]:indeterminate {
+                border: 2px solid red;
+                animation: 0.4s linear infinite alternate border-pulse;
+            }
+
+            @keyframes border-pulse {
+                from {
+                    border: 2px solid red;
+                }
+
+                to {
+                    border: 6px solid red;
+                }
+            }
+
+         * Isso cria uma pequena borda animada nos botões de opção, o que indica que você precisa selecionar um deles!
+        */
+    </script>
+</body>
+
+</html>

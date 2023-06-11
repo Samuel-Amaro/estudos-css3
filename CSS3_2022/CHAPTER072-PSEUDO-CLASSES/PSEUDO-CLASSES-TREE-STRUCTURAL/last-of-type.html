@@ -1,0 +1,41 @@
+<!--
+    * :last-of-type
+
+        A pseudo-classe :last-of-type CSS representa o último elemento de seu tipo entre um grupo de elementos irmãos.
+
+        /*Seleciona qualquer <p> que seja o último elemento de seu tipo entre seus irmãos*/
+        p:last-of-type {
+            color: lime;
+        }
+
+        Nota: Conforme definido originalmente, o elemento selecionado precisava ter um pai. Começando com Seletores Nível 4, isso não é mais necessário.
+
+    * Sintaxe
+
+        :last-of-type
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /*
+         - seleciona o ultimo elemento <p> entre um grupo de irmãos de mesmo tipo
+        */
+        p:last-of-type{
+            color: red;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Heading</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    
+</body>
+</html>

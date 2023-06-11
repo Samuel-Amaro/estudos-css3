@@ -1,0 +1,63 @@
+<!--
+    * :valid
+
+        A pseudoclasse :valid CSS representa qualquer <input> ou outro <form> elemento cujo conteúdo seja validado com sucesso. Isso permite facilmente fazer com que os campos válidos adotem uma aparência que ajude o usuário a confirmar que seus dados estão formatados corretamente.
+            
+        /*Seleciona qualquer <input> válido*/
+        input:valid {
+            background-color: powderblue;
+        }
+
+        Essa pseudoclasse é útil para destacar campos corretos para o usuário.
+
+    * Sintaxe
+
+        :valid
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        input + span {
+            position: relative;
+        }
+
+        input + span::before {
+            position: absolute;
+            right: -20px;
+            top: 5px;
+        }
+
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        input:invalid + span::before {
+            content: '✖';
+            color: red;
+        }
+
+        /*
+         - A pseudoclasse :valid CSS representa qualquer <input> ou outro <form> elemento cujo conteúdo seja validado com sucesso.
+         - seleciona elementos <input> que sejam validos, quando o elemento <input> for valido o o proximo elemento que seja seguido do elemento valido, recebera um conteudo antes do conteudo orginal.
+        */
+        input:valid + span::before {
+            content: '✓';
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div>
+        <label for="fname">First name *: </label>
+        <input id="fname" name="fname" type="text" required/>
+        <span></span>
+    </div>
+      
+</body>
+</html>

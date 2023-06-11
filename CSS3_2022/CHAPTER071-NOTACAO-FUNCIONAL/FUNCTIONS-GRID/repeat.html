@@ -1,0 +1,132 @@
+<!--
+    * REPEAT() - REPETIR
+
+        A função CSS repeat() representa um fragmento repetido da lista de faixas , permitindo que um grande número de colunas ou linhas que exibem um padrão recorrente sejam escritos de forma mais compacta.
+
+        Esta função pode ser usada nas propriedades CSS Grid grid-template-columns e grid-template-rows.
+
+    * SINTAXE
+
+        /*<repetição-faixas> valores*/
+
+        repeat(4, 1fr)
+        repeat(4, [col-start] 250px [col-end])
+        repeat(4, [col-start] 60% [col-end])
+        repeat(4, [col-start] 1fr [col-end])
+        repeat(4, [col-start] min-content [col-end])
+        repeat(4, [col-start] max-content [col-end])
+        repeat(4, [col-start] auto [col-end])
+        repeat(4, [col-start] minmax(100px, 1fr) [col-end])
+        repeat(4, [col-start] fit-content(200px) [col-end])
+        repeat(4, 10px [col-start] 30% [col-middle] auto [col-end])
+        repeat(4, [col-start] min-content [col-middle] max-content [col-end])
+
+        /*<auto-repeat> valores*/
+
+        repeat(auto-fill, 250px)
+        repeat(auto-fit, 250px)
+        repeat(auto-fill, [col-start] 250px [col-end])
+        repeat(auto-fit, [col-start] 250px [col-end])
+        repeat(auto-fill, [col-start] minmax(100px, 1fr) [col-end])
+        repeat(auto-fill, 10px [col-start] 30% [col-middle] 400px [col-end])
+
+        /*<fixed-repeat> valores*/
+        repeat(4, 250px)
+        repeat(4, [col-start] 250px [col-end])
+        repeat(4, [col-start] 60% [col-end])
+        repeat(4, [col-start] minmax(100px, 1fr) [col-end])
+        repeat(4, [col-start] fit-content(200px) [col-end])
+        repeat(4, 10px [col-start] 30% [col-middle] 400px [col-end])
+
+    * SINTAXE
+
+        A repeat() função recebe dois argumentos:
+
+            repeat count : o primeiro argumento especifica o número de vezes que a lista de faixas deve ser repetida. É especificado com um valor inteiro de 1 ou mais, ou com os valores de palavra-chave auto-fillou auto-fit. Esses valores de palavras-chave repetem o conjunto de faixas quantas vezes forem necessárias para preencher o contêiner da grade.
+
+            faixas(tracks): o segundo argumento especifica o conjunto de faixas que serão repetidas. Fundamentalmente, isso consiste em um ou mais valores, onde cada valor representa o tamanho dessa faixa. Cada tamanho é especificado usando um <track-size> valor ou um <fixed-size> valor. Você também pode especificar um ou mais nomes de linha antes ou depois de cada faixa, fornecendo <line-names> valores antes e/ou depois do tamanho da faixa.
+
+        Se você usar auto-fill(preenchimento automatico) ou auto-fit(ajuste automatico) para definir a contagem de repetições, poderá especificar apenas os tamanhos das faixas usando o <fixed-size> tipo, não o <track-size> tipo. Isso nos dá três formas de sintaxe principais para repeat():
+
+            <track-repeat>, que utiliza:
+                
+                um inteiro para definir a contagem de repetição
+
+                <track-size> valores para definir os tamanhos das faixas.
+
+            <auto-repeat>, que utiliza:
+
+                auto-fill ou auto-fit para definir a contagem de repetição.
+
+                <fixed-size> para definir os tamanhos das faixas.
+
+            <fixed-repeat>, que utiliza:
+
+                um inteiro para definir a contagem de repetição.
+
+                <fixed-size> valores para definir os tamanhos das faixas.
+
+            Então, se uma declaração de propriedade usa <auto-repeat>, só é permitido usar <fixed-repeat> para quaisquer repeat() chamadas adicionais. Por exemplo, isso é inválido, porque combina o <auto-repeat> formulário com o <track-repeat> formulário:
+
+                .wrapper {
+                    grid-template-columns:  repeat(auto-fill, 10px) repeat(2, minmax(min-content, max-content));
+                }
+
+            Há uma quarta forma, <name-repeat>, que é usada para adicionar nomes de linha a subgrades. Ele é usado apenas com a palavra-chave sub grid e especifica apenas nomes de linha, não tamanhos de faixa.
+
+    * VALORES
+
+        <fixed-size>
+        
+            Uma das seguintes formas:
+
+                um <length-percentage> valor
+
+                uma minmax() função com:
+
+                    min dado como um <length-percentage> valor
+
+                    max fornecido como um <length-percentage>valor, um <flex> valor ou uma das seguintes palavras-chave: min-content, max-content ou auto
+
+                uma minmax() função com:
+                
+                    min dado como um <length-percentage> valor ou uma das seguintes palavras-chave: min-content, max-content, ou auto
+
+                    max dado como <length-percentage> valor.
+
+            <flex>: Uma dimensão não negativa com a unidade fr especificando o fator de flexibilidade da faixa. Cada <flex> faixa de tamanho ocupa uma parte do espaço restante em proporção ao seu fator de flexibilidade.
+
+            <length>: Um comprimento inteiro positivo.
+
+            <line-names>: Zero ou mais <custom-ident> valores, separados por espaços e entre colchetes, assim: [first header-start].
+
+            <percentage>: Uma porcentagem não negativa em relação ao tamanho embutido do contêiner de grade em faixas de grade de coluna e o tamanho de bloco do contêiner de grade em faixas de grade de linha. Se o tamanho do contêiner de grade depender do tamanho de suas faixas, então o <percentage> deve ser tratado como auto. O agente do usuário pode ajustar as contribuições de tamanho intrínseco da trilha ao tamanho do contêiner da grade e aumentar o tamanho final da trilha pelo valor mínimo que resultaria em honrar a porcentagem.
+
+            <tamanho-faixas>
+
+                Uma das seguintes formas:
+
+                    um <length-percentage> valor, um <flex> valor ou uma das seguintes palavras-chave: min-content, max-content ou auto.
+
+                uma minmax() função com
+
+                    min fornecido como um <length-percentage> valor ou uma das seguintes palavras-chave: min-content, max-content, ou auto
+
+                    max fornecido como um <length-percentage> valor, um <flex> valor ou uma das seguintes palavras-chave: min-content, max-content ou auto
+
+                uma fit-content() função, passou um <length-percentage> valor.
+
+            auto: No máx, idêntico a max-content. No mín, representa o maior tamanho mínimo (conforme especificado por min-width/ min-height) dos itens da grade que ocupam a trilha da grade.
+
+            auto-fill(auto preenchimento): Se o contêiner de grade tiver um tamanho definido ou máximo no eixo relevante, então o número de repetições é o maior inteiro positivo possível que não faz com que a grade transborde seu contêiner de grade. Tratar cada trilha como sua função de dimensionamento de trilha máxima (cada valor independente usado para definir grid-template-rowsou grid-template-columns), se isso for definido. Caso contrário, como sua função de dimensionamento mínimo de pista, e levando em consideração o grid gap. Se qualquer número de repetições estourar, então a repetição é 1. Caso contrário, se o contêiner da grade tiver um tamanho mínimo definido no eixo relevante, o número de repetições será o menor inteiro positivo possível que atenda a esse requisito mínimo. Caso contrário, a lista de faixas especificada será repetida apenas uma vez.
+
+            auto-fit(ajuste automatico): Comporta-se da mesma forma que auto-fill, exceto que depois de colocar os itens da grade, todas as faixas repetidas vazias são recolhidas. Uma trilha vazia é aquela sem itens de grade de entrada colocados ou atravessando-a. (Isso pode resultar no colapso de todas as faixas, se estiverem todas vazias.)
+
+                Uma trilha recolhida é tratada como tendo uma única função de dimensionamento de trilha fixa de 0px, e as calhas de cada lado dela colapsam.
+
+                Com a finalidade de encontrar o número de faixas auto-repetidas, o agente do usuário reduz o tamanho da faixa para um valor especificado pelo agente do usuário (por exemplo, 1px), para evitar a divisão por zero.
+
+            max-content: Representa a maior contribuição de conteúdo máximo dos itens de grade que ocupam a faixa de grade.
+                
+            min-content: Representa a maior contribuição de conteúdo mínimo dos itens de grade que ocupam a faixa de grade.
+-->

@@ -1,0 +1,76 @@
+<!--
+    * ALINHANDO CONTEÚDO NO EIXO CRUZADO - A PROPRIEDADE ALIGN-CONTENT
+
+        Até agora estamos alinhando os itens, ou um item individual dentro da área definida pelo flex-container. Se você tiver um contêiner flexível de várias linhas encapsulado, também poderá usar a align-content propriedade para controlar a distribuição de espaço entre as linhas. 
+
+        Para align-content trabalhar, você precisa de mais altura em seu contêiner flexível do que o necessário para exibir os itens. Em seguida, ele funciona em todos os itens como um conjunto e determina o que acontece com esse espaço livre e o alinhamento de todo o conjunto de itens dentro dele.
+
+        A align-content propriedade assume os seguintes valores:
+
+            align-content: flex-start
+            align-content: flex-end
+            align-content: center
+            align-content: space-between
+            align-content: space-around
+            align-content: stretch
+            align-content: space-evenly(não definido na especificação Flexbox)
+
+        No exemplo ao vivo abaixo, o contêiner flex tem uma altura de 400 pixels, o que é mais do que o necessário para exibir nossos itens. O valor de align-content é space-between, o que significa que o espaço disponível é compartilhado entre as linhas flexíveis, que são colocadas alinhadas com o início e o fim do contêiner no eixo cruzado.
+
+        Experimente os outros valores para ver como a align-contentpropriedade funciona.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex.
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            flex-wrap: wrap;
+            height: 400px;
+            /*
+             - usar a align-content propriedade para controlar a distribuição de espaço entre as linhas. 
+             - space-between, o que significa que o espaço disponível é compartilhado entre as linhas flexíveis, que são colocadas alinhadas com o início e o fim do contêiner no eixo cruzado(cross axis).
+            */
+            align-content: space-between;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            padding: 20px;
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            flex:1 1 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div class="selected">Três</div>
+        <div>Quatro</div>
+        <div>Cinco</div>
+        <div>Seis</div>
+        <div>Sete</div>
+        <div>Oito</div>
+    </div>
+</body>
+</html>

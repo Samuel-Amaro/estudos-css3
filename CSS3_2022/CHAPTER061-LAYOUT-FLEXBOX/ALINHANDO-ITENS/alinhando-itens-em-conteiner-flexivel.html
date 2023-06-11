@@ -1,0 +1,61 @@
+<!--
+    * ALINHANDO ITENS EM UM CONTÊINER FLEXÍVEL
+
+        Uma das razões pelas quais o flexbox rapidamente atraiu o interesse dos desenvolvedores da web é que ele trouxe recursos de alinhamento adequados para a web pela primeira vez. Ele permitiu o alinhamento vertical adequado, para que possamos finalmente centralizar facilmente uma caixa. Neste guia, examinaremos detalhadamente como as propriedades de alinhamento e justificação funcionam no Flexbox.
+
+        Para centralizar nossa caixa usamos a align-items propriedade para alinhar nosso item no eixo cruzado(cross axis), que neste caso é o eixo do bloco que corre verticalmente. Usamos justify-content para alinhar o item no eixo principal(main axis), que neste caso é o eixo embutido na horizontal.
+
+        Você pode dar uma olhada no código deste exemplo abaixo. Altere o tamanho do contêiner ou elemento aninhado e o elemento aninhado sempre permanecerá centralizado.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container, area que faz uso do flexbox*/
+        .box{
+            /*
+             - Para criar essa estrutura, define-se o valor da propriedade display do elemento representado pelo contêiner como flex ou inline-flex
+             - os elementos-filhos desse contêiner tornar-se-ão do tipo flex
+            */
+            display: flex;
+            border: 2px dotted rgb(96, 139, 168);
+            /*
+             - align-items propriedade para alinhar nosso item no eixo cruzado(cross axis).
+             - que neste caso é o eixo do bloco que corre verticalmente.
+            */
+            align-items: center;
+            /*
+             - Usamos justify-content para alinhar o item no eixo principal(main axis), que neste caso é o eixo embutido na horizontal.
+            */
+            justify-content: center;
+        }
+
+        /*
+         - flex itens possuirão o seguinte comportamento padrão:
+         - flex-direction: row;
+         -  Alinhamento na  borda inicial(lado esquerdo) do eixo principal.
+         - Não há expansão no eixo principal, mas pode haver contração.
+         - Haverá expansão vertical para preencher a altura do eixo transversal.
+         - flex-basis: auto;
+         - flex-wrap: nowrap;
+        */
+        .box div{
+            background-color:rgba(96, 139, 168, 0.2);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três</div>
+    </div>
+</body>
+</html>

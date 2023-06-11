@@ -1,0 +1,71 @@
+<!--
+    * CONTROLANDO HERANÇA
+    
+        CSS fornece quatro valores especiais de propriedades universais para controlar a herança. Cada propriedade CSS aceita esses valores.
+
+            inherit(herdar):  Define o valor da propriedade aplicada a um elemento selecionado para ser o mesmo de seu elemento pai. Efetivamente, isso "ativa a herança".
+
+            initial(inicial): Define o valor da propriedade aplicada a um elemento selecionado para o valor inicial dessa propriedade.
+
+            unset(desarmar): Restaura a propriedade com seu valor natural, o que significa que se a propriedade é herdada naturalmente, ela age como herdada, caso contrário, ela age como inicial.
+
+        Podemos ver uma lista de links e explorar como funcionam os valores universais. O exemplo ao vivo abaixo permite que você brinque com o CSS e veja o que acontece quando você faz alterações. Usar/modificar o código é realmente a melhor maneira de se familiarizar com HTML e CSS.
+
+        Por exemplo:
+
+            O segundo item da lista tem a classe my-class-1 aplicada. Isso define a cor do elemento <a> aninhado dentro para herdar. Se você remover a regra, como ela muda a cor do link?
+
+            Você consegue entende por que o terceiro e o quarto links são da mesma cor? Verifique a descrição dos valores acima se não.
+
+            Qual dos links mudará de cor se você definir uma nova cor para o elemento <a> - por exemplo, um {color: red; }?
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css"> 
+        
+        body{
+            /*
+             - define a cor do texto de todo o corpo do documento como verde
+            */
+            color: green;
+        }
+
+        .my-class-1 a{
+            /*
+             - o valor inherit(herdar) para a propriedade color define o valor da propriedade aplicada a um elemento selecionado para ser o mesmo de seu elemento pai. Efetivamente, isso "ativa a herança".
+             - define o valor da propriedade color aplicada ao elemento <a> como o mesmo valor do elemento pai, herda o valor do elemento pai
+            */
+            color: inherit;
+        }
+
+        .my-class-2 a{
+            /*
+             - o valor initial(inicial) define o valor da propriedade aplicada a um elemento selecionado para o valor inicial dessa propriedade.
+             - o valor da propriedade color aplicada ao elemento <a> sera o seu valor inicial definido pelo proprio navegador, o valor que e definido de forma padrão para a propriedade
+            */
+            color: initial;
+        }
+
+        .my-class-3 a{
+            /*
+             - a propriedade color com o valor unset(desarmar), restaura a propriedade com seu valor natural, o que significa que se a propriedade é herdada naturalmente, ela age como herdada, caso contrário, ela age como inicial.
+             - o valor unset para a propriedade color faz a propriedade ser restaurada para seu valor natural.
+            */
+            color: unset;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+       <li>Default <a href="#">link</a> color</li>
+       <li class="my-class-1">Inherit the <a href="#">link</a> color</li> 
+       <li class="my-class-2">Reset the <a href="#">link</a> color</li>
+       <li class="my-class-3">Unset the <a href="#">link</a> color</li>
+    </ul>
+
+</body>
+</html>

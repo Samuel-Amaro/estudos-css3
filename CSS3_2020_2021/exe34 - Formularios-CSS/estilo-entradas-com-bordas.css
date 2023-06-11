@@ -1,0 +1,39 @@
+/*
+ * ENTRADAS COM BORDAS
+
+   - Use a border propriedade para alterar o tamanho e a cor da borda e use a border-radius propriedade para adicionar cantos arredondados:
+
+*/
+
+/*seleciona os campos de entrada de texto, com o seletor de atributo e valor*/
+input[type=text]{
+
+    /*largura do elemento, pode ocupar 100% da largura em relação a pagina*/
+    width: 100%;
+
+    /*espaço interno*/
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+
+    /*espaço externo*/
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+
+    /*add um prenchimento(borda)*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-color: red;
+    border-style: solid;
+
+    /*arredondando os cantos*/
+    border-radius: 4px;
+
+    /*Observe que definimos a box-sizingpropriedade como border-box. Isso garante que o preenchimento e, eventualmente, as bordas sejam incluídos na largura e altura total dos elementos.*/
+    box-sizing: border-box;
+}

@@ -1,0 +1,46 @@
+<!--
+    * SELETOR DE [attribute|="value"] CSS 
+
+        - O [attribute|="value"] seletor é usado para selecionar elementos com o atributo especificado, cujo valor pode ser exatamente o valor especificado, ou o valor especificado seguido de um hífen (-).
+
+        - Nota: O valor deve ser uma palavra inteira, sozinha, como class="top", ou seguida por um hífen( - ), como class="top-text".
+
+    * DEFINIÇÃO E USO
+
+        - O seletor [attribute|=value] é usado para selecionar elementos com o atributo especificado começando com o valor especificado.
+
+        Nota: O valor deve ser uma palavra inteira, sozinha, como lang="en", ou seguida por um hífen( - ), como lang="en-us".
+
+    * SINTAXE CSS
+
+        [attribute|=value] {
+            css declarations;
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seletor de atributos
+         - estilizando elementos que possuem um atributo ou valor de atributo especifico.
+         - O [attribute|="value"] seletor é usado para selecionar elementos com o atributo especificado, cujo valor pode ser exatamente o valor especificado, ou o valor especificado seguido de um hífen (-).
+         - no exemplo abaixo o seletor ira selecionar todos os elementos que tenham o atributo class especificado cujo valor pode ser top ou top seguido de um hifen top-
+        */
+        [class|=top] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Seletor [attribute|="value"] CSS</h2>
+    
+    <h1 class="top-header">Welcome</h1>
+    <p class="top-text">Hello World!</p>
+    <p class="topcontent">Are you learning CSS?</p>
+
+</body>
+</html>

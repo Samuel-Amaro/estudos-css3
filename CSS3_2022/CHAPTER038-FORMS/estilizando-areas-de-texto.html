@@ -1,0 +1,40 @@
+<!--
+    * ESTILIZANDO ÁREAS DE TEXTO
+
+        - Dica: Use a resize propriedade para evitar que as áreas de texto sejam redimensionadas (desabilite o "grabber" no canto inferior direito):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        textarea{
+            width: 100%;
+            height: 150px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #f8f8f8;
+            padding: 12px 20px;
+            /*
+             - Use a resize propriedade para evitar que as áreas de texto sejam redimensionadas
+            */
+            resize: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h2>Estilizando a área de texto</h2>
+
+    <p><strong>Dica:</strong>  Use a propriedade resize para evitar que as textareas sejam redimensionadas (desabilite o "grabber" no canto inferior direito):</p>
+
+    <form>
+        <textarea>Some text...</textarea>
+    </form>
+
+</body>
+</html>

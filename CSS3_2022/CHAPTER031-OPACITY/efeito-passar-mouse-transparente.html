@@ -1,0 +1,45 @@
+<!--
+    * EFEITO DE PASSAR O MOUSE TRANSPARENTE
+
+        - A opacity propriedade é frequentemente usada junto com o :hover seletor para alterar a opacidade ao passar o mouse:
+
+        - O primeiro bloco CSS é semelhante ao código do Exemplo 1. Além disso, adicionamos o que deve acontecer quando um usuário passa o mouse sobre uma das imagens. Nesse caso, queremos que a imagem NÃO seja transparente quando o usuário passar o mouse sobre ela. O CSS para isso é opacity:1;.
+
+        - Quando o ponteiro do mouse se afastar da imagem, a imagem ficará transparente novamente.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        img{
+            /*
+             - a propriedade opacity especifica a opacidade/transparencia de um elemento
+             - o valor 0.5 especifica que a imagen tera 0.5 de transparencia-opacidade, 50% de opacidade
+             - a propriedade pode ter um valor de 0,0 a 1,0 quanto menor o valor mais transparente
+            */
+            opacity: 0.5;
+        }
+        /*usando uma pseudo-classe para capturar um estado especial de um elemento, o estado img:hover quando o usuario passa o mouse sobre o elemento <img>*/
+        img:hover{
+            /*
+             - quando usuario passar o mouse por cima do elmemento img, o elemento ira ter seu valor de opacidade sobreposto por um novo valor
+             - o valor 1.0, e padrão, sem transparencia e opacidade, a imagen não sera transparente, quando o usuario passar o mouse sobre ela.
+            */
+            opacity: 1.0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Imagem transparente</h1>
+
+    <p>A propriedade opacity é frequentemente usada junto com o seletor :hover para alterar a opacidade ao passar o mouse:</p>
+
+    <img src="./img_forest (1).jpg" alt="Floresta" width="170" height="100"/>
+    <img src="./img_mountains (1).jpg" alt="Mountains" width="170" height="100"/>
+    <img src="img_5terre (3).jpg" alt="Italy" width="170" height="100"/>
+
+</body>
+</html>

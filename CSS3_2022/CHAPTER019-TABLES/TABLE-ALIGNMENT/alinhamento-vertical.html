@@ -1,0 +1,98 @@
+<!--
+    * ALINHAMENTO VERTICAL
+
+        - A vertical-align propriedade define o alinhamento vertical (como TOP, BOTTOM ou MIDDLE) do conteúdo em <th> ou <td>.
+
+        - Por padrão, o alinhamento vertical do conteúdo em uma tabela é no meio(middle) (para elementos <th> e <td>).
+
+        - O exemplo a seguir define o alinhamento vertical do texto para baixo para elementos <td>:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table geral
+         - para as celulas de cabeçalho
+        - para as celulas de dados
+        */
+        table, th, td{
+            /*a shorthand border e usada para abreviar as seguintes propriedades individuais border-width, border-style, border-color, adicionar uma borda nos elementos*/
+            border: 1px solid;
+        }
+        /*
+         - para o elemento table
+        */
+        table{
+            /*
+             - a propriedade width especifica uma largura para um elemento
+             - o valor em % Define a largura em porcentagem do bloco que o contém
+             - aqui o valor 100%, e que o elemento table ira ocupar 100% do espaço fornecido pelo elemento pai, no caso o elemento pai e o body, toda area visual do documento, assim o espaço fornecido e toda largura do documento
+            */
+            width: 100%;
+            /*
+             - a propriedade border-collapse define se as bordas da tabela devem ser recolhidas em uma unica borda
+             - recolhe a borda do elemento table
+             - isso e usado por causa que a tabela possui bordas duplas os elementos table, th, td possui bordas separadas.
+            */
+            border-collapse: collapse;
+        }
+        /*
+         - celulas de conteudo
+        */
+        td{
+            /*
+             - a propriedade height e usada para definir a altura de um elemento, o valor 50px define que as celulas de conteudo terão 50px de altura
+            */
+            height: 50px;
+            /*
+             - a propriedade vertical-align define o alinhamento vertical de um elemento.
+             - o valor bottom O elemento está alinhado com o elemento mais baixo na linha
+             -  o conteudo das celulas de conteudo vão ser alinhados com o elemento mais baixo da linha que eles estiverem
+            */
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Propriedades vertical-align</h2>
+
+    <p>Esta propriedade define o alinhamento vertical (como superior, inferior ou meio) do conteúdo em th ou td.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Primeiro Nome</th>
+                <th>Ultimo Nome</th>
+                <th>Poupança</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>$150</td>
+            </tr>
+            <tr>
+                <td>Joe</td>
+                <td>Swansom</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>Cleveland</td>
+                <td>Brown</td>
+                <td>$250</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

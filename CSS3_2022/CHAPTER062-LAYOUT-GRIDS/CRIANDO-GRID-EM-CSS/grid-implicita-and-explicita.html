@@ -1,0 +1,78 @@
+<!--
+    * A GRID IMPLICITA E EXPLICITA
+
+       Até agora, especificamos apenas faixas de coluna, mas as linhas estão sendo criadas para conter nosso conteúdo. Este é um exemplo da grade explícita versus implícita. A grade explícita é aquela que você cria usando grid-template-columns ou grid-template-rows. A grade implícita é criada quando o conteúdo é colocado fora dessa grade, como em nossas linhas.
+
+       Por padrão, as faixas criadas na grade implícita são dimensionadas automaticamente(auto), o que geralmente significa que são grandes o suficiente para acomodar seu conteúdo. Se você deseja atribuir um tamanho às faixas de grade implícitas, você pode usar as propriedades grid-auto-rows e grid-auto-columns. Se você adicionar grid-auto-rows com um valor de 100px ao seu CSS, verá que essas linhas criadas agora têm 100 pixels de altura.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Grid starting point</title>
+    <style>
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        /*Grid Container*/
+        .container{
+            /*
+             - Valor grid: O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo de grade.
+             - o valor grid habilita o grid layout.
+             -  todos os filhos diretos do contêiner se tornam itens de grade. 
+             - inicialmente o valor grid, fornece uma grid de uma coluna somente, assim o filhos os itens grid continuam sendo exibidos um abaixo do outro como no fluxo normal do documento.
+            */
+            display: grid;
+            /*
+             - exemplo de grid(grade) explicita. criada usando grid-template-columns. especifica explicitamente as faixas de colunas. as de linha são criadas implicitamente pelo proprio navegador, somente para conter o conteudo.
+             -  usar a fr unidade para dimensionar com flexibilidade as linhas e colunas da grade.
+             - usando a propriedade abaixo para adicionar três colunas, a grid, adicona três faixas de colunas com 1fr cada.
+             - 1fr e o mesmo que 1 fração do espaço disponivel no conteiner grid. temos três colunas com a mesma quantidade de espaço.
+             - A fr unidade distribui o espaço proporcionalmente.
+             - a função repeat() e usada para repetir toda ou apenas uma seção da lista de faixas de colunas.
+             - a função aceita como primeiro valor o numero de vezes que eu desejo que a lista se repita, enquanto o segundo valor e uma lista de faixas, que pode ser uma ou mais faxias que você deseja repetir
+            */
+            grid-template-columns: repeat(3, 1fr);
+            /*
+             - A propriedade CSS grid-auto-rows especifica o tamanho de uma faixa de linha de grade criada implicitamente ou padrão de faixas.
+             - Se um item de grade é posicionado em uma linha que não é dimensionada explicitamente por grid-template-rows, faixas de grade implícitas são criadas para mantê-lo.
+             - atribuir um tamanho às faixas de grade de linhas implícitas.
+             - adiciona 100px de altura as linhas implicitas não especificadas no grid.
+            */
+            grid-auto-rows: 100px;
+            /*
+             - adicionando intervalos entre faixas(colunas e linhas).
+             - gap É uma shorthand para intervalo de linha(row-gap) e intervalo de coluna(column-gap).
+             - a gap e uma shorthand para column-gap e row-gap, especificar somente um unico valor, e definido 20px de intervalo entre as linhas primeiro, e a propriedade assume o valor de 20px como o mesmo para o intervalo entre colunas.
+            */
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple grid example</h1>
+
+    <div class="container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+    </div>
+
+</body>
+</html>

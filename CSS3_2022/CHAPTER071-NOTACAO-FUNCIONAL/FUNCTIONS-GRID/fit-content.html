@@ -1,0 +1,52 @@
+<!--
+    * FIT CONTENT(CONTEÚDO ADEQUADO)
+
+        O fit-content se comporta como fit-content(stretch). Na prática, isso significa que a caixa usará o espaço disponível, mas nunca mais do que max-content.
+
+        Quando usado como tamanho de caixa definido para width, height, min-width, min-height, max-width e max-height os tamanhos máximo e mínimo referem-se ao tamanho do conteúdo.
+
+        Nota: A especificação CSS Sizing também define a fit-content() função. Esta página detalha a palavra-chave.
+
+    * SINTAXE
+
+        width: fit-content
+        block-size: fit-content
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .container {
+            border: 2px solid #ccc;
+            padding: 10px;
+            width: 20em;
+        }
+
+        .item {
+            /*fallback*/
+            width: -moz-fit-content;
+            /*
+             - a caixa usará o espaço disponível, mas nunca mais do que max-content.
+            */
+            width: fit-content;
+            background-color: #8ca0ff;
+            padding: 5px;
+            margin-bottom: 1em;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item">Item</div>
+        <div class="item">Item with more text in it.</div>
+        <div class="item">Item with more text in it, hopefully we have added enough text so the text will start to wrap.</div>
+    </div>
+
+
+</body>
+</html>

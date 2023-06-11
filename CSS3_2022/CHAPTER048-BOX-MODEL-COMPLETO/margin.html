@@ -1,0 +1,37 @@
+<!--
+    * MARGEN(MARGIN)
+
+        A margem é um espaço invisível ao redor de sua caixa. Ele empurra outros elementos para longe da caixa. As margens podem ter valores positivos ou negativos. Definir uma margem negativa em um lado da caixa pode fazer com que ela se sobreponha a outras coisas na página. Se você estiver usando o modelo de caixa padrão ou alternativo, a margem é sempre adicionada após o cálculo do tamanho da caixa visível.
+        
+        Podemos controlar todas as margens de um elemento de uma só vez usando o margin propriedade, ou cada lado individualmente usando as propriedades longhand equivalentes: 
+
+            margin-top
+            margin-right
+            margin-bottom
+            margin-left
+
+        No exemplo abaixo, tente alterar os valores de margem para ver como a caixa é empurrada devido à margem criando ou removendo espaço (se for uma margem negativa) entre este elemento e o elemento que o contém. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .box{
+            /*
+             - A margem é um espaço invisível ao redor de sua caixa. Ele empurra outros elementos para longe da caixa. As margens podem ter valores positivos ou negativos.
+            */
+            margin-top: -40px;
+            margin-right: 30px;
+            margin-bottom: 40px;
+            margin-left: 4em;/*4em significa 4vezes o tamanho da fonte do elemento atual|16px tamanho da fonte atual|4emx16px=64px*/
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">Alterar minha margem.</div>
+
+</body>
+</html>

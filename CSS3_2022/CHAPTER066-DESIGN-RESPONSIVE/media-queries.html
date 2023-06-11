@@ -1,0 +1,17 @@
+<!--
+    * MEDIA QUERY(CONSULTAS DE MÍDIA)
+
+        O design responsivo só conseguiu surgir devido à media query. A especificação Media Queries Nível 3 tornou-se uma Recomendação Candidata em 2009, o que significa que foi considerada pronta para implementação em navegadores. As consultas de mídia nos permitem executar uma série de testes (por exemplo, se a tela do usuário é maior que uma certa largura ou uma certa resolução) e aplicar CSS seletivamente para estilizar a página adequadamente para as necessidades do usuário.
+
+        Por exemplo, a consulta de mídia a seguir testa se a página da Web atual está sendo exibida como mídia de tela (portanto, não é um documento impresso) e a janela de visualização tem pelo menos 800 pixels de largura. O CSS para o .container seletor só será aplicado se essas duas coisas forem verdadeiras.
+
+        @media screen and (min-width: 800px) {
+            .container {
+                margin: 1em 2em;
+            }
+        }
+
+        Você pode adicionar várias consultas de mídia em uma folha de estilo, ajustando todo o layout ou partes dele para melhor se adequar aos vários tamanhos de tela. Os pontos em que uma consulta de mídia é introduzida e o layout alterado são conhecidos como pontos de interrupção .
+
+        Uma abordagem comum ao usar Consultas de mídia é criar um layout simples de coluna única para dispositivos de tela estreita (por exemplo, telefones celulares), verificar se há telas maiores e implementar um layout de várias colunas quando você souber que tem largura de tela suficiente para lidar isto. Isso é frequentemente descrito como primeiro design móvel(mobile first) design .
+-->

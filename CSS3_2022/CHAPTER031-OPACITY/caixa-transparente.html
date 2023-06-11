@@ -1,0 +1,62 @@
+<!--
+    * CAIXA TRANSPARENTE
+
+        - Ao usar a opacity propriedade para adicionar transparência ao plano de fundo de um elemento, todos os seus elementos filho herdam a mesma transparência. Isso pode dificultar a leitura do texto dentro de um elemento totalmente transparente:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        div{
+            /*
+             - todos os elementos div terão cor de fundo verde
+            */
+            background-color: green;
+            padding: 10px;
+        }
+        div.first{
+            /*
+             - a propriedade opacity especifica a opacidade/transparencia de um elemento. 
+             - A opacity propriedade pode ter um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
+             - o valor 0.1 especifica o elemento mais transparente
+             -a opacidade afeita o texto de um elemento, se o elemento for muito tranasparente dificulta a visualização do texto
+            */
+            opacity: 0.1;
+        }
+        div.second{
+            /*
+             - o valor 0.3 especifica o elemento transparente mas com menos trasparencia que o elemento acima
+            */
+            opacity: 0.3;
+        }
+        div.third{
+            /*
+             - o valor 0.6 especifica o elemento transparente mas com menos trasparencia, que os dois elementos acima
+            */
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Caixas transparentes</h1>
+
+    <p>Ao usar a propriedade opacity para adicionar transparência ao plano de fundo de um elemento, todos os seus elementos filhos também se tornam transparentes. Isso pode dificultar a leitura do texto dentro de um elemento totalmente transparente:</p>
+
+    <div class="first">
+        <h1>opacity 0.1</h1>
+    </div>
+    <div class="second">
+        <h1>opacity 0.3</h1>
+    </div>
+    <div class="third">
+        <h1>opacity 0.6</h1>
+    </div>
+    <div>
+        <h1>opacity 1(default)</h1>
+    </div>
+
+</body>
+</html>

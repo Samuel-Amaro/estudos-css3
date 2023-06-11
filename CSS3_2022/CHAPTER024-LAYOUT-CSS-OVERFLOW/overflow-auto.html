@@ -1,0 +1,38 @@
+<!--
+    * overflow: auto
+
+      - O auto valor é semelhante a scroll, mas adiciona barras de rolagem apenas quando necessário:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        div{
+            background-color: coral;
+            width: 200px;
+            /*
+             - a overflow propriedade so funcionada para elementos com display block e com uma altura especificada
+            */
+            height: 100px;
+            border: 1px solid black;
+            /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - o valor auto(automatico) - Semelhante a scroll, mas adiciona barras de rolagem apenas quando necessário
+            */
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>overflow: auto(automatico)</h2>
+
+    <p>O valor auto é semelhante ao scroll, só que adiciona barras de rolagem quando necessário:</p>
+
+    <div>Você pode usar a propriedade overflow quando quiser ter um melhor controle do layout. A propriedade overflow especifica o que acontece se o conteúdo transbordar da caixa de um elemento.</div>
+
+</body>
+</html>

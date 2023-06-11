@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade CSS</title>
+    <style>
+        html{
+            font-size: 16px;
+        }
+
+        div{
+            font-size: 3rem;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        #top-div{
+            font-size: 2rem;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unidades CSS Relativas</h1>
+
+    <h1>Exemplo unidade CSS em(Em relação ao tamanho da fonte do elemento raiz)</h1>
+
+    <p>O tamanho da fonte deste documento é 16px.</p>
+
+    <div id="top-div">O tamanho da fonte deste elemento div é 2rem, que se traduz em 2x o tamanho da fonte do navegador.
+        <div>O tamanho da fonte deste elemento div é 3rem. Ele também mostra que não herda do tamanho da fonte do elemento pai.
+        </div>
+    </div>
+
+    <p>A unidade rem define o tamanho da fonte em relação ao tamanho da fonte de base do navegador e não herdará de seus pais.</p>
+
+    
+</body>
+</html>

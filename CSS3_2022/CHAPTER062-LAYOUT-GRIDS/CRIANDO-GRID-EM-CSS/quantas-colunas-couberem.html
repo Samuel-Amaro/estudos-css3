@@ -1,0 +1,79 @@
+<!--
+    * QUANTAS COLUNAS COUBEREM
+
+        Podemos combinar algumas das lições que aprendemos sobre listagem de faixas, notação de repetição e minmax() criar um padrão útil. Às vezes é útil poder pedir à grade para criar quantas colunas couberem no contêiner. Fazemos isso definindo o valor de grid-template-columns usar a repeat() função, mas em vez de passar um número, passe a palavra-chave auto-fill. Para o segundo parâmetro da função usamos minmax()com um valor mínimo igual ao tamanho mínimo da trilha que gostaríamos de ter e um máximo de 1fr.
+
+        Isso funciona porque a grade está criando tantas colunas de 200 pixels quantas couberem no contêiner e, em seguida, compartilhando o espaço restante entre todas as colunas. O máximo é 1fr que, como já sabemos, distribui o espaço uniformemente entre as faixas.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Grid starting point</title>
+    <style>
+
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        /*Grid Container*/
+        .container{
+            /*
+             - Valor grid: O elemento se comporta como um elemento de bloco e apresenta seu conteúdo de acordo com o modelo de grade.
+             - o valor grid habilita o grid layout.
+             -  todos os filhos diretos do contêiner se tornam itens de grade. 
+             - inicialmente o valor grid, fornece uma grid de uma coluna somente, assim o filhos os itens grid continuam sendo exibidos um abaixo do outro como no fluxo normal do documento.
+            */
+            display: grid;
+            /*
+             - exemplo de grid(grade) explicita. criada usando grid-template-columns. especifica explicitamente as faixas de colunas. as de linha são criadas implicitamente pelo proprio navegador, somente para conter o conteudo.
+             -  usar a fr unidade para dimensionar com flexibilidade as linhas e colunas da grade. 1fr e o mesmo que 1 fração do espaço disponivel no conteiner grid.
+             - usando a propriedade abaixo para adicionar faixas de coluna, o quanto o container grid couber.
+             - a propriedade grid-template-columns ira usar a function repeat() como valor, a function repeat() recebe como primeiro paramentro o valor auto-fill(preenchimento automatico), e como segundo paramentro outra function css, minmax(min, max).
+             - o valor repeat como valor para a propriedade: representa um fragmento repetido da lista de faixas, permitindo que um grande número de colunas ou linhas que exibem um padrão recorrente sejam escritos de forma mais compacta.
+             - o valor auto-fill como primeiro paramentro de repeat: Se o contêiner de grade tiver um tamanho maximo definido no eixo relevante, então o número de repetições é o maior inteiro positivo possível que não faz com que a grade transborde seu contêiner de grade.
+             - a function minmax como segundo paramentro de repeat, possui como o seu  primeiro paramentro define o tamanho minimo da coluna, um tamanho fixo de 200px e o tamanho maximo e 1fr um comprimento flexivel, a coluna pode ocupar o maximo de 1 fração do espaço disponivel no conteiner grid.
+            */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            /*
+             - A propriedade CSS grid-auto-rows especifica o tamanho de uma faixa de linha de grade criada implicitamente ou padrão de faixas.
+             - Se um item de grade é posicionado em uma linha que não é dimensionada explicitamente por grid-template-rows, faixas de grade implícitas são criadas para mantê-lo.
+             - atribuir um tamanho às faixas de grade de linhas implícitas.
+             - o valor minmax(100px, auto), e uma function que nos permite definir um tamanho mínimo e máximo para uma faixa.
+             - aqui neste exemplo o tamanho minimo e 100px e o maximo e auto  que será expandido para acomodar mais conteúdo
+            */
+            grid-auto-rows: minmax(100px, auto);
+            /*
+             - adicionando intervalos entre faixas(colunas e linhas).
+             - gap É uma shorthand para intervalo de linha(row-gap) e intervalo de coluna(column-gap).
+             - a gap e uma shorthand para column-gap e row-gap, especificar somente um unico valor, e definido 20px de intervalo entre as linhas primeiro, e a propriedade assume o valor de 20px como o mesmo para o intervalo entre colunas.
+            */
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple grid example</h1>
+
+    <div class="container">
+        <div>One Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit provident nam quos, sunt minima soluta maiores doloremque earum eum voluptatibus adipisci ullam excepturi totam quas aspernatur ex maxime exercitationem odit!</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad sunt inventore ab nobis veritatis. Labore, voluptates saepe laborum nihil, debitis culpa asperiores ratione minima numquam, temporibus sit ut pariatur dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam fuga quas sapiente eum fugiat ut, totam officia hic ab, assumenda animi quos non, rerum quae facilis officiis saepe. Totam?</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nostrum veritatis at dignissimos expedita, magnam ex! Atque eaque sunt sint ut ullam iste corporis vero ipsam porro, aliquam quo dolore!</div>
+    </div>
+
+</body>
+</html>

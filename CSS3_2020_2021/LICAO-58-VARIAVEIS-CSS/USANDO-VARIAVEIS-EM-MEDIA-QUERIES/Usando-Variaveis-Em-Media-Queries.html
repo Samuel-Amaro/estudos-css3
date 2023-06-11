@@ -1,0 +1,84 @@
+<!--
+    * USANDO VARIÁVEIS EM CONSULTAS DE MÍDIA
+
+      - Agora queremos alterar um valor de variável dentro de uma consulta de mídia.
+
+      - Aqui, primeiro declaramos uma nova variável local chamada --fontsize para a .containerclasse. Definimos seu valor para 25 pixels. Então, nós o usamos na .containerclasse mais abaixo. Em seguida, criamos uma @mediaregra que diz "Quando a largura do navegador é de 450 px ou mais, altere o valor da variável --fontsize da .containerclasse para 50 px."
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maneira tradicional</title>
+    <style>
+        /*
+         - O :root seletor corresponde ao elemento raiz do documento.
+         - Em HTML, o elemento raiz é sempre o elemento html.
+        */
+        :root{
+            /*definindo nome e valor da variavel gloabal, podera ser usada em todo o documento*/
+            --blue: #6495ed; /*valor antigo: #1e90ff*/
+            --white: #faf0e6; /*valor antigo: #FFFFFF*/
+        }
+        div.container{
+            /*definindo um nome para variavel e valor*/
+            --fontsize: 25px;
+        }
+        body{
+            /*a propriedade background color, vai receber o valor de --blue por meio da função var*/
+            background-color: var(--blue); 
+        }
+        h2{
+            border-bottom: 2px solid var(--blue);
+        }
+        div.container{
+            color: var(--blue);
+            background-color: var(--white);
+            padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            /*a propriedade font-size vai receber o tamanho da fonte, em px por meio da função var*/
+            font-size: var(--fontsize);
+        }
+        button{
+            background-color: var(--white);
+            color: var(--blue-local);
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-color: var(--blue-local);
+            border-style: solid;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }
+        /*quando a largura do navegador for igual a 450px, ou maior que isso, vai aplicar novas regras de estilo*/
+        @media screen and (min-width: 450px) {
+            div.container{
+                /*variavel font-size recebe um novo valor*/
+                --fontsize: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Usando variáveis em consultas de mídia</h1>
+
+    <div class="container">
+        <h2>Lorem Ipsum</h2>
+        <p>Quando a largura do navegador é inferior a 450 px, o tamanho da fonte deste div é 25 px. Quando for 450px ou mais largo, defina o valor da variável --fontsize para 50px. Redimensione a janela do navegador para ver o efeito.</p>
+        <p>
+            <button>Yes</button>
+            <button>No</button>
+        </p>
+    </div>
+
+</body>
+</html>

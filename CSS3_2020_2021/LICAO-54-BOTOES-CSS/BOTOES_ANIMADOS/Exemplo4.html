@@ -1,0 +1,109 @@
+<!--
+    * EXEMPLO
+
+      - ADICIONE UM EFEITO DE ONDULAÇÃO AO CLICAR:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 4</title>
+    <style>
+        button.button{
+            /*
+                - O posicionamento permite retirar elementos do fluxo normal de layout do documento e fazer com que se comportem de maneira diferente; 
+                - Toda a ideia de posicionamento é nos permitir substituir o comportamento de fluxo de documento básico descrito acima, para produzir efeitos interessantes.
+                - O posicionamento relativo é o primeiro tipo de posição que veremos. Isso é muito semelhante ao posicionamento estático, exceto que, uma vez que o elemento posicionado tenha tomado seu lugar no fluxo de layout normal, você pode modificar sua posição final, incluindo fazê-lo sobrepor outros elementos na página.
+                - Você precisa usar as propriedades top (en-US) , bottom (en-US) , left (en-US) e right (en-US). são usados ​​ao ladopositionpara especificar exatamente para onde mover o elemento posicionado.
+                - Por mais ilógico que possa parecer à primeira vista, é apenas assim que funciona o posicionamento relativo - você precisa pensar em uma força invisível que empurra o lado especificado da caixa posicionada, movendo-a na direção oposta.
+            */
+            position: relative;
+            background-color: #4CAF50;
+            border: none;
+            color: #FFFFFF;
+            /*add espaço interno*/
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            font-size: 28px;
+            /*largura estatica do elemento. o elemento tera essa largura*/
+            width: 200px;
+            text-align: center;
+            /*
+                - todas as propriedade que aceitam transição vão ser afetadas pela transição neste elemento. 
+                - As transições CSS permitem que você altere os valores das propriedades suavemente, ao longo de um determinado período.
+                - transição vai ser o periodo de tempo que uma propriedade muda de um valor para o outro, conseguimos suavisar isso, determinando tempo, e outras coisas
+            */
+            transition-property: all;
+            /*duração da transição*/
+            transition-duration: 0.4s;
+            text-decoration: none;
+            cursor: pointer;
+            /*
+             -  A overflow propriedade CSS controla o que acontece com o conteúdo que é muito grande para caber em uma área.
+             - A overflow propriedade especifica se é necessário cortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é muito grande para caber na área especificada.
+             - hidden(escondidos) - O estouro(overflow) é cortado e o resto do conteúdo ficará invisível;
+            */
+            overflow: hidden;
+        }
+        /*
+         - o elemento button vai ter um pseudo elemento aplicado. 
+         - Um pseudoelemento CSS é usado para estilizar partes específicas de um elemento.
+         - O ::after pseudoelemento pode ser usado para inserir algum conteúdo após o conteúdo de um elemento;
+         - inseri um conteudo apos o conteudo do elemento button ter sido mostrado na pagina.
+        */
+        button.button:after{
+            /*conteudo, e uma texto vazio*/
+            content: "";
+            background-color: #f1f1f1;
+            /*elemento sera exibido com um elemento em bloco quebrando linha no layout e aceitando largura e altura especificadas*/
+            display: block;
+            /*
+             - Um elemento posicionado absolutamente não existe mais no fluxo normal de layout do documento. Em vez disso, ele fica em sua própria camada, separado de todo o resto.
+             - Em segundo lugar, observe que a posição do elemento mudou - isso porque top (en-US) , bottom (en-US) , left (en-US) e right (en-US) se comportam de maneira diferente com o posicionamento absoluto. Em vez de especificar a direção em que o elemento deve se mover, eles especificam a distância que o elemento deve estar de cada lado do elemento que o contém. 
+            */
+            position: absolute;
+            /*add espaço interno entre o conteudo e a borda*/
+            padding-top: 300%;
+            padding-left: 350%;
+            /*add espaço externo entre elementos html - espaço negativo faz se aproximar ao inves de se afastar*/
+            margin-left: -20px !important;
+            margin-top: -120%;
+            /*elemento fica trasparente, opaco sem cor*/
+            opacity: 0;
+            /*todas propriedade no elemento especificasa que suportam transição vão ser afetadas*/
+            transition-property: all;
+            /*duração da transição*/
+            transition-duration: 0.8s;
+        }
+        /*
+         - elemento button vai ter uma pseudo classe ativada e um pseudo elemento.
+         - Uma pseudoclasse é usada para definir um estado especial de um elemento.
+         - a pseudo class active: o elemento esta com o estado ativado.
+         - e o pseudo elemento after: apos o elemento esta com o estado ativado e o seu conteudo ter sido mostrado apos o elemento esta ativado o pseudo elemento after entra em ação.
+        */
+        button.button:active:after{
+            padding: 0;
+            margin: 0;
+            /*elemento perde opacidade e trasparencia, e volta a sua cor normal*/
+            opacity: 1;
+            /*todas as propriedades que aceitam transição se estiverm sendo usadas no elemento, vão ser afetadas*/
+            transition-property: all;
+            /*duração da transição*/
+            transition-duration: 0s;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Botões Animado - efeito ondulação</h2>
+
+    <p><strong>Exemplo 04:</strong> Adicione um efeito de "ondulação" ao clicar:</p>
+
+    <button class="button">Clique Aqui!</button>
+</body>
+</html>

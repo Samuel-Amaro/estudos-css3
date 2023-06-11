@@ -1,0 +1,95 @@
+<!--
+    * ÁREAS DE GRADE IMPLÍCITAS DE LINHAS NOMEADAS
+
+        Ao nomear as linhas, mencionei que você pode nomeá-las como quiser. O nome é um ident personalizado , um nome definido pelo autor. Ao escolher o nome, você precisa evitar palavras que possam aparecer na especificação e ser confusas - como span. Idents não são citados.
+
+        Embora você possa escolher qualquer nome, se você anexar -start e -end às linhas ao redor de uma área, como no exemplo acima, a grade criará uma área nomeada do nome principal usado. Tomando o exemplo acima, eu tenho content-start e content-end tanto para linhas quanto para colunas. Isso significa que eu recebo uma área de grade chamada content, e posso colocar algo nessa área se eu desejar.
+
+        Estou usando as mesmas definições de grade acima, porém desta vez vou colocar um único item na área nomeada content.
+
+        Não precisamos definir onde nossas áreas estão grid-template-areas, pois nossas linhas nomeadas criaram uma área para nós.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .box{
+            border: 2px solid #ffa94d;
+            border-radius: 5px;
+            background-color: #ffd8a8;
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - NOMEANDO LINHAS AO DEFINIR UMA GRADE
+             - Você pode atribuir um nome a algumas ou todas as linhas em sua grade ao definir sua grade com as propriedades grid-template-rows e grid-template-columns.
+             -  Desta vez vou criar a grade usando linhas nomeadas.
+             - DEFINE UM NOME PARA O INICIO E O FIM DO CONTEINER, TANTO PARA LINHAS QUANTO PARA COLUNAS. O CONTEINER PARA LINHAS E PARA COLUNAS.
+             - Ao definir a grade, nomeio minhas linhas entre colchetes. Esses nomes podem ser o que você quiser.
+            */
+            grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];
+            /*
+             - para definir linhas, faixa de linhas.
+             - especificando as faixas de linha de forma explicita.
+             - linhas nomeadas
+            */
+            grid-template-rows: [main-start] 100px [content-start] 100px [content-end] 100px [main-end];
+        }   
+
+        /*iten grid*/
+        .thing{
+            /*
+             - AREA DE GRADE IMPLICITA DED LINHAS NOMEADAS, AREAS DE GRADE CRIADAS IMPLICITAMENTE E JA POSICIONADAS POR LINHAS NOMEADAS.
+             - define um nome para uma area.
+             - Embora você possa escolher qualquer nome para as linhas nomeadas, se você anexar -start e -end às linhas ao redor de uma área, como no exemplo acima, a grade criará uma área nomeada do nome principal usado. 
+             - como content-end, e content-start, cria uma area com o nome principal chamado content, assim criou-se uma area chamada content- que esta posicionada entre as linhas content-start e content-end na faixa de linhas.
+             - automaticamente vai receber uma area de grade chamada content, assim podeemos colocar algo nessa area.
+            */
+            grid-area: content;
+            /*
+             - Não precisamos definir onde nossas áreas estão grid-template-areas, pois nossas linhas nomeadas criaram uma área para nós.
+            */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+       <div class="thing">Sou colocado em uma área chamada content.</div>
+    </div>
+
+</body>
+</html>

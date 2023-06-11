@@ -1,0 +1,107 @@
+<!--
+    * PROPRIEDADE DE EXIBIÇÃO(DISPLAY) CSS
+
+    * DEFINIÇÃO E USO
+
+      - A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+
+      - Em HTML, o valor da propriedade de exibição padrão é obtido das especificações HTML ou da folha de estilo padrão do navegador / usuário. O valor padrão em XML é embutido(inline), incluindo elementos SVG.
+
+    * SINTAXE CSS:
+
+      display: value;
+
+    * VALORES DE PROPRIEDADE:
+
+      inline(na linha ou embutido): Exibe um elemento como um elemento embutido (como <span>). Quaisquer propriedades de altura e largura não terão efeito;
+
+      block(bloco): Exibe um elemento como um elemento de bloco (como <p>). Ele começa em uma nova linha e ocupa toda a largura;
+
+     contents(conteúdo): Faz com que o contêiner desapareça, tornando os elementos filhos filhos do elemento no próximo nível acima no DOM;
+
+     flex(): Exibe um elemento como um flex container em nível de bloco(block);
+
+     grid(rede): Exibe um elemento como um contêiner de grade em nível de bloco;
+
+     inline-block(bloco embutido): Exibe um elemento como um contêiner de bloco de nível embutido. O próprio elemento é formatado como um elemento embutido, mas você pode aplicar valores de altura e largura;
+
+     inline-flex(flex inline): Exibe um elemento como um contêiner flexível de nível embutido;
+
+     inline-grid(grade embutida): Exibe um elemento como um contêiner de grade de nível embutido;
+
+     inline-table(tabela embutida): O elemento é exibido como uma tabela de nível embutido;
+
+     list-item(item da lista): Deixe o elemento se comportar como um elemento <li>;
+
+     run-in(correr em): Exibe um elemento como bloco ou embutido, dependendo do contexto; 
+
+     table(tabela): Deixe o elemento se comportar como um elemento <table>;
+     
+     table-caption(legenda da tabela): Deixe o elemento se comportar como um elemento <caption>;
+
+     table-column-group(grupo de coluna da tabela): Deixe o elemento se comportar como um elemento <colgroup>;
+
+     table-header-group(grupo de cabeçalho da tabela): Deixe o elemento se comportar como um elemento <thead>;
+
+     table-footer-group(grupo de rodape da tabela): Deixe o elemento se comportar como um elemento <tfoot>;
+
+     table-row-group(grupo de linha da tabela): Deixe o elemento se comportar como um elemento <tbody>;
+
+    table-cell(celula da tabela): Deixe o elemento se comportar como um elemento <td>;
+
+    table-column(coluna da tabela): Deixe o elemento se comportar como um elemento <col>;
+
+    table-row(linha da tabela): Deixe o elemento se comportar como um elemento <tr>;
+
+    none(Nenhum): O elemento foi completamente removido;
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade Display</title>
+    <style>
+        p{
+            color: red;
+        }
+        p.ex1{
+            display: none;
+        }
+        p.ex2{
+            display: inline;
+        }
+        p.ex3{
+            display: block;
+        }
+        p.ex4{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Propriedade Display</h1>
+
+    <p><strong>Exemplo:</strong> Uso de alguns valores de display diferentes:</p>
+
+    <h2>display: none</h2>
+
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum et ad recusandae nesciunt illo quod at repellat, consequatur impedit, suscipit labore fugit totam officia aut vitae officiis nihil dolore? <p class="ex1">HELLO WORD!</p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit eligendi incidunt necessitatibus cupiditate voluptates quo eius, similique facilis eum, voluptas labore ea soluta maiores nobis est laborum nisi dicta.</div>
+
+    <h2>display: inline</h2>
+
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum et ad recusandae nesciunt illo quod at repellat, consequatur impedit, suscipit labore fugit totam officia aut vitae officiis nihil dolore? <p class="ex2">HELLO WORD!</p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit eligendi incidunt necessitatibus cupiditate voluptates quo eius, similique facilis eum, voluptas labore ea soluta maiores nobis est laborum nisi dicta.</div>
+
+    <h2>display: block</h2>
+
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum et ad recusandae nesciunt illo quod at repellat, consequatur impedit, suscipit labore fugit totam officia aut vitae officiis nihil dolore? <p class="ex3">HELLO WORD!</p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit eligendi incidunt necessitatibus cupiditate voluptates quo eius, similique facilis eum, voluptas labore ea soluta maiores nobis est laborum nisi dicta.</div>
+
+    <h2>display: inline-block</h2>
+
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum et ad recusandae nesciunt illo quod at repellat, consequatur impedit, suscipit labore fugit totam officia aut vitae officiis nihil dolore? <p class="ex4">HELLO WORD!</p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit eligendi incidunt necessitatibus cupiditate voluptates quo eius, similique facilis eum, voluptas labore ea soluta maiores nobis est laborum nisi dicta.</div>
+
+</body>
+</html>

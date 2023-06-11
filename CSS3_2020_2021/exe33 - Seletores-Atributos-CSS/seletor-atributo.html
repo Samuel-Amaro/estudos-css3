@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores de Atributo CSS</title>
+    <link rel="stylesheet" href="seletor-atributo.css">
+</head>
+<body>
+    <h1>Seletores de Atributo CSS</h1>
+    
+    <h2>Seletor CSS[atributo]</h2>
+    
+    <p>Os links com um atributo de destino recebem um fundo amarelo:</p>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus rem laudantium. Voluptate possimus repellat et placeat necessitatibus veritatis odit ea eaque maiores incidunt iure repudiandae, hic velit? Magni, odit?</p>
+    
+    <p><strong>O exemplo a seguir seleciona todos os elementos <a> com um atributo de destino:</strong></p>
+    
+    <a href="https://www.w3schools.com">W3schools.com</a>
+    <br>
+    <a class="seletor-atributo" href="http://www.disney.com" target="_blank">disney.com</a>
+    <br>
+    <a class="seletor-atributo" href="http//www.wikipedia.org" target="_top">wikipedia.org</a>    
+
+    <h2>SELETOR DE CSS [attribute = "value"]</h2>
+    <p>O link com target = "_ blank" obtém um fundo amarelo:</p>
+    <p><strong>O exemplo a seguir seleciona todos os <a> elementos com um atributo target = "_ blank":</strong></p>
+    <a href="https://www.w3schools.com">W3schools.com</a>
+    <br>
+    <a class="seletor-atributo-valor" href="http://www.disney.com" target="_blank">disney.com</a>
+    <br>
+    <a href="http//www.wikipedia.org" target="_top">wikipedia.org</a>   
+    
+    <h2>SELETOR DE CSS [attribute~="Value"]</h2>
+    <p><strong>O exemplo a seguir seleciona todos os elementos com um atributo de título que contém uma lista de palavras separadas por espaço, uma das quais é "flor":</strong></p>
+    <p><strong>Todas as imagens com o atributo title contendo a palavra "flower" recebem uma borda amarela.</strong></p>
+    <img src="https://www.w3schools.com/css/klematis.jpg" title="flor klematis" width="150" height="113">
+    <img src="https://www.w3schools.com/css/img_flwr.gif" width="224" height="162" title="flor">
+    <img src="https://www.w3schools.com/css/img_tree.gif" title="terceiro" width="200" height="358">
+
+    <h2>SELETOR DE CSS[atributo|="valor"]</h2>
+    <p><strong>O exemplo a seguir seleciona todos os elementos com um valor de atributo de classe que começa com "top":</strong></p>
+    <h1 class="topo-cabecalho">Bem Vindo!</h1>
+    <p class="topo-texto">Ola mundo!</p>
+    <p class="conteudotopo">Você esta aprendendo CSS ?</p>
+
+    <h2>Seletor de CSS [atributo$="valor"]</h2>
+    <p><strong>O exemplo a seguir seleciona todos os elementos com um valor de atributo de classe que termina com "test":</strong></p>
+    <div class="primeiro_teste">o primeiro elemento div.</div>
+    <div class="segundo">o segundo elemento div.</div>
+    <div class="meu-teste">o terceiro elemento div.</div>
+    <p class="meuteste">Este é um texto em um parágrafo</p>
+    
+    <h2>SELETOR CSS[atributo*="valor"]</h2>
+    <p><strong>O exemplo a seguir seleciona todos os elementos com um valor de atributo de classe que contém "te":</strong></p>
+    <div class="teste_1">o primeiro elemento div.</div>
+    <div class="segundo">o segundo elemento div.</div>
+    <div class="myteste">o terceiro elemento div.</div>
+    <p class="myteste">Este é um texto em um parágrafo</p>
+</body>
+</html>

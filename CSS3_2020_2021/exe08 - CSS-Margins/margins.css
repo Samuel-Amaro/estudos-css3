@@ -1,0 +1,72 @@
+/*
+ * CSS MARGINS
+
+  - As margin propriedades CSS são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas.
+  - Com CSS, você tem controle total sobre as margens. Existem propriedades para definir a margem para cada lado de um elemento (superior, direita, inferior e esquerda).
+
+  # MARGEM - LADOS INDIVIDUAIS
+   
+    - CSS tem propriedades para especificar a margem de cada lado de um elemento:
+    
+        margin-top (margem do topo da caixa)
+        margin-right(margem da direita da caixa)
+        margin-botton(margem inferior da caixa)
+        margin-left(margem da esquerda da caixa)
+
+    as propriedades de margem podem ter os seguintes valores:
+    
+      auto - o navegador calcula a margem;
+      length(comprimento) - especifica uma margem em px,pt,cm etc..
+      %(porcentagem) - especifica uma margem em % da largura do elemento que contém;  
+      inherit(herdar) - especifica que a margem deve ser herdada do elemento pai;
+      
+      valores negativos são permitidos;
+*/
+/*definindo margens diferentes para todos os quatros lados de um elemento*/
+#p1{
+   margin-top: 100px; /*superior*/
+   margin-bottom: 100px; /*inferior*/
+   margin-right: 150px; /*direita*/
+   margin-left: 80px; /*esquerda*/
+}
+/*
+ * O VALOR AUTOMATICO
+   
+  - Você pode definir a propriedade margin autopara centralizar horizontalmente o elemento em seu contêiner.
+  - O elemento então ocupará a largura especificada e o espaço restante será dividido igualmente entre as margens esquerda e direita.
+*/
+#conteiner{
+    width: 300px;
+    margin: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+}
+/*
+ * O VALOR HERDADO
+  
+   - A MARGIN DA ESQUERDA DO PARAGRAFO SERA HERDADA DO CONTEINER DIV
+*/
+#p2{
+    margin-left: inherit;
+}
+/*
+ * Redução da margem
+  
+  - As margens superior e inferior dos elementos às vezes são reduzidas em uma única margem que é igual à maior das duas margens.
+  - Isso não acontece nas margens esquerda e direita! Apenas as margens superior e inferior!
+
+  - exemplo de colapso da margem
+*/
+#p3{
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+    margin-left: 0;
+}
+#p4{
+    margin-top: 50px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}

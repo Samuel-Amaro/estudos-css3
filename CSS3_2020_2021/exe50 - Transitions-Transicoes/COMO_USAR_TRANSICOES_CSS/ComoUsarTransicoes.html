@@ -1,0 +1,64 @@
+<!--
+    * COMO USAR TRANSIÇÕES CSS ?
+
+      - Para criar um efeito de transição, você deve especificar duas coisas:
+
+        * a propriedade CSS à qual você deseja adicionar um efeito a duração do efeito
+
+        * a duração do efeito
+
+      - Nota: Se a parte da duração não for especificada, a transição não terá efeito, porque o valor padrão é 0.
+
+      - O exemplo a seguir mostra um elemento 100px * 100px red <div>. O elemento <div> também especificou um efeito de transição para a propriedade width, com duração de 2 segundos:
+
+      - O efeito de transição começará quando a propriedade CSS especificada (largura) alterar o valor.
+
+      - Agora, vamos especificar um novo valor para a propriedade de largura quando um usuário passa o mouse sobre o elemento <div>:
+
+      - Observe que quando o cursor sai do elemento, ele muda gradualmente de volta ao estilo original.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transições</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /*
+                - especificando um efeito de transição no elemento div, que vai durar dois segundos o efeito, vai ser aplicado na propriedade width(largura do elemento).
+                - usando a propriedade transition shorthand: propriedadeCSS duracaoTransicao;    
+            */
+            transition: width 2s;
+        }
+        /*
+              - O efeito de transição começará quando a propriedade CSS especificada (largura) alterar o valor.
+              - Agora, vamos especificar um novo valor para a propriedade de largura quando um usuário passa o mouse sobre o elemento <div>:
+              - para ver o efeito de transição dinamicamente, o usuario passara o mouse por cima do elemento <div> e quando isso acontecer, a propriedade width recebera um novo valor.
+              - Observe que quando o cursor sai do elemento, ele muda gradualmente de volta ao estilo original
+        */
+        div:hover{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Transições</h1>
+    
+    <h2>Como Usar transições</h2>
+
+    <p><strong>Exemplo:</strong>O exemplo a seguir mostra um elemento 100px * 100px red &lt;div&gt;. O elemento &lt;div&gt; também especificou um efeito de transição para a propriedade width, com duração de 2 segundos:</p>
+
+    <h3>A propriedade de transição</h3>
+
+    <p>Passe o mouse sobre o elemento div abaixo para ver o efeito de transição:</p>
+
+    <div></div>
+</body>
+</html>

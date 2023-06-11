@@ -1,0 +1,62 @@
+/**
+ * * PROPRIEDADE CSS BACKGROUND-ORIGIN - FUNDO DE ORIGEM
+ * 
+ * A background-origin propriedade CSS especifica onde a imagem de fundo é posicionada.
+ * 
+ * A propriedade assume três valores diferentes:
+
+   - border-box - a imagem de fundo começa no canto superior esquerdo da borda;
+   - 
+   - padding-box -  (padrão) a imagem de fundo começa no canto superior esquerdo da borda de preenchimento;
+   - 
+   - content-box -  a imagem de fundo começa no canto superior esquerdo do conteúdo;
+ *
+ *  O exemplo a seguir ilustra a background-origin propriedade:
+**/
+
+div.bloco1{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 35px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    background: url(flor-fundo-trasparente.jpg);
+    background-repeat: no-repeat;
+}
+
+div.bloco2{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 35px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    background: url(flor-fundo-trasparente.jpg);
+    background-repeat: no-repeat;
+    background-origin: border-box;
+}
+
+div.bloco3{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 35px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    background: url(flor-fundo-trasparente.jpg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}

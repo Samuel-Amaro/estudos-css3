@@ -1,0 +1,42 @@
+<!--
+    * LAYOUT DE GRADE(GRID)
+
+        Enquanto o flexbox é projetado para um layout unidimensional, o Grid Layout é projetado para duas dimensões – alinhando as coisas em linhas e colunas.
+
+        SEETING display: grid
+
+            Semelhante ao flexbox, habilitamos Grid Layout com seu valor de exibição específico — display: grid. O exemplo abaixo usa marcação semelhante ao exemplo flex, com um contêiner e alguns elementos filho. Além de usar display: grid, também definimos algumas faixas de linha e coluna para o pai usando as propriedades grid-template-rows e grid-template-columns respectivamente. Definimos três colunas, cada uma de 1fr, bem como duas linhas de 100px. Não precisamos colocar nenhuma regra nos elementos filhos; eles são colocados automaticamente nas células criadas por nossa grade.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .wrapper{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px;
+            gap: 10px;
+        }
+        
+        .box1, .box2, .box3, .box4, .box5, .box6{
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1">Um</div>
+        <div class="box2">Dois</div>
+        <div class="box3">Três</div>
+        <div class="box4">Quatro</div>
+        <div class="box5">Cinco</div>
+        <div class="box6">Seis</div>
+    </div>
+
+</body>
+</html>

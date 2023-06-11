@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletor Disabled</title>
+    <!--
+        * CSS SELETOR DISABLED ( seletor desativado)
+
+         - O :disabled seletor corresponde a cada elemento desativado (usado principalmente em elementos de formulário).
+
+         - SINTAXE CSS:
+
+          :disabled{
+              css declaração;
+          }
+    -->
+    <style>
+        input:disabled{
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seletor disabled (seletor desativado)</h1>
+    <p>Defina uma cor de fundo para todos os elementos &lt;input&gt; desativados:</p>
+    <!--formulario-->
+    <form action="">
+        Primeiro Nome: <input type="text" value="Mickey"><br>
+        Segundo Nome: <input type="text" value="Mouse"><br>
+        País: <input type="text" value="Disneyland" disabled><br>
+        Senha: <input type="password" name="password" value="psw" disabled><br>
+        E-mail: <input type="email" value="john@doe.com" name="usremail">
+    </form>
+</body>
+</html>

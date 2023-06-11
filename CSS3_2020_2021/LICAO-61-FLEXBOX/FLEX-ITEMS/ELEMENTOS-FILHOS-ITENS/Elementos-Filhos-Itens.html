@@ -1,0 +1,67 @@
+<!--
+    
+    * CSS FLEX ITEMS
+
+    * ELEMENTOS FILHOS (ITENS)
+
+      - Os elementos filhos diretos de um flex container automaticamente se tornam flexíveis (flex) items.
+
+      - O elemento acima representa quatro flex items azuis dentro de um flex container cinza.
+
+    * As propriedades do flex item são
+
+      - order(pedido);
+      - flex-grow(crescer flexivel);
+      - flex-shrink(encolher flexivel);
+      - flex basis(base flexível);
+      - flex(flexivel);
+      - align-self(alinhar-se);
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        div.flex-container{
+            /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            background-color: #f1f1f1;
+        }
+        div.flex-container > div{
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Flex Box</h1>
+    
+    <p><strong>Exemplo:</strong>O elemento abaixo representa quatro flex items azuis dentro de um flex container cinza.</p>
+
+    <h2>Itens Flexíveis</h2>
+
+    <p><strong>Exemplo:</strong> Todos os filhos diretos de um contêiner flexível tornam-se itens flexíveis.</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

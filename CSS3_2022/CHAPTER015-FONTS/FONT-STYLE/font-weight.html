@@ -1,0 +1,82 @@
+<!--
+    * ESPESSURA DA FONTE(FONT-WEIGHT)
+
+        - A font-weight propriedade especifica o peso de uma fonte:
+        
+        - A font-weight propriedade define como caracteres grossos ou finos no texto devem ser exibidos
+
+    * SINTAXE CSS:
+
+        font-weight: normal|bold|bolder|lighter|number|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: normal
+        DESCRIPTION: Define caracteres normais. Isso é padrão
+        --------------------------------------
+        VALUE: bold
+        DESCRIPTION: Define caracteres grossos
+        --------------------------------------
+        VALUE: bolder
+        DESCRIPTION: Define caracteres mais grossos
+        --------------------------------------
+        VALUE: lighter
+        DESCRIPTION: Define caracteres mais claros
+        --------------------------------------
+        VALUE: 100, 200, 300, 400, 500, 600, 700, 800, 900
+        DESCRIPTION: Define de caracteres finos a grossos. 400 é o mesmo que normal e 700 é o mesmo que negrito(bold)
+        --------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        --------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        --------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        p.normal{
+            /*
+             - a propriedade font-weight, especifica o peso da fonte
+             - uma fonte com peso normal
+            */
+            font-weight: normal;
+        }
+        p.light{
+            /*
+             - uma fonte com o peso lighter(mais leve)
+            */
+            font-weight: lighter;
+        }
+        p.thick{
+            /*
+             - uma fonte com o peso thick(espesso), grossa, bold(negrito)
+            */
+            font-weight: bold;
+        }
+        p.thicker{
+            /*
+             - uma fonte com o peso thicker(mais grossa) 
+            */
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>A propriedade font-weight</h1>
+
+    <p class="normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore saepe, perspiciatis quibusdam explicabo nisi! Quos facere cupiditate nisi, quo ut veritatis, officia libero id dolore commodi consectetur consequuntur corporis?</p>
+
+    <p class="light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore saepe, perspiciatis quibusdam explicabo nisi! Quos facere cupiditate nisi, quo ut veritatis, officia libero id dolore commodi consectetur consequuntur corporis?</p>
+
+    <p class="thick">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore saepe, perspiciatis quibusdam explicabo nisi! Quos facere cupiditate nisi, quo ut veritatis, officia libero id dolore commodi consectetur consequuntur corporis?</p>
+
+    <p class="thicker">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore saepe, perspiciatis quibusdam explicabo nisi! Quos facere cupiditate nisi, quo ut veritatis, officia libero id dolore commodi consectetur consequuntur corporis?</p>
+
+</body>
+</html>

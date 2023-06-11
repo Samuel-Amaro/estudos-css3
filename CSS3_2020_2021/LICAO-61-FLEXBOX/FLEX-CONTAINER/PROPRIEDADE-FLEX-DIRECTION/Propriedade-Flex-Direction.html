@@ -1,0 +1,79 @@
+<!--
+    * A PROPRIEDADE FLEX-DIRECTION(DIREÇÃO FLEXIVEL)
+
+     - Especifica a direção dos itens flexíveis dentro de um flex container.
+
+     - A flex-direction propriedade define em qual direção o contêiner deseja empilhar os itens flexíveis.
+
+     - A flex-direction propriedade especifica a direção dos itens flexíveis.
+
+     - Observação: se o elemento não for um item flexível, a flex-direction propriedade não terá efeito.
+
+    * SINTAXE CSS:
+
+       flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+      row(fileira): Valor padrão. Os itens flexíveis são exibidos horizontalmente, como uma linha;
+
+      row-reverse(linha reversa): O mesmo que a linha, mas na ordem inversa;
+
+      column(coluna): Os itens flexíveis são exibidos verticalmente, como uma coluna;
+
+      column-reverse(coluna reversa): Igual à coluna, mas na ordem inversa
+
+      initial: Define esta propriedade com seu valor padrão.
+
+      inherit: Herda essa propriedade de seu elemento pai.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex direction</title>
+    <style>
+        i{
+            color: rgb(228, 119, 119);
+        }
+        div.flex-container{
+             /*A display propriedade especifica o comportamento de exibição (o tipo de caixa de renderização) de um elemento.
+            Flex: Exibe um elemento como um flex container em nível de bloco
+            */
+            display: flex;
+            /*define a direção dos elementos flexiveis que o conteiner agrupa, no caso vai agrupar de forma vertical por coluna de cima para baixo*/
+            flex-direction: column;
+            background-color: dodgerblue;
+        }
+        div.flex-container > div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Propriedade flex-direction - FlexBox</h1>
+
+    <p>O "flex-direction: column;" empilha os itens flexíveis verticalmente (de cima para baixo):</p>
+
+    <p><strong>Exemplo:</strong>O <i>column</i> valor empilha os itens flexíveis verticalmente (de cima para baixo):</p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    
+</body>
+</html>

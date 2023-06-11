@@ -1,0 +1,79 @@
+<!--
+    * PROPRIEDADE CSS FLEX(FLEXIVEL)
+
+        A propriedade flex do CSS, define como um ítem será posicionado para no espaço disponível dentro de seu container.
+
+    * PROPRIEDADES
+
+        Esta propriedade é uma abreviação das seguintes propriedades CSS:
+
+            flex-grow
+            flex-shrin
+            flex-basis
+
+        Por padrão, os itens flexíveis não diminuem abaixo de seu tamanho mínimo de conteúdo. Para alterar isso, defina a largura mínima(min-width) (en-US) ou a altura mínima(min-height) do item.
+
+    * SINTAXE
+
+        /* Propriedades principais */
+        flex: auto;
+        flex: initial;
+        flex: none;
+
+        /* Valor único, sem unidade: flex-grow */
+        flex: 2;
+
+        /* Valor único, unidade width/height: flex-basis */
+        flex: 10em;
+        flex: 30%;
+        flex: min-content;
+
+        /* Dois valores: flex-grow | flex-basis */
+        flex: 1 30px;
+
+        /* Dois valores: flex-grow | flex-shrink */
+        flex: 2 2;
+
+        /* Três valores: flex-grow | flex-shrink | flex-basis */
+        flex: 2 2 10%;
+
+        /* Valores globais */
+        flex: inherit;
+        flex: initial;
+        flex: unset;
+
+        A flex propriedade pode ser especificada usando um, dois ou três valores.
+
+            Sintaxe de valor único: o valor deve ser um dos seguintes:
+
+                a <number>: Neste caso é interpretado como flex: <number> 1 0; o <flex-shrink> valor é assumido como 1 e o <flex-basis> valor é considerado como 0.
+
+                uma das palavras-chave: none, auto ou initial.
+
+            Sintaxe de dois valores : o primeiro valor deve ser a <number> e é interpretado como <flex-grow>. O segundo valor deve ser um dos seguintes:
+
+                a <number>: então é interpretado como <flex-shrink>.
+
+                um valor válido para width: então é interpretado como <flex-basis>.
+
+            Sintaxe de três valores: os valores devem estar na seguinte ordem:
+
+                1. um <number> para <flex-grow>.
+                2. um <number>para <flex-shrink>.
+                3. um valor válido para width para <flex-basis>.
+    
+    * VALORES
+
+        initial(inicial): O item é dimensionado de acordo com suas propriedades width e height. Ele encolhe até seu tamanho mínimo para caber no contêiner, mas não cresce para absorver qualquer espaço livre extra no contêiner flexível. Isso é equivalente a definir " flex: 0 1 auto".
+
+        auto: O item é dimensionado de acordo com suas propriedades width e height, mas cresce para absorver qualquer espaço livre extra no contêiner flexível e encolhe até seu tamanho mínimo para caber no contêiner. Isso é equivalente a definir " flex: 1 1 auto".
+
+        none: O item é dimensionado de acordo com suas propriedades width e height. É totalmente inflexível: não encolhe nem cresce em relação ao contêiner flexível. Isso é equivalente a definir " flex: 0 0 auto".
+
+        <flex-grow>: Define o flex-grow (en-US) do item flexível. Valores negativos são considerados inválidos. O padrão é 1 quando omitido.
+
+        <flex-shrink>: Define o flex-shrink (en-US) do item flexível. Valores negativos são considerados inválidos. O padrão é 1 quando omitido.
+
+        <flex-basis>: Define o flex-basis (en-US) do item flexível. Um tamanho preferencial de 0 deve ter uma unidade para evitar ser interpretado como uma flexibilidade. O padrão é 0 quando omitido.
+
+-->

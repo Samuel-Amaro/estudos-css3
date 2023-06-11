@@ -1,0 +1,139 @@
+<!--
+    * * EXECUTAR ANIMAÇÃO EM DIREÇÃO REVERSA OU CICLOS ALTERNATIVOS(ANIMATION-DIRECTION)
+
+     - A animation-direction propriedade especifica se uma animação deve ser reproduzida para frente, para trás ou em ciclos alternados.
+
+     - A propriedade animation-direction pode ter os seguintes valores:
+
+       - normal- A animação é reproduzida normalmente (para frente). Este é o padrão
+
+       - reverse - A animação é reproduzida na direção reversa (para trás)
+
+       - alternate - A animação é reproduzida primeiro para a frente e depois para trás
+
+       - alternate-reverse - A animação é reproduzida primeiro para trás e depois para a frente
+
+     * O exemplo a seguir executará a animação na direção reversa - reverse (para trás):
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regra animation-direction</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            /*nome da animação, esse nome, vinculo os quadros chaves a essa animação, que vai representar um elemento HTML*/
+            animation-name: exemplo;
+            /*duração da animação especificada*/
+            animation-duration: 4s;
+            /*especificando a direção em que a animação deve ocorrer, neste caso o valor, especificado e para a animação ocorrer na direção reverssa contraria a sua posição atual, ela vai em direção reverrsa*/
+            animation-direction: reverse;
+        }
+        /*especificando os quadros chaves de uma animação*/
+        @keyframes exemplo{
+            /*quando animação tiver 0% concluida anima essas propriedade css, cor de fundo, se posiciona na esquerda no 0, e topo 0*/
+            0%{background-color: red; left: 0; top: 0;}
+            /*quando animção tiver 25% concluida anima essa propriedade css, cor de fundo, se afasta 200px da esquerda e continua no topo*/
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            /*quando animção tiver 50% concluida anima essa propriedade css, se afasta 200px da esquerda e 200px do topo*/
+            50%{background-color: blue; left: 200px; top: 200px;}
+            /*quando animção tiver 75% concluida anima essa propriedade css, cor de fundo, volta a 0 esquerda, e continua 200px afastado do topo*/
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            /*quando animação tiver 100% concluida anima essa propriedade css, cor de fundo, volta a sua posição original*/
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+
+        /**
+        
+         - O exemplo a seguir usa o valor "alternate" para fazer a animação rodar primeiro para a frente e depois para trás:
+         
+        **/
+        div#direction_alternate{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: exemplo_alternate;
+            animation-duration: 4s;
+            /*especificando a direção em que a animação deve ocorrer, neste caso o valor, especificado e para a animação ocorrer na direção alternate, que primeiro faz a animação ser reproduzida para frente e logo depois para tras*/
+            animation-direction: alternate;
+        }
+        @keyframes exemplo_alternate{
+            0%{background-color: red; left: 0; top: 0;}
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            50%{background-color: blue; left: 200px; top: 200px;}
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+        /**
+            - O exemplo a seguir usa o valor "alternate-reverse" para fazer a animação rodar primeiro para trás e depois para frente:
+        **/
+        div#direction_alternate_reverse{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: exemplo_alternate_reverse;
+            animation-duration: 4s;
+            /*a animação deve ser executada 2 vezes*/
+            animation-iteration-count: 2;
+            /*especificando a direção em que a animação deve ocorrer, neste caso o valor, especificado e para a animação ocorrer na direção alternate-reverse, A animação é reproduzida primeiro para trás e depois para a frente*/
+            animation-direction: alternate-reverse;
+        }
+        @keyframes exemplo_alternate_reverse{
+            0%{background-color: red; left: 0; top: 0;}
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            50%{background-color: blue; left: 200px; top: 200px;}
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Animações EM CSS</h1>
+    
+    <p>Exemplo:</p>
+    
+    <h2>A Regra animation-direction</h2>
+     
+    <h3>Direction reverse</h3>
+
+    <p><strong>Exemplo: </strong>O exemplo a seguir executará a animação na direção reversa - reverse (para trás)</p>
+    
+    <p><strong>Nota:</strong> Quando uma animação termina, ela volta ao estilo original.</p>
+
+    <div></div>
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+    <h3>Direction alternate</h3>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir usa o valor "alternate" para fazer a animação rodar primeiro para a frente e depois para trás:</p>
+
+    <div id="direction_alternate"></div>
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+    <h3>Direction alternate-reverse</h3>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir usa o valor "alternate-reverse" para fazer a animação rodar primeiro para trás e depois para frente:</p>
+
+    <div id="direction_alternate_reverse"></div>
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+</html>

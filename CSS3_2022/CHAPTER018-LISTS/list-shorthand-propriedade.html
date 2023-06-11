@@ -1,0 +1,51 @@
+<!--
+    * LIST - SHORTHAND PROPERTY
+
+        - A list-style propriedade é uma propriedade abreviada(SHORTHAND). Ele é usado para definir todas as propriedades da lista em uma declaração:
+
+        - Ao usar a propriedade abreviada, a ordem dos valores da propriedade é:
+
+            - list-style-type(se uma imagem de estilo de lista for especificada, o valor desta propriedade será exibido se a imagem por algum motivo não puder ser exibida)
+
+            - list-style-position(especifica se os marcadores de item de lista devem aparecer dentro ou fora do fluxo de conteúdo)
+
+            - list-style-image(especifica uma imagem como marcador de item da lista)
+
+        - Se um dos valores de propriedade acima estiver ausente, o valor padrão para a propriedade ausente será inserido, se houver.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        ul{
+            /*
+             - a propriedade list-style e uma shorthand para os valores individuais na seguinte ordem:
+              list-style-type
+              list-style-position
+              list-style-image
+
+             - o primeiro valor especifica o tipo de marcador da lista, o valor square especifica um marcador quadrado
+             - o segundo valor especifica que o marcador da lista deve estar dentro do item da lista
+             - o terceiro valor especifica a url de onde se encontra a image que ira ser o marcador da lista
+            */
+            list-style: square inside url('quadrado-16.png');
+        }          
+    </style>
+</head>
+<body>
+    
+    <h2>A propriedade list-style</h2>
+
+    <p>A propriedade list-style é uma propriedade abreviada, que é usada para definir todas as propriedades da lista em uma declaração.</p>
+
+    <p>Lista padrão:</p>
+    <ul>
+        <li>Coffe</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+</body>
+</html>

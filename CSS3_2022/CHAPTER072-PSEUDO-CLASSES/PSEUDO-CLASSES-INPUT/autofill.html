@@ -1,0 +1,52 @@
+<!--
+    * AS PSEUDO-CLASSES DE ENTRADA
+
+        Essas pseudoclasses estão relacionadas a elementos de formulário e permitem a seleção de elementos com base em atributos HTML e no estado em que o campo se encontra antes e depois da interação.
+
+    * :auto-fill(preenchimento automatico)
+
+        A pseudo classe CSS :autofill  corresponde quando um elemento tem seu valor preenchido automaticamente pelo navegador. A classe para de corresponder se o usuário editar o campo.<input>
+
+    * Sintaxe
+
+        :autofill
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        input {
+            border: 3px solid grey;
+            border-radius: 3px;
+        }
+
+        /*
+         - Para obter a melhor compatibilidade do navegador, use :-webkit-autofill e :autofill.
+        */
+        input:-webkit-autofill {
+            border: 3px solid blue;
+        }
+
+        /*
+         - A pseudo classe CSS :autofill  corresponde quando um elemento tem seu valor preenchido automaticamente pelo navegador.
+         - A classe para de corresponder se o usuário editar o campo.<input>
+         - O exemplo a seguir demonstra o uso da :autofillpseudoclasse para alterar a borda de um campo de texto que foi preenchido automaticamente pelo navegador.
+        */
+        input:autofill {
+            border: 3px solid blue;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form method="post" action="">
+        <label for="email">Email</label> <input type="email" name="email" id="email" autocomplete="email"/>
+    </form>
+      
+</body>
+</html>

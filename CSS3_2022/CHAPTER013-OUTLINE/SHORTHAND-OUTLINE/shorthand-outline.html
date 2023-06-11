@@ -1,0 +1,73 @@
+<!--
+    * SHORTHAND OUTLINE(PROPRIEDADE ABREVIADA DE CORTORNO CSS)
+
+        - A outline propriedade é uma propriedade abreviada(SHORTHAND) para definir as seguintes propriedades de OUTLINE individuais:
+
+            outline-width(largura do contorno)
+            outline-style(estilo do contorno)
+            outline-color(cor do contorno)
+
+        - A outline propriedade é especificada como um, dois ou três valores da lista acima. A ordem dos valores não importa.
+
+        - O exemplo a seguir mostra alguns contornos especificados com a outline propriedade shorthand:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p.ex1{
+            /*
+             - Um contorno(outline) é uma linha desenhada fora da borda do elemento.
+             - outline é uma linha que é desenhada em torno de elementos, FORA das bordas, para fazer o elemento "se destacar".
+             -  A outline propriedade é uma propriedade abreviada(SHORTHAND) para definir as seguintes propriedades de OUTLINE individuais:
+
+                outline-width(largura do contorno)
+                outline-style(estilo do contorno)
+                outline-color(cor do contorno)
+
+            - a propriedade outline shorthand aceita um dois ou três valores da lista acima. a ordem não importa
+            - especificando somente um valor
+            */
+            outline: dashed; /*outline-style: dashed -> um contorno tracejado*/
+        }
+        p.ex2{
+            /*
+             - outline-style: dotted -> um contorno pontilhado
+             - outline-color: red -> especifica a cor red para o contorno
+             - especificando dois valores
+            */
+            outline: dotted red; 
+        }
+        p.ex3{
+            /*
+             - outline-style: solid -> um contorno solido
+             - outline-color: yellow -> especifica a cor yeloo para o contorno
+             - outline-width: 5px -> especifica um tamnho especifico em px para o contorno
+             - especificando três valores
+            */
+            outline: 5px solid yellow; 
+        }
+        p.ex4{
+            /*
+             - outline-style: ridge -> um contorno estriado 3D
+             - outline-color: pink -> especifica a cor pink para o contorno
+             - outline-width: thick -> especifica um tamanho grosso para o contorno
+              - especificando três valores
+            */
+            outline: thick ridge pink; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade outline(shorthand)</h2>
+    <p class="ex1">Um contorno tracejado</p>
+    <p class="ex2">Um contorno pontilhado</p>
+    <p class="ex3">Um contorno de 5px solido amarelo
+    </p>
+    <p class="ex4">Um contorno rosa grosso estriado</p>
+    
+</body>    
+</html>

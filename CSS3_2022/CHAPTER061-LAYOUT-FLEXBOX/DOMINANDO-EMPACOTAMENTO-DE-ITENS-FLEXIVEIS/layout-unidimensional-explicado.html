@@ -1,0 +1,56 @@
+<!--
+    * LAYOUT UNIDIMENSIONAL EXPLICADO
+
+        Como vimos nos exemplos acima, se nossos itens puderem aumentar e diminuir, quando houver menos itens na última linha ou coluna, esses itens crescerão para preencher o espaço disponível.
+
+        Não há método no flexbox para dizer aos itens em uma linha para alinhar com os itens na linha acima - cada linha flex age como um novo contêiner flex. Ele lida com a distribuição do espaço ao longo do eixo principal. Se houver apenas um item e esse item puder crescer, ele preencherá o eixo como se você tivesse um único contêiner flexível de item.
+
+        Se você deseja layout em duas dimensões, provavelmente deseja Layout de grade. Podemos comparar nosso exemplo de linha encapsulada acima com a versão CSS Grid desse layout para ver a diferença. A amostra ao vivo a seguir usa CSS Grid Layout para criar um layout que tenha tantas colunas de pelo menos 160 pixels quanto couber, distribuindo o espaço extra entre todas as colunas. No entanto, neste caso, os itens permanecem em sua grade e não se estendem quando há menos itens na linha final.
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+    <style>
+        .box{
+            /*
+             - Se você deseja layout em duas dimensões, provavelmente deseja Layout de grade.
+             - Esta é a diferença entre layout unidimensional e bidimensional. Em um método unidimensional como o flexbox, controlamos apenas a linha ou coluna. Em layout bidimensional como grade, controlamos ambos ao mesmo tempo.
+            */
+            display: grid;
+            background-color: #608BA8;
+            gap: 5px;
+            padding: 3px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
+
+        .box > *{
+            background-color: #DFE8EE;
+            color: black;
+            border-radius: 4px;
+        }
+
+        /**
+         - Esta é a diferença entre layout unidimensional e bidimensional. Em um método unidimensional como o flexbox, controlamos apenas a linha ou coluna. Em layout bidimensional como grade, controlamos ambos ao mesmo tempo. Se você quiser a distribuição de espaço linha por linha, use flexbox. Se você não fizer isso, use Grid.
+        */
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+        <div>Eight</div>
+        <div>Nine</div>
+        <div>Ten</div>
+    </div>
+
+</body>
+</html>

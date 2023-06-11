@@ -1,0 +1,36 @@
+<!--
+    * ENTRADAS ACOLCHOADAS
+
+        - Use a padding propriedade para adicionar espaço dentro do campo de texto.
+
+        - Dica: Quando você tem muitas entradas uma após a outra, você também pode querer adicionar algumas margin, para adicionar mais espaço fora delas:
+
+        - Observe que definimos a box-sizing propriedade como border-box. Isso garante que o preenchimento e, eventualmente, as bordas sejam incluídos na largura e altura totais dos elementos.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Campos de entrada acolchoados</h2>
+
+    <form>
+        <label for="fname">Primeiro Nome</label>
+        <input type="text" id="fname" name="fname"/>
+        <label for="lname">Ultimo Nome</label>
+        <input type="text" id="lname" name="lname"/>
+    </form>
+
+</body>
+</html>

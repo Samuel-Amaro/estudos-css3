@@ -1,0 +1,71 @@
+<!--
+    * CSS TEXT TRANSFORMATION(TRANSFORMAÇÃO DE TEXTO)
+
+        - A text-transform propriedade controla a capitalização do texto.
+
+        - A text-transform propriedade é usada para especificar letras maiúsculas e minúsculas em um texto.
+
+        - Ele pode ser usado para transformar tudo em letras maiúsculas ou minúsculas, ou colocar em maiúscula a primeira letra de cada palavra:
+
+    * SINTAXE CSS:
+
+        text-transform: none|capitalize|uppercase|lowercase|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: none(nenhum)
+        DESCRIPTION: Sem capitalização. O texto é renderizado como está. Isso é padrão
+        ------------------------------------
+        VALUE: capitalize 
+        DESCRIPTION: Transforma o primeiro caractere de cada palavra em maiúscula
+        ------------------------------------
+        VALUE: uppercase(maiuscula)
+        DESCRIPTION: Transforma todos os caracteres em maiúsculas
+        ------------------------------------
+        VALUE: lowercase(minusculas)
+        DESCRIPTION: Transforma todos os caracteres em minúsculas
+        ------------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        ------------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        ------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p.uppercase{
+            /*
+             - a propriedade text-transform controla a capitalização do texto.
+             - e usada para especificar letras maiusculas e minusculas em um texto
+             - o valor uppercase(maiusculas) transforma todos os caracteres em maiusculas
+            */
+            text-transform: uppercase;
+        }
+        p.lowercase{
+           /* 
+            - o valor lowercase(minusculas) transforma todos os caracteres em minusculas
+            */
+            text-transform: lowercase;
+        }
+        p.capitalize{
+            /*
+             - o valor capitalize, transforma o primeiro caractere de cada palavra em maiuscula
+            */
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Usando a propriedade text-transform;</h1>
+    <p class="uppercase">Este texto é transformado em maiúscula.</p>
+    <p class="lowercase">Este texto é transformado em minúsculas.</p>
+    <p class="capitalize">Este texto está em maiúscula.</p>
+
+</body>
+</html>

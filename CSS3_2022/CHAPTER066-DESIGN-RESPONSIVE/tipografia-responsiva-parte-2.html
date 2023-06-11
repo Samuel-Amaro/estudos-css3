@@ -1,0 +1,83 @@
+<!--
+  * USANDO UNIDADES DE JANELA DE VISUALIZAÇÃO PARA TIPOGRAFIA RESPONSIVA
+
+    Uma abordagem interessante é usar a unidade de viewport vw para habilitar a tipografia responsiva. 1vw é igual a um por cento da largura da janela de visualização, o que significa que se você definir o tamanho da fonte usando vw, ele sempre estará relacionado ao tamanho da janela de visualização.
+
+    h1 {
+      font-size: 6vw;
+    }
+
+    O problema de fazer o acima é que o usuário perde a capacidade de ampliar qualquer texto definido usando a vw unidade, pois esse texto está sempre relacionado ao tamanho da viewport. Portanto, você nunca deve definir o texto usando apenas unidades de viewport .
+
+    Existe uma solução e envolve o uso do calc(). Se você adicionar a vw unidade a um valor definido usando um tamanho fixo, como ems ou rems, o texto ainda poderá ser ampliado. Essencialmente, a vw unidade adiciona em cima desse valor ampliado:
+
+    h1 {
+      font-size: calc(1.5rem + 3vw);
+    }
+
+    Isso significa que só precisamos especificar o tamanho da fonte do título uma vez, em vez de configurá-lo para dispositivos móveis e redefini-lo nas consultas de mídia. A fonte aumenta gradualmente à medida que você aumenta o tamanho da janela de visualização.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demonstration of responsive typography with vw</title>
+  <style>
+    
+    html {
+      font-size: 1em;
+    }
+
+    body {
+      font: 1.2em Helvetica, Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #eee;
+    }
+
+    .wrapper {
+      max-width: 960px;
+      margin: 2em auto;
+    }
+
+    h1 {
+      font-size: calc(1.5rem + 3vw);
+      margin: 0;
+    }
+
+    .col1,
+    .col2 {
+      background-color: #fff;
+    }
+
+    @media screen and (min-width: 600px) {
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="col1">
+      <h1>Watch my size!</h1>
+      <p>This layout is responsive. See what happens if you make the browser window wider or narrow.</p>
+    </div>
+    <div class="col2">
+      <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little
+        French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names
+        were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful
+        minds and a deep interest in all scientific knowledge and new discovery.</p>
+      <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising
+        smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+    </div>
+
+  </div>
+</body>
+
+</html>

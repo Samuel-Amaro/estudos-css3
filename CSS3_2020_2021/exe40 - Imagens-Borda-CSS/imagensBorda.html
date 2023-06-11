@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens CSS de borda</title>
+    <link rel="stylesheet" href="estiloImagensBorda.css">
+</head>
+<body>
+    <h1>Imagens em bordas de elementos</h1>
+    
+    <h2>A propriedade border-image</h2>
+    
+    <p><strong>Exemplo:</strong> Aqui, as seções do meio da imagem são repetidas para criar a borda:</p>
+    
+    <p class="borderimg">border-image: url (border.png) 30 round;</p>
+
+    <p>Aqui está a imagen original: </p>
+    <img src="border.png" alt="imagen de borda">
+
+    <p><strong>Exemplo 02:</strong> Aqui, as seções do meio da imagem são esticadas para criar a borda:</p>
+
+    <p class="borderimg2">Uma imagen como fronteira! border-image: url(border.png) 30 stretch;</p>
+
+    <h2>CSS border-image - diferentes valores de fatia</h2>
+    
+    <p><strong>Exemplo 3: </strong>Valores de corte diferentes mudam completamente a aparência da borda:</p>
+
+    <p class="borderimg3">border-image: url (border.png) 50 round;</p>
+
+    <p class="borderimg4">border-image: url (border.png) 20% redondo;</p>
+
+    <p class="borderimg5">border-image: url (border.png) 30% round;</p>
+
+</body>
+</html>

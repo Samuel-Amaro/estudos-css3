@@ -1,0 +1,47 @@
+/*
+ * ALINHAMENTO DE TEXTO
+
+  - A text-align propriedade é usada para definir o alinhamento horizontal de um texto.
+  - Um texto pode ser alinhado à esquerda(left) ou à direita(right), centralizado(center) ou justificado(justified).
+  - O exemplo a seguir mostra texto alinhado ao centro e à esquerda e à direita (o alinhamento à esquerda é o padrão se a direção do texto for da esquerda para a direita, e o alinhamento à direita é o padrão se a direção do texto for da direita para a esquerda):
+*/
+#centro{
+    text-align: center;
+}
+#direita{
+    text-align: right;
+}
+#esquerda{
+    text-align: left;
+}
+/*
+ * Quando a text-align propriedade é definida como "justificar", cada linha é esticada para que todas as linhas tenham a mesma largura e as margens esquerda e direita sejam retas (como em revistas e jornais):
+*/
+#justi{
+    text-align: justify;
+}
+/*
+ * DIREÇÃO DO TEXT(TEXT DIRECTION)
+
+  - As propriedades direction e unicode-bidi podem ser usadas para alterar a direção do texto de um elemento:
+*/
+#di{
+    direction: rtl; /*direção da direita para esquerda*/
+    unicode-bidi: bidi-override;
+}
+/*
+ * ALINHAMENTO VERTICAL(VERTICAL ALIGN)
+
+  - A vertical-align propriedade define o alinhamento vertical de um elemento;
+
+  - exemplo que demostra o alinhamento vertical de uma imagem em um elemento de texto:
+*/
+#superior{
+     vertical-align: top; /*alinhado no superior*/
+}
+#meio{
+    vertical-align: middle; /*no meio*/
+}
+#inferior{
+    vertical-align: bottom; /*inferior*/
+}

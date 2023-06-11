@@ -1,0 +1,57 @@
+<!--
+    * POSITION STATIC(ESTÁTICO)
+
+        O posicionamento estático é o padrão que cada elemento recebe. Significa apenas "colocar o elemento em sua posição normal no fluxo de documentos - nada de especial para ver aqui".
+
+        Se você salvar e atualizar, não verá nenhuma diferença, exceto pela cor de fundo atualizada do 2º parágrafo. Isso é bom - como dissemos antes, o posicionamento estático é o comportamento padrão!
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic document flow</title>
+
+    <style type="text/css">
+        body {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        .positioned{
+            /*
+             -  O posicionamento permite que você retire elementos do fluxo normal de documentos e faça com que eles se comportem de maneira diferente,
+             - Para ativar um tipo específico de posicionamento em um elemento, usamos a position propriedade.
+             - o valor static, é o padrão que cada elemento recebe. Significa apenas "colocar o elemento em sua posição normal no fluxo de documentos  
+            */
+            position: static;
+            background: yellow;
+        }
+    </style>
+  </head>
+  <body>
+
+    <h1>Fluxo básico de documentos</h1>
+
+    <p>Sou um elemento básico de nível de bloco. Meus elementos de nível de bloco adjacentes ficam em novas linhas abaixo de mim.</p>
+
+    <p class="positioned">Por padrão, abrangemos 100% da largura de nosso elemento pai e nossa altura é tão alta quanto nosso conteúdo filho. Nossa largura e altura totais são nosso conteúdo + preenchimento + largura/altura da borda.</p>
+
+    <p>Estamos separados por nossas margens. Por causa do recolhimento da margem, somos separados pela largura de uma de nossas margens, não de ambas.</p>
+
+    <p>elementos inline <span>como este</span> e <span>este</span> ficam na mesma linha um do outro, e nós de texto adjacentes, se houver espaço na mesma linha. Elementos inline transbordantes <span>se encaixam em uma nova linha, se possível — como esta contendo texto</span>, ou apenas vá para uma nova linha se não, assim como esta imagem fará: <img src="long.jpg "></p>
+
+  </body>
+</html>

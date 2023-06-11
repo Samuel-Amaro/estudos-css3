@@ -1,0 +1,198 @@
+<!--
+    * PASSO A PASSO: UM LAYOUT SIMPLES PARA DISPOSITIVOS MÓVEIS
+
+        Nosso ponto de partida é um documento HTML com algum CSS aplicado para adicionar cores de fundo às várias partes do layout.
+
+        Não fizemos alterações no layout, mas a fonte do documento está ordenada de forma a tornar o conteúdo legível. Este é um primeiro passo importante e que garante que, se o conteúdo for lido por um leitor de tela, seja compreensível.
+
+        Esse layout simples também funciona bem em dispositivos móveis. Se visualizarmos o layout no modo de design responsivo no DevTools, podemos ver que ele funciona muito bem como uma visualização móvel direta do site.
+
+        A partir deste ponto, comece a arrastar a visualização do Modo de design responsivo mais amplamente até que você possa ver que os comprimentos das linhas estão se tornando bastante longos e temos espaço para a navegação ser exibida em uma linha horizontal. É aqui que adicionaremos nossa primeira consulta de mídia. Usaremos ems, pois isso significa que, se o usuário tiver aumentado o tamanho do texto, o ponto de interrupção ocorrerá em uma janela de exibição de comprimento de linha semelhante, mas mais ampla, do que alguém com um tamanho de texto menor.
+
+        Este CSS nos dá um layout de duas colunas dentro do artigo, do conteúdo do artigo e informações relacionadas no elemento ao lado. Também usamos o flexbox para colocar a navegação em uma linha.
+
+        Vamos continuar a expandir a largura até sentirmos que há espaço suficiente para a barra lateral também formar uma nova coluna. Dentro de uma consulta de mídia, transformaremos o elemento principal em uma grade de duas colunas. Em seguida, precisamos remover o margin-bottom no artigo para que as duas barras laterais se alinhem e adicionaremos um border ao topo do rodapé. Normalmente, esses pequenos ajustes são o tipo de coisa que você fará para que o design pareça bom em cada ponto de interrupção.
+
+        Se você observar o exemplo final em diferentes larguras, poderá ver como o design responde e funciona como uma única coluna, duas colunas ou três colunas, dependendo da largura disponível. Este é um exemplo muito simples de um design responsivo mobile first.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Media Queries: a simple mobile first design, step 1</title>
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 90%;
+            margin: 2em auto;
+            font: 1em/1.3 Arial, Helvetica, sans-serif;
+        }
+
+        a:link,
+        a:visited {
+            color: #333;
+        }
+
+        nav ul,
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav a:link,
+        nav a:visited {
+            background-color: rgba(207, 232, 220, 0.2);
+            border: 2px solid rgb(79, 185, 227);
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: rgba(207, 232, 220, 0.7);
+        }
+
+        .related {
+            background-color: rgba(79, 185, 227, 0.3);
+            border: 1px solid rgb(79, 185, 227);
+            padding: 10px;
+        }
+
+        .sidebar {
+            background-color: rgba(207, 232, 220, 0.5);
+            padding: 10px;
+        }
+
+        article {
+            margin-bottom: 1em;
+        }
+
+        /*
+         - breakpoint - media query
+         - dispositivo for tela e tiver uma viewport com 40em = 640px de largura ou mais.
+        */
+        @media screen and (min-width: 40em) {
+            article{
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                column-gap: 20px;
+            }
+
+            nav ul{
+                display: flex;
+            }
+
+            nav li{
+                flex: 1;
+            }
+        }
+
+        /*
+         - breakpoint - media query
+         - dispositivo for tela e tiver uma viewport com 70em = 1120px de largura ou mais.
+        */
+        @media screen and (min-width: 70em) {
+            
+            main{
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                column-gap: 20px;
+            }
+
+            article{
+                margin-bottom: 0;
+            }
+
+            footer{
+                border-top: 1px solid #ccc;
+                margin-top: 2em;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Meet the team</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <div class="content">
+                    <h1>Veggies!</h1>
+                    <p>
+                        Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi
+                        welsh onion daikon amaranth tatsoi tomatillo melon azuki bean
+                        garlic.
+                    </p>
+                    <p>
+                        Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+                        courgette tatsoi pea sprouts fava bean collard greens dandelion
+                        okra wakame tomato. Dandelion cucumber earthnut pea peanut soko
+                        zucchini.
+                    </p>
+                    <p>
+                        Turnip greens yarrow ricebean rutabaga endive cauliflower sea
+                        lettuce kohlrabi amaranth water spinach avocado daikon napa
+                        cabbage asparagus winter purslane kale. Celery potato scallion
+                        desert raisin horseradish spinach carrot soko. Lotus root water
+                        spinach fennel kombu maize bamboo shoot green bean swiss chard
+                        seakale pumpkin onion chickpea gram corn pea. Brussels sprout
+                        coriander water chestnut gourd swiss chard wakame kohlrabi
+                        beetroot carrot watercress. Corn amaranth salsify bunya nuts nori
+                        azuki bean chickweed potato bell pepper artichoke.
+                    </p>
+                    <p>
+                        Nori grape silver beet broccoli kombu beet greens fava bean potato
+                        quandong celery. Bunya nuts black-eyed pea prairie turnip leek
+                        lentil turnip greens parsnip. Sea lettuce lettuce water chestnut
+                        eggplant winter purslane fennel azuki bean earthnut pea sierra
+                        leone bologi leek soko chicory celtuce parsley jícama salsify.
+                    </p>
+                </div>
+                <aside class="related">
+                    <p>
+                        All these veggies are brought to you by the
+                        <a href="https://veggieipsum.com/">Veggie Ipsum generator</a>.
+                    </p>
+                </aside>
+            </article>
+            <aside class="sidebar">
+                <h2>External vegetable-based links</h2>
+                <ul>
+                    <li>
+                        <a href="https://www.thekitchn.com/how-to-cook-broccoli-5-ways-167323">How to cook broccoli</a>
+                    </li>
+                    <li>
+                        <a href="https://www.bbcgoodfood.com/glossary/swiss-chard">Swiss Chard</a>
+                    </li>
+                    <li>
+                        <a href="https://www.bbcgoodfood.com/recipes/collection/christmas-parsnip">Christmas Parsnip
+                            Recipes</a>
+                    </li>
+                </ul>
+            </aside>
+        </main>
+        <footer>
+            <p>&copy;2019</p>
+        </footer>
+    </div>
+
+</body>
+</html>

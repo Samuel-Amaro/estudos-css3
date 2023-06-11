@@ -1,0 +1,82 @@
+<!--
+    * PROPRIEDADE CSS align-items(ALINHAMENTO DE ITENS)
+
+        A propriedade CSS align-items estabelece o valor align-self em todos filhos diretos como um grupo. A propriedade align-self estabelece o alinhamento de um certo item dentro do bloco que o contém. Em Flexbox ele controla o alinhamento dos itens em Cross Axis (eixo cruzado-vertical), enquanto que no Grid Layout, controla o alinhamento dos itens no Eixo de Bloco dentro de sua grid area.
+
+    * SINTAXE
+
+        /* Palavras-chave básicas */
+        align-items: normal;
+        align-items: stretch;
+
+        /*POSICIONAMENTO DO ALINHAMENTO*/
+        /* align-items NÃO RECEBE VALORES COMO LEFT E RIGHT*/
+
+        /* Itens posicionados ao redor do centro */
+        align-items: center;
+
+        /* Posiciona itens a partir do início */
+        align-items: start; 
+
+        /* Posiciona itens a partir do fim */
+        align-items: end; 
+
+        /* Posiciona itens-flex a partir do início */
+        align-items: flex-start; 
+
+        /* Posiciona itens-flex a partir do fim */
+        align-items: flex-end; 
+
+        align-items: self-start;
+        align-items: self-end;
+
+        /*ALINHAMENTO DE BASELINE*/
+        align-items: baseline;
+        align-items: first baseline;
+        align-items: last baseline; 
+
+        /* Overflow alinhamento (apenas para alinhamento de posição) */
+        align-items: safe center;
+        align-items: unsafe center;
+
+        /*VALORES GLOBAIS*/
+        align-items: inherit;
+        align-items: initial;
+        align-items: unset;
+
+    * VALORES
+
+        normal: O efeito desta palavra-chave depende do modo de layout em que nos encontramos:
+
+            Em layouts absolutamente posicionados, a palavra-chave se comporta como start em substituição de caixas absolutamente posicionadas, e como stretch em todas outras de caixas absolutamente posicionadas.
+
+            Em posição estática de layouts absolutamente posicionados, a palavra-chave se comporta como stretch.
+
+            Para itens-flex, a palavra chave se comporto como stretch.
+
+            Para itens-grid, esta palavra-chave leva a um comportamento similiar ao stretch, exceto para caixas com um aspect ratio ou tamanhos intrínsecos, onde se comporta como start.
+
+            A propriedade não se aplica para caixas block-level, e para células de tabela.
+
+        flex-start: As bordas da margem superior dos itens-flex são juntados com a borda superior da linha.
+
+        flex-end: As bordas da margem inferior dos itens flex são juntados com a borda inferior da linha.
+
+        center: As caixas de margem dos itens flex são centralizados ao longo da linha do eixo. Caso o tamanho de um item seja superior ao container flex, irá transbordar de maneira igual em ambas direções.
+
+        start: Os itens são posicionados, para cada um, em direção a borda início do container de alinhamento no eixo apropriado. 
+
+        end: Os itens são posicionados, para cada um, em direção a borda fim do container de alinhamento no eixo apropriado.
+
+        self-start: Os itens são posicionados para a borda do container de alinhamento do lado inicial do item, no eixo apropriado.
+
+        self-end: Os itens são posicionados para a borda do container de alinhamento do lado final do item, no eixo apropriado.
+
+        baseline, first baseline, last baseline: Todos itens-flex são alinhados de tal forma que suas  baselines de container flex estejam alinhados. O item com a maior distância entre o eixo de início de sua margem e sua baseline é juntado com eixo de início da linha.
+
+        stretch: Itens-flex são esticados de tal maneira que o tamanho da caixa de margem do item seja o mesmo da linha, respeitando as restrições de comprimento e altura.
+
+        safe: Usado em conjunto com uma palavra-chave de alinhamento. Se a palavra-chave escolhida signifique que o item transborde o alinhamento do container, causando assim perda de dados, o item é alinhado como estivesse no modo start
+
+        unsafe: Usado em conjunto com uma palavra-chave de alinhamento. Independente dos tamanhos relativos do item, do alinhamento do container e caso overflow possa causar perda de dados, o valor de alinhamento estabelecido é mantido.
+-->

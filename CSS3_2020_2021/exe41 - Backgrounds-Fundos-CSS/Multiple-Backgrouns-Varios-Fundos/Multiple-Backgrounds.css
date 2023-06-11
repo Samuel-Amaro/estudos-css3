@@ -1,0 +1,42 @@
+/**
+ * * CSS MULTIPLE BACKGROUNDS
+ * 
+ *  Neste capítulo, você aprenderá como adicionar várias imagens de fundo a um elemento.
+ * Você também aprenderá sobre as seguintes propriedades:
+
+    - background-size
+    - background-origin
+    - background-clip
+
+ * * CSS MULTIPLE BACKGROUNDS - VARIOS FUNDOS
+
+    - CSS permite adicionar várias imagens de fundo para um elemento, por meio da background-image propriedade.
+    - 
+    - As diferentes imagens de fundo são separadas por vírgulas e as imagens são empilhadas umas sobre as outras, onde a primeira imagem está mais próxima do visualizador.
+    - 
+    - O exemplo a seguir tem duas imagens de fundo, a primeira imagem é uma flor (alinhada na parte inferior e direita) e a segunda imagem é um fundo de papel (alinhado no canto superior esquerdo):
+*/
+
+div#exemplo1{
+    background-image: url(flor-fundo-trasparente.jpg), url(papel-amassado-fundo-branco_1232-2082.jpg);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+/**
+ - Várias imagens de fundo podem ser especificadas usando as propriedades de fundo individuais (como acima) ou a background propriedade abreviada.
+ - 
+ - O exemplo a seguir usa a background propriedade shorthand (mesmo resultado do exemplo acima):
+
+ div#exemplo1{
+    background-image: url(flor-fundo-trasparente.jpg) right bottom no-repeat, url(papel-amassado-fundo-branco_1232-2082.jpg) left top repeat;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+*/

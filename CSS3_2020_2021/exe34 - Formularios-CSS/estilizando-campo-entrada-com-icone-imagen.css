@@ -1,0 +1,46 @@
+/*
+ * CAMPO DE ENTRADA COM ÍCONE/IMAGEN
+
+   - Se você quiser um ícone dentro da entrada, use a background-image propriedade e posicione-o com a background-position propriedade. Observe também que adicionamos um grande preenchimento à esquerda para reservar o espaço do ícone:
+*/
+
+/*seleciona os campos de entrada de texto - input text do usuario*/
+input[type=text]{
+    /*largura do elemento, pode ocupar 100% da largura em relação a pagina*/
+    width: 100%;
+
+    /*espaço interno*/
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 40px;
+
+    /*borda - preenchimento*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-color: #ccc;
+    border-style: solid;
+
+    /*arredondando cantos*/
+    border-radius: 4px;
+
+    /*tamanho da fonte*/
+    font-size: 16px;
+    
+    /*cor de fundo*/
+    background-color: white;
+
+    /*Observe que definimos a box-sizingpropriedade como border-box. Isso garante que o preenchimento e, eventualmente, as bordas sejam incluídos na largura e altura total dos elementos.*/
+    box-sizing: border-box;
+
+    /*add imagen ao fundo do elemento*/
+    background-image: url('search.png');
+
+    /*posicionando a imagen no elemento*/
+    background-position: 10px 10px;
+
+    /*não e para imagen se repetir*/
+    background-repeat: no-repeat;
+}

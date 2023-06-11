@@ -1,0 +1,44 @@
+<!--
+    * :placeholder-show
+
+        A pseudo-classe CSS :placeholder-shown representa <input> ou <textarea> qualquer elemento que esteja exibindo texto de espaço reservado no momento. 
+
+        /*Seleciona qualquer elemento com um espaço reservado ativo*/
+        :placeholder-shown {
+            border: 2px solid silver;
+        }
+
+    * SINTAXE
+
+        :placeholder-show
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+      
+        input {
+            border: 1px solid black;
+            padding: 3px;
+        }
+
+        /*
+         - A pseudo-classe CSS :placeholder-shown representa <input> ou <textarea> qualquer elemento que esteja exibindo texto de espaço reservado no momento. 
+         - seleciona elementos <input> que tenham o placeholder ativo
+        */
+        input:placeholder-shown {
+            border-color: teal;
+            color: purple;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <input type="text" placeholder="Type something here!"/>
+
+</body>
+</html>

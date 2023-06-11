@@ -1,0 +1,93 @@
+<!--
+    * BARRA DE NAVEGAÇÃO VERTICAL FIXA DE ALTURA TOTAL
+
+        - Crie uma navegação lateral "fixa" de altura total:
+
+        - Nota: Este exemplo pode não funcionar corretamente em dispositivos móveis.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        body{
+            margin: 0;
+        }
+        aside{
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            background-color: #f1f1f1;
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor fixed define que o elemento é posicionado em relação à janela de visualização(viewport)-(é a área visível do usuário de uma página da web. Varia de acordo com o dispositivo - será menor em um telefone celular do que em uma tela de computador.), o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada.
+             - As propriedades top, right, bottom e left são usadas para posicionar o elemento.
+            */
+            position: fixed;
+            height: 100%;
+            /*
+             - a propriedade overflow controla o que acontece com o conteudo grande de mais para caber em uma area.
+             - a overflow propriedade especifica se deve adicionar barras de rolagem ou recortar o conteudo que e grande de mais para caber em uma area especificada.
+             - o valor auto(automatico) - Semelhante a scroll, mas adiciona barras de rolagem apenas quando necessário
+            */
+            overflow: auto;
+        }
+
+        nav a{
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        nav a.active{
+            background-color: #04AA6D;
+            color: white;
+        }
+        /*
+         - muda a cor do fundo do link e do texto quando o usuario passar o mouse sobre o link, uma pseudo-classe que captura o estado especial de quando o usuario passa o mouse sobre o elemento <a>
+         - a pseudo-class not(selector), seleciona todo elemento que não seja o selector
+         - todo elemento <a> que o usuario estiver passando o mouse por cima e esse elemento for descedente de uma <li> e não for o elemento <a class="active">
+        */
+        nav a:hover:not(.active){
+            background-color: #555;
+            color: white;
+        }
+        main{
+            margin-left: 25%;
+            padding: 1px 16px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <nav>
+            <a class="active" href="#home" target="_self" rel="next">Home</a>
+            <a href="#news" target="_self" rel="next">News</a>
+            <a href="#contact" target="_self" rel="next">Contact</a>
+            <a href="#about" target="_self" rel="next">About</a>
+        </nav>
+    </aside>
+    <main>
+        <header>
+            <h2>Barra de navegação Lateral de altura completa fixa</h2>
+            <h3>Tente rolar esta área e veja como o sidenav adere à página</h3>
+        </header>
+        <section>
+            <p>Observe que este elemento div tem uma margem esquerda de 25%. Isso ocorre porque a navegação lateral está definida para 25% de largura. Se você remover a margem, o sidenav irá sobrepor/ficar no topo desta div.</p>
+            <p>Observe também que configuramos overflow:auto para sidenav. Isso adicionará uma barra de rolagem quando o sidenav for muito longo (por exemplo, se tiver mais de 50 links dentro dele).</p>
+            <p>Algum texto..</p>
+            <p>Algum texto..</p>
+            <p>Algum texto..</p>
+            <p>Algum texto..</p>
+            <p>Algum texto..</p>
+            <p>Algum texto..</p>
+            <p>Algum texto..</p>
+        </section>
+    </main>
+
+</body>
+</html>

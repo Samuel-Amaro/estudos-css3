@@ -1,0 +1,14 @@
+# CSS HEX COLORS
+
+ * VALOR HEX
+   - Em CSS, uma cor pode ser especificada usando um valor hexadecimal na forma:
+
+   #rrggbb
+
+   - Onde rr (vermelho), gg (verde) e bb (azul) são valores hexadecimais entre 00 e ff (igual ao decimal 0-255)
+
+   - Por exemplo, #ff0000 é exibido em vermelho, porque o vermelho é definido com seu valor mais alto (ff) e os outros são definidos com o valor mais baixo (00).
+
+   - Tons de cinza são frequentemente definidos usando valores iguais para todas as 3 fontes de luz
+
+    #000000    #3c3c3c     #787878

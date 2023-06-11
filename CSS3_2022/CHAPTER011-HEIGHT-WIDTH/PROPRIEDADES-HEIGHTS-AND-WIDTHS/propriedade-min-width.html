@@ -1,0 +1,72 @@
+<!--
+    * PROPRIEDADE CSS MIN-WIDTH(LARGURA MINIMA)
+
+    * DEFINIÇÃO E USO
+
+        - A min-width propriedade define a largura mínima de um elemento.
+
+        - Se o conteúdo for menor que a largura mínima, a largura mínima será aplicada.
+
+        - Se o conteúdo for maior que a largura mínima, a min-width propriedade não terá efeito.
+
+        - Nota: Isso evita que o valor da propriedade width fique menor que min-width.
+
+    * SINTAXE CSS:
+
+        min-width: length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: lenght
+        DESCRIPTION: O valor padrão é 0. Define a largura mínima em px, cm, etc.
+        -----------------------------------
+        VALUE: %
+        DESCRIPTION: Define a largura mínima em porcentagem do bloco que contém
+        -----------------------------------
+        VALUE: inicial(initial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        -----------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        -----------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        span{
+            /*especifica uma cor de fundo usando a propriedade background-color*/
+            background-color: yellow;
+        }
+        span.ex1{
+            /*
+             - a propriedade min-width, define a largura minima de um elemento.
+             - Se o conteúdo for menor que a largura mínima, a largura mínima será aplicada.
+             - Se o conteúdo for maior que a largura mínima, a min-width propriedade não terá efeito.
+             - o valor 500px define que o elemento tera uma largura minima de 500px o comprimento define a largura em px
+             - obs: a min-width so e aplicada quando o conteudo e menor que a min-width especificada.
+            */
+            min-width: 500px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A propriedade min-width(largura minima)</h1>
+
+    <h2>A propriedade min-width: none(default).</h2>
+
+    <!--
+        O <span> elemento é um contêiner embutido(inline) usado para marcar uma parte de um texto ou uma parte de um documento.
+    -->
+    <span>Lorem ipsum dolor sit amet...</span>
+
+    <h2>min-width: 500px</h2>
+
+    <span class="ex1">Lorem ipsum dolor sit amet...</span>
+    
+</body>
+</html>

@@ -1,0 +1,195 @@
+/*
+ * ESPÇAMENTO E LAYOUT
+
+    A primeira coisa que precisamos fazer é resolver o espaçamento/layout - o estilo padrão da tabela é tão apertado! Para fazer isso, adicione o seguinte CSS ao seu style.css arquivo:
+
+        Um table-layout valor de fixed geralmente é uma boa ideia para definir em sua tabela, pois faz com que a tabela se comporte um pouco mais previsível por padrão. Normalmente, as colunas da tabela tendem a ser dimensionadas de acordo com a quantidade de conteúdo que contêm, o que produz alguns resultados estranhos. Com table-layout: fixed, você pode dimensionar suas colunas de acordo com a largura de seus títulos e, em seguida, lidar com seu conteúdo conforme apropriado. É por isso que selecionamos os quatro títulos diferentes com o seletor ( ) ("Selecione o thead th:nth-child(n)enésimo filho que é um elemento em uma sequência, dentro de um:nth-child<th><thead>element") e dado a eles larguras percentuais definidas. A largura inteira da coluna segue a largura de seu cabeçalho, tornando-se uma boa maneira de dimensionar as colunas da sua tabela. Chris Coyier discute essa técnica com mais detalhes em Layouts de tabela fixa . Acoplamos isso com um widthde 100%, o que significa que a tabela preencherá qualquer contêiner em que for colocada e responderá bem (embora ainda precise de mais trabalho para ficar bem em larguras de tela estreitas).
+
+        Um border-collapse valor de collapse é a melhor prática padrão para qualquer esforço de estilo de tabela. Por padrão, quando você define bordas nos elementos da tabela, todos eles terão espaçamento entre eles.
+
+        Isso não parece muito bom (embora possa ser a aparência que você deseja, quem sabe?). Com border-collapse: collapse;set, as bordas se desfazem em uma, que fica muito melhor:
+
+        Colocamos um border ao redor de toda a tabela, o que é necessário porque colocaremos algumas bordas ao redor do cabeçalho e rodapé da tabela mais tarde - parece muito estranho e desarticulado quando você não tem uma borda ao redor de todo o lado de fora do mesa e acabar com lacunas.
+
+        Definimos alguns paddingelementos <th>e <td>— isso dá aos itens de dados algum espaço para respirar, tornando a tabela muito mais legível.
+*/
+
+/* spacing */
+
+table {
+    /*
+     - A propriedade CSS table-layout define o algoritmo usado para dispor células, linhas e colunas <table>.
+     - valor fixed: As larguras de tabela e coluna são definidas pelas larguras de table e col elementos ou pela largura da primeira linha de células. As células nas linhas subsequentes não afetam as larguras das colunas.
+    */
+    table-layout: fixed;
+    width: 100%;
+    /*
+     - A propriedade CSS border-collapse define se as células dentro de uma <table> têm bordas compartilhadas ou separadas.
+     - valor collpse: As células adjacentes têm bordas compartilhadas (o modelo de renderização de tabela de borda recolhida).
+    */
+    border-collapse: collapse;
+    border: 3px solid purple;
+}
+
+/*
+ - usando o pseudo-elemento nth-child, A pseudo-classe CSS :nth-child() casa os elementos com base em sua posição entre um grupo de irmãos.
+ - seleciona o 1 elemento de uma serie de irmãos <th> do elemento pai <thead>
+*/
+thead th:nth-child(1) {
+    width: 30%;
+}
+
+/*
+ - seleciona o 2 elemento de uma serie de irmãos <th> do elemento pai <thead>
+*/
+thead th:nth-child(2) {
+    width: 20%;
+}
+/*
+- seleciona o 3 elemento de uma serie de irmãos <th> do elemento pai <thead>
+*/
+thead th:nth-child(3) {
+    width: 15%;
+}
+/*
+- seleciona o 4 elemento de uma serie de irmãos <th> do elemento pai <thead>
+*/
+thead th:nth-child(4) {
+    width: 35%;
+}
+
+/*
+ - seleciona todas as celulas de cabeçalho e de dados
+*/
+th, td {
+    padding: 20px;
+}
+
+/**
+ * ALGUMAS TIPOGRAFIAS SIMPLES
+
+    Não há nada realmente específico para tabelas aqui; geralmente estamos ajustando o estilo da fonte para facilitar a leitura:
+
+        Definimos uma pilha global de fontes sans-serif; isso é puramente uma escolha estilística. Também definimos nossa fonte personalizada nos títulos dentro dos elementos <thead> e <tfoot>, para uma aparência agradável e punk.
+
+        Definimos alguns letter-spacing nos títulos e células, pois achamos que isso ajuda na legibilidade. Novamente, principalmente uma escolha estilística.
+
+        Alinhamos o texto nas células da tabela dentro do centro <tbody> para que eles se alinhem com os títulos. Por padrão, as células recebem um text-align valor de left, e os títulos recebem um valor de center, mas geralmente parece melhor ter os alinhamentos definidos da mesma forma para ambos. O peso padrão em negrito nas fontes do título é suficiente para diferenciar sua aparência.
+
+        Alinhamos o cabeçalho à direita dentro de <tfoot> para que ele seja visualmente associado melhor ao seu ponto de dados
+*/
+
+html{
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+thead, th, tfoot, th{
+    font-family: 'Rock Salt', cursive;
+}
+
+th{
+    /*
+     - A propriedade CSS de espaçamento entre letras define o comportamento do espaçamento horizontal entre os caracteres de texto. Esse valor é adicionado ao espaçamento natural entre os caracteres durante a renderização do texto. Valores positivos de espaçamento entre letras fazem com que os caracteres se espalhem mais, enquanto valores negativos de espaçamento entre letras aproximam os caracteres.
+    */
+    letter-spacing: 1px;
+}
+
+td{
+    letter-spacing: 1px;
+}
+
+tbody td{
+    /*
+     - o conteudo das celulas de dados são alinhado ao centro, centralizados
+    */
+    text-align: center;
+}
+
+tfoot th{
+    /*
+     - o conteudo das celulas de cabeçalho são alinhados a direita, da direita para esquerda.
+    */
+    text-align: right;
+}
+
+/*
+ * GRÁFICOS E CORES
+
+    Agora em gráficos e cores! Como a mesa está cheia de punk e atitude, precisamos dar um estilo imponente e brilhante para se adequar a ela. Não se preocupe, você não precisa fazer suas mesas tão barulhentas - você pode optar por algo mais sutil e de bom gosto.
+
+    Comece adicionando o seguinte CSS ao seu style.css arquivo, novamente na parte inferior:
+*/
+
+/*graficos e cores*/
+thead, tfoot{
+    background: url(./leopardskin.jpg);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+thead th, tfoot th, tfoot td{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+    border: 3px solid purple;
+}
+
+/**
+    Adicionamos um background-image ao <thead> e <tfoot>, e alteramos o color de todo o texto dentro do cabeçalho e rodapé para branco (e demos um text-shadow) para que seja legível. Você deve sempre certificar-se de que seu texto contrasta bem com seu plano de fundo, para que seja legível
+
+    Também adicionamos um gradiente linear aos elementos <th>e <td> dentro do cabeçalho e rodapé para obter uma boa textura, além de dar a esses elementos uma borda roxa brilhante. É útil ter vários elementos aninhados disponíveis para que você possa sobrepor estilos uns aos outros. Sim, poderíamos ter colocado a imagem de fundo e o gradiente linear nos elementos <thead>e <tfoot>usando várias imagens de fundo, mas decidimos fazê-lo separadamente para o benefício de navegadores mais antigos que não suportam várias imagens de fundo ou gradientes lineares.
+
+ * FAIXAS DE ZEBRA
+
+    Queríamos dedicar uma seção separada para mostrar como implementar listras de zebra — alternando linhas de cores que facilitam a análise e a leitura das diferentes linhas de dados em sua tabela. Adicione o seguinte CSS à parte inferior do seu style.cssarquivo:
+*/
+
+/*faixas de zebra*/
+
+/*
+ - usando o pseudo-elemento nth-child, A pseudo-classe CSS :nth-child() casa os elementos com base em sua posição entre um grupo de irmãos.
+ - seleciona as linhas que possua a posição numerica impar em uma serir de irmaos de um elemento pai <tbody>
+  - Representa elementos cuja posição numérica em uma série de irmãos é ímpar: 1, 3, 5, etc.
+*/
+tbody tr:nth-child(odd) {
+    background-color: #ff33cc;
+}
+
+/*
+ - Representa elementos cuja posição numérica em uma série de irmãos é par: 2, 4, 6, etc.
+ - seleciona as linhas que possua a posição numerica par em uma serie de irmaos de um elemento pai <tbody>
+*/
+tbody tr:nth-child(even) {
+    background-color: #e495e4;
+}
+
+tbody tr{
+    background: url(./noise.png);
+}
+
+table{
+    background-color: #ff33cc;
+}
+
+/*
+  Anteriormente, você viu o :nth-child seletor sendo usado para selecionar elementos filho específicos. Também pode receber uma fórmula como parâmetro, para selecionar uma sequência de elementos. A fórmula 2n-1 selecionaria todos os filhos de números ímpares (1, 3, 5 etc.) e a fórmula 2n selecionaria todos os filhos de números pares (2, 4, 6 etc.). Usamos as palavras-chave odd e even em nosso código, que fazem exatamente as mesmas coisas que as fórmulas acima mencionadas. Neste caso, estamos dando às linhas ímpares e pares cores diferentes (lúridas).
+
+  Também adicionamos um bloco de fundo repetido a todas as linhas do corpo, que é apenas um pouco de ruído (um semitransparente .png com um pouco de distorção visual) para fornecer alguma textura.
+
+  Por fim, demos à tabela inteira uma cor de fundo sólida para que os navegadores que não suportam o :nth-child seletor ainda tenham um plano de fundo para as linhas do corpo.
+
+  Agora, isso pode ser um pouco exagerado e não do seu gosto, mas o ponto que estamos tentando fazer aqui é que as tabelas não precisam ser chatas e acadêmicas.
+
+ * ESTILIZANDO A LEGENDA
+
+  Há uma última coisa a fazer com nossa tabela - estilize a legenda. Para fazer isso, adicione o seguinte na parte inferior do seu style.css arquivo:
+*/
+
+caption{
+    font-family: 'Rock Salt', cursive;
+    padding: 20px;
+    font-style: italic;
+    caption-side: bottom; /* Coloca a legenda abaixo da tabela*/
+    color: #666;
+    text-align: right;
+    letter-spacing: 1px;
+}
+

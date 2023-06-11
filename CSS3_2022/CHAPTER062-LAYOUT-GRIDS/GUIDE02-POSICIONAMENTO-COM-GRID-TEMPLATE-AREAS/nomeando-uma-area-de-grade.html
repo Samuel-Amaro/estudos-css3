@@ -1,0 +1,127 @@
+<!--
+    * NOMEANDO UMA ÁREA DE GRADE
+
+        Você já encontrou a grid-area propriedade. Esta é a propriedade que pode tomar como valor todas as quatro linhas usadas para posicionar uma área de grade.
+
+        .box1 {
+            grid-area: 1 / 1 / 4 / 2;
+        }
+
+        O que estamos fazendo aqui ao definir todas as quatro linhas é definir a área especificando as linhas que delimitam essa área.
+
+        Também podemos definir uma área dando-lhe um nome e, em seguida, especificar a localização dessa área no valor da grid-template-areas propriedade. Você pode escolher o nome que deseja para sua área. Por exemplo, se eu quiser criar o layout mostrado abaixo, posso identificar quatro áreas principais.
+
+            a header
+            a footer
+            a sidebar
+            the main content
+
+        Com a grid-area propriedade posso atribuir um nome a cada uma dessas áreas. Isso ainda não criará nenhum layout, mas agora temos áreas nomeadas para usar em um layout.
+
+        Tendo definido esses nomes, crio meu layout. Desta vez, em vez de colocar meus itens usando números de linha especificados nos próprios itens, crio todo o layout no contêiner de grade.
+
+        Usando este método, não precisamos especificar nada nos itens de grade individuais, tudo acontece em nosso contêiner de grade. Podemos ver o layout descrito como o valor do grid-template-areas imóvel.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns. define um grid explicito de colunas.
+             - Isso define o grid tracks(faixas de grade).
+             - cria uma grid com nove colunas de tamanhos iguais, com uma medida flexivel, que aumentam e diminuem de acordo com o espaço disponivel.
+             - usando a notação repeat() para repetir todas ou uma seção de track listing(listagem de faixas).
+            */
+            grid-template-columns: repeat(9, 1fr);
+            /*
+             - espefica a altura das linhas implicitas
+            */
+            grid-auto-rows: minmax(100px, auto);
+            /*
+             - Aqui vamos, especificar a localização das áreas definidas por nome, especificando o valor na grid-template-areas propriedade.
+             - criando o layout, cria todo o layout no conteiner de grade ao inves de especificar nos proprios itens grid.
+            */
+            grid-template-areas: 
+                "hd hd hd hd hd hd hd hd hd"
+                "sd sd sd main main main main main main"
+                "ft ft ft ft ft ft ft ft ft";
+        }
+
+        /*iten grid*/
+        .header{
+            /*
+             - a propriedade grid-area e usada para posicionar uma area de grade
+             - Definindo uma área dando-lhe um nome. pode ser o nome que eu quiser.
+             - isso não cria um layout, mas nomeia areas para serem usdas em um layout.
+             - nomendo a area do primeiro iten de grid.
+            */
+            grid-area: hd;
+        }
+
+        /*iten grid*/
+        .footer{
+            /*
+            - nomendo a area do segundo iten de grid.
+            */
+            grid-area: ft;
+        }
+
+        /*iten grid*/
+        .content{
+            /*
+            - nomendo a area do terceiro iten de grid.
+            */
+            grid-area: main;
+        }
+
+        /*iten grid*/
+        .sidebar{
+            /*
+            - nomendo a area do quarto iten de grid.
+            */
+            grid-area: sd;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

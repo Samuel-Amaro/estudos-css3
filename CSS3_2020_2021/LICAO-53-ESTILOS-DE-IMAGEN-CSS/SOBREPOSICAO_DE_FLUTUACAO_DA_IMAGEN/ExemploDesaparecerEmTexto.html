@@ -1,0 +1,83 @@
+<!--
+    * * SOBREPOSIÇÃO DE FLUTUAÇÃO DA IMAGEN
+      - Crie um efeito de sobreposição ao pairar:
+    * EXEMPLO: 
+      - Desaparecer Em Texto
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 01</title>
+    <style>
+        div.conteiner{
+            /*posição relativa ao fluxo normal da pagina*/
+            position: relative;
+            /*o bloco tera 50% da largura da pagina*/
+            width: 50%;
+        }
+        img.imagen{
+            /*elemento de nivel de bloco, aceita especificar altura e largura, ao redor do conteudo*/
+            display: block;
+            /*a largura do elemento img e de 100%, pode ocupar 100% do espaço horizontal que le e reservado*/
+            width: 100%;
+            /*altura altomatica, proprio navegador define*/
+            height: auto;
+        }
+        div.overlay{
+            /*Um elemento posicionado absolutamente não existe mais no fluxo normal de layout do documento. Em vez disso, ele fica em sua própria camada, separado de todo o resto. Isso é muito útil: significa que podemos criar recursos de IU isolados que não interferem na posição de outros elementos na página.
+            - Em segundo lugar, observe que a posição do elemento mudou - isso porque top (en-US) , bottom (en-US) , left (en-US) e right (en-US) se comportam de maneira diferente com o posicionamento absoluto. Em vez de especificar a direção em que o elemento deve se mover, eles especificam a distância que o elemento deve estar de cada lado do elemento que o contém. Portanto, neste caso, estamos dizendo que o elemento posicionado de forma absoluta deve ficar 30px do topo do "elemento que contém" e 30px da esquerda*/
+            position: absolute;
+            /*e elemento posicionado de forma absoluta não se afasta do elemento que o contém*/
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /*pode ocupar toda o espaço vertical reservador para o elemento*/
+            height: 100%;
+            /*a largura do elemento e de 100%, pode ocupar 100% do espaço horizontal que le e reservado*/
+            width: 100%;
+            /*o elemento fica trasparente, o elemento existe no layout, mas a visibilidade fica dificil de velo, o elemento fica trasparente, fica opaco*/
+            opacity: 0;
+            /*a duração de transição vai ser de 0.5s,  a curva de velocidade do efeito de transição, (ease) especifica um efeito de transição com início lento, depois rápido e, a seguir, fim lento (é o padrão)*/
+            transition: 0.5s ease;
+            background-color: #008CBA;
+        }
+        /*ao passar o mouse por cima do elemento conteiner, e esse elemento tiver um elemento descendente com a class overlay*/
+        div.conteiner:hover div.overlay{
+            /*elemento perde a transparencia e volta a sua cor normal*/
+            opacity: 1;
+        }
+        /*trabalhando com o texto*/
+        div.text{
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            /*se afasta 50% de cima para baixo, do elemento que contém este elemento, ou do ancestral mais, proximo que tenha definido sua position*/
+            top: 50%;
+            /*se afasta 50% da esquerda para direita, do elemento que contém este elemento*/
+            left: 50%;
+            /*O translate() método move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y).
+            propriedade CSS: tranform;
+            valor: metodo translate(deslocamentoEixoXPositivoOuNegatio, deslocamentoEixoYPositivoOuNegativo);  
+              -50%: para eixo x da esquerda;
+              -50%: eixo y para baixo;
+            */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Fade in overlay</h2>
+    <div class="conteiner">
+        <img src="imagem-de-avatar-de-homem-para-perfil (1).png" alt="Avatar" class="imagen">
+        <div class="overlay">
+            <div class="text">Olá, mundo!</div>
+        </div>
+    </div>
+
+</body>
+</html>

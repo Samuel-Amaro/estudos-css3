@@ -1,0 +1,86 @@
+<!--
+    * FUNCTION TRANSFORM MATRIX()
+
+        A função CSS matrix() define uma matriz de transformação 2D homogênea. Isso resulta em um dado do tipo <transform-function> .
+
+        Note: matrix(a, b, c, d, tx, ty) e um shorthand de matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1).
+
+    * SINTAXE
+
+        A matrix() função é especificada com seis valores. Os valores constantes são implícitos e não passados ​​como parâmetros; os outros parâmetros são descritos na ordem principal da coluna.
+
+        matrix(a, b, c, d, tx, ty)
+
+    * VALORES 
+
+        a b c d: são <number>s descrevendo a transformação linear.
+
+        tx ty: São <number>s descrevendo a translate a ser aplicada.
+
+        Cartesian coordinates on ℝ2: 
+
+            a	c
+            b	d
+
+        Homogeneous coordinates on ℝℙ2
+
+            a	c	tx
+            b	d	ty
+            0	0	1
+
+            [a b c d tx ty]
+
+        Cartesian coordinates on ℝ3
+
+            a	c	tx
+            b	d	ty
+            0	0	1
+
+        Homogeneous coordinates on ℝℙ3
+
+            a	c	0	tx
+            b	d	0	ty
+            0	0	1	0
+            0	0	0	1
+
+        Os valores representam as seguintes funções: matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY() )
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        div{
+            width: 80px;
+            height: 80px;
+            background-color: skyblue;
+        }
+
+        .changed{
+            /*
+             - A função CSS matrix() define uma matriz de transformação 2D homogênea
+             - A matrix() função é especificada com seis valores.
+
+
+                1  -1  80
+
+                2   1  80
+
+                0   0   1
+
+                
+            */
+            transform: matrix(1, 2, -1, 1, 80, 80);
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div>Normal</div>
+    <div class="changed">Changed</div>
+
+</body>
+</html>

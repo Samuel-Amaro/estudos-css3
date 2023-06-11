@@ -1,0 +1,39 @@
+<!--
+    * DEFINIR UM TAMANHO ESPECIFICO
+
+        Podemos, é claro, dar aos elementos em nosso design um tamanho específico. Quando um tamanho é dado a um elemento (cujo conteúdo precisa caber nesse tamanho), nos referimos a ele como um tamanho extrínseco. Veja <div> o exemplo acima - podemos dar valores width e height valores específicos, e agora ele terá esse tamanho, independentemente do conteúdo colocado nele. Como descobrimos em nossa lição anterior sobre estouro , uma altura definida pode fazer com que o conteúdo estoure se houver mais conteúdo do que o elemento tem espaço para caber dentro dele.
+
+        Devido a esse problema de overflow, fixar a altura dos elementos com comprimentos ou porcentagens é algo que precisamos fazer com muito cuidado na web.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .box{
+            border: 5px solid darkblue;
+            /*
+             - A height propriedade CSS especifica a altura de um elemento. Por padrão, a propriedade define a altura da área de conteúdo . Se box-sizing estiver definido como border-box, no entanto, ele determina a altura da área da borda .
+             - define a altura de um elemento, usando um comprimento de unidade absoluta
+             - define a altura como um valor absoluto de 150px
+            */
+            height: 150px;
+            /*
+             - A width propriedade CSS define a largura de um elemento. Por padrão, ele define a largura da área de conteúdo , mas se box-sizing estiver definido como border-box, ele define a largura da área da borda .
+             - define a largura de um elemento, usando um comprimento de unidade absoluta.
+             - define a largura como um valor absoluto de 200px
+            */
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box"></div>
+        <div class="box">Ambas as caixas têm uma altura definida, esta caixa tem conteúdo que precisará de mais espaço do que a altura atribuída e, portanto, temos um estouro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nam et quam accusamus rem excepturi placeat nisi obcaecati qui totam. Veritatis dignissimos totam praesentium reiciendis accusantium, ipsum consequuntur quis fugiat.</div>
+    </div>
+
+</body>
+</html>

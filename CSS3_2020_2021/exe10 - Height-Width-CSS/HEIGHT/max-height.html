@@ -1,0 +1,76 @@
+<!--
+    * PROPRIEDADE CSS max-height
+
+      - Define a altura máxima de um elemento
+
+    * DEFINIÇÃO E USO
+
+      - A max-height propriedade define a altura máxima de um elemento.
+
+      - Se o conteúdo for maior do que a altura máxima, ele transbordará. A forma como o contêiner lidará com o conteúdo transbordando é definida pela propriedade overflow .
+
+      - Se o conteúdo for menor que a altura máxima, a max-height propriedade não terá efeito.
+
+      - Nota: Isso evita que o valor da propriedade height se torne maior que max-height. O valor da max-height propriedade substitui a propriedade height.
+
+     - VALOR PADRÃO: none;
+
+     - HERDADO: não;
+
+    * SINTAXE: 
+
+       max-height: none|length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+       VALUE: none; 
+       DESCRIPTION: Sem altura máxima. Este é o padrão;
+
+       VALUE: length;
+       DESCRIPTION: Define a altura em px, cm, etc.
+
+      VALUE: %;
+      DESCRIPTION: Define a altura maxima em porcentagem do bloco que o contém;
+
+      VALUE: initial;
+      DESCRIPTION: Define esta propriedade com seu valor padrão. 
+
+      VALUE: inherit;
+      DESCRIPTION: Herda essa propriedade de seu elemento pai.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura Maxima Elemento</title>
+    <style>
+        p.ex1{
+            /*definindo a altura maxima do elemento em px, uma altura estatica definida pelo dev.*/
+            max-height: 50px;
+            /*
+              - A overflow propriedade CSS controla o que acontece com o conteúdo que é muito grande para caber em uma área.
+              - caso o conteudo seja maior que o elemento que o contera, o conteudo que for trasbordado ou ficar fora do elemento porque não coube, O estouro(overflow) é cortado e uma barra de rolagem é adicionada para ver o resto do conteúdo, a barra de rolagem e add automaticamente pelo navegador quando e necessario;
+            */ 
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Altura Maxima de um elemento</h1>
+
+    <p><strong>Exemplo:</strong> Defina a altura máxima de um elemento &lt;p&gt; em 50 pixels:</p>
+
+    <h2>max-height: none(default)</h2>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores pariatur sed, animi dolore quia cumque praesentium dolorum eos, vero beatae deserunt sit illo, nemo a? Tempora eos enim debitis sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat quis, earum quidem cumque quasi facere eligendi quo. Numquam sint laborum at suscipit qui placeat quaerat id unde asperiores? Reprehenderit.</p>
+
+    <h2>max-height: 50px</h2>
+
+    <p class="ex1">Lorem ipsum dolor sit amet consectetur adipisicing elit. A adipisci animi quos laborum quae aliquam neque deleniti pariatur, non dolorum possimus? Magnam nulla asperiores reprehenderit quos. Eum quam ex facere! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, commodi iste! Magni nostrum, eveniet dicta iure dignissimos excepturi numquam. Dicta fugiat voluptatem perspiciatis numquam perferendis molestias earum esse, aut similique.</p>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!--
+    * * DEFINIR QUANTAS VEZES UMA ANIMAÇÃO DEVE SER EXECUTADA
+
+      - A animation-iteration-count propriedade especifica o número de vezes que uma animação deve ser executada.
+
+      - O exemplo a seguir executará a animação 3 vezes antes de parar:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantas Vezes Animação deve ser executada</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            /*nome da animação, esse nome, vinculo os quadros chaves a essa animação, que vai representar um elemento HTML*/
+            animation-name: exemplo;
+            /*duração da animação especificada, a animação sera executa nesse tempo especificado*/
+            animation-duration: 4s;
+            /*a animação vinculada a esse elemento deve ser executada três vezes do inicio ao fim*/
+            animation-iteration-count: 3;
+        }
+        /*especificando os quadros chaves de uma animação*/
+        @keyframes exemplo{
+            /*quando animação tiver 0% concluida anima essas propriedade css, cor de fundo, se posiciona na esquerda no 0, e topo 0*/
+            0%{background-color: red; left: 0; top: 0;}
+            /*quando animção tiver 25% concluida anima essa propriedade css, cor de fundo, se afasta 200px da esquerda e continua no topo*/
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            /*quando animção tiver 50% concluida anima essa propriedade css, se afasta 200px da esquerda e 200px do topo*/
+            50%{background-color: blue; left: 200px; top: 200px;}
+            /*quando animção tiver 75% concluida anima essa propriedade css, cor de fundo, volta a 0 esquerda, e continua 200px afastado do topo*/
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            /*quando animação tiver 100% concluida anima essa propriedade css, cor de fundo, volta a sua posição original*/
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+        
+        /**
+         - O exemplo a seguir usa o valor "infinito" para fazer a animação continuar para sempre:
+        */
+        div#executa_ifinito{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: exemplo_ifinito;
+            animation-duration: 4s;
+            /*a animação vinculada a esse elemento deve ser executada ifinitamente*/
+            animation-iteration-count: infinite;
+        }
+        @keyframes exemplo_ifinito{
+            0%{background-color: red; left: 0; top: 0;}
+            25%{background-color: yellow; left: 200px; top: 0px;}
+            50%{background-color: blue; left: 200px; top: 200px;}
+            75%{
+                background-color: green; left: 0px; top: 200px;
+            }
+            100%{background-color: red; left: 0px; top: 0px;}            
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Animações EM CSS</h1>
+    
+    <p>Exemplo:</p>
+    
+    <h2>Definir Quantas vezes Uma animação deve ser executada - animation-iteration-count(quantidade iteração animação)</h2>
+    
+    <p><strong>Exemplo: </strong> O exemplo a seguir executará a animação 3 vezes antes de parar</p>
+    
+    <p><strong>Nota:</strong> Quando uma animação termina, ela volta ao estilo original.</p>
+
+    <h3>Exemplo: que especifica a quantidade de vezes que a animação deve ser executada</h3>
+
+    <div></div>
+
+    <h3>Exemplo: que não especifica a quantidade de vezes que a animção deve ser executada, usa o valor "ifinito"</h3>
+
+    <p><strong>Exemplo: </strong>O exemplo a seguir usa o valor "infinito" para fazer a animação continuar para sempre:</p>
+
+    <div id="executa_ifinito"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!--
+    * GRADIENTE LINEAR
+
+    * USANDO TRANSPARENCIA
+
+      - Os gradientes CSS também suportam transparência, que pode ser usada para criar efeitos de esmaecimento.
+      - 
+      - Para adicionar transparência, usamos a função rgba () para definir os limites de cor. O último parâmetro na função rgba () pode ser um valor de 0 a 1 e define a transparência da cor: 0 indica transparência total, 1 indica cor total (sem transparência).
+      - 
+      - O exemplo a seguir mostra um gradiente linear que começa da esquerda. Ele começa totalmente transparente, passando para a cor vermelha total:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradiente Linear</title>
+    <style>
+        div#grad1{
+            height: 200px;
+            /*para definir as cores do gradiente passa rgba() transparencia, para cada cor*/
+            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+        }
+    </style>
+</head>
+<body>
+    <h1>Gradiente Linear</h1>
+    <h2>Usando Transparência</h2>
+    <p><strong>Exemplo:</strong> Para adicionar transparência, usamos a função rgba() para definir os limites de cor. O último parâmetro na função rgba() pode ser um valor de 0 a 1 e define a transparência da cor: 0 indica transparência total, 1 indica cor total (sem transparência).</p>
+    <div id="grad1"></div>
+</body>
+</html>

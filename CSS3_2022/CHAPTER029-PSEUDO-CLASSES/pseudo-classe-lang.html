@@ -1,0 +1,31 @@
+<!--
+    * CSS - A PSEUDOCLASSE :lang
+
+        - A :lang pseudo-classe permite definir regras especiais para diferentes idiomas.
+
+        - No exemplo abaixo, :lang define as aspas para elementos <q> com lang="no":
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+          - um pseudo-classe e usada para definir uma estado especial  de um elemento.
+          - A :lang pseudo-classe permite definir regras especiais para diferentes idiomas.
+          -  No exemplo abaixo, :lang define as aspas para elementos <q> com lang="no":
+          - seleciona um elemento <q> que tenha o lang="no"
+        */
+        q:lang(no){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Algum texto <q lang="no">Uma citação em um parágrafo.</q> Algum texto</p>
+    <p>Neste exemplo, :lang define as aspas para elementos q com lang="no":</p>
+
+</body>
+</html>

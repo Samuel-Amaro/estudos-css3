@@ -1,0 +1,150 @@
+/*
+ * CSS LAYOUT FLOAT EXAMPLES - EXEMPLOS DE FLUTUAÇÃO DO LAYOUT CSS
+*/
+
+/*
+    * Exemplo de caixas conteiner float: lef, flutuando a esquerda;
+
+        - para decidir a largura das caixas, faz se a conta qtd_Caixas / 100 = largura das caixas;
+        - 25% para quatro caixas, 50% duas caixas, etc...;
+
+      * O que é tamanho da caixa ? box-sizing:
+    
+         -  Você pode criar facilmente três caixas flutuantes lado a lado. No entanto, quando você adiciona algo que aumenta a largura de cada caixa (por exemplo, preenchimento ou bordas), a caixa se quebra. A box-sizing propriedade permite incluir o preenchimento e a borda na largura (e altura) total da caixa, garantindo que o preenchimento fique dentro da caixa e não quebre.
+*/
+
+/*para todos os elementos HTML, vai ter box-sizing, as caixas não vão se quebrar ao add espaço interno, externo, preenchimento etc...*/
+*{
+    box-sizing: border-box;
+}
+
+#conteiner_01{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura do conteiner e de 33.33% da pagina, o conteiner pode ocupar 33.33% da largura da pagina*/
+    width: 33.33%;
+    /*um espaço interno dentro do conteiner de 50px*/
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    background-color:#bbb
+}
+
+#conteiner_02{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura do conteiner e de 33.33% da pagina, o conteiner pode ocupar 33.33% da largura da pagina*/
+    width: 33.33%;
+    /*um espaço interno dentro do conteiner de 50px*/
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    background-color:#ccc
+}
+
+#conteiner_03{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura do conteiner e de 33.33% da pagina, o conteiner pode ocupar 33.33% da largura da pagina*/
+    width: 33.33%;
+    /*um espaço interno dentro do conteiner de 50px*/
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    background-color:#ddd
+}
+
+
+/*###################################################################*/
+
+/*
+ * EXEMPLO 02 - IMAGENS LADO A LADO USANDO A FLOAT PROPRIEDADE LEFT
+  
+  - FLUTUAÇÃO A ESQUERDA
+
+*/
+#conteiner_imagen_01{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura do conteiner e de 33.33% da pagina, o conteiner pode ocupar 33.33% da largura da pagina*/
+    width: 33.33%;
+    /*um espaço interno dentro do conteiner de 50px*/
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+#conteiner_imagen_01 > img{
+    width: 100%; /*a imagen pode ocupar 100% da largura do conteiner*/
+}
+#conteiner_imagen_02{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura do conteiner e de 33.33% da pagina, o conteiner pode ocupar 33.33% da largura da pagina*/
+    width: 33.33%;
+    /*um espaço interno dentro do conteiner de 5px, entre a borda e a imagen*/
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+#conteiner_imagen_02 > img{
+    width: 100%; /*a imagen pode ocupar 100% da largura do conteiner*/
+}
+#conteiner_imagen_03{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura do conteiner e de 33.33% da pagina, o conteiner pode ocupar 33.33% da largura da pagina*/
+    width: 33.33%;
+    /*um espaço interno dentro do conteiner de 5px, entre a borda e a imagen*/
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+#conteiner_imagen_03 > img{
+    width: 100%; /*a imagen pode ocupar 100% da largura do conteiner*/
+}
+
+/*#######################################################*/
+
+/*
+    * CAIXAS DE IGUAL ALTURA
+
+      - USANDO O FLOAT LAYOUT LEFT
+      - PROBLEMA: 
+      - No entanto , isso não é muito flexível. Tudo bem se você puder garantir que as caixas sempre terão a mesma quantidade de conteúdo. Mas muitas vezes, o conteúdo não é o mesmo. Se você tentar o exemplo acima em um telefone celular, verá que o conteúdo da segunda caixa será exibido fora da caixa. É aqui que CSS3 Flexbox se torna útil - pois pode esticar caixas automaticamente para serem tão longas quanto a caixa mais longa:
+*/
+#caixa_altura{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura da e de 50% da pagina, o conteiner pode ocupar 50% da largura da pagina*/
+    width: 50%;
+    /*um espaço interno dentro do conteiner de 50px, entre a borda e a imagen*/
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    /*altura do conteiner*/
+    height: 300px;
+    /*cor de fundo da caixa*/
+    background-color:#bbb
+}
+#caixa_altura_02{
+    /*o conteiner flutua a esquerda*/
+    float: left;
+    /*largura da e de 50% da pagina, o conteiner pode ocupar 50% da largura da pagina*/
+    width: 50%;
+    /*um espaço interno dentro do conteiner de 50px, entre a borda e a imagen*/
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    /*altura do conteiner*/
+    height: 300px;
+    /*cor de fundo da caixa*/
+    background-color:#bbb
+}

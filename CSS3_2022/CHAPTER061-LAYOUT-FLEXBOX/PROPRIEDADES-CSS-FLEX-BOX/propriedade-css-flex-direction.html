@@ -1,0 +1,98 @@
+<!--
+    * PROPRIEDADE CSS FLEX-DIRECTION(DIREÇÃO FLEXIVEL)
+
+        A propriedade CSS flex-direction define como os itens flexíveis são colocados no contêiner flexível, definindo o eixo principal(main-axis) e a direção (normal ou invertido).
+
+        Observer que os valores row e row-reverse são afetados pela direcionalidade do contêiner flexível. Se seu atributo dir for ltr, row representa o eixo horizontal orientado da esquerda para a direita, e row-reverse está orientado da direita para esquerda; Se seu atributo  rtl, row representa o eixo orientado da direita para a esquerda e  row-reverse da esquerda para a direita.
+
+    * SINTAXE
+
+        /* The direction text is laid out in a line */
+        flex-direction: row;
+
+        /* Like <row>, but reversed */
+        flex-direction: row-reverse;
+
+        /* The direction in which lines of text are stacked */
+        flex-direction: column;
+
+        /* Like <column>, but reversed */
+        flex-direction: column-reverse;
+
+        /* Global values */
+        flex-direction: inherit;
+        flex-direction: initial;
+        flex-direction: unset;
+
+    * VALORES
+
+        Os seguintes valores são aceitos:
+
+        row(linha): O eixo principal do flex container é definido para ser o mesmo que a direção do texto. Os pontos de início(start) e término(end) principais são iguais à direção do conteúdo.
+
+        row-reverse(linha reversa): Se comporta da mesma forma que row porém os pontos de inicio e término seram invertidos (permutados).
+
+        column(coluna): O eixo principal(main-axis) do flex container é igual ao eixo do bloco. Os pontos de início(main-start) e término principais(main-end) são iguais aos pontos de antes e depois do modo de escrita.
+
+        column-reverse: Se comporta da mesma forma que column porém os pontos de inicio e término seram invertidos (permutados).
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*flex container*/
+        #content{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #c3c3c3;
+            display: flex;
+            /*
+             - A propriedade CSS flex-direction define como os itens flexíveis são colocados no contêiner flexível, definindo o eixo principal(main-axis) e a direção (normal ou invertido).
+             - Se comporta da mesma forma que column porém os pontos de inicio e término seram invertidos (permutados).
+            */
+            flex-direction: column-reverse;
+        }
+
+        .box{
+            width: 50px;
+            height: 50px;
+        }
+
+        /*flex container*/
+        #content1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #c3c3c3;
+            display: flex;
+            /*
+             - A propriedade CSS flex-direction define como os itens flexíveis são colocados no contêiner flexível, definindo o eixo principal(main-axis) e a direção (normal ou invertido).
+             - row-reverse(linha reversa): Se comporta da mesma forma que row porém os pontos de inicio e término seram invertidos (permutados).
+            */
+            flex-direction: row-reverse;
+        }
+
+        .box1{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h4>Este e um Column-Reverse</h4>
+    <div id="content">
+        <div class="box" style="background-color: red;">A</div>
+        <div class="box" style="background-color: lightblue">B</div>
+        <div class="box" style="background-color: yellow;">C</div>
+    </div>
+    <h4>Este e um Row-reverse</h4>
+    <div id="content1">
+        <div class="box1" style="background-color: red;">A</div>
+        <div class="box1" style="background-color: lightblue;">B</div>
+        <div class="box1" style="background-color: yellow;">C</div>
+    </div>
+
+</body>
+</html>

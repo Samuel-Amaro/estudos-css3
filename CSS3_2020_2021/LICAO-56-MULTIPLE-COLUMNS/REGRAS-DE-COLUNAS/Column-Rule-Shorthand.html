@@ -1,0 +1,38 @@
+<!--
+    * A REGRAS COLUNAS CSS
+
+    * REGRA CSS : column-rule propriedade é uma propriedade abreviada para definir todas as propriedades column-rule- * acima.
+
+      - O exemplo a seguir define a largura, o estilo e a cor da regra entre as colunas:
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplas Colunas</title>
+    <style>
+        div.newspaper{
+            /*o texto no elemento div sera dividido em 3 colunas*/
+            column-count: 3;
+            /*especificando o espaço que e para se ter entre as lacunas das colunas, o espaço que vai haver entre uma coluna e outra*/
+            column-gap: 40px;
+            /*usando shorthand para especificar, a largura da regra, o estilo da regra, e a cor da regra, ordem das propriedades css a serem passadas: largura da regra, estilo da regra, cor da regra*/
+            column-rule: 1px solid lightblue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Regras de coluna css</h1>
+
+    <p><strong>Exemplo:</strong> define a largura, o estilo e a cor da regra entre as colunas:</p>
+
+    <h2>Definido estilo, largura, cor por shorthand - column-rule-*</h2>
+
+    <div class="newspaper">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores rem ex quaerat velit quasi ipsa assumenda repellat, minus placeat pariatur optio magnam eum, error ab nam, esse ullam. Amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium fugiat delectus itaque excepturi eos veritatis impedit, voluptatum aut laboriosam recusandae accusamus harum ullam, aliquid error repellat velit, ab ea earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis molestiae nesciunt voluptatum! Id culpa quos minima. Ad nihil deleniti accusantium, ut aliquid doloribus ipsa repellendus sit, repellat, ratione libero! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo corrupti earum asperiores debitis quo. Quibusdam omnis, ut vero delectus odio voluptatum corrupti soluta tempore dolorum mollitia iste eos esse ad! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum atque deserunt consectetur consequuntur in debitis sint exercitationem autem porro aperiam! Minus molestias voluptate expedita cumque eos adipisci sunt consequatur ipsum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat fugit quam, soluta totam aspernatur libero unde nemo voluptas praesentium asperiores voluptate quos tempore assumenda impedit beatae, iure accusantium et.</div>
+</body>
+</html>

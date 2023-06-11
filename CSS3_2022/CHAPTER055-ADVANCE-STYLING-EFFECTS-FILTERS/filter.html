@@ -1,0 +1,50 @@
+<!--
+    * FILTROS(FILTER)
+
+        Embora você não possa alterar a composição de uma imagem usando CSS, existem algumas coisas criativas que você pode fazer. Uma propriedade muito agradável, que pode ajudá-lo a trazer interesse aos seus projetos, é a filter propriedade. Essa propriedade habilita filtros semelhantes ao Photoshop diretamente do CSS.
+
+        No exemplo abaixo, usamos dois valores diferentes para filtro. O primeiro e  blur()— esta função pode receber um valor para indicar o quanto a imagem deve ser desfocada.
+
+        A segunda é grayscale(); usando uma porcentagem, estamos definindo quanta cor queremos que seja removida.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        img{
+            height: 100%;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .blur{
+            /*
+             - a propriedade filter, habilita filtros do CSS, A propriedade de filtro(filter) CSS aplica efeitos gráficos como desfoque(blur) ou mudança de cor(shift color) a um elemento.
+             - o primeiro valor a função blur(), aceita um valor de paramentro para indicar o quanto a imagen deve ser desfocada.
+             - a imagen e desfocada em 10px
+            */
+            filter: blur(10px);
+        }
+
+        .grayscale{
+            /*
+             - o valor grayscale() que e uma função tem um paramentro que e informado para indicar quanto cor queremos que seja removida do elemento.
+             - o elemento tem 60% de cor removida, so ira ter 40% de cor.
+            */
+            filter: grayscale(60%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box"><img src="./balloons (5).jpg" alt="balloons" class="blur"/></div>
+        <div class="box"><img src="./balloons (5).jpg" alt="balloons" class="grayscale"/></div>
+    </div>
+
+</body>
+</html>

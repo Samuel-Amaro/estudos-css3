@@ -1,0 +1,78 @@
+<!--
+    * ESTILO DO CONTORNO(OUTLINE-STYLE)
+
+        - A outline-style propriedade especifica o estilo do contorno e pode ter um dos seguintes valores:
+
+            dotted- Define um contorno pontilhado
+            dashed- Define um contorno tracejado
+            solid- Define um contorno sólido
+            double- Define um contorno duplo
+            groove- Define um contorno ranhurado 3D
+            ridge- Define um contorno 3D estriado
+            inset- Define um contorno de inserção 3D
+            outset- Define um esboço inicial 3D
+            none- Não define contorno
+            hidden- Define um contorno oculto
+
+        - O exemplo a seguir mostra os diferentes outline-style valores:
+
+        - Nota: Nenhuma das outras propriedades de contorno (sobre as quais você aprenderá mais nos próximos capítulos) terá QUALQUER efeito a menos que a outline-style propriedade seja definida!
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        p{
+            /*
+             - Um contorno(outline) é uma linha desenhada fora da borda do elemento.
+             - outline é uma linha que é desenhada em torno de elementos, FORA das bordas, para fazer o elemento "se destacar".
+            */
+            outline-color: red;
+        }
+        p.dotted{
+            /* 
+             - a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: dotted; /*outline pontilhada*/
+        }
+        p.dashed{
+            /* 
+             - a propriedade de outline a outline-style especifica o estilo da outline.
+            */
+            outline-style: dashed; /*outline tracejada*/
+        }
+        p.solid{
+            outline-style: solid; /*outline solida*/
+        }
+        p.double{
+            outline-style: double; /*outline dupla*/
+        }
+        p.groove{
+            outline-style: groove; /*outline ranhurada 3D*/
+        }
+        p.ridge{
+            outline-style: ridge; /*outline estriada 3D*/
+        }
+        p.inset{
+            outline-style: inset; /*outline de inserção 3D*/
+        }
+        p.outset{
+            outline-style: outset; /*outline de esboço inicial 3D*/
+        }
+    </style>
+</head>
+<body>
+
+    <h2>A propriedade outline-style</h2>
+    <p class="dotted">Um contorno dotted(pontilhado)</p>
+    <p class="dashed">Um contorno dashed(tracejado)</p>
+    <p class="solid">Um contorno solido(solido)</p>
+    <p class="double">Um contorno double(duplo)</p>
+    <p class="groove">Um contorno groove(ranhurado 3D). O efeito depende do valor da outline-color.</p>
+    <p class="ridge">Um contorno ridge(estriado 3D). O efeito depende do valor da outline-color</p>
+    <p class="inset">Um contorno inset(inserção 3D). O efeito depende do valor da outline-color</p>
+    <p class="outset">Um contorno outset(esboço inicial 3D). O efeito depende do valor da outline-color</p>
+</body>    
+</html>

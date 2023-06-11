@@ -1,0 +1,68 @@
+<!--
+    * O SELETOR DE AGRUPAMENTO CSS
+
+        - O seletor de agrupamento seleciona todos os elementos HTML com as mesmas definições de estilo.
+
+        - Veja o seguinte código CSS (os elementos h1, h2 e p têm as mesmas definições de estilo):
+
+        h1 {
+            text-align: center;
+            color: red;
+        }
+
+        h2 {
+            text-align: center;
+            color: red;
+        }
+
+        p {
+            text-align: center;
+            color: red;
+        }
+
+        - Será melhor agrupar os seletores, para minimizar o código.
+
+        - Para agrupar seletores, separe cada seletor com uma vírgula.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--
+        - Um CSS interno é usado para definir um estilo para uma única página HTML.
+        - Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento.
+        - A <style> tag é usada para definir informações de estilo (CSS) para um documento.
+    -->
+    <style>
+        /*
+            - uma regra css formada por:
+            
+            seletor{
+                //bloco de declaração
+            }
+
+            - seletor de agrupamento seleciona todos os elementos html, com as mesmas definições de estilo.
+            - seleciona diferentes elementos html, que irão possuir a mesma definição de estilo
+            - para agrupar seletores, separe cada seletor por virgula
+            - aqui estamos usando seletores de elementos, seleciona os elementos html pelo nome da tag
+            - ira aplicar a mesma regra css, para diferentes elementos css
+        */
+        h1, h2, p{ 
+            /*
+             - declarações css são separadas, por (;)
+             - uma declaração e composta por uma propriedade e valor que são separadas por (:)
+            */
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hello world!</h1>
+    <h2>Título Menor!</h2>
+    <p>Este é um parágrafo.</p>
+
+</body>
+</html>

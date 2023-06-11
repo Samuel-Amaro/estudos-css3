@@ -1,0 +1,31 @@
+/*
+ * ESTILIZANDO BOTÕES DE ENTRADA
+
+   - ESTILIZAÇÃO DE BOTÕES DE ENTRADA, PARA FORMULARIOS;
+*/
+
+/*seleciona botões de diferentes tipos, para estilziar, usando o seletor de atributo e valor do atributo*/
+input[type=button], input[type=submit], input[type=reset]{
+    /*cor de fundo*/
+    background-color: #4CAF50;
+    /*borda - prenchimento 0cultado*/
+    border: none;
+    /*cor do texto*/
+    color: white;
+    /*espaços interno*/
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    /*tira sublinhado e deixa o botão no formato padrão - limpo*/
+    text-decoration: none;
+    /*espaço externo*/
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    /*cursor do mouse*/
+    cursor: pointer;
+    /*oculta o contorno que se destaca quando elemento e clicado*/
+    outline: none;
+}

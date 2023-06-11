@@ -1,0 +1,46 @@
+<!--
+    * O MODELO DE CAIXA(BOX MODEL) PADRÃO CSS
+
+        No modelo de caixa padrão, se você der a uma caixa um width e um height atributo, isso define a largura e a altura da caixa de conteúdo.
+        
+        Qualquer preenchimento e borda são adicionados a essa largura e altura para obter o tamanho total ocupado pela caixa. Isso é mostrado na imagem abaixo. 
+
+        Se assumirmos que uma caixa tem a seguinte definição de CSS width, height, margin, border, e padding: 
+
+        O real ocupado pela caixa terá 410px de largura (350 + 25 + 25 + 5 + 5) e 210px de altura (150 + 25 + 25 + 5 + 5). 
+
+        Nota: A margem não é contada para o tamanho real da caixa - claro, afeta o espaço total que a caixa ocupará na página, mas apenas o espaço fora da caixa. A área da caixa termina na borda — ela não se estende até a margem.
+
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        /*
+            - box model padrão
+            - a largura da caixa de conteudo e 350px
+            - altura da caixa de conteudo 150px
+            - largura e altura total da caixa e obtida por meio da seguinte soma:
+
+                width(350px) + padding-top(25px) + padding-bottom(25px) + border-bottom(5px) + border-top(5px) = 405px de width
+
+                height(150px) + padding-left(25px) + padding-right(25px) + border-left(5px) + border-right(5px) = 205px de height
+
+        */ 
+        .box{
+            width: 350px;
+            height: 150px;
+            margin: 10px;
+            padding: 25px;
+            border: 5px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

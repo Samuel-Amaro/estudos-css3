@@ -1,0 +1,33 @@
+<!--
+    * DICA DE FERRAMENTA SIMPLES(TOOLTIP)
+
+        - Passe o mouse sobre um elemento <div> para mostrar um elemento <p> (como uma dica de ferramenta):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p{
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+        }
+        /*
+         - um pseudo-classe e usada para definir uma estado especial  de um elemento.
+         - aqui e quando o usuario passar o mouse sobre o elemento div, e o elemento div tiver um elemento p como descendente
+         - o seletor simples seleciona um elemento baseado no nome, o estado div:hover quando o usuario passa o mouse sobre o <div> elemento, este estado de um link ao ser estilizado para funcionar tem que vir depois de  div:link e div:visited*/
+        div:hover p{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div>Passe o mouse sobre este elemento div para mostrar o elemento p
+        <p>Tada! Aqui estou!</p>
+    </div>
+
+</body>
+</html>

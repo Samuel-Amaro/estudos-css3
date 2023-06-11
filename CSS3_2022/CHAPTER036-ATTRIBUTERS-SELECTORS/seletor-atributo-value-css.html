@@ -1,0 +1,46 @@
+<!--
+    * SELETOR DE [attribute="value"] CSS
+
+        - O [attribute="value"] seletor é usado para selecionar elementos com um atributo e valor especificados.
+
+    * DEFINIÇÃO E USO
+
+        - O seletor [attribute=value] é usado para selecionar elementos com o atributo e valor especificados.
+
+    * SINTAXE CSS:
+
+        [attribute = value] {
+            css declarations;
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - seletor de atributos
+         - estilizando elementos que possuem um atributo ou valor de atributo especifico
+         - O [attribute="value"] seletor é usado para selecionar elementos com um atributo e valor especificados.
+         - no exemplo abaixo o seletor de atributo e valor seleciona todos os elementos <a> com um atributo target que possui um valor _blank
+        */
+        a[target=_blank] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Seletor [atributo="valor"] CSS</h2>
+        <p>O exemplo a seguir seleciona todos os elementos <a> com um atributo target="_blank":</p>
+    </header>
+    <nav>
+        <a href="https://www.w3schools.com" rel="external">w3shools.com</a>
+        <a href="http://www.disney.com" target="_blank" rel="external">disney.com</a>
+        <a href="http://www.wikipedia.org" target="_top" rel="external">wikipedia.org</a>
+    </nav>
+
+</body>
+</html>

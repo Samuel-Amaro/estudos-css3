@@ -1,0 +1,52 @@
+<!--
+    * ROTATEX()
+
+        A função CSS rotateX() define uma transformação que gira um elemento em torno da abcissa (eixo horizontal) sem deformá-la. Seu resultado é um tipo de dados <transform-function>.
+
+        O eixo de rotação passa por uma origem, definida pela propriedade CSS transform-origin.
+
+        Nota: rotateX(a) é equivalente a rotate3d(1, 0, 0, a).
+
+        Nota: Ao contrário das rotações no plano 2D, a composição das rotações 3D geralmente não é comutativa. Em outras palavras, a ordem em que as rotações são aplicadas afeta o resultado.
+
+    * SINTAXE
+
+        A quantidade de rotação criada por rotateX() é especificada por um <angle>. Se positivo, o movimento será no sentido horário; se negativo, será no sentido anti-horário.
+
+            rotateX(a)
+
+        * VALORES
+
+            a: É um <angle> que representa o ângulo de rotação. Um ângulo positivo denota uma rotação no sentido horário, um ângulo negativo denota uma rotação no sentido anti-horário.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        div {
+            width: 80px;
+            height: 80px;
+            background-color: skyblue;
+        }
+
+        .rotated {
+            /*
+             - A função CSS rotateX() define uma transformação que gira um elemento em torno da abcissa (eixo horizontal) sem deformá-la.
+             - A quantidade de rotação criada por rotateX() é especificada por um <angle>.
+             - o elemento e rotacionado 45 graus no sentido horario, em torno da abcissa(do eixo horizontal) 
+            */
+            transform: rotateX(45deg);
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div>Normal</div>
+    <div class="rotated">Rotated</div>
+
+</body>
+</html>

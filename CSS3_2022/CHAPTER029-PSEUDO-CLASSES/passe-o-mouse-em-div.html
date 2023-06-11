@@ -1,0 +1,33 @@
+<!--
+    * PASSE O MOUSE EM <div>
+
+        - Um exemplo de uso da :hover pseudoclasse em um elemento <div>:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        div{
+            color: white;
+            background-color: green;
+            padding: 25px;
+            text-align: center;
+        }
+        /*
+         - um pseudo-classe e usada para definir uma estado especial  de um elemento.
+         - aqui e quando o usuario passar o mouse sobre o elemento
+         - o seletor simples seleciona um elemento baseado no nome, o estado a:hover quando o usuario passa o mouse sobre o <div> elemento, este estado de um link ao ser estilizado para funcionar tem que vir depois de  div:link e div:visited*/
+        div:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Passe o mouse sobre o elemento div abaixo para alterar sua cor de fundo:</p>
+
+    <div>Passe o mouse sobre min</div>
+</body>
+</html>

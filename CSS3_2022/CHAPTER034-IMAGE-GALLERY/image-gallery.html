@@ -1,0 +1,67 @@
+<!--
+    * GALERIA DE IMAGENS CSS
+
+        - CSS pode ser usado para criar uma galeria de imagens.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        div.gallery{
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+        }
+
+        div.gallery:hover{
+            border: 1px solid #777;
+        }
+
+        div.gallery img{
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc{
+            padding: 15px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <a href="img_5terre (5).jpg" target="_blank" rel="next">
+            <img src="./img_5terre (5).jpg" alt="Cinque Terre" width="600" height="400"/>
+        </a>
+        <div class="desc">Adicione uma descrição imagen aqui.</div>
+    </div>
+
+    <div class="gallery">
+        <a href="./img_forest (2).jpg" target="_blank" rel="next">
+            <img src="./img_forest (2).jpg" alt="Forest" width="600" height="400"/>
+        </a>
+        <div class="desc">Adicione uma descrição imagen aqui.</div>
+    </div>
+
+    <div class="gallery">
+        <a href="./img_lights.jpg" target="_blank" rel="next">
+            <img src="./img_lights.jpg" alt="Northern Lights" width="600" height="400"/>
+        </a>
+        <div class="desc">Adicione uma descrição imagen aqui.</div>
+    </div>
+
+    <div class="gallery">
+        <a href="./img_mountains (2).jpg" target="_blank" rel="next">
+            <img src="./img_mountains (2).jpg" alt="Northern Lights" width="600" height="400"/>
+        </a>
+        <div class="desc">Adicione uma descrição imagen aqui.</div>
+    </div>
+
+</body>
+</html>

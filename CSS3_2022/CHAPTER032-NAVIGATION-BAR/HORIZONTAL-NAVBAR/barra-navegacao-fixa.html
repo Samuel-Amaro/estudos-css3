@@ -1,0 +1,82 @@
+<!--
+    * BARRA DE NAVEGAÇÃO FIXA
+
+        - Adicione position: sticky; a <ul> para criar uma barra de navegação fixa.
+
+        - Um elemento adesivo alterna entre relativo e fixo, dependendo da posição de rolagem. Ele é posicionado em relação até que uma determinada posição de deslocamento seja encontrada na viewport - então ele "gruda" no lugar (como position:fixed).
+
+        - Nota: o Internet Explorer não suporta posicionamento fixo. O Safari requer um prefixo -webkit- (veja o exemplo acima). Você também deve especificar pelo menos um de , top ou right bottom left para que o posicionamento fixo funcione.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        body{
+            font-size: 28px;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;/*browser safari*/
+            /*
+             - Um elemento adesivo(sticky) alterna entre relativo(relative) e fixo(fixed), dependendo da posição de rolagem. Ele é posicionado em relative até que uma determinada posição de deslocamento seja encontrada na viewport - então ele "gruda" no lugar (como position:fixed).
+            */
+            position: sticky;
+            /*
+             - Se position: sticky; - a propriedade top se comporta como sua posição é relativa quando o elemento está dentro da viewport, e como sua posição é fixa quando está fora
+            */
+            top: 0;
+        }
+
+        li{
+            float: left;
+        }
+        
+        li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        /*
+         - pseudo-class :not(selector) seleciona todos os elementos que não sejam selector
+         - pseudo-class captura um estado especial de um elemento,
+         - o usuario ira selecionar o elemento ao passar o mouse por cima do elemento <a> que e descendente de um elemento li
+        */
+        li a:hover{
+            background-color: #111;
+        }
+
+        .active{
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a class="active" href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+    
+    <h3>Exemplo barra de navegação sticky</h3>
+    <p>A barra de navegação ficará no topo quando você atingir sua posição de rolagem.</p>
+    <p>Nota: O Internet Explorer não suporta posicionamento fixo e o Safari requer um prefixo -webkit-.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+    <p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</body>
+</html>

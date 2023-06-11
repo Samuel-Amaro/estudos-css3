@@ -1,0 +1,33 @@
+<!--
+    * TALVEZ UM OU DOIS USOS JUSTOS DE !IMPORTANT
+
+        Uma maneira de usar !important é se você precisar substituir um estilo que não pode ser substituído de nenhuma outra maneira. Isso pode acontecer se você estiver trabalhando em um sistema de gerenciamento de conteúdo (CMS) e não puder editar o código CSS. Em seguida, você pode definir alguns estilos personalizados para substituir alguns dos estilos do CMS.
+
+        Outra maneira de usar !important é: Suponha que você queira uma aparência especial para todos os botões de uma página. Aqui, os botões são estilizados com uma cor de fundo cinza, texto branco e alguns preenchimentos e bordas:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - seletor de classe, seleciona um ou varios elementos que possua o seguinte valor de classe.
+        */
+        .button{
+            background-color: #8c8c8c;
+            color: white;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>Standard button: <a class="button" href="#" target="_top" rel="next">CSS Tutorial</a></p>
+
+    <p>Standard button: <a class="button" href="#" target="_top" rel="next">HTML Tutorial</a></p>
+
+</body>
+</html>

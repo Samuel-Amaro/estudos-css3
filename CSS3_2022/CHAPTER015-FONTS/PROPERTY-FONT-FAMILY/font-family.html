@@ -1,0 +1,50 @@
+<!--
+    * A PROPRIEDADE DA FAMILIA DE FONTES CSS(FONT-FAMILY)
+
+        - Em CSS, usamos a font-family propriedade para especificar a fonte de um texto.
+
+        - Nota : Se o nome da fonte for mais de uma palavra, deve estar entre aspas, como: "Times New Roman".
+
+        - Dica: A font-family propriedade deve conter vários nomes de fontes como um sistema "fallback", para garantir a máxima compatibilidade entre navegadores/sistemas operacionais. Comece com a fonte desejada e termine com uma família genérica (para permitir que o navegador escolha uma fonte semelhante na família genérica, se não houver outras fontes disponíveis). Os nomes das fontes devem ser separados por vírgula.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        .p1{
+            /*
+             - a propriedade font-family e usada para especificar a fonte de um texto.
+             - a font times new roman pertece a familia de fontes serif(fontes formais e elegantes)
+             - Se o nome da fonte for mais de uma palavra, deve estar entre aspas, como: "Times New Roman".
+            */
+            font-family: 'Times New Roman', Times, serif;
+        }
+        p.p2{
+            /*
+            - as fontes Arial, helvetica pertece a familia de fontes sans-serif(fontes sem serifa que possui desgin moderno e minimalista)
+            */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p.p3{
+            /*
+             - as fontes Lucida Console, Couriew New, pertece a familia de fontes monoespace(fontes monoespaças possui uma aparencia mecanica)
+             - Se o nome da fonte for mais de uma palavra, deve estar entre aspas, como: "Times New Roman".
+            */
+            font-family: "Lucidade Console", "Couriew New", monospace;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>CSS Font-family</h1>
+
+    <p class="p1">Este é um parágrafo, mostrado na fonte Times New Roman.</p>
+
+    <p class="p2">Este é um parágrafo, mostrado na fonte Arial.</p>
+
+    <p class="p3">Este é um parágrafo, mostrado na fonte Lucida Console</p>
+
+</body>
+</html>

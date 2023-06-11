@@ -1,0 +1,32 @@
+<!--
+    * MAIS EXEMPLOS DE REGRA DE ESPECIFICIDADE
+
+        Especificidade igual: a regra mais recente vence - Se a mesma regra for escrita duas vezes na folha de estilo externa, a regra mais recente vence:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        /**
+         - especificidade igual, duas regras css, apontando para o mesmo elemento, qual sera aplicada ? duas regras css igual, dois seletores de elemento igual qual sera aplicada? a mais recente(a ultima regra especificada dentro da folha de estilo ou o ultimo bloco de declração dentro do elemento style)
+        */
+
+        h1{
+            background-color: yellow;
+        }
+
+        h1{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Este é o título 1</h1>
+    
+</body>
+</html>

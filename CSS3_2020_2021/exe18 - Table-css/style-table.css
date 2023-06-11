@@ -1,0 +1,60 @@
+
+/*aplicando estilo na tabela*/
+
+
+/*
+ * STYLE FROM TABLE (Estilo da tabela)
+
+ * PREENCHIMENTO DA MESA(PADDING TABLE):
+
+  - Para controlar o espaço entre a borda e o conteúdo em uma tabela, use a padding propriedade nos elementos <td> e <th>:
+*/
+.conteudo{
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    text-align: left;
+}
+/*
+ * DIVISORES HORIZONTAIS
+
+  - Adicione a border-bottom propriedade a <th> e <td> para divisores horizontais:
+*/
+.coluna_cabecalho{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #ddd
+
+}
+.conteudo{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #ddd
+}
+/* 
+  * TABELA HOVER(TABLE HOVER)
+
+  - USANDO O ESTADO HOVER( AO PASSAR O MOUSE - FLUTUAR)
+  - Use o :hover seletor em <tr> para destacar as linhas da tabela ao passar o mouse:
+*/
+.conteudo:hover{
+    background-color: #f5f5f5;
+}
+/*
+ * TABELA LISTRADAS
+
+  - Para tabelas listradas de zebra, use o nth-child()seletor e adicione um background-color a todas as linhas da tabela par(ou ímpar):
+*/
+.linha:nth-child(even){
+    background-color: #f2f2f2;
+}
+/*
+ * COR DA TABELA
+
+  - O exemplo abaixo especifica a cor de fundo e a cor do texto dos elementos <th>
+*/
+.cabecalho{
+    background-color: #4CAF50;
+    color: white;
+}

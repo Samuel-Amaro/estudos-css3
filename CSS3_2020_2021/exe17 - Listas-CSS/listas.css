@@ -1,0 +1,151 @@
+/*
+ * LISTAS CSS
+
+  # Listas HTML e propriedades da lista CSS
+
+    - Em HTML, existem dois tipos principais de listas:
+
+     - listas não ordenadas (<ul>) - os itens da lista são marcados com marcadores
+     - listas ordenadas (<ol>) - os itens da lista são marcados com números ou letras
+
+    - As propriedades da lista CSS permitem que você:
+
+     - Definir marcadores de item de lista diferentes para listas ordenadas;
+     - Definir marcadores de item de lista diferentes para listas não ordenadas;
+     - Defina uma imagem como o marcador do item da lista;
+     - Adicionar cores de fundo a listas e itens de lista
+*/
+/*
+ * MARCADORES DE ITEM DE LISTA DIFERENTES
+
+  - A list-style-type propriedade especifica o tipo de marcador de item da lista.
+*/
+/*marcadores especificos para tipo de lista não ordenada*/
+.a{
+    list-style-type: circle;
+}
+.b{
+    list-style-type: square;
+}
+/*maracadores para tipo especifico de lista ordenada
+*/
+.c{
+    list-style-type:upper-roman;
+}
+.d{
+    list-style-type:lower-alpha;
+}
+.e{
+    list-style-type: lower-greek;
+}
+.f{
+    list-style-type:lower-latin;
+}
+
+/*
+ * UMA IMAGEN COMO MARCADOR DE ITEM DA LISTA
+  - IMG E DE 16 X 16
+  - A list-style-image propriedade especifica uma imagem como marcador do item da lista
+*/
+#lista_item_img{
+    list-style-image: url('light-bulb.png');
+}
+/*
+ * POSICIONE MARCADORES DE ITEM DA LISTA
+
+  - A list-style-position propriedade especifica a posição dos marcadores de item da lista (marcadores)
+  
+  - inside(dentro);
+  - outside(fora);
+
+  - "list-style-position: outside;" significa que os marcadores estarão fora do item da lista. O início de cada linha de um item da lista será alinhado verticalmente. Este é o padrão:
+
+  - "list-style-position: inside;" significa que os marcadores estarão dentro do item da lista. Como faz parte do item da lista, fará parte do texto e empurrará o texto no início:
+*/
+
+/*ITEM DA LISTA POSICIONADO AO LADO DE FORA DA CAIXA*/
+#position_list{
+    list-style-position: outside;
+}
+/*mostra que os itens da caixa estão de fora*/
+#position_list > li{
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+}
+/*ITEM DA LISTA POSICIONADO DENTRO DA CAIXA*/
+#position_list_2{
+    list-style-position: inside;
+}
+#position_list_2 > li{
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+}
+/*
+ * REMOVER CONFIGURAÇÕES PADRÃO
+
+  - A list-style-type:none propriedade também pode ser usada para remover os marcadores/marcadores. Observe que a lista também tem margem e preenchimento padrão. Para remover isso, adicione margin:0 e padding:0 a <ul> ou <ol>:
+*/
+/*tira configurações padrão da lista*/
+#rem_01{
+    list-style-type: none;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+#rem_02{
+    list-style-type: none;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+/*
+ * LISTA DE ESTILOS COM CORES
+
+  - Também podemos estilizar listas com cores, para torná-las um pouco mais interessantes;
+  - Qualquer coisa adicionada à tag <ol> ou <ul> afeta a lista inteira, enquanto as propriedades adicionadas à tag <li> afetarão os itens individuais da lista:
+*/
+/*aplicando uma cor de fundo e um espaço interno na lista inteira*/
+#estilo_01{
+    background-color: #ff9999;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+/*em cada item da lista não ordenada vai ter uma cor de fundo e um espaço interno de 5px e uma margin de 35px no lado esquerdo para dar um recuo para dentro*/
+#estilo_01 > li {
+    background-color: #ffe5e5;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-left: 35px;
+}
+/*lista ordenada, inteira, vai ter uma cor de fundo, e um espaço interno entre o conteudo e a borda*/
+#estilo_02{
+    background-color: #3399ff;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+/*para cada item da lista ordenada, uma cor de fundo, e um espaço de margin depois da borda */
+#estilo_02 > li {
+    background: #cce5ff;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}

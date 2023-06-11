@@ -1,0 +1,38 @@
+<!--
+    * ELEMENTOS SUBSTITUÍDOS NO LAYOUT
+
+        Ao usar várias técnicas de layout CSS em elementos substituídos, você pode descobrir que eles se comportam de maneira ligeiramente diferente de outros elementos. Por exemplo, em um layout flexível ou de grade, os elementos são esticados por padrão para preencher toda a área. As imagens não serão esticadas e, em vez disso, serão alinhadas ao início da área da grade ou do contêiner flexível.
+
+        Você pode ver isso acontecendo no exemplo abaixo, onde temos um contêiner de grade de duas colunas e duas linhas, que possui quatro itens. Todos os <div> elementos têm uma cor de fundo e são alongados para preencher a linha e a coluna. A imagem, no entanto, não estica.
+
+        Se você está seguindo essas lições em ordem, talvez ainda não tenha visto o layout. Basta ter em mente que os elementos substituídos, quando se tornam parte de um layout de grade ou flex, têm comportamentos padrão diferentes, essencialmente para evitar que sejam esticados de forma estranha pelo layout.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .wrapper{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 20px;
+        }
+        .wrapper > div{
+            background-color: rebeccapurple;
+            border-radius: .5em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <img src="star (4).png" alt="star"/>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+/*
+ * CSS EXTERNO
+   - Com uma folha de estilo externa, você pode alterar a aparência de um site inteiro alterando apenas um arquivo!
+   - Cada página HTML deve incluir uma referência ao arquivo de folha de estilo externo dentro do elemento <link>, dentro da seção head.
+   - Uma folha de estilo externa pode ser escrita em qualquer editor de texto e deve ser salva com uma extensão .css.
+   O arquivo .css externo não deve conter nenhuma tag HTML.
+*/
+body{
+    background-color: lightblue;
+}
+h1{
+    color: navy;
+    margin-left: 20px;
+}

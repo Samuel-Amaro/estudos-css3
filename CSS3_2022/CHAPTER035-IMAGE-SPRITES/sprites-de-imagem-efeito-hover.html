@@ -1,0 +1,143 @@
+<!--
+    * SPRITES DE IMAGEM - EFEITO HOVER
+
+        - Agora queremos adicionar um efeito de foco à nossa lista de navegação.
+
+        - Dica: O :hover seletor pode ser usado em todos os elementos, não apenas em links.
+
+        - Nossa nova imagem ("img_navsprites_hover.gif") contém três imagens de navegação e três imagens para usar para efeitos de foco:
+
+        - Como esta é uma única imagem e não seis arquivos separados, não haverá atraso no carregamento quando um usuário passar o mouse sobre a imagem.
+
+        - Adicionamos apenas três linhas de código para adicionar o efeito hover:
+
+    * EXEMPLO EXPLICADO
+
+        - #home a:hover {background: url('img_navsprites_hover.gif') 0 -45px;} - Para todas as três imagens hover, especificamos a mesma posição de fundo, apenas 45px mais abaixo
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        #navlist{
+            position: relative;
+        }
+
+        #navlist div{
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            /*
+             - posicionado totalmente no topo
+            */
+            top: 0;
+        }
+
+        #navlist div, #navlist a{
+            height: 44px;
+            display: block;
+        }
+
+        #home{
+            /*
+             - posicinamento totalmente a esquerda
+            */
+            left: 0;
+            /*
+             - define a largura do elemento que a imagen sera o fundo
+            */
+            width: 46px;
+            /*
+             -  A background propriedade é uma propriedade abreviada para:
+                background-color
+                background-image
+                background-position
+                background-size
+                background-repeat
+                background-origin
+                background-clip
+                background-attachment
+
+                background-image: url(img_navsprites.gif);
+                background-position: 0 0; -> 0px left-horizontal 0px top-vertical
+            */
+            background: url('img_navsprites.gif') 0 0;
+        }
+        #prev{
+            /*
+             - posicionado 63px a direita, se afasta da esquerda para direita, valor positivo.
+             - 46px widht do #home + algum espaço extra entre os itens para definir o posicionamento
+            */
+            left: 63px;
+            /*
+             - define a largura do elemento
+            */
+            width: 43px;
+            /**
+                background-image: url(img_navsprites.gif);
+                background-position: -47px 0; -> -47px a direita horizontal 0px vertical
+                - #home widht 46px + 1px divisor de linha para definir posicionamento de qual parte da imagen de fundo mostrar
+            */
+            background: url(img_navsprites.gif) -47px 0;
+        }
+        #next{
+            /*
+             - posicionado 129px a direita, se afasta da esquerda para direita, valor positivo.
+             - width 43px #prev + inicio de #prev 63px + expaço extra, para definir o posicionamento
+            */
+            left: 129px;
+            /*
+             - define a largura do elemento
+            */
+            width: 43px;
+            /*
+             - define o posicionamento da imagen de fundo -91px a direita, usando #home width 46px + 1px linha divisão + #prev width 43px + 1 linha de divisão.
+            */
+            background: url(img_navsprites.gif) -91px 0;
+        }
+
+        #home a:hover{
+            /*
+             - especififcando uma imagen de fundo e sua posição inicial, primeiro valor posição horizontal, segundo valor posição vertical
+             - 0px left-horizontal, -45px bottom-vertical, posicionada no inferior.
+             - a unidade de posicionamento vertical foi definida por <a> height: 44px + 1 linha de divisão
+            */
+            background: url('img_navsprites_hover.gif') 0 -45px;
+        }
+        #prev a:hover{
+            /*
+             - especififcando uma imagen de fundo e sua posição inicial, primeiro valor posição horizontal, segundo valor posição vertical
+             -47px left-horizontal, -45px bottom-vertical, posicionada no inferior.
+             - a unidade de posicionamento horizontal foi definida por #prev width 43px + espaço extra, posiconamento vertical <a> height: -44px + 1 linha de divisão
+            */
+            background: url('img_navsprites_hover.gif') -47px -45px;
+        }
+        #next a:hover{
+            /*
+             - especififcando uma imagen de fundo e sua posição inicial, primeiro valor posição horizontal, segundo valor posição vertical
+             -91px left-horizontal, -45px bottom-vertical, posicionada no inferior.
+             - a unidade de posicionamento horizontal foi definida por #prev width 43px + #home width 43px +  espaço extra + 2 linha de divisão, posiconamento vertical <a> height: -44px + 1 linha de divisão
+            */
+            background: url('img_navsprites_hover.gif') -91px -45px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navlist">
+        <div id="home" >
+            <a href="#" target="_blank" rel="next"></a>
+        </div>
+        <div id="prev">
+            <a href="#" target="_blank" rel="next"></a>
+        </div>
+        <div id="next">
+            <a href="#" target="_blank" rel="next"></a>
+        </div>
+    </nav>
+
+</body>
+</html>

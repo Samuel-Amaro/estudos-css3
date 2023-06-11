@@ -1,0 +1,37 @@
+<!--
+    * CSS REGRA : column-rule-width
+
+      - A column-rule-width propriedade especifica a largura da regra entre as colunas:
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplas Colunas</title>
+    <style>
+        div.newspaper{
+            /*o texto no elemento div sera dividido em 3 colunas*/
+            column-count: 3;
+            /*especificando o espaço que e para se ter entre as lacunas das colunas, o espaço que vai haver entre uma coluna e outra*/
+            column-gap: 40px;
+            /*especificando o estilo da regra entre as colunas*/
+            column-rule-style: solid;
+            /*especificando a largura da regra da coluna, a largura da column-rule-style especificada*/
+            column-rule-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Regras de coluna css</h1>
+
+    <p><strong>Exemplo:</strong>especificando a largura da regra da coluna</p>
+
+    <h2>regra da largura da coluna - column-rule-width</h2>
+
+    <div class="newspaper">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores rem ex quaerat velit quasi ipsa assumenda repellat, minus placeat pariatur optio magnam eum, error ab nam, esse ullam. Amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium fugiat delectus itaque excepturi eos veritatis impedit, voluptatum aut laboriosam recusandae accusamus harum ullam, aliquid error repellat velit, ab ea earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis molestiae nesciunt voluptatum! Id culpa quos minima. Ad nihil deleniti accusantium, ut aliquid doloribus ipsa repellendus sit, repellat, ratione libero! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo corrupti earum asperiores debitis quo. Quibusdam omnis, ut vero delectus odio voluptatum corrupti soluta tempore dolorum mollitia iste eos esse ad! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum atque deserunt consectetur consequuntur in debitis sint exercitationem autem porro aperiam! Minus molestias voluptate expedita cumque eos adipisci sunt consequatur ipsum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quaerat fugit quam, soluta totam aspernatur libero unde nemo voluptas praesentium asperiores voluptate quos tempore assumenda impedit beatae, iure accusantium et.</div>
+</body>
+</html>

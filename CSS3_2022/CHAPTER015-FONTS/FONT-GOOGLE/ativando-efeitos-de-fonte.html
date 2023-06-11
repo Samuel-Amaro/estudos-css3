@@ -1,0 +1,39 @@
+<!--
+    * ATIVANDO EFEITOS DE FONTE
+
+        - O Google também ativou diferentes efeitos de fonte que você pode usar.
+
+        - Primeiro adicione à API do Google e, em seguida, adicione um nome de classe especial ao elemento que usará o efeito especial. O nome da classe sempre começa e termina com o .effect=effectname font-effect- effectname
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--
+        - link para um recurso externo de font google
+        - api de fontes do google
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <style type="text/css">
+        body{
+            /*
+             - a propriedade font-family e usada para especificar a fonte de um texto.
+             - a fonte Sofia e da familia de fontes sans-serif(fontes sem serifa que possui um desgin minimalista e moderno).
+            */
+            font-family: 'Sofia', sans-serif;
+            /*usando a propriedade font-size para especificar um tamanho absoluto, um tamanho especifico de fonte em px*/
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        - elementos que usarão o efeito especial da fonte possui um nome de classe
+    -->
+    <h1 class="font-effect-fire">Sofia on Fire</h1>
+    <p class="font-effect-fire">Lorem ipsum dolor sit amet.</p>
+    <p class="font-effect-fire">1234567890</p>
+    
+</body>
+</html>

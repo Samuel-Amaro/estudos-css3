@@ -1,0 +1,102 @@
+/**
+ 
+ * * IMAGENS CSS DE BORDA
+
+     - Com a border-image propriedade CSS, você pode definir uma imagem a ser usada como borda ao redor de um elemento.
+
+ * * PROPRIEDADE CSS BORDER-IMAGE
+    
+    - A border-image propriedade CSS permite que você especifique uma imagem a ser usada em vez da borda normal ao redor de um elemento.
+
+    - A propriedade tem três partes:
+
+        1. a imagen a ser usada como borda.
+        2. onde cortar a imagen.
+        3. defina se as seções do meio devem ser repetidas ou alongadas;
+    
+    - A border-image propriedade pega a imagem e a divide em nove seções, como um jogo da velha. Em seguida, ele posiciona os cantos nos cantos e as seções do meio são repetidas ou esticadas conforme você especificar.
+
+    - Nota: Para border-image funcionar, o elemento também precisa da border propriedade definida!
+**/
+
+/** exemplo de border-image propriedade css **/
+p.borderimg{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: transparent;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    /*definindo uma a imagen com borda do elemento*/
+    border-image: url(border.png) 30 round;
+}
+
+/** exemplo em Aqui, as seções do meio da imagem são esticadas para criar a borda: **/
+p.borderimg2{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: transparent;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    /*definindo uma a imagen com borda do elemento*/
+    border-image: url(border.png) 30 stretch;
+}
+
+/*
+ - Dica: A border-image propriedade é na verdade um atalho para os border-image-source, border-image-slice, border-image-width, border-image-outset e border-image-repeat propriedades.
+*/
+
+/** EXEMPLOS3: CSS border-image - diferentes valores de fatia. Valores de corte diferentes mudam completamente a aparência da borda: **/
+p.borderimg3{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: transparent;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    /*definindo uma a imagen com borda do elemento*/
+    border-image: url(border.png) 50 round;
+}
+
+p.borderimg4{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: transparent;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    /*definindo uma a imagen com borda do elemento*/
+    border-image: url(border.png) 20% round;
+}
+
+p.borderimg5{
+    border-top: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: transparent;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    /*definindo uma a imagen com borda do elemento*/
+    border-image: url(border.png) 30% round;
+}

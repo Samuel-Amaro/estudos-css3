@@ -1,0 +1,63 @@
+<!--
+    Nesse exemplo final, nós misturamos unidades de medida fixa com as de fração. A primeira coluna tem 500px, que será fixa. O espaço disponível restante será dividido em três partes, sendo uma parte para a segunda coluna e mais duas partes para a terceira coluna.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+        }
+
+        .wrapper{
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+        }
+
+        .wrapper > div {
+            border: 2px solid rgb(233,171,88);
+            border-radius: 5px;
+            background-color: rgba(233,171,88,.5);
+            padding: 1em;
+            color: #d9480f;
+        }
+
+        /**Grid Container - todos os elementos filhos diretos daquele container se transformam em grid items.*/
+        .wrapper{
+            /*a declaração abaixo cria-se um grid container*/
+            display: grid;
+            /*
+             - para definir colunas no grid, usar a propriedade grid-template-columns.
+             - Isso define o grid tracks(faixas de grade)
+             - cria uma grid com três colunas, uma com medida fixa, as outras duas com medida flexivel.
+             - cria-se 2 espaços de tamanhos diferentes, que aumentam e diminuem de acordo com o espaço disponivel. e uma coluna e de tamanho fixo, nem diminue e nem cresce e fixa.
+             - a primeira coluna sera 500px medida fixa, nem cresce e diminui.
+             - a segunda coluna tera 1fr, de medida flexivel, tera 1 fração do espaço disponivel no conteiner grid, ela aumenta e diminue de acordo com o espaço disponivel.
+             - a terceira coluna tera 2fr de medida flexivel, 2fr e 2 fração do espaço disponivel no container grid, ela aumenta e diminue de acordo com o espaço disponivel.
+             -  Os itens filhos serão dispostos nessa grade, um em cada célula da grade.
+            */
+            grid-template-columns: 500px 1fr 2fr;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div>Um</div>
+        <div>Dois</div>
+        <div>Três</div>
+        <div>Quatro</div>
+        <div>Cinco</div>
+    </div>
+
+</body>
+</htm

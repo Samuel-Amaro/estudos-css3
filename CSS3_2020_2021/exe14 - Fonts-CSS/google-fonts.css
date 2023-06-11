@@ -1,0 +1,36 @@
+/*
+ * GOOGLE FONTS CSS
+
+    # FONTES DO GOOGLE
+
+      - Se você não quiser usar nenhuma das fontes padrão em HTML, pode usar o Google Fonts.
+      - O Google Fonts é de uso gratuito e tem mais de 1000 fontes para você escolher.
+*/
+body{
+    font-family: "Sofia",sans-serif;
+}
+h2.f1{
+    font-family: "Trirong",serif;
+}
+p.f1{
+    font-family: "Trirong",serif;
+}
+h2.f2{
+    font-family: "Audiowide",sans-serif;
+}
+p.f2{
+    font-family: "Audiowide",sans-serif;
+}
+/*
+ - Nota: Ao especificar uma fonte em CSS, sempre liste pelo menos uma fonte substituta (para evitar comportamentos inesperados). Portanto, também aqui você deve adicionar uma família de fontes genéricas (como serif ou sans-serif) ao final da lista.
+*/
+/*
+ * ESTILO DE FONTES DO GOOGLE 
+
+  - Claro que você pode estilizar Google Fonts como quiser, com CSS!
+*/
+body{
+    font-family: "Sofia",sans-serif;
+    font-size: 30px; /*tamanho da fonte*/
+    text-shadow: 3px 3px 3px #ababab;
+}

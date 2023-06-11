@@ -1,0 +1,66 @@
+<!--
+    * VALOR HSLA
+
+        - Os valores de cor HSLA são uma extensão dos valores de cor HSL com um canal alfa - que especifica a opacidade de uma cor.
+
+        - Um valor de cor HSLA é especificado com:
+
+            hsla(matiz, saturation, luminosidade, alfa);
+
+        - O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente):
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="witdh=device-width, initial-scale=1"/>
+    <title>hsla</title>
+</head>
+<body>
+
+    <h1>Faça cores transparentes com HSLA</h1>
+
+    <!--
+        - CSS INLINE(embutido)
+        - O style atributo é usado para adicionar estilos a um elemento, como cor, fonte, tamanho e muito mais.
+        - usando o css inline para aplicar um estilo unico a somente ao elemento h2 abaixo
+        - usando o atributo style e como valor as propriedades css, formando declarações css separadas por (;)
+        - adicionando um cor de fundo ao elementos h2 usando a propriedade background-color, especificando as cores por meio de valores hsla
+        - especificando a cor por meio do valor hsl usando a forma hsl(matiz, saturação, luminosidade, alfa).
+        - a matiz e um grau na roda de cor, a saturação e um valor percentual, a luminosidade e uma porcentagem também, o alfa e um numero 0.0 e 1.0 para especificar opacidade(transparencia da cor);
+        - matiz no valor 9, 100% de saturação e a cor completa nada de tons de cinza, 64% luminosidade(claridade) significa dar 64% de luz(claridade, leveza) a cor. e o valor 0, para o alfa significa totalmente transparente.
+    -->
+    <h2 style="background-color: hsla(9, 100%, 64%, 0);">hsla(9, 100%, 64%, 0);</h1>
+    <!--
+        - especificando a cor por meio do valor hsl usando a forma hsl(matiz, saturação, luminosidade).
+        - a matiz e um grau na roda de cor, a saturação e um valor percentual, a luminosidade e uma porcentagem também;
+        - matiz no valor 9, 100% de saturação e a cor completa nada de tons de cinza, 64% luminosidade(claridade) significa dar 64% de luz(claridade, leveza) a cor. e o valor 0.2, para o alfa significa 0.2 transparencia na cor.
+    -->
+    <h2 style="background-color: hsla(9, 100%, 64%, 0.2);">hsla(9, 100%, 64%, 0.2);</h2>
+    <!--
+        - especificando a cor por meio do valor hsl usando a forma hsl(matiz, saturação, luminosidade).
+        - a matiz e um grau na roda de cor, a saturação e um valor percentual, a luminosidade e uma porcentagem também;
+        - matiz no valor 9, 100% de saturação e a cor completa nada de tons de cinza, 64% luminosidade(claridade) significa dar 64% de luz(claridade, leveza) a cor. e o valor 0.4, para o alfa significa 0.4 transparencia na cor.
+    -->
+    <h2 style="background-color: hsl(9, 100%, 64%, 0.4);">hsl(9, 100%, 64%, 0.4);</h2>
+    <!--
+        - especificando a cor por meio do valor hsl usando a forma hsl(matiz, saturação, luminosidade).
+        - a matiz e um grau na roda de cor, a saturação e um valor percentual, a luminosidade e uma porcentagem também;
+        - matiz no valor 9, 100% de saturação e a cor completa nada de tons de cinza, 64% luminosidade(claridade) significa dar 64% de luz(claridade, leveza) a cor. e o valor 0.6, para o alfa significa 0.6 transparencia na cor.
+    -->
+    <h2 style="background-color: hsl(9, 100%, 64%, 0.6);">hsl(9, 100%, 64%, 0.6);</h2>
+    <!--
+        - especificando a cor por meio do valor hsl usando a forma hsl(matiz, saturação, luminosidade).
+        - a matiz e um grau na roda de cor, a saturação e um valor percentual, a luminosidade e uma porcentagem também;
+        - matiz no valor 9, 100% de saturação e a cor completa nada de tons de cinza, 64% luminosidade(claridade) significa dar 64% de luz(claridade, leveza) a cor. e o valor 0.8, para o alfa significa 0.8 de transparencia na cor.
+    -->
+    <h2 style="background-color: hsl(0, 100%, 64%, 0.8);">hsl(0, 100%, 64%, 0.8);</h2>
+    <!--
+        - especificando a cor por meio do valor hsl usando a forma hsl(matiz, saturação, luminosidade).
+        - a matiz e um grau na roda de cor, a saturação e um valor percentual, a luminosidade e uma porcentagem também;
+        - matiz no valor 9, 100% de saturação e a cor completa nada de tons de cinza, 64% luminosidade(claridade) significa dar 64% de luz(claridade, leveza) a cor. e o valor 1, para o alfa significa nada transparencia na cor.
+    -->
+    <h2 style="background-color: hsl(9, 100%, 64%, 1);">hsl(9, 100%, 64%, 1);</h2>
+    
+</body>
+</html>

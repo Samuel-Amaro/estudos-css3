@@ -1,0 +1,76 @@
+<!--
+    * POSITION FIXED(POSICIONAMENTO FIXO)
+
+        Vejamos agora o posicionamento fixo. Isso funciona exatamente da mesma maneira que o posicionamento absoluto, com uma diferença fundamental: enquanto o posicionamento absoluto(absolute) fixa um elemento no lugar em relação ao seu ancestral posicionado mais próximo (o bloco contendo inicial, se não houver um), o posicionamento fixo(fixed) geralmente fixa um elemento em coloque em relação à parte visível da viewport. (Uma exceção a isso ocorre se um dos ancestrais do elemento for um bloco de conteúdo fixo porque sua propriedade transform tem um valor diferente de none.) Isso significa que você pode criar itens de interface do usuário úteis que são fixos no local, como menus de navegação persistentes que são sempre visível, não importa o quanto a página rola.
+
+        Vamos montar um exemplo simples para mostrar o que queremos dizer. Antes de tudo, exclua as regras p:nth-of-type(1) e existentes .positioned do seu CSS.
+
+        O top: 0; é necessário para fazê-lo ficar na parte superior da tela. Damos ao título a mesma largura que a coluna de conteúdo e, em seguida, um fundo branco e algum preenchimento e margem para que o conteúdo não fique visível abaixo dele.
+
+        Se você salvar e atualizar, verá um pequeno efeito divertido do título permanecer fixo - o conteúdo parece rolar para cima e desaparecer abaixo dele. Mas observe como parte do conteúdo é inicialmente recortado sob o título. Isso ocorre porque o título posicionado não aparece mais no fluxo de documentos, de modo que o restante do conteúdo é movido para o topo. Poderíamos melhorar isso movendo os parágrafos um pouco para baixo. Podemos fazer isso definindo alguma margem superior no primeiro parágrafo. Adicione isso agora:
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Basic document flow</title>
+
+    <style type="text/css">
+        body {
+            width: 500px;
+            margin: 0 auto;
+            height: 1400px;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        h1{
+            /*
+             -  O posicionamento permite que você retire elementos do fluxo normal de documentos e faça com que eles se comportem de maneira diferente.
+             - Para ativar um tipo específico de posicionamento em um elemento, usamos a position propriedade.
+             - o posicionamento fixo(fixed) geralmente fixa um elemento em coloque em relação à parte visível da viewport.
+             -  colocá-lo no topo da janela de visualização.
+            */
+            position: fixed;
+            /*
+             - o elemento não se afasta da viewport.
+             - O top: 0;é necessário para fazê-lo ficar na parte superior da tela.
+            */
+            top: 0;
+            width: 500px;
+            margin-top: 0;
+            background: white;
+            padding: 10px;
+        }
+
+        p:nth-of-type(1){
+            margin-top: 60px;
+        }
+        
+    </style>
+  </head>
+  <body>
+
+    <h1>Fluxo básico de documentos</h1>
+
+    <p>Sou um elemento básico de nível de bloco. Meus elementos de nível de bloco adjacentes ficam em novas linhas abaixo de mim.</p>
+
+    <p class="positioned">Por padrão, abrangemos 100% da largura de nosso elemento pai e nossa altura é tão alta quanto nosso conteúdo filho. Nossa largura e altura totais são nosso conteúdo + preenchimento + largura/altura da borda.</p>
+
+    <p>Estamos separados por nossas margens. Por causa do recolhimento da margem, somos separados pela largura de uma de nossas margens, não de ambas.</p>
+
+    <p>elementos inline <span>como este</span> e <span>este</span> ficam na mesma linha um do outro, e nós de texto adjacentes, se houver espaço na mesma linha. Elementos inline transbordantes <span>se encaixam em uma nova linha, se possível — como esta contendo texto</span>, ou apenas vá para uma nova linha se não, assim como esta imagem fará: <img src="long.jpg "></p>
+
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!--
+    * PROPRIEDADE CSS JUSTIFY-CONTENT(JUSTIFICAR O CONTEÚDO)
+
+        A propriedade CSS justify-content define como o navegador distribui o espaço entre e ao redor dos itens de conteúdo ao longo do eixo principal(main axis) de um contêiner flexível e do eixo embutido(inline axis) de um contêiner de grade.
+
+    * SINTAX
+
+        /*ALINHAMENTO POSICIONAL*/
+
+        /* Embala os itens ao redor do centro */
+        justify-content: center;   
+
+        /* Embala os itens desde o início */
+        justify-content: start;  
+
+        /* Empacotar itens do final */    
+        justify-content: end;        
+
+        /* Embalar itens flexíveis desde o início */
+        justify-content: flex-start; 
+
+        /* Empacotar itens flexíveis do final */
+        justify-content: flex-end; 
+
+        /* Embala os itens da esquerda */  
+        justify-content: left;      
+
+        /* Embala os itens da direita */ 
+        justify-content: right;      
+
+        /* Alinhamento da linha de base */
+        /* justify-content não aceita valores de linha de base */
+
+        /* ALINHAMENTO NORMAL */
+        justify-content: normal;
+
+        /*ALINHAMENTO DISTRIBUIDO*/
+
+        /* Distribuir os itens uniformemente O primeiro item está alinhado com o início, o último está alinhado com o final */
+        justify-content: space-between;
+
+        /* Distribuir os itens uniformemente Os itens têm um espaço de metade do tamanho em cada extremidade */
+        justify-content: space-around; 
+
+        /* Distribuir os itens uniformemente Os itens têm espaço igual ao redor deles*/
+        justify-content: space-evenly;  
+
+        /* Distribuir os itens uniformemente Estique itens de tamanho 'automático' para caber o recipiente */
+        justify-content: stretch;       
+
+        /*Alinhamento de estouro(OVERLFOW)*/
+        justify-content: safe center;
+        justify-content: unsafe center;
+
+        /* Valores Globais*/
+        justify-content: inherit;
+        justify-content: initial;
+        justify-content: revert;
+        justify-content: revert-layer;
+        justify-content: unset;
+
+    * VALORES
+
+        start: Os itens são empacotados alinhados uns com os outros em direção à borda inicial do contêiner de alinhamento no eixo principal.
+
+        end: Os itens são embalados alinhados uns com os outros em direção à borda final do contêiner de alinhamento no eixo principal.
+        
+        flex-start: Os itens são embalados alinhados uns com os outros em direção à borda do contêiner de alinhamento, dependendo do lado de partida principal do contêiner flexível. Isso se aplica apenas a itens de layout flexível. Para itens que não são filhos de um contêiner flexível, esse valor é tratado como start.
+
+        flex-end: Os itens são embalados alinhados uns com os outros em direção à borda do contêiner de alinhamento, dependendo do lado da extremidade principal do contêiner flexível. Isso se aplica apenas a itens de layout flexível. Para itens que não são filhos de um contêiner flexível, esse valor é tratado como end.
+
+        center: Os itens são embalados alinhados uns com os outros em direção ao centro do contêiner de alinhamento ao longo do eixo principal.
+
+        left: Os itens são embalados alinhados uns com os outros em direção à borda esquerda do contêiner de alinhamento. Se o eixo da propriedade não for paralelo ao eixo embutido, esse valor se comportará como start.
+
+        right: Os itens são embalados alinhados uns com os outros em direção à borda direita do contêiner de alinhamento no eixo apropriado. Se o eixo da propriedade não for paralelo ao eixo embutido, esse valor se comportará como start.
+
+        normal: Os itens são embalados em sua posição padrão como se nenhum justify-content valor fosse definido. Esse valor se comporta como stretch em contêineres de grade e flex.
+
+        baseline first baseline last baseline: Especifica a participação no alinhamento da primeira ou última linha de base: alinha a linha de base de alinhamento do primeiro ou último conjunto de linha de base da caixa com a linha de base correspondente no primeiro ou último conjunto de linha de base compartilhado de todas as caixas em seu grupo de compartilhamento de linha de base. O alinhamento de fallback para first baseline é start, aquele para last baseline é end.
+
+        space-between: Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo principal. O espaçamento entre cada par de itens adjacentes é o mesmo. O primeiro item está alinhado com a borda de início principal e o último item está alinhado com a borda de extremidade principal.
+
+        space-around: Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo principal. O espaçamento entre cada par de itens adjacentes é o mesmo. O espaço vazio antes do primeiro e depois do último item é igual a metade do espaço entre cada par de itens adjacentes.
+
+        space-evenly: Os itens são distribuídos uniformemente dentro do contêiner de alinhamento ao longo do eixo principal. O espaçamento entre cada par de itens adjacentes, a borda inicial principal e o primeiro item, e a borda final principal e o último item, são exatamente iguais.
+
+        stretch: Se o tamanho combinado dos itens ao longo do eixo principal for menor que o tamanho do container de alinhamento, qualquer auto item de tamanho terá seu tamanho aumentado igualmente (não proporcionalmente), respeitando as restrições impostas por max-height/ max-width(ou funcionalidade equivalente), então que o tamanho combinado preencha exatamente o contêiner de alinhamento ao longo do eixo principal. Nota: stretch não é suportado por caixas flexíveis (flexbox).
+
+        safe: Usado junto com uma palavra-chave de alinhamento. Se a palavra-chave escolhida significar que o item estoura no contêiner de alinhamento causando perda de dados, o item será alinhado como se o modo de alinhamento fosse start.
+
+        unsafe: Usado junto com uma palavra-chave de alinhamento. Independentemente dos tamanhos relativos do item e do contêiner de alinhamento, e independentemente de ocorrer estouro que causa perda de dados, o valor de alinhamento fornecido é respeitado.
+-->

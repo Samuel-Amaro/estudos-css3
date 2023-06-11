@@ -1,0 +1,50 @@
+<!--
+    * MARGIN COLLAPSING(RECOLHIMENTO DA MARGEM)
+
+        Uma coisa importante para entender sobre margens é o conceito de colapso de margem. Se você tiver dois elementos cujas margens se toquem e ambas as margens forem positivas, essas margens se combinarão para se tornar uma margem, que é o tamanho da maior margem individual. Se uma ou ambas as margens forem negativas, a quantidade de valor negativo será subtraída do total. 
+
+        No exemplo abaixo, temos dois parágrafos. O parágrafo superior tem um margin-bottom de 50 pixels. O segundo parágrafo tem um margin-top de 30 pixels. As margens foram recolhidas juntas, de modo que a margem real entre as caixas é de 50 pixels e não o total das duas margens. 
+
+        Você pode testar isso configurando o margin-topdo parágrafo dois para 0. A margem visível entre os dois parágrafos não será alterada — ela mantém os 50 pixels definidos no bottom-margindo parágrafo um. Se você definir como -10px, verá que a margem geral se torna 40px - ela subtrai dos 50px. 
+
+        Há uma série de regras que determinam quando as margens caem e não caem. 
+
+        A principal coisa a lembrar por enquanto é que o colapso da margem é uma coisa que acontece. Se você está criando espaço com margens e não obtém o espaço esperado, provavelmente é isso que está acontecendo. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - exemplo de margin collapsing, duas margens se tocando, e se o valor dessas margens forem positivos elas se combinarão para se tornar um  margen, que sera o tamanho da maior margen individual
+        */
+        .one{
+            border: 5px solid rebeccapurple;
+            background-color: lightgray;
+            /*
+             - A margem é um espaço invisível ao redor de sua caixa. Ele empurra outros elementos para longe da caixa. As margens podem ter valores positivos ou negativos.
+             - definindo uma margin individual no lado inferior do elemento de 50px, cria uma espaço ao redor da caixa no lado inferior de 50px
+            */
+            margin-bottom: 50px;
+        }
+        .two{
+            border: 5px solid rebeccapurple;
+            background-color: lightgray;
+            /*
+             - definindo uma margin individual no lado superior do elemento, cria uma espaço ao redor da caixa no lado superior de 30px
+            */
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p class="one box">Eu sou o parágrafo um. </p>
+        <p class="two box">Eu sou o parágrafo dois. </p>
+    </div>
+
+</body>
+</html>

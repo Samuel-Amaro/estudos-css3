@@ -1,0 +1,75 @@
+/*
+ * TAMANHO DA FONTE CSS (FONT SIZE)
+
+  - A font-size propriedade define o tamanho do texto.
+  - Ser capaz de gerenciar o tamanho do texto é importante em web design. No entanto, você não deve usar ajustes de tamanho de fonte para fazer com que os parágrafos se pareçam com títulos ou que os cabeçalhos pareçam parágrafos.
+  - O valor do tamanho da fonte pode ser um tamanho absoluto ou relativo:
+
+   - tamanho absoluto:
+     - Define o texto para um tamanho especificado;
+     - Não permite que o usuário altere o tamanho do texto em todos os navegadores (ruim por motivos de acessibilidade)
+     - O tamanho absoluto é útil quando o tamanho físico da saída é conhecido;
+    
+   - tamanho relativo:
+     - Define o tamanho em relação aos elementos circundantes;
+     - Permite ao usuário alterar o tamanho do texto nos navegadores
+*/
+/*
+ * FONT SIZE EM PIXELS
+
+  - Definir o tamanho do texto com pixels oferece controle total sobre o tamanho do texto;
+  - Se você usar pixels, ainda poderá usar a ferramenta de zoom para redimensionar a página inteira.
+*/
+h2.px{
+    font-size: 40px;
+}
+p.px{
+    font-size: 30px;
+}
+/*
+ * FONT SIZE COM (em)
+ 
+  - Para permitir que os usuários redimensionem o texto (no menu do navegador), muitos desenvolvedores usam (em) vez de (pixels).
+  - 1em é igual ao tamanho da fonte atual. O tamanho de texto padrão em navegadores é 16px. Portanto, o tamanho padrão de 1em é 16px.
+  - O tamanho pode ser calculado de pixels para em usando esta fórmula: pixels / 16 = em
+*/
+h2.em{
+    font-size: 2.5em; /*40px / 16em = 2.5em*/
+}
+p.em{
+    font-size: 0.875em; /*14px / 16em = 0.875em*/
+}
+/*
+ - No exemplo acima, o tamanho do texto em em é o mesmo do exemplo anterior em pixels. Porém, com o tamanho em, é possível ajustar o tamanho do texto em todos os navegadores.
+*/
+/*
+ * USANDO COMBINAÇÃO DE PERCENT(PORCENTAGEM) e (em)
+  - A solução que funciona em todos os navegadores é definir um tamanho de fonte padrão em porcentagem para o elemento <body>:
+*/
+body{
+    font-size: 100%;
+}
+h2.combinado{
+    font-size: 2.5em;
+}
+p.combinado{
+    font-size: 0.875em;
+}
+/*
+ - Nosso código agora funciona muito bem! Ele mostra o mesmo tamanho de texto em todos os navegadores e permite que todos ampliem ou redimensionem o texto!
+*/
+/*
+ * TAMANHO DE FONTE RESPONSIVO
+
+  - O tamanho do texto pode ser definido com uma vw unidade, o que significa "largura da janela de visualização".
+  - Dessa forma, o tamanho do texto seguirá o tamanho da janela do navegador:
+*/
+h2.responsivo{
+    font-size: 10vw;
+}
+p.responsivo{
+    font-size: 10vw;
+}
+/*
+ - Viewport é o tamanho da janela do navegador. 1vw = 1% da largura da janela de visualização. Se a janela de visualização tiver 50 cm de largura, 1vw é 0,5 cm.
+*/

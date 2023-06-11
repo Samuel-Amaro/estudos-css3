@@ -1,0 +1,174 @@
+/*
+ * OPACIDADE/TRASPARÊNCIA - OPACITY/TRASPARENCY
+
+  - A opacity propriedade especifica a opacidade/transparência de um elemento.
+*/
+
+/*
+ * IMAGEN TRASPARENTE
+
+  - A opacity propriedade pode assumir um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
+*/
+
+/*no elemento img*/
+img.opacidade-meio{
+    /*opacidade da imagen*/
+    opacity: 0.5;
+    /*altura da imagen*/
+    height: 100px;
+    /*largura da imagen*/
+    width: 100px;
+}
+img.opacidade-um-quarto{
+    /*opacidade da imagen*/
+    opacity: 0.2;
+    /*altura da imagen*/
+    height: 100px;
+    /*largura da imagen*/
+    width: 100px;
+}
+
+/************************************************************/
+
+/*
+ * EFEITO DE FOCO TRASPARENTE
+
+  - A opacity propriedade geralmente é usada junto com o :hover seletor para alterar a opacidade ao passar o mouse:
+*/
+.img-trasparente{
+  opacity: 0.5;
+}
+/*usando o seletor de estado, junto com o elemento img, ao passar o mouse por cima da imagen ela volta para o estado de opacidade padrão*/
+.img-trasparente:hover{
+  /*opacidade/trasparencia da imagen*/
+  opacity: 1.0;
+}
+
+/**********************************************/
+
+/*
+ * CAIXA TRASPARENTE
+
+  - Ao usar a opacity propriedade para adicionar transparência ao plano de fundo de um elemento, todos os seus elementos filhos herdam a mesma transparência. Isso pode tornar o texto dentro de um elemento totalmente transparente difícil de ler:
+*/
+
+
+/*elemento div - bloco - conteiner*/
+div{
+  /*cor de fundo*/
+  background-color: #4CAF50;
+  /*espaço interno dentro do elemento*/
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+/*elemento div - bloco - conteiner*/
+div.primeiro{
+  /*trasparencia/opacidade*/
+  opacity: 0.1;
+}
+/*elemento div - bloco - conteiner*/
+div.segundo{
+  /*trasparencia/opacidade*/
+  opacity: 0.3;
+}
+/*elemento div - bloco - conteiner*/
+div.terceiro{
+  /*trasparencia/opacidade*/
+  opacity: 0.6;
+}
+
+/***********************************************/
+
+/*
+ * TRASPARÊNCIA USANDO RGBA
+
+  - Se você não quiser aplicar opacidade aos elementos filhos, como em nosso exemplo acima, use os valores de cor RGBA . O exemplo a seguir define a opacidade da cor de fundo e não do texto:
+
+  - Você aprendeu em nosso Capítulo Cores CSS , que pode usar RGB como um valor de cor. Além de RGB, você pode usar um valor de cor RGB com um canal alfa (RGBA) - que especifica a opacidade de uma cor.
+
+  - Um valor de cor RGBA é especificado com: rgba (vermelho, verde, azul, alfa ). O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (totalmente opaco).
+
+  - Dica: você aprenderá mais sobre cores RGBA em nosso capítulo Cores CSS 
+*/
+
+/*elemento de bloco - conteiner - caixa*/
+div.padrao_rgba{
+  /*cor de fundo*/
+  background-color: rgb(76, 175, 80);
+  /*espaço interno dentro do elemento*/
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  /*o elemento não quebra linha, para o proximo elemento se posicionar, fica todos os elementos de tipo div, na mesma linha*/
+  display: inline-block;
+}
+/*elemento de bloco - conteiner - caixa*/
+div.primeiro_rgba{
+  /*cor de fundo - usando rgba(red - green - blue - alfa(trasparencia))*/
+  background-color: rgb(76, 175, 80, 0.1);
+}
+/*elemento de bloco - conteiner - caixa*/
+div.segundo_rgba{
+  /*cor de fundo - usando rgba(red - green - blue - alfa(trasparencia))*/
+  background-color: rgb(76, 175, 80, 0.3);
+}
+/*elemento de bloco - conteiner - caixa*/
+div.terceiro_rgba{
+  /*cor de fundo - usando rgba(red - green - blue - alfa(trasparencia))*/
+  background-color: rgb(76, 175, 80, 0.6);
+}
+
+/************************************************/
+
+/*
+ * TEXTO EM CAIXA TRASPARENTE
+
+  - 
+*/
+
+/*elemento div - bloco - conteier*/
+div.fundo{
+   /*fundo - com imagen de fundo e borda*/
+   background: url(flor.jpg) repeat;
+   /*preenchimento*/
+   border-top: 2px;
+   border-right: 2px;
+   border-bottom: 2px;
+   border-left: 2px;
+   border-style: solid;
+   border-color: black;
+}
+
+/*elemento div*/
+div.caixa_trasparence{
+  /*espaço externo ao redor da caixa*/
+  margin-top: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  /*fundo*/
+  background-color: #ffffff;
+  /*preenchimento*/
+  border-top: 2px;
+  border-right: 2px;
+  border-bottom: 2px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: black;
+  /*opacidade/trasparencia*/
+  opacity: 0.6;
+}
+
+/*elemento p*/
+div.caixa_trasparence > p{
+  /*espaço externo ao redor da caixa do elemento*/
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}

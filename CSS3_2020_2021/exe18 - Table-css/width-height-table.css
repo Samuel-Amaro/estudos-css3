@@ -1,0 +1,34 @@
+/*
+ * LARGURA E ALTURA DA TABELA(HEIGHT AND WIDTH FROM TABLE)
+
+  - A largura e a altura de uma tabela são definidas pelas propriedades widthe height;
+  - O exemplo abaixo define a largura da tabela em 100% e a altura dos elementos <th> em 70 px:
+*/
+table{
+    width: 100%; /*largura total*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: blue;
+}
+th{
+    height: 70px; /*altura do cabeçalho da tabela*/
+}
+table > tr,th,td{
+    width: 100%; /*largura total*/
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color: blue;
+}
+/*uma tabela que deve ocupar somente metade da pagina*/
+.mt{
+    width: 50%;
+}
+th{
+    height: 70px; /*altura do cabeçalho da tabela*/
+}

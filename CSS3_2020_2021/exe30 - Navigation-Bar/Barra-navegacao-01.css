@@ -1,0 +1,33 @@
+/*
+ * BARRA DE NAVEGAÇÃO CSS - CSS NAVIGATION BAR
+
+ * BARRAS DE NAVEGAÇÃO
+
+    - Ter uma navegação fácil de usar é importante para qualquer site.
+    - Com CSS, você pode transformar menus HTML enfadonhos em barras de navegação bonitas.
+*/
+
+/*
+ * BARRA DE NAVEGAÇÃO == LISTA DE LINKS
+
+  - Uma barra de navegação precisa de HTML padrão como base.
+
+  - Em nossos exemplos, construiremos a barra de navegação a partir de uma lista HTML padrão.
+
+  - Uma barra de navegação é basicamente uma lista de links, portanto, usar os elementos <ul> e <li> faz todo o sentido:
+*/
+/*elemento lista não ordenada*/
+ul.links-navigation{
+    /*lista sem estilo*/
+    list-style-type: none;
+    /*tira todo espaço externo ao redor da lista, da borda para fora*/
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    /*tira todo espaço interno da lista, da borda para o conteudo*/
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}

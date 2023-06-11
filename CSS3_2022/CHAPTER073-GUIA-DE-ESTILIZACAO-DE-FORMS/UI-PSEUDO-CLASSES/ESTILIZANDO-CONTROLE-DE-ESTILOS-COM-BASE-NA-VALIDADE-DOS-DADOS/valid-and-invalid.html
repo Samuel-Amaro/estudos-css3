@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+          font-family: 'Josefin Sans', sans-serif;
+          margin: 20px auto;
+          max-width: 460px;
+        }
+  
+        fieldset {
+          padding: 10px 30px 0;
+        }
+  
+        legend {
+          color: white;
+          background: black;
+          padding: 5px 10px;
+        }
+  
+        fieldset > div {
+          margin-bottom: 20px;
+          display: flex;
+          flex-flow: row wrap;
+        }
+  
+        button, label, input {
+          display: block;
+          font-family: inherit;
+          font-size: 100%;
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 5px;
+          height: 30px;
+        }
+  
+        input {
+          box-shadow: inset 1px 1px 3px #ccc;
+          border-radius: 5px;
+        }
+  
+        /*
+         - quando usuario passar o mouse sobre o input ou quando ele receber o foco nele
+        */
+        input:hover, input:focus {
+          background-color: #eee;
+        }
+  
+        /**CSS para fornecer os indicadores labels, valid e invalid**/
+        input + span {
+          position: relative;
+        }
+        
+        /*se um elemento input possui o atributo required especificado, e ele tiver um span elemento como irmão sendo o proximo elemento, adicionaremos o conteudo "required" depois do conteudo original do span*/
+        input:required + span::after {
+          font-size: 0.7rem;
+          position: absolute;
+          content: "required";
+          color: white;
+          background-color: black;
+          padding: 5px 10px;
+          top: -26px;
+          left: -70px;
+        }
+        
+        input + span::before {
+          position: absolute;
+          right: -20px;
+          top: 5px;
+        }
+  
+        /*
+         - quando um elemento input possuir um conteudo não valido, aplica pseudo classe invalid.
+        */
+        input:invalid {
+          border: 2px solid red;
+        }
+  
+        /*
+         - quando um elemento input possuir um conteudo não valido , aplica pseudo classe invalid.
+         - e ele tiver um span elemento como irmão proximo, adicionaremos antes do conteudo original dele um indicador de conteudo invalido
+        */
+        input:invalid + span::before {
+          content: '✖';
+          color: red;
+        }
+        
+        /*
+         - quando um elemento input possuir um conteudo valido com suceso, aplica pseudo classe :valid.
+         - e ele tiver um span elemento como irmão proximo, adicionaremos antes do conteudo original dele um indicador de conteudo valido
+        */
+        input:valid + span::before {
+          content: '✓';
+          color: green;
+        }
+  
+        button {
+          width: 60%;
+          margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <fieldset>
+            <legend>Feedback form</legend>
+            <p>Required fields are labelled with "required".</p>
+            <div>
+                <label for="fname">First name: </label>
+                <input id="fname" name="fname" type="text" required>
+                <!--
+                    - temos <span>s extras para gerar conteúdo, que usaremos para fornecer indicadores de dados válidos/inválidos:
+                -->
+                <span></span>
+            </div>
+            <div>
+                <label for="lname">Last name: </label>
+                <input id="lname" name="lname" type="text" required>
+                <span></span>
+            </div>
+            <div>
+                <label for="email">Email address (include if you want a response): </label>
+                <input id="email" name="email" type="email">
+                <span></span>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script type="text/javascript">
+        /*
+         * * :valid é :invalid
+         * 
+         * Você pode direcionar controles de formulário usando as pseudo-classes :valid e :invalid Alguns pontos que merecem atenção:
+         * 
+            * Controles sem validação de restrição sempre serão válidos e, portanto, combinados com :valid. 
+            *
+            * Controles com required conjunto neles que não têm valor são contados como inválidos — eles serão combinados com :invalid e :required.
+            * 
+            * Controles com validação integrada, como <input type="email"> ou <input type="url"> são (correspondidos com) :invalid quando os dados inseridos neles não correspondem ao padrão que estão procurando (mas são válidos quando vazios).
+            * 
+            * Controles cujo valor atual está fora dos limites de intervalo especificados pelos atributos min and max são (correspondidos com) :invalid, mas também correspondidos por :out-of-range, como você verá mais adiante.
+            * 
+            * Vamos dar uma olhada em um exemplo simples de :valid/:invalid
+            * 
+            * Como no exemplo anterior, temos <span>s extras para gerar conteúdo, que usaremos para fornecer indicadores de dados válidos/inválidos:
+            
+                <div>
+                    <label for="fname">First name *: </label>
+                    <input id="fname" name="fname" type="text" required>
+                    <span></span>   
+                </div>'
+
+            * 
+            * Para fornecer esses indicadores, usamos o seguinte CSS:
+            
+                input + span {
+                    position: relative;
+                }
+
+                input + span::before {
+                    position: absolute;
+                    right: -20px;
+                    top: 5px;
+                }
+
+                input:invalid {
+                    border: 2px solid red;
+                }
+
+                input:invalid + span::before {
+                    content: '✖';
+                    color: red;
+                }
+
+                input:valid + span::before {
+                    content: '✓';
+                    color: green;
+                }
+
+            *
+            * Como antes, definimos o <span>s para position: relativeque possamos posicionar o conteúdo gerado em relação a eles. Em seguida, posicionamos absolutamente diferentes conteúdos gerados dependendo se os dados do formulário são válidos ou inválidos - uma verificação verde ou uma cruz vermelha, respectivamente. Para adicionar um pouco de urgência extra aos dados inválidos, também demos às entradas uma borda vermelha grossa quando inválidas.
+            * 
+            * Nota: Usamos ::before para adicionar esses rótulos, pois já estávamos usando ::after para os rótulos "obrigatórios".
+            */
+    </script>
+</body>
+</html>

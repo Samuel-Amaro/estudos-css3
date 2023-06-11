@@ -1,0 +1,56 @@
+<!--
+    * CSS TEXT SHADOW
+
+      - A text-shadow propriedade CSS aplica sombra ao texto.
+
+      - Em seu uso mais simples, você especifica apenas a sombra horizontal (2px) e a sombra vertical (2px):
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombras no texto</title>
+    <style>
+        h2#h2_1{
+            /*aplicando uma sombra simples em um subtitulo, sombra horizontal(2px) e a sombra vertical(2px)*/
+            text-shadow: 2px 2px;
+        }
+        h2#h2_2{
+            /*aplicando uma sombra simples em um subtitulo, sombra horizontal(2px) e a sombra vertical(2px) e uma cor na sombra*/
+            text-shadow: 2px 2px red;
+        }
+        h2#h2_3{
+            /*aplicando uma sombra simples em um subtitulo, sombra horizontal(2px) e a sombra vertical(2px) e uma cor na sombra, e um efeito de desfoque á sombra*/
+            text-shadow: 2px 2px 5px red;
+        }
+        h2#h2_4{
+            color: white;
+            /*aplicando uma sombra simples em um subtitulo, sombra horizontal(2px) e a sombra vertical(2px) e uma cor na sombra(#000000), e um efeito de desfoque á sombra(4px)*/
+            text-shadow: 2px 2px 4px #000000;
+        }
+        h2#h2_5{
+            /*aplicando uma sombra simples em um subtitulo, sombra horizontal(0px) e a sombra vertical(0px) e uma cor na sombra(#FF0000), e um efeito de desfoque á sombra(3px)*/
+            text-shadow: 0px 0px 3px #FF0000;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>CSS Text-shadow - sombras ao texto</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem rerum nihil amet quasi, consequuntur eaque ratione nostrum minus eos vitae a voluptatibus animi assumenda accusamus itaque doloribus blanditiis dolorem ipsam.</p>
+    <p><strong>Exemplo:</strong> sombra simples em um subtitulo</p>
+    <h2 id="h2_1">Efeito de sombra de texto!</h2>
+    <p><strong>Exemplo 2:</strong> adicionando cor a sombra</p>
+    <h2 id="h2_2">Efeito de sombra de texto!</h2>
+    <p><strong>Exemplo 3:</strong> Em seguida, adicione um efeito de desfoque à sombra:</p>
+    <h2 id="h2_3">Efeito de sombra de texto!</h2>
+    <p><strong>Exemplo 4:</strong> mostra um texto branco com sombra preta</p>
+    <h2 id="h2_4">Efeito de sombra de texto!</h2>
+    <p><strong>Exemplo 5:</strong>sombra brilhante de neon vermelho:</p>
+    <h2 id="h2_5">Efeito de sombra de texto!</h2>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!--
+    * MAIS EXEMPLOS
+
+        - Este exemplo demonstra como adicionar outros estilos a hiperlinks:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        /**
+         - alguns regras ao definir o estilo de varios estados de um link, algumas regras de ordem:
+
+            - a:hover deve vir depois de a:link e a:visited
+
+            - a:active deve vir depois de a:hover
+        */
+
+        /*o estado a:link e um link normal e não visitado*/
+        a.one:link{
+            /*esta propriedade color e usada para definir uma cor para o texto do elemento, aqui enquanto o link tiver o estado de normal e não visitado a cor do texto do link e vermelho*/
+            color: #ff0000;
+        }
+        /*o estado a:visited um estado em que o usuario visitou o link*/
+        a.one:visited{
+            /*esta propriedade color e usada para definir uma cor para o texto do elemento, aqui enquanto o link tiver o estado de visitado, usuario visitou o link o texto do link fica verde*/
+            color: #0000ff;
+        }
+        /*o estado a:hover quando o usuario passa o mouse sobre o link, este estado de um link ao ser estilizado para funcionar tem que vir depois de  a:link e a:visited*/
+        a.one:hover{
+            /*esta propriedade color e usada para definir uma cor para o texto do elemento, aqui quando o usuario passa o mouse por cima do link o texto do link ficara na cor rosa*/
+            color: #ffcc00;
+        }
+
+        a.two:link{
+            color: #ff0000;
+        }
+        a.two:visited{
+            color: #0000ff;
+        }
+        a.two:hover{
+            /*a propriedade font-size especifica o tamanho da fonte, o valor em %, e um tamanho relativo em relação ao elemento circuncidante(pai) Define o tamanho da fonte como uma porcentagem do tamanho da fonte do elemento pai, 150% maior que a fonte do elemento pai no caso o elemento <b>*/
+            font-size: 150%;
+        }
+        
+        a.three:link{
+            color: #ff0000;
+        }
+        a.three:visited{
+            color: #0000ff;
+        }
+        a.three:hover{
+            /*
+             - a shorthand background especifica somente um valor para a propriedade background-color 
+            */
+            background: #66ff66;
+        }
+
+        a.four:link{
+            color: #ff0000;
+        }
+        a.four:visited{
+            color: #0000ff;
+        }
+        a.four:hover{
+            /*
+             - a propriedade font-family e usada para especificar a fonte de um texto.
+             - o valor monoespace especifica uma familia de fonte generica monoespaçada. uma fonte com caracteres da mesma largura aparencia mecanica
+            */
+            font-family: monospace;
+        }
+
+        a.five:link{
+            color: #ff0000;
+            /*
+             - shorthand text-decoration, e uma abreviação para text-decoration-line, text-decoration-color, text-decoration-style, text-decoration-thickness
+             - especificando somente um valor para a primeira propriedade text-decoration-line, o valor none nesta propriedade não especifica nenhuma linha para a decoração de texto*/
+            text-decoration: none;
+        }
+        a.five:visited{
+            color: #0000ff;
+            text-decoration: none;
+        }
+        a.five:hover{
+            /*
+             - especificando somente um valor para a primeira propriedade text-decoration-line, o valor underline nesta propriedade Especifica que uma linha será exibida sob o texto
+            */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Links de estilo</h1>
+
+    <p>Passe o mouse sobre os links e observe-os mudarem de layout:</p>
+
+    <p><b><a class="one" href="#" target="_blank">Este link muda de cor</a></b></p>
+    <p><b><a class="two" href="#" target="_blank">Este link altera o tamanho da fonte</a></b></p>
+    <p><b><a class="three" href="#" target="_blank">Este link muda a cor de fundo</a></b></p>
+    <p><b><a class="four" href="#" target="_blank">Este link altera a familia de fontes</a></b></p>
+    <p><b><a class="five" href="#" target="_blank">Este link altera a decoração do texto</a></b></p>
+</body>
+</html>

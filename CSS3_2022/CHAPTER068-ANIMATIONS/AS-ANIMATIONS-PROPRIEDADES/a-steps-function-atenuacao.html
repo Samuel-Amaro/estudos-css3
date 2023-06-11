@@ -1,0 +1,76 @@
+<!--
+    * A STEPS FUNCTION DE ATENUAÇÃO
+
+        Às vezes, você pode querer um controle mais granular de sua animação e, em vez de se mover ao longo de uma curva, deseja mover em intervalos. A steps()função de atenuação permite que você divida a linha do tempo em intervalos definidos e iguais.
+
+        .my-element {
+            animation-timing-function: steps(10, end);
+        }   
+
+        O primeiro argumento é quantos passos. Se as etapas forem definidas como 10 e houver 10 quadros-chave, cada quadro-chave será reproduzido em sequência pelo tempo exato, sem transição entre os estados. Se não houver quadros-chave suficientes para as etapas, as etapas entre os quadros-chave serão adicionadas dependendo do segundo argumento.
+
+        O segundo argumento é a direção. Se estiver definido como end, que é o padrão, as etapas terminam no final da linha do tempo. Se estiver definido como start, a primeira etapa da animação será concluída assim que for iniciada, o que significa que termina uma etapa antes de end.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .demo{
+            /*
+             - Para usar your @keyframes em uma regra CSS, defina várias propriedades de animação
+            */
+
+            animation: move;
+            /*
+             -  A propriedade animation-duration define quanto tempo a @keyframes linha do tempo deve ter. Deve ser um valor de tempo.
+             - a animação tera 2segundos
+            */
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            /*
+             - Para ajudar a recriar o movimento natural na animação, você pode usar funções de tempo que calculam a velocidade de uma animação em cada ponto.
+             - A steps() função de atenuação permite que você divida a linha do tempo em intervalos definidos e iguais.
+             - o primeiro argumento define a quantidade de passos
+             - o segundo argumento e a direção
+             - assim temos 10 invervalos que terminan no fim da animação, no final da animação. as etapas terminam no final da linha do tempo.
+            */
+            animation-timing-function: steps(10, end);
+        }
+
+        /*
+         - keyframes são o mecanismo que você usa para atribuir estados(states) de animação a carimbos de data e hora(timestamp), ao longo de uma linha do tempo.
+         - grow o nome da regra de key-frames.
+        */
+        @keyframes move {
+            /*inicio da animação*/
+            from{
+                transform: translateX(0px)
+            }
+            /*fim da animação*/
+            to{
+                transform: translateX(300px);
+            }
+        }
+
+        .demo{
+            width: 50px;
+            height: 50px;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="wrapper">
+            <article class="flow">
+                <div class="demo"></div>
+            </article>
+        </div>
+    </main>
+
+</body>
+</html>

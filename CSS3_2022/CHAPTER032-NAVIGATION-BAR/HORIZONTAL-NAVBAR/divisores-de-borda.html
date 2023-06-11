@@ -1,0 +1,63 @@
+<!--
+    * DIVISORES DE BORDA
+
+        - Adicione a border-right propriedade a <li> para criar divisores de link:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li{
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+        
+        li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        /*
+         - pseudo-class :not(selector) seleciona todos os elementos que não sejam selector
+         - pseudo-class captura um estado especial de um elemento,
+         - o usuario ira selecionar o elemento ao passar o mouse por cima do elemento <a> que e descendente de um elemento li, e que não seja o que tenha a class .active
+        */
+        li a:hover:not(.active){
+            background-color: #111;
+        }
+
+        .active{
+            background-color: #04AA6D;
+        }
+
+        /*
+         - a pseudo-class :last-child(ultimo filho) seleciona o ultimo elemento <li> filho de um elemento pai qualquer
+        */
+        li:last-child{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a class="active" href="#home" target="_self" rel="next">Home</a></li>
+        <li><a href="#news" target="_self" rel="next">News</a></li>
+        <li><a href="#contact" target="_self" rel="next">Contact</a></li>
+        <li><a href="#about" target="_self" rel="next">About</a></li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!--
+    * IMAGENS LADO A LADO
+
+        - A grade de caixas também pode ser usada para exibir imagens lado a lado:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+
+        .img-container{
+            /*
+             - a propriedade float e usada para especificar como um elemento deve flutuar 
+             - A float propriedade é usada para posicionar e formatar o conteúdo
+             - o valor left, O elemento flutua à esquerda de seu contêiner.
+             - neste exemplo o elemento <div class="img-container"> ira fluar a esquerda do elemento <div class="clearfix">
+            */
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+        img{
+            width: 100%;
+        }
+        .clearfix::after{
+            /*
+             - O novo e moderno hack do clearfix , no entanto, é mais seguro de usar, e o código a seguir é usado para a maioria das páginas da web:
+            */
+            content: "";
+            /*
+             - Quando usamos a float propriedade, e queremos o próximo elemento abaixo (não à direita ou à esquerda), teremos que usar a propriedade clear.
+             - A propriedade clear especifica o que deve acontecer com o elemento que está próximo a um elemento flutuante.
+             - both(ambos) - O elemento é empurrado abaixo dos elementos flutuantes esquerda e direita.
+            */
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Imagens lado a lado</h2>
+
+    <p>Flutuar imagens lado a lado:</p>
+
+    <div class="clearfix">
+        <div class="img-container">
+            <img src="./img_5terre (1).jpg" alt="Italy"/>
+        </div> 
+        <div class="img-container">
+            <img src="./img_forest.jpg" alt="Forest"/>
+        </div>
+        <div class="img-container">
+            <img src="./img_forest.jpg" alt="Mountains"/>
+        </div>
+    </div>
+
+    <p>Observe que também usamos o hack clearfix para cuidar do fluxo de layout e adicionamos a propriedade box-sizing para garantir que o contêiner de imagem não seja quebrado devido ao preenchimento extra. Tente remover este código para ver o efeito.</p>
+</body>
+</html>

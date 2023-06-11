@@ -1,0 +1,67 @@
+<!--
+    * O MÉTODO ROTATE()
+
+      - O rotate() método gira um elemento no sentido horário ou anti-horário de acordo com um determinado grau.
+
+      - Usar valores negativos girará o elemento no sentido anti-horário.
+
+      - O exemplo a seguir gira o elemento <div> no sentido horário em 20 graus:
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D TRANSFORM</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border-top: 1px;
+            border-right: 1px;
+            border-bottom: 1px;
+            border-left: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+        div#myDiv{
+            /**
+             - usando a propriedade tranform do CSS 2D
+             - usando o metodo rotate() - que gira um elemento no sentido horario e anti horario. 
+             - elemento esta sendo girado a 20 graus no sentido horario
+            **/
+            transform: rotate(20deg);
+            margin-bottom: 100px;
+        }
+        div#myDiv2{
+            /*Usar valores negativos girará o elemento no sentido anti-horário.*/
+            transform: rotate(-20deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 2D PROPRIEDADE TRANSFORM</h1>
+
+    <h2>O Método rotate()</h2>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir gira o elemento &lt;div&gt; no sentido horário em 20 graus:</p>
+
+    <p>O método rotate() gira um elemento no sentido horário ou anti-horário.</p>
+
+    <div>Este é um elemento div normal</div>
+
+    <div id="myDiv">Este elemento div é girado 20 graus no sentido horário</div>
+
+    <p><strong>Exemplo 02: </strong>O exemplo a seguir gira o elemento &lt;div&gt; no sentido anti-horário em 20 graus:</p>
+    
+    <p>Usar valores negativos girará o elemento no sentido anti-horário.</p>
+    
+    <div>Este é um elemento div normal</div>
+
+    <div id="myDiv2">Este elemento div é girado no sentido anti-horário em 20 graus</div>
+</body>
+</html>

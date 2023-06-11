@@ -1,0 +1,133 @@
+<!--
+    * BARRA DE NAVEGAÇÃO SUSPENSA
+
+      - Como adicionar um menu suspenso dentro de uma barra de navegação.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra Navegação Suspensa</title>
+    <style>
+        /*elemento lista não ordenada*/
+        ul{
+            /*tira o estilo da lista, tira os marcadores de item da lista*/
+            list-style-type: none;
+            /*tira os espaços externos ao redor da lista, da borda para fora*/
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            /*tira o espaço interno no interior da lista, entre a borda e o conteudo*/
+            padding-top: 0;
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+            /*evita trasbordamento, estouro de conteudo, o conteudo que for maior que a lista, ele e escondido caso passe a caixa*/
+            overflow: hidden;
+            /*cor de fundo*/
+            background-color: #333;
+        }
+
+        /*para cada item de uma lista não ordenada*/
+        li{
+            /*Cada item da lista vai flutuar a esquerda, todo item da lista vai se flutuar a esquerda*/
+            float: left;
+        }
+
+        /*para cada link que e filho de um item da lista*/
+        li  > a, a.dropbtn{
+            /*elemento e exibido, como um bloco embutido, não quebra linha antes de ser exibido e nem depois de ser exibido, mas aceita configurações de espaço interno, externo, borda etc*/
+            display: inline-block;
+            /*cor do texto*/
+            color: white;
+            /*texto alinhado ao centro*/
+            text-align: center;
+            /*espaço interno entre a borda e conteudo, da borda para o conteudo, espaço em todos os lados do elemento*/
+            padding-top: 16px;
+            padding-right: 16px;
+            padding-bottom: 14px;
+            padding-left: 14px;
+            /*tira o sublinhado do link*/
+            text-decoration: none;
+        }
+
+        /*para um item da lista ordenada com a seguinte classe*/
+        li.dropdow{
+            /*elemento e exibido, como um bloco embutido, não quebra linha antes de ser exibido e nem depois de ser exibido, mas aceita configurações de espaço interno, externo, borda etc*/
+            display: inline-block;
+        }
+
+        /*para um conteiner, um elemento de bloco*/
+        div.conteudo-dropdow{
+            /*o elemento não sera exibido inicialmente*/
+            display: none;
+            /*posição absoluta*/
+            position: absolute;
+            /*cor de fundo do elemento*/
+            background-color: #f9f9f9;
+            /*largura minima do elemento*/
+            min-width: 160px;
+            /*aplicando uma sombra com uma shorthand*/
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.20);
+            /*o elemento tem preferencia na sobreposição, ele e mostrado primeiro*/
+            z-index: 1;
+        }
+
+        /*para cada link que e filho do elemento de bloco(conteiner)*/
+        div.conteudo-dropdow > a{
+            /*cor do texto*/
+            color: black;
+            /*espaço interno entre a borda e conteudo, da borda para o conteudo em todos os lados do elemento*/
+            padding-top: 12px;
+            padding-right: 12px;
+            padding-bottom: 16px;
+            padding-right: 16px;
+            /*tira sublinhado do link*/
+            text-decoration: none;
+            /*o elemento sera exibido como um elemento de bloco, que quebra linha antes e depois de se exibido, e aceita espaços internos, externos, borda, etc...*/
+            display: block;
+            /*texto alinhado a esquerda*/
+            text-align: left;
+        }
+
+        /*para cada link que e filho do elemento de bloco, vai ter um pseudo-elemento add a ele, ao passar o mouse por cima de cada link*/
+        div.conteudo-dropdow > a:hover{
+            /*cor do fundo do elemento*/
+            background-color: #f1f1f1;
+        }
+
+
+        /*para o elemento li que e um item da lista não ordenada com uma classe identificada, vai ter seu estado mudado com um pseudo-elemento, ao usuario passar o mouse por cima do elemento, ele sera exibido com um elemento de bloco. 
+        e para o elemento de bloco-conteiner, que e filho do elemento item da lista, ele também se tornara um elemento de bloco*/
+        li.dropdown:hover > div.conteudo-dropdow{
+                /*o elemento sera exibido como um elemento de bloco, que quebra linha antes e depois de se exibido, e aceita espaços internos, externos, borda, etc...*/
+                display: block;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <!--lista não ordenada-->
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#noticia">Notícia</a></li>
+        <li class="dropdown">
+            <a class="dropbtn" href="#menususpenso">Menu Suspenso</a>
+            <div class="conteudo-dropdow">
+                  <a href="#link1">Link 1</a>
+                  <a href="#link2">Link 2</a>
+                  <a href="#link3">Link 3</a>  
+            </div>        
+        </li>
+    </ul>
+
+    <h1>Barra de Navegação Suspensa</h1>
+    <p>Menu suspenso dentro de uma barra de navegação</p>
+    <p>Passe o mouse sobre o link "Suspenso" para ver o menu suspenso.</p>
+</body>
+</html>

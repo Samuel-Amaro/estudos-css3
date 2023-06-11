@@ -1,0 +1,62 @@
+<!--
+    * LINE HEIGHT(ALTURA DA LINHA)
+
+        - A line-height propriedade é usada para especificar o espaço entre as linhas:
+
+        - A line-height propriedade especifica a altura de uma linha.
+
+        - Nota: Valores negativos não são permitidos.
+
+    * SINTAXE CSS:
+
+        line-height: normal|number|length|initial|inherit;
+
+    * VALORES DE PROPRIEDADE:
+
+        VALUE: normal
+        DESCRIPTION: Uma altura de linha normal. Isso é padrão
+        ----------------------------------
+        VALUE: number
+        DESCRIPTION: Um número que será multiplicado pelo tamanho da fonte atual para definir a altura da linha
+        ----------------------------------
+        VALUE: lenght(comprimento)
+        DESCRIPTION: Uma altura de linha fixa em px, pt, cm, etc.
+        ----------------------------------
+        VALUE: %
+        DESCRIPTION: A altura da linha em porcentagem do tamanho da fonte atual
+        ----------------------------------
+        VALUE: initial(inicial)
+        DESCRIPTION:  Configura esta propriedade para seu valor padrão.
+        ----------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai
+        ----------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        p.small{
+            /*a propriedade css line-height, e usada para especificar o espaço entre as linhas, especificar a altura de uma linha, o valor 0.7 e um numero que será multiplicado pelo tamanho da fonte atual para definir a altura da linha, no caso o tamanho da fonte atual e 16px e 16 x 0.7 = 11.2 sera a altura da linha*/
+            line-height: 0.7;
+        }
+        p.big{
+            /*a propriedade css line-height, e usada para especificar o espaço entre as linhas, especificar a altura de uma linha, o valor 1.8 e um numero que será multiplicado pelo tamanho da fonte atual para definir a altura da linha, no caso o tamanho da fonte atual e 16px e 16 x 1.8 = 28.8 sera a altura da linha*/
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Usando line-height</h1>
+    
+    <p>Este é um parágrafo com uma altura de linha padrão. <br/> A altura da linha padrão na maioria dos navegadores é de cerca de 110% a 120%. <br/></p>
+
+    <p class="small">Este é um parágrafo com uma altura de linha menor. <br/> Este é um parágrafo com uma altura de linha menor.</p>
+
+    <p class="big">Este é um parágrafo com uma altura de linha maior. <br/> Este é um parágrafo com uma altura de linha maior.</p>
+
+</body>
+</html>

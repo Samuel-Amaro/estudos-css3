@@ -1,0 +1,52 @@
+/*
+ * Layout-CSS LARGURA E LARGURA MÁXIMA (layout-css width and width max)
+
+ * USANDO LARGURA, LARGURA MÁXIMA E MARGEM: AUTOMATICO (width-max and margin: auto)
+
+   - Conforme mencionado no capítulo anterior;
+    um elemento de nível de bloco(block-level) sempre ocupa toda a largura disponível (estende-se para a esquerda e para a direita, tanto quanto pode).
+   - Definir o width de um elemento de nível de bloco(block) impedirá que ele se estenda até as bordas de seu contêiner. Em seguida, você pode definir as margens como automáticas, para centralizar horizontalmente o elemento em seu contêiner. O elemento ocupará a largura especificada e o espaço restante será dividido igualmente entre as duas margens:
+*/
+#conteiner_centro{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: aqua;
+    margin: auto;/*margim automatica, centraliza o conteiner*/
+    width: 500px; /*largura do conteiner, a margin distribui essa largura para que o conteiner fique centralizado a todo momento*/
+}
+/*
+ * O problema <div> acima ocorre quando a janela do navegador é menor que a largura do elemento. O navegador então adiciona uma barra de rolagem horizontal à página.
+ - basta so redimensionar a pagina e ver que o scroll da barra de rolagem aparecera, porque a pagina esta menor que a largura definida para o elemento;
+ -  redimensione a janela do navegador para menos de 500 pixels de largura, para ver a diferença entre os dois divs!
+ - como resolver ?
+ - em vez de usar width, use max-width vez disso, o uso , nessa situação, melhorará o manuseio do navegador de pequenas janelas. Isso é importante ao tornar um site utilizável em dispositivos pequenos:
+*/
+#conteiner_centro_auto{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    border-top: 3px;
+    border-right: 3px;
+    border-bottom: 3px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: aqua;
+    margin: auto;/*margim automatica, centraliza o conteiner na horizontal da pagina*/
+    max-width: 500px; /*largura maxima em que a janela pode ser redimesionada, para que não quebre a div e adicione uma barra de rolagem horizontal, a div possui largura de 500px, e o maximo em que o navegador pode chegar, no redimensionamento, para não quebrar a div*/
+}

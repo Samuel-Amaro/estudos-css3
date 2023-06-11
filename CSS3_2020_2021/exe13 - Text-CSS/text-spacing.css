@@ -1,0 +1,57 @@
+/*
+ * CSS TEXT SPACING(ESPAÇAMENTO DE TEXTO CSS)
+
+  * TEXT INDENTATION(RECUO DO TEXTO)
+
+   - A text-indent propriedade é usada para especificar o recuo da primeira linha de um texto:
+*/
+#recuo{
+    text-indent: 50px;
+}
+/*
+ * ESPAÇAMENTO ENTRE LETRAS
+
+  - A letter-spacing propriedade é usada para especificar o espaço entre os caracteres em um texto.
+  - O exemplo a seguir demonstra como aumentar ou diminuir o espaço entre os caracteres:
+*/
+/*aumenta o espaço entre as letras(Caracteres)*/
+#esp_aum{
+    letter-spacing: 3px;
+}
+/*diminui o espaço entre as letras(Caracteres)*/
+#esp_dimi{
+    letter-spacing: -3px;
+}
+/*
+ * ALTURA DA LINHA
+
+  - A line-height propriedade é usada para especificar o espaço entre as linhas:
+*/
+#pequeno{
+    line-height: 0.8;
+}
+#grande{
+    line-height: 1.8;
+}
+/*
+ * ESPAÇAMENTO ENTRE PALAVRAS
+
+  - A word-spacing propriedade é usada para especificar o espaço entre as palavras em um texto.
+*/
+#esp_grande{
+     word-spacing: 10px;
+}
+#esp_pequeno{
+    word-spacing: -3px;
+}
+/*
+ * ESPAÇO EM BRANCO
+
+  - A white-spacep ropriedade especifica como o espaço em branco dentro de um elemento é tratado.
+*/
+/*
+ * exemplo que demostra como desativar a quebra automatica de texto dentro de um elemento
+*/
+#quebra{
+    white-space: nowrap;
+}

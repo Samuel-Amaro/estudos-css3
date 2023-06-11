@@ -1,0 +1,48 @@
+<!--
+    - No entanto , isso não é muito flexível. Tudo bem se você puder garantir que as caixas sempre terão a mesma quantidade de conteúdo. Mas muitas vezes, o conteúdo não é o mesmo. Se você tentar o exemplo acima em um celular, verá que o conteúdo da segunda caixa será exibido fora da caixa. É aqui que o CSS3 Flexbox é útil - pois pode esticar automaticamente as caixas para serem tão longas quanto a caixa mais longa:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        .flex-container{
+            /*
+             - Exibe um elemento como um contêiner flex em nível de bloco
+            */
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: dodgerblue;
+        }
+        .flex-container .box{
+            background-color: #f1f1f1;
+            width: 50%;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Caixas de altura igual</h2>
+
+    <p>Caixas flutuantes com alturas iguais:</p>
+
+    <div class="flex-container">
+        <div class="box">
+            <p>Box 1 - Este é um texto para garantir que o conteúdo fique realmente alto. Este é um texto para garantir que o conteúdo fique realmente alto.</p>
+        </div>
+        <div class="box">
+            <p>Caixa 2 - Minha altura seguirá a Caixa 1.</p>
+        </div>
+    </div>
+
+    <p>Tente redimensionar a janela do navegador para ver o layout flexível.</p>
+
+    <p><strong>Nota:</strong>  o Flexbox não é compatível com o Internet Explorer 10 ou versões anteriores.</p>
+
+</body>
+</html>

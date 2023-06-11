@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade de conteudo</title>
+    <style>
+        /*
+         * * DEFINIÇÃO E USO
+         * A content propriedade é usada com os pseudo-elementos ::before e ::after , para inserir o conteúdo gerado.
+         * SINTAXE CSS:
+
+         content: normal | none | counter | attr | string | open-quote | close-quote | no-open-quote | no-close-quote | url | initial | inherit;
+
+         normal : Valor padrão. Define o conteúdo, se especificado, ao normal, que padrão é "nenhum" (o que não é nada);
+
+         none : Define o conteúdo, se especificado, para nada;
+
+         counter : Define o conteúdo como um contador;
+
+         attr(attribute) : Define o conteúdo como um dos atributos do seletor;
+         
+         string : Define o conteúdo do texto especificado;
+
+         open-quote : Define o conteúdo para ser uma citação de abertura;
+
+         close-quote : Define o conteúdo para ser uma cotação de fechamento;
+
+         no-open-quote : Remove a cotação de abertura do conteúdo, se especificado;
+
+         no-close-quote : Remove a cotação de fechamento do conteúdo, se especificado;
+
+         url(url): Define o conteúdo como algum tipo de mídia (uma imagem, um som, um vídeo, etc.);
+
+         initial : Define essa propriedade ao seu valor padrão. Leia sobre a inicial;
+
+         inherit : Herda esta propriedade de seu elemento pai;
+        */
+
+        /*para o seletor de link, apos mostrar o conteudo*/
+        a::after{
+            /*define um novo conteudo para um elemento. vai mostrar o href do elemento a*/
+            content: " (" attr(href) ")";
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Propriedade de conteudo CSS</h1>
+
+    <p><strong>Exemplo:</strong> O exemplo a seguir insere o valor do atributo href entre parênteses após cada elemento &lt;a&gt;:</p>
+
+    <h1>a propriedade de conteudo</h1>
+
+    <p>A propriedade content é usada para inserir o conteúdo gerado.</p>
+
+    <p>Veja nosso</p>
+
+    <p>
+        <a href="https://www.w3schools.com/css/">CSS Tutorial</a>
+
+        <br>
+
+        <a href="https://www.w3schools.com/cssref/">CSS Rereference</a>
+    </p>
+</body>
+</html>

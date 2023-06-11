@@ -1,0 +1,47 @@
+<!--
+    * POSICIONAMENTO RELATIVO
+
+        O posicionamento relativo permite deslocar um item de sua posição padrão no fluxo normal. Isso significa que você pode realizar uma tarefa como mover um ícone um pouco para baixo para que ele se alinhe com um rótulo de texto. Para fazer isso, podemos adicionar a seguinte regra para adicionar posicionamento relativo:
+
+        Aqui damos ao nosso parágrafo do meio um position valor de relative. Isso não faz nada por conta própria, então também adicionamos top e left propriedades. Estes servem para mover o elemento afetado para baixo e para a direita. Isso pode parecer o oposto do que você esperava, mas você precisa pensar nisso como o elemento sendo empurrado em seus lados esquerdo e superior, o que resulta em movimento para a direita e para baixo.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css"> 
+        
+        body{
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p{
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .positioned{
+            background-color: rgb(255, 212, 202);
+            border-color: rgb(250, 145, 145);
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Posicionamento</h1>
+
+    <p>Eu sou um elemento básico de nível de bloco.</p>
+    <p class="positioned">Eu sou um elemento básico de nível de bloco.</p>
+    <p>Eu sou um elemento básico de nível de bloco.</p>
+
+</body>
+</html>

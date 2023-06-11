@@ -1,0 +1,55 @@
+<!--
+    * UM EXEMPLO SIMPLES DE FLUTUAÇÃO
+
+        Vamos explorar o uso de flutuadores. Começaremos com um exemplo muito simples envolvendo a flutuação de um bloco de texto em torno de um elemento. 
+
+        Flutuando a caixa: Para flutuar a caixa, adicione as propriedades float e margin-right à .box regra:
+
+        Vamos pensar em como o float funciona. O elemento com o float definido nele (o <div> elemento neste caso) é retirado do fluxo de layout normal do documento e preso ao lado esquerdo de seu contêiner pai ( <body>, neste caso). Qualquer conteúdo que venha abaixo do elemento flutuante no fluxo de layout normal agora o envolverá, preenchendo o espaço à direita dele até o topo do elemento flutuante. Aí vai parar.
+
+        Flutuar o conteúdo para a direita tem exatamente o mesmo efeito, mas ao contrário: o elemento flutuante ficará à direita e o conteúdo o envolverá à esquerda. Tente alterar o valor float para right e substituir margin-right no margin-left último conjunto de regras para ver qual é o resultado.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        
+        body{
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            font: 0.9em/1.2 Arial, Helvetica, sans-serif; /*0.9em = 14.4px*/
+        }
+
+        .box{
+            /*
+             - o <div> elemento neste caso) é retirado do fluxo de layout normal do documento e preso ao lado esquerdo de seu contêiner pai ( <body>, neste caso).
+             - Qualquer conteúdo que venha abaixo do elemento flutuante no fluxo de layout normal agora o envolverá, preenchendo o espaço à direita dele até o topo do elemento flutuante. Aí vai parar.
+            */
+            float: left;
+            margin-right: 15px;
+            width: 150px;
+            height: 150px;
+            border-radius: 5px;
+            background-color: rgb(207, 232, 220);
+            padding: 1em; /*16px*/
+        }
+
+    </style>
+</head>
+<body>
+
+        <h1>Exemplo de flutuação simples</h1>
+
+        <div class="box">Float</div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. </p>
+
+        <p>Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+        <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam lorem. Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+</body>
+</html>

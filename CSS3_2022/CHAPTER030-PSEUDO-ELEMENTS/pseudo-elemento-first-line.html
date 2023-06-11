@@ -1,0 +1,57 @@
+<!--
+    * O PSEUDO-ELEMENTO ::FIRST-LINE(PRIMEIRA LINHA)
+
+        - O ::first-line pseudoelemento é usado para adicionar um estilo especial à primeira linha de um texto.
+
+        - O exemplo a seguir formata a primeira linha do texto em todos os elementos <p>:
+
+        - Nota: O ::first-line pseudoelemento só pode ser aplicado a elementos de nível de bloco.
+
+        - As seguintes propriedades se aplicam ao ::first-line pseudoelemento:
+
+            font properties
+            color properties
+            background properties
+            word-spacing
+            letter-spacing
+            text-decoration
+            vertical-align
+            text-transform
+            line-height
+            clear
+
+        - Observe a notação de dois pontos - ::first-line versus :first-line
+
+        - Os dois-pontos duplos substituíram a notação de dois-pontos para pseudo-elementos em CSS3. Esta foi uma tentativa do W3C de distinguir entre pseudo-classes e pseudo-elementos.
+
+        - A sintaxe de dois-pontos foi usada para pseudoclasses e pseudoelementos em CSS2 e CSS1.
+
+        - Para compatibilidade com versões anteriores, a sintaxe de dois-pontos é aceitável para pseudoelementos CSS2 e CSS1.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.
+         - O ::first-line pseudoelemento é usado para adicionar um estilo especial à primeira linha de um texto.
+         - estilizando a primeira linha de texto em um elemento <p>
+        */
+        p::first-line{
+            color: #ff0000;
+            /*
+             - a propriedade font-variant especifica se um texto deve ou não ser exibido em um font versalete
+             - o valor small-caps, exibe o texto em versalete, caracteres maiusculos com dimensões de caracteres minusculos.
+            */
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Você pode usar o pseudoelemento ::first-line para adicionar um efeito especial à primeira linha de um texto. Mais algum texto. E ainda mais e mais e mais e mais e mais e mais e mais e mais e mais e mais e mais e mais e mais e mais.</p>
+
+</body>
+</html>

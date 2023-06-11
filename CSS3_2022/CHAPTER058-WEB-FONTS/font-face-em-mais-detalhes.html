@@ -1,0 +1,20 @@
+<!--
+    * @FONT-FACES EM MAIS DETALHES
+
+        Vamos explorar essa @font-face sintaxe gerada para você pelo fontsquirrel. É assim que um dos conjuntos de regras se parece:
+
+        @font-face {
+            /* Esta linha especifica o nome com o qual você deseja se referir à fonte. Isso pode ser o que você quiser, desde que você o use consistentemente em todo o seu CSS.*/
+            font-family: 'zantrokeregular';
+            /*
+             Essas linhas especificam os caminhos para os arquivos de fonte a serem importados para o CSS (a parte do URL) e o formato de cada arquivo de fonte (a parte do format). A última parte em cada caso é opcional, mas é útil declarar porque permite que os navegadores determinem mais rapidamente qual fonte eles podem usar. Várias declarações podem ser listadas, separadas por vírgulas. Como o navegador irá pesquisá-los de acordo com as regras da cascata, é melhor indicar seus formatos preferidos, como WOFF2, no início.
+            */
+            src: url('zantroke-webfont.woff2') format('woff2'),
+                url('zantroke-webfont.woff') format('woff');
+            /*
+             - font-weight/font-style: Estas linhas especificam o peso da fonte e se é itálico ou não. Se você estiver importando vários pesos da mesma fonte, você pode especificar qual é o peso/estilo deles e usar valores diferentes de peso/estilo de fonte para escolher entre eles, em vez de ter que chamar todos os diferentes membros da fonte nomes diferentes da família.
+            */
+            font-weight: normal;
+            font-style: normal;
+        }
+-->

@@ -1,0 +1,94 @@
+<!--
+    * <transform-function>
+
+        O tipo de dados CSS <transform-function> representa uma transformação que afeta a aparência de um elemento. As funções de transformação podem girar, redimensionar, distorcer ou mover um elemento no espaço 2D ou 3D. É usado na propriedade de transform
+
+    * SINTAXE
+
+        O tipo de dados <transform-function> é especificado usando uma das funções de transformação listadas abaixo. Cada função aplica uma operação geométrica em 2D ou 3D.
+
+        * MATRIX TRANSFORMATION(TRANSFORMAÇÃO DA MATRIX)
+
+            matrix(): Descreve uma matriz de transformação 2D homogênea.
+
+            matrix3d(): Descreve uma transformação 3D como uma matriz homogênea 4×4.
+
+        * PESPECTIVE(PESPECTIVA)
+
+            perspective(): Define a distância entre o usuário e o plano z=0.
+
+        * ROTATION(ROTAÇÃO)
+
+            rotate(): Gira um elemento em torno de um ponto fixo no plano 2D.
+
+            rotate3d(): Gira um elemento em torno de um eixo fixo no espaço 3D.
+
+            rotateX(): Gira um elemento em torno do eixo horizontal.
+
+            rotateY(): Gira um elemento em torno do eixo vertical.
+
+            rotateZ(): Gira um elemento ao redor do eixo z.
+
+        * SCALING(RESIZING) - ESCALA(REDIMENSIONAMENTO)
+
+            scale(): Dimensiona um elemento para cima ou para baixo no plano 2D.
+
+            scale3d(): Dimensiona um elemento para cima ou para baixo no espaço 3D.
+
+            scaleX(): Dimensiona um elemento para cima ou para baixo horizontalmente.
+
+            scaleY(): Dimensiona um elemento para cima ou para baixo verticalmente.
+
+            scaleZ(): Dimensiona um elemento para cima ou para baixo ao longo do eixo z.
+
+        * SKEWING(DISTORTION) - INCLINAÇÃO (DISTORÇÃO)
+
+            skew(): Inclina um elemento no plano 2D.
+
+            skewX(): Inclina um elemento na direção horizontal.
+
+            skewY(): Inclina um elemento na direção vertical.
+
+        * TRANSLATION(MOVING) - TRANSLAÇÃO(MOVIMENTO)
+
+            translate(): Converte um elemento no plano 2D.
+
+            translate3d(): Traduz um elemento no espaço 3D.
+
+            translateX(): Traduz um elemento horizontalmente.
+
+            translateY(): Traduz um elemento verticalmente
+
+            translateZ(): Traduz um elemento ao longo do eixo z.
+
+    * DESCRIÇÃO
+
+        Vários modelos de coordenadas podem ser usados para descrever o tamanho e a forma de um elemento HTML, bem como quaisquer transformações aplicadas a ele. O mais comum é o sistema de coordenadas cartesianas, embora às vezes também sejam usadas coordenadas homogêneas.   
+
+        * CARTESIAN COORDINATES(COORDENADAS CARTESIANAS)
+
+            No sistema de coordenadas cartesianas, um ponto bidimensional é descrito usando dois valores: uma coordenada x (abscissa) e uma coordenada y (ordenada). Isso é representado pela notação vetorial (x, y).
+
+            Em CSS (e na maioria dos gráficos de computador), a origem (0, 0) representa o canto superior esquerdo de qualquer elemento. As coordenadas positivas estão para baixo e à direita da origem, enquanto as negativas estão para cima e à esquerda. Assim, um ponto que está 2 unidades à direita e 5 unidades abaixo seria (2, 5), enquanto um ponto 3 unidades à esquerda e 12 unidades acima seria (-3, -12).
+
+        * TRANSFORMATION FUNCTIONS(FUNÇÕES TRANSFORMAÇÃO)
+
+            As funções de transformação alteram a aparência de um elemento manipulando os valores de suas coordenadas. Uma função de transformação linear é descrita usando uma matriz 2×2, assim:
+
+                (a c)
+                (b d)
+
+            A função é aplicada a um elemento usando a multiplicação de matrizes. Assim, cada coordenada muda com base nos valores na matriz:
+
+                (a c) (x) = (a x + c y)
+                (b d) (y)   (b x + d y)
+
+            É ainda possível aplicar várias transformações consecutivas:
+
+                (a1 c1) (a2 c2) = (a1a2 + c1b2a1c2 + c1d2)
+                (b1 d1) (b2 d2)   (b1a2 + d1b2b1c2 + d1d2)
+
+            Com essa notação, é possível descrever e, portanto, compor as transformações mais comuns: rotações, dimensionamento ou inclinação. (Na verdade, todas as transformações que são funções lineares podem ser descritas.) As transformações compostas são efetivamente aplicadas na ordem da direita para a esquerda.
+
+            No entanto, uma grande transformação não é linear e, portanto, deve ter maiúsculas e minúsculas ao usar esta notação: translation O vetor de translation (tx, ty) deve ser expresso separadamente, como dois parâmetros adicionais.
+-->

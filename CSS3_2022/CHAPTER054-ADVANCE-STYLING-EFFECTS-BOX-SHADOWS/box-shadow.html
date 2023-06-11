@@ -1,0 +1,59 @@
+<!--
+    * BOX-SHADOW(SOMBRAS DE CAIXA)
+
+        box-shadow permite que você aplique uma ou mais sombras à caixa de um elemento. Como sombras de texto, sombras de caixa são suportadas muito bem em navegadores, incluindo IE9+ e Edge. Os usuários de versões mais antigas do IE podem ter que lidar com nenhuma sombra, então apenas teste seus designs para garantir que seu conteúdo seja legível sem elas.
+
+    * UMA SOMBRA DE CAIXA SIMPLES
+
+        Vejamos um exemplo simples para começar as coisas. Primeiro, um pouco de HTML:
+
+        Você verá que temos quatro itens no box-shadow valor da propriedade:
+
+            1. O primeiro valor de comprimento é o deslocamento horizontal — a distância à direita em que a sombra é deslocada da caixa original (ou à esquerda, se o valor for negativo).
+
+            2. O segundo valor de comprimento é o deslocamento vertical — a distância para baixo em que a sombra é deslocada da caixa original (ou para cima, se o valor for negativo).
+
+            3. O terceiro valor de comprimento é o raio de desfoque — a quantidade de desfoque aplicada à sombra.
+
+            4. O valor da cor é a cor base da sombra.
+
+        Você pode usar qualquer unidade de comprimento e cor que faça sentido para definir esses valores.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        p{
+            margin: 0;
+        }
+
+        article{
+            max-width: 500px;
+            padding: 10px;
+            background-color: red;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+        }
+
+        .simple{
+            /**
+             - a propriedade box-shadow permite aplicar um ou mais sombreamentos a caixa de um elemento para criar uma sombra externa ao redor do elemento.
+             - o primeiro valor de comprimento e o deslocamento horizontal - a distancia a direita em que a sombra e deslocada. a sombra e deslocada 5px a direita da caixa
+             - o segundo valor de comprimento e o deslocamento vertical - a distancia para baixo em que a sombra e deslocada da caixa original. (ou para cima, se o valor for negativo). a sombra e descolocada 5px abaixo da caixa. na vertical
+             - o terceiro valor de comprimento e o raio de desfoque a quantidade de desfoque aplicada à sombra. a sombra e desfocada 5px, a sombra de espalha pelo comprimento de 5px, a quantidade de desfoque aplicada a sombra e de 5px
+             - o quarto valor e a cor da sombra. especifica uma cor pelo seu valor RGBA
+            */
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <article class="simple">
+        <p><strong>Aviso:</strong> O termostato do transcender cósmico atingiu um nível crítico.</p>
+    </article>
+
+</body>
+</html>

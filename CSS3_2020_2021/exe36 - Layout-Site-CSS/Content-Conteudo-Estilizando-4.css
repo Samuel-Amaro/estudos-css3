@@ -1,0 +1,114 @@
+/*
+
+ * CONTEÚDO - CONTENT - LAYOUT DE SITE 
+
+   - O layout nesta seção geralmente depende dos usuários-alvo. O layout mais comum é um (ou combiná-los) dos seguintes:
+
+        - 1 coluna (geralmente usado para navegadores de celular);
+
+        - 2 colunas (geralmente usado para tablets e laptops);
+
+        - Layout de 3 colunas (usado apenas para desktops);
+
+    - Dica: para criar um layout de 2 colunas, altere a largura para 50%. Para criar um layout de 4 colunas, use 25%, etc.
+    
+    - Dica: Uma maneira mais moderna de criar layouts de coluna é usar CSS Flexbox. No entanto, não é compatível com o Internet Explorer 10 e versões anteriores. Se você precisar de suporte ao IE6-10, use floats (conforme mostrado acima).
+
+
+    -  Vamos criar um layout de 3 colunas e alterá-lo para um layout de 1 coluna em telas menores:   
+
+
+*/
+
+/*tira todos os espaços externo ao redor do corpo da pagina - na area de conteudo da pagina*/
+body{
+    margin: 0;
+}
+
+/*no elemento header - cabeçalho*/
+header{
+    /*cor de fundo*/
+    background-color: #f1f1f1;
+    /*add espaço interno ao elemento*/
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /*alinhando o texto ao centro do elemento na vertical*/
+    text-align: center;
+} 
+
+/*para todos os elementos da pagina*/
+*{
+    box-sizing: border-box;
+}
+
+/*para o elemento nav*/
+nav.barra-navegacao{
+    /*cor de fundo do elemento*/
+    background-color: #333;
+    /*caso o conteudo seja maior que a area desse elemento, essa propriedade vai ocultar o conteudo que passar da area, o conteudo que ficar fora da area sera ocultado*/
+    overflow: hidden;
+}
+
+/*para cada elemento <a> que for filho do nav*/
+nav.barra-navegacao > a{
+    /*flutua a esquerda, o elemento a flutua a esquerda, mas a esquerda de quem ? a cada elemento a adicionado a nav, sempre ficara fluturando a esquerda*/
+    float: left;
+    /*o elemento sera exibido como um elemento de bloco*/
+    display: block;
+    /*cor do conteudo do elemento*/
+    color: #f2f2f2;
+    /*alinhamento do texto*/
+    text-align: center;
+    /*add espaço interno*/
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    /*tira o sublinhado dos elementos*/
+    text-decoration: none;
+}
+
+/*para cada elemento <a> que for filho do nav, tera um pseudo-classe aplicado ao elemento, essa pseudo classe cpturara o estado do elemento quando o mouse, estiver por cima do elemento*/
+nav.barra-navegacao > a:hover{
+    /*cor de fundo do elemento*/
+    background-color: #ddd;
+    /*cor do texto*/
+    color: black;
+}    
+
+/* Crie três colunas iguais que flutuam uma ao lado da outra* - para cada elemento article*/
+article.coluna{
+    /*flutuação a esquerda, cada coluna tera um elemento sendo flutuado a sua esquerda*/
+    float: left;
+    /*largura do elemento em relação ao conteiner que o abrange, pode ocupar 33.33% da largura do coneinter*/
+    width: 33.33%;
+    /*espaço interno no elemento*/
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}    
+
+/* Limpar flutua após as colunas - para o elemento section - aplicando um pseudo-elemento, que vai adicionar conteudo, apos o conteudo do section ter sido inserido no elemento - o after, inseri conteudo apos o conteudo do elemento*/
+section.linha:after{
+    /*conteudo do elemento*/
+    content: "";
+    /*o elemento sera exibido como uma tabela*/
+    display: table;
+    /*limpa os float propriedade aplicada as colunas, a propriedade continua a existir e ser usada nas colunas, mas a limpeza e necessaria para que para o proximo conteudo apos as colunas não fique flutuando também, porque a propriedade float faz flutuar qualquer elemento flutue a esquerda das colunas, aplicando o clear: both nenhum elemento pode ser flutuado apos as colunas, dentro do elemento section, apos o conteudo do elemento ter sido exibido no caso as colunas, essa propriedade passa a ser valida para o proximo conteudo apos as colunas. como teste coloque um conteudo na string vazia. */
+    clear: both;
+}
+
+
+
+/*Layout responsivo - faz com que as três colunas empilham uma em cima da outra em vez de uma ao lado da outra*/
+@media screen and (max-width:600px) {
+    
+    /*para cada elemento article - colunas*/
+    article.coluna {
+        /*largura total*/
+        width: 100%;
+    }
+}

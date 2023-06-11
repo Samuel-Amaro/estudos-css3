@@ -1,0 +1,17 @@
+ # TRANSIÇÕES(TRANSITIONS)
+
+  - As transições CSS permitem que você altere os valores das propriedades suavemente, ao longo de um determinado período.
+
+  - Neste capítulo, você aprenderá sobre as seguintes propriedades:
+
+    * transition
+
+    * transition-delay
+
+    * transition-duration
+
+    * transition-property
+
+    * transition-timing-function
+
+    

@@ -1,0 +1,118 @@
+<!--
+    * PROPRIEDADE CSS BORDER-SPACING(ESPAÇAMENTO DE BORDA)
+
+    * DEFINIÇÃO E USO
+
+        - A border-spacing propriedade define a distância entre as bordas das células adjacentes.
+
+        Observação: essa propriedade funciona somente quando o border-collapse: separate;
+
+    * SINTAXE CSS:
+
+        border-spacing: lenght|initial|inherit;
+
+    * VALORES DE PROPRIEDADE
+
+        VALUE: length(comprimento)
+        DESCRIPTION: comprimento Especifica a distância entre as bordas das células adjacentes em px, cm, etc. Valores negativos não são permitidos. Se um valor for especificado, ele define o espaçamento horizontal e vertical entre as células.
+        Se dois valores forem especificados, o primeiro define o espaçamento horizontal e o segundo define o espaçamento vertical
+        --------------------------------
+        VALUE: inicial(initial)
+        DESCRIPTION: Configura esta propriedade para seu valor padrão.
+        --------------------------------
+        VALUE: inherit(herdar)
+        DESCRIPTION: Herda esta propriedade de seu elemento pai.
+        --------------------------------
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style type="text/css">
+        /*
+         - para o elemento table geral
+         - para as celulas de cabeçalho
+        - para as celulas de dados
+        */
+        table, th, td{
+            /*a shorthand border e usada para abreviar as seguintes propriedades individuais border-width, border-style, border-color, adicionar uma borda nos elementos*/
+            border: 1px solid;
+        }
+        #table1{
+            /*
+             - A border-collapse propriedade define se as bordas da tabela devem ser recolhidas em uma única borda ou separadas como no HTML padrão.
+             - o valor separate As bordas são separadas; cada célula exibirá suas próprias bordas.
+            */
+            border-collapse: separate;
+            /*
+             - essa propriedade funciona somente quando o border-collapse: separate;
+             - a propriedade border-spacing define a distância entre as bordas das células adjacentes. proxima celula. celula vizinha.
+             - especificar so um valor, ele define o espaçamento horizontal e vertical entre as células.
+             - o valor 15px e um comprimento em px que define a distancia vertical entre uma celula e outra de 15px e uma distancia horizontal de 15px
+            */
+            border-spacing: 15px;
+        }
+        #table2{
+            /*
+             - Se dois valores forem especificados, o primeiro define o espaçamento horizontal e o segundo define o espaçamento vertical
+             - o valor 15px e um comprimento em px que define a distancia horizontal entre uma celula e outra. e 50px e um comprimento em px que define a distancia entre uma celula e outra na vertical
+            */
+            border-spacing: 15px 50px;
+            /*
+             - A border-collapse propriedade define se as bordas da tabela devem ser recolhidas em uma única borda ou separadas como no HTML padrão.
+             - o valor separate As bordas são separadas; cada célula exibirá suas próprias bordas.
+            */
+            border-collapse: separate;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>border-spacing: 15px</h2>
+
+    <p>Ao usar "border-collapse: separate", a propriedade border-spacing pode ser usada para definir o espaço entre as células:</p>
+
+    <table id="table1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>border-spacing: 15px 20px</h2>
+
+    <p>Usando dois valores (o primeiro define o espaçamento horizontal e o segundo define o espaçamento vertical):</p>
+
+    <table id="table2">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

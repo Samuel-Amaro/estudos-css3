@@ -1,0 +1,68 @@
+<!--
+    * OUTRO EXEMPLO DE Z-INDEX
+
+        Aqui vemos que um elemento com maior ordem de pilha está sempre acima de um elemento com menor ordem de pilha:
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+        .container{
+            position: relative;
+        }
+        .black-box{
+            position: relative;
+            /*
+             - a propriedade z-index  especifica a ordem de pilha de um elemento.
+             - qual elemento deve ser colocado na frente ou atrás dos outros
+             - um elemento pode ter a ordem de pilha negativa ou positiva
+             - o elemento com ordem de pilha positiva e o elemento que vai ser colocado na frente o elemento com ordem de pilha negativa e o elemento que ser colocado atras
+             - aqui especificamos que o elemento com a class .black-box sera o penultimo elemento a ser colocado na frente
+            */
+            z-index: 1;
+            border: 2px solid black;
+            height: 100px;
+            margin: 30px;
+        }
+        .gray-box{
+            position: absolute;
+            /*
+             - aqui especificamos que o elemento com a class .gray-box estara na frente do elemento com a class .black-box(caixa de cor preta) e o elemento com a class green-box(caixa de cor verde), pois a sua ordem de pilha e um valor acima de todos os outros definidos 
+            */
+            z-index: 3;
+            background: lightgray;
+            height: 60px;
+            width: 70%;
+            left: 50px;
+            top: 50px;
+        }
+        .green-box{
+            position: absolute;
+            /*
+             - aqui especificamos que o elemento com a class .green-box estara na frente do elemento com a class .black-box(caixa de cor preta) , pois a sua ordem de pilha e um valor acima do da ordem de pilha definido no elemento black-box 
+            */
+            z-index: 2;/* a caixa verde ficará acima da caixa preta */
+            background: lightgreen;
+            width: 35%;
+            left: 270px;
+            top: -15px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Z-index exemplo</h1>
+
+    <p>Um elemento com maior ordem de pilha está sempre acima de um elemento com menor ordem de pilha.</p>
+
+    <div class="container">
+        <div class="black-box">Black box(z-index: 1)</div>
+        <div class="gray-box">Gray box(z-index: 3)</div>
+        <div class="green-box">Green box(z-index: 2)</div>
+    </div>
+
+</body>
+</html>

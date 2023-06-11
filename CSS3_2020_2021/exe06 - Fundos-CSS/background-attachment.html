@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexo de Plano de Fundo CSS</title>
+    <style>
+        /*
+            * CSS BACKGROUND-ATTACH
+              - A background-attachment propriedade especifica se a imagem de plano de fundo deve rolar ou ser corrigida (não rola com o resto da página):        
+        */
+        /*imagen de fundo fixa fixa não rola junto com o conteudo*/
+        body{
+            background-image: url("img-2.jpg");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+        }
+        /*a imagen de fundo rola com o resto da pagina*/
+        body{
+            background-image: url("img-2.jpg");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: scroll;
+        }
+        /*
+         * TODAS PROPRIEDADES DE FUNDO CSS
+           - background: Define todas as propriedades de fundo em uma declaração;
+           - background-attachment: Define se uma imagem de fundo é fixa ou rola com o resto da página;
+           - background-clip(clipe de fundo): Especifica a área de pintura do fundo;
+           - background-color(cor de fundo): Define a cor de fundo de um elemento;
+           - background-image(imagen de fundo): Define a imagem de fundo para um elemento;
+           - background-origin(origem do fundo): Especifica onde a (s) imagem (ns) de fundo estão posicionadas;
+           - background-position(posição de fundo): Define a posição inicial de uma imagem de fundo;
+           - background-repeat(fundo-repetição):Define como uma imagem de fundo será repetida;
+           - background-size(tamanho do fundo): Especifica o tamanho da (s) imagem (ns) de fundo     
+        */
+    </style>
+</head>
+<body>
+    <h1>css background-attach</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illo corporis voluptatibus doloremque quia tenetur, distinctio aspernatur porro repellat similique sint. Dicta error magni necessitatibus fugit atque exercitationem dolores nesciunt.</p>
+    <h2>Anexo de plano de fundo</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque omnis non culpa nisi enim? Inventore, ratione blanditiis? Saepe quam quos perspiciatis dicta corrupti facilis architecto iste, nesciunt explicabo neque quia!</p>
+</body>
+</html>

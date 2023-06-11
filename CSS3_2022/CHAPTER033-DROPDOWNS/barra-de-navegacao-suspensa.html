@@ -1,0 +1,104 @@
+<!--
+    * BARRA DE NAVEGAÇÃO SUSPENSA
+
+        - Como adicionar um menu suspenso dentro de uma barra de navegação.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        body{
+            background-color: white;
+        }
+
+        nav{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #38444d;
+        }
+        
+        nav a, .dropbtn{
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        nav a:hover, .dropdown:hover .dropbtn{
+            background-color: red;
+        }
+
+        nav .dropdown{
+            display: inline-block;
+        }
+
+        .dropdown-content{
+            display: none;
+            /*
+             - a propriedade position e usada para especificar o tipo de metodo de posicionamento usado para um elemento
+             - o valor absolute define que um elemento e é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização(viewport), como fixed).
+             - No entanto se um elemento position: absolute; não tiver ancestrais posicionados, ele usará o body do documento e se moverá junto com a rolagem da página.
+             - o elemento ancestral deste elemento e o elemento <body>, porque? porque o real elemento ancestral deste elemento e um elemento com position static, o elemento <div class="dropdown"> sendo assim não usa.
+            */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            /*
+             - a propriedade z-index  especifica a ordem de pilha de um elemento.
+             - qual elemento deve ser colocado na frente ou atrás dos outros
+             - um elemento pode ter a ordem de pilha negativa ou positiva
+             - o elemento com ordem de pilha positiva e o elemento que vai ser colocado na frente o elemento com ordem de pilha negativa e o elemento que ser colocado atras
+             - aqui especificamos que o elemento com a class .black-box sera o penultimo elemento a ser colocado na frene
+            */
+            z-index: 1;
+        }
+
+        .dropdown-content a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover{
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside>
+        <nav>
+            <a class="active" href="#home" target="_self" rel="next">Home</a>
+            <a href="#news" target="_self" rel="next">News</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="javascript:void(0)" target="_self" rel="next">Dropdown</a>
+                <div class="dropdown-content">
+                    <a href="#" target="_self" rel="next">Link 1</a>
+                    <a href="#" target="_self" rel="next">Link 2</a>
+                    <a href="#" target="_self" rel="next">Link 3</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+    <main>
+        <header>
+            <h3>Menu supenso dentro de uma barra de navegação</h3>
+        </header>
+        <p>Passe o mouse sobre o link "Suspenso" para ver o menu suspenso.</p>
+    </main>
+
+</body>
+</html>

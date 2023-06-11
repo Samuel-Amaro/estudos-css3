@@ -1,0 +1,80 @@
+<!--
+    * PROPRIEDADE CSS ANIMATION-ITERATION-COUNT
+
+        A propriedade CSS animation-iteration-count define o número de vezes que uma sequência de animação deve ser reproduzida antes de parar.
+
+        Muitas vezes, é conveniente usar a animação de propriedade abreviada para definir todas as propriedades de animação de uma só vez.
+
+    * SINTAXE
+
+        /*VALORES PALAVRA-CHAVE*/
+        animation-iteration-count: infinite;
+
+        /*VALORES <number>*/
+        animation-iteration-count: 3;
+        animation-iteration-count: 2.4;
+
+        /*multiplos valores*/
+        animation-iteration-count: 2, 0, infinite;
+
+        /*valores globais*/
+        animation-iteration-count: inherit;
+        animation-iteration-count: initial;
+        animation-iteration-count: revert;
+        animation-iteration-count: revert-layer;
+        animation-iteration-count: unset;
+
+        A propriedade animation-iteration-count é especificada como um ou mais valores separados por vírgula.
+
+    * VALORES
+
+        infinite: A animação se repetirá para sempre.
+
+        <number>: O número de vezes que a animação se repetirá; isso é 1 por padrão. Você pode especificar valores não inteiros para reproduzir parte de um ciclo de animação: por exemplo, 0.5 reproduzirá metade do ciclo de animação. Os valores negativos são inválidos.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+
+        .box{
+            background-color: rebeccapurple;
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box:hover{
+            animation-name: rotate;
+            /*
+             - a animação tera uma duração de 0.7 segundos
+            */
+            animation-duration: 0.7s;
+            /*
+             - a propriedade css, animation-iteration-count, define o número de vezes que uma sequência de animação deve ser reproduzida antes de parar.
+             - a animação sera reproduzida 10vezes cada repetição de animação tem 0.7s cada animação.
+            */
+            animation-iteration-count: 10;
+        }
+
+        @keyframes rotate{
+            
+            0%{
+                transform: rotate(0);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>

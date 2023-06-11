@@ -1,0 +1,60 @@
+<!--
+    * SELETOR FILHO(CHILD) >
+
+        - O seletor filho seleciona todos os elementos que são filhos de um elemento especificado.
+
+        - O exemplo a seguir seleciona todos os elementos <p> que são filhos de um elemento <div>:
+
+    * DEFINIÇÃO E USO
+
+        - O seletor elemento>elemento é usado para selecionar elementos com um pai específico.
+
+        - Nota: Os elementos que não são diretamente filhos do pai especificado não são selecionados.
+
+    * SINTAXE:
+
+        element > element{
+            css declarations;
+        }
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+        /*
+         - o combinador e algo que explica a relação entre os seletores.
+         - Um seletor CSS pode conter mais de um seletor simples. Entre os seletores simples, podemos incluir um combinador.
+         - O seletor filho seleciona todos os elementos que são filhos de um elemento especificado.
+         - Um seletor CSS seleciona o(s) elemento(s) HTML que você deseja estilizar.
+         - aqui temos o seletor simples que seleciona um elemento com base no nome
+         - a combinação de dois seletores simples
+         - seleciona todos os elementos <p> que são filhos diretos do elemento <div>
+        */
+        div > p{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Seletor filho(>)</h2>
+
+    <p>O seletor filho (>) seleciona todos os elementos que são filhos de um elemento especificado.</p>
+
+    <div>
+        <p>Parágrafo 1º da div.</p>
+        <p>Parágrafo 2º da div.</p>
+        <section>
+            <!--não filho, mas descendente-->
+            <p>Parágrafo 3 na div(dentro de um elemento de section).</p>
+        </section>
+        <p>Parágrafo 4º na div.</p>    
+    </div>
+
+    <p>Parágrafo 5º não tem div.</p>
+    <p>Parágrafo 6º não tem div.</p>
+
+</body>
+</html>

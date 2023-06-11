@@ -1,0 +1,66 @@
+<!--
+    * DEFINIR TAMANHO DA FONTE COM EM
+
+        - Para permitir que os usuários redimensionem o texto (no menu do navegador), muitos desenvolvedores usam (em) vez de pixels.
+
+        - 1 em é igual ao tamanho da fonte atual. O tamanho de texto padrão nos navegadores é 16px. Portanto, o tamanho padrão de 1em é 16px.
+
+        - O tamanho pode ser calculado de pixels para em usando esta fórmula: pixels/16 = em 
+
+        - No exemplo acima, o tamanho do texto em em é o mesmo do exemplo anterior em pixels. No entanto, com o tamanho em, é possível ajustar o tamanho do texto em todos os navegadores.
+
+        - Infelizmente, ainda há um problema com versões mais antigas do Internet Explorer. O texto torna-se maior do que deveria quando aumentado e menor do que deveria quando diminuído.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        h1{
+            /*
+             - a propriedade font-size define o tamanho do texto
+             - define o tamanho do texto com em e um tamanho relativo 
+              - Define o tamanho em relação aos elementos circundantes
+              - Permite que um usuário altere o tamanho do texto nos navegadores usamos o valor em
+              - 1em e igual a 16px
+              - calculando o tamanho de pixels para em usando esta formula: 
+                pixels/16 = em
+             - 40px/16px = 2.5em
+             - define o tamanho do texto do elemento h1 para 2.5em
+             - para calcular de em para pixels usar esta formula:
+                em * 16 = pixels
+            */
+            font-size: 2.5em;
+        }
+        h2{
+            /*
+              - 1em e igual a 16px
+              - calculando o tamanho de pixels para em usando esta formula: 
+                pixels/16 = em
+             - 30px/16px = 1.875em
+             - define o tamanho do texto do elemento h2 para 1.875em
+            */
+            font-size: 1.875em;
+        }
+        p{
+            /*
+              - 1em e igual a 16px
+              - calculando o tamanho de pixels para em usando esta formula: 
+                pixels/16 = em
+             - 14px/16px = 0.875em
+             - define o tamanho do texto do elemento h2 para 0.875em
+            */
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Este é um título 1</h1>
+    <h2>Este é um título 2</h2>
+    <p>Este e um paragrafo</p>
+    <p>Especificar o tamanho da fonte em em permite que todos os principais navegadores redimensionem o texto. Infelizmente, ainda há um problema com versões mais antigas do IE. Ao redimensionar o texto, ele fica maior/menor do que deveria.</p>
+
+</body>
+</html>
